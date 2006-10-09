@@ -9,8 +9,6 @@ $wgGroupPermissions['sysop']['nuke'] = true;
 $wgAvailableRights[] = 'nuke';
 
 function wfSetupNuke() {
-	require_once( 'SpecialPage.php' );
-
 	global $wgMessageCache;
 	$wgMessageCache->addMessages(
 		array(
@@ -21,7 +19,13 @@ function wfSetupNuke() {
 		)
 	);
 	
-	SpecialPage::addPage( new SpecialPage( 'Nuke', 'nuke', /*listed*/ true, /*function*/ false, /*file*/ false ) );
+	$GLOBALS['wgSpecialPages']['Nuke'] = array(
+		/*class*/ 'SpecialPage', 
+		/*name*/ 'Nuke',
+		/* permission */'nuke',
+		/*listed*/ true, 
+		/*function*/ false,
+		/*file*/ false );
 }
 
 function wfSpecialNuke( $par = '' ) {
