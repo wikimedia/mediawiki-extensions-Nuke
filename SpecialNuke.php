@@ -142,7 +142,8 @@ class NukeForm {
 			$fname,
 			array(
 				'ORDER BY' => 'rc_timestamp DESC',
-				'GROUP BY' => 'rev_page' ) );
+				'GROUP BY' => $dbr->implicitGroupby() ? 'rev_page' : 'rc_namespace, rc_title, rc_timestamp'
+			) );
 		$pages = array();
 		while( $row = $dbr->fetchObject( $result ) ) {
 			$pages[] = array( Title::makeTitle( $row->rc_namespace, $row->rc_title ), $row->edits );
