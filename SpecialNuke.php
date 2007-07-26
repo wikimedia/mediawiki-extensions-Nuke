@@ -5,6 +5,13 @@ if( !defined( 'MEDIAWIKI' ) )
 
 $wgExtensionFunctions[] = 'wfSetupNuke';
 
+$wgExtensionCredits['specialpage'][] = array(
+	'name' => 'Nuke',
+	'description' => 'Gives sysops the ability to mass delete pages',
+	'author' => 'Brion Vibber',
+	'url' => 'http://www.mediawiki.org/wiki/Extension:Nuke'
+);
+
 $wgGroupPermissions['sysop']['nuke'] = true;
 $wgAvailableRights[] = 'nuke';
 
