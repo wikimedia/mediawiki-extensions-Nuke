@@ -16,15 +16,10 @@ $wgGroupPermissions['sysop']['nuke'] = true;
 $wgAvailableRights[] = 'nuke';
 
 function wfSetupNuke() {
-	global $wgMessageCache;
-	$wgMessageCache->addMessages(
-		array(
-			'nuke' => 'Mass delete',
-			'nuke-nopages' => "No new pages by [[Special:Contributions/$1|$1]] in recent changes.",
-			'nuke-list' => "The following pages were recently created by [[Special:Contributions/$1|$1]]; put in a comment and hit the button to delete them.",
-			'nuke-defaultreason' => "Mass removal of pages added by $1",
-		)
-	);
+	global $wgMessageCache, $messages, $lang ;
+	require_once( dirname( __FILE__ ) . '/SpecialNuke.i18n.php' );
+	foreach( SpecialNukeMessages() as $lang => $messages )
+		$GLOBALS['wgMessageCache']->addMessages( $messages, $lang );
 	
 	$GLOBALS['wgSpecialPages']['Nuke'] = array(
 		/*class*/ 'SpecialPage', 
@@ -73,7 +68,7 @@ class NukeForm {
 		$nuke = Title::makeTitle( NS_SPECIAL, 'Nuke' );
 		$submit = wfElement( 'input', array( 'type' => 'submit' ) );
 		
-		$wgOut->addWikiText( "This tool allows for mass deletions of pages recently added by a given user or IP. Input the IP to get a list of things to delete:" );
+		$wgOut->addWikiText( wfMsgForContent('nuke-tools') );
 		$wgOut->addHTML( wfElement( 'form', array(
 				'action' => $nuke->getLocalURL( 'action=submit' ),
 				'method' => 'post' ),
@@ -167,4 +162,5 @@ class NukeForm {
 		}
 	}
 }
+
 
