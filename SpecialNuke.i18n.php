@@ -1,5 +1,10 @@
 <?php
-#Internationalisation de l'extension mediawiki Nuke
+/**
+ * Internationalisation file for the Nuke extension
+ *
+ * @addtogroup Extensions
+ * @author Brion Vibber
+ */
 
 function SpecialNukeMessages () {
 	$messages = array(
@@ -11,6 +16,15 @@ function SpecialNukeMessages () {
 		'nuke-list' => "The following pages were recently created by [[Special:Contributions/$1|$1]]; put in a comment and hit the button to delete them.",
 		'nuke-defaultreason' => "Mass removal of pages added by $1",
 		'nuke-tools' => 'This tool allows for mass deletions of pages recently added by a given user or IP. Input the IP to get a list of things to delete:',
+),
+
+# German messages by Raimond Spekking
+	'de' => array(
+		'nuke'               => 'Massen-Löschung',
+		'nuke-nopages'       => "Es gibt in den Letzten Änderungen keine neuen Seiten von [[Special:Contributions/$1|$1]].",
+		'nuke-list'          => "Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] erzeugt; gebe einen Kommentar ein und drücke auf den Lösch-Knopf.",
+		'nuke-defaultreason' => "Massen-Löschung von Seiten, die von $1 angelegt wurden",
+		'nuke-tools'         => 'Dieses Werkzeug ermöglicht die Massen-Löschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Gib die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
 ),
 
 # French messages by Bertrand GRONDIN
@@ -25,4 +39,3 @@ function SpecialNukeMessages () {
 
 return $messages ;
 }
-?>
