@@ -41,7 +41,7 @@ function SpecialNukeMessages () {
 		'nuke' => 'En masse verwijderen',
 		'nuke-nopages' => "Geen nieuwe pagina's van [[Special:Contributions/$1|$1]] in de recente wijzigingen.",
 		'nuke-list' => "De onderstaande pagina's zijn recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer een reden in en klik op de knop om ze te verwijderen.",
-		'nuke-defaultreason' => "En messe verwijderen van pagina's van $1",
+		'nuke-defaultreason' => "En masse verwijderen van pagina's van $1",
 		'nuke-tools' => 'Dit hulpmiddel maakt het mogelijk en masse pagina\'s te verwijderen die recentelijk zijn aangemaakt door een gebruiker of IP-adres. Voer de gebruikernaam of het IP-adres in voor een lijst van te verwijderen pagina\'s:',
 	),
 );
