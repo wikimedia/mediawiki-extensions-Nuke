@@ -37,7 +37,7 @@ function SpecialNukeMessages () {
 	),
 
 # Dutch messages by Siebrand Mazeland
-	'en' => array(
+	'nl' => array(
 		'nuke' => 'En masse verwijderen',
 		'nuke-nopages' => "Geen nieuwe pagina's van [[Special:Contributions/$1|$1]] in de recente wijzigingen.",
 		'nuke-list' => "De onderstaande pagina's zijn recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer een reden in en klik op de knop om ze te verwijderen.",
