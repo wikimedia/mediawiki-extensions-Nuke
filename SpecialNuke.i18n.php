@@ -18,6 +18,12 @@ function SpecialNukeMessages () {
 		'nuke-tools' => 'This tool allows for mass deletions of pages recently added by a given user or IP. Input the username or IP to get a list of pages to delete:',
 	),
 
+	'ar' => array(
+		'nuke'               => 'حذف ضخم',
+		'nuke-nopages'       => 'لا صفحات جديدة بواسطة [[Special:Contributions/$1|$1]] في أحدث التغييرات.',
+		'nuke-defaultreason' => 'حذف شامل للصفحات المضافة بواسطة $1',
+	),
+
 # German messages by Raimond Spekking
 	'de' => array(
 		'nuke'               => 'Massen-Löschung',
@@ -34,6 +40,14 @@ function SpecialNukeMessages () {
 		'nuke-list' => "Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|$1]]; Indiquer un commentaire et cliquer sur le bouton pour les supprimer.",
 		'nuke-defaultreason' => "Suppression en masse des pages ajoutées par $1",
 		'nuke-tools' => 'Cet outil autorise les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer :',
+	),
+
+	'hsb' => array(
+		'nuke'               => 'Masowe wušmórnjenje',
+		'nuke-nopages'       => 'W poslednich změnach njejsu nowe strony z [[Special:Contributions/$1|$1]].',
+		'nuke-list'          => 'Slědowace strony buchu runje přez [[Special:Contributions/$1|$1]] wutworjene; zapodaj komentar a klikń na tłóčatko wušmórnjenja.',
+		'nuke-defaultreason' => 'Masowe wušmórnjenje stronow, kotrež buchu wot $1 wutworjene',
+		'nuke-tools'         => 'Tutón grat zmóžnja masowe wušmórnjenje stronow, kotrež buchu wot IP-adresy abo wužiwarja wutworjene. Zapodaj IP-adresu resp. wužiwarske mjeno, zo by lisćinu dóstał:',
 	),
 
 # Dutch messages by Siebrand Mazeland
