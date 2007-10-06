@@ -50,6 +50,13 @@ function SpecialNukeMessages () {
 		'nuke-tools'         => 'Tutón grat zmóžnja masowe wušmórnjenje stronow, kotrež buchu wot IP-adresy abo wužiwarja wutworjene. Zapodaj IP-adresu resp. wužiwarske mjeno, zo by lisćinu dóstał:',
 	),
 
+	'it' => array(
+		'nuke'               => 'Cancellazione di massa',
+		'nuke-nopages'       => 'Non sono state trovate nuove pagine create da [[Speciale:Contributi/$1|$1]] tra le modifiche recenti.',
+		'nuke-defaultreason' => 'Cancellazione di massa delle pagine create da $1',
+		'nuke-tools'         => 'Questo strumento permette la cancellazione in massa delle pagina create di recente da un determinato utente o IP. Inserisci il nome utente o l\'IP per la lista delle pagine da cancellare:',
+	),
+
 # Dutch messages by Siebrand Mazeland
 	'nl' => array(
 		'nuke' => 'En masse verwijderen',
