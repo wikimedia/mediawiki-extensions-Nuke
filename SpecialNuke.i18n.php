@@ -33,6 +33,13 @@ function SpecialNukeMessages () {
 		'nuke-tools'         => 'Dieses Werkzeug ermöglicht die Massen-Löschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Gib die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
 	),
 
+	'fi' => array(
+		'nuke' => 'Massapoistaminen',
+		'nuke-nopages' => "Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.",
+		'nuke-list' => "Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut.",
+		'nuke-defaultreason' => "Käyttäjän $1 lisäämien sivujen massapoistaminen",
+		'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP:n perusteella. Kirjoita käyttäjänimi tai IP, niin saat listan poistettavista sivuista:',
+	),
 # French messages by Bertrand GRONDIN
 	'fr' => array(
 		'nuke' => 'Suppression en masse',
