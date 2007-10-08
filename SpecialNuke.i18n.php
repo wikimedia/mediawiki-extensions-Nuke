@@ -21,7 +21,9 @@ function SpecialNukeMessages () {
 	'ar' => array(
 		'nuke'               => 'حذف ضخم',
 		'nuke-nopages'       => 'لا صفحات جديدة بواسطة [[Special:Contributions/$1|$1]] في أحدث التغييرات.',
+		'nuke-list'          => 'الصفحات التالية تم إنشاؤها حديثا بواسطة [[Special:Contributions/$1|$1]]؛ ضع تعليقا واضغط الزر لحذفهم.',
 		'nuke-defaultreason' => 'حذف شامل للصفحات المضافة بواسطة $1',
+		'nuke-tools'         => 'هذه الأداة تسمح بالحذف الضخم للصفحات المضافة حديثا بواسطة مستخدم أو أيبي معطى. أدخل اسم المستخدم أو الأيبي لعرض قائمة بالصفحات للحذف:',
 	),
 
 # German messages by Raimond Spekking
