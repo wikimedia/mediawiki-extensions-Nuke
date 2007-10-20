@@ -74,6 +74,14 @@ function SpecialNukeMessages () {
 		'nuke-defaultreason' => "En masse verwijderen van pagina's van $1",
 		'nuke-tools' => 'Dit hulpmiddel maakt het mogelijk en masse pagina\'s te verwijderen die recentelijk zijn aangemaakt door een gebruiker of IP-adres. Voer de gebruikernaam of het IP-adres in voor een lijst van te verwijderen pagina\'s:',
 	),
+
+	'no' => array(
+		'nuke'               => 'Massesletting',
+		'nuke-nopages'       => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringer.',
+		'nuke-list'          => 'Følgende sider ble nylig opprettet av [[Special:Contributions/$1|$1]]; skriv inn en slettingsgrunn og trykk på knappen for å slette alle sidene.',
+		'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
+		'nuke-tools'         => 'Dette verktøyet muliggjør massesletting av sider som nylig er lagt inn av en gitt bruker eller IP. Skriv et brukernavn eller en IP for å få en liste over sider som slettes:',
+	),
 );
 
 return $messages ;
