@@ -82,6 +82,13 @@ function SpecialNukeMessages () {
 		'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
 		'nuke-tools'         => 'Dette verktøyet muliggjør massesletting av sider som nylig er lagt inn av en gitt bruker eller IP. Skriv et brukernavn eller en IP for å få en liste over sider som slettes:',
 	),
+	'pl' => array(
+		'nuke'               => 'Masowe usuwanie',
+		'nuke-nopages'       => 'Brak nowych stron autorstwa [[Special:Contributions/$1|$1]] w ostatnich zmianach.',
+		'nuke-list'          => 'Następujące strony zostały ostatnio stworzone przez [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk by usunąć je.',
+		'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1',
+		'nuke-tools'         => 'To narzędzia pozwala na masowe kasowanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika. Wpis nazwę użytkownika lub adres IP by otrzymać listę stron do skasowania:',
+	),
 	'pms' => array(
 		'nuke'               => 'Scancelament d\'amblé',
 		'nuke-nopages'       => 'Gnun-a pàgine faite da [[Special:Contributions/$1|$1]] ant j\'ùltim cambiament.',
