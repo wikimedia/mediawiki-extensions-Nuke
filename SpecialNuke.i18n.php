@@ -44,11 +44,11 @@ function SpecialNukeMessages () {
 	),
 # French messages by Bertrand GRONDIN
 	'fr' => array(
-		'nuke' => 'Suppression en masse',
-		'nuke-nopages' => "Aucune nouvelle page crée par [[Special:Contributions/$1|$1]] dans la liste des changements récents.",
-		'nuke-list' => "Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|$1]]; Indiquer un commentaire et cliquer sur le bouton pour les supprimer.",
-		'nuke-defaultreason' => "Suppression en masse des pages ajoutées par $1",
-		'nuke-tools' => 'Cet outil autorise les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer :',
+		'nuke'               => 'Suppression en masse',
+		'nuke-nopages'       => 'Aucune nouvelle page crée par [[Special:Contributions/$1|$1]] dans la liste des changements récents.',
+		'nuke-list'          => 'Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|$1]]; Indiquer un commentaire et cliquer sur le bouton pour les supprimer.',
+		'nuke-defaultreason' => 'Suppression en masse des pages ajoutées par $1',
+		'nuke-tools'         => 'Cet outil autorise les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une adresse IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer :',
 	),
 
 	'hsb' => array(
