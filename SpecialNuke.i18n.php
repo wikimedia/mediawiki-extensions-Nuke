@@ -51,6 +51,11 @@ function SpecialNukeMessages () {
 		'nuke-tools'         => 'Cet outil autorise les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une adresse IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer :',
 	),
 
+	'gl' => array(
+		'nuke'               => 'Eliminar en masa',
+		'nuke-defaultreason' => 'Eliminación en masa das páxinas engadidas por $1',
+	),
+
 	'hsb' => array(
 		'nuke'               => 'Masowe wušmórnjenje',
 		'nuke-nopages'       => 'W poslednich změnach njejsu nowe strony z [[Special:Contributions/$1|$1]].',
