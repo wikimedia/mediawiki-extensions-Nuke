@@ -9,7 +9,7 @@
 function SpecialNukeMessages () {
 	$messages = array(
 
-# English messages by Brion Vibber
+	# English messages by Brion Vibber
 	'en' => array(
 		'nuke' => 'Mass delete',
 		'nuke-nopages' => "No new pages by [[Special:Contributions/$1|$1]] in recent changes.",
@@ -19,14 +19,14 @@ function SpecialNukeMessages () {
 	),
 
 	'ar' => array(
-		'nuke'               => 'حذف ضخم',
+		'nuke'               => 'حذف كمي',
 		'nuke-nopages'       => 'لا صفحات جديدة بواسطة [[Special:Contributions/$1|$1]] في أحدث التغييرات.',
 		'nuke-list'          => 'الصفحات التالية تم إنشاؤها حديثا بواسطة [[Special:Contributions/$1|$1]]؛ ضع تعليقا واضغط الزر لحذفهم.',
-		'nuke-defaultreason' => 'حذف شامل للصفحات المضافة بواسطة $1',
+		'nuke-defaultreason' => 'حذف ضخم للصفحات المضافة بواسطة $1',
 		'nuke-tools'         => 'هذه الأداة تسمح بالحذف الضخم للصفحات المضافة حديثا بواسطة مستخدم أو أيبي معطى. أدخل اسم المستخدم أو الأيبي لعرض قائمة بالصفحات للحذف:',
 	),
 
-# German messages by Raimond Spekking
+	# German messages by Raimond Spekking
 	'de' => array(
 		'nuke'               => 'Massen-Löschung',
 		'nuke-nopages'       => "Es gibt in den Letzten Änderungen keine neuen Seiten von [[Special:Contributions/$1|$1]].",
@@ -42,7 +42,8 @@ function SpecialNukeMessages () {
 		'nuke-defaultreason' => "Käyttäjän $1 lisäämien sivujen massapoistaminen",
 		'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP:n perusteella. Kirjoita käyttäjänimi tai IP, niin saat listan poistettavista sivuista:',
 	),
-# French messages by Bertrand GRONDIN
+
+	# French messages by Bertrand GRONDIN
 	'fr' => array(
 		'nuke'               => 'Suppression en masse',
 		'nuke-nopages'       => 'Aucune nouvelle page crée par [[Special:Contributions/$1|$1]] dans la liste des changements récents.',
@@ -89,6 +90,13 @@ function SpecialNukeMessages () {
 		'nuke-list'          => 'Følgende sider ble nylig opprettet av [[Special:Contributions/$1|$1]]; skriv inn en slettingsgrunn og trykk på knappen for å slette alle sidene.',
 		'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
 		'nuke-tools'         => 'Dette verktøyet muliggjør massesletting av sider som nylig er lagt inn av en gitt bruker eller IP. Skriv et brukernavn eller en IP for å få en liste over sider som slettes:',
+	),
+	'oc' => array(
+		'nuke'               => 'Supression en massa',
+		'nuke-nopages'       => 'Cap de pagina novèla creada per [[Special:Contributions/$1|$1]] dins la lista dels darrièrs cambiaments.',
+		'nuke-list'          => 'Las paginas seguentas son estadas creadas recentament per [[Special:Contributions/$1|$1]]; Indicatz un comentari e clicatz sul boton per los suprimir.',
+		'nuke-defaultreason' => 'Supression en massa de las paginas ajustadas per $1',
+		'nuke-tools'         => 'Aqueste esplech autoriza las supressions en massa de las paginas ajustadas recentament per un utilizaire enregistrat o per una adreça IP. Indicatz l’adreça IP per obténer la lista de las paginas de suprimir :',
 	),
 	'pl' => array(
 		'nuke'               => 'Masowe usuwanie',
