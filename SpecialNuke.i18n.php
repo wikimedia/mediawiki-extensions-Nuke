@@ -107,6 +107,7 @@ function SpecialNukeMessages () {
 		'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
 		'nuke-tools'         => 'Dette verktøyet muliggjør massesletting av sider som nylig er lagt inn av en gitt bruker eller IP. Skriv et brukernavn eller en IP for å få en liste over sider som slettes:',
 	),
+
 	'oc' => array(
 		'nuke'               => 'Supression en massa',
 		'nuke-nopages'       => 'Cap de pagina novèla creada per [[Special:Contributions/$1|$1]] dins la lista dels darrièrs cambiaments.',
@@ -114,6 +115,7 @@ function SpecialNukeMessages () {
 		'nuke-defaultreason' => 'Supression en massa de las paginas ajustadas per $1',
 		'nuke-tools'         => 'Aqueste esplech autoriza las supressions en massa de las paginas ajustadas recentament per un utilizaire enregistrat o per una adreça IP. Indicatz l’adreça IP per obténer la lista de las paginas de suprimir :',
 	),
+
 	'pl' => array(
 		'nuke'               => 'Masowe usuwanie',
 		'nuke-nopages'       => 'Brak nowych stron autorstwa [[Special:Contributions/$1|$1]] w ostatnich zmianach.',
@@ -121,12 +123,24 @@ function SpecialNukeMessages () {
 		'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1',
 		'nuke-tools'         => 'To narzędzia pozwala na masowe kasowanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika. Wpis nazwę użytkownika lub adres IP by otrzymać listę stron do skasowania:',
 	),
+
 	'pms' => array(
 		'nuke'               => 'Scancelament d\'amblé',
 		'nuke-nopages'       => 'Gnun-a pàgine faite da [[Special:Contributions/$1|$1]] ant j\'ùltim cambiament.',
 		'nuke-list'          => 'Ste pàgine-sì a son staite faite ant j\'ùltim temp da [[Special:Contributions/$1|$1]]; ch\'a lassa un coment e ch\'a-i daga \'n colp ansima al boton për gaveje via tute d\'amblé.',
 		'nuke-defaultreason' => 'Scancelament d\'amblé dle pàgine faite da $1',
 		'nuke-tools'         => 'St\'utiss-sì a lassa scancelé d\'amblé le pàgine gionta ant j\'ùltim temp da un chèich utent ò da \'nt na chèich adrëssa IP. Ch\'a buta lë stranòm ò l\'adrëssa IP për tiré giù na lista dle pàgine da scancelé:',
+	),
+
+/** Russian (Русский)
+ * @author VasilievVV
+ */
+	'ru' => array(
+		'nuke'               => 'Массовое удаление',
+		'nuke-nopages'       => 'Созданий страниц участником [[Special:Contributions/$1|$1]] не найдено в свежих правках.',
+		'nuke-list'          => 'Следующие страницы были недавно созданны участником [[Special:Contributions/$1|$1]]. Введите комментарий и нажмите на кнопку для того, чтобы удалить их.',
+		'nuke-defaultreason' => 'Массовое удаление страниц, созданных участником $1',
+		'nuke-tools'         => 'Эта страница позволяет массово удалять страницы, созданные определённым участником или IP. Введите имя участника или IP для того, чтобы получить список созданных им страниц.',
 	),
 );
 
