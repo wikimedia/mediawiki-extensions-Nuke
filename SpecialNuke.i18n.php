@@ -142,6 +142,15 @@ function SpecialNukeMessages () {
 		'nuke-defaultreason' => 'Массовое удаление страниц, созданных участником $1',
 		'nuke-tools'         => 'Эта страница позволяет массово удалять страницы, созданные определённым участником или IP. Введите имя участника или IP для того, чтобы получить список созданных им страниц.',
 	),
+
+/** Seeltersk (Seeltersk)
+ * @author Pyt
+ */
+	'stq' => array(
+		'nuke'         => 'Massen-Läskenge',
+		'nuke-nopages' => 'Dät rakt in do Lääste Annerengen neen näie Sieden fon [[Special:Contributions/$1|$1]].',
+		'nuke-list'    => 'Do foulgjende Sieden wuuden fon [[Special:Contributions/$1|$1]] moaked; reek n Kommentoar ien un tai ap dän Läsk-Knoop.',
+	),
 );
 
 return $messages ;
