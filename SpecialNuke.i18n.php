@@ -60,6 +60,17 @@ function SpecialNukeMessages () {
 		'nuke-tools'         => 'Cet outil autorise les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une adresse IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer :',
 	),
 
+/** Franco-Provençal (Arpetan)
+ * @author ChrisPtDe
+ */
+	'frp' => array(
+		'nuke'               => 'Suprèssion en massa',
+		'nuke-nopages'       => 'Niona novèla pâge crèâ per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.',
+		'nuke-list'          => 'Les pâges siuventes ont étâ crèâs dèrriérement per [[Special:Contributions/$1|$1]] ; endicâd un comentèro et pués clicâd sur lo boton por les suprimar.',
+		'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
+		'nuke-tools'         => 'Ceti outil ôtorise les suprèssions en massa de les pâges apondues dèrriérement per un utilisator enregistrâ ou per una adrèce IP. Endicâd l’adrèce IP por obtegnir la lista de les pâges a suprimar :',
+	),
+
 	'gl' => array(
 		'nuke'               => 'Eliminar en masa',
 		'nuke-nopages'       => 'Non hai novas páxinas feitas por [[Special:Contributions/$1|$1]] nos cambios recentes.',
@@ -84,6 +95,18 @@ function SpecialNukeMessages () {
 		'nuke-tools'         => 'Tutón grat zmóžnja masowe wušmórnjenje stronow, kotrež buchu wot IP-adresy abo wužiwarja wutworjene. Zapodaj IP-adresu resp. wužiwarske mjeno, zo by lisćinu dóstał:',
 	),
 
+/** Hungarian (Magyar)
+ * @author Bdanee
+ * @author KossuthRad
+ */
+	'hu' => array(
+		'nuke'               => 'Halmozott törlés',
+		'nuke-nopages'       => 'Nincsenek új oldalak [[Special:Contributions/$1|$1]] az aktuális események között.',
+		'nuke-list'          => 'Az alábbi lapokat nem rég készítette [[Special:Contributions/$1|$1]]; adj meg egy indoklást, és kattints a gombra a törlésükhöz.',
+		'nuke-defaultreason' => '$1 által készített lapok tömeges eltávolítása',
+		'nuke-tools'         => 'Ez az eszköz lehetővé teszi egy adott felhasználó vagy IP által nem rég készített lapok tömeges törlését. Add meg a felhasználónevet vagy az IP-címet, hogy lekérd a törlendő lapok listáját:',
+	),
+
 /** Italian (Italiano)
  * @author .anaconda
  */
@@ -93,6 +116,17 @@ function SpecialNukeMessages () {
 		'nuke-list'          => 'Le seguenti pagine sono state create di recente da [[Special:Contributions/$1|$1]]; inserisci un commento e conferma la cancellazione.',
 		'nuke-defaultreason' => 'Cancellazione di massa delle pagine create da $1',
 		'nuke-tools'         => "Questo strumento permette la cancellazione in massa delle pagina create di recente da un determinato utente o IP. Inserisci il nome utente o l'IP per la lista delle pagine da cancellare:",
+	),
+
+/** Luxembourgish (Lëtzebuergesch)
+ * @author Robby
+ */
+	'lb' => array(
+		'nuke'               => 'Masse-Läschung',
+		'nuke-nopages'       => 'Et gëtt bei de läschten Ännerunge keng nei Säite vum [[Special:Contributions/$1|$1]].',
+		'nuke-list'          => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|$1]] nei ugeluecht; gitt w.e.g. eng Bemierkung an an dréckt op de Kneppche Läschen.',
+		'nuke-defaultreason' => 'Masse-Läschung vu Säiten, déi vum $1 ugefaang goufen',
+		'nuke-tools'         => "Dësen tool erlaabt masse-Läschunge vu Säiten déi vun engem Benotzer oder vun enger IP-Adresse ugeluecht goufen. Gitt w.e.g. d'IP-Adress respektiv de Benotzer un fir eng Lescht ze kréien:",
 	),
 
 	# Dutch messages by Siebrand Mazeland
