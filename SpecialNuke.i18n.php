@@ -42,6 +42,16 @@ function SpecialNukeMessages () {
 		'nuke-defaultreason' => "Massen-Löschung von Seiten, die von $1 angelegt wurden",
 		'nuke-tools'         => 'Dieses Werkzeug ermöglicht die Massen-Löschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Gib die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
 	),
+	
+	# فارسی (Huji)
+	'fa' => array(
+		'nuke'               => 'حذف دست‌جمعی',
+		'nuke-nopages'       => 'صفحه‌ٔ جدیدی از [[Special:Contributions/$1|$1]] در تغییرات اخیر وجود ندارد.',
+		'nuke-list'          => 'صفحه‌های زیر به تازگی توسط [[Special:Contributions/$1|$1]] ایجاد شده‌اند؛ توضیحی ارائه کنید و دکمه را بزنید تا این صحفه‌ها حذف شوند.',
+		'nuke-defaultreason' => 'حذف دست‌جمعی صفحه‌هایی که توسط $1 ایجاد شده‌اند',
+		'nuke-tools'         => 'این ابزار امکان حذف دست‌جمعی صفحه‌هایی که به تازگی توسط یک کاربر یا نشانی اینترنتی اضافه شده‌اند را فراهم می‌کند. نام کاربری یا نشانی اینترنتی موردنظر را وارد کنید تا فهرست صفحه‌هایی که حذف می‌شوند را ببینید:',
+
+	),
 
 	'fi' => array(
 		'nuke' => 'Massapoistaminen',
