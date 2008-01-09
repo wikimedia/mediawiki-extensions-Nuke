@@ -4,9 +4,11 @@ if( !defined( 'MEDIAWIKI' ) )
 	die( 'Not an entry point.' );
 
 $wgExtensionFunctions[] = 'wfSetupNuke';
+$wgExtensionMessagesFiles['Nuke'] = dirname(__FILE__) . '/SpecialNuke.i18n.php';
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Nuke',
+	'version' => '2008-01-09',
 	'description' => 'Gives sysops the ability to mass delete pages',
 	'author' => 'Brion Vibber',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Nuke'
@@ -16,16 +18,13 @@ $wgGroupPermissions['sysop']['nuke'] = true;
 $wgAvailableRights[] = 'nuke';
 
 function wfSetupNuke() {
-	global $wgMessageCache, $messages, $lang ;
-	require_once( dirname( __FILE__ ) . '/SpecialNuke.i18n.php' );
-	foreach( SpecialNukeMessages() as $lang => $messages )
-		$GLOBALS['wgMessageCache']->addMessages( $messages, $lang );
-	
+	wfLoadExtensionMessages( 'Nuke' );
+
 	$GLOBALS['wgSpecialPages']['Nuke'] = array(
-		/*class*/ 'SpecialPage', 
+		/*class*/ 'SpecialPage',
 		/*name*/ 'Nuke',
 		/* permission */'nuke',
-		/*listed*/ true, 
+		/*listed*/ true,
 		/*function*/ false,
 		/*file*/ false );
 }
@@ -49,7 +48,7 @@ class NukeForm {
 			$this->mPages = $request->getArray( 'pages' );
 		}
 	}
-	
+
 	function run() {
 		if( $this->mPosted && $this->mPages ) {
 			return $this->doDelete( $this->mPages, $this->mReason );
@@ -60,14 +59,14 @@ class NukeForm {
 			$this->promptForm();
 		}
 	}
-	
+
 	function promptForm() {
 		global $wgUser, $wgOut;
 		$sk =& $wgUser->getSkin();
-		
+
 		$nuke = Title::makeTitle( NS_SPECIAL, 'Nuke' );
 		$submit = wfElement( 'input', array( 'type' => 'submit' ) );
-		
+
 		$wgOut->addWikiText( wfMsgForContent('nuke-tools') );
 		$wgOut->addHTML( wfElement( 'form', array(
 				'action' => $nuke->getLocalURL( 'action=submit' ),
@@ -78,10 +77,10 @@ class NukeForm {
 				'size' => 40,
 				'name' => 'target' ) ) .
 			"\n$submit\n" );
-		
+
 		$wgOut->addHTML( "</form>" );
 	}
-	
+
 	function listForm( $username, $reason ) {
 		global $wgUser, $wgOut, $wgLang;
 
@@ -92,10 +91,10 @@ class NukeForm {
 			return $this->promptForm();
 		}
 		$wgOut->addWikiText( wfMsg( 'nuke-list', $escapedName ) );
-		
+
 		$nuke = Title::makeTitle( NS_SPECIAL, 'Nuke' );
 		$submit = wfElement( 'input', array( 'type' => 'submit' ) );
-		
+
 		$wgOut->addHTML( wfElement( 'form', array(
 			'action' => $nuke->getLocalURL( 'action=delete' ),
 			'method' => 'post' ),
@@ -113,7 +112,7 @@ class NukeForm {
 				'name' => 'wpEditToken',
 				'value' => $wgUser->editToken() ) ) .
 			"\n<ul>\n" );
-		
+
 		$sk =& $wgUser->getSkin();
 		foreach( $pages as $info ) {
 			list( $title, $edits ) = $info;
@@ -131,7 +130,7 @@ class NukeForm {
 		}
 		$wgOut->addHTML( "</ul>\n$submit</form>" );
 	}
-	
+
 	function getNewPages( $username ) {
 		$fname = 'NukeForm::getNewPages';
 		$dbr =& wfGetDB( DB_SLAVE );
@@ -153,7 +152,7 @@ class NukeForm {
 		$dbr->freeResult( $result );
 		return $pages;
 	}
-	
+
 	function doDelete( $pages, $reason ) {
 		foreach( $pages as $page ) {
 			$title = Title::newFromUrl( $page );
@@ -162,5 +161,3 @@ class NukeForm {
 		}
 	}
 }
-
-
