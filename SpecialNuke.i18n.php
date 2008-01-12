@@ -17,10 +17,13 @@ $messages['en'] = array(
 	'nuke-tools' => 'This tool allows for mass deletions of pages recently added by a given user or IP. Input the username or IP to get a list of pages to delete:',
 );
 
+/** Arabic (العربية)
+ * @author Meno25
+ */
 $messages['ar'] = array(
 	'nuke'               => 'حذف كمي',
-	'nuke-nopages'       => 'لا صفحات جديدة بواسطة [[Special:Contributions/$1|$1] في أحدث التغييرات.',
-	'nuke-list'          => 'الصفحات التالية تم إنشاؤها حديثا بواسطة [[Special:Contributions/$1|$1]؛ ضع تعليقا واضغط الزر لحذفهم.',
+	'nuke-nopages'       => 'لا صفحات جديدة بواسطة [[Special:Contributions/$1|$1]] في أحدث التغييرات.',
+	'nuke-list'          => 'الصفحات التالية تم إنشاؤها حديثا بواسطة [[Special:Contributions/$1|$1]]؛ ضع تعليقا واضغط الزر لحذفهم.',
 	'nuke-defaultreason' => 'إزالة كمية للصفحات المضافة بواسطة $1',
 	'nuke-tools'         => 'هذه الأداة تسمح بالحذف الضخم للصفحات المضافة حديثا بواسطة مستخدم أو أيبي معطى. أدخل اسم المستخدم أو الأيبي لعرض قائمة بالصفحات للحذف:',
 );
