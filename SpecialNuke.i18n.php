@@ -237,3 +237,11 @@ $messages['stq'] = array(
 	'nuke-tools'         => 'Disse Reewe moaket ju Massen-Läskenge muugelk fon Sieden, do der fon een IP-Adresse of aan Benutser anlaid wuuden. Reek ju IP-Adresse/die Benutsernoome ien, uum ne Lieste tou kriegen:',
 );
 
+/** Swedish (Svenska)
+ * @author Max sonnelid
+ */
+$messages['sv'] = array(
+	'nuke'         => 'Mass borttagning',
+	'nuke-nopages' => 'Inga nya sidor av [[Special:Contributions/$1|$1] i senaste ändringar.',
+);
+
