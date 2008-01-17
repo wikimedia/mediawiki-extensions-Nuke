@@ -238,10 +238,13 @@ $messages['stq'] = array(
 );
 
 /** Swedish (Svenska)
- * @author Max sonnelid
+ * @author Lejonel
  */
 $messages['sv'] = array(
-	'nuke'         => 'Mass borttagning',
-	'nuke-nopages' => 'Inga nya sidor av [[Special:Contributions/$1|$1] i senaste ändringar.',
+	'nuke'               => 'Massborttagning',
+	'nuke-nopages'       => 'Inga nya sidor av [[Special:Contributions/$1|$1]] bland de senaste ändringarna.',
+	'nuke-list'          => 'Följande sidor har nyligen skapats av [[Special:Contributions/$1|$1]]. Skriv en raderingskommentar och klicka på knappen för att ta bort dem.',
+	'nuke-defaultreason' => 'Massradering av sidor skapade av $1',
+	'nuke-tools'         => 'Det här verktyget gör det möjligt att massradera sidor som nyligen skapats av en vissa användare eller IP-adress. Ange ett användarnamn eller en IP-adress för att de en lista över sidor som kan tas bort:',
 );
 
