@@ -94,6 +94,10 @@ $messages['frp'] = array(
 	'nuke-tools'         => 'Ceti outil ôtorise les suprèssions en massa de les pâges apondues dèrriérement per un utilisator enregistrâ ou per una adrèce IP. Endicâd l’adrèce IP por obtegnir la lista de les pâges a suprimar :',
 );
 
+/** Galician (Galego)
+ * @author Xosé
+ * @author Alma
+ */
 $messages['gl'] = array(
 	'nuke'               => 'Eliminar en masa',
 	'nuke-nopages'       => 'Non hai novas páxinas feitas por [[Special:Contributions/$1|$1] nos cambios recentes.',
