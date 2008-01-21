@@ -8,7 +8,7 @@ $wgExtensionMessagesFiles['Nuke'] = dirname(__FILE__) . '/SpecialNuke.i18n.php';
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name' => 'Nuke',
-	'version' => '2008-01-09',
+	'version' => '2008-01-21',
 	'description' => 'Gives sysops the ability to mass delete pages',
 	'author' => 'Brion Vibber',
 	'url' => 'http://www.mediawiki.org/wiki/Extension:Nuke'
@@ -65,7 +65,7 @@ class NukeForm {
 		$sk =& $wgUser->getSkin();
 
 		$nuke = Title::makeTitle( NS_SPECIAL, 'Nuke' );
-		$submit = wfElement( 'input', array( 'type' => 'submit' ) );
+		$submit = wfElement( 'input', array( 'type' => 'submit', 'value' => wfMsgHtml( 'nuke-submit-user' ) ) );
 
 		$wgOut->addWikiText( wfMsgForContent('nuke-tools') );
 		$wgOut->addHTML( wfElement( 'form', array(
@@ -85,7 +85,7 @@ class NukeForm {
 		global $wgUser, $wgOut, $wgLang;
 
 		$pages = $this->getNewPages( $username );
-		$escapedName = wfEscapeWIkiText( $username );
+		$escapedName = wfEscapeWikiText( $username );
 		if( count( $pages ) == 0 ) {
 			$wgOut->addWikiText( wfMsg( 'nuke-nopages', $escapedName ) );
 			return $this->promptForm();
@@ -93,7 +93,7 @@ class NukeForm {
 		$wgOut->addWikiText( wfMsg( 'nuke-list', $escapedName ) );
 
 		$nuke = Title::makeTitle( NS_SPECIAL, 'Nuke' );
-		$submit = wfElement( 'input', array( 'type' => 'submit' ) );
+		$submit = wfElement( 'input', array( 'type' => 'submit', 'value' => wfMsgHtml( 'nuke-submit-delete' ) ) );
 
 		$wgOut->addHTML( wfElement( 'form', array(
 			'action' => $nuke->getLocalURL( 'action=delete' ),
@@ -125,7 +125,7 @@ class NukeForm {
 				'&nbsp;' .
 				$sk->makeKnownLinkObj( $title ) .
 				'&nbsp;(' .
-				$sk->makeKnownLinkObj( $title, wfMsgHtml( 'nchanges', $wgLang->formatNum( $edits ) ), 'action=history' ) .
+				$sk->makeKnownLinkObj( $title, wfMsgExt( 'nchanges', array( 'parsemag' ), $wgLang->formatNum( $edits ) ), 'action=history' ) .
 				")</li>\n" );
 		}
 		$wgOut->addHTML( "</ul>\n$submit</form>" );
