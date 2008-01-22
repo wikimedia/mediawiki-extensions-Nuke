@@ -28,6 +28,8 @@ $messages['ar'] = array(
 	'nuke-list'          => 'الصفحات التالية تم إنشاؤها حديثا بواسطة [[Special:Contributions/$1|$1]]؛ ضع تعليقا واضغط الزر لحذفهم.',
 	'nuke-defaultreason' => 'إزالة كمية للصفحات المضافة بواسطة $1',
 	'nuke-tools'         => 'هذه الأداة تسمح بالحذف الضخم للصفحات المضافة حديثا بواسطة مستخدم أو أيبي معطى. أدخل اسم المستخدم أو الأيبي لعرض قائمة بالصفحات للحذف:',
+	'nuke-submit-user'   => 'اذهب',
+	'nuke-submit-delete' => 'احذف المختار',
 );
 
 $messages['bg'] = array(
@@ -40,6 +42,7 @@ $messages['bg'] = array(
 
 /** Bengali (বাংলা)
  * @author Zaheen
+ * @author Bellayet
  */
 $messages['bn'] = array(
 	'nuke'               => 'গণ মুছে ফেলা',
@@ -47,6 +50,8 @@ $messages['bn'] = array(
 	'nuke-list'          => '[[Special:Contributions/$1|$1]] সাম্প্রতিক কালে নিচের পাতাগুলি সৃষ্টি করেছেন; একটি মন্তব্য দিন এবং বোতাম চেপে এগুলি মুছে ফেলুন।',
 	'nuke-defaultreason' => '$1-এর যোগ করা পাতাগুলির গণ মুছে-ফেলা',
 	'nuke-tools'         => 'এই সরঞ্জামটি ব্যবহার করে আপনি একটি প্রদত্ত ব্যবহারকারীর বা আইপি ঠিকানার যোগ করা পাতাগুলি গণ আকারে মুছে ফেলতে পারবেন। পাতাগুলির তালিকা পেতে ব্যবহারকারী নাম বা আইপি ঠিকানাটি ইনপুট করুন:',
+	'nuke-submit-user'   => 'যাও',
+	'nuke-submit-delete' => 'নির্বাচিত গুলো মুছে ফেলো',
 );
 
 /** Czech (Česky)
@@ -114,6 +119,8 @@ $messages['frp'] = array(
 	'nuke-list'          => 'Les pâges siuventes ont étâ crèâs dèrriérement per [[Special:Contributions/$1|$1]] ; endicâd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
 	'nuke-tools'         => 'Ceti outil ôtorise les suprèssions en massa de les pâges apondues dèrriérement per un utilisator enregistrâ ou per una adrèce IP. Endicâd l’adrèce IP por obtegnir la lista de les pâges a suprimar :',
+	'nuke-submit-user'   => 'Validar',
+	'nuke-submit-delete' => 'Suprèssion sèlèccionâ',
 );
 
 /** Galician (Galego)
@@ -177,6 +184,14 @@ $messages['lb'] = array(
 	'nuke-list'          => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|$1]] nei ugeluecht; gitt w.e.g. eng Bemierkung an an dréckt op de Kneppche Läschen.',
 	'nuke-defaultreason' => 'Masse-Läschung vu Säiten, déi vum $1 ugefaang goufen',
 	'nuke-tools'         => "Dësen tool erlaabt masse-Läschunge vu Säiten déi vun engem Benotzer oder vun enger IP-Adresse ugeluecht goufen. Gitt w.e.g. d'IP-Adress respektiv de Benotzer un fir eng Lescht ze kréien:",
+);
+
+/** Lithuanian (Lietuvių)
+ * @author Matasg
+ */
+$messages['lt'] = array(
+	'nuke-submit-user'   => 'Išsiųsti',
+	'nuke-submit-delete' => 'Ištrinti pasirinktus(ą)',
 );
 
 /** Dutch (Nederlands)
@@ -256,6 +271,8 @@ $messages['sk'] = array(
 	'nuke-list'          => '[[Special:Contributions/$1|$1]] nedávno vytvoril nasledovné nové stránky; vyplňte komentár a stlačením tlačidla ich vymažete.',
 	'nuke-defaultreason' => 'Hromadné odstránenie stránok, ktoré pridal $1',
 	'nuke-tools'         => 'Tento nástroj umožňuje hromadné odstránenie stránok, ktoré nedávno pridal zadaný používateľ alebo IP. Zadajte používateľa alebo IP a dostanente zoznam stránok na zmazanie:',
+	'nuke-submit-user'   => 'Vykonať',
+	'nuke-submit-delete' => 'Zmazať vybrané',
 );
 
 /** Seeltersk (Seeltersk)
