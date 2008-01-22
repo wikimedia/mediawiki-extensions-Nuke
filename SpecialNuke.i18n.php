@@ -91,13 +91,18 @@ $messages['fi'] = array(
 	'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP:n perusteella. Kirjoita käyttäjänimi tai IP, niin saat listan poistettavista sivuista:',
 );
 
-# French messages by Bertrand GRONDIN
+/** French (Français)
+ * @author Grondin
+ * @author Sherbrooke
+ */
 $messages['fr'] = array(
 	'nuke'               => 'Suppression en masse',
-	'nuke-nopages'       => 'Aucune nouvelle page crée par [[Special:Contributions/$1|$1]] dans la liste des changements récents.',
+	'nuke-nopages'       => 'Aucune nouvelle page créée par [[Special:Contributions/$1|$1]] dans la liste des changements récents.',
 	'nuke-list'          => 'Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|$1]]; Indiquer un commentaire et cliquer sur le bouton pour les supprimer.',
 	'nuke-defaultreason' => 'Suppression en masse des pages ajoutées par $1',
 	'nuke-tools'         => 'Cet outil autorise les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une adresse IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer :',
+	'nuke-submit-user'   => 'Valider',
+	'nuke-submit-delete' => 'Suppression sélectionnée',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -174,13 +179,18 @@ $messages['lb'] = array(
 	'nuke-tools'         => "Dësen tool erlaabt masse-Läschunge vu Säiten déi vun engem Benotzer oder vun enger IP-Adresse ugeluecht goufen. Gitt w.e.g. d'IP-Adress respektiv de Benotzer un fir eng Lescht ze kréien:",
 );
 
-# Dutch messages by Siebrand Mazeland
+/** Dutch (Nederlands)
+ * @author SPQRobin
+ * @author Siebrand
+ */
 $messages['nl'] = array(
 	'nuke'               => 'Massaal verwijderen',
-	'nuke-nopages'       => 'Geen nieuwe pagina\'s van [[Special:Contributions/$1|$1]] in de recente wijzigingen.',
-	'nuke-list'          => 'De onderstaande pagina\'s zijn recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer een reden in en klik op de knop om ze te verwijderen.',
-	'nuke-defaultreason' => 'Massaal verwijderen van pagina\'s van $1',
-	'nuke-tools'         => 'Dit hulpmiddel maakt het mogelijk massaal pagina\'s te verwijderen die recentelijk zijn aangemaakt door een gebruiker of IP-adres. Voer de gebruikernaam of het IP-adres in voor een lijst van te verwijderen pagina\'s:',
+	'nuke-nopages'       => "Geen nieuwe pagina's van [[Special:Contributions/$1|$1]] in de recente wijzigingen.",
+	'nuke-list'          => "De onderstaande pagina's zijn recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer een reden in en klik op de knop om ze te verwijderen.",
+	'nuke-defaultreason' => "Massaal verwijderen van pagina's van $1",
+	'nuke-tools'         => "Dit hulpmiddel maakt het mogelijk massaal pagina's te verwijderen die recentelijk zijn aangemaakt door een gebruiker of IP-adres. Voer de gebruikernaam of het IP-adres in voor een lijst van te verwijderen pagina's:",
+	'nuke-submit-user'   => 'OK',
+	'nuke-submit-delete' => 'Geselecteerde verwijderen',
 );
 
 $messages['no'] = array(

@@ -105,7 +105,7 @@ class NukeForm {
 				'name' => 'wpReason',
 				'value' => $reason,
 				'size' => 60 ) ) .
-			"</div>\n" .
+			"</div><br />" .
 			$submit .
 			wfElement( 'input', array(
 				'type' => 'hidden',
