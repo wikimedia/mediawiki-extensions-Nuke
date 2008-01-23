@@ -249,10 +249,13 @@ $messages['pt'] = array(
 	'nuke-list'          => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|$1]]; forneça uma justificativa e pressione o botão a seguir para eliminá-las.',
 	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas por $1',
 	'nuke-tools'         => 'Esta ferramenta permite a eliminação em massa de páginas recentemente criadas por um utilizador ou IP em específico. Forneça o nome de utilizador ou IP para obter uma lista de páginas a eliminar:',
+	'nuke-submit-user'   => 'Ir',
+	'nuke-submit-delete' => 'Eliminar as seleccionadas',
 );
 
 /** Russian (Русский)
  * @author VasilievVV
+ * @author .:Ajvol:.
  */
 $messages['ru'] = array(
 	'nuke'               => 'Массовое удаление',
@@ -260,6 +263,8 @@ $messages['ru'] = array(
 	'nuke-list'          => 'Следующие страницы были недавно созданны участником [[Special:Contributions/$1|$1]]. Введите комментарий и нажмите на кнопку для того, чтобы удалить их.',
 	'nuke-defaultreason' => 'Массовое удаление страниц, созданных участником $1',
 	'nuke-tools'         => 'Эта страница позволяет массово удалять страницы, созданные определённым участником или IP. Введите имя участника или IP для того, чтобы получить список созданных им страниц.',
+	'nuke-submit-user'   => 'Выполнить',
+	'nuke-submit-delete' => 'Удалить выбранные',
 );
 
 /** Slovak (Slovenčina)
@@ -298,6 +303,19 @@ $messages['sv'] = array(
 	'nuke-submit-user'   => 'Visa',
 	'nuke-submit-delete' => 'Ta bort valda',
 
+);
+
+/** Volapük (Volapük)
+ * @author Smeira
+ */
+$messages['vo'] = array(
+	'nuke'               => 'Moükön pademi',
+	'nuke-nopages'       => 'Pads nonik fa geban: [[Special:Contributions/$1|$1]] pejaföls binons su lised votükamas nulik.',
+	'nuke-list'          => 'Pads sököl pejafons brefabüo fa geban: [[Special:Contributions/$1|$1]]; penolös küpeti e klikolös gnobi ad moükön onis.',
+	'nuke-defaultreason' => 'Moükam padas fa geban: $1 pejafölas',
+	'nuke-tools'         => 'Stum at kanon moükön mödoti padas fa geban u ladet-IP semik brefabüo pejafölas. Penolös gebananemi u ladeti-IP ad dagetön lisedi padas moükovik:',
+	'nuke-submit-user'   => 'Ledunolöd',
+	'nuke-submit-delete' => 'Pevalöl ad pamoükön',
 );
 
 $messages['de-formal'] = $messages['de'];
