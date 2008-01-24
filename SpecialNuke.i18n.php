@@ -63,6 +63,8 @@ $messages['cs'] = array(
 	'nuke-list'          => 'Následující stránky nedávno vytvořil uživatel [[Special:Contributions/$1|$1]]; vyplňte komentář a všechny smažte kliknutím na tlačítko.',
 	'nuke-defaultreason' => 'Hromadné odstranění stránek, které vytvořil $1',
 	'nuke-tools'         => 'Tento nástroj umožňuje hromadné smazání stránek nedávno vytvořených zadaným uživatelem na IP adresou. Zadejte uživatelské jméno nebo IP adresu, jejichž seznam stránek ke smazání chcete zobrazit:',
+	'nuke-submit-user'   => 'Provést',
+	'nuke-submit-delete' => 'Smazat vybrané',
 );
 
 /** German (Deutsch)
@@ -136,12 +138,18 @@ $messages['gl'] = array(
 	'nuke-tools'         => 'Esta ferramenta permite supresións masivas das páxinas engadidas recentemente por un determinado usuario ou enderezo IP. Introduza o nome do usuario ou enderezo IP para obter unha listaxe das páxinas para borrar:',
 );
 
+/** Croatian (Hrvatski)
+ * @author SpeedyGonsales
+ * @author Dnik
+ */
 $messages['hr'] = array(
 	'nuke'               => 'Grupno brisanje',
 	'nuke-nopages'       => 'Nema novih stranica suradnika [[Special:Contributions/$1|$1]] među nedavnim promjenama.',
 	'nuke-list'          => 'Slijedeće stranice je stvorio suradnik [[Special:Contributions/$1|$1]]; napišite zaključak i kliknite gumb za njihovo brisanje.',
 	'nuke-defaultreason' => 'Grupno brisanje stranica suradnika $1',
 	'nuke-tools'         => 'Ova ekstenzija omogućava grupno brisanje stranica (članaka) nekog prijavljenog ili neprijavljenog suradnika. Upišite ime ili IP adresu za dobivanje popisa stranica koje je moguće obrisati:',
+	'nuke-submit-user'   => 'Kreni',
+	'nuke-submit-delete' => 'Obriši označeno',
 );
 
 $messages['hsb'] = array(
@@ -289,6 +297,8 @@ $messages['stq'] = array(
 	'nuke-list'          => 'Do foulgjende Sieden wuuden fon [[Special:Contributions/$1|$1]] moaked; reek n Kommentoar ien un tai ap dän Läsk-Knoop.',
 	'nuke-defaultreason' => 'Massen-Läskenge fon Sieden, do der fon $1 anlaid wuden',
 	'nuke-tools'         => 'Disse Reewe moaket ju Massen-Läskenge muugelk fon Sieden, do der fon een IP-Adresse of aan Benutser anlaid wuuden. Reek ju IP-Adresse/die Benutsernoome ien, uum ne Lieste tou kriegen:',
+	'nuke-submit-user'   => 'Hoalje Lieste',
+	'nuke-submit-delete' => 'Läskje',
 );
 
 /** Swedish (Svenska)
@@ -303,6 +313,14 @@ $messages['sv'] = array(
 	'nuke-submit-user'   => 'Visa',
 	'nuke-submit-delete' => 'Ta bort valda',
 
+);
+
+/** Telugu (తెలుగు)
+ * @author Veeven
+ */
+$messages['te'] = array(
+	'nuke-submit-user'   => 'వెళ్ళు',
+	'nuke-submit-delete' => 'ఎంచుకున్నవి తొలగించు',
 );
 
 /** Volapük (Volapük)
