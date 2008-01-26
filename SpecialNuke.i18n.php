@@ -163,6 +163,7 @@ $messages['hsb'] = array(
 /** Hungarian (Magyar)
  * @author Bdanee
  * @author KossuthRad
+ * @author Dorgan
  */
 $messages['hu'] = array(
 	'nuke'               => 'Halmozott törlés',
@@ -170,6 +171,8 @@ $messages['hu'] = array(
 	'nuke-list'          => 'Az alábbi lapokat nem rég készítette [[Special:Contributions/$1|$1]]; adj meg egy indoklást, és kattints a gombra a törlésükhöz.',
 	'nuke-defaultreason' => '$1 által készített lapok tömeges eltávolítása',
 	'nuke-tools'         => 'Ez az eszköz lehetővé teszi egy adott felhasználó vagy IP által nem rég készített lapok tömeges törlését. Add meg a felhasználónevet vagy az IP-címet, hogy lekérd a törlendő lapok listáját:',
+	'nuke-submit-user'   => 'Menj',
+	'nuke-submit-delete' => 'Kijelöltek törlése',
 );
 
 /** Italian (Italiano)
