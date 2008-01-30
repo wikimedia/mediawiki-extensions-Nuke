@@ -175,6 +175,13 @@ $messages['hu'] = array(
 	'nuke-submit-delete' => 'Kijelöltek törlése',
 );
 
+/** Icelandic (Íslenska)
+ * @author S.Örvarr.S
+ */
+$messages['is'] = array(
+	'nuke-submit-user' => 'Áfram',
+);
+
 /** Italian (Italiano)
  * @author .anaconda
  */
