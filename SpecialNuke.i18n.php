@@ -274,6 +274,13 @@ $messages['pms'] = array(
 	'nuke-tools'         => 'St\'utiss-sì a lassa scancelé d\'amblé le pàgine gionta ant j\'ùltim temp da un chèich utent ò da \'nt na chèich adrëssa IP. Ch\'a buta lë stranòm ò l\'adrëssa IP për tiré giù na lista dle pàgine da scancelé:',
 );
 
+/** Pashto (پښتو)
+ * @author Ahmed-Najib-Biabani-Ibrahimkhel
+ */
+$messages['ps'] = array(
+	'nuke-submit-user' => 'ورځه',
+);
+
 /** Portuguese (Português)
  * @author 555
  */
@@ -285,6 +292,18 @@ $messages['pt'] = array(
 	'nuke-tools'         => 'Esta ferramenta permite a eliminação em massa de páginas recentemente criadas por um utilizador ou IP em específico. Forneça o nome de utilizador ou IP para obter uma lista de páginas a eliminar:',
 	'nuke-submit-user'   => 'Ir',
 	'nuke-submit-delete' => 'Eliminar as seleccionadas',
+);
+
+/** Quechua (Runa Simi)
+ * @author AlimanRuna
+ */
+$messages['qu'] = array(
+	'nuke'               => 'Tawqa qulluy',
+	'nuke-list'          => "Kay qatiq p'anqakunataqa [[Special:Contributions/$1|$1]] ruraqmi kamarirqun; imarayku nispa butunta ñit'iy tawqalla qullunapaq.",
+	'nuke-defaultreason' => "$1-pa rurasqan p'anqakunata tawqalla qulluy",
+	'nuke-tools'         => "Kay llamk'anawanqa huk ruraqpa kamarisqan p'anqakunata tawqalla qulluytam atinki. Ruraqpa sutinta icha IP huchhanta yaykuchiy qulluna p'anqakunata rikunaykipaq.",
+	'nuke-submit-user'   => 'Riy',
+	'nuke-submit-delete' => 'Akllasqata qulluy',
 );
 
 /** Russian (Русский)
