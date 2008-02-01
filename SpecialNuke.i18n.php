@@ -132,9 +132,9 @@ $messages['frp'] = array(
 );
 
 /** Galician (Galego)
- * @author Xosé
- * @author SPQRobin
  * @author Alma
+ * @author SPQRobin
+ * @author Xosé
  */
 $messages['gl'] = array(
 	'nuke'               => 'Eliminar en masa',
@@ -142,6 +142,7 @@ $messages['gl'] = array(
 	'nuke-list'          => 'As seguintes páxinas foron recentemente creadas por [[Special:Contributions/$1|$1]]; poña un comentario e prema o botón para borralos.',
 	'nuke-defaultreason' => 'Eliminación en masa das páxinas engadidas por $1',
 	'nuke-tools'         => 'Esta ferramenta permite supresións masivas das páxinas engadidas recentemente por un determinado usuario ou enderezo IP. Introduza o nome do usuario ou enderezo IP para obter unha listaxe das páxinas para borrar:',
+	'nuke-submit-user'   => 'Adiante',
 );
 
 /** Croatian (Hrvatski)
@@ -366,6 +367,13 @@ $messages['sv'] = array(
 $messages['te'] = array(
 	'nuke-submit-user'   => 'వెళ్ళు',
 	'nuke-submit-delete' => 'ఎంచుకున్నవి తొలగించు',
+);
+
+/** Turkish (Türkçe)
+ * @author Erkan Yilmaz
+ */
+$messages['tr'] = array(
+	'nuke-submit-user' => 'Git',
 );
 
 /** Volapük (Volapük)
