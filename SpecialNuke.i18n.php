@@ -321,6 +321,15 @@ $messages['ru'] = array(
 	'nuke-submit-delete' => 'Удалить выбранные',
 );
 
+/** Yakut (Саха тыла)
+ * @author HalanTul
+ */
+$messages['sah'] = array(
+	'nuke'               => 'Маассабай сотуу',
+	'nuke-submit-user'   => 'Толор',
+	'nuke-submit-delete' => 'Талыллыбыты сот',
+);
+
 /** Slovak (Slovenčina)
  * @author Helix84
  */
