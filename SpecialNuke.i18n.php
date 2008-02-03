@@ -230,6 +230,7 @@ $messages['lb'] = array(
 	'nuke-list'          => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|$1]] nei ugeluecht; gitt w.e.g. eng Bemierkung an an dréckt op de Kneppche Läschen.',
 	'nuke-defaultreason' => 'Masse-Läschung vu Säiten, déi vum $1 ugefaang goufen',
 	'nuke-tools'         => "Dësen tool erlaabt masse-Läschunge vu Säiten déi vun engem Benotzer oder vun enger IP-Adresse ugeluecht goufen. Gitt w.e.g. d'IP-Adress respektiv de Benotzer un fir eng Lescht ze kréien:",
+	'nuke-submit-delete' => 'Ugewielt läschen',
 );
 
 /** Lithuanian (Lietuvių)
@@ -254,12 +255,16 @@ $messages['nl'] = array(
 	'nuke-submit-delete' => 'Geselecteerde verwijderen',
 );
 
+/** Norwegian (‪Norsk (bokmål)‬)
+ * @author Jon Harald Søby
+ */
 $messages['no'] = array(
 	'nuke'               => 'Massesletting',
 	'nuke-nopages'       => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringer.',
 	'nuke-list'          => 'Følgende sider ble nylig opprettet av [[Special:Contributions/$1|$1]]; skriv inn en slettingsgrunn og trykk på knappen for å slette alle sidene.',
 	'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
 	'nuke-tools'         => 'Dette verktøyet muliggjør massesletting av sider som nylig er lagt inn av en gitt bruker eller IP. Skriv et brukernavn eller en IP for å få en liste over sider som slettes:',
+	'nuke-submit-user'   => 'Gå',
 );
 
 $messages['oc'] = array(
@@ -342,6 +347,9 @@ $messages['ru'] = array(
  */
 $messages['sah'] = array(
 	'nuke'               => 'Маассабай сотуу',
+	'nuke-nopages'       => 'Кэнники көннөрүүлэр испииһэктэригэр [[Special:Contributions/$1|$1]] саҥа сирэйи оҥорбута көстүбэтэ.',
+	'nuke-defaultreason' => '$1 кыттааччы айбыт сирэйдэрин бүтүннүү суох оҥоруу',
+	'nuke-tools'         => 'Бу сирэй көмөтүнэн ханнык эмэ кыттааччы эбэтэр IP оҥорбут көннөрүүлэрин бүтүннүү суох гынахха сөп. Кыттааччы аатын эбэтэр IP-тын киллэрдэххинэ оҥорбут көннөрүүлэрин испииһэгэ тахсыа:',
 	'nuke-submit-user'   => 'Толор',
 	'nuke-submit-delete' => 'Талыллыбыты сот',
 );
