@@ -32,6 +32,19 @@ $messages['ar'] = array(
 	'nuke-submit-delete' => 'احذف المختار',
 );
 
+/** Asturian (Asturianu)
+ * @author Esbardu
+ */
+$messages['ast'] = array(
+	'nuke'               => 'Borráu masivu',
+	'nuke-nopages'       => 'Nun hai páxines nueves de [[Special:Contributions/$1|$1]] nos cambeos recientes.',
+	'nuke-list'          => 'Les páxines siguientes foron creaes recién por [[Special:Contributions/$1|$1]]; escribi un comentariu y calca nel botón pa borrales.',
+	'nuke-defaultreason' => 'Borráu masivu de páxines añadíes por $1',
+	'nuke-tools'         => "Esta ferramienta permite borraos masivo de páxines añadíes recién por un usariu o una IP determinada. Escribi'l nome d'usuariu o la IP pa obtener una llista de páxines pa borrar:",
+	'nuke-submit-user'   => 'Dir',
+	'nuke-submit-delete' => 'Borrar seleicionaes',
+);
+
 $messages['bg'] = array(
 	'nuke'               => 'Масово изтриване',
 	'nuke-nopages'       => 'Сред последните промени не съществуват нови страници, създадени от [[Special:Contributions/$1|$1]].',
@@ -94,14 +107,17 @@ $messages['fa'] = array(
 
 );
 
-
-
+/** Finnish (Suomi)
+ * @author Crt
+ */
 $messages['fi'] = array(
-	'nuke' => 'Massapoistaminen',
-	'nuke-nopages' => "Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.",
-	'nuke-list' => "Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut.",
-	'nuke-defaultreason' => "Käyttäjän $1 lisäämien sivujen massapoistaminen",
-	'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP:n perusteella. Kirjoita käyttäjänimi tai IP, niin saat listan poistettavista sivuista:',
+	'nuke'               => 'Massapoistaminen',
+	'nuke-nopages'       => 'Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.',
+	'nuke-list'          => 'Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut.',
+	'nuke-defaultreason' => 'Käyttäjän $1 lisäämien sivujen massapoistaminen',
+	'nuke-tools'         => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP:n perusteella. Kirjoita käyttäjänimi tai IP, niin saat listan poistettavista sivuista:',
+	'nuke-submit-user'   => 'Siirry',
+	'nuke-submit-delete' => 'Poista valitut',
 );
 
 /** French (Français)
