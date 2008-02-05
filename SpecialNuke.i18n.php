@@ -233,6 +233,14 @@ $messages['lb'] = array(
 	'nuke-submit-delete' => 'Ugewielt läschen',
 );
 
+/** Limburgish (Limburgs)
+ * @author Ooswesthoesbes
+ */
+$messages['li'] = array(
+	'nuke-submit-user'   => 'Gao',
+	'nuke-submit-delete' => 'Geslecteerd wisse',
+);
+
 /** Lithuanian (Lietuvių)
  * @author Matasg
  */
@@ -265,6 +273,7 @@ $messages['no'] = array(
 	'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
 	'nuke-tools'         => 'Dette verktøyet muliggjør massesletting av sider som nylig er lagt inn av en gitt bruker eller IP. Skriv et brukernavn eller en IP for å få en liste over sider som slettes:',
 	'nuke-submit-user'   => 'Gå',
+	'nuke-submit-delete' => 'Slett valgte',
 );
 
 $messages['oc'] = array(
@@ -400,6 +409,9 @@ $messages['sv'] = array(
  * @author Veeven
  */
 $messages['te'] = array(
+	'nuke'               => 'సామూహిక తొలగింపు',
+	'nuke-nopages'       => 'ఇటీవలి మార్పులలో [[Special:Contributions/$1|$1]] సృష్టించిన కొత్త పేజీలేమీ లేవు.',
+	'nuke-defaultreason' => '$1 చేర్చిన పేజీల యొక్క సామూహిక తొలగింపు',
 	'nuke-submit-user'   => 'వెళ్ళు',
 	'nuke-submit-delete' => 'ఎంచుకున్నవి తొలగించు',
 );
