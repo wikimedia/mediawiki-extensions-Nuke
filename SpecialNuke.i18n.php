@@ -416,6 +416,14 @@ $messages['te'] = array(
 	'nuke-submit-delete' => 'ఎంచుకున్నవి తొలగించు',
 );
 
+/** Tajik (Тоҷикӣ)
+ * @author Ibrahim
+ */
+$messages['tg'] = array(
+	'nuke-submit-user'   => 'Бирав',
+	'nuke-submit-delete' => 'Интихобшудагон ҳазф шаванд',
+);
+
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
  */
