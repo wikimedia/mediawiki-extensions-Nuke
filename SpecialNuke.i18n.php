@@ -425,10 +425,12 @@ $messages['tg'] = array(
 );
 
 /** Turkish (Türkçe)
+ * @author Srhat
  * @author Erkan Yilmaz
  */
 $messages['tr'] = array(
-	'nuke-submit-user' => 'Git',
+	'nuke-submit-user'   => 'Git',
+	'nuke-submit-delete' => 'Seçileni sil',
 );
 
 /** Volapük (Volapük)
