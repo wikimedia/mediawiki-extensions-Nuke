@@ -445,5 +445,3 @@ $messages['vo'] = array(
 	'nuke-submit-user'   => 'Ledunolöd',
 	'nuke-submit-delete' => 'Pevalöl ad pamoükön',
 );
-
-$messages['de-formal'] = $messages['de'];
