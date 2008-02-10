@@ -234,9 +234,15 @@ $messages['lb'] = array(
 );
 
 /** Limburgish (Limburgs)
+ * @author Matthias
  * @author Ooswesthoesbes
  */
 $messages['li'] = array(
+	'nuke'               => 'Massaal verwijdere',
+	'nuke-nopages'       => "Gein nuje pagina's van [[special:Contributions/$1|$1]] in de recente wijziginge.",
+	'nuke-list'          => "De onderstaonde pagina's zien recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer 'n rede in en klik op de knop om ze te verwijdere/",
+	'nuke-defaultreason' => "Massaal verwijdere van pagina's van $1",
+	'nuke-tools'         => "Dit hulpmiddel maakt 't meugelik massaal pagina's te wisse die recentelijk zien aangemaakt door 'n gebroeker of IP-adres. Voer de gebroekersnaam of 't IP-adres in veur 'n lijst van te wisse pagina's:",
 	'nuke-submit-user'   => 'Gao',
 	'nuke-submit-delete' => 'Geslecteerd wisse',
 );
@@ -445,3 +451,4 @@ $messages['vo'] = array(
 	'nuke-submit-user'   => 'Ledunolöd',
 	'nuke-submit-delete' => 'Pevalöl ad pamoükön',
 );
+
