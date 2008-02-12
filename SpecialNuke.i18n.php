@@ -93,6 +93,13 @@ $messages['de'] = array(
 	'nuke-submit-delete' => 'Löschen',
 );
 
+/** Ewe (Eʋegbe)
+ * @author M.M.S.
+ */
+$messages['ee'] = array(
+	'nuke-submit-user' => 'Yi',
+);
+
 /** فارسی (فارسی)
  * @author Huji
  */
@@ -280,6 +287,13 @@ $messages['no'] = array(
 	'nuke-tools'         => 'Dette verktøyet muliggjør massesletting av sider som nylig er lagt inn av en gitt bruker eller IP. Skriv et brukernavn eller en IP for å få en liste over sider som slettes:',
 	'nuke-submit-user'   => 'Gå',
 	'nuke-submit-delete' => 'Slett valgte',
+);
+
+/** Northern Sotho (Sesotho sa Leboa)
+ * @author Mohau
+ */
+$messages['nso'] = array(
+	'nuke-submit-user' => 'Sepela',
 );
 
 $messages['oc'] = array(
