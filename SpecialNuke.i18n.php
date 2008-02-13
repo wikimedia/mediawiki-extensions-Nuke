@@ -296,12 +296,17 @@ $messages['nso'] = array(
 	'nuke-submit-user' => 'Sepela',
 );
 
+/** Occitan (Occitan)
+ * @author Cedric31
+ */
 $messages['oc'] = array(
 	'nuke'               => 'Supression en massa',
 	'nuke-nopages'       => 'Cap de pagina novèla creada per [[Special:Contributions/$1|$1]] dins la lista dels darrièrs cambiaments.',
 	'nuke-list'          => 'Las paginas seguentas son estadas creadas recentament per [[Special:Contributions/$1|$1]]; Indicatz un comentari e clicatz sul boton per los suprimir.',
 	'nuke-defaultreason' => 'Supression en massa de las paginas ajustadas per $1',
 	'nuke-tools'         => 'Aqueste esplech autoriza las supressions en massa de las paginas ajustadas recentament per un utilizaire enregistrat o per una adreça IP. Indicatz l’adreça IP per obténer la lista de las paginas de suprimir :',
+	'nuke-submit-user'   => 'Validar',
+	'nuke-submit-delete' => 'Supression seleccionada',
 );
 
 /** Polish (Polski)
@@ -431,7 +436,9 @@ $messages['sv'] = array(
 $messages['te'] = array(
 	'nuke'               => 'సామూహిక తొలగింపు',
 	'nuke-nopages'       => 'ఇటీవలి మార్పులలో [[Special:Contributions/$1|$1]] సృష్టించిన కొత్త పేజీలేమీ లేవు.',
+	'nuke-list'          => 'ఈ క్రింద పేర్కొన్న పేజీలను [[Special:Contributions/$1|$1]] ఇటీవలే సృష్టించారు; వాటిని తొలగించడానికి ఎందుకో ఓ వ్యాఖ్య రాసి ఆతర్వాత తొలగించు అన్న బొత్తం నొక్కండి.',
 	'nuke-defaultreason' => '$1 చేర్చిన పేజీల యొక్క సామూహిక తొలగింపు',
+	'nuke-tools'         => 'ఓ ప్రత్యేక వాడుకరి లేదా IP చేర్చిన పేజీలను ఒక్కసారిగా తొలగించడానికి ఈ పనిముట్టు వీలుకల్పిస్తుంది. పేజీల జాబితాని పొందడానికి ఆ వాడుకరిపేరుని లేదా IPని ఇవ్వండి:',
 	'nuke-submit-user'   => 'వెళ్ళు',
 	'nuke-submit-delete' => 'ఎంచుకున్నవి తొలగించు',
 );
