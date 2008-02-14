@@ -7,11 +7,12 @@ $wgExtensionFunctions[] = 'wfSetupNuke';
 $wgExtensionMessagesFiles['Nuke'] = dirname(__FILE__) . '/SpecialNuke.i18n.php';
 
 $wgExtensionCredits['specialpage'][] = array(
-	'name' => 'Nuke',
-	'version' => '2008-01-21',
-	'description' => 'Gives sysops the ability to mass delete pages',
-	'author' => 'Brion Vibber',
-	'url' => 'http://www.mediawiki.org/wiki/Extension:Nuke'
+	'name'           => 'Nuke',
+	'version'        => '2008-02-14',
+	'description'    => 'Gives sysops the ability to mass delete pages',
+	'descriptionmsg' => 'nuke-desc',
+	'author'         => 'Brion Vibber',
+	'url'            => 'http://www.mediawiki.org/wiki/Extension:Nuke'
 );
 
 $wgGroupPermissions['sysop']['nuke'] = true;

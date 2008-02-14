@@ -8,9 +8,12 @@
 
 $messages = array();
 
-# English messages by Brion Vibber
+/** English
+ * @author Brion Vibber
+ */
 $messages['en'] = array(
 	'nuke' => 'Mass delete',
+	'nuke-desc' => 'Gives sysops the ability to [[Special:Nuke|mass delete]] pages',
 	'nuke-nopages' => "No new pages by [[Special:Contributions/$1|$1]] in recent changes.",
 	'nuke-list' => "The following pages were recently created by [[Special:Contributions/$1|$1]]; put in a comment and hit the button to delete them.",
 	'nuke-defaultreason' => "Mass removal of pages added by $1",
@@ -85,6 +88,7 @@ $messages['cs'] = array(
  */
 $messages['de'] = array(
 	'nuke'               => 'Massen-Löschung',
+	'nuke-desc'          => 'Ermöglicht Administratoren die [[Special:Nuke|Massenlöschung]] von Seiten',
 	'nuke-nopages'       => "Es gibt in den Letzten Änderungen keine neuen Seiten von [[{{#special:Contributions}}/$1|$1]].",
 	'nuke-list'          => "Die folgenden Seiten wurden von [[{{#special:Contributions}}/$1|$1]] erzeugt; gebe einen Kommentar ein und drücke auf den Lösch-Knopf.",
 	'nuke-defaultreason' => "Massen-Löschung von Seiten, die von $1 angelegt wurden",
