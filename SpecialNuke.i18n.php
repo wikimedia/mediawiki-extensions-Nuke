@@ -192,6 +192,7 @@ $messages['hr'] = array(
  */
 $messages['hsb'] = array(
 	'nuke'               => 'Masowe wušmórnjenje',
+	'nuke-desc'          => 'Zmóžnja administratoram [[Special:Nuke|masowe wušmórnjenje]] stronow',
 	'nuke-nopages'       => 'W poslednich změnach njejsu nowe strony z [[Special:Contributions/$1|$1]].',
 	'nuke-list'          => 'Slědowace strony buchu runje přez [[Special:Contributions/$1|$1]] wutworjene; zapodaj komentar a klikń na tłóčatko wušmórnjenja.',
 	'nuke-defaultreason' => 'Masowe wušmórnjenje stronow, kotrež buchu wot $1 wutworjene',
@@ -273,6 +274,7 @@ $messages['lt'] = array(
  */
 $messages['nl'] = array(
 	'nuke'               => 'Massaal verwijderen',
+	'nuke-desc'          => "Geeft beheerders de mogelijkheid om [[Special:Nuke|massaal pagina's te verwijderen]]",
 	'nuke-nopages'       => "Geen nieuwe pagina's van [[Special:Contributions/$1|$1]] in de recente wijzigingen.",
 	'nuke-list'          => "De onderstaande pagina's zijn recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer een reden in en klik op de knop om ze te verwijderen.",
 	'nuke-defaultreason' => "Massaal verwijderen van pagina's van $1",
@@ -374,6 +376,7 @@ $messages['qu'] = array(
  */
 $messages['ru'] = array(
 	'nuke'               => 'Массовое удаление',
+	'nuke-desc'          => 'Даёт администраторам возможность [[Special:Nuke|множественного удаления]] страниц',
 	'nuke-nopages'       => 'Созданий страниц участником [[Special:Contributions/$1|$1]] не найдено в свежих правках.',
 	'nuke-list'          => 'Следующие страницы были недавно созданы участником [[Special:Contributions/$1|$1]]. Введите комментарий и нажмите на кнопку для того, чтобы удалить их.',
 	'nuke-defaultreason' => 'Массовое удаление страниц, созданных участником $1',
@@ -423,16 +426,17 @@ $messages['stq'] = array(
 
 /** Swedish (Svenska)
  * @author Lejonel
+ * @author M.M.S.
  */
 $messages['sv'] = array(
 	'nuke'               => 'Massborttagning',
+	'nuke-desc'          => 'Ger administratörer tillåtelsen till att [[Special:Nuke|mass radera]] sidor',
 	'nuke-nopages'       => 'Inga nya sidor av [[Special:Contributions/$1|$1]] bland de senaste ändringarna.',
 	'nuke-list'          => 'Följande sidor har nyligen skapats av [[Special:Contributions/$1|$1]]. Skriv en raderingskommentar och klicka på knappen för att ta bort dem.',
 	'nuke-defaultreason' => 'Massradering av sidor skapade av $1',
 	'nuke-tools'         => 'Det här verktyget gör det möjligt att massradera sidor som nyligen skapats av en vissa användare eller IP-adress. Ange ett användarnamn eller en IP-adress för att de en lista över sidor som kan tas bort:',
 	'nuke-submit-user'   => 'Visa',
 	'nuke-submit-delete' => 'Ta bort valda',
-
 );
 
 /** Telugu (తెలుగు)
