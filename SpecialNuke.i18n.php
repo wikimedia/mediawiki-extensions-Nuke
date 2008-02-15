@@ -27,6 +27,7 @@ $messages['en'] = array(
  */
 $messages['ar'] = array(
 	'nuke'               => 'حذف كمي',
+	'nuke-desc'          => 'يعطي مدراء النظام القدرة على [[Special:Nuke|الحذف الكمي]] للصفحات',
 	'nuke-nopages'       => 'لا صفحات جديدة بواسطة [[Special:Contributions/$1|$1]] في أحدث التغييرات.',
 	'nuke-list'          => 'الصفحات التالية تم إنشاؤها حديثا بواسطة [[Special:Contributions/$1|$1]]؛ ضع تعليقا واضغط الزر لحذفهم.',
 	'nuke-defaultreason' => 'إزالة كمية للصفحات المضافة بواسطة $1',
@@ -208,6 +209,7 @@ $messages['hsb'] = array(
  */
 $messages['hu'] = array(
 	'nuke'               => 'Halmozott törlés',
+	'nuke-desc'          => 'Lehetővé teszi az adminisztrátorok számára a lapok [[Special:Nuke|tömeges törlését]].',
 	'nuke-nopages'       => 'Nincsenek új oldalak [[Special:Contributions/$1|$1]] az aktuális események között.',
 	'nuke-list'          => 'Az alábbi lapokat nem rég készítette [[Special:Contributions/$1|$1]]; adj meg egy indoklást, és kattints a gombra a törlésükhöz.',
 	'nuke-defaultreason' => '$1 által készített lapok tömeges eltávolítása',
@@ -346,9 +348,11 @@ $messages['ps'] = array(
 
 /** Portuguese (Português)
  * @author 555
+ * @author Malafaya
  */
 $messages['pt'] = array(
 	'nuke'               => 'Eliminação em massa',
+	'nuke-desc'          => 'Dá aos sysops a possibilidade de [[{{ns:special}}:Nuke|apagar páginas em massa]]',
 	'nuke-nopages'       => 'Não há páginas criadas por [[Special:Contributions/$1|$1]] nas mudanças recentes.',
 	'nuke-list'          => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|$1]]; forneça uma justificativa e pressione o botão a seguir para eliminá-las.',
 	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas por $1',
@@ -444,6 +448,7 @@ $messages['sv'] = array(
  */
 $messages['te'] = array(
 	'nuke'               => 'సామూహిక తొలగింపు',
+	'nuke-desc'          => 'నిర్వాహకులకు పేజీలను [[Special:Nuke|సామూహికంగా తొలగించే]] సౌలభ్యాన్నిస్తుంది',
 	'nuke-nopages'       => 'ఇటీవలి మార్పులలో [[Special:Contributions/$1|$1]] సృష్టించిన కొత్త పేజీలేమీ లేవు.',
 	'nuke-list'          => 'ఈ క్రింద పేర్కొన్న పేజీలను [[Special:Contributions/$1|$1]] ఇటీవలే సృష్టించారు; వాటిని తొలగించడానికి ఎందుకో ఓ వ్యాఖ్య రాసి ఆతర్వాత తొలగించు అన్న బొత్తం నొక్కండి.',
 	'nuke-defaultreason' => '$1 చేర్చిన పేజీల యొక్క సామూహిక తొలగింపు',
