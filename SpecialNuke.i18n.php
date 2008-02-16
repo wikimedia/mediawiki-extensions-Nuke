@@ -407,6 +407,7 @@ $messages['sah'] = array(
  */
 $messages['sk'] = array(
 	'nuke'               => 'Hromadné mazanie',
+	'nuke-desc'          => 'Dáva správcom schopnosť [[Special:Nuke|hromadného mazania]] stránok',
 	'nuke-nopages'       => 'V posledných zmenách sa nenachádzajú nové stránky od [[Special:Contributions/$1|$1]].',
 	'nuke-list'          => '[[Special:Contributions/$1|$1]] nedávno vytvoril nasledovné nové stránky; vyplňte komentár a stlačením tlačidla ich vymažete.',
 	'nuke-defaultreason' => 'Hromadné odstránenie stránok, ktoré pridal $1',
@@ -430,11 +431,10 @@ $messages['stq'] = array(
 
 /** Swedish (Svenska)
  * @author Lejonel
- * @author M.M.S.
  */
 $messages['sv'] = array(
 	'nuke'               => 'Massborttagning',
-	'nuke-desc'          => 'Ger administratörer tillåtelsen till att [[Special:Nuke|mass radera]] sidor',
+	'nuke-desc'          => 'Gör det möjligt för administratörer att [[Special:Nuke|massradera]] sidor',
 	'nuke-nopages'       => 'Inga nya sidor av [[Special:Contributions/$1|$1]] bland de senaste ändringarna.',
 	'nuke-list'          => 'Följande sidor har nyligen skapats av [[Special:Contributions/$1|$1]]. Skriv en raderingskommentar och klicka på knappen för att ta bort dem.',
 	'nuke-defaultreason' => 'Massradering av sidor skapade av $1',
