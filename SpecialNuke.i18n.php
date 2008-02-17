@@ -293,6 +293,7 @@ $messages['nl'] = array(
  */
 $messages['no'] = array(
 	'nuke'               => 'Massesletting',
+	'nuke-desc'          => 'Gir administratorer muligheten til å [[Special:Nuke|masseslette]] sider',
 	'nuke-nopages'       => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringer.',
 	'nuke-list'          => 'Følgende sider ble nylig opprettet av [[Special:Contributions/$1|$1]]; skriv inn en slettingsgrunn og trykk på knappen for å slette alle sidene.',
 	'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
