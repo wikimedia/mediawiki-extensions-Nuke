@@ -63,6 +63,7 @@ $messages['bg'] = array(
  */
 $messages['bn'] = array(
 	'nuke'               => 'গণ মুছে ফেলা',
+	'nuke-desc'          => 'প্রশাসকদের পাতাগুলি [[Special:Nuke|গণহারে মুছে ফেলার]] ক্ষমতা দেয়',
 	'nuke-nopages'       => 'সাম্প্রতিক পরিবর্তনগুলিতে [[Special:Contributions/$1|$1]]-এর তৈরি কোন নতুন পাতা নেই।',
 	'nuke-list'          => '[[Special:Contributions/$1|$1]] সাম্প্রতিক কালে নিচের পাতাগুলি সৃষ্টি করেছেন; একটি মন্তব্য দিন এবং বোতাম চেপে এগুলি মুছে ফেলুন।',
 	'nuke-defaultreason' => '$1-এর যোগ করা পাতাগুলির গণ মুছে-ফেলা',
@@ -73,9 +74,11 @@ $messages['bn'] = array(
 
 /** Czech (Česky)
  * @author Li-sung
+ * @author Matěj Grabovský
  */
 $messages['cs'] = array(
 	'nuke'               => 'Hromadné mazání',
+	'nuke-desc'          => 'Dává správcům možnost [[Special:Nuke|hromadného mazání]] stránek',
 	'nuke-nopages'       => 'V posledních změnách nejsou žádné nové stránky od uživatele [[Special:Contributions/$1|$1]].',
 	'nuke-list'          => 'Následující stránky nedávno vytvořil uživatel [[Special:Contributions/$1|$1]]; vyplňte komentář a všechny smažte kliknutím na tlačítko.',
 	'nuke-defaultreason' => 'Hromadné odstranění stránek, které vytvořil $1',
