@@ -183,6 +183,7 @@ $messages['gl'] = array(
  */
 $messages['hr'] = array(
 	'nuke'               => 'Grupno brisanje',
+	'nuke-desc'          => 'Daje administratorima mogućnost [[Special:Nuke|masovnog brisanja]] stranica',
 	'nuke-nopages'       => 'Nema novih stranica suradnika [[Special:Contributions/$1|$1]] među nedavnim promjenama.',
 	'nuke-list'          => 'Slijedeće stranice je stvorio suradnik [[Special:Contributions/$1|$1]]; napišite zaključak i kliknite gumb za njihovo brisanje.',
 	'nuke-defaultreason' => 'Grupno brisanje stranica suradnika $1',
@@ -248,6 +249,7 @@ $messages['lb'] = array(
 	'nuke-list'          => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|$1]] nei ugeluecht; gitt w.e.g. eng Bemierkung an an dréckt op de Kneppche Läschen.',
 	'nuke-defaultreason' => 'Masse-Läschung vu Säiten, déi vum $1 ugefaang goufen',
 	'nuke-tools'         => "Dësen tool erlaabt masse-Läschunge vu Säiten déi vun engem Benotzer oder vun enger IP-Adresse ugeluecht goufen. Gitt w.e.g. d'IP-Adress respektiv de Benotzer un fir eng Lescht ze kréien:",
+	'nuke-submit-user'   => 'Lass',
 	'nuke-submit-delete' => 'Ugewielt läschen',
 );
 
@@ -398,6 +400,7 @@ $messages['ru'] = array(
  */
 $messages['sah'] = array(
 	'nuke'               => 'Маассабай сотуу',
+	'nuke-desc'          => 'Администраатардарга [[Special:Nuke|элбэх сирэйи биир дьайыыннан сотор]] кыаҕы биэрэр',
 	'nuke-nopages'       => 'Кэнники көннөрүүлэр испииһэктэригэр [[Special:Contributions/$1|$1]] саҥа сирэйи оҥорбута көстүбэтэ.',
 	'nuke-list'          => 'Бу сирэйдэри соторутааҕыта [[Special:Contributions/$1|$1]] кыттааччы оҥорбут. Сотуоххун баҕарар буоллаххына быһаарыыны оҥорон баран тимэҕи баттаа.',
 	'nuke-defaultreason' => '$1 кыттааччы айбыт сирэйдэрин бүтүннүү суох оҥоруу',
@@ -476,6 +479,20 @@ $messages['tg'] = array(
 $messages['tr'] = array(
 	'nuke-submit-user'   => 'Git',
 	'nuke-submit-delete' => 'Seçileni sil',
+);
+
+/** Vietnamese (Tiếng Việt)
+ * @author Minh Nguyen
+ */
+$messages['vi'] = array(
+	'nuke'               => 'Xóa hàng loạt',
+	'nuke-desc'          => 'Cung cấp cho người quản lý khả năng [[Special:Nuke|xóa trang hàng loạt]]',
+	'nuke-nopages'       => 'Không có trang mới do [[Special:Contributions/$1|$1]] tạo ra trong thay đổi gần đây.',
+	'nuke-list'          => 'Các trang sau do [[Special:Contributions/$1|$1]] tạo ra gần đây; hãy ghi lý do và nhấn nút để xóa tất cả những trang này.',
+	'nuke-defaultreason' => 'Xóa hàng loạt các trang do $1 tạo ra',
+	'nuke-tools'         => 'Công cụ này để xóa hàng lạt các trang do một người dùng tạo ra gần đây. Hãy cung cấp tên hiệu của thành viên hay địa chỉ IP của người dùng để tìm kiếm những trang để xóa:',
+	'nuke-submit-user'   => 'Tìm kiếm',
+	'nuke-submit-delete' => 'Xóa lựa chọn',
 );
 
 /** Volapük (Volapük)
