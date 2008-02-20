@@ -240,6 +240,20 @@ $messages['it'] = array(
 	'nuke-tools'         => "Questo strumento permette la cancellazione in massa delle pagina create di recente da un determinato utente o IP. Inserisci il nome utente o l'IP per la lista delle pagine da cancellare:",
 );
 
+/** Japanese (日本語)
+ * @author JtFuruhata
+ */
+$messages['ja'] = array(
+	'nuke'               => 'まとめて削除',
+	'nuke-desc'          => '{{int:group-sysop}}に[[{{ns:special}}:Nuke|まとめて削除]]ページを提供する',
+	'nuke-nopages'       => '[[{{ns:special}}:Contributions/$1|$1]] が最近更新したページはありません。',
+	'nuke-list'          => '以下は、[[{{ns:special}}:Contributions/$1|$1]] によって最近作成されたページの一覧です。要約欄へ記入しボタンを押すと、一気に消えて無くなります。',
+	'nuke-defaultreason' => '$1 によって加えられたページを一括して削除',
+	'nuke-tools'         => 'このツールを使うと、指定した利用者またはIPから最近追加されたページを、まとめて削除することができます。削除対象ページ一覧を取得する利用者名またはIPアドレスを入力してください:',
+	'nuke-submit-user'   => '一覧取得',
+	'nuke-submit-delete' => '選択されたページを削除',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
@@ -349,7 +363,8 @@ $messages['pms'] = array(
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
-	'nuke-submit-user' => 'ورځه',
+	'nuke-submit-user'   => 'ورځه',
+	'nuke-submit-delete' => 'ټاکل شوی ړنګول',
 );
 
 /** Portuguese (Português)
