@@ -127,6 +127,7 @@ $messages['fa'] = array(
  */
 $messages['fi'] = array(
 	'nuke'               => 'Massapoistaminen',
+	'nuke-desc'          => 'Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]]',
 	'nuke-nopages'       => 'Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.',
 	'nuke-list'          => 'Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut.',
 	'nuke-defaultreason' => 'Käyttäjän $1 lisäämien sivujen massapoistaminen',
@@ -155,6 +156,7 @@ $messages['fr'] = array(
  */
 $messages['frp'] = array(
 	'nuke'               => 'Suprèssion en massa',
+	'nuke-desc'          => 'Balye la possibilitât ux administrators de [[Special:Nuke|suprimar en massa]] des pâges.',
 	'nuke-nopages'       => 'Niona novèla pâge crèâ per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.',
 	'nuke-list'          => 'Les pâges siuventes ont étâ crèâs dèrriérement per [[Special:Contributions/$1|$1]] ; endicâd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
@@ -344,6 +346,7 @@ $messages['oc'] = array(
  */
 $messages['pl'] = array(
 	'nuke'               => 'Masowe usuwanie',
+	'nuke-desc'          => 'Dodaje administratorom funkcjonalność równoczesnego [[Special:Nuke|usuwania dużej ilości stron]]',
 	'nuke-nopages'       => 'Brak nowych stron autorstwa [[Special:Contributions/$1|$1]] w ostatnich zmianach.',
 	'nuke-list'          => 'Następujące strony zostały ostatnio stworzone przez [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk by usunąć je.',
 	'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1',
