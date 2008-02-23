@@ -275,6 +275,7 @@ $messages['lb'] = array(
  */
 $messages['li'] = array(
 	'nuke'               => 'Massaal verwijdere',
+	'nuke-desc'          => "Geeft beheerders de mogelijkheid om [[Special:Nuke|massaal pagina's te verwijdere]]",
 	'nuke-nopages'       => "Gein nuje pagina's van [[special:Contributions/$1|$1]] in de recente wijziginge.",
 	'nuke-list'          => "De onderstaonde pagina's zien recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer 'n rede in en klik op de knop om ze te verwijdere/",
 	'nuke-defaultreason' => "Massaal verwijdere van pagina's van $1",
