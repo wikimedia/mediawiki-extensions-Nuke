@@ -127,7 +127,7 @@ $messages['fa'] = array(
  */
 $messages['fi'] = array(
 	'nuke'               => 'Massapoistaminen',
-	'nuke-desc'          => 'Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]]',
+	'nuke-desc'          => 'Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]].',
 	'nuke-nopages'       => 'Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.',
 	'nuke-list'          => 'Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut.',
 	'nuke-defaultreason' => 'Käyttäjän $1 lisäämien sivujen massapoistaminen',
@@ -233,13 +233,17 @@ $messages['is'] = array(
 
 /** Italian (Italiano)
  * @author .anaconda
+ * @author BrokenArrow
  */
 $messages['it'] = array(
 	'nuke'               => 'Cancellazione di massa',
+	'nuke-desc'          => 'Consente agli amministratori la [[Special:Nuke|cancellazione in massa]] delle pagine',
 	'nuke-nopages'       => 'Non sono state trovate nuove pagine create da [[Speciale:Contributi/$1|$1]] tra le modifiche recenti.',
 	'nuke-list'          => 'Le seguenti pagine sono state create di recente da [[Special:Contributions/$1|$1]]; inserisci un commento e conferma la cancellazione.',
 	'nuke-defaultreason' => 'Cancellazione di massa delle pagine create da $1',
 	'nuke-tools'         => "Questo strumento permette la cancellazione in massa delle pagina create di recente da un determinato utente o IP. Inserisci il nome utente o l'IP per la lista delle pagine da cancellare:",
+	'nuke-submit-user'   => 'Vai',
+	'nuke-submit-delete' => 'Cancella la selezione',
 );
 
 /** Japanese (日本語)
