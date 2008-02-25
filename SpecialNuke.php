@@ -8,7 +8,7 @@ $wgExtensionMessagesFiles['Nuke'] = dirname(__FILE__) . '/SpecialNuke.i18n.php';
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Nuke',
-	'version'        => '2008-02-14',
+	'version'        => '2008-02-25',
 	'description'    => 'Gives sysops the ability to mass delete pages',
 	'descriptionmsg' => 'nuke-desc',
 	'author'         => 'Brion Vibber',
@@ -68,7 +68,7 @@ class NukeForm {
 		$nuke = Title::makeTitle( NS_SPECIAL, 'Nuke' );
 		$submit = wfElement( 'input', array( 'type' => 'submit', 'value' => wfMsgHtml( 'nuke-submit-user' ) ) );
 
-		$wgOut->addWikiText( wfMsgForContent('nuke-tools') );
+		$wgOut->addWikiText( wfMsg( 'nuke-tools' ) );
 		$wgOut->addHTML( wfElement( 'form', array(
 				'action' => $nuke->getLocalURL( 'action=submit' ),
 				'method' => 'post' ),
