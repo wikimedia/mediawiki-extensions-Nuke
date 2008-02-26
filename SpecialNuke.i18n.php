@@ -49,12 +49,18 @@ $messages['ast'] = array(
 	'nuke-submit-delete' => 'Borrar seleicionaes',
 );
 
+/** Bulgarian (Български)
+ * @author Spiritia
+ * @author DCLXVI
+ */
 $messages['bg'] = array(
 	'nuke'               => 'Масово изтриване',
+	'nuke-desc'          => 'Предоставя на администраторите възможност за [[Special:Nuke|масово изтриване]] на страници',
 	'nuke-nopages'       => 'Сред последните промени не съществуват нови страници, създадени от [[Special:Contributions/$1|$1]].',
 	'nuke-list'          => 'Следните страници са били наскоро създадени от [[Special:Contributions/$1|$1]]. Напишете коментар и щракнете бутона, за да ги изтриете.',
 	'nuke-defaultreason' => 'Масово изтриване на страници, създадени от $1',
 	'nuke-tools'         => 'Този инструмент позволява масовото изтриване на страници, създадени от даден регистриран или анонимен потребител. Въведете потребителско име или IP, за да получите списъка от страници за изтриване:',
+	'nuke-submit-delete' => 'Изтриване на избраните',
 );
 
 /** Bengali (বাংলা)
@@ -548,7 +554,7 @@ $messages['yue'] = array(
 /** Chinese (Simplified) (中文 (简化字))
  * @author Shinjiman
  */
-$messages['zh-hant'] = array(
+$messages['zh-hans'] = array(
 	'nuke' => '大量删除',
 	'nuke-desc' => '给操作员作出[[Special:Nuke|大量删除]]的能力',
 	'nuke-nopages' => "在最近更改中没有[[Special:Contributions/$1|$1]]所作的新页面。",
@@ -573,3 +579,4 @@ $messages['zh-hant'] = array(
 	'nuke-submit-user' => '去',
 	'nuke-submit-delete' => '刪除已選擇的',
 );
+
