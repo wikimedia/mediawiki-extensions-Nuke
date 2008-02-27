@@ -107,6 +107,14 @@ $messages['de'] = array(
 	'nuke-submit-delete' => 'Löschen',
 );
 
+/** German - formal address (Deutsch - förmliche Anrede)
+ * @author Raimond Spekking
+ */
+$messages['de-formal'] = array(
+	'nuke-list'          => "Die folgenden Seiten wurden von [[{{#special:Contributions}}/$1|$1]] erzeugt; geben Sie einen Kommentar ein und drücken Sie auf den Lösch-Knopf.",
+	'nuke-tools'         => 'Dieses Werkzeug ermöglicht die Massen-Löschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Geben Sie die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
+);
+
 /** Ewe (Eʋegbe)
  * @author M.M.S.
  */
