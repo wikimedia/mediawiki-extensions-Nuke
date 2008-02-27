@@ -230,6 +230,20 @@ $messages['hu'] = array(
 	'nuke-submit-delete' => 'Kijelöltek törlése',
 );
 
+/** Indonesian (Bahasa Indonesia)
+ * @author IvanLanin
+ */
+$messages['id'] = array(
+	'nuke' => 'Penghapusan massal',
+	'nuke-desc' => 'Memberikan kemampuan bagi pengurus untuk [[Special:Nuke|menghapus halaman secara massal]]',
+	'nuke-nopages' => "Tak ditemukan halaman baru dari [[Special:Contributions/$1|$1]] di perubahan terbaru.",
+	'nuke-list' => "Halaman berikut baru saja dibuat oleh [[Special:Contributions/$1|$1]]; masukkan suatu komentar dan tekan tombol untuk menghapus halaman-halaman tersebut.",
+	'nuke-defaultreason' => "Penghapusan massal halaman-halaman yang dibuat oleh $1",
+	'nuke-tools' => 'Perkakas ini memungkinkan penghapusan massal halaman-halaman yang baru saja dibuat oleh seorang pengguna atau IP. Masukkan nama pengguna atau IP untuk mendapat daftar halaman yang dapat dihapus:',
+	'nuke-submit-user' => 'Cari',
+	'nuke-submit-delete' => 'Hapus yang terpilih',
+);
+
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
  */
