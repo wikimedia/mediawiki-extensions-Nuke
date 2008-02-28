@@ -365,6 +365,7 @@ $messages['nso'] = array(
  */
 $messages['oc'] = array(
 	'nuke'               => 'Supression en massa',
+	'nuke-desc'          => 'Balha la possiblitat als administrators de [[Special:Nuke|suprimir en massa]] de paginas.',
 	'nuke-nopages'       => 'Cap de pagina novèla creada per [[Special:Contributions/$1|$1]] dins la lista dels darrièrs cambiaments.',
 	'nuke-list'          => 'Las paginas seguentas son estadas creadas recentament per [[Special:Contributions/$1|$1]]; Indicatz un comentari e clicatz sul boton per los suprimir.',
 	'nuke-defaultreason' => 'Supression en massa de las paginas ajustadas per $1',
