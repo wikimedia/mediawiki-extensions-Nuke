@@ -22,6 +22,20 @@ $messages['en'] = array(
 	'nuke-submit-delete' => 'Delete selected',
 );
 
+/** Aragonese (Aragonés)
+ * @author Juanpabl
+ */
+$messages['an'] = array(
+	'nuke'               => 'Borrato masibo',
+	'nuke-desc'          => 'Da á os almenistradors a capazidat de fer [[Special:Nuke|borratos masibos]] de pachinas',
+	'nuke-nopages'       => 'No bi ha garra pachina nueba feita por [[Special:Contributions/$1|$1]] entre os zaguers cambeos.',
+	'nuke-list'          => 'A siguients pachinas fuoron creyatas por [[Special:Contributions/$1|$1]]; escriba un comentario y punche o botón ta borrar-los.',
+	'nuke-defaultreason' => "Borrato masibo d'as pachinas adibitas por $1",
+	'nuke-tools'         => "Ista ferramienta fa posible de fer borratos masibos de pachinas adibitas en zaguerías por un usuario u adreza IP datos. Escriba o nombre d'usuario u l'adreza IP ta obtener una lista de pachinas ta borrar:",
+	'nuke-submit-user'   => 'Ir-ie',
+	'nuke-submit-delete' => 'Borrar as trigatas',
+);
+
 /** Arabic (العربية)
  * @author Meno25
  */
@@ -286,6 +300,13 @@ $messages['ja'] = array(
 	'nuke-tools'         => 'このツールを使うと、指定した利用者またはIPから最近追加されたページを、まとめて削除することができます。削除対象ページ一覧を取得する利用者名またはIPアドレスを入力してください:',
 	'nuke-submit-user'   => '一覧取得',
 	'nuke-submit-delete' => '選択されたページを削除',
+);
+
+/** Khmer (ភាសាខ្មែរ)
+ * @author Chhorran
+ */
+$messages['km'] = array(
+	'nuke-submit-user' => 'ទៅ',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
