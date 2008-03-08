@@ -66,6 +66,7 @@ $messages['ast'] = array(
 /** Bulgarian (Български)
  * @author Spiritia
  * @author DCLXVI
+ * @author Borislav
  */
 $messages['bg'] = array(
 	'nuke'               => 'Масово изтриване',
@@ -74,6 +75,7 @@ $messages['bg'] = array(
 	'nuke-list'          => 'Следните страници са били наскоро създадени от [[Special:Contributions/$1|$1]]. Напишете коментар и щракнете бутона, за да ги изтриете.',
 	'nuke-defaultreason' => 'Масово изтриване на страници, създадени от $1',
 	'nuke-tools'         => 'Този инструмент позволява масовото изтриване на страници, създадени от даден регистриран или анонимен потребител. Въведете потребителско име или IP, за да получите списъка от страници за изтриване:',
+	'nuke-submit-user'   => 'Изпълняване',
 	'nuke-submit-delete' => 'Изтриване на избраните',
 );
 
@@ -348,6 +350,9 @@ $messages['li'] = array(
  * @author Matasg
  */
 $messages['lt'] = array(
+	'nuke'               => 'Masinis trynimas',
+	'nuke-desc'          => 'Suteikia administratoriams galimybę [[Special:Nuke|masiškai trinti]] puslapius',
+	'nuke-nopages'       => 'Nėra naujų puslapių, sukurtų [[Special:Contributions/$1|$1]] naujausiuose keitimuose.',
 	'nuke-submit-user'   => 'Išsiųsti',
 	'nuke-submit-delete' => 'Ištrinti pasirinktus(ą)',
 );
