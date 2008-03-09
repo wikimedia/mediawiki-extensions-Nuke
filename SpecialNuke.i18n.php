@@ -553,6 +553,7 @@ $messages['te'] = array(
  * @author Ibrahim
  */
 $messages['tg'] = array(
+	'nuke'               => 'Ҳазфи дастаҷамъӣ',
 	'nuke-submit-user'   => 'Бирав',
 	'nuke-submit-delete' => 'Интихобшудагон ҳазф шаванд',
 );
