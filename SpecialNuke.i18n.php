@@ -364,6 +364,20 @@ $messages['lt'] = array(
 	'nuke-submit-delete' => 'Ištrinti pasirinktus(ą)',
 );
 
+/** Low German (Plattdüütsch)
+ * @author Slomox
+ */
+$messages['nds'] = array(
+	'nuke'               => 'General-Utmesten',
+	'nuke-desc'          => 'Verlöövt Administraters dat [[{{ns:Special}}:Nuke|General-Utmesten]] vun Sieden',
+	'nuke-nopages'       => 'Gifft in de Ne’esten Ännern kene ne’en Sieden vun [[{{#special:Contributions}}/$1|$1]].',
+	'nuke-list'          => 'Disse Sieden hett [[{{#special:Contributions}}/$1|$1]] nee maakt; geev en Kommentar in un drück op den Utmest-Knopp.',
+	'nuke-defaultreason' => 'General-Utmesten vun Sieden, de $1 anleggt hett',
+	'nuke-tools'         => 'Dit Warktüüch verlöövt dat General-Utmesten vun Sieden, de vun ene IP-Adress oder en Bruker anleggt worrn sünd. Geev de IP-Adress oder den Brukernaam in, dat du ene List kriggst:',
+	'nuke-submit-user'   => 'List kriegen',
+	'nuke-submit-delete' => 'Utmesten',
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
