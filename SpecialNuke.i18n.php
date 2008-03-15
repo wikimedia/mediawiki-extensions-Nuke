@@ -142,7 +142,9 @@ $messages['ee'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
-	'nuke' => 'Amasforigu',
+	'nuke'               => 'Amasforigu',
+	'nuke-submit-user'   => 'Ek!',
+	'nuke-submit-delete' => 'Forigu elekton',
 );
 
 /** فارسی (فارسی)
