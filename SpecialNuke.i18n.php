@@ -469,6 +469,7 @@ $messages['pl'] = array(
 	'nuke-list'          => 'Następujące strony zostały ostatnio stworzone przez [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk by usunąć je.',
 	'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1',
 	'nuke-tools'         => 'To narzędzia pozwala na masowe kasowanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika. Wpis nazwę użytkownika lub adres IP by otrzymać listę stron do skasowania:',
+	'nuke-submit-user'   => 'Dalej',
 	'nuke-submit-delete' => 'Usuń zaznaczone',
 );
 
