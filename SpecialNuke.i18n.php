@@ -138,6 +138,13 @@ $messages['ee'] = array(
 	'nuke-submit-user' => 'Yi',
 );
 
+/** Greek (Ελληνικά)
+ * @author ZaDiak
+ */
+$messages['el'] = array(
+	'nuke-submit-user' => 'Πήγαινε',
+);
+
 /** Esperanto (Esperanto)
  * @author Yekrats
  */
