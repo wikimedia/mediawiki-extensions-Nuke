@@ -94,6 +94,13 @@ $messages['bn'] = array(
 	'nuke-submit-delete' => 'নির্বাচিত গুলো মুছে ফেলো',
 );
 
+/** Catalan (Català)
+ * @author Toniher
+ */
+$messages['ca'] = array(
+	'nuke' => 'Eliminació massiva',
+);
+
 /** Czech (Česky)
  * @author Li-sung
  * @author Matěj Grabovský
