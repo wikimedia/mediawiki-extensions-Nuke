@@ -587,6 +587,14 @@ $messages['stq'] = array(
 	'nuke-submit-delete' => 'Läskje',
 );
 
+/** Sundanese (Basa Sunda)
+ * @author Kandar
+ */
+$messages['su'] = array(
+	'nuke-submit-user'   => 'Jung',
+	'nuke-submit-delete' => 'Hapus nu dipilih',
+);
+
 /** Swedish (Svenska)
  * @author Lejonel
  */
