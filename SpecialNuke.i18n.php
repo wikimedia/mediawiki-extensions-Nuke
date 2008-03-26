@@ -97,10 +97,12 @@ $messages['bn'] = array(
 );
 
 /** Catalan (Català)
+ * @author SMP
  * @author Toniher
  */
 $messages['ca'] = array(
-	'nuke' => 'Eliminació massiva',
+	'nuke'             => 'Eliminació massiva',
+	'nuke-submit-user' => 'Vés-hi',
 );
 
 /** Czech (Česky)
@@ -623,6 +625,13 @@ $messages['te'] = array(
 	'nuke-tools'         => 'ఓ ప్రత్యేక వాడుకరి లేదా IP చేర్చిన పేజీలను ఒక్కసారిగా తొలగించడానికి ఈ పనిముట్టు వీలుకల్పిస్తుంది. పేజీల జాబితాని పొందడానికి ఆ వాడుకరిపేరుని లేదా IPని ఇవ్వండి:',
 	'nuke-submit-user'   => 'వెళ్ళు',
 	'nuke-submit-delete' => 'ఎంచుకున్నవి తొలగించు',
+);
+
+/** Tetum (Tetun)
+ * @author MF-Warburg
+ */
+$messages['tet'] = array(
+	'nuke-submit-user' => 'Bá',
 );
 
 /** Tajik (Тоҷикӣ)
