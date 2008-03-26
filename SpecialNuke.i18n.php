@@ -15,9 +15,11 @@ $messages['en'] = array(
 	'nuke' => 'Mass delete',
 	'nuke-desc' => 'Gives sysops the ability to [[Special:Nuke|mass delete]] pages',
 	'nuke-nopages' => "No new pages by [[Special:Contributions/$1|$1]] in recent changes.",
-	'nuke-list' => "The following pages were recently created by [[Special:Contributions/$1|$1]]; put in a comment and hit the button to delete them.",
+	'nuke-list' => "The following pages were recently created by [[Special:Contributions/$1|$1]];
+put in a comment and hit the button to delete them.",
 	'nuke-defaultreason' => "Mass removal of pages added by $1",
-	'nuke-tools' => 'This tool allows for mass deletions of pages recently added by a given user or IP. Input the username or IP to get a list of pages to delete:',
+	'nuke-tools' => 'This tool allows for mass deletions of pages recently added by a given user or IP.
+Input the username or IP to get a list of pages to delete:',
 	'nuke-submit-user' => 'Go',
 	'nuke-submit-delete' => 'Delete selected',
 );
