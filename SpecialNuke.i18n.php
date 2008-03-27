@@ -398,6 +398,13 @@ $messages['lt'] = array(
 	'nuke-submit-delete' => 'Ištrinti pasirinktus(ą)',
 );
 
+/** Malayalam (മലയാളം)
+ * @author Shijualex
+ */
+$messages['ml'] = array(
+	'nuke-submit-user' => 'പോകൂ',
+);
+
 /** Marathi (मराठी)
  * @author Kaustubh
  */
