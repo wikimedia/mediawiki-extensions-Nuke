@@ -402,7 +402,8 @@ $messages['lt'] = array(
  * @author Shijualex
  */
 $messages['ml'] = array(
-	'nuke-submit-user' => 'പോകൂ',
+	'nuke-submit-user'   => 'പോകൂ',
+	'nuke-submit-delete' => 'തിരഞ്ഞെടുത്തവ മായ്ക്കുക',
 );
 
 /** Marathi (मराठी)
@@ -733,4 +734,5 @@ $messages['zh-hant'] = array(
 	'nuke-submit-user'   => '去',
 	'nuke-submit-delete' => '刪除已選擇的',
 );
+
 
