@@ -1,7 +1,6 @@
 <?php
 /**
  * Internationalisation file for the Nuke extension
- *
  * @addtogroup Extensions
  * @author Brion Vibber
  */
@@ -364,6 +363,7 @@ $messages['km'] = array(
  */
 $messages['lb'] = array(
 	'nuke'               => 'Masse-Läschung',
+	'nuke-desc'          => "Gëtt Administrateuren d'Méiglechkeet fir [[Special:Nuke|vill Säite mateneen ze läschen]]",
 	'nuke-nopages'       => 'Et gëtt bei de läschten Ännerunge keng nei Säite vum [[Special:Contributions/$1|$1]].',
 	'nuke-list'          => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|$1]] nei ugeluecht; gitt w.e.g. eng Bemierkung an an dréckt op de Kneppche Läschen.',
 	'nuke-defaultreason' => 'Masse-Läschung vu Säiten, déi vum $1 ugefaang goufen',
