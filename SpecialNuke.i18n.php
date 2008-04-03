@@ -235,6 +235,19 @@ $messages['gl'] = array(
 	'nuke-submit-user'   => 'Adiante',
 );
 
+/** Hindi (हिन्दी)
+ * @author Kaustubh
+ */
+$messages['hi'] = array(
+	'nuke'               => 'एकसाथ बहुत सारे पन्ने हटायें',
+	'nuke-desc'          => 'प्रबंधकोंको एकसाथ [[Special:Nuke|बहुत सारे पन्ने हटानेकी]] अनुमति देता हैं',
+	'nuke-nopages'       => 'हाल में हुए बदलावोंमें [[Special:Contributions/$1|$1]] द्वारा नये पन्ने नहीं हैं।',
+	'nuke-list'          => 'नीचे दिये हुए पन्ने [[Special:Contributions/$1|$1]] ने हाल में बनायें हैं; टिप्पणी दें और हटाने के लिये बटनपर क्लिक करें।',
+	'nuke-defaultreason' => '$1 ने बनाये हुए पन्ने एकसाथ हटायें',
+	'nuke-submit-user'   => 'जायें',
+	'nuke-submit-delete' => 'चुने हुए हटायें',
+);
+
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
  * @author Dnik
