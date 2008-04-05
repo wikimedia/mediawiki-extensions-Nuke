@@ -95,6 +95,16 @@ $messages['bn'] = array(
 	'nuke-submit-delete' => 'নির্বাচিত গুলো মুছে ফেলো',
 );
 
+/** Breton (Brezhoneg)
+ * @author Fulup
+ */
+$messages['br'] = array(
+	'nuke'               => "Diverkañ a-vloc'h",
+	'nuke-nopages'       => "Pajenn nevez ebet bet krouet gant [[Special:Contributions/$1|$1]] er c'hemmoù diwezhañ.",
+	'nuke-submit-user'   => 'Mont',
+	'nuke-submit-delete' => 'Diverkañ diuzet',
+);
+
 /** Catalan (Català)
  * @author SMP
  * @author Toniher
@@ -160,6 +170,7 @@ $messages['el'] = array(
  */
 $messages['eo'] = array(
 	'nuke'               => 'Amasforigu',
+	'nuke-defaultreason' => 'Amasforigo de paĝoj aldonita de $1',
 	'nuke-submit-user'   => 'Ek!',
 	'nuke-submit-delete' => 'Forigu elekton',
 );
