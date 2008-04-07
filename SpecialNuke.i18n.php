@@ -429,6 +429,7 @@ $messages['lt'] = array(
  * @author Shijualex
  */
 $messages['ml'] = array(
+	'nuke'               => 'കൂട്ട മായ്ക്കല്‍',
 	'nuke-submit-user'   => 'പോകൂ',
 	'nuke-submit-delete' => 'തിരഞ്ഞെടുത്തവ മായ്ക്കുക',
 );
@@ -697,6 +698,20 @@ $messages['tg-cyrl'] = array(
 $messages['tr'] = array(
 	'nuke-submit-user'   => 'Git',
 	'nuke-submit-delete' => 'Seçileni sil',
+);
+
+/** Vèneto (Vèneto)
+ * @author Candalua
+ */
+$messages['vec'] = array(
+	'nuke'               => 'Scancelazion de massa',
+	'nuke-desc'          => 'Consente ai aministradori la [[Special:Nuke|scancelazion in massa]] de le pagine',
+	'nuke-nopages'       => 'No xe stà catà pagine nove creà da [[Speciale:Contributi/$1|$1]] tra le modifiche recenti.',
+	'nuke-list'          => 'Le seguenti pagine le xe stà creà de recente da [[Special:Contributions/$1|$1]]; inserissi un comento e conferma la scancelazion.',
+	'nuke-defaultreason' => 'Scancelazion de massa de le pagine creà da $1',
+	'nuke-tools'         => "Sto strumento el permete la scancelazion in massa de le pagine creà de recente da un determinato utente o IP. Inserissi el nome utente o l'IP par la lista de le pagine da scancelar:",
+	'nuke-submit-user'   => 'Và',
+	'nuke-submit-delete' => 'Scancela la selezion',
 );
 
 /** Vietnamese (Tiếng Việt)
