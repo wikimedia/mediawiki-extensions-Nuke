@@ -371,6 +371,18 @@ $messages['jut'] = array(
 	'nuke-submit-delete' => 'Sletterenge sælektærn',
 );
 
+/** Javanese (Basa Jawa)
+ * @author Meursault2004
+ */
+$messages['jv'] = array(
+	'nuke'               => 'Busak massal',
+	'nuke-desc'          => 'Mènèhi opsis fungsionalitas kanggo [[Special:Nuke|mbusak massal]] kaca-kaca',
+	'nuke-defaultreason' => 'Pambusakan massal kaca-kaca sing digawé déning $1',
+	'nuke-tools'         => 'Piranti iki bisa ngakibataké pambusakan massal kaca-kaca sing lagi waé ditambahaké déning sawijining panganggo utawa alamat IP.
+Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa dibusak:',
+	'nuke-submit-user'   => 'Lakokna',
+);
+
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  */
@@ -430,6 +442,11 @@ $messages['lt'] = array(
  */
 $messages['ml'] = array(
 	'nuke'               => 'കൂട്ട മായ്ക്കല്‍',
+	'nuke-desc'          => 'സിസോപ്പുകള്‍ക്ക്  താളുകള്‍ [[Special:Nuke|കൂട്ടമായി മായ്ക്കാനുള്ള]] അവകാശം നല്‍കുക',
+	'nuke-list'          => 'താഴെ പ്രദര്‍ശിപ്പിച്ചിരിക്കുന്ന താളുകള്‍ [Special:Contributions/$1|$1]] സമീപ കാലത്ത് സൃഷ്ടിച്ചവ ആണ്‌;
+ഇവ മായ്ക്കുവാന്‍ അഭിപ്രായം രേഖപ്പെടുത്തിയതിനു ശേഷം ബട്ടണ്‍ അമര്‍ത്തുക.',
+	'nuke-defaultreason' => '$1 ചേര്‍ത്ത താളുകള്‍ മൊത്തമായി മായ്ക്കുന്നതിനുള്ള സം‌വിധാനം',
+	'nuke-tools'         => 'ഏതെങ്കിലും ഒരു ഉപയോക്താവോ ഐപിയോ സമീപകാലത്തു സൃഷ്ടിച്ച താളുകള്‍ കൂട്ടമായി മായ്ക്കാനുള്ള സൗകര്യം ഈ സം‌വിധാനം നല്‍കുന്നു. താളുകള്‍ മായ്കപ്പെടേണ്ട ഉപയോക്തൃനാമമോ ഐപി വിലാസമോ ഇവിടെ കൊടുക്കുക:',
 	'nuke-submit-user'   => 'പോകൂ',
 	'nuke-submit-delete' => 'തിരഞ്ഞെടുത്തവ മായ്ക്കുക',
 );
@@ -783,5 +800,4 @@ $messages['zh-hant'] = array(
 	'nuke-submit-user'   => '去',
 	'nuke-submit-delete' => '刪除已選擇的',
 );
-
 
