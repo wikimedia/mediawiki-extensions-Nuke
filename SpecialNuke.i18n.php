@@ -106,12 +106,17 @@ $messages['br'] = array(
 );
 
 /** Catalan (Català)
+ * @author Paucabot
  * @author SMP
  * @author Toniher
  */
 $messages['ca'] = array(
-	'nuke'             => 'Eliminació massiva',
-	'nuke-submit-user' => 'Vés-hi',
+	'nuke'               => 'Eliminació massiva',
+	'nuke-desc'          => "Dóna als administradors l'habilitat d'[[Special:Nuke|esborrar pàgines massivament]]",
+	'nuke-nopages'       => 'No hi ha pàgines noves de [[Special:Contributions/$1|$1]] als canvis recents.',
+	'nuke-defaultreason' => 'Esborrat massiu de pàgines creades per $1',
+	'nuke-submit-user'   => 'Vés-hi',
+	'nuke-submit-delete' => 'Esborra la selecció',
 );
 
 /** Czech (Česky)
@@ -443,6 +448,7 @@ $messages['lt'] = array(
 $messages['ml'] = array(
 	'nuke'               => 'കൂട്ട മായ്ക്കല്‍',
 	'nuke-desc'          => 'സിസോപ്പുകള്‍ക്ക്  താളുകള്‍ [[Special:Nuke|കൂട്ടമായി മായ്ക്കാനുള്ള]] അവകാശം നല്‍കുക',
+	'nuke-nopages'       => '[[Special:Contributions/$1|$1]] ഉണ്ടാക്കിയ പുതിയ താളുകളൊന്നും പുതിയ മാറ്റങ്ങളിലില്ല.',
 	'nuke-list'          => 'താഴെ പ്രദര്‍ശിപ്പിച്ചിരിക്കുന്ന താളുകള്‍ [Special:Contributions/$1|$1]] സമീപ കാലത്ത് സൃഷ്ടിച്ചവ ആണ്‌;
 ഇവ മായ്ക്കുവാന്‍ അഭിപ്രായം രേഖപ്പെടുത്തിയതിനു ശേഷം ബട്ടണ്‍ അമര്‍ത്തുക.',
 	'nuke-defaultreason' => '$1 ചേര്‍ത്ത താളുകള്‍ മൊത്തമായി മായ്ക്കുന്നതിനുള്ള സം‌വിധാനം',
@@ -530,8 +536,8 @@ $messages['oc'] = array(
 );
 
 /** Polish (Polski)
- * @author Derbeth
  * @author Sp5uhe
+ * @author Derbeth
  */
 $messages['pl'] = array(
 	'nuke'               => 'Masowe usuwanie',
@@ -539,7 +545,7 @@ $messages['pl'] = array(
 	'nuke-nopages'       => 'Brak nowych stron autorstwa [[Special:Contributions/$1|$1]] w ostatnich zmianach.',
 	'nuke-list'          => 'Następujące strony zostały ostatnio stworzone przez [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk by usunąć je.',
 	'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1',
-	'nuke-tools'         => 'To narzędzia pozwala na masowe kasowanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika. Wpis nazwę użytkownika lub adres IP by otrzymać listę stron do skasowania:',
+	'nuke-tools'         => 'Narzędzia pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika. Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia:',
 	'nuke-submit-user'   => 'Dalej',
 	'nuke-submit-delete' => 'Usuń zaznaczone',
 );
