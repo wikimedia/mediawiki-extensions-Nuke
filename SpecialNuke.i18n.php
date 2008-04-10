@@ -723,6 +723,14 @@ $messages['tr'] = array(
 	'nuke-submit-delete' => 'Seçileni sil',
 );
 
+/** Ukrainian (Українська)
+ * @author Ahonc
+ */
+$messages['uk'] = array(
+	'nuke'             => 'Масове вилучення',
+	'nuke-submit-user' => 'Виконати',
+);
+
 /** Vèneto (Vèneto)
  * @author Candalua
  */
