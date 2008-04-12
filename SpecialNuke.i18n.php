@@ -386,6 +386,7 @@ $messages['jv'] = array(
 	'nuke-tools'         => 'Piranti iki bisa ngakibataké pambusakan massal kaca-kaca sing lagi waé ditambahaké déning sawijining panganggo utawa alamat IP.
 Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa dibusak:',
 	'nuke-submit-user'   => 'Lakokna',
+	'nuke-submit-delete' => 'Busaken sing kapilih',
 );
 
 /** Khmer (ភាសាខ្មែរ)
