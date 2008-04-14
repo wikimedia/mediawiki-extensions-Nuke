@@ -542,7 +542,7 @@ $messages['oc'] = array(
  */
 $messages['pl'] = array(
 	'nuke'               => 'Masowe usuwanie',
-	'nuke-desc'          => 'Dodaje administratorom funkcjonalność równoczesnego [[Special:Nuke|usuwania dużej ilości stron]]',
+	'nuke-desc'          => 'Dodaje administratorom funkcjonalność równoczesnego [[Special:Nuke|usuwania dużej liczby stron]]',
 	'nuke-nopages'       => 'Brak nowych stron autorstwa [[Special:Contributions/$1|$1]] w ostatnich zmianach.',
 	'nuke-list'          => 'Następujące strony zostały ostatnio stworzone przez [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk by usunąć je.',
 	'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1',
@@ -728,8 +728,10 @@ $messages['tr'] = array(
  * @author Ahonc
  */
 $messages['uk'] = array(
-	'nuke'             => 'Масове вилучення',
-	'nuke-submit-user' => 'Виконати',
+	'nuke'               => 'Масове вилучення',
+	'nuke-desc'          => 'Дає адміністраторам можливість [[Special:Nuke|масового вилучення]] сторінок',
+	'nuke-submit-user'   => 'Виконати',
+	'nuke-submit-delete' => 'Вилучити обрані',
 );
 
 /** Vèneto (Vèneto)
