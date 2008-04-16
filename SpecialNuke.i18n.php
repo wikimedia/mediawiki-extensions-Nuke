@@ -382,6 +382,9 @@ $messages['jut'] = array(
 $messages['jv'] = array(
 	'nuke'               => 'Busak massal',
 	'nuke-desc'          => 'Mènèhi opsis fungsionalitas kanggo [[Special:Nuke|mbusak massal]] kaca-kaca',
+	'nuke-nopages'       => 'Ora ditemokaké kaca anyar saka [[Special:Contributions/$1|$1]] ing owah-owahan pungkasan.',
+	'nuke-list'          => 'Kaca-kaca ing ngisor iki lagi baé digawé déning [[Special:Contributions/$1|$1]];
+lebokna komentar lan pencèten tombol kanggo mbusak kabèh.',
 	'nuke-defaultreason' => 'Pambusakan massal kaca-kaca sing digawé déning $1',
 	'nuke-tools'         => 'Piranti iki bisa ngakibataké pambusakan massal kaca-kaca sing lagi waé ditambahaké déning sawijining panganggo utawa alamat IP.
 Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa dibusak:',
