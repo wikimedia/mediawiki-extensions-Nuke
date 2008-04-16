@@ -326,6 +326,13 @@ $messages['id'] = array(
 	'nuke-submit-delete' => 'Hapus yang terpilih',
 );
 
+/** Ido (Ido)
+ * @author Malafaya
+ */
+$messages['io'] = array(
+	'nuke-submit-user' => 'Irar',
+);
+
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
  */
