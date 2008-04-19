@@ -254,6 +254,13 @@ $messages['gl'] = array(
 	'nuke-submit-delete' => 'Eliminar o seleccionado',
 );
 
+/** Manx (Gaelg)
+ * @author MacTire02
+ */
+$messages['gv'] = array(
+	'nuke-submit-user' => 'Gow',
+);
+
 /** Hindi (हिन्दी)
  * @author Kaustubh
  */
