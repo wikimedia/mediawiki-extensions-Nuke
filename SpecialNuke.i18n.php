@@ -180,6 +180,13 @@ $messages['eo'] = array(
 	'nuke-submit-delete' => 'Forigu elekton',
 );
 
+/** Spanish (Español)
+ * @author Jatrobat
+ */
+$messages['es'] = array(
+	'nuke-submit-user' => 'Ir',
+);
+
 /** فارسی (فارسی)
  * @author Huji
  */
