@@ -119,6 +119,13 @@ $messages['ca'] = array(
 	'nuke-submit-delete' => 'Esborra la selecció',
 );
 
+/** Chamorro (Chamoru)
+ * @author Jatrobat
+ */
+$messages['ch'] = array(
+	'nuke-submit-user' => 'Hånao',
+);
+
 /** Czech (Česky)
  * @author Li-sung
  * @author Matěj Grabovský
@@ -270,6 +277,7 @@ $messages['gv'] = array(
 
 /** Hindi (हिन्दी)
  * @author Kaustubh
+ * @author Shyam
  */
 $messages['hi'] = array(
 	'nuke'               => 'एकसाथ बहुत सारे पन्ने हटायें',
@@ -277,6 +285,8 @@ $messages['hi'] = array(
 	'nuke-nopages'       => 'हाल में हुए बदलावोंमें [[Special:Contributions/$1|$1]] द्वारा नये पन्ने नहीं हैं।',
 	'nuke-list'          => 'नीचे दिये हुए पन्ने [[Special:Contributions/$1|$1]] ने हाल में बनायें हैं; टिप्पणी दें और हटाने के लिये बटनपर क्लिक करें।',
 	'nuke-defaultreason' => '$1 ने बनाये हुए पन्ने एकसाथ हटायें',
+	'nuke-tools'         => 'यह उपकरण किसी सदस्य या IP द्वारा हाल ही में जोड़े गए पृष्ठों को सामूहिक रूप से हटाने में सहायक है।
+सदस्यनाम या IP डालकर हटाने वाले पृष्ठों की सूची प्राप्त करें।',
 	'nuke-submit-user'   => 'जायें',
 	'nuke-submit-delete' => 'चुने हुए हटायें',
 );
