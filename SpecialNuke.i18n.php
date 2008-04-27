@@ -291,6 +291,13 @@ $messages['hi'] = array(
 	'nuke-submit-delete' => 'चुने हुए हटायें',
 );
 
+/** Hiligaynon (Ilonggo)
+ * @author Jose77
+ */
+$messages['hil'] = array(
+	'nuke-submit-user' => 'Lakat',
+);
+
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
  * @author Dnik
