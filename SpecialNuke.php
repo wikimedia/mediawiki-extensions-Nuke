@@ -8,7 +8,8 @@ $wgExtensionMessagesFiles['Nuke'] = dirname(__FILE__) . '/SpecialNuke.i18n.php';
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Nuke',
-	'version' => preg_replace('/^.* (\d\d\d\d-\d\d-\d\d) .*$/', '\1', '$LastChangedDate$'), #just the date of the last change
+	'svn-date' => '$LastChangedDate$',
+	'svn-revision' => '$LastChangedRevision$',
 	'description'    => 'Gives sysops the ability to mass delete pages',
 	'descriptionmsg' => 'nuke-desc',
 	'author'         => 'Brion Vibber',
