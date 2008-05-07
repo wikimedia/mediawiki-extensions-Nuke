@@ -444,6 +444,13 @@ $messages['km'] = array(
 	'nuke-submit-delete' => 'លុបចេញ ជំរើសយក',
 );
 
+/** Kinaray-a (Kinaray-a)
+ * @author Jose77
+ */
+$messages['krj'] = array(
+	'nuke-submit-user' => 'Agto',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
