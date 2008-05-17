@@ -181,10 +181,10 @@ $messages['el'] = array(
  * @author Yekrats
  */
 $messages['eo'] = array(
-	'nuke'               => 'Amasforigu',
+	'nuke'               => 'Amasforigi',
 	'nuke-defaultreason' => 'Amasforigo de paĝoj aldonita de $1',
 	'nuke-submit-user'   => 'Ek!',
-	'nuke-submit-delete' => 'Forigu elekton',
+	'nuke-submit-delete' => 'Forigi elekton',
 );
 
 /** Spanish (Español)
