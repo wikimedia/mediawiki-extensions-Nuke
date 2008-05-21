@@ -644,7 +644,7 @@ $messages['qu'] = array(
 
 /** Russian (Русский)
  * @author VasilievVV
- * @author .:Ajvol:.
+ * @author Александр Сигачёв
  * @author HalanTul
  */
 $messages['ru'] = array(
