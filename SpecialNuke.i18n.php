@@ -451,6 +451,13 @@ $messages['krj'] = array(
 	'nuke-submit-user' => 'Agto',
 );
 
+/** Ripoarisch (Ripoarisch)
+ * @author Purodha
+ */
+$messages['ksh'] = array(
+	'nuke-submit-user' => 'Leß holle',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Robby
  */
