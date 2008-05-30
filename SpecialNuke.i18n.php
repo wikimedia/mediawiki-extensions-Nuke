@@ -850,6 +850,7 @@ $messages['yue'] = array(
 	'nuke-tools'         => '呢個工具容許之前提供咗嘅用戶或者IP加入嘅頁。輸入用戶名或者IP去拎頁一覽去刪除:',
 	'nuke-submit-user'   => '去',
 	'nuke-submit-delete' => '刪除㨂咗嘅',
+	'right-nuke'         => '大量刪頁',
 );
 
 /** Chinese (Simplified) (中文 (简化字))
@@ -864,6 +865,7 @@ $messages['zh-hans'] = array(
 	'nuke-tools'         => '这个工具容许先前提供了的的用户或IP创建的页面。输入用户名或IP去取得页面列表以作删除:',
 	'nuke-submit-user'   => '去',
 	'nuke-submit-delete' => '删除已选择的',
+	'right-nuke'         => '大量删除页面',
 );
 
 
@@ -879,5 +881,6 @@ $messages['zh-hant'] = array(
 	'nuke-tools'         => '這個工具容許先前提供了的的用戶或IP創建的頁面。輸入用戶名或IP去取得頁面列表以作刪除:',
 	'nuke-submit-user'   => '去',
 	'nuke-submit-delete' => '刪除已選擇的',
+	'right-nuke'         => '大量刪除頁面',
 );
 
