@@ -154,6 +154,7 @@ $messages['de'] = array(
 	'nuke-tools'         => 'Dieses Werkzeug ermöglicht die Massen-Löschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Gib die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
 	'nuke-submit-user'   => 'Hole Liste',
 	'nuke-submit-delete' => 'Löschen',
+	'right-nuke'         => 'Massenlöschung von Seiten',
 );
 
 /** German - formal address (Deutsch - förmliche Anrede)
