@@ -94,6 +94,9 @@ class SpecialNuke extends SpecialPage {
 		$sk =& $wgUser->getSkin();
 		foreach( $pages as $info ) {
 			list( $title, $edits ) = $info;
+			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
+			$thumb = $image ? $image->getThumbnail( 120, 120 ) : false;
+			
 			$wgOut->addHTML( '<li>' .
 				Xml::element( 'input', array(
 					'type' => 'checkbox',
@@ -101,6 +104,7 @@ class SpecialNuke extends SpecialPage {
 					'value' => $title->getPrefixedDbKey(),
 					'checked' => 'checked' ) ) .
 				'&nbsp;' .
+				( $thumb ? $thumb->toHtml( array( 'desc-link' => true ) ) : '' ) .
 				$sk->makeKnownLinkObj( $title ) .
 				'&nbsp;(' .
 				$sk->makeKnownLinkObj( $title, wfMsgExt( 'nchanges', array( 'parsemag' ), $wgLang->formatNum( $edits ) ), 'action=history' ) .
@@ -133,8 +137,14 @@ class SpecialNuke extends SpecialPage {
 	function doDelete( $pages, $reason ) {
 		foreach( $pages as $page ) {
 			$title = Title::newFromUrl( $page );
-			$article = new Article( $title );
-			$article->doDelete( $reason );
+			$file = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
+			if ( $file ) {
+				$oldimage = null; // Must be passed by reference
+				FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false );								
+			} else {
+				$article = new Article( $title );
+				$article->doDelete( $reason );
+			}
 		}
 	}
 }
