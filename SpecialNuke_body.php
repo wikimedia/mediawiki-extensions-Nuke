@@ -95,7 +95,7 @@ class SpecialNuke extends SpecialPage {
 		foreach( $pages as $info ) {
 			list( $title, $edits ) = $info;
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
-			$thumb = $image ? $image->getThumbnail( 120, 120 ) : false;
+			$thumb = $image && $image->exists() ? $image->getThumbnail( 120, 120 ) : false;
 			
 			$wgOut->addHTML( '<li>' .
 				Xml::element( 'input', array(
@@ -114,12 +114,12 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	function getNewPages( $username ) {
-		$dbr =& wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_SLAVE );
 		$result = $dbr->select( array( 'recentchanges', 'revision' ),
 			array( 'rc_namespace', 'rc_title', 'rc_timestamp', 'COUNT(rev_id) AS edits' ),
 			array(
 				'rc_user_text' => $username,
-				'rc_new' => 1,
+				'(rc_new = 1) OR (rc_log_type = "upload" AND rc_log_action = "upload")',
 				'rc_cur_id=rev_page' ),
 			__METHOD__,
 			array(
