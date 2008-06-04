@@ -620,6 +620,7 @@ $messages['pl'] = array(
 	'nuke-tools'         => 'Narzędzia pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika. Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia:',
 	'nuke-submit-user'   => 'Dalej',
 	'nuke-submit-delete' => 'Usuń zaznaczone',
+	'right-nuke'         => 'Masowe usuwanie stron',
 );
 
 $messages['pms'] = array(
