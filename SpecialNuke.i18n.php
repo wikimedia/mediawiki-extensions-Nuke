@@ -80,6 +80,7 @@ $messages['bg'] = array(
 	'nuke-tools'         => 'Този инструмент позволява масовото изтриване на страници, създадени от даден регистриран или анонимен потребител. Въведете потребителско име или IP, за да получите списъка от страници за изтриване:',
 	'nuke-submit-user'   => 'Изпълняване',
 	'nuke-submit-delete' => 'Изтриване на избраните',
+	'right-nuke'         => 'масово изтриване на страници',
 );
 
 /** Bengali (বাংলা)
@@ -550,6 +551,7 @@ $messages['nds'] = array(
 	'nuke-tools'         => 'Dit Warktüüch verlöövt dat General-Utmesten vun Sieden, de vun ene IP-Adress oder en Bruker anleggt worrn sünd. Geev de IP-Adress oder den Brukernaam in, dat du ene List kriggst:',
 	'nuke-submit-user'   => 'List kriegen',
 	'nuke-submit-delete' => 'Utmesten',
+	'right-nuke'         => 'Groten Hümpel Sieden wegsmieten',
 );
 
 /** Dutch (Nederlands)
@@ -580,7 +582,7 @@ $messages['no'] = array(
 	'nuke-tools'         => 'Dette verktøyet muliggjør massesletting av sider som nylig er lagt inn av en gitt bruker eller IP. Skriv et brukernavn eller en IP for å få en liste over sider som slettes:',
 	'nuke-submit-user'   => 'Gå',
 	'nuke-submit-delete' => 'Slett valgte',
-	'right-nuke'         => "Slette sider ''en masse''",
+	'right-nuke'         => 'Slette sider <i>en masse</i>',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
