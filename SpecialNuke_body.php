@@ -119,13 +119,15 @@ class SpecialNuke extends SpecialPage {
 			array( 'rc_namespace', 'rc_title', 'rc_timestamp', 'COUNT(rev_id) AS edits' ),
 			array(
 				'rc_user_text' => $username,
-				'(rc_new = 1) OR (rc_log_type = "upload" AND rc_log_action = "upload")',
-				'rc_cur_id=rev_page' ),
+				'(rc_new = 1) OR (rc_log_type = "upload" AND rc_log_action = "upload")' 
+				),
 			__METHOD__,
 			array(
 				'ORDER BY' => 'rc_timestamp DESC',
 				'GROUP BY' => $dbr->implicitGroupby() ? 'rev_page' : 'rc_namespace, rc_title, rc_timestamp'
-			) );
+			),
+			array( 'revision' => array( 'LEFT JOIN', 'rc_cur_id=rev_page' ) )
+			);
 		$pages = array();
 		while( $row = $dbr->fetchObject( $result ) ) {
 			$pages[] = array( Title::makeTitle( $row->rc_namespace, $row->rc_title ), $row->edits );
