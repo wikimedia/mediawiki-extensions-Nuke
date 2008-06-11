@@ -187,7 +187,12 @@ $messages['el'] = array(
 $messages['eo'] = array(
 	'nuke'               => 'Amasforigi',
 	'nuke-desc'          => 'Rajtigas al administrantoj la kapablon [[Special:Nuke|amasforigi]] paĝojn',
+	'nuke-nopages'       => 'Neniuj novaj paĝoj de [[Special:Contributions/$1|$1]] en lastaj ŝanĝoj.',
+	'nuke-list'          => 'La jenaj paĝoj estis lastatempe kreitaj de [[Special:Contributions/$1|$1]];
+aldonu komenton kaj klaku la butonon forigi ilin.',
 	'nuke-defaultreason' => 'Amasforigo de paĝoj aldonita de $1',
+	'nuke-tools'         => 'Ĉi tiu ilo ebligas amasforigojn de paĝoj lastatempe aldonitaj de aparta uzanto aŭ IP-adreso.
+Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi:',
 	'nuke-submit-user'   => 'Ek!',
 	'nuke-submit-delete' => 'Forigi elekton',
 	'right-nuke'         => 'Amasforigi paĝojn',
