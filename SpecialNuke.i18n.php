@@ -287,6 +287,23 @@ $messages['gv'] = array(
 	'nuke-submit-user' => 'Gow',
 );
 
+/** Hebrew (עברית)
+ * @author Rotem Liss
+ */
+$messages['he'] = array(
+	'nuke'               => 'מחיקה מרובה',
+	'nuke-desc'          => 'אפשרות למפעילי המערכת לבצע [[Special:Nuke|מחיקה מרובה]] של דפים',
+	'nuke-nopages'       => 'אין דפים חדשים שנוצרו על ידי [[Special:Contributions/$1|$1]] in בשינויים האחרונים.',
+	'nuke-list'          => 'הדפים הבאים נוצרו לאחרונה על ידי [[Special:Contributions/$1|$1]];
+אנא כתבו נימוק למחיקה ולחצו על הכפתור כדי למחוק אותם.',
+	'nuke-defaultreason' => 'הסרה מרובה של דפים שנוספו על ידי $1',
+	'nuke-tools'         => 'כלי זה מאפשר מחיקות מרובות של דפים שנוספו לאחרונה על ידי משתמש או כתובת IP מסוימים.
+כתבו את שם המשתמש או כתובת ה־IP כדי לקבל את רשימת הדפים למחיקה:',
+	'nuke-submit-user'   => 'הצגה',
+	'nuke-submit-delete' => 'מחיקת הדפים שנבחרו',
+	'right-nuke'         => 'מחיקה מרובה של דפים',
+);
+
 /** Hindi (हिन्दी)
  * @author Kaustubh
  * @author Shyam
