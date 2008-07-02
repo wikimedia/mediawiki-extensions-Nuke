@@ -24,6 +24,20 @@ Input the username or IP to get a list of pages to delete:',
 	'right-nuke'         => 'Mass delete pages',
 );
 
+/** Tarifit (Tarifit)
+ * @author Jose77
+ */
+$messages['rif'] = array(
+	'nuke-submit-user' => 'Raḥ ɣa',
+);
+
+/** Niuean (native name missing)
+ * @author Jose77
+ */
+$messages['niu'] = array(
+	'nuke-submit-user' => 'Fano',
+);
+
 /** Aragonese (Aragonés)
  * @author Juanpabl
  */
@@ -132,6 +146,7 @@ $messages['ch'] = array(
 /** Czech (Česky)
  * @author Li-sung
  * @author Matěj Grabovský
+ * @author Danny B.
  */
 $messages['cs'] = array(
 	'nuke'               => 'Hromadné mazání',
@@ -142,6 +157,7 @@ $messages['cs'] = array(
 	'nuke-tools'         => 'Tento nástroj umožňuje hromadné smazání stránek nedávno vytvořených zadaným uživatelem na IP adresou. Zadejte uživatelské jméno nebo IP adresu, jejichž seznam stránek ke smazání chcete zobrazit:',
 	'nuke-submit-user'   => 'Provést',
 	'nuke-submit-delete' => 'Smazat vybrané',
+	'right-nuke'         => 'Hromadné mazání stránek',
 );
 
 /** German (Deutsch)
@@ -559,6 +575,21 @@ $messages['mr'] = array(
 	'nuke-submit-user'   => 'जा',
 	'nuke-submit-delete' => 'निवडलेले वगळा',
 	'right-nuke'         => 'खूप पाने एकत्र वगळा',
+);
+
+/** Malay (Bahasa Melayu)
+ * @author Aviator
+ */
+$messages['ms'] = array(
+	'nuke'               => 'Hapus pukal',
+	'nuke-desc'          => 'Membolehkan penyelia [[Special:Nuke|menghapuskan laman-laman]] secara pukal',
+	'nuke-nopages'       => 'Tiada laman baru oleh [[Special:Contributions/$1|$1]] dalam senarai perubahan terkini.',
+	'nuke-list'          => 'Laman-laman berikut dicipta oleh [[Special:Contributions/$1|$1]]; sila masukkan komen anda dan tekan butang untuk menghapuskannya.',
+	'nuke-defaultreason' => 'Menghapuskan laman-laman yang ditambah oleh $1 secara pukal',
+	'nuke-tools'         => 'Alat ini digunakan untuk menghapuskan laman-laman yang ditambah oleh pengguna atau IP yang dinyatakan secara pukal. Masukkan nama pengguna atau IP untuk mendapatkan senarai laman untuk dihapuskan:',
+	'nuke-submit-user'   => 'Pergi',
+	'nuke-submit-delete' => 'Hapus',
+	'right-nuke'         => 'Menghapuskan laman secara pukal',
 );
 
 /** Low German (Plattdüütsch)
