@@ -50,6 +50,7 @@ $messages['an'] = array(
 	'nuke-tools'         => "Ista ferramienta fa posible de fer borratos masibos de pachinas adibitas en zaguerías por un usuario u adreza IP datos. Escriba o nombre d'usuario u l'adreza IP ta obtener una lista de pachinas ta borrar:",
 	'nuke-submit-user'   => 'Ir-ie',
 	'nuke-submit-delete' => 'Borrar as trigatas',
+	'right-nuke'         => 'Borrar pachinas masibament',
 );
 
 /** Arabic (العربية)
