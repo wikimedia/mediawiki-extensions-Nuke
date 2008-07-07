@@ -24,14 +24,7 @@ Input the username or IP to get a list of pages to delete:',
 	'right-nuke'         => 'Mass delete pages',
 );
 
-/** Tarifit (Tarifit)
- * @author Jose77
- */
-$messages['rif'] = array(
-	'nuke-submit-user' => 'Raḥ ɣa',
-);
-
-/** Niuean (native name missing)
+/** Niuean (ko e vagahau Niuē)
  * @author Jose77
  */
 $messages['niu'] = array(
@@ -719,6 +712,13 @@ $messages['qu'] = array(
 	'nuke-tools'         => "Kay llamk'anawanqa huk ruraqpa kamarisqan p'anqakunata tawqalla qulluytam atinki. Ruraqpa sutinta icha IP huchhanta yaykuchiy qulluna p'anqakunata rikunaykipaq.",
 	'nuke-submit-user'   => 'Riy',
 	'nuke-submit-delete' => 'Akllasqata qulluy',
+);
+
+/** Tarifit (Tarifit)
+ * @author Jose77
+ */
+$messages['rif'] = array(
+	'nuke-submit-user' => 'Raḥ ɣa',
 );
 
 /** Russian (Русский)
