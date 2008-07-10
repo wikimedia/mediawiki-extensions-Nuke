@@ -6,7 +6,7 @@ if( !defined( 'MEDIAWIKI' ) )
 $dir = dirname(__FILE__) . '/';
 
 $wgExtensionMessagesFiles['Nuke'] = $dir . 'SpecialNuke.i18n.php';
-$wgExtensionAliasesFiles['Nuke'] = $dir . 'Nuke.alias.php';
+$wgExtensionAliasesFiles['Nuke'] = $dir . 'SpecialNuke.alias.php';
 
 $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Nuke',
