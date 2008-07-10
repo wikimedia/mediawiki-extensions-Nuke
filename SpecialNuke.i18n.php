@@ -160,21 +160,21 @@ $messages['cs'] = array(
 $messages['de'] = array(
 	'nuke'               => 'Massen-Löschung',
 	'nuke-desc'          => 'Ermöglicht Administratoren die [[Special:Nuke|Massenlöschung]] von Seiten',
-	'nuke-nopages'       => "Es gibt in den Letzten Änderungen keine neuen Seiten von [[{{#special:Contributions}}/$1|$1]].",
-	'nuke-list'          => "Die folgenden Seiten wurden von [[{{#special:Contributions}}/$1|$1]] erzeugt; gib einen Kommentar ein und drücke auf den Lösch-Knopf.",
-	'nuke-defaultreason' => "Massen-Löschung von Seiten, die von $1 angelegt wurden",
+	'nuke-nopages'       => 'Es gibt in den Letzten Änderungen keine neuen Seiten von [[{{#special:Contributions}}/$1|$1]].',
+	'nuke-list'          => 'Die folgenden Seiten wurden von [[{{#special:Contributions}}/$1|$1]] erzeugt; gib einen Kommentar ein und drücke auf den Lösch-Knopf.',
+	'nuke-defaultreason' => 'Massen-Löschung von Seiten, die von $1 angelegt wurden',
 	'nuke-tools'         => 'Dieses Werkzeug ermöglicht die Massen-Löschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Gib die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
 	'nuke-submit-user'   => 'Hole Liste',
 	'nuke-submit-delete' => 'Löschen',
 	'right-nuke'         => 'Massenlöschung von Seiten',
 );
 
-/** German - formal address (Deutsch - förmliche Anrede)
+/** German (formal address) (Deutsch (Sie-Form))
  * @author Raimond Spekking
  */
 $messages['de-formal'] = array(
-	'nuke-list'          => "Die folgenden Seiten wurden von [[{{#special:Contributions}}/$1|$1]] erzeugt; geben Sie einen Kommentar ein und drücken Sie auf den Lösch-Knopf.",
-	'nuke-tools'         => 'Dieses Werkzeug ermöglicht die Massen-Löschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Geben Sie die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
+	'nuke-list'  => 'Die folgenden Seiten wurden von [[{{#special:Contributions}}/$1|$1]] erzeugt; geben Sie einen Kommentar ein und drücken Sie auf den Lösch-Knopf.',
+	'nuke-tools' => 'Dieses Werkzeug ermöglicht die Massen-Löschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Geben Sie die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
 );
 
 /** Ewe (Eʋegbe)
@@ -215,6 +215,9 @@ $messages['es'] = array(
 	'nuke-submit-user' => 'Ir',
 );
 
+/** Persian (فارسی)
+ * @author Huji
+ */
 $messages['fa'] = array(
 	'nuke'               => 'حذف دسته‌جمعی',
 	'nuke-desc'          => 'به مدیران امکان [[Special:Nuke|حذف دسته‌جمعی]] صفحه‌ها را می‌دهد',
@@ -670,12 +673,15 @@ $messages['pl'] = array(
 	'right-nuke'         => 'Masowe usuwanie stron',
 );
 
+/** Piedmontese (Piemontèis)
+ * @author Bèrto 'd Sèra
+ */
 $messages['pms'] = array(
-	'nuke'               => 'Scancelament d\'amblé',
-	'nuke-nopages'       => 'Gnun-a pàgine faite da [[Special:Contributions/$1|$1]] ant j\'ùltim cambiament.',
-	'nuke-list'          => 'Ste pàgine-sì a son staite faite ant j\'ùltim temp da [[Special:Contributions/$1|$1]]; ch\'a lassa un coment e ch\'a-i daga \'n colp ansima al boton për gaveje via tute d\'amblé.',
-	'nuke-defaultreason' => 'Scancelament d\'amblé dle pàgine faite da $1',
-	'nuke-tools'         => 'St\'utiss-sì a lassa scancelé d\'amblé le pàgine gionta ant j\'ùltim temp da un chèich utent ò da \'nt na chèich adrëssa IP. Ch\'a buta lë stranòm ò l\'adrëssa IP për tiré giù na lista dle pàgine da scancelé:',
+	'nuke'               => "Scancelament d'amblé",
+	'nuke-nopages'       => "Gnun-a pàgine faite da [[Special:Contributions/$1|$1]] ant j'ùltim cambiament.",
+	'nuke-list'          => "Ste pàgine-sì a son staite faite ant j'ùltim temp da [[Special:Contributions/$1|$1]]; ch'a lassa un coment e ch'a-i daga 'n colp ansima al boton për gaveje via tute d'amblé.",
+	'nuke-defaultreason' => "Scancelament d'amblé dle pàgine faite da $1",
+	'nuke-tools'         => "St'utiss-sì a lassa scancelé d'amblé le pàgine gionta ant j'ùltim temp da un chèich utent ò da 'nt na chèich adrëssa IP. Ch'a buta lë stranòm ò l'adrëssa IP për tiré giù na lista dle pàgine da scancelé:",
 );
 
 /** Pashto (پښتو)
@@ -833,7 +839,7 @@ $messages['tet'] = array(
 	'nuke-submit-user' => 'Bá',
 );
 
-/** Tajik (Тоҷикӣ)
+/** Tajik (Cyrillic) (Тоҷикӣ/tojikī (Cyrillic))
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -916,46 +922,45 @@ $messages['vo'] = array(
 	'nuke-submit-delete' => 'Pevalöl ad pamoükön',
 );
 
-/** Cantonese (廣東話)
+/** Yue (粵語)
  * @author Shinjiman
  */
 $messages['yue'] = array(
 	'nuke'               => '大量刪除',
 	'nuke-desc'          => '畀操作員去做[[Special:Nuke|大量刪除]]嘅能力',
-	'nuke-nopages'       => "響最近更改度無[[Special:Contributions/$1|$1]]所做嘅新頁。",
-	'nuke-list'          => "下面嘅頁係由[[Special:Contributions/$1|$1]]響之前所寫嘅；記低一個註解再撳掣去刪除佢哋。",
-	'nuke-defaultreason' => "大量刪除由$1所開嘅頁",
+	'nuke-nopages'       => '響最近更改度無[[Special:Contributions/$1|$1]]所做嘅新頁。',
+	'nuke-list'          => '下面嘅頁係由[[Special:Contributions/$1|$1]]響之前所寫嘅；記低一個註解再撳掣去刪除佢哋。',
+	'nuke-defaultreason' => '大量刪除由$1所開嘅頁',
 	'nuke-tools'         => '呢個工具容許之前提供咗嘅用戶或者IP加入嘅頁。輸入用戶名或者IP去拎頁一覽去刪除:',
 	'nuke-submit-user'   => '去',
 	'nuke-submit-delete' => '刪除㨂咗嘅',
 	'right-nuke'         => '大量刪頁',
 );
 
-/** Chinese (Simplified) (中文 (简化字))
+/** Simplified Chinese (‪中文(简体)‬)
  * @author Shinjiman
  */
 $messages['zh-hans'] = array(
 	'nuke'               => '大量删除',
 	'nuke-desc'          => '给操作员作出[[Special:Nuke|大量删除]]的能力',
-	'nuke-nopages'       => "在最近更改中没有[[Special:Contributions/$1|$1]]所作的新页面。",
-	'nuke-list'          => "以下的页面是由[[Special:Contributions/$1|$1]]在以前所写的；记下一个注解再点击按钮去删除它们。",
-	'nuke-defaultreason' => "大量删除由$1所创建的页面",
+	'nuke-nopages'       => '在最近更改中没有[[Special:Contributions/$1|$1]]所作的新页面。',
+	'nuke-list'          => '以下的页面是由[[Special:Contributions/$1|$1]]在以前所写的；记下一个注解再点击按钮去删除它们。',
+	'nuke-defaultreason' => '大量删除由$1所创建的页面',
 	'nuke-tools'         => '这个工具容许先前提供了的的用户或IP创建的页面。输入用户名或IP去取得页面列表以作删除:',
 	'nuke-submit-user'   => '去',
 	'nuke-submit-delete' => '删除已选择的',
 	'right-nuke'         => '大量删除页面',
 );
 
-
-/** Chinese (Traditional) (中文 (傳統字))
+/** Traditional Chinese (‪中文(繁體)‬)
  * @author Shinjiman
  */
 $messages['zh-hant'] = array(
 	'nuke'               => '大量刪除',
 	'nuke-desc'          => '給操作員作出[[Special:Nuke|大量刪除]]的能力',
-	'nuke-nopages'       => "在最近更改中沒有[[Special:Contributions/$1|$1]]所作的新頁面。",
-	'nuke-list'          => "以下的頁面是由[[Special:Contributions/$1|$1]]在以前所寫的；記下一個註解再點擊按鈕去刪除它們。",
-	'nuke-defaultreason' => "大量刪除由$1所創建的頁面",
+	'nuke-nopages'       => '在最近更改中沒有[[Special:Contributions/$1|$1]]所作的新頁面。',
+	'nuke-list'          => '以下的頁面是由[[Special:Contributions/$1|$1]]在以前所寫的；記下一個註解再點擊按鈕去刪除它們。',
+	'nuke-defaultreason' => '大量刪除由$1所創建的頁面',
 	'nuke-tools'         => '這個工具容許先前提供了的的用戶或IP創建的頁面。輸入用戶名或IP去取得頁面列表以作刪除:',
 	'nuke-submit-user'   => '去',
 	'nuke-submit-delete' => '刪除已選擇的',
