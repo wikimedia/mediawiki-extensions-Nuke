@@ -20,3 +20,10 @@ $aliases['en'] = array(
 $aliases['de'] = array(
 	'Nuke' => array( 'Massenlöschung' ),
 );
+
+/** Hebrew (עברית)
+ * @author Rotem Liss
+ */
+$aliases['he'] = array(
+	'Nuke' => array( 'מחיקה_מרובה' ),
+);
