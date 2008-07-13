@@ -31,6 +31,13 @@ $messages['niu'] = array(
 	'nuke-submit-user' => 'Fano',
 );
 
+/** Afrikaans (Afrikaans)
+ * @author Naudefj
+ */
+$messages['af'] = array(
+	'nuke-submit-user' => 'Gaan',
+);
+
 /** Aragonese (Aragonés)
  * @author Juanpabl
  */
@@ -344,6 +351,7 @@ $messages['hil'] = array(
 /** Croatian (Hrvatski)
  * @author SpeedyGonsales
  * @author Dnik
+ * @author Dalibor Bosits
  */
 $messages['hr'] = array(
 	'nuke'               => 'Grupno brisanje',
@@ -354,6 +362,7 @@ $messages['hr'] = array(
 	'nuke-tools'         => 'Ova ekstenzija omogućava grupno brisanje stranica (članaka) nekog prijavljenog ili neprijavljenog suradnika. Upišite ime ili IP adresu za dobivanje popisa stranica koje je moguće obrisati:',
 	'nuke-submit-user'   => 'Kreni',
 	'nuke-submit-delete' => 'Obriši označeno',
+	'right-nuke'         => 'Masovno brisanje stranica',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
