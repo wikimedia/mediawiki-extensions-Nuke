@@ -81,6 +81,19 @@ $messages['ast'] = array(
 	'nuke-submit-delete' => 'Borrar seleicionaes',
 );
 
+/** Southern Balochi (بلوچی مکرانی)
+ * @author Mostafadaneshvar
+ */
+$messages['bcc'] = array(
+	'nuke'               => 'حذف جمعی',
+	'nuke-desc'          => 'مدیران سیستمء ای توانایی دنت تا صفحات  [[Special:Nuke|حذف جمعی]]',
+	'nuke-nopages'       => 'هچ نوکین صفحه په وسیله  [[Special:Contributions/$1|$1]] ته نوکین تغییرات.',
+	'nuke-defaultreason' => 'حذف جمعی صفحات اضافه بوتت په وسیله $1',
+	'nuke-submit-user'   => 'برو',
+	'nuke-submit-delete' => 'انتخاب بوتگین حذف',
+	'right-nuke'         => 'حذف جمعی صفحات',
+);
+
 /** Bulgarian (Български)
  * @author Spiritia
  * @author DCLXVI
