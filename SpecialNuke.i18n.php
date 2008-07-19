@@ -442,6 +442,8 @@ $messages['is'] = array(
 /** Italian (Italiano)
  * @author .anaconda
  * @author BrokenArrow
+ * @author Darth Kule
+ * @author Siebrand
  */
 $messages['it'] = array(
 	'nuke'               => 'Cancellazione di massa',
@@ -452,6 +454,7 @@ $messages['it'] = array(
 	'nuke-tools'         => "Questo strumento permette la cancellazione in massa delle pagina create di recente da un determinato utente o IP. Inserisci il nome utente o l'IP per la lista delle pagine da cancellare:",
 	'nuke-submit-user'   => 'Vai',
 	'nuke-submit-delete' => 'Cancella la selezione',
+	'right-nuke'         => 'Cancella pagine in massa',
 );
 
 /** Japanese (日本語)
@@ -610,6 +613,13 @@ $messages['ms'] = array(
 	'nuke-submit-user'   => 'Pergi',
 	'nuke-submit-delete' => 'Hapus',
 	'right-nuke'         => 'Menghapuskan laman secara pukal',
+);
+
+/** Nahuatl (Nahuatl)
+ * @author Fluence
+ */
+$messages['nah'] = array(
+	'nuke-submit-user' => 'Yāuh',
 );
 
 /** Low German (Plattdüütsch)
