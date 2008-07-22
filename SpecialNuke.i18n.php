@@ -410,6 +410,23 @@ $messages['hu'] = array(
 	'right-nuke'         => 'oldalak tömeges törlése',
 );
 
+/** Interlingua (Interlingua)
+ * @author McDutchie
+ */
+$messages['ia'] = array(
+	'nuke'               => 'Deletion in massa',
+	'nuke-desc'          => 'Da le capabilitate al administratores de [[Special:Nuke|deler paginas in massa]]',
+	'nuke-nopages'       => 'Nulle nove paginas per [[Special:Contributions/$1|$1]] trovate in le modificationes recente.',
+	'nuke-list'          => 'Le sequente paginas esseva recentemente create per [[Special:Contributions/$1|$1]];
+entra un commento e clicca le button pro deler los.',
+	'nuke-defaultreason' => 'Deletion in massa de paginas addite per $1',
+	'nuke-tools'         => 'Iste instrumento permitte le deletion in massa de paginas recentemente addite per un usator o IP specific.
+Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler:',
+	'nuke-submit-user'   => 'Ir',
+	'nuke-submit-delete' => 'Deler seligites',
+	'right-nuke'         => 'Deler paginas in massa',
+);
+
 /** Indonesian (Bahasa Indonesia)
  * @author Rex
  */
@@ -527,6 +544,7 @@ $messages['krj'] = array(
  */
 $messages['ksh'] = array(
 	'nuke-submit-user' => 'Leß holle',
+	'right-nuke'       => 'Massich Sigge Fottschmieße',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
@@ -619,6 +637,7 @@ $messages['ms'] = array(
  * @author Fluence
  */
 $messages['nah'] = array(
+	'nuke'             => 'Huēyi tlapololiztli',
 	'nuke-submit-user' => 'Yāuh',
 );
 
