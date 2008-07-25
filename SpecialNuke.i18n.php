@@ -825,6 +825,21 @@ $messages['sk'] = array(
 	'right-nuke'         => 'Hromadné mazanie stránok',
 );
 
+/** Serbian Cyrillic ekavian (ћирилица)
+ * @author Millosh
+ */
+$messages['sr-ec'] = array(
+	'nuke'               => 'Масовно брисање',
+	'nuke-desc'          => 'Даје сиспу могућност да [[Special:Nuke|масовно брише]] стране.',
+	'nuke-nopages'       => 'Нема нових страна од стране сарадника [[Special:Contributions/$1|$1]] у скорашњим изменама.',
+	'nuke-list'          => 'Следеће стране је скоро направио сарадник [[Special:Contributions/$1|$1]]; коментариши и притисни дугме за њихово брисање.',
+	'nuke-defaultreason' => 'Масовно брисање страна које је направио сарадник $1.',
+	'nuke-tools'         => 'Ово оруђе омогућава масовно брисање страна које је скоро додао одређени сарадник (регистрован или не). Унеси сарадничко име или ИП адресу за добијање списка страна за брисање.',
+	'nuke-submit-user'   => 'Иди',
+	'nuke-submit-delete' => 'Обриши обележено',
+	'right-nuke'         => 'Масовно брисање страна.',
+);
+
 /** Seeltersk (Seeltersk)
  * @author Pyt
  */
