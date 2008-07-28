@@ -300,6 +300,13 @@ $messages['frp'] = array(
 	'nuke-submit-delete' => 'Suprèssion sèlèccionâ',
 );
 
+/** Friulian (Furlan)
+ * @author Klenje
+ */
+$messages['fur'] = array(
+	'nuke-submit-user' => 'Va',
+);
+
 /** Galician (Galego)
  * @author Toliño
  * @author Alma
