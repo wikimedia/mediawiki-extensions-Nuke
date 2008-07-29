@@ -257,6 +257,7 @@ $messages['fa'] = array(
 
 /** Finnish (Suomi)
  * @author Crt
+ * @author Jaakonam
  */
 $messages['fi'] = array(
 	'nuke'               => 'Massapoistaminen',
@@ -267,6 +268,7 @@ $messages['fi'] = array(
 	'nuke-tools'         => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP:n perusteella. Kirjoita käyttäjänimi tai IP, niin saat listan poistettavista sivuista:',
 	'nuke-submit-user'   => 'Siirry',
 	'nuke-submit-delete' => 'Poista valitut',
+	'right-nuke'         => 'Sivujen massapoistaminen',
 );
 
 /** French (Français)
@@ -586,6 +588,7 @@ $messages['li'] = array(
 	'nuke-tools'         => "Dit hulpmiddel maakt 't meugelik massaal pagina's te wisse die recentelijk zien aangemaakt door 'n gebroeker of IP-adres. Voer de gebroekersnaam of 't IP-adres in veur 'n lijst van te wisse pagina's:",
 	'nuke-submit-user'   => 'Gao',
 	'nuke-submit-delete' => 'Geslecteerd wisse',
+	'right-nuke'         => "Massaal pagina's verwi'jdere",
 );
 
 /** Lithuanian (Lietuvių)
