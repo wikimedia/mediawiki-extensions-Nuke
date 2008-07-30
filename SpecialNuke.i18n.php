@@ -152,6 +152,7 @@ $messages['ca'] = array(
 	'nuke-defaultreason' => 'Esborrat massiu de pàgines creades per $1',
 	'nuke-submit-user'   => 'Vés-hi',
 	'nuke-submit-delete' => 'Esborra la selecció',
+	'right-nuke'         => 'Esborrat massiu de pàgines',
 );
 
 /** Chamorro (Chamoru)
@@ -657,10 +658,11 @@ $messages['nah'] = array(
 
 /** Low German (Plattdüütsch)
  * @author Slomox
+ * @author Siebrand
  */
 $messages['nds'] = array(
 	'nuke'               => 'General-Utmesten',
-	'nuke-desc'          => 'Verlöövt Administraters dat [[{{ns:Special}}:Nuke|General-Utmesten]] vun Sieden',
+	'nuke-desc'          => 'Verlöövt Administraters dat [[Special:Nuke|General-Utmesten]] vun Sieden',
 	'nuke-nopages'       => 'Gifft in de Ne’esten Ännern kene ne’en Sieden vun [[Special:Contributions/$1|$1]].',
 	'nuke-list'          => 'Disse Sieden hett [[Special:Contributions/$1|$1]] nee maakt; geev en Kommentar in un drück op den Utmest-Knopp.',
 	'nuke-defaultreason' => 'General-Utmesten vun Sieden, de $1 anleggt hett',
@@ -957,6 +959,7 @@ $messages['uk'] = array(
 Уведіть ім'я користувача або IP для того, щоб отримати список створених ним сторінок:",
 	'nuke-submit-user'   => 'Виконати',
 	'nuke-submit-delete' => 'Вилучити обрані',
+	'right-nuke'         => 'Масове вилучення сторінок',
 );
 
 /** Vèneto (Vèneto)
