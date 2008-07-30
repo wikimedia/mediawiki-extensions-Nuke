@@ -18,7 +18,7 @@ $messages['en'] = array(
 put in a comment and hit the button to delete them.",
 	'nuke-defaultreason' => "Mass removal of pages added by $1",
 	'nuke-tools'         => 'This tool allows for mass deletions of pages recently added by a given user or IP.
-Input the username or IP to get a list of pages to delete:',
+Input the username or IP to get a list of pages to delete.',
 	'nuke-submit-user'   => 'Go',
 	'nuke-submit-delete' => 'Delete selected',
 	'right-nuke'         => 'Mass delete pages',
