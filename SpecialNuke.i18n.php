@@ -98,6 +98,13 @@ $messages['bcc'] = array(
 	'right-nuke'         => 'حذف جمعی صفحات',
 );
 
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+ * @author EugeneZelenko
+ */
+$messages['be-tarask'] = array(
+	'nuke-tools' => 'Гэтая старонка дазваляе рабіць масавыя выдаленьні старонак, створаных пэўным удзельнікам альбо з IP-адрасу. Увядзіце імя ўдзельніка або IP-адрас для таго, каб атрымаць сьпіс створаных ім старонак.',
+);
+
 /** Bulgarian (Български)
  * @author Spiritia
  * @author DCLXVI
@@ -482,7 +489,7 @@ $messages['it'] = array(
 	'nuke-nopages'       => 'Non sono state trovate nuove pagine create da [[Special:Contributions/$1|$1]] tra le modifiche recenti.',
 	'nuke-list'          => 'Le seguenti pagine sono state create di recente da [[Special:Contributions/$1|$1]]; inserisci un commento e conferma la cancellazione.',
 	'nuke-defaultreason' => 'Cancellazione di massa delle pagine create da $1',
-	'nuke-tools'         => "Questo strumento permette la cancellazione in massa delle pagina create di recente da un determinato utente o IP. Inserisci il nome utente o l'IP per la lista delle pagine da cancellare:",
+	'nuke-tools'         => "Questo strumento permette la cancellazione in massa delle pagina create di recente da un determinato utente o IP. Inserisci il nome utente o l'IP per la lista delle pagine da cancellare.",
 	'nuke-submit-user'   => 'Vai',
 	'nuke-submit-delete' => 'Cancella la selezione',
 	'right-nuke'         => 'Cancella pagine in massa',
@@ -682,7 +689,8 @@ $messages['nl'] = array(
 	'nuke-nopages'       => "Geen nieuwe pagina's van [[Special:Contributions/$1|$1]] in de recente wijzigingen.",
 	'nuke-list'          => "De onderstaande pagina's zijn recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer een reden in en klik op de knop om ze te verwijderen.",
 	'nuke-defaultreason' => "Massaal verwijderen van pagina's van $1",
-	'nuke-tools'         => "Dit hulpmiddel maakt het mogelijk massaal pagina's te verwijderen die recentelijk zijn aangemaakt door een gebruiker of IP-adres. Voer de gebruikernaam of het IP-adres in voor een lijst van te verwijderen pagina's:",
+	'nuke-tools'         => "Dit hulpmiddel maakt het mogelijk massaal pagina's te verwijderen die recentelijk zijn aangemaakt door een gebruiker of IP-adres.
+Voer de gebruikernaam of het IP-adres in voor een lijst van te verwijderen pagina's.",
 	'nuke-submit-user'   => 'OK',
 	'nuke-submit-delete' => 'Geselecteerde verwijderen',
 	'right-nuke'         => "Massaal pagina's verwijderen",
@@ -895,7 +903,8 @@ $messages['sv'] = array(
 	'nuke-nopages'       => 'Inga nya sidor av [[Special:Contributions/$1|$1]] bland de senaste ändringarna.',
 	'nuke-list'          => 'Följande sidor har nyligen skapats av [[Special:Contributions/$1|$1]]. Skriv en raderingskommentar och klicka på knappen för att ta bort dem.',
 	'nuke-defaultreason' => 'Massradering av sidor skapade av $1',
-	'nuke-tools'         => 'Det här verktyget gör det möjligt att massradera sidor som nyligen skapats av en vissa användare eller IP-adress. Ange ett användarnamn eller en IP-adress för att de en lista över sidor som kan tas bort:',
+	'nuke-tools'         => 'Det här verktyget gör det möjligt att massradera sidor som nyligen skapats av en viss användare eller IP-adress.
+Ange ett användarnamn eller en IP-adress för att se en lista över sidor som kan tas bort.',
 	'nuke-submit-user'   => 'Visa',
 	'nuke-submit-delete' => 'Ta bort valda',
 	'right-nuke'         => 'Massradera sidor',
