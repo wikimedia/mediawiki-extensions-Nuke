@@ -188,6 +188,7 @@ $messages['cs'] = array(
 
 /** German (Deutsch)
  * @author Raimond Spekking
+ * @author Raymond
  */
 $messages['de'] = array(
 	'nuke'               => 'Massenlöschung',
@@ -196,7 +197,7 @@ $messages['de'] = array(
 	'nuke-list'          => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] erzeugt;
 gib einen Kommentar ein und drücke auf den Löschknopf.',
 	'nuke-defaultreason' => 'Massenlöschung von Seiten, die von „$1“ angelegt wurden',
-	'nuke-tools'         => 'Dieses Werkzeug ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Gib die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
+	'nuke-tools'         => 'Dieses Werkzeug ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Gib die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten.',
 	'nuke-submit-user'   => 'Hole Liste',
 	'nuke-submit-delete' => 'Löschen',
 	'right-nuke'         => 'Massenlöschung von Seiten',
@@ -726,8 +727,8 @@ $messages['oc'] = array(
 	'nuke-desc'          => 'Balha la possiblitat als administrators de [[Special:Nuke|suprimir en massa]] de paginas.',
 	'nuke-nopages'       => 'Cap de pagina novèla creada per [[Special:Contributions/$1|$1]] dins la lista dels darrièrs cambiaments.',
 	'nuke-list'          => 'Las paginas seguentas son estadas creadas recentament per [[Special:Contributions/$1|$1]]; Indicatz un comentari e clicatz sul boton per los suprimir.',
-	'nuke-defaultreason' => 'Supression en massa de las paginas ajustadas per $1',
-	'nuke-tools'         => 'Aqueste esplech autoriza las supressions en massa de las paginas ajustadas recentament per un utilizaire enregistrat o per una adreça IP. Indicatz l’adreça IP per obténer la lista de las paginas de suprimir :',
+	'nuke-defaultreason' => 'Supression en massa de las paginas apondudas per $1',
+	'nuke-tools'         => 'Aqueste esplech autoriza las supressions en massa de las paginas apondudas recentament per un utilizaire enregistrat o per una adreça IP. Indicatz l’adreça IP per obténer la tièra de las paginas de suprimir :',
 	'nuke-submit-user'   => 'Validar',
 	'nuke-submit-delete' => 'Supression seleccionada',
 	'right-nuke'         => 'Suprimir de paginas en massa',
