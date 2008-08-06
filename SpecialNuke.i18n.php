@@ -72,6 +72,14 @@ $messages['ar'] = array(
 	'right-nuke'         => 'حذف الصفحات كميا',
 );
 
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Ramsis II
+ */
+$messages['arz'] = array(
+	'nuke-submit-user'   => 'روح',
+	'nuke-submit-delete' => 'امسح اللي اخترته',
+);
+
 /** Asturian (Asturianu)
  * @author Esbardu
  */
