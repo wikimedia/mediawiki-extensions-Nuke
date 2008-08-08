@@ -24,7 +24,7 @@ $aliases['arz'] = array(
 	'Nuke' => array( 'حذف_كمى' ),
 );
 
-/** German
+/** German (Deutsch)
  * @author Raimond Spekking
  */
 $aliases['de'] = array(
