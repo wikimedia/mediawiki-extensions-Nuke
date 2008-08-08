@@ -14,12 +14,16 @@ $aliases['en'] = array(
 	'Nuke' => array( 'Nuke' ),
 );
 
-/** Arabic (العربية) */
+/** Arabic (العربية)
+ * @author Meno25
+ */
 $aliases['ar'] = array(
 	'Nuke' => array( 'حذف_كمي' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Spoken Arabic (مصرى)
+ * @author Meno25
+ */
 $aliases['arz'] = array(
 	'Nuke' => array( 'حذف_كمى' ),
 );
