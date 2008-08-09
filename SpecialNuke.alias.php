@@ -47,3 +47,8 @@ $aliases['nl'] = array(
 	'Nuke' => array( 'MassaalVerwijderen' ),
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
+$aliases['no'] = array(
+	'Nuke' => array( 'Massesletting' ),
+);
+
