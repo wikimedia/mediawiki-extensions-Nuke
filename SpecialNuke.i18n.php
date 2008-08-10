@@ -25,6 +25,7 @@ Input the username or IP to get a list of pages to delete.',
 );
 
 /** Message documentation (Message documentation)
+ * @author Jon Harald Søby
  * @author Meno25
  */
 $messages['qqq'] = array(
