@@ -584,7 +584,20 @@ $messages['krj'] = array(
  * @author Purodha
  */
 $messages['ksh'] = array(
+	'nuke' => 'Sigge fottschmieße ang Mass',
+	'nuke-desc' => 'Määd_et müjjelesch för de Wiki-Köbesse, [[Special:Nuke|angmass Sigge fottzeschmieße]].',
+	'nuke-nopages' => 'Mer han kein neu Sigge fum [[Special:Contributions/$1|$1]] en de [[Special:RecentChanges|{{lcfirst:{{int:Recentchanges}}}}]].',
+	'nuke-list' => 'Hee di Sigge sen fum „[[Special:Contributions/$1|$1]]“ neu
+aanjelaat woode. Jiff enne Jrond för et Fottschmieße aan,
+un dann donn der Knopp zom Fottschmieße dröcke.',
+	'nuke-defaultreason' => 'Fum $1 neu aanjelaate Sigge ang Block fottschmieße',
+	'nuke-tools' => 'Di Sigg hee hellef Der, angmaß Sigge fottzeschmieße,
+di ene bestemmpte enjeloggte udder namelose Metmaacher
+aanjalaat hät.
+Jif dä Metmaacher-Name udder de IP-Address dofun aan,
+öm en Liß met Sigge fun däm ze krijje.',
 	'nuke-submit-user' => 'Leß holle',
+	'nuke-submit-delete' => 'Donn de üßjewählte Sigge fottschmieße!',
 	'right-nuke' => 'Massich Sigge Fottschmieße',
 );
 
