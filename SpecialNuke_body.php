@@ -78,7 +78,7 @@ class SpecialNuke extends SpecialPage {
 			'method' => 'post' ),
 			null ) .
 			"\n<div>" .
-			wfMsgHtml( 'deletecomment' ) . ': ' .
+			wfMsgHtml( 'deletecomment' ) . ' ' .
 			Xml::element( 'input', array(
 				'name' => 'wpReason',
 				'value' => $reason,
