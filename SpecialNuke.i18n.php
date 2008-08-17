@@ -85,8 +85,15 @@ $messages['ar'] = array(
  * @author Ramsis II
  */
 $messages['arz'] = array(
+	'nuke-nopages' => '[[Special:Contributions/$1|$1]]  ماعملش صفحات جديدة في احدث التغيرات.',
+	'nuke-list' => 'الصفحات دي اتعملها انشاء قريب عي طريق [[Special:Contributions/$1|$1]];
+اكتب تعليق و دوس على الزرار علشان تمسحهم.',
+	'nuke-defaultreason' => 'مسح كبير للصفحات اللي ضافها $1',
+	'nuke-tools' => 'الطريقة دي بتسمحلك تعمل مسح كبير للصفحات اللي اتضافت قريب عن طريق واحد من اليوزرز او الأي بي.
+دخل اسم اليوزر او عنوان الاي بي علشان تطلعلك لستة بالصفحات اللي ح تتمسح.',
 	'nuke-submit-user' => 'روح',
 	'nuke-submit-delete' => 'امسح اللي اخترته',
+	'right-nuke' => 'مسح كبير للصفحات',
 );
 
 /** Asturian (Asturianu)
