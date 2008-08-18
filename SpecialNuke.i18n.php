@@ -85,6 +85,8 @@ $messages['ar'] = array(
  * @author Ramsis II
  */
 $messages['arz'] = array(
+	'nuke' => 'مسح كبير',
+	'nuke-desc' => 'بيدي السيسوبات امكانية  [[Special:Nuke|المسح الكبير]] للصفحات',
 	'nuke-nopages' => '[[Special:Contributions/$1|$1]]  ماعملش صفحات جديدة في احدث التغيرات.',
 	'nuke-list' => 'الصفحات دي اتعملها انشاء قريب عي طريق [[Special:Contributions/$1|$1]];
 اكتب تعليق و دوس على الزرار علشان تمسحهم.',
@@ -417,15 +419,15 @@ $messages['hil'] = array(
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
-	'nuke' => 'Grupno brisanje',
-	'nuke-desc' => 'Daje administratorima mogućnost [[Special:Nuke|masovnog brisanja]] stranica',
+	'nuke' => 'Skupno brisanje',
+	'nuke-desc' => 'Daje administratorima mogućnost [[Special:Nuke|skupnog brisanja]] stranica',
 	'nuke-nopages' => 'Nema novih stranica suradnika [[Special:Contributions/$1|$1]] među nedavnim promjenama.',
 	'nuke-list' => 'Slijedeće stranice je stvorio suradnik [[Special:Contributions/$1|$1]]; napišite zaključak i kliknite gumb za njihovo brisanje.',
-	'nuke-defaultreason' => 'Grupno brisanje stranica suradnika $1',
-	'nuke-tools' => 'Ova ekstenzija omogućava grupno brisanje stranica (članaka) nekog prijavljenog ili neprijavljenog suradnika. Upišite ime ili IP adresu za dobivanje popisa stranica koje je moguće obrisati:',
+	'nuke-defaultreason' => 'Skupno brisanje stranica suradnika $1',
+	'nuke-tools' => 'Ova ekstenzija omogućava skupno brisanje stranica (članaka) nekog prijavljenog ili neprijavljenog suradnika. Upišite ime ili IP adresu za dobivanje popisa stranica koje je moguće obrisati:',
 	'nuke-submit-user' => 'Kreni',
 	'nuke-submit-delete' => 'Obriši označeno',
-	'right-nuke' => 'Masovno brisanje stranica',
+	'right-nuke' => 'Skupno brisanje stranica',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
