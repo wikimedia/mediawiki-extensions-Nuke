@@ -42,6 +42,11 @@ $aliases['he'] = array(
 	'Nuke' => array( 'מחיקה_מרובה' ),
 );
 
+/** Nedersaksisch (Nedersaksisch) */
+$aliases['nds-nl'] = array(
+	'Nuke' => array( 'Massaal_vortdoon' ),
+);
+
 /** Dutch (Nederlands) */
 $aliases['nl'] = array(
 	'Nuke' => array( 'MassaalVerwijderen' ),
