@@ -526,6 +526,7 @@ $messages['it'] = array(
 
 /** Japanese (日本語)
  * @author JtFuruhata
+ * @author Muttley
  */
 $messages['ja'] = array(
 	'nuke' => 'まとめて削除',
@@ -536,6 +537,7 @@ $messages['ja'] = array(
 	'nuke-tools' => 'このツールを使うと、指定した利用者またはIPから最近追加されたページを、まとめて削除することができます。削除対象ページ一覧を取得する利用者名またはIPアドレスを入力してください:',
 	'nuke-submit-user' => '一覧取得',
 	'nuke-submit-delete' => '選択されたページを削除',
+	'right-nuke' => 'ページの一括削除',
 );
 
 /** Jutish (Jysk)
