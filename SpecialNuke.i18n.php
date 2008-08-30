@@ -82,19 +82,20 @@ $messages['ar'] = array(
 );
 
 /** Egyptian Spoken Arabic (مصرى)
+ * @author Meno25
  * @author Ramsis II
  */
 $messages['arz'] = array(
 	'nuke' => 'مسح كبير',
-	'nuke-desc' => 'بيدي السيسوبات امكانية  [[Special:Nuke|المسح الكبير]] للصفحات',
-	'nuke-nopages' => '[[Special:Contributions/$1|$1]]  ماعملش صفحات جديدة في احدث التغيرات.',
-	'nuke-list' => 'الصفحات دي اتعملها انشاء قريب عي طريق [[Special:Contributions/$1|$1]];
+	'nuke-desc' => 'بيدى السيسوبات امكانية  [[Special:Nuke|المسح الكبير]] للصفحات',
+	'nuke-nopages' => '[[Special:Contributions/$1|$1]]  ماعملش صفحات جديدة فى احدث التغيرات.',
+	'nuke-list' => 'الصفحات دى اتعملها انشاء قريب عى طريق [[Special:Contributions/$1|$1]];
 اكتب تعليق و دوس على الزرار علشان تمسحهم.',
-	'nuke-defaultreason' => 'مسح كبير للصفحات اللي ضافها $1',
-	'nuke-tools' => 'الطريقة دي بتسمحلك تعمل مسح كبير للصفحات اللي اتضافت قريب عن طريق واحد من اليوزرز او الأي بي.
-دخل اسم اليوزر او عنوان الاي بي علشان تطلعلك لستة بالصفحات اللي ح تتمسح.',
+	'nuke-defaultreason' => 'مسح كبير للصفحات اللى ضافها $1',
+	'nuke-tools' => 'الطريقة دى بتسمحلك تعمل مسح كبير للصفحات اللى اتضافت قريب عن طريق واحد من اليوزرز او الأى بي.
+دخل اسم اليوزر او عنوان الاى بى علشان تطلعلك لستة بالصفحات اللى ح تتمسح.',
 	'nuke-submit-user' => 'روح',
-	'nuke-submit-delete' => 'امسح اللي اخترته',
+	'nuke-submit-delete' => 'امسح اللى اخترته',
 	'right-nuke' => 'مسح كبير للصفحات',
 );
 
@@ -314,10 +315,11 @@ $messages['fi'] = array(
  * @author Grondin
  * @author IAlex
  * @author Sherbrooke
+ * @author Zetud
  */
 $messages['fr'] = array(
 	'nuke' => 'Suppression en masse',
-	'nuke-desc' => 'Donne la possiblité aux administrateurs de [[Special:Nuke|supprimer en masse]] des pages.',
+	'nuke-desc' => 'Donne la possibilité aux administrateurs de [[Special:Nuke|supprimer en masse]] des pages.',
 	'nuke-nopages' => 'Aucune nouvelle page créée par [[Special:Contributions/$1|$1]] dans la liste des changements récents.',
 	'nuke-list' => 'Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|$1]]; Indiquer un commentaire et cliquer sur le bouton pour les supprimer.',
 	'nuke-defaultreason' => 'Suppression en masse des pages ajoutées par $1',
