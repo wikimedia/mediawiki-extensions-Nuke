@@ -23,3 +23,4 @@ $wgAvailableRights[] = 'nuke';
 
 $wgAutoloadClasses['SpecialNuke'] = $dir . 'SpecialNuke_body.php';
 $wgSpecialPages['Nuke'] = 'SpecialNuke';
+$wgSpecialPageGroups['Nuke'] = 'pagetools';
