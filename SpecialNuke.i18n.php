@@ -277,8 +277,10 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi:',
 
 /** Spanish (Español)
  * @author Jatrobat
+ * @author Sanbec
  */
 $messages['es'] = array(
+	'nuke-nopages' => 'No hay páginas nuevas de [[Special:Contributions/$1|$1]] en los cambios recientes.',
 	'nuke-submit-user' => 'Ir',
 );
 
@@ -880,6 +882,7 @@ $messages['sah'] = array(
 	'nuke-tools' => 'Бу сирэй көмөтүнэн ханнык эмэ кыттааччы эбэтэр IP оҥорбут көннөрүүлэрин бүтүннүү суох гынахха сөп. Кыттааччы аатын эбэтэр IP-тын киллэрдэххинэ оҥорбут көннөрүүлэрин испииһэгэ тахсыа:',
 	'nuke-submit-user' => 'Толор',
 	'nuke-submit-delete' => 'Талыллыбыты сот',
+	'right-nuke' => 'Сирэйдэри халҕаһалыы суох оҥоруу',
 );
 
 /** Slovak (Slovenčina)
