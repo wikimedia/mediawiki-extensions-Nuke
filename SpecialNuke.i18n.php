@@ -27,8 +27,10 @@ Input the username or IP to get a list of pages to delete.',
 /** Message documentation (Message documentation)
  * @author Jon Harald Søby
  * @author Meno25
+ * @author Purodha
  */
 $messages['qqq'] = array(
+	'nuke-desc' => 'Short description of the Nuke extension, shown in [[Special:Version]]. Do not translate or change links.',
 	'nuke-submit-user' => '{{Identical|Go}}',
 	'right-nuke' => '{{doc-right}}',
 );
@@ -277,10 +279,13 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi:',
 
 /** Spanish (Español)
  * @author Jatrobat
+ * @author Remember the dot
  * @author Sanbec
  */
 $messages['es'] = array(
 	'nuke-nopages' => 'No hay páginas nuevas de [[Special:Contributions/$1|$1]] en los cambios recientes.',
+	'nuke-list' => '[[Special:Contributions/$1|$1]] recientemente creó las siguientes páginas;
+entregue un comentario y haga clic en la botón para borrarlas.',
 	'nuke-submit-user' => 'Ir',
 );
 
