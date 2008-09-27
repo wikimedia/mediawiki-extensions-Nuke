@@ -596,6 +596,13 @@ $messages['km'] = array(
 	'nuke-submit-delete' => 'លុបចេញ ជំរើសយក',
 );
 
+/** Krio (Krio)
+ * @author Jose77
+ */
+$messages['kri'] = array(
+	'nuke-submit-user' => 'Go to am',
+);
+
 /** Kinaray-a (Kinaray-a)
  * @author Jose77
  */
