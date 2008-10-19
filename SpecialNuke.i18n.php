@@ -105,15 +105,15 @@ $messages['arz'] = array(
  * @author Esbardu
  */
 $messages['ast'] = array(
-	'nuke' => 'Borráu masivu',
-	'nuke-desc' => 'Da a los alministradores la capacidá de [[Special:Nuke|borrar páxines masivamente]]',
+	'nuke' => 'Esborráu masivu',
+	'nuke-desc' => "Da a los alministradores la capacidá d'[[Special:Nuke|esborrar páxines masivamente]]",
 	'nuke-nopages' => 'Nun hai páxines nueves de [[Special:Contributions/$1|$1]] nos cambeos recientes.',
-	'nuke-list' => 'Les páxines siguientes foron creaes recién por [[Special:Contributions/$1|$1]]; escribi un comentariu y calca nel botón pa borrales.',
-	'nuke-defaultreason' => 'Borráu masivu de páxines añadíes por $1',
-	'nuke-tools' => "Esta ferramienta permite borraos masivos de páxines añadíes recién por un usariu o una IP determinada. Escribi'l nome d'usuariu o la IP pa obtener una llista de páxines pa borrar:",
+	'nuke-list' => 'Les páxines siguientes foron creaes recién por [[Special:Contributions/$1|$1]]; escribi un comentariu y calca nel botón pa esborrales.',
+	'nuke-defaultreason' => 'Esborráu masivu de páxines añadíes por $1',
+	'nuke-tools' => "Esta ferramienta permite esborraos masivos de páxines añadíes recién por un usariu o una IP determinada. Escribi'l nome d'usuariu o la IP pa obtener una llista de páxines pa esborrar:",
 	'nuke-submit-user' => 'Dir',
-	'nuke-submit-delete' => 'Borrar seleicionaes',
-	'right-nuke' => 'Borráu masivu de páxines',
+	'nuke-submit-delete' => 'Esborrar seleicionaes',
+	'right-nuke' => 'Esborráu masivu de páxines',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
