@@ -35,6 +35,16 @@ $aliases['de'] = array(
 	'Nuke' => array( 'Massenlöschung' ),
 );
 
+/** Persian (فارسی) */
+$aliases['fa'] = array(
+	'Nuke' => array( 'حذف_دسته‌جمعی' ),
+);
+
+/** Finnish (Suomi) */
+$aliases['fi'] = array(
+	'Nuke' => array( 'Massapoistaminen' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
@@ -55,5 +65,10 @@ $aliases['nl'] = array(
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
 $aliases['no'] = array(
 	'Nuke' => array( 'Massesletting' ),
+);
+
+/** Polish (Polski) */
+$aliases['pl'] = array(
+	'Nuke' => array( 'Masowe usuwanie' ),
 );
 
