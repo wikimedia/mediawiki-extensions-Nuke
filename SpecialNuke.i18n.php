@@ -846,6 +846,15 @@ $messages['pt'] = array(
 	'right-nuke' => 'Eliminar páginas em massa',
 );
 
+/** Brazilian Portuguese (Português do Brasil)
+ * @author Carla404
+ */
+$messages['pt-br'] = array(
+	'nuke' => 'Eliminar em massa',
+	'nuke-desc' => 'Dá aos sysops a possibilidade de [[Special:Nuke|apagar páginas em massa]]',
+	'nuke-nopages' => 'Não há novas páginas criadas por [[Special:Contributions/$1|$1]] nas mudanças recentes.',
+);
+
 /** Quechua (Runa Simi)
  * @author AlimanRuna
  */
