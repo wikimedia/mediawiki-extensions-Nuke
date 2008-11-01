@@ -537,12 +537,13 @@ $messages['it'] = array(
 );
 
 /** Japanese (日本語)
+ * @author Fievarsty
  * @author JtFuruhata
  * @author Muttley
  */
 $messages['ja'] = array(
 	'nuke' => 'まとめて削除',
-	'nuke-desc' => '{{int:group-sysop}}に[[Special:Nuke|まとめて削除]]ページを提供する',
+	'nuke-desc' => '{{int:group-sysop}}に[[Special:Nuke|まとめて削除]]するページを提供する',
 	'nuke-nopages' => '[[Special:Contributions/$1|$1]] が最近更新したページはありません。',
 	'nuke-list' => '以下は、[[Special:Contributions/$1|$1]] によって最近作成されたページの一覧です。要約欄へ記入しボタンを押すと、一気に消えて無くなります。',
 	'nuke-defaultreason' => '$1 によって加えられたページを一括して削除',
