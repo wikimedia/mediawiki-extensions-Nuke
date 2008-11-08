@@ -324,7 +324,7 @@ $messages['fi'] = array(
 	'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP:n perusteella. Kirjoita käyttäjänimi tai IP, niin saat listan poistettavista sivuista:',
 	'nuke-submit-user' => 'Siirry',
 	'nuke-submit-delete' => 'Poista valitut',
-	'right-nuke' => 'Sivujen massapoistaminen',
+	'right-nuke' => 'Massapoistaa sivuja',
 );
 
 /** French (Français)
