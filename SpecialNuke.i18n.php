@@ -198,6 +198,13 @@ $messages['br'] = array(
 	'nuke-submit-delete' => 'Diverkañ diuzet',
 );
 
+/** Bosnian (Bosanski)
+ * @author CERminator
+ */
+$messages['bs'] = array(
+	'nuke-submit-user' => 'Idi',
+);
+
 /** Catalan (Català)
  * @author Paucabot
  * @author SMP
