@@ -202,7 +202,12 @@ $messages['br'] = array(
  * @author CERminator
  */
 $messages['bs'] = array(
+	'nuke' => 'Masovno brisanje',
+	'nuke-desc' => 'Daje administratorima mogućnost [[Special:Nuke|masovnog brisanja]] stranica',
+	'nuke-nopages' => 'Nema novih stranica od korisnika [[Special:Contributions/$1|$1]] u nedavnim izmjenama.',
 	'nuke-submit-user' => 'Idi',
+	'nuke-submit-delete' => 'Obriši označeno',
+	'right-nuke' => 'Masovno brisanje stranica',
 );
 
 /** Catalan (Català)
