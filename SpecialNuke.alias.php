@@ -52,6 +52,11 @@ $aliases['he'] = array(
 	'Nuke' => array( 'מחיקה_מרובה' ),
 );
 
+/** Hungarian (Magyar) */
+$aliases['hu'] = array(
+	'Nuke' => array( 'Kiírtás' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $aliases['nds-nl'] = array(
 	'Nuke' => array( 'Massaal_vortdoon' ),
