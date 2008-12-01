@@ -974,6 +974,13 @@ $messages['sah'] = array(
 	'right-nuke' => 'Сирэйдэри халҕаһалыы суох оҥоруу',
 );
 
+/** Sinhala (සිංහල)
+ * @author නන්දිමිතුරු
+ */
+$messages['si'] = array(
+	'nuke-submit-user' => 'යන්න',
+);
+
 /** Slovak (Slovenčina)
  * @author Helix84
  */
