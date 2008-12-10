@@ -601,13 +601,14 @@ $messages['it'] = array(
 );
 
 /** Japanese (日本語)
+ * @author Aotake
  * @author Fievarsty
  * @author JtFuruhata
  * @author Muttley
  */
 $messages['ja'] = array(
 	'nuke' => 'まとめて削除',
-	'nuke-desc' => '{{int:group-sysop}}に[[Special:Nuke|まとめて削除]]するページを提供する',
+	'nuke-desc' => '{{int:group-sysop}}がページを[[Special:Nuke|まとめて削除]]できるようにする',
 	'nuke-nopages' => '[[Special:Contributions/$1|$1]] が最近更新したページはありません。',
 	'nuke-list' => '以下は、[[Special:Contributions/$1|$1]] によって最近作成されたページの一覧です。要約欄へ記入しボタンを押すと、一気に消えて無くなります。',
 	'nuke-defaultreason' => '$1 によって加えられたページを一括して削除',
@@ -650,6 +651,7 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
 
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
+ * @author Thearith
  */
 $messages['km'] = array(
 	'nuke' => 'លុបចេញ ជាខ្សែ',
@@ -659,7 +661,7 @@ $messages['km'] = array(
 	'nuke-defaultreason' => 'ការដកចេញ ជាខ្សែ នៃ ទំព័រ បានបន្ថែម ដោយ $1',
 	'nuke-tools' => 'ឧបករនេះ អនុញ្ញាតិ លុបចេញ ជាខ្សែ នូវ ទំព័រទើបបានបន្ថែមថ្មីៗ ដោយ អ្នកប្រើប្រាស់បានចុះឈ្មោះ ឬ ដោយ អាស័យដ្ឋាន IP ។ សូម បញ្ចូល ឈ្មោះអ្នកប្រើប្រាស់ ឬ អាស័យដ្ឋាន IP ដើម្បី មាន បញ្ជីទំព័រ សំរាប់លុប ៖',
 	'nuke-submit-user' => 'ទៅ',
-	'nuke-submit-delete' => 'លុបចេញ ជំរើសយក',
+	'nuke-submit-delete' => 'លុបចេញ ជម្រើសយក',
 );
 
 /** Krio (Krio)

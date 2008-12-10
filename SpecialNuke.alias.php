@@ -45,6 +45,11 @@ $aliases['fi'] = array(
 	'Nuke' => array( 'Massapoistaminen' ),
 );
 
+/** Swiss German (Alemannisch) */
+$aliases['gsw'] = array(
+	'Nuke' => array( 'Masseleschig', '' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
