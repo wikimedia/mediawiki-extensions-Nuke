@@ -664,6 +664,15 @@ $messages['km'] = array(
 	'nuke-submit-delete' => 'លុបចេញ ជម្រើសយក',
 );
 
+/** Korean (한국어)
+ * @author Kwj2772
+ */
+$messages['ko'] = array(
+	'nuke' => '문서 대량 삭제',
+	'nuke-nopages' => '최근 바뀜에 [[Special:Contributions/$1|$1]] 사용자가 만든 문서가 없습니다.',
+	'nuke-submit-delete' => '선택한 문서를 삭제',
+);
+
 /** Krio (Krio)
  * @author Jose77
  */
