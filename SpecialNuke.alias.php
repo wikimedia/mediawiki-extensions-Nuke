@@ -28,6 +28,11 @@ $aliases['arz'] = array(
 	'Nuke' => array( 'حذف_كمى' ),
 );
 
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца)) */
+$aliases['be-tarask'] = array(
+	'Nuke' => array( 'Масавае_выдаленьне' ),
+);
+
 /** German (Deutsch)
  * @author Raimond Spekking
  */

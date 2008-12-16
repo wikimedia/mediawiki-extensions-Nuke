@@ -151,9 +151,19 @@ $messages['be'] = array(
 
 /** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
  * @author EugeneZelenko
+ * @author Jim-by
  */
 $messages['be-tarask'] = array(
+	'nuke' => 'Масавае выдаленьне',
+	'nuke-desc' => 'Дае адміністратарам магчымасьць [[Special:Nuke|масавага выдаленьня]] старонак',
+	'nuke-nopages' => 'У апошніх зьменах няма новых старонак, створаных [[Special:Contributions/$1|$1]].',
+	'nuke-list' => 'Наступныя старонкі былі нядаўна створаны ўдзельнікам [[Special:Contributions/$1|$1]];
+дадайце камэнтар і націсьніце кнопку для іх выдаленьня.',
+	'nuke-defaultreason' => 'Масавае выдаленьне старонак, створаных удзельнікам $1',
 	'nuke-tools' => 'Гэтая старонка дазваляе рабіць масавыя выдаленьні старонак, створаных пэўным удзельнікам альбо з IP-адрасу. Увядзіце імя ўдзельніка або IP-адрас для таго, каб атрымаць сьпіс створаных ім старонак.',
+	'nuke-submit-user' => 'Выканаць',
+	'nuke-submit-delete' => 'Выдаліць выбраныя',
+	'right-nuke' => 'масавае выдаленьне старонак',
 );
 
 /** Bulgarian (Български)
@@ -205,6 +215,10 @@ $messages['bs'] = array(
 	'nuke' => 'Masovno brisanje',
 	'nuke-desc' => 'Daje administratorima mogućnost [[Special:Nuke|masovnog brisanja]] stranica',
 	'nuke-nopages' => 'Nema novih stranica od korisnika [[Special:Contributions/$1|$1]] u nedavnim izmjenama.',
+	'nuke-list' => 'Prikazane stranice su nedavno napravljenje od strane [[Special:Contributions/$1|$1]];
+navedite razloge i komentare te kliknite na dugme da bi ste ih obrisali.',
+	'nuke-defaultreason' => 'Masovno uklanjanje stranica koje je dodao $1',
+	'nuke-tools' => 'Ovaj alat omogućuje masovno brisanje stranica koje je nedavno dodao određeni korisnik ili IP adresa. Unesite korisničko ime ili IP adresi za izlistavanje stranica koje se brišu.',
 	'nuke-submit-user' => 'Idi',
 	'nuke-submit-delete' => 'Obriši označeno',
 	'right-nuke' => 'Masovno brisanje stranica',
@@ -654,12 +668,12 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
  * @author Thearith
  */
 $messages['km'] = array(
-	'nuke' => 'លុបចេញ ជាខ្សែ',
-	'nuke-desc' => 'ផ្តល់លទ្ធភាព អោយ អ្នកថែទាំប្រព័ន្ធ [[Special:Nuke|លុបចេញ ជាខ្សែ]] ទំព័រនានា',
-	'nuke-nopages' => 'គ្មាន ទំព័រថ្មី [[Special:Contributions/$1|$1]] ក្នុង បំលាស់ប្តូរ ថ្មីៗ ។',
-	'nuke-list' => 'ទំព័រទាំងនេះ ទើបតែ ត្រូវបានបង្កើត ដោយ [[Special:Contributions/$1|$1]]; សូម ដាក់ ហេតុផល និង ចុច ប្រអប់ ដើម្បី លុបចេញ ពួកវា ។',
-	'nuke-defaultreason' => 'ការដកចេញ ជាខ្សែ នៃ ទំព័រ បានបន្ថែម ដោយ $1',
-	'nuke-tools' => 'ឧបករនេះ អនុញ្ញាតិ លុបចេញ ជាខ្សែ នូវ ទំព័រទើបបានបន្ថែមថ្មីៗ ដោយ អ្នកប្រើប្រាស់បានចុះឈ្មោះ ឬ ដោយ អាស័យដ្ឋាន IP ។ សូម បញ្ចូល ឈ្មោះអ្នកប្រើប្រាស់ ឬ អាស័យដ្ឋាន IP ដើម្បី មាន បញ្ជីទំព័រ សំរាប់លុប ៖',
+	'nuke' => 'លុបចេញ​ជាខ្សែ',
+	'nuke-desc' => 'ផ្តល់លទ្ធភាព​ឱ្យ​អ្នកថែទាំប្រព័ន្ធ [[Special:Nuke|លុបចេញ​ជាខ្សែ]] ទំព័រនានា',
+	'nuke-nopages' => 'គ្មាន​ទំព័រ​ថ្មី [[Special:Contributions/$1|$1]] ក្នុង​បំលាស់ប្តូរ​ថ្មីៗ​។',
+	'nuke-list' => 'ទំព័រទាំងនេះ ទើបតែ​ត្រូវ​បាន​បង្កើត ដោយ [[Special:Contributions/$1|$1]]; សូម​ដាក់​ហេតុផល និង​ចុច​ប្រអប់​ដើម្បី​លុបចេញ​ពួកវា​។',
+	'nuke-defaultreason' => 'ការដកចេញ​ជាខ្សែ នៃ​ទំព័រ​បានបន្ថែម​ដោយ $1',
+	'nuke-tools' => 'ឧបករណ៍​នេះ អនុញ្ញាត​លុបចេញ​ជាខ្សែ​នូវ​ទំព័រ​ទើប​បាន​បន្ថែម​ថ្មីៗ ដោយ​អ្នកប្រើប្រាស់​បាន​ចុះ​ឈ្មោះ ឬ ដោយ​អាសយដ្ឋាន IP ។ សូម​បញ្ចូល​ឈ្មោះអ្នកប្រើប្រាស់ ឬ អាសយដ្ឋាន IP ដើម្បី​មាន​បញ្ជីទំព័រ​សម្រាប់​លុប ៖',
 	'nuke-submit-user' => 'ទៅ',
 	'nuke-submit-delete' => 'លុបចេញ ជម្រើសយក',
 );
