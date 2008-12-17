@@ -52,7 +52,7 @@ $aliases['fi'] = array(
 
 /** Swiss German (Alemannisch) */
 $aliases['gsw'] = array(
-	'Nuke' => array( 'Masseleschig', '' ),
+	'Nuke' => array( 'Masseleschig' ),
 );
 
 /** Hebrew (עברית)
