@@ -446,6 +446,7 @@ $messages['gl'] = array(
  */
 $messages['grc'] = array(
 	'nuke' => 'Μαζικὴ διαγραφή',
+	'nuke-desc' => 'Δίδει τοῖς γέρουσι τὴν ἱκανότητα [[Special:Nuke|μαζικῆς διαγραφῆς]] δέλτων.',
 	'nuke-nopages' => 'Οὐδεμία νέα δέλτος ὑπὸ τοῦ [[Special:Contributions/$1|$1]] ἐν ταῖς προσφάτοις ἀλλαγαῖς.',
 	'nuke-defaultreason' => 'Μαζικὴ ἀφαίρεσις δέλτων προστεθειμένων ὑπὸ τοῦ $1',
 	'nuke-submit-user' => 'Ἱέναι',
