@@ -292,6 +292,22 @@ geben Sie einen Kommentar ein und drücken Sie auf den Löschknopf.',
 	'nuke-tools' => 'Dieses Werkzeug ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Geben Sie die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
 );
 
+/** Lower Sorbian (Dolnoserbski)
+ * @author Michawiki
+ */
+$messages['dsb'] = array(
+	'nuke' => 'Masowe lašowanje',
+	'nuke-desc' => 'Zmóžnja admininistratoram boki [[Special:Nuke|z masami lašowaś]]',
+	'nuke-nopages' => 'Žedne nowe boki wót [[Special:Contributions/$1|$1]] w aktualnych změnach',
+	'nuke-list' => 'Slědujuce boki su se nowo napórali wót [[Special:Contributions/$1|$1]];
+zapódaj komentar a klikni na tłocašk, aby je lašował.',
+	'nuke-defaultreason' => 'Masowe lašowanje bokow, kótarež $1 jo pśidał.',
+	'nuke-tools' => 'Toś ten rěd zmóžnja masowe lašowanja bokow, kótarež wěsty wužywaŕ abo IP jo rowno pśidał. Zapódaj wužywarske mě abo IP-adresu, aby dostał lisćinu bokow, kótarež maju se lašowaś.',
+	'nuke-submit-user' => 'W pórěźe',
+	'nuke-submit-delete' => 'Wubrane wulašowaś',
+	'right-nuke' => 'Boki z masami lašowaś',
+);
+
 /** Ewe (Eʋegbe) */
 $messages['ee'] = array(
 	'nuke-submit-user' => 'Yi',
@@ -690,6 +706,9 @@ $messages['ko'] = array(
 	'nuke' => '문서 대량 삭제',
 	'nuke-nopages' => '최근 바뀜에 [[Special:Contributions/$1|$1]] 사용자가 만든 문서가 없습니다.',
 	'nuke-defaultreason' => '$1이 작성한 문서를 대량으로 삭제함',
+	'nuke-tools' => '이 기능은 특정 사용자나 IP 사용자가 생성한 문서를 대량 삭제할 수 있도록 할 수 있습니다.
+삭제할 문서의 목록을 만들기 위해 사용자 이름이나 IP를 입력하십시오.',
+	'nuke-submit-user' => '계속',
 	'nuke-submit-delete' => '선택한 문서를 삭제',
 	'right-nuke' => '문서 대량 삭제',
 );
@@ -714,7 +733,7 @@ $messages['krj'] = array(
 $messages['ksh'] = array(
 	'nuke' => 'Sigge fottschmieße ang Mass',
 	'nuke-desc' => 'Määd_et müjjelesch för de Wiki-Köbesse, [[Special:Nuke|angmass Sigge fottzeschmieße]].',
-	'nuke-nopages' => 'Mer han kein neu Sigge fum [[Special:Contributions/$1|$1]] en de [[Special:RecentChanges|{{lcfirst:{{int:Recentchanges}}}}]].',
+	'nuke-nopages' => 'Mer han kein neu Sigge fum [[Special:Contributions/$1|$1]] en de {{lcfirst:{{int:Recentchanges}}}}.',
 	'nuke-list' => 'Hee di Sigge sen fum „[[Special:Contributions/$1|$1]]“ neu
 aanjelaat woode. Jiff enne Jrond för et Fottschmieße aan,
 un dann donn der Knopp zom Fottschmieße dröcke.',
@@ -854,6 +873,23 @@ Voer de gebruikernaam of het IP-adres in voor een lijst van te verwijderen pagin
 	'nuke-submit-user' => 'OK',
 	'nuke-submit-delete' => 'Geselecteerde verwijderen',
 	'right-nuke' => "Massaal pagina's verwijderen",
+);
+
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+ * @author Harald Khan
+ */
+$messages['nn'] = array(
+	'nuke' => 'Massesletting',
+	'nuke-desc' => 'Gjev administratorane moglegheita til å [[Special:Nuke|massesletta]] sider',
+	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringar.',
+	'nuke-list' => 'Følgjande sider blei nyleg oppretta av [[Special:Contributions/$1|$1]]. 
+Skriv inn ei sletteårsak og trykk på knappen for å sletta alle sidene.',
+	'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
+	'nuke-tools' => 'Dette verktøyet mogleggjer massesletting av sider som nyleg er lagt inn av ein viss brukar eller ei viss IP-adressa. 
+Skriv inn eit brukarnamn eller ei IP-adressa for å få ei lista over sider som kan bli sletta.',
+	'nuke-submit-user' => 'Gå',
+	'nuke-submit-delete' => 'Slett valte',
+	'right-nuke' => 'Masseslett sider',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
