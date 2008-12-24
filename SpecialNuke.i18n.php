@@ -345,6 +345,7 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi:',
  */
 $messages['es'] = array(
 	'nuke' => 'Borrado en masa',
+	'nuke-desc' => 'Da a los administradores la posibilidad de [[Special:Nuke|borrar páginas de forma masiva]]',
 	'nuke-nopages' => 'No hay páginas nuevas de [[Special:Contributions/$1|$1]] en los cambios recientes.',
 	'nuke-list' => '[[Special:Contributions/$1|$1]] creó recientemente las siguientes páginas;
 escriba un comentario y haga clic en el botón para borrarlas.',
