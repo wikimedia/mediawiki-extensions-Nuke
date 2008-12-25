@@ -1162,6 +1162,23 @@ $messages['tg-cyrl'] = array(
 	'nuke-submit-delete' => 'Интихобшудагон ҳазф шаванд',
 );
 
+/** Tagalog (Tagalog)
+ * @author AnakngAraw
+ */
+$messages['tl'] = array(
+	'nuke' => 'Malawakang pagbura',
+	'nuke-desc' => "Nagbibigay sa mga ''sysop'' ng kakayahang [[Special:Nuke|magburang pangmalawakan]] ng mga pahina",
+	'nuke-nopages' => 'Walang bagong mga pahinang ginawa ni [[Special:Contributions/$1|$1]] na nasa loob ng kamakailang mga pagbabago.',
+	'nuke-list' => 'Ang sumusunod na mga pahina ay nilikha kamakailan lamang ni [[Special:Contributions/$1|$1]];
+maglagay/magpasok ng isang puna (kumento) at pindutin ang pindutan upang mabura ang mga ito.',
+	'nuke-defaultreason' => 'Idinagdag ni $1 ang malawakang pagbubura ng mga pahina',
+	'nuke-tools' => 'Nagpapahintulot ang kagamitang ito upang makapagbura nang malawakan ng mga pahinang idinagdag kamakailan ng isang ibinigay na tagagamit o IP.
+Ipasok ang pangalan ng tagagamit o IP upang makakuha ng isang talaan ng mga pahinang buburahin.',
+	'nuke-submit-user' => 'Gawin',
+	'nuke-submit-delete' => 'Pinili ang pagbura',
+	'right-nuke' => 'Malawakang burahin ang mga pahina',
+);
+
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
  * @author Srhat
