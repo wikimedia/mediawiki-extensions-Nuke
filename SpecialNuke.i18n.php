@@ -706,6 +706,8 @@ $messages['km'] = array(
 $messages['ko'] = array(
 	'nuke' => '문서 대량 삭제',
 	'nuke-nopages' => '최근 바뀜에 [[Special:Contributions/$1|$1]] 사용자가 만든 문서가 없습니다.',
+	'nuke-list' => '다음 문서들은 [[Special:Contributions/$1|$1]]이 최근에 생성한 문서입니다.
+삭제하시려면 이유를 입력하고 아래 버튼을 클릭해주세요.',
 	'nuke-defaultreason' => '$1이 작성한 문서를 대량으로 삭제함',
 	'nuke-tools' => '이 기능은 특정 사용자나 IP 사용자가 생성한 문서를 대량 삭제할 수 있도록 할 수 있습니다.
 삭제할 문서의 목록을 만들기 위해 사용자 이름이나 IP를 입력하십시오.',
