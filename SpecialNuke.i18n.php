@@ -317,7 +317,9 @@ $messages['ee'] = array(
  * @author ZaDiak
  */
 $messages['el'] = array(
+	'nuke' => 'Μαζική διαγραφή',
 	'nuke-submit-user' => 'Πήγαινε',
+	'right-nuke' => 'Μαζική διαγραφή σελίδων',
 );
 
 /** Esperanto (Esperanto)
@@ -1043,6 +1045,21 @@ $messages['sah'] = array(
 	'nuke-submit-user' => 'Толор',
 	'nuke-submit-delete' => 'Талыллыбыты сот',
 	'right-nuke' => 'Сирэйдэри халҕаһалыы суох оҥоруу',
+);
+
+/** Sicilian (Sicilianu)
+ * @author Santu
+ */
+$messages['scn'] = array(
+	'nuke' => 'Scancella la massa',
+	'nuke-desc' => "Pirmetti a l'amministraturi la [[Special:Nuke|scancillazzioni 'n massa]] dê pàggini",
+	'nuke-nopages' => "Nun s'attruvaru pàggini novi criati di [[Special:Contributions/$1|$1]] ntra li mudìfichi fatti di picca tempu.",
+	'nuke-list' => 'Li pàggini ccà di sècutu havi picca ca foru criati di [[Special:Contributions/$1|$1]]; nzirisci nu cummentu e cunferma la scancillazzioni.',
+	'nuke-defaultreason' => 'Scanciallazzioni di massa dê pàggini criati di $1',
+	'nuke-tools' => "Stu strumentu pirmetti di scancillari 'n massa pàggini criati di picca tempu di N'utenti o IP. Nzirisci lu nomu utenti o lu IP pi la lista dê pàggini di scancillari.",
+	'nuke-submit-user' => 'Và',
+	'nuke-submit-delete' => 'Scancella la silizzioni',
+	'right-nuke' => "Scancella pàggini 'n massa",
 );
 
 /** Sinhala (සිංහල)
