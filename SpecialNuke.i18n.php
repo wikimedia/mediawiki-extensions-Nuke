@@ -1296,16 +1296,19 @@ $messages['zh-classical'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Gaoxuewei
  * @author Shinjiman
  */
 $messages['zh-hans'] = array(
 	'nuke' => '大量删除',
-	'nuke-desc' => '给操作员作出[[Special:Nuke|大量删除]]的能力',
+	'nuke-desc' => '使系统管理员具有[[Special:Nuke|大量删除]]页面的能力',
 	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|$1]]所作的新页面。',
-	'nuke-list' => '以下的页面是由[[Special:Contributions/$1|$1]]在以前所写的；记下一个注解再点击按钮去删除它们。',
+	'nuke-list' => '以下页面是由[[Special:Contributions/$1|$1]]最新创建的；
+请留下摘要信息，并点击按钮删除这些页面。',
 	'nuke-defaultreason' => '大量删除由$1所创建的页面',
-	'nuke-tools' => '这个工具容许先前提供了的的用户或IP创建的页面。输入用户名或IP去取得页面列表以作删除:',
-	'nuke-submit-user' => '去',
+	'nuke-tools' => '这个工具允许根据提供的用户名称或IP大量删除它们最新添加的页面。
+请输入用户名或IP，以得到页面列表并作删除。',
+	'nuke-submit-user' => 'Go',
 	'nuke-submit-delete' => '删除已选择的',
 	'right-nuke' => '大量删除页面',
 );
