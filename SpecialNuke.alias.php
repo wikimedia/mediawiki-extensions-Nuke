@@ -87,3 +87,8 @@ $aliases['pl'] = array(
 	'Nuke' => array( 'Masowe usuwanie' ),
 );
 
+/** Sanskrit (संस्कृत) */
+$aliases['sa'] = array(
+	'Nuke' => array( 'न्यूक' ),
+);
+
