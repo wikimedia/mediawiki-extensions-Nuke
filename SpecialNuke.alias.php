@@ -67,6 +67,11 @@ $aliases['hu'] = array(
 	'Nuke' => array( 'Kiírtás' ),
 );
 
+/** Japanese (日本語) */
+$aliases['ja'] = array(
+	'Nuke' => array( 'まとめて削除' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $aliases['nds-nl'] = array(
 	'Nuke' => array( 'Massaal_vortdoon' ),
