@@ -1304,7 +1304,7 @@ $messages['yue'] = array(
 );
 
 /** Classical Chinese (文言) */
-$messages['zh-classical'] = array(
+$messages['lzh'] = array(
 	'nuke' => '量刪',
 	'nuke-nopages' => '近易無示[[Special:Contributions/$1|$1]]之新頁。',
 	'nuke-list' => '[[Special:Contributions/$1|$1]]之作所示；剔註再點刪之。',
