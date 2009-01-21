@@ -703,6 +703,13 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
 	'right-nuke' => 'Pambusakan masal',
 );
 
+/** Georgian (ქართული)
+ * @author Sopho
+ */
+$messages['ka'] = array(
+	'nuke-submit-user' => 'გადასვლა',
+);
+
 /** Khmer (ភាសាខ្មែរ)
  * @author Chhorran
  * @author Thearith
@@ -810,6 +817,18 @@ $messages['lt'] = array(
 	'nuke-nopages' => 'Nėra naujų puslapių, sukurtų [[Special:Contributions/$1|$1]] naujausiuose keitimuose.',
 	'nuke-submit-user' => 'Išsiųsti',
 	'nuke-submit-delete' => 'Ištrinti pasirinktus(ą)',
+);
+
+/** Classical Chinese (文言) */
+$messages['lzh'] = array(
+	'nuke' => '量刪',
+	'nuke-nopages' => '近易無示[[Special:Contributions/$1|$1]]之新頁。',
+	'nuke-list' => '[[Special:Contributions/$1|$1]]之作所示；剔註再點刪之。',
+	'nuke-defaultreason' => '量刪由$1所建之頁',
+	'nuke-tools' => '此意供簿或IP建之頁。入簿名加號取表作刪也：',
+	'nuke-submit-user' => '往',
+	'nuke-submit-delete' => '刪已擇',
+	'right-nuke' => '量刪頁',
 );
 
 /** Malayalam (മലയാളം)
@@ -1121,12 +1140,14 @@ $messages['sr-ec'] = array(
  */
 $messages['stq'] = array(
 	'nuke' => 'Massen-Läskenge',
+	'nuke-desc' => 'Moaket Administratore ju [[Special:Nuke|Massenlöösenge]] fon Sieden muugelk',
 	'nuke-nopages' => 'Dät rakt in do Lääste Annerengen neen näie Sieden fon [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Do foulgjende Sieden wuuden fon [[Special:Contributions/$1|$1]] moaked; reek n Kommentoar ien un tai ap dän Läsk-Knoop.',
 	'nuke-defaultreason' => 'Massen-Läskenge fon Sieden, do der fon $1 anlaid wuden',
 	'nuke-tools' => 'Disse Reewe moaket ju Massen-Läskenge muugelk fon Sieden, do der fon een IP-Adresse of aan Benutser anlaid wuuden. Reek ju IP-Adresse/die Benutsernoome ien, uum ne Lieste tou kriegen:',
 	'nuke-submit-user' => 'Hoalje Lieste',
 	'nuke-submit-delete' => 'Läskje',
+	'right-nuke' => 'Massenlöösenge fon Sieden',
 );
 
 /** Sundanese (Basa Sunda)
@@ -1218,11 +1239,21 @@ Ipasok ang pangalan ng tagagamit o IP upang makakuha ng isang talaan ng mga pahi
 
 /** Turkish (Türkçe)
  * @author Erkan Yilmaz
+ * @author Joseph
  * @author Srhat
  */
 $messages['tr'] = array(
+	'nuke' => 'Kitlesel silme',
+	'nuke-desc' => 'Hizmetlilere, sayfaları [[Special:Nuke|kitlesel silme]] yeteneği verir',
+	'nuke-nopages' => 'Son değişikliklerde [[Special:Contributions/$1|$1]] tarafından oluşturulan yeni sayfa yok.',
+	'nuke-list' => 'Aşağıdaki sayfalar yakın zamanda [[Special:Contributions/$1|$1]] tarafından oluşturuldu;
+bir yorum girin ve silmek için düğmeye basın.',
+	'nuke-defaultreason' => '$1 tarafından eklenen sayfaların kitlesel kaldırımı',
+	'nuke-tools' => 'Bu araç, bir kullanıcı ya da IP tarafından yakın zamanda eklenen sayfaların kitlesel silinmelerine izin verir.
+Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin.',
 	'nuke-submit-user' => 'Git',
 	'nuke-submit-delete' => 'Seçileni sil',
+	'right-nuke' => 'Sayfaları kitlesel olarak sil',
 );
 
 /** Ukrainian (Українська)
@@ -1301,18 +1332,6 @@ $messages['yue'] = array(
 	'nuke-submit-user' => '去',
 	'nuke-submit-delete' => '刪除㨂咗嘅',
 	'right-nuke' => '大量刪頁',
-);
-
-/** Classical Chinese (文言) */
-$messages['lzh'] = array(
-	'nuke' => '量刪',
-	'nuke-nopages' => '近易無示[[Special:Contributions/$1|$1]]之新頁。',
-	'nuke-list' => '[[Special:Contributions/$1|$1]]之作所示；剔註再點刪之。',
-	'nuke-defaultreason' => '量刪由$1所建之頁',
-	'nuke-tools' => '此意供簿或IP建之頁。入簿名加號取表作刪也：',
-	'nuke-submit-user' => '往',
-	'nuke-submit-delete' => '刪已擇',
-	'right-nuke' => '量刪頁',
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
