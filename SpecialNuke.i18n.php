@@ -12,7 +12,7 @@ $messages = array();
  */
 $messages['en'] = array(
 	'nuke'               => 'Mass delete',
-	'nuke-desc'          => 'Gives sysops the ability to [[Special:Nuke|mass delete]] pages',
+	'nuke-desc'          => 'Gives administrators the ability to [[Special:Nuke|mass delete]] pages',
 	'nuke-nopages'       => "No new pages by [[Special:Contributions/$1|$1]] in recent changes.",
 	'nuke-list'          => "The following pages were recently created by [[Special:Contributions/$1|$1]];
 put in a comment and hit the button to delete them.",
