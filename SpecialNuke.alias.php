@@ -72,6 +72,11 @@ $aliases['ja'] = array(
 	'Nuke' => array( 'まとめて削除' ),
 );
 
+/** Korean (한국어) */
+$aliases['ko'] = array(
+	'Nuke' => array( '문서대량삭제' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $aliases['nds-nl'] = array(
 	'Nuke' => array( 'Massaal_vortdoon' ),
