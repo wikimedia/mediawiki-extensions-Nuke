@@ -40,6 +40,11 @@ $aliases['de'] = array(
 	'Nuke' => array( 'Massenlöschung' ),
 );
 
+/** Lower Sorbian (Dolnoserbski) */
+$aliases['dsb'] = array(
+	'Nuke' => array( 'Wulašowanje z kopicami' ),
+);
+
 /** Persian (فارسی) */
 $aliases['fa'] = array(
 	'Nuke' => array( 'حذف_دسته‌جمعی' ),
@@ -60,6 +65,11 @@ $aliases['gsw'] = array(
  */
 $aliases['he'] = array(
 	'Nuke' => array( 'מחיקה_מרובה' ),
+);
+
+/** Upper Sorbian (Hornjoserbsce) */
+$aliases['hsb'] = array(
+	'Nuke' => array( 'Masowe wušmórnjenje' ),
 );
 
 /** Hungarian (Magyar) */
