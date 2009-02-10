@@ -1023,11 +1023,18 @@ $messages['pt'] = array(
 
 /** Brazilian Portuguese (Português do Brasil)
  * @author Carla404
+ * @author Eduardo.mps
  */
 $messages['pt-br'] = array(
 	'nuke' => 'Eliminar em massa',
 	'nuke-desc' => 'Dá aos sysops a possibilidade de [[Special:Nuke|apagar páginas em massa]]',
 	'nuke-nopages' => 'Não há novas páginas criadas por [[Special:Contributions/$1|$1]] nas mudanças recentes.',
+	'nuke-list' => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|$1]]; forneça uma justificativa e pressione o botão a seguir para eliminá-las.',
+	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas por $1',
+	'nuke-tools' => 'Esta ferramenta permite a eliminação em massa de páginas recentemente criadas por um utilizador ou IP em específico. Forneça o nome de utilizador ou IP para obter uma lista de páginas a eliminar:',
+	'nuke-submit-user' => 'Ir',
+	'nuke-submit-delete' => 'Eliminar as selecionadas',
+	'right-nuke' => 'Eliminar páginas em massa',
 );
 
 /** Quechua (Runa Simi)
