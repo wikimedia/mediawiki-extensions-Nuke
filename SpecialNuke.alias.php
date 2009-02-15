@@ -112,3 +112,8 @@ $aliases['sa'] = array(
 	'Nuke' => array( 'न्यूक' ),
 );
 
+/** Tagalog (Tagalog) */
+$aliases['tl'] = array(
+	'Nuke' => array( 'Malawakang pagbura' ),
+);
+
