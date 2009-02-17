@@ -77,6 +77,11 @@ $aliases['hu'] = array(
 	'Nuke' => array( 'Kiírtás' ),
 );
 
+/** Interlingua (Interlingua) */
+$aliases['ia'] = array(
+	'Nuke' => array( 'Deler in massa' ),
+);
+
 /** Japanese (日本語) */
 $aliases['ja'] = array(
 	'Nuke' => array( 'まとめて削除' ),
