@@ -463,7 +463,7 @@ $messages['gl'] = array(
 	'nuke-nopages' => 'Non hai novas páxinas feitas por [[Special:Contributions/$1|$1]] nos cambios recentes.',
 	'nuke-list' => 'As seguintes páxinas foron recentemente creadas por [[Special:Contributions/$1|$1]]; poña un comentario e prema o botón para borralos.',
 	'nuke-defaultreason' => 'Eliminación en masa das páxinas engadidas por $1',
-	'nuke-tools' => 'Esta ferramenta permite supresións masivas das páxinas engadidas recentemente por un determinado usuario ou enderezo IP. Introduza o nome do usuario ou enderezo IP para obter unha listaxe das páxinas para borrar.',
+	'nuke-tools' => 'Esta ferramenta permite supresións masivas das páxinas engadidas recentemente por un determinado usuario ou enderezo IP. Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas para borrar.',
 	'nuke-submit-user' => 'Adiante',
 	'nuke-submit-delete' => 'Eliminar o seleccionado',
 	'right-nuke' => 'Borrar páxinas masivamente',
@@ -1270,6 +1270,13 @@ Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin
 	'nuke-submit-user' => 'Git',
 	'nuke-submit-delete' => 'Seçileni sil',
 	'right-nuke' => 'Sayfaları kitlesel olarak sil',
+);
+
+/** Uighur (Latin) (Uyghurche‎ / ئۇيغۇرچە (Latin))
+ * @author Jose77
+ */
+$messages['ug-latn'] = array(
+	'nuke-submit-user' => 'Köchüsh',
 );
 
 /** Ukrainian (Українська)
