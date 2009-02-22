@@ -617,6 +617,7 @@ Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler:'
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author IvanLanin
  * @author Rex
  */
 $messages['id'] = array(
@@ -628,7 +629,7 @@ $messages['id'] = array(
 	'nuke-tools' => 'Perkakas ini memungkinkan penghapusan massal halaman-halaman yang baru saja dibuat oleh seorang pengguna atau IP. Masukkan nama pengguna atau IP untuk mendapat daftar halaman yang dapat dihapus:',
 	'nuke-submit-user' => 'Cari',
 	'nuke-submit-delete' => 'Hapus yang terpilih',
-	'right-nuke' => 'Penghapusan masal',
+	'right-nuke' => 'Melakukan penghapusan masal halaman',
 );
 
 /** Ido (Ido)
