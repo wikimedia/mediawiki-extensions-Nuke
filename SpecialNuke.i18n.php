@@ -637,6 +637,7 @@ $messages['id'] = array(
  */
 $messages['io'] = array(
 	'nuke-submit-user' => 'Irar',
+	'nuke-submit-delete' => 'Efacez selektiti',
 );
 
 /** Icelandic (Íslenska)
