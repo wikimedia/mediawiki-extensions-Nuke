@@ -981,6 +981,15 @@ $messages['oc'] = array(
 	'right-nuke' => 'Suprimir de paginas en massa',
 );
 
+/** Ossetic (Иронау)
+ * @author Amikeco
+ */
+$messages['os'] = array(
+	'nuke' => 'Бирæгай аппарын',
+	'nuke-submit-user' => 'Афтæ уæд',
+	'right-nuke' => 'фæрстæ бирæгай аппарын',
+);
+
 /** Polish (Polski)
  * @author Derbeth
  * @author Sp5uhe
