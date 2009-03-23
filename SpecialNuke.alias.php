@@ -60,6 +60,11 @@ $aliases['gsw'] = array(
 	'Nuke' => array( 'Masseleschig' ),
 );
 
+/** Hawaiian (Hawai`i) */
+$aliases['haw'] = array(
+	'Nuke' => array( 'Luku' ),
+);
+
 /** Hebrew (עברית)
  * @author Rotem Liss
  */
