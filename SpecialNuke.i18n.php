@@ -1322,6 +1322,14 @@ $messages['vec'] = array(
 	'right-nuke' => 'Scancelassion de massa de le pagine',
 );
 
+/** Veps (Vepsan kel')
+ * @author Игорь Бродский
+ */
+$messages['vep'] = array(
+	'nuke-submit-user' => 'Mäne',
+	'nuke-submit-delete' => 'Čuta valitud',
+);
+
 /** Vietnamese (Tiếng Việt)
  * @author Minh Nguyen
  * @author Vinhtantran
