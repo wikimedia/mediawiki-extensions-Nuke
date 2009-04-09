@@ -830,7 +830,7 @@ $messages['lt'] = array(
 	'nuke-submit-delete' => 'Ištrinti pasirinktus(ą)',
 );
 
-/** Classical Chinese (文言) */
+/** Literary Chinese (文言) */
 $messages['lzh'] = array(
 	'nuke' => '量刪',
 	'nuke-nopages' => '近易無示[[Special:Contributions/$1|$1]]之新頁。',
@@ -1281,6 +1281,13 @@ Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin
 	'nuke-submit-user' => 'Git',
 	'nuke-submit-delete' => 'Seçileni sil',
 	'right-nuke' => 'Sayfaları kitlesel olarak sil',
+);
+
+/** ئۇيغۇرچە (ئۇيغۇرچە)
+ * @author Alfredie
+ */
+$messages['ug-arab'] = array(
+	'nuke-submit-user' => 'كۆچۈش',
 );
 
 /** Uighur (Latin) (Uyghurche‎ / ئۇيغۇرچە (Latin))
