@@ -887,6 +887,13 @@ $messages['ms'] = array(
 	'right-nuke' => 'Menghapuskan laman secara pukal',
 );
 
+/** Erzya (Эрзянь)
+ * @author Botuzhaleny-sodamo
+ */
+$messages['myv'] = array(
+	'nuke-submit-user' => 'Адя',
+);
+
 /** Nahuatl (Nāhuatl)
  * @author Fluence
  */
