@@ -9,6 +9,7 @@ $wgExtensionMessagesFiles['Nuke'] = $dir . 'SpecialNuke.i18n.php';
 $wgExtensionAliasesFiles['Nuke'] = $dir . 'SpecialNuke.alias.php';
 
 $wgExtensionCredits['specialpage'][] = array(
+	'path'           => __FILE__,
 	'name'           => 'Nuke',
 	'description'    => 'Gives sysops the ability to mass delete pages',
 	'descriptionmsg' => 'nuke-desc',
