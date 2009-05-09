@@ -89,12 +89,17 @@ $aliases['ia'] = array(
 
 /** Japanese (日本語) */
 $aliases['ja'] = array(
-	'Nuke' => array( 'まとめて削除', '一括削除' ),
+	'Nuke' => array( '一括削除', 'まとめて削除' ),
 );
 
 /** Korean (한국어) */
 $aliases['ko'] = array(
 	'Nuke' => array( '문서대량삭제' ),
+);
+
+/** Ripoarisch (Ripoarisch) */
+$aliases['ksh'] = array(
+	'Nuke' => array( 'Maßesch Sigge Fottschmiiße' ),
 );
 
 /** Nedersaksisch (Nedersaksisch) */
