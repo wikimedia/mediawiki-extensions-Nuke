@@ -102,6 +102,11 @@ $aliases['ksh'] = array(
 	'Nuke' => array( 'Maßesch Sigge Fottschmiiße' ),
 );
 
+/** Maltese (Malti) */
+$aliases['mt'] = array(
+	'Nuke' => array( 'Nuke' ),
+);
+
 /** Nedersaksisch (Nedersaksisch) */
 $aliases['nds-nl'] = array(
 	'Nuke' => array( 'Massaal_vortdoon' ),
