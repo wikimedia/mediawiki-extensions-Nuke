@@ -1085,6 +1085,14 @@ $messages['rif'] = array(
 	'nuke-submit-user' => 'Raḥ ɣa',
 );
 
+/** Romanian (Română)
+ * @author Mihai
+ */
+$messages['ro'] = array(
+	'nuke-submit-user' => 'Du-te',
+	'nuke-submit-delete' => 'Şterge ce e marcat',
+);
+
 /** Russian (Русский)
  * @author HalanTul
  * @author VasilievVV
