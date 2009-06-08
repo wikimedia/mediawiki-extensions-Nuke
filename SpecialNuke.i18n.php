@@ -437,12 +437,15 @@ $messages['fr'] = array(
 $messages['frp'] = array(
 	'nuke' => 'Suprèssion en massa',
 	'nuke-desc' => 'Balye la possibilitât ux administrators de [[Special:Nuke|suprimar en massa]] des pâges.',
-	'nuke-nopages' => 'Niona novèla pâge crèâ per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.',
-	'nuke-list' => 'Les pâges siuventes ont étâ crèâs dèrriérement per [[Special:Contributions/$1|$1]] ; endicâd un comentèro et pués clicâd sur lo boton por les suprimar.',
+	'nuke-nopages' => 'Niona novèla pâge fêta per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.',
+	'nuke-list' => 'Cetes pâges ont étâ fêtes dèrriérement per [[Special:Contributions/$1|$1]] ;
+buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
-	'nuke-tools' => 'Ceti outil ôtorise les suprèssions en massa de les pâges apondues dèrriérement per un utilisator enregistrâ ou per una adrèce IP. Endicâd l’adrèce IP por obtegnir la lista de les pâges a suprimar :',
+	'nuke-tools' => 'Ceti outil ôtorise les suprèssions en massa de les pâges apondues dèrriérement per un utilisator enregistrâ ou ben per una adrèce IP.
+Buchiéd lo nom d’utilisator ou ben l’adrèce IP por avêr la lista de les pâges a suprimar :',
 	'nuke-submit-user' => 'Validar',
-	'nuke-submit-delete' => 'Suprèssion sèlèccionâ',
+	'nuke-submit-delete' => 'Suprèssion chouèsia',
+	'right-nuke' => 'Suprimar des pâges en massa',
 );
 
 /** Friulian (Furlan)
