@@ -437,7 +437,7 @@ $messages['fr'] = array(
 $messages['frp'] = array(
 	'nuke' => 'Suprèssion en massa',
 	'nuke-desc' => 'Balye la possibilitât ux administrators de [[Special:Nuke|suprimar en massa]] des pâges.',
-	'nuke-nopages' => 'Niona novèla pâge fêta per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.',
+	'nuke-nopages' => 'Gins de novèla pâge fêta per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.',
 	'nuke-list' => 'Cetes pâges ont étâ fêtes dèrriérement per [[Special:Contributions/$1|$1]] ;
 buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
