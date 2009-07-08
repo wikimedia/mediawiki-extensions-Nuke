@@ -89,7 +89,7 @@ $aliases['ia'] = array(
 
 /** Japanese (日本語) */
 $aliases['ja'] = array(
-	'Nuke' => array( '一括削除', 'まとめて削除' ),
+	'Nuke' => array( 'まとめて削除' ),
 );
 
 /** Korean (한국어) */
