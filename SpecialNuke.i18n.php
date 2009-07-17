@@ -83,6 +83,13 @@ $messages['ar'] = array(
 	'right-nuke' => 'حذف الصفحات كميا',
 );
 
+/** Aramaic (ܐܪܡܝܐ)
+ * @author Basharh
+ */
+$messages['arc'] = array(
+	'nuke-submit-user' => 'ܙܠ',
+);
+
 /** Egyptian Spoken Arabic (مصرى)
  * @author Meno25
  * @author Ramsis II
@@ -831,6 +838,7 @@ $messages['lt'] = array(
 	'nuke-nopages' => 'Nėra naujų puslapių, sukurtų [[Special:Contributions/$1|$1]] naujausiuose keitimuose.',
 	'nuke-submit-user' => 'Išsiųsti',
 	'nuke-submit-delete' => 'Ištrinti pasirinktus(ą)',
+	'right-nuke' => 'Masinis puslapių trynėjas',
 );
 
 /** Literary Chinese (文言) */
