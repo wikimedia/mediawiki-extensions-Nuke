@@ -132,6 +132,11 @@ $aliases['sa'] = array(
 	'Nuke' => array( 'न्यूक' ),
 );
 
+/** Slovak (Slovenčina) */
+$aliases['sk'] = array(
+	'Nuke' => array( 'Zničenie' ),
+);
+
 /** Tagalog (Tagalog) */
 $aliases['tl'] = array(
 	'Nuke' => array( 'Malawakang pagbura' ),
