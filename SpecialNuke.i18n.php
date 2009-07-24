@@ -627,6 +627,7 @@ Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler:'
 );
 
 /** Indonesian (Bahasa Indonesia)
+ * @author Bennylin
  * @author IvanLanin
  * @author Rex
  */
@@ -637,7 +638,7 @@ $messages['id'] = array(
 	'nuke-list' => 'Halaman berikut baru saja dibuat oleh [[Special:Contributions/$1|$1]]; masukkan suatu komentar dan tekan tombol untuk menghapus halaman-halaman tersebut.',
 	'nuke-defaultreason' => 'Penghapusan massal halaman-halaman yang dibuat oleh $1',
 	'nuke-tools' => 'Perkakas ini memungkinkan penghapusan massal halaman-halaman yang baru saja dibuat oleh seorang pengguna atau IP. Masukkan nama pengguna atau IP untuk mendapat daftar halaman yang dapat dihapus:',
-	'nuke-submit-user' => 'Cari',
+	'nuke-submit-user' => 'Tuju ke',
 	'nuke-submit-delete' => 'Hapus yang terpilih',
 	'right-nuke' => 'Melakukan penghapusan masal halaman',
 );
