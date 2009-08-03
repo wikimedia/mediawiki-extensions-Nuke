@@ -748,19 +748,20 @@ $messages['km'] = array(
 );
 
 /** Korean (한국어)
+ * @author Klutzy
  * @author Kwj2772
  */
 $messages['ko'] = array(
 	'nuke' => '문서 대량 삭제',
-	'nuke-desc' => '관리자에게 [[Special:Nuke|문서를 대량 삭제]]할 수 있는 권한을 줌',
-	'nuke-nopages' => '최근 바뀜에 [[Special:Contributions/$1|$1]] 사용자가 만든 문서가 없습니다.',
-	'nuke-list' => '다음 문서들은 [[Special:Contributions/$1|$1]]이 최근에 생성한 문서입니다.
-삭제하시려면 이유를 입력하고 아래 버튼을 클릭해주세요.',
-	'nuke-defaultreason' => '$1이 작성한 문서를 대량으로 삭제함',
-	'nuke-tools' => '이 기능은 특정 사용자나 IP 사용자가 생성한 문서를 대량 삭제할 수 있도록 할 수 있습니다.
-삭제할 문서의 목록을 만들기 위해 사용자 이름이나 IP를 입력하십시오.',
+	'nuke-desc' => '관리자가 [[Special:Nuke|문서를 대량 삭제]]할 수 있는 기능을 추가합니다.',
+	'nuke-nopages' => '최근에 [[Special:Contributions/$1|$1]] 사용자가 만든 문서가 없습니다.',
+	'nuke-list' => '다음은 [[Special:Contributions/$1|$1]]이 최근에 만든 문서입니다.
+삭제에 대한 이유를 입력한 다음 아래 버튼을 클릭해주세요.',
+	'nuke-defaultreason' => '$1이 작성한 문서를 대량 삭제함',
+	'nuke-tools' => '특정 사용자나 IP 사용자가 최근 생성한 문서를 대량으로 삭제할 수 있습니다.
+아래에 이름을 입력하면 삭제할 문서 목록을 가져옵니다.',
 	'nuke-submit-user' => '계속',
-	'nuke-submit-delete' => '선택한 문서를 삭제',
+	'nuke-submit-delete' => '선택한 문서 삭제',
 	'right-nuke' => '문서 대량 삭제',
 );
 
