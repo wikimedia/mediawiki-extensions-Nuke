@@ -375,6 +375,13 @@ Introduzca el nombre de usuario o la IP para obtener la lista de páginas a borr
 	'right-nuke' => 'Borrar páginas masivamente',
 );
 
+/** Estonian (Eesti)
+ * @author Pikne
+ */
+$messages['et'] = array(
+	'nuke-desc' => 'Võimaldab ülematel lehekülgede [[Special:Nuke|lauskustutamist]].',
+);
+
 /** Basque (Euskara)
  * @author Theklan
  * @author Unai Fdz. de Betoño
