@@ -1198,6 +1198,21 @@ $messages['sr-ec'] = array(
 	'right-nuke' => 'Масовно брисање страна.',
 );
 
+/** latinica (latinica)
+ * @author Michaello
+ */
+$messages['sr-el'] = array(
+	'nuke' => 'Masovno brisanje',
+	'nuke-desc' => 'Daje sispu mogućnost da [[Special:Nuke|masovno briše]] strane.',
+	'nuke-nopages' => 'Nema novih strana od strane saradnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.',
+	'nuke-list' => 'Sledeće strane je skoro napravio saradnik [[Special:Contributions/$1|$1]]; komentariši i pritisni dugme za njihovo brisanje.',
+	'nuke-defaultreason' => 'Masovno brisanje strana koje je napravio saradnik $1.',
+	'nuke-tools' => 'Ovo oruđe omogućava masovno brisanje strana koje je skoro dodao određeni saradnik (registrovan ili ne). Unesi saradničko ime ili IP adresu za dobijanje spiska strana za brisanje.',
+	'nuke-submit-user' => 'Idi',
+	'nuke-submit-delete' => 'Obriši obeleženo',
+	'right-nuke' => 'Masovno brisanje strana.',
+);
+
 /** Seeltersk (Seeltersk)
  * @author Pyt
  */
