@@ -380,6 +380,13 @@ Introduzca el nombre de usuario o la IP para obtener la lista de páginas a borr
  */
 $messages['et'] = array(
 	'nuke-desc' => 'Võimaldab ülematel lehekülgede [[Special:Nuke|lauskustutamist]].',
+	'nuke-nopages' => 'Viimaste muudatuste all pole uusi kasutaja [[Special:Contributions/$1|$1]] loodud lehekülgi.',
+	'nuke-list' => 'Kasutaja [[Special:Contributions/$1|$1]] on hiljuti loonud järgnevad leheküljed. Enne kustutamist sisesta kommentaar.',
+	'nuke-defaultreason' => 'Kasutaja $1 lisatud lehekülgede lauseemaldamine',
+	'nuke-tools' => 'See tööriist võimaldab ülesantud kasutaja või IP-aadressi lisatud leheküljed lauskustutada.
+Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-aadress.',
+	'nuke-submit-user' => 'Mine',
+	'nuke-submit-delete' => 'Kustuta väljavalitud',
 );
 
 /** Basque (Euskara)
@@ -1107,9 +1114,11 @@ $messages['rif'] = array(
 );
 
 /** Romanian (Română)
+ * @author KlaudiuMihaila
  * @author Mihai
  */
 $messages['ro'] = array(
+	'nuke' => 'Ştergere în masă',
 	'nuke-submit-user' => 'Du-te',
 	'nuke-submit-delete' => 'Şterge ce e marcat',
 );
