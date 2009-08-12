@@ -274,6 +274,22 @@ $messages['cs'] = array(
 	'right-nuke' => 'Hromadné mazání stránek',
 );
 
+/** Danish (Dansk)
+ * @author Byrial
+ */
+$messages['da'] = array(
+	'nuke' => 'Massesletning',
+	'nuke-desc' => 'Giver administratorer mulighed for at [[Special:Nuke|masseslette]] sider',
+	'nuke-nopages' => 'Der er ingen nye sider af [[Special:Contributions/$1|$1]] i seneste ændringer.',
+	'nuke-list' => 'Følgende sider er oprettet for nylig af [[Special:Contributions/$1|$1]]; skriv en kommentar og tryk på knappen for at slette dem.',
+	'nuke-defaultreason' => 'Massesletting af sider som er oprettet af $1',
+	'nuke-tools' => 'Dette værktøj muliggør massesletting af sider som for nylig er oprettet af en bestemt bruger eller IP.
+Skriv et brugernavn eller en IP for at få en liste over sider at slette.',
+	'nuke-submit-user' => 'Udfør',
+	'nuke-submit-delete' => 'Slet valgte',
+	'right-nuke' => 'masseslette sider',
+);
+
 /** German (Deutsch)
  * @author Raimond Spekking
  */
