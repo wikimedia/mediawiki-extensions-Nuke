@@ -395,6 +395,7 @@ Introduzca el nombre de usuario o la IP para obtener la lista de páginas a borr
  * @author Pikne
  */
 $messages['et'] = array(
+	'nuke' => 'Lauskustutamine',
 	'nuke-desc' => 'Võimaldab ülematel lehekülgede [[Special:Nuke|lauskustutamist]].',
 	'nuke-nopages' => 'Viimaste muudatuste all pole uusi kasutaja [[Special:Contributions/$1|$1]] loodud lehekülgi.',
 	'nuke-list' => 'Kasutaja [[Special:Contributions/$1|$1]] on hiljuti loonud järgnevad leheküljed. Enne kustutamist sisesta kommentaar.',
@@ -775,6 +776,13 @@ $messages['km'] = array(
 	'nuke-tools' => 'ឧបករណ៍​នេះ អនុញ្ញាត​លុបចេញ​ជាខ្សែ​នូវ​ទំព័រ​ទើប​បាន​បន្ថែម​ថ្មីៗ ដោយ​អ្នកប្រើប្រាស់​បាន​ចុះ​ឈ្មោះ ឬ ដោយ​អាសយដ្ឋាន IP ។ សូម​បញ្ចូល​ឈ្មោះអ្នកប្រើប្រាស់ ឬ អាសយដ្ឋាន IP ដើម្បី​មាន​បញ្ជីទំព័រ​សម្រាប់​លុប​៖',
 	'nuke-submit-user' => 'ទៅ',
 	'nuke-submit-delete' => 'លុបចេញ ជម្រើសយក',
+);
+
+/** Kannada (ಕನ್ನಡ)
+ * @author Nayvik
+ */
+$messages['kn'] = array(
+	'nuke-submit-user' => 'ಹೋಗು',
 );
 
 /** Korean (한국어)
