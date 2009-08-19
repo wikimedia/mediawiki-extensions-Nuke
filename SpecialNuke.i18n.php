@@ -404,6 +404,7 @@ $messages['et'] = array(
 Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-aadress.',
 	'nuke-submit-user' => 'Mine',
 	'nuke-submit-delete' => 'Kustuta väljavalitud',
+	'right-nuke' => 'Lehekülgi lauskustutada',
 );
 
 /** Basque (Euskara)
