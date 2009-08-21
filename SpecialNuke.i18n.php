@@ -790,10 +790,11 @@ $messages['kn'] = array(
 /** Korean (한국어)
  * @author Klutzy
  * @author Kwj2772
+ * @author ToePeu
  */
 $messages['ko'] = array(
 	'nuke' => '문서 대량 삭제',
-	'nuke-desc' => '관리자가 [[Special:Nuke|문서를 대량 삭제]]할 수 있는 기능을 추가합니다.',
+	'nuke-desc' => '관리자가 문서를 [[Special:Nuke|대량 삭제]]할 수 있는 기능을 추가합니다.',
 	'nuke-nopages' => '최근에 [[Special:Contributions/$1|$1]] 사용자가 만든 문서가 없습니다.',
 	'nuke-list' => '다음은 [[Special:Contributions/$1|$1]]이 최근에 만든 문서입니다.
 삭제에 대한 이유를 입력한 다음 아래 버튼을 클릭해주세요.',
@@ -1433,9 +1434,10 @@ $messages['vi'] = array(
 	'nuke-nopages' => 'Không có trang mới do [[Special:Contributions/$1|$1]] tạo ra trong thay đổi gần đây.',
 	'nuke-list' => 'Các trang sau do [[Special:Contributions/$1|$1]] tạo ra gần đây; hãy ghi lý do và nhấn nút để xóa tất cả những trang này.',
 	'nuke-defaultreason' => 'Xóa hàng loạt các trang do $1 tạo ra',
-	'nuke-tools' => 'Công cụ này để xóa hàng lạt các trang do một người dùng tạo ra gần đây. Hãy cung cấp tên hiệu của thành viên hay địa chỉ IP của người dùng để tìm kiếm những trang để xóa:',
+	'nuke-tools' => 'Công cụ này để xóa hàng loạt các trang do một người dùng hoặc IP nào đó tạo ra gần đây.
+Hãy nhập tên người dùng hoặc địa chỉ IP  để lấy danh sách các trang sẽ xóa.',
 	'nuke-submit-user' => 'Tìm kiếm',
-	'nuke-submit-delete' => 'Xóa lựa chọn',
+	'nuke-submit-delete' => 'Xóa các trang đã chọn',
 	'right-nuke' => 'Xóa trang hàng loạt',
 );
 
