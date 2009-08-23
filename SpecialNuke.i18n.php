@@ -1224,7 +1224,7 @@ $messages['sk'] = array(
 	'right-nuke' => 'Hromadné mazanie stránok',
 );
 
-/** Serbian Cyrillic ekavian (ћирилица)
+/** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
  */
 $messages['sr-ec'] = array(
@@ -1239,7 +1239,7 @@ $messages['sr-ec'] = array(
 	'right-nuke' => 'Масовно брисање страна.',
 );
 
-/** latinica (latinica)
+/** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
  */
 $messages['sr-el'] = array(
