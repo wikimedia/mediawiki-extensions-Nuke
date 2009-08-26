@@ -874,12 +874,18 @@ $messages['li'] = array(
 );
 
 /** Lithuanian (Lietuvių)
+ * @author Homo
  * @author Matasg
  */
 $messages['lt'] = array(
 	'nuke' => 'Masinis trynimas',
 	'nuke-desc' => 'Suteikia administratoriams galimybę [[Special:Nuke|masiškai trinti]] puslapius',
 	'nuke-nopages' => 'Nėra naujų puslapių, sukurtų [[Special:Contributions/$1|$1]] naujausiuose keitimuose.',
+	'nuke-list' => 'Šiuos puslapius neseniai sukūrė [[Special:Contributions/$1|$1]];
+įrašykite komentarą ir paspauskite mygtuką, kad jie būtų ištrinti.',
+	'nuke-defaultreason' => 'Masinis pašalinimas puslapių, kuriuos sukūrė $1',
+	'nuke-tools' => 'Šis įrankis leidžia masiškai ištrinti puslapius, neseniai sukurtus nurodyto naudotojo ar IP.
+Įrašykite naudotojo vardą ar IP adresą, kad gautumėte trintinų puslapių sąrašą.',
 	'nuke-submit-user' => 'Išsiųsti',
 	'nuke-submit-delete' => 'Ištrinti pasirinktus(ą)',
 	'right-nuke' => 'Masinis puslapių trynėjas',
