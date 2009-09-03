@@ -47,7 +47,7 @@ $messages['niu'] = array(
  */
 $messages['af'] = array(
 	'nuke' => 'Massa verwyder',
-	'nuke-submit-user' => 'Gaan',
+	'nuke-submit-user' => 'Laat waai',
 	'nuke-submit-delete' => 'Skrap geselekteerde',
 );
 
