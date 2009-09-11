@@ -210,9 +210,15 @@ $messages['bn'] = array(
  */
 $messages['br'] = array(
 	'nuke' => "Diverkañ a-vloc'h",
+	'nuke-desc' => "Reiñ a ra an tu d'ar verourien da [[Special:Nuke|ziverkañ pajennoù a-vras]]",
 	'nuke-nopages' => "Pajenn nevez ebet bet krouet gant [[Special:Contributions/$1|$1]] er c'hemmoù diwezhañ.",
+	'nuke-list' => "Nevez zo eo bet krouet ar pajennoù da-heul gant [[Special:Contributions/$1|$1]];
+Merkañ un tamm notenn ha klikañ war ar bouton d'o diverkañ.",
+	'nuke-defaultreason' => 'Diverkañ a-vras ar pajennoù bet ouzhpennet gant $1',
+	'nuke-tools' => "Talvezout a ra an ostilh-mañ da ziverkañ a-vras pajennoù bet ouzhpennet nevez zo gant un implijer enrollet pe gant ur chomlec'h IP. Merkañ ar c'homlec'h IP pe anv an implijer a-benn kaout roll ar pajennoù da ziverkañ :",
 	'nuke-submit-user' => 'Mont',
 	'nuke-submit-delete' => 'Diverkañ diuzet',
+	'right-nuke' => 'Diverkañ pajennoù a-vras',
 );
 
 /** Bosnian (Bosanski)
