@@ -486,7 +486,7 @@ $messages['frp'] = array(
 	'nuke-list' => 'Cetes pâges ont étâ fêtes dèrriérement per [[Special:Contributions/$1|$1]] ;
 buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
-	'nuke-tools' => 'Ceti outil ôtorise les suprèssions en massa de les pâges apondues dèrriérement per un utilisator enregistrâ ou ben per una adrèce IP.
+	'nuke-tools' => 'Ceti outil ôtorise les suprèssions en massa de les pâges apondues dèrriérement per un utilisator encartâ ou ben per una adrèce IP.
 Buchiéd lo nom d’utilisator ou ben l’adrèce IP por avêr la lista de les pâges a suprimar :',
 	'nuke-submit-user' => 'Validar',
 	'nuke-submit-delete' => 'Suprèssion chouèsia',
