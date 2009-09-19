@@ -1437,6 +1437,7 @@ $messages['vec'] = array(
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
+	'nuke' => 'Massine heitmine',
 	'nuke-submit-user' => 'Mäne',
 	'nuke-submit-delete' => 'Čuta valitud',
 );
