@@ -267,6 +267,7 @@ $messages['ch'] = array(
  * @author Danny B.
  * @author Li-sung
  * @author Matěj Grabovský
+ * @author Mormegil
  */
 $messages['cs'] = array(
 	'nuke' => 'Hromadné mazání',
@@ -274,7 +275,8 @@ $messages['cs'] = array(
 	'nuke-nopages' => 'V posledních změnách nejsou žádné nové stránky od uživatele [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Následující stránky nedávno vytvořil uživatel [[Special:Contributions/$1|$1]]; vyplňte komentář a všechny smažte kliknutím na tlačítko.',
 	'nuke-defaultreason' => 'Hromadné odstranění stránek, které vytvořil $1',
-	'nuke-tools' => 'Tento nástroj umožňuje hromadné smazání stránek nedávno vytvořených zadaným uživatelem na IP adresou. Zadejte uživatelské jméno nebo IP adresu, jejichž seznam stránek ke smazání chcete zobrazit:',
+	'nuke-tools' => 'Tento nástroj umožňuje hromadné smazání stránek nedávno vytvořených zadaným uživatelem nebo IP adresou.
+Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smazání.',
 	'nuke-submit-user' => 'Provést',
 	'nuke-submit-delete' => 'Smazat vybrané',
 	'right-nuke' => 'Hromadné mazání stránek',
