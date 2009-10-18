@@ -323,6 +323,13 @@ geben Sie einen Kommentar ein und drücken Sie auf den Löschknopf.',
 	'nuke-tools' => 'Dieses Werkzeug ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Geben Sie die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
 );
 
+/** Zazaki (Zazaki)
+ * @author Aspar
+ */
+$messages['diq'] = array(
+	'nuke' => 'pêropiya hewnakeno..',
+);
+
 /** Lower Sorbian (Dolnoserbski)
  * @author Michawiki
  */
