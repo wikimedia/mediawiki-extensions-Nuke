@@ -328,6 +328,15 @@ geben Sie einen Kommentar ein und drücken Sie auf den Löschknopf.',
  */
 $messages['diq'] = array(
 	'nuke' => 'pêropiya hewnakeno..',
+	'nuke-desc' => 'Hizmetlilere, sayfaları [[Special:Nuke|kitlesel silme]] yeteneği verir',
+	'nuke-nopages' => 'vuriyayişê ke hetê ıney ra [[Special:Contributions/$1|$1]] biye tede çı pelê neweyi çini .',
+	'nuke-list' => 'pelê ke cêr de yê hetê ıney ra [[Special:Contributions/$1|$1]]  yew tarixo nızdi de  vıraziyayi; mışore bıkerê u qey hewnakerdışi yew tuş bıtıknê.',
+	'nuke-defaultreason' => 'Mass removal of pages added by $1',
+	'nuke-tools' => 'Bu araç, bir kullanıcı ya da IP tarafından yakın zamanda eklenen sayfaların kitlesel silinmelerine izin verir.
+Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin.',
+	'nuke-submit-user' => 'şo',
+	'nuke-submit-delete' => 'nişanbiyayeyi hewnaker',
+	'right-nuke' => 'pelan yew hew de hewnaker',
 );
 
 /** Lower Sorbian (Dolnoserbski)
