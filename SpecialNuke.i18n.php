@@ -882,20 +882,21 @@ $messages['lb'] = array(
 );
 
 /** Limburgish (Limburgs)
+ * @author Aelske
  * @author Matthias
  * @author Ooswesthoesbes
  * @author Pahles
  */
 $messages['li'] = array(
-	'nuke' => 'Massaal verwijdere',
-	'nuke-desc' => "Geeft beheerders de mogelijkheid om [[Special:Nuke|massaal pagina's te verwijdere]]",
-	'nuke-nopages' => "Gein nuje pagina's van [[special:Contributions/$1|$1]] in de recente wijziginge.",
+	'nuke' => 'Massaal weggoeje',
+	'nuke-desc' => "Geuf beheerdersj de meugelikheid óm [[Special:Nuke|massaal pagina's weg te goeje]]",
+	'nuke-nopages' => "Gein nuuj pagina's van [[special:Contributions/$1|$1]] in de recente wieziginge.",
 	'nuke-list' => "De onderstaonde pagina's zien recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer 'n rede in en klik op de knop om ze te verwijdere/",
-	'nuke-defaultreason' => "Massaal verwijdere van pagina's van $1",
-	'nuke-tools' => "Dit hulpmiddel maakt 't meugelik massaal pagina's te wisse die recentelijk zien aangemaakt door 'n gebroeker of IP-adres. Voer de gebroekersnaam of 't IP-adres in veur 'n lijst van te wisse pagina's:",
+	'nuke-defaultreason' => "Massaal weggoeje van pagina's van $1",
+	'nuke-tools' => "Dit hölpmiddel maak 't meugelik massaal pagina's te wisse die recentelijk zin aangemaak door 'n gebroeker of IP-adres. Veur de gebroekersnaam of 't IP-adres in veur 'n liees van te wisse pagina's:",
 	'nuke-submit-user' => 'Gank',
 	'nuke-submit-delete' => 'Geslecteerd wisse',
-	'right-nuke' => "Massaal pagina's verwi'jdere",
+	'right-nuke' => "Massaal pagina's weggoeje",
 );
 
 /** Lithuanian (Lietuvių)
