@@ -1006,6 +1006,17 @@ $messages['nds'] = array(
 	'right-nuke' => 'Groten Hümpel Sieden wegsmieten',
 );
 
+/** Nedersaksisch (Nedersaksisch)
+ * @author Servien
+ */
+$messages['nds-nl'] = array(
+	'nuke' => 'Massaal vortdoon',
+	'nuke-desc' => "Hiermee kunnen beheerders [[Special:Nuke|massaal pagina's vortdoon]]",
+	'nuke-nopages' => "Gien nieje pagina's van [[Special:Contributions/$1|$1]] in de leste wiezigingen.",
+	'nuke-defaultreason' => "Massaal pagina's van $1 vortdoon",
+	'right-nuke' => "Massaal pagina's vortdoon",
+);
+
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
