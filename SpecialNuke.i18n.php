@@ -812,6 +812,7 @@ $messages['kn'] = array(
 );
 
 /** Korean (한국어)
+ * @author Albamhandae
  * @author Klutzy
  * @author Kwj2772
  * @author ToePeu
@@ -820,7 +821,7 @@ $messages['ko'] = array(
 	'nuke' => '문서 대량 삭제',
 	'nuke-desc' => '관리자가 문서를 [[Special:Nuke|대량 삭제]]할 수 있는 기능을 추가합니다.',
 	'nuke-nopages' => '최근에 [[Special:Contributions/$1|$1]] 사용자가 만든 문서가 없습니다.',
-	'nuke-list' => '다음은 [[Special:Contributions/$1|$1]]이 최근에 만든 문서입니다.
+	'nuke-list' => '다음은 [[Special:Contributions/$1|$1]]이(가) 최근에 만든 문서입니다.
 삭제에 대한 이유를 입력한 다음 아래 버튼을 클릭해주세요.',
 	'nuke-defaultreason' => '$1이 작성한 문서를 대량 삭제함',
 	'nuke-tools' => '특정 사용자나 IP 사용자가 최근 생성한 문서를 대량으로 삭제할 수 있습니다.
