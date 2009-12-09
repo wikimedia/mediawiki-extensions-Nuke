@@ -784,10 +784,12 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
 );
 
 /** Georgian (ქართული)
+ * @author BRUTE
  * @author Sopho
  */
 $messages['ka'] = array(
 	'nuke-submit-user' => 'გადასვლა',
+	'nuke-submit-delete' => 'არჩეულის წაშლა',
 );
 
 /** Khmer (ភាសាខ្មែរ)
