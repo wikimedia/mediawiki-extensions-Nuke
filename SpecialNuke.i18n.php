@@ -1406,6 +1406,16 @@ $messages['tg-cyrl'] = array(
 	'right-nuke' => 'Ҳазфи дастаҷамъии саҳифаҳо',
 );
 
+/** Turkmen (Türkmençe)
+ * @author Hanberke
+ */
+$messages['tk'] = array(
+	'nuke' => 'Köpçülikleýin öçür',
+	'nuke-submit-user' => 'Git',
+	'nuke-submit-delete' => 'Saýlanylanlary öçür',
+	'right-nuke' => 'Sahypalary köpçülikleýin öçür',
+);
+
 /** Tagalog (Tagalog)
  * @author AnakngAraw
  */
