@@ -101,7 +101,7 @@ $messages['arz'] = array(
 	'nuke-list' => 'الصفحات دى اتعملها انشاء قريب عى طريق [[Special:Contributions/$1|$1]];
 اكتب تعليق و دوس على الزرار علشان تمسحهم.',
 	'nuke-defaultreason' => 'مسح كبير للصفحات اللى ضافها $1',
-	'nuke-tools' => 'الطريقة دى بتسمحلك تعمل مسح كبير للصفحات اللى اتضافت قريب عن طريق واحد من اليوزرز او الأى بي.
+	'nuke-tools' => 'الطريقة دى بتسمحلك تعمل مسح كبير للصفحات اللى اتضافت قريب عن طريق واحد من اليوزرز او الأى بى.
 دخل اسم اليوزر او عنوان الاى بى علشان تطلعلك لستة بالصفحات اللى ح تتمسح.',
 	'nuke-submit-user' => 'روح',
 	'nuke-submit-delete' => 'امسح اللى اخترته',
@@ -501,7 +501,7 @@ $messages['fr'] = array(
 $messages['frp'] = array(
 	'nuke' => 'Suprèssion en massa',
 	'nuke-desc' => 'Balye la possibilitât ux administrators de [[Special:Nuke|suprimar en massa]] des pâges.',
-	'nuke-nopages' => 'Gins de novèla pâge fêta per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.',
+	'nuke-nopages' => 'Gins de pâge novèla fêta per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.',
 	'nuke-list' => 'Cetes pâges ont étâ fêtes dèrriérement per [[Special:Contributions/$1|$1]] ;
 buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
@@ -1215,11 +1215,18 @@ $messages['rif'] = array(
 /** Romanian (Română)
  * @author KlaudiuMihaila
  * @author Mihai
+ * @author Stelistcristi
  */
 $messages['ro'] = array(
 	'nuke' => 'Ştergere în masă',
+	'nuke-desc' => 'Oferă administratorilor abilitatea de [[Special:Nuke|a şterge în masă]] pagini',
+	'nuke-nopages' => 'Nicio nouă pagină de către [[Special:Contributions/$1|$1]] în schimbările recente.',
+	'nuke-defaultreason' => 'Eliminatorul în masă al paginilor adăugat de $1',
+	'nuke-tools' => 'Această unealtă permite ştergeri în masă a paginilor recent adăugate de către un utilizator dat sau IP.
+Introduceţi numele de utilizator sau IP-ul pentru a primi o listă de paginii de şters.',
 	'nuke-submit-user' => 'Du-te',
 	'nuke-submit-delete' => 'Şterge ce e marcat',
+	'right-nuke' => 'şterge pagini în masă',
 );
 
 /** Russian (Русский)
