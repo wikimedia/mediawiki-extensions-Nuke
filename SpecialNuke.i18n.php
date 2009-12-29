@@ -47,8 +47,11 @@ $messages['niu'] = array(
  */
 $messages['af'] = array(
 	'nuke' => 'Massa verwyder',
+	'nuke-nopages' => 'Geen nuwe bladsye [[Special:Contributions/$1|$1]] in onlangse wysigings.',
+	'nuke-defaultreason' => 'Massa verwydering van bladsye van $1',
 	'nuke-submit-user' => 'Laat waai',
 	'nuke-submit-delete' => 'Skrap geselekteerde',
+	'right-nuke' => 'Massa verwydering van bladsye',
 );
 
 /** Aragonese (Aragonés)
@@ -1229,6 +1232,23 @@ Introduceţi numele de utilizator sau IP-ul pentru a primi o listă de paginii d
 	'right-nuke' => 'şterge pagini în masă',
 );
 
+/** Tarandíne (Tarandíne)
+ * @author Joetaras
+ */
+$messages['roa-tara'] = array(
+	'nuke' => 'Scangellazione de masse',
+	'nuke-desc' => "Dà a l'amministrature l'abbilità de [[Special:Nuke|scangellà massivamende]] le pàggene",
+	'nuke-nopages' => "Nisciuna pàgena nove da [[Special:Contributions/$1|$1]] jndr'à l'urteme cangiaminde.",
+	'nuke-list' => "Le pàggene seguende onne state ccrejate recendemende da [[Special:Contributions/$1|$1]];
+mitte 'nu commende e cazze sus a 'u buttone pe scangellarle.",
+	'nuke-defaultreason' => 'Scangellazzione de masse de le pàggene aggiunde da $1',
+	'nuke-tools' => "Stu strumende permette le scangellazziune de masse de le pàggene aggiunde de recende da 'nu certe utende o IP.<br />
+Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de scangellà.",
+	'nuke-submit-user' => 'Veje',
+	'nuke-submit-delete' => "Scangelle 'a selezione",
+	'right-nuke' => 'Scangellazione de masse de le pàggene',
+);
+
 /** Russian (Русский)
  * @author HalanTul
  * @author VasilievVV
@@ -1433,6 +1453,7 @@ $messages['tg-latn'] = array(
  */
 $messages['tk'] = array(
 	'nuke' => 'Köpçülikleýin öçür',
+	'nuke-defaultreason' => '$1 tarapyndan sahypalaryň köpçülikleýin aýrylmagy goşuldy',
 	'nuke-submit-user' => 'Git',
 	'nuke-submit-delete' => 'Saýlanylanlary öçür',
 	'right-nuke' => 'Sahypalary köpçülikleýin öçür',
