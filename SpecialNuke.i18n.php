@@ -1453,6 +1453,7 @@ $messages['tg-latn'] = array(
  */
 $messages['tk'] = array(
 	'nuke' => 'Köpçülikleýin öçür',
+	'nuke-desc' => 'Administratorlara sahypalary [[Special:Nuke|köpçülikleýin öçürme]] ukybyny berýär',
 	'nuke-defaultreason' => '$1 tarapyndan sahypalaryň köpçülikleýin aýrylmagy goşuldy',
 	'nuke-submit-user' => 'Git',
 	'nuke-submit-delete' => 'Saýlanylanlary öçür',
