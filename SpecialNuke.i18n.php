@@ -791,6 +791,9 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
  * @author Sopho
  */
 $messages['ka'] = array(
+	'nuke-nopages' => 'ბოლო ცვლილებებში არ არის ახალი გვერდები [[Special:Contributions/$1|$1]]-ის მიერ.',
+	'nuke-list' => 'ეს გვერდები შეიქმნა [[Special:Contributions/$1|$1]]-ის მიერ;
+შეიყვანეთ კომენტარი და დააჭირეთ ღილაკს მათ წასაშლელად.',
 	'nuke-submit-user' => 'გადასვლა',
 	'nuke-submit-delete' => 'არჩეულის წაშლა',
 );
