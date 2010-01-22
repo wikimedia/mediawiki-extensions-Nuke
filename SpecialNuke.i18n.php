@@ -939,6 +939,13 @@ $messages['lzh'] = array(
 	'right-nuke' => '量刪頁',
 );
 
+/** Malagasy (Malagasy)
+ * @author Jagwar
+ */
+$messages['mg'] = array(
+	'right-nuke' => 'Mamafa pejy maro',
+);
+
 /** Macedonian (Македонски)
  * @author Bjankuloski06
  */
