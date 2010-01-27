@@ -1077,11 +1077,11 @@ $messages['nn'] = array(
 	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringar.',
 	'nuke-list' => 'Følgjande sider blei nyleg oppretta av [[Special:Contributions/$1|$1]]. 
 Skriv inn ei sletteårsak og trykk på knappen for å sletta alle sidene.',
-	'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
-	'nuke-tools' => 'Dette verktøyet mogleggjer massesletting av sider som nyleg er lagt inn av ein viss brukar eller ei viss IP-adressa. 
-Skriv inn eit brukarnamn eller ei IP-adressa for å få ei lista over sider som kan bli sletta.',
+	'nuke-defaultreason' => 'Massesletting av sider lagde inn av $1',
+	'nuke-tools' => 'Dette verktøyet mogleggjer massesletting av sider som nyleg er lagde inn av ein viss brukar eller ei viss IP-adressa. 
+Skriv inn eit brukarnamn eller ei IP-adressa for å få ei lista over sider som ein kan sletta her.',
 	'nuke-submit-user' => 'Gå',
-	'nuke-submit-delete' => 'Slett valte',
+	'nuke-submit-delete' => 'Slett valde',
 	'right-nuke' => 'Masseslett sider',
 );
 
