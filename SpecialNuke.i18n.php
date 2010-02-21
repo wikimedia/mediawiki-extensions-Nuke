@@ -482,6 +482,7 @@ $messages['fi'] = array(
 /** French (Français)
  * @author Grondin
  * @author IAlex
+ * @author Jean-Frédéric
  * @author Louperivois
  * @author Sherbrooke
  * @author Zetud
@@ -494,7 +495,7 @@ $messages['fr'] = array(
 	'nuke-defaultreason' => 'Suppression en masse des pages ajoutées par $1',
 	'nuke-tools' => 'Cet outil autorise les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une adresse IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer :',
 	'nuke-submit-user' => 'Valider',
-	'nuke-submit-delete' => 'Suppression sélectionnée',
+	'nuke-submit-delete' => 'Supprimer la sélection',
 	'right-nuke' => 'Supprimer des pages en masse',
 );
 
