@@ -468,12 +468,13 @@ $messages['fa'] = array(
  * @author Jaakonam
  */
 $messages['fi'] = array(
-	'nuke' => 'Massapoistaminen',
+	'nuke' => 'Massapoisto',
 	'nuke-desc' => 'Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]].',
 	'nuke-nopages' => 'Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.',
 	'nuke-list' => 'Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut.',
 	'nuke-defaultreason' => 'Käyttäjän $1 lisäämien sivujen massapoistaminen',
-	'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP:n perusteella. Kirjoita käyttäjänimi tai IP, niin saat listan poistettavista sivuista:',
+	'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP-osoitteen perusteella.
+Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista.',
 	'nuke-submit-user' => 'Siirry',
 	'nuke-submit-delete' => 'Poista valitut',
 	'right-nuke' => 'Massapoistaa sivuja',
