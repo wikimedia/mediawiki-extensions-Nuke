@@ -99,7 +99,7 @@ $aliases['ko'] = array(
 	'Nuke' => array( '문서대량삭제' ),
 );
 
-/** Ripoarisch (Ripoarisch) */
+/** Colognian (Ripoarisch) */
 $aliases['ksh'] = array(
 	'Nuke' => array( 'Maßesch Sigge Fottschmiiße' ),
 );
