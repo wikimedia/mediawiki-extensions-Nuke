@@ -1330,6 +1330,13 @@ $messages['sk'] = array(
 	'right-nuke' => 'Hromadné mazanie stránok',
 );
 
+/** Slovenian (Slovenščina)
+ * @author Dbc334
+ */
+$messages['sl'] = array(
+	'nuke' => 'Množični izbris',
+);
+
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
  */
