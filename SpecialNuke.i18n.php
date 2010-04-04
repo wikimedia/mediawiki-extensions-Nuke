@@ -1335,6 +1335,16 @@ $messages['sk'] = array(
  */
 $messages['sl'] = array(
 	'nuke' => 'Množični izbris',
+	'nuke-desc' => 'Da administratorjem zmožnost [[Special:Nuke|množičnega izbrisa]] strani',
+	'nuke-nopages' => 'Ni novih strani uporabnika [[Special:Contributions/$1|$1]] v zadnjih spremembah.',
+	'nuke-list' => 'Naslednje strani je nedavno ustvaril uporabnik [[Special:Contributions/$1|$1]];
+vnesite komentar in pritisnite gumb za njihov izbris.',
+	'nuke-defaultreason' => 'Množično brisanje strani, ki jih je dodal $1',
+	'nuke-tools' => 'To orodje omogoča množični izbris strani, ki jih je nedavno ustvaril določen uporabnik ali IP.
+Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris.',
+	'nuke-submit-user' => 'Pojdi',
+	'nuke-submit-delete' => 'Izbriši izbrano',
+	'right-nuke' => 'Množično brisanje strani',
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
