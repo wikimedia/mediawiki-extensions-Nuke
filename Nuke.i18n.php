@@ -856,7 +856,7 @@ $messages['krj'] = array(
 	'nuke-submit-user' => 'Agto',
 );
 
-/** Ripoarisch (Ripoarisch)
+/** Colognian (Ripoarisch)
  * @author Purodha
  */
 $messages['ksh'] = array(
@@ -1612,7 +1612,7 @@ $messages['vo'] = array(
 	'right-nuke' => 'Moükön padamödoti',
 );
 
-/** Yue (粵語)
+/** Cantonese (粵語)
  * @author Shinjiman
  */
 $messages['yue'] = array(
