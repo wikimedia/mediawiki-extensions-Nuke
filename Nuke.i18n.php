@@ -1234,14 +1234,14 @@ $messages['rif'] = array(
  */
 $messages['ro'] = array(
 	'nuke' => 'Ştergere în masă',
-	'nuke-desc' => 'Oferă administratorilor abilitatea de [[Special:Nuke|a şterge în masă]] pagini',
+	'nuke-desc' => 'Oferă administratorilor abilitatea de [[Special:Nuke|a șterge în masă]] pagini',
 	'nuke-nopages' => 'Nicio nouă pagină de către [[Special:Contributions/$1|$1]] în schimbările recente.',
 	'nuke-defaultreason' => 'Eliminatorul în masă al paginilor adăugat de $1',
-	'nuke-tools' => 'Această unealtă permite ştergeri în masă a paginilor recent adăugate de către un utilizator dat sau IP.
-Introduceţi numele de utilizator sau IP-ul pentru a primi o listă de paginii de şters.',
+	'nuke-tools' => 'Această unealtă permite ștergeri în masă a paginilor recent adăugate de către un utilizator dat sau IP.
+Introduceți numele de utilizator sau IP-ul pentru a primi o listă de paginii de șters.',
 	'nuke-submit-user' => 'Du-te',
 	'nuke-submit-delete' => 'Şterge ce e marcat',
-	'right-nuke' => 'şterge pagini în masă',
+	'right-nuke' => 'șterge pagini în masă',
 );
 
 /** Tarandíne (Tarandíne)
