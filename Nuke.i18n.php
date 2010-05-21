@@ -1133,6 +1133,13 @@ $messages['os'] = array(
 	'right-nuke' => 'фæрстæ бирæгай аппарын',
 );
 
+/** Deitsch (Deitsch)
+ * @author Xqt
+ */
+$messages['pdc'] = array(
+	'nuke-submit-user' => 'Lischt hole',
+);
+
 /** Polish (Polski)
  * @author Derbeth
  * @author Sp5uhe
