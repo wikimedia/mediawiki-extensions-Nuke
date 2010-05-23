@@ -793,11 +793,13 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
  * @author Sopho
  */
 $messages['ka'] = array(
+	'nuke' => 'მასობრივი წაშლა',
 	'nuke-nopages' => 'ბოლო ცვლილებებში არ არის ახალი გვერდები [[Special:Contributions/$1|$1]]-ის მიერ.',
 	'nuke-list' => 'ეს გვერდები შეიქმნა [[Special:Contributions/$1|$1]]-ის მიერ;
 შეიყვანეთ კომენტარი და დააჭირეთ ღილაკს მათ წასაშლელად.',
 	'nuke-submit-user' => 'გადასვლა',
 	'nuke-submit-delete' => 'არჩეულის წაშლა',
+	'right-nuke' => 'გვერდების მასობრივად წაშლა',
 );
 
 /** Khmer (ភាសាខ្មែរ)
@@ -1010,6 +1012,17 @@ $messages['ms'] = array(
 	'nuke-submit-user' => 'Pergi',
 	'nuke-submit-delete' => 'Hapus',
 	'right-nuke' => 'Menghapuskan laman secara pukal',
+);
+
+/** Maltese (Malti)
+ * @author Chrisportelli
+ */
+$messages['mt'] = array(
+	'nuke' => 'Tħassir tal-massa',
+	'nuke-tools' => "Din l-għodda tippermetti t-tħassir ta' massa ta' paġni li ġew miżjuda riċentament minn utent partikulari jew IP.
+Daħħal l-isem tal-utent jew l-IP biex tikseb lista ta' paġni li jridu jitħassru.",
+	'nuke-submit-user' => 'Mur',
+	'right-nuke' => 'Ħassar paġni bil-massa',
 );
 
 /** Erzya (Эрзянь)
