@@ -302,18 +302,20 @@ Skriv et brugernavn eller en IP for at få en liste over sider at slette.',
 );
 
 /** German (Deutsch)
+ * @author Kghbln
  * @author Raimond Spekking
  */
 $messages['de'] = array(
 	'nuke' => 'Massenlöschung',
 	'nuke-desc' => 'Ermöglicht Administratoren die [[Special:Nuke|Massenlöschung]] von Seiten',
-	'nuke-nopages' => 'Es gibt in den Letzten Änderungen keine neuen Seiten von [[Special:Contributions/$1|$1]].',
-	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] erzeugt;
-gib einen Kommentar ein und drücke auf den Löschknopf.',
-	'nuke-defaultreason' => 'Massenlöschung von Seiten, die von „$1“ angelegt wurden',
-	'nuke-tools' => 'Dieses Werkzeug ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Gib die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten.',
-	'nuke-submit-user' => 'Hole Liste',
-	'nuke-submit-delete' => 'Löschen',
+	'nuke-nopages' => 'Es gibt in den „Letzten Änderungen“ keine neuen Seiten von [[Special:Contributions/$1|$1]].',
+	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] angelegt.
+Gib einen Kommentar ein und drücke auf den Knopf zum Löschen.',
+	'nuke-defaultreason' => 'Massenlöschung der Seiten, die von „$1“ angelegt wurden',
+	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden.
+Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten.',
+	'nuke-submit-user' => 'Hole die Liste',
+	'nuke-submit-delete' => 'Ausgewählte Seiten löschen',
 	'right-nuke' => 'Massenlöschung von Seiten',
 );
 
