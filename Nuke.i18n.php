@@ -17,8 +17,8 @@ $messages['en'] = array(
 	'nuke-list'          => "The following pages were recently created by [[Special:Contributions/$1|$1]];
 put in a comment and hit the button to delete them.",
 	'nuke-defaultreason' => "Mass removal of pages added by $1",
-	'nuke-tools'         => 'This tool allows for mass deletions of pages recently added by a given user or IP.
-Input the username or IP to get a list of pages to delete.',
+	'nuke-tools'         => 'This tool allows for mass deletions of pages recently added by a given user or an IP address.
+Input the username or IP address to get a list of pages to delete.',
 	'nuke-submit-user'   => 'Go',
 	'nuke-submit-delete' => 'Delete selected',
 	'right-nuke'         => 'Mass delete pages',
