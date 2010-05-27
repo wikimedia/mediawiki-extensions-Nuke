@@ -535,7 +535,8 @@ $messages['gl'] = array(
 	'nuke' => 'Eliminar en masa',
 	'nuke-desc' => 'Dá aos administradores a posibilidade de [[Special:Nuke|borrar páxinas]] masivamente',
 	'nuke-nopages' => 'Non hai novas páxinas feitas por [[Special:Contributions/$1|$1]] nos cambios recentes.',
-	'nuke-list' => 'As seguintes páxinas foron recentemente creadas por [[Special:Contributions/$1|$1]]; poña un comentario e prema o botón para borralos.',
+	'nuke-list' => '[[Special:Contributions/$1|$1]] creou nos últimos intres as seguintes páxinas;
+escriba un comentario e prema o botón para borralas.',
 	'nuke-defaultreason' => 'Eliminación en masa das páxinas engadidas por $1',
 	'nuke-tools' => 'Esta ferramenta permite supresións masivas das páxinas engadidas recentemente por un determinado usuario ou enderezo IP. Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas para borrar.',
 	'nuke-submit-user' => 'Adiante',
