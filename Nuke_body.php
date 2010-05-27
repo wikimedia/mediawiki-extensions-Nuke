@@ -5,6 +5,7 @@ if( !defined( 'MEDIAWIKI' ) )
 
 class SpecialNuke extends SpecialPage {
 	function __construct() {
+		wfLoadExtensionMessages( 'Nuke' );
 		parent::__construct( 'Nuke', 'nuke' );
 	}
 
