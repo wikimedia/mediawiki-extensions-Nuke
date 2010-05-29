@@ -964,7 +964,7 @@ $messages['mk'] = array(
 вметнете коментар и притиснете на копчето за да ги избришете',
 	'nuke-defaultreason' => 'Групно отстранување на страници додадени од $1',
 	'nuke-tools' => 'Оваа алатка овозможува групни бришења на страници неодамна додадени од извесен корисник или IP адреса.
-Внесете го корисничкото име или IP адреса за да ја добиете листата на страниците за бришење.',
+Внесете го корисничкото име или IP-адреса за да го добиете списокот на страници за бришење.',
 	'nuke-submit-user' => 'Изврши',
 	'nuke-submit-delete' => 'Избриши ги избраните',
 	'right-nuke' => 'Групно бришење на страници',
@@ -1079,8 +1079,8 @@ $messages['nl'] = array(
 	'nuke-nopages' => "Geen nieuwe pagina's van [[Special:Contributions/$1|$1]] in de recente wijzigingen.",
 	'nuke-list' => "De onderstaande pagina's zijn recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer een reden in en klik op de knop om ze te verwijderen.",
 	'nuke-defaultreason' => "Massaal verwijderen van pagina's van $1",
-	'nuke-tools' => "Dit hulpmiddel maakt het mogelijk massaal pagina's te verwijderen die recentelijk zijn aangemaakt door een gebruiker of IP-adres.
-Voer de gebruikernaam of het IP-adres in voor een lijst van te verwijderen pagina's.",
+	'nuke-tools' => "Dit hulpmiddel maakt het mogelijk pagina's die recentelijk zijn aangemaakt door een gebruiker of IP-adres massaal te verwijderen.
+Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagina's.",
 	'nuke-submit-user' => 'OK',
 	'nuke-submit-delete' => 'Geselecteerde verwijderen',
 	'right-nuke' => "Massaal pagina's verwijderen",
