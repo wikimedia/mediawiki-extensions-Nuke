@@ -259,6 +259,13 @@ Introduïu el nom d'usuari o la IP per obtenir una llista de pàgines per esborr
 	'right-nuke' => 'Esborrat massiu de pàgines',
 );
 
+/** Chechen (Нохчийн)
+ * @author Sasan700
+ */
+$messages['ce'] = array(
+	'nuke-submit-delete' => 'Дlадайá хаьржнарш',
+);
+
 /** Chamorro (Chamoru)
  * @author Jatrobat
  */
@@ -797,6 +804,7 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
  */
 $messages['ka'] = array(
 	'nuke' => 'მასობრივი წაშლა',
+	'nuke-desc' => 'ადმინისტრატორებს აძლევს გვერდების [[Special:Nuke|მასობრივად წაშლის]] საშუალებას',
 	'nuke-nopages' => 'ბოლო ცვლილებებში არ არის ახალი გვერდები [[Special:Contributions/$1|$1]]-ის მიერ.',
 	'nuke-list' => 'ეს გვერდები შეიქმნა [[Special:Contributions/$1|$1]]-ის მიერ;
 შეიყვანეთ კომენტარი და დააჭირეთ ღილაკს მათ წასაშლელად.',
@@ -963,7 +971,7 @@ $messages['mk'] = array(
 	'nuke-list' => 'Следниве страници биле неодамна создадени од [[Special:Contributions/$1|$1]];
 вметнете коментар и притиснете на копчето за да ги избришете',
 	'nuke-defaultreason' => 'Групно отстранување на страници додадени од $1',
-	'nuke-tools' => 'Оваа алатка овозможува групни бришења на страници неодамна додадени од извесен корисник или IP адреса.
+	'nuke-tools' => 'Оваа алатка овозможува групни бришења на страници неодамна додадени од извесен корисник или IP-адреса.
 Внесете го корисничкото име или IP-адреса за да го добиете списокот на страници за бришење.',
 	'nuke-submit-user' => 'Изврши',
 	'nuke-submit-delete' => 'Избриши ги избраните',
