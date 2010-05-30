@@ -102,10 +102,10 @@ class SpecialNuke extends SpecialPage {
 				Xml::check( 'pages[]', true,
 					array( 'value' =>  $title->getPrefixedDbKey() )
 				) .
-				'&nbsp;' .
+				'&#160;' .
 				( $thumb ? $thumb->toHtml( array( 'desc-link' => true ) ) : '' ) .
 				$sk->makeKnownLinkObj( $title ) .
-				'&nbsp;(' .
+				'&#160;(' .
 				$sk->makeKnownLinkObj( $title, $changes, 'action=history' ) .
 				")</li>\n" );
 		}
