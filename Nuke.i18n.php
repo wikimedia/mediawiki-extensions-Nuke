@@ -327,12 +327,14 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
+ * @author Kghbln
  * @author Raimond Spekking
  */
 $messages['de-formal'] = array(
-	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] erzeugt;
-geben Sie einen Kommentar ein und drücken Sie auf den Löschknopf.',
-	'nuke-tools' => 'Dieses Werkzeug ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden. Geben Sie die IP-Adresse/den Benutzernamen ein, um eine Liste zu erhalten:',
+	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] angelegt.
+Geben Sie einen Kommentar ein und drücken Sie auf den Knopf zum Löschen der Seiten.',
+	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden.
+Geben Sie die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten.',
 );
 
 /** Zazaki (Zazaki)
