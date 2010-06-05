@@ -1250,6 +1250,7 @@ $messages['pt-br'] = array(
  */
 $messages['qu'] = array(
 	'nuke' => 'Tawqa qulluy',
+	'nuke-desc' => "Kamachiqkunata [[Special:Nuke|p'anqa tawqa qulluywan]] atichin",
 	'nuke-nopages' => "Manam kanchu [[Special:Contributions/$1|$1]]-pa musuqta kamarisqan p'anqakuna ñaqha hukchasqakunapi.",
 	'nuke-list' => "Kay qatiq p'anqakunataqa [[Special:Contributions/$1|$1]] ruraqmi kamarirqun; imarayku nispa butunta ñit'iy tawqalla qullunapaq.",
 	'nuke-defaultreason' => "$1-pa rurasqan p'anqakunata tawqalla qulluy",
