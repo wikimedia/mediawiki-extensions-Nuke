@@ -1,7 +1,9 @@
 <?php
 /**
  * Internationalisation file for the Nuke extension
- * @addtogroup Extensions
+ *
+ * @file
+ * @ingroup Extensions
  * @author Brion Vibber
  */
 

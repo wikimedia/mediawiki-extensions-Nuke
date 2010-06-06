@@ -2,7 +2,8 @@
 /**
  * Aliases for Special:Nuke
  *
- * @addtogroup Extensions
+ * @file
+ * @ingroup Extensions
  */
 
 $aliases = array();
