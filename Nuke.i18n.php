@@ -60,15 +60,15 @@ $messages['af'] = array(
  * @author Juanpabl
  */
 $messages['an'] = array(
-	'nuke' => 'Borrato masibo',
-	'nuke-desc' => 'Da á os almenistradors a capazidat de fer [[Special:Nuke|borratos masibos]] de pachinas',
-	'nuke-nopages' => 'No bi ha garra pachina nueba feita por [[Special:Contributions/$1|$1]] entre os zaguers cambeos.',
+	'nuke' => 'Borrato masivo',
+	'nuke-desc' => 'Da a os almenistradors a capacidat de fer [[Special:Nuke|borratos masivos]] de pachinas',
+	'nuke-nopages' => 'No bi ha garra pachina nueva feita por [[Special:Contributions/$1|$1]] entre os zaguers cambeos.',
 	'nuke-list' => 'A siguients pachinas fuoron creyatas por [[Special:Contributions/$1|$1]]; escriba un comentario y punche o botón ta borrar-los.',
-	'nuke-defaultreason' => "Borrato masibo d'as pachinas adibitas por $1",
-	'nuke-tools' => "Ista ferramienta fa posible de fer borratos masibos de pachinas adibitas en zaguerías por un usuario u adreza IP datos. Escriba o nombre d'usuario u l'adreza IP ta obtener una lista de pachinas ta borrar:",
+	'nuke-defaultreason' => "Borrato masivo d'as pachinas adhibitas por $1",
+	'nuke-tools' => "Ista ferramienta fa posible de fer borratos masivos de pachinas adhibitas en zaguerías por un usuario u adreza IP datos. Escriba o nombre d'usuario u l'adreza IP ta obtener una lista de pachinas ta borrar:",
 	'nuke-submit-user' => 'Ir-ie',
 	'nuke-submit-delete' => 'Borrar as trigatas',
-	'right-nuke' => 'Borrar pachinas masibament',
+	'right-nuke' => 'Borrar pachinas masivament',
 );
 
 /** Arabic (العربية)
