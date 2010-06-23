@@ -1270,6 +1270,7 @@ $messages['rif'] = array(
 );
 
 /** Romanian (Română)
+ * @author Cin
  * @author KlaudiuMihaila
  * @author Mihai
  * @author Stelistcristi
@@ -1277,12 +1278,12 @@ $messages['rif'] = array(
 $messages['ro'] = array(
 	'nuke' => 'Ştergere în masă',
 	'nuke-desc' => 'Oferă administratorilor abilitatea de [[Special:Nuke|a șterge în masă]] pagini',
-	'nuke-nopages' => 'Nicio nouă pagină de către [[Special:Contributions/$1|$1]] în schimbările recente.',
+	'nuke-nopages' => 'Nicio pagină nouă de către [[Special:Contributions/$1|$1]] în schimbările recente.',
 	'nuke-defaultreason' => 'Eliminatorul în masă al paginilor adăugat de $1',
 	'nuke-tools' => 'Această unealtă permite ștergeri în masă a paginilor recent adăugate de către un utilizator dat sau IP.
 Introduceți numele de utilizator sau IP-ul pentru a primi o listă de paginii de șters.',
 	'nuke-submit-user' => 'Du-te',
-	'nuke-submit-delete' => 'Şterge ce e marcat',
+	'nuke-submit-delete' => 'Şterge selectatele',
 	'right-nuke' => 'șterge pagini în masă',
 );
 
