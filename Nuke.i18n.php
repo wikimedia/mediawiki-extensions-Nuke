@@ -1273,6 +1273,7 @@ $messages['rif'] = array(
  * @author Cin
  * @author KlaudiuMihaila
  * @author Mihai
+ * @author Minisarm
  * @author Stelistcristi
  */
 $messages['ro'] = array(
@@ -1283,7 +1284,7 @@ $messages['ro'] = array(
 	'nuke-tools' => 'Această unealtă permite ștergeri în masă a paginilor recent adăugate de către un utilizator dat sau IP.
 Introduceți numele de utilizator sau IP-ul pentru a primi o listă de paginii de șters.',
 	'nuke-submit-user' => 'Du-te',
-	'nuke-submit-delete' => 'Şterge selectatele',
+	'nuke-submit-delete' => 'Șterge ce e marcat',
 	'right-nuke' => 'șterge pagini în masă',
 );
 
