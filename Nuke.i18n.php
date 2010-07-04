@@ -1180,11 +1180,12 @@ $messages['pdc'] = array(
 
 /** Polish (Polski)
  * @author Derbeth
+ * @author Nux
  * @author Sp5uhe
  */
 $messages['pl'] = array(
 	'nuke' => 'Masowe usuwanie',
-	'nuke-desc' => 'Dodaje administratorom funkcjonalność równoczesnego [[Special:Nuke|usuwania dużej liczby stron]]',
+	'nuke-desc' => 'Dodaje administratorom funkcję równoczesnego [[Special:Nuke|usuwania dużej liczby stron]]',
 	'nuke-nopages' => 'Brak nowych stron autorstwa [[Special:Contributions/$1|$1]] w ostatnich zmianach.',
 	'nuke-list' => 'Następujące strony zostały ostatnio utworzone przez [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk by usunąć je.',
 	'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1',
