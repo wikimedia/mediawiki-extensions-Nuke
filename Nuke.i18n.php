@@ -1327,6 +1327,13 @@ $messages['ru'] = array(
 	'right-nuke' => 'множественное удаление страниц',
 );
 
+/** Rusyn (русиньскый язык)
+ * @author Gazeb
+ */
+$messages['rue'] = array(
+	'nuke-submit-user' => 'Выконати',
+);
+
 /** Yakut (Саха тыла)
  * @author HalanTul
  */
