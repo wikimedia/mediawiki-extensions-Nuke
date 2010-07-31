@@ -122,7 +122,7 @@ class SpecialNuke extends SpecialPage {
 			array( 'rc_namespace', 'rc_title', 'rc_timestamp', 'COUNT(*) AS edits' ),
 			array(
 				'rc_user_text' => $username,
-				'(rc_new = 1) OR (rc_log_type = "import" AND rc_log_action = "upload")'
+				"(rc_new = 1) OR (rc_log_type = 'import' AND rc_log_action = 'upload')"
 			),
 			__METHOD__,
 			array(
