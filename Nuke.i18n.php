@@ -719,6 +719,13 @@ $messages['id'] = array(
 	'right-nuke' => 'Melakukan penghapusan masal halaman',
 );
 
+/** Igbo (Igbo)
+ * @author Ukabia
+ */
+$messages['ig'] = array(
+	'nuke-submit-user' => 'Gá',
+);
+
 /** Ido (Ido)
  * @author Malafaya
  */
