@@ -30,9 +30,10 @@ Input the username or IP address to get a list of pages to delete.',
  * @author Jon Harald Søby
  * @author Meno25
  * @author Purodha
+ * @author The Evil IP address
  */
 $messages['qqq'] = array(
-	'nuke-desc' => 'Short description of the Nuke extension, shown in [[Special:Version]]. Do not translate or change links.',
+	'nuke-desc' => '{{desc}}',
 	'nuke-submit-user' => '{{Identical|Go}}',
 	'right-nuke' => '{{doc-right}}',
 );
