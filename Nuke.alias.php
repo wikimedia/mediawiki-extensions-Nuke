@@ -15,158 +15,138 @@ $aliases['en'] = array(
 	'Nuke' => array( 'Nuke' ),
 );
 
-/** Arabic (العربية) */
 $aliases['ar'] = array(
-	'Nuke' => array( 'حذف_كمي' ),
+	'Nuke'   => array( 'حذف_كمي' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
 $aliases['arz'] = array(
-	'Nuke' => array( 'مسح_كامل' ),
+	'Nuke'   => array( 'مسح_كامل' ),
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца)) */
 $aliases['be-tarask'] = array(
-	'Nuke' => array( 'Масавае_выдаленьне' ),
+	'Nuke'   => array( 'Масавае_выдаленьне' ),
 );
 
-/** German (Deutsch) */
 $aliases['de'] = array(
-	'Nuke' => array( 'Massenlöschung' ),
+	'Nuke'   => array( 'Massenlöschung' ),
 );
 
-/** Lower Sorbian (Dolnoserbski) */
 $aliases['dsb'] = array(
-	'Nuke' => array( 'Wulašowanje z kopicami' ),
+	'Nuke'   => array( 'Wulašowanje_z_kopicami' ),
 );
 
-/** Estonian (Eesti) */
 $aliases['et'] = array(
-	'Nuke' => array( 'Lauskustutamine' ),
+	'Nuke'   => array( 'Lauskustutamine' ),
 );
 
-/** Persian (فارسی) */
 $aliases['fa'] = array(
-	'Nuke' => array( 'حذف_دسته‌جمعی' ),
+	'Nuke'   => array( 'حذف_دسته‌جمعی' ),
 );
 
-/** Finnish (Suomi) */
 $aliases['fi'] = array(
-	'Nuke' => array( 'Massapoisto' ),
+	'Nuke'   => array( 'Massapoisto' ),
 );
 
-/** Swiss German (Alemannisch) */
 $aliases['gsw'] = array(
-	'Nuke' => array( 'Masseleschig' ),
+	'Nuke'   => array( 'Masseleschig' ),
 );
 
-/** Hawaiian (Hawai`i) */
 $aliases['haw'] = array(
-	'Nuke' => array( 'Luku' ),
+	'Nuke'   => array( 'Luku' ),
 );
 
-/** Hebrew (עברית) */
 $aliases['he'] = array(
-	'Nuke' => array( 'מחיקה_מרובה' ),
+	'Nuke'   => array( 'מחיקה_מרובה' ),
 );
 
-/** Upper Sorbian (Hornjoserbsce) */
 $aliases['hsb'] = array(
-	'Nuke' => array( 'Masowe wušmórnjenje' ),
+	'Nuke'   => array( 'Masowe_wušmórnjenje' ),
 );
 
-/** Hungarian (Magyar) */
 $aliases['hu'] = array(
-	'Nuke' => array( 'Kiirtás' ),
+	'Nuke'   => array( 'Kiirtás' ),
 );
 
-/** Interlingua (Interlingua) */
 $aliases['ia'] = array(
-	'Nuke' => array( 'Deler in massa' ),
+	'Nuke'   => array( 'Deler_in_massa' ),
 );
 
-/** Italian (Italiano) */
+$aliases['id'] = array(
+	'Nuke'   => array( 'Nuklir' ),
+);
+
 $aliases['it'] = array(
-	'Nuke' => array( 'CancellazioneMassiva' ),
+	'Nuke'   => array( 'CancellazioneMassiva' ),
 );
 
-/** Japanese (日本語) */
 $aliases['ja'] = array(
-	'Nuke' => array( 'まとめて削除' ),
+	'Nuke'   => array( 'まとめて削除' ),
 );
 
-/** Korean (한국어) */
 $aliases['ko'] = array(
-	'Nuke' => array( '문서대량삭제' ),
+	'Nuke'   => array( '문서대량삭제' ),
 );
 
-/** Colognian (Ripoarisch) */
 $aliases['ksh'] = array(
-	'Nuke' => array( 'Maßesch Sigge Fottschmiiße' ),
+	'Nuke'   => array( 'Maßesch_Sigge_Fottschmiiße' ),
 );
 
-/** Luxembourgish (Lëtzebuergesch) */
+$aliases['lad'] = array(
+	'Nuke'   => array( 'Bombardea' ),
+);
+
 $aliases['lb'] = array(
-	'Nuke' => array( 'Masseläschung' ),
+	'Nuke'   => array( 'Masseläschung' ),
 );
 
-/** Macedonian (Македонски) */
 $aliases['mk'] = array(
-	'Nuke' => array( 'Нукирање' ),
+	'Nuke'   => array( 'Нукирање' ),
 );
 
-/** Malayalam (മലയാളം) */
 $aliases['ml'] = array(
-	'Nuke' => array( 'സർവ്വനാശം' ),
+	'Nuke'   => array( 'സർവ്വനാശം' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
 $aliases['nds-nl'] = array(
-	'Nuke' => array( 'Massaal_vortdoon' ),
+	'Nuke'   => array( 'Massaal_vortdoon' ),
 );
 
-/** Dutch (Nederlands) */
 $aliases['nl'] = array(
-	'Nuke' => array( 'MassaalVerwijderen' ),
+	'Nuke'   => array( 'MassaalVerwijderen' ),
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬) */
 $aliases['nn'] = array(
-	'Nuke' => array( 'Massesletting' ),
+	'Nuke'   => array( 'Massesletting' ),
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
 $aliases['no'] = array(
-	'Nuke' => array( 'Massesletting' ),
+	'Nuke'   => array( 'Massesletting' ),
 );
 
-/** Polish (Polski) */
 $aliases['pl'] = array(
-	'Nuke' => array( 'Masowe usuwanie' ),
+	'Nuke'   => array( 'Masowe_usuwanie' ),
 );
 
-/** Sanskrit (संस्कृत) */
 $aliases['sa'] = array(
-	'Nuke' => array( 'न्यूक' ),
+	'Nuke'   => array( 'न्यूक' ),
 );
 
-/** Slovak (Slovenčina) */
 $aliases['sk'] = array(
-	'Nuke' => array( 'Zničenie' ),
+	'Nuke'   => array( 'Zničenie' ),
 );
 
-/** Swedish (Svenska) */
 $aliases['sv'] = array(
-	'Nuke' => array( 'Massradering' ),
+	'Nuke'   => array( 'Massradering' ),
 );
 
-/** Tagalog (Tagalog) */
 $aliases['tl'] = array(
-	'Nuke' => array( 'Malawakang pagbura' ),
+	'Nuke'   => array( 'Malawakang pagbura' ),
 );
 
-/** Turkish (Türkçe) */
 $aliases['tr'] = array(
-	'Nuke' => array( 'Uçur' ),
+	'Nuke'   => array( 'Uçur' ),
 );
 
+$aliases['zh-hant'] = array(
+	'Nuke'   => array( '大量刪除' ),
+);
