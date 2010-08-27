@@ -1419,7 +1419,7 @@ $messages['sr-ec'] = array(
 	'nuke' => 'Масовно брисање',
 	'nuke-desc' => 'Даје сиспу могућност да [[Special:Nuke|масовно брише]] стране.',
 	'nuke-nopages' => 'Нема нових страница од стране корисника [[Special:Contributions/$1|$1]] у скорашњим изменама.',
-	'nuke-list' => 'Следеће стране је скоро направио корисник [[Special:Contributions/$1|$1]]; коментариши и притисни дугме за њихово брисање.',
+	'nuke-list' => 'Следеће странице је скоро направио корисник [[Special:Contributions/$1|$1]]; коментариши и притисни дугме за њихово брисање.',
 	'nuke-defaultreason' => 'Масовно брисање страница које је направио корисник $1',
 	'nuke-tools' => 'Ово оруђе омогућава масовно брисање страница које је скоро додао одређени корисник (регистрован или не). Унеси корисничко име или ИП адресу за добијање списка страница за брисање.',
 	'nuke-submit-user' => 'Иди',
@@ -1429,14 +1429,15 @@ $messages['sr-ec'] = array(
 
 /** Serbian Latin ekavian (Srpski (latinica))
  * @author Michaello
+ * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
 	'nuke' => 'Masovno brisanje',
 	'nuke-desc' => 'Daje sispu mogućnost da [[Special:Nuke|masovno briše]] strane.',
-	'nuke-nopages' => 'Nema novih strana od strane saradnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.',
-	'nuke-list' => 'Sledeće strane je skoro napravio saradnik [[Special:Contributions/$1|$1]]; komentariši i pritisni dugme za njihovo brisanje.',
-	'nuke-defaultreason' => 'Masovno brisanje strana koje je napravio saradnik $1.',
-	'nuke-tools' => 'Ovo oruđe omogućava masovno brisanje strana koje je skoro dodao određeni saradnik (registrovan ili ne). Unesi saradničko ime ili IP adresu za dobijanje spiska strana za brisanje.',
+	'nuke-nopages' => 'Nema novih stranica od strane korisnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.',
+	'nuke-list' => 'Sledeće stranice je skoro napravio korisnik [[Special:Contributions/$1|$1]]; komentariši i pritisni dugme za njihovo brisanje.',
+	'nuke-defaultreason' => 'Masovno brisanje stranica koje je napravio korisnik $1.',
+	'nuke-tools' => 'Ovo oruđe omogućava masovno brisanje stranica koje je skoro dodao određeni korisnik (registrovan ili ne). Unesi korisničko ime ili IP adresu za dobijanje spiska stranica za brisanje.',
 	'nuke-submit-user' => 'Idi',
 	'nuke-submit-delete' => 'Obriši obeleženo',
 	'right-nuke' => 'Masovno brisanje strana.',
