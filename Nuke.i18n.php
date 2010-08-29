@@ -1293,6 +1293,8 @@ $messages['ro'] = array(
 	'nuke' => 'Ştergere în masă',
 	'nuke-desc' => 'Oferă administratorilor abilitatea de [[Special:Nuke|a șterge în masă]] pagini',
 	'nuke-nopages' => 'Nicio pagină nouă de către [[Special:Contributions/$1|$1]] în schimbările recente.',
+	'nuke-list' => 'Aceste pagini au fost recent create de [[Special:Contributions/$1|$1]];
+adăugați un comentariu și apăsați butonul pentru a le șterge.',
 	'nuke-defaultreason' => 'Eliminatorul în masă al paginilor adăugat de $1',
 	'nuke-tools' => 'Această unealtă permite ștergeri în masă a paginilor recent adăugate de către un utilizator dat sau IP.
 Introduceți numele de utilizator sau IP-ul pentru a primi o listă de paginii de șters.',
