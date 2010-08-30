@@ -1419,7 +1419,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris.',
  */
 $messages['sr-ec'] = array(
 	'nuke' => 'Масовно брисање',
-	'nuke-desc' => 'Даје сиспу могућност да [[Special:Nuke|масовно брише]] стране.',
+	'nuke-desc' => 'Даје администратору могућност да [[Special:Nuke|масовно брише]] странице.',
 	'nuke-nopages' => 'Нема нових страница од стране корисника [[Special:Contributions/$1|$1]] у скорашњим изменама.',
 	'nuke-list' => 'Следеће странице је скоро направио корисник [[Special:Contributions/$1|$1]]; коментариши и притисни дугме за њихово брисање.',
 	'nuke-defaultreason' => 'Масовно брисање страница које је направио корисник $1',
@@ -1435,7 +1435,7 @@ $messages['sr-ec'] = array(
  */
 $messages['sr-el'] = array(
 	'nuke' => 'Masovno brisanje',
-	'nuke-desc' => 'Daje sispu mogućnost da [[Special:Nuke|masovno briše]] strane.',
+	'nuke-desc' => 'Daje administratoru mogućnost da [[Special:Nuke|masovno briše]] stranice.',
 	'nuke-nopages' => 'Nema novih stranica od strane korisnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.',
 	'nuke-list' => 'Sledeće stranice je skoro napravio korisnik [[Special:Contributions/$1|$1]]; komentariši i pritisni dugme za njihovo brisanje.',
 	'nuke-defaultreason' => 'Masovno brisanje stranica koje je napravio korisnik $1.',
