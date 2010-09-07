@@ -1493,6 +1493,11 @@ Ange ett användarnamn eller en IP-adress för att se en lista över sidor som k
 	'right-nuke' => 'Massradera sidor',
 );
 
+/** Swahili (Kiswahili) */
+$messages['sw'] = array(
+	'nuke-submit-user' => 'Nenda',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
