@@ -148,9 +148,11 @@ $messages['bcc'] = array(
 
 /** Belarusian (Беларуская)
  * @author Yury Tarasievich
+ * @author Хомелка
  */
 $messages['be'] = array(
 	'nuke' => 'Масавае сціранне',
+	'nuke-desc' => 'Дае адміністратарам магчымасць [[Special:Nuke|масавага выдалення]] старонак',
 	'nuke-nopages' => 'Няма новых старонак аўтарства [[Special:Contributions/$1|$1]] у нядаўніх змяненнях.',
 	'nuke-list' => 'Наступныя старонкі былі нядаўна створаныя [[Special:Contributions/$1|$1]];
 упішыце тлумачэнне і націсніце кнопку, каб іх сцерці.',
