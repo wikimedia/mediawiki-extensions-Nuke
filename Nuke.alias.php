@@ -6,147 +6,189 @@
  * @ingroup Extensions
  */
 
-$aliases = array();
-
 /** English
  * @author Brion Vibber
  */
-$aliases['en'] = array(
+$specialPageAliases['en'] = array(
 	'Nuke' => array( 'Nuke' ),
 );
 
-$aliases['ar'] = array(
-	'Nuke'   => array( 'حذف_كمي' ),
+/** Arabic (العربية) */
+$specialPageAliases['ar'] = array(
+	'Nuke' => array( 'حذف_كمي' ),
 );
 
-$aliases['arz'] = array(
-	'Nuke'   => array( 'مسح_كامل' ),
+/** Egyptian Spoken Arabic (مصرى) */
+$specialPageAliases['arz'] = array(
+	'Nuke' => array( 'مسح_كامل' ),
 );
 
-$aliases['be-tarask'] = array(
-	'Nuke'   => array( 'Масавае_выдаленьне' ),
+/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца)) */
+$specialPageAliases['be-tarask'] = array(
+	'Nuke' => array( 'Масавае_выдаленьне' ),
 );
 
-$aliases['de'] = array(
-	'Nuke'   => array( 'Massenlöschung' ),
+/** German (Deutsch) */
+$specialPageAliases['de'] = array(
+	'Nuke' => array( 'Massenlöschung' ),
 );
 
-$aliases['dsb'] = array(
-	'Nuke'   => array( 'Wulašowanje_z_kopicami' ),
+/** Lower Sorbian (Dolnoserbski) */
+$specialPageAliases['dsb'] = array(
+	'Nuke' => array( 'Wulašowanje_z_kopicami' ),
 );
 
-$aliases['et'] = array(
-	'Nuke'   => array( 'Lauskustutamine' ),
+/** Estonian (Eesti) */
+$specialPageAliases['et'] = array(
+	'Nuke' => array( 'Lauskustutamine' ),
 );
 
-$aliases['fa'] = array(
-	'Nuke'   => array( 'حذف_دسته‌جمعی' ),
+/** Persian (فارسی) */
+$specialPageAliases['fa'] = array(
+	'Nuke' => array( 'حذف_دسته‌جمعی' ),
 );
 
-$aliases['fi'] = array(
-	'Nuke'   => array( 'Massapoisto' ),
+/** Finnish (Suomi) */
+$specialPageAliases['fi'] = array(
+	'Nuke' => array( 'Massapoisto' ),
 );
 
-$aliases['gsw'] = array(
-	'Nuke'   => array( 'Masseleschig' ),
+/** Swiss German (Alemannisch) */
+$specialPageAliases['gsw'] = array(
+	'Nuke' => array( 'Masseleschig' ),
 );
 
-$aliases['haw'] = array(
-	'Nuke'   => array( 'Luku' ),
+/** Hawaiian (Hawai`i) */
+$specialPageAliases['haw'] = array(
+	'Nuke' => array( 'Luku' ),
 );
 
-$aliases['he'] = array(
-	'Nuke'   => array( 'מחיקה_מרובה' ),
+/** Hebrew (עברית) */
+$specialPageAliases['he'] = array(
+	'Nuke' => array( 'מחיקה_מרובה' ),
 );
 
-$aliases['hsb'] = array(
-	'Nuke'   => array( 'Masowe_wušmórnjenje' ),
+/** Upper Sorbian (Hornjoserbsce) */
+$specialPageAliases['hsb'] = array(
+	'Nuke' => array( 'Masowe_wušmórnjenje' ),
 );
 
-$aliases['hu'] = array(
-	'Nuke'   => array( 'Kiirtás' ),
+/** Hungarian (Magyar) */
+$specialPageAliases['hu'] = array(
+	'Nuke' => array( 'Kiirtás' ),
 );
 
-$aliases['ia'] = array(
-	'Nuke'   => array( 'Deler_in_massa' ),
+/** Interlingua (Interlingua) */
+$specialPageAliases['ia'] = array(
+	'Nuke' => array( 'Deler_in_massa' ),
 );
 
-$aliases['id'] = array(
-	'Nuke'   => array( 'Nuklir' ),
+/** Indonesian (Bahasa Indonesia) */
+$specialPageAliases['id'] = array(
+	'Nuke' => array( 'Nuklir' ),
 );
 
-$aliases['it'] = array(
-	'Nuke'   => array( 'CancellazioneMassiva' ),
+/** Italian (Italiano) */
+$specialPageAliases['it'] = array(
+	'Nuke' => array( 'CancellazioneMassiva' ),
 );
 
-$aliases['ja'] = array(
-	'Nuke'   => array( 'まとめて削除' ),
+/** Japanese (日本語) */
+$specialPageAliases['ja'] = array(
+	'Nuke' => array( 'まとめて削除' ),
 );
 
-$aliases['ko'] = array(
-	'Nuke'   => array( '문서대량삭제' ),
+/** Korean (한국어) */
+$specialPageAliases['ko'] = array(
+	'Nuke' => array( '문서대량삭제' ),
 );
 
-$aliases['ksh'] = array(
-	'Nuke'   => array( 'Maßesch_Sigge_Fottschmiiße' ),
+/** Colognian (Ripoarisch) */
+$specialPageAliases['ksh'] = array(
+	'Nuke' => array( 'Maßesch_Sigge_Fottschmiiße' ),
 );
 
-$aliases['lad'] = array(
-	'Nuke'   => array( 'Bombardea' ),
+/** Ladino (Ladino) */
+$specialPageAliases['lad'] = array(
+	'Nuke' => array( 'Bombardea' ),
 );
 
-$aliases['lb'] = array(
-	'Nuke'   => array( 'Masseläschung' ),
+/** Luxembourgish (Lëtzebuergesch) */
+$specialPageAliases['lb'] = array(
+	'Nuke' => array( 'Masseläschung' ),
 );
 
-$aliases['mk'] = array(
-	'Nuke'   => array( 'Нукирање' ),
+/** Macedonian (Македонски) */
+$specialPageAliases['mk'] = array(
+	'Nuke' => array( 'Нукирање' ),
 );
 
-$aliases['ml'] = array(
-	'Nuke'   => array( 'സർവ്വനാശം' ),
+/** Malayalam (മലയാളം) */
+$specialPageAliases['ml'] = array(
+	'Nuke' => array( 'സർവ്വനാശം' ),
 );
 
-$aliases['nds-nl'] = array(
-	'Nuke'   => array( 'Massaal_vortdoon' ),
+/** Malay (Bahasa Melayu) */
+$specialPageAliases['ms'] = array(
+	'Nuke' => array( 'Hapus_pukal' ),
 );
 
-$aliases['nl'] = array(
-	'Nuke'   => array( 'MassaalVerwijderen' ),
+/** Nedersaksisch (Nedersaksisch) */
+$specialPageAliases['nds-nl'] = array(
+	'Nuke' => array( 'Massaal_vortdoon' ),
 );
 
-$aliases['nn'] = array(
-	'Nuke'   => array( 'Massesletting' ),
+/** Dutch (Nederlands) */
+$specialPageAliases['nl'] = array(
+	'Nuke' => array( 'MassaalVerwijderen' ),
 );
 
-$aliases['no'] = array(
-	'Nuke'   => array( 'Massesletting' ),
+/** Norwegian Nynorsk (‪Norsk (nynorsk)‬) */
+$specialPageAliases['nn'] = array(
+	'Nuke' => array( 'Massesletting' ),
 );
 
-$aliases['pl'] = array(
-	'Nuke'   => array( 'Masowe_usuwanie' ),
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬) */
+$specialPageAliases['no'] = array(
+	'Nuke' => array( 'Massesletting' ),
 );
 
-$aliases['sa'] = array(
-	'Nuke'   => array( 'न्यूक' ),
+/** Polish (Polski) */
+$specialPageAliases['pl'] = array(
+	'Nuke' => array( 'Masowe_usuwanie' ),
 );
 
-$aliases['sk'] = array(
-	'Nuke'   => array( 'Zničenie' ),
+/** Sanskrit (संस्कृत) */
+$specialPageAliases['sa'] = array(
+	'Nuke' => array( 'न्यूक' ),
 );
 
-$aliases['sv'] = array(
-	'Nuke'   => array( 'Massradering' ),
+/** Slovak (Slovenčina) */
+$specialPageAliases['sk'] = array(
+	'Nuke' => array( 'Zničenie' ),
 );
 
-$aliases['tl'] = array(
-	'Nuke'   => array( 'Malawakang pagbura' ),
+/** Swedish (Svenska) */
+$specialPageAliases['sv'] = array(
+	'Nuke' => array( 'Massradering' ),
 );
 
-$aliases['tr'] = array(
-	'Nuke'   => array( 'Uçur' ),
+/** Tagalog (Tagalog) */
+$specialPageAliases['tl'] = array(
+	'Nuke' => array( 'Malawakang pagbura' ),
 );
 
-$aliases['zh-hant'] = array(
-	'Nuke'   => array( '大量刪除' ),
+/** Turkish (Türkçe) */
+$specialPageAliases['tr'] = array(
+	'Nuke' => array( 'Uçur' ),
 );
+
+/** Traditional Chinese (‪中文(繁體)‬) */
+$specialPageAliases['zh-hant'] = array(
+	'Nuke' => array( '大量刪除' ),
+);
+
+/**
+ * For backwards compatibility with MediaWiki 1.15 and earlier.
+ */
+$aliases =& $specialPageAliases;
