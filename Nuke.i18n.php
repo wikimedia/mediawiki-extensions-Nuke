@@ -1339,7 +1339,7 @@ $messages['ru'] = array(
 	'right-nuke' => 'множественное удаление страниц',
 );
 
-/** Rusyn (русиньскый язык)
+/** Rusyn (Русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
