@@ -319,7 +319,7 @@ Skriv et brugernavn eller en IP for at få en liste over sider at slette.',
  */
 $messages['de'] = array(
 	'nuke' => 'Massenlöschung',
-	'nuke-desc' => 'Ermöglicht Administratoren die [[Special:Nuke|Massenlöschung]] von Seiten',
+	'nuke-desc' => 'Ergänzt eine [[Special:Nuke|Spezialseite]] zur Massenlöschung von Seiten',
 	'nuke-nopages' => 'Es gibt in den „Letzten Änderungen“ keine neuen Seiten von [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] angelegt.
 Gib einen Kommentar ein und drücke auf den Knopf zum Löschen.',
@@ -1166,7 +1166,7 @@ $messages['oc'] = array(
 	'nuke-nopages' => 'Cap de pagina novèla creada per [[Special:Contributions/$1|$1]] dins la lista dels darrièrs cambiaments.',
 	'nuke-list' => 'Las paginas seguentas son estadas creadas recentament per [[Special:Contributions/$1|$1]]; Indicatz un comentari e clicatz sul boton per los suprimir.',
 	'nuke-defaultreason' => 'Supression en massa de las paginas apondudas per $1',
-	'nuke-tools' => 'Aqueste esplech autoriza las supressions en massa de las paginas apondudas recentament per un utilizaire enregistrat o per una adreça IP. Indicatz l’adreça IP per obténer la tièra de las paginas de suprimir :',
+	'nuke-tools' => 'Aquesta aisina autoriza las supressions en massa de las paginas apondudas recentament per un utilizaire enregistrat o per una adreça IP. Indicatz l’adreça IP per obténer la tièra de las paginas de suprimir :',
 	'nuke-submit-user' => 'Validar',
 	'nuke-submit-delete' => 'Supression seleccionada',
 	'right-nuke' => 'Suprimir de paginas en massa',
