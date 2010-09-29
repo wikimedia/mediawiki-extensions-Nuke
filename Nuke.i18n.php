@@ -1500,6 +1500,13 @@ $messages['sw'] = array(
 	'nuke-submit-user' => 'Nenda',
 );
 
+/** Tamil (தமிழ்)
+ * @author TRYPPN
+ */
+$messages['ta'] = array(
+	'nuke-submit-user' => 'செல்',
+);
+
 /** Telugu (తెలుగు)
  * @author Veeven
  */
