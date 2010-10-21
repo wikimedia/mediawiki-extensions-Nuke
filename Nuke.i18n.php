@@ -1344,7 +1344,10 @@ $messages['ru'] = array(
  * @author Gazeb
  */
 $messages['rue'] = array(
+	'nuke' => 'Масове вылучіня',
 	'nuke-submit-user' => 'Выконати',
+	'nuke-submit-delete' => 'Змазати выбдарны',
+	'right-nuke' => 'Масове вылучіня сторінок',
 );
 
 /** Yakut (Саха тыла)
