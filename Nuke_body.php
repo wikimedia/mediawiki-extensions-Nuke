@@ -130,7 +130,7 @@ class SpecialNuke extends SpecialPage {
 			)
 		);
 		$pages = array();
-		while( $row = $dbr->fetchObject( $result ) ) {
+		foreach ( $result as $row ) {
 			$pages[] = array( Title::makeTitle( $row->rc_namespace, $row->rc_title ), $row->edits );
 		}
 		$dbr->freeResult( $result );
