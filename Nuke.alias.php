@@ -40,6 +40,11 @@ $specialPageAliases['dsb'] = array(
 	'Nuke' => array( 'Wulašowanje_z_kopicami' ),
 );
 
+/** Spanish (Español) */
+$specialPageAliases['es'] = array(
+	'Nuke' => array( 'BorradoMasivo', 'Borrado_en_masa' ),
+);
+
 /** Estonian (Eesti) */
 $specialPageAliases['et'] = array(
 	'Nuke' => array( 'Lauskustutamine' ),
