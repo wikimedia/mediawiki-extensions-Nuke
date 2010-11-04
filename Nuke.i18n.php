@@ -1698,8 +1698,8 @@ $messages['vi'] = array(
 	'nuke-nopages' => 'Không có trang mới do [[Special:Contributions/$1|$1]] tạo ra trong thay đổi gần đây.',
 	'nuke-list' => 'Các trang sau do [[Special:Contributions/$1|$1]] tạo ra gần đây; hãy ghi lý do và nhấn nút để xóa tất cả những trang này.',
 	'nuke-defaultreason' => 'Xóa hàng loạt các trang do $1 tạo ra',
-	'nuke-tools' => 'Công cụ này để xóa hàng loạt các trang do một người dùng hoặc IP nào đó tạo ra gần đây.
-Hãy nhập tên người dùng hoặc địa chỉ IP  để lấy danh sách các trang sẽ xóa.',
+	'nuke-tools' => 'Công cụ này cho phép xóa hàng loạt các trang do một người dùng hoặc IP nào đó tạo ra gần đây.
+Hãy nhập tên người dùng hoặc địa chỉ IP để lấy danh sách các trang sẽ xóa.',
 	'nuke-submit-user' => 'Tìm kiếm',
 	'nuke-submit-delete' => 'Xóa các trang đã chọn',
 	'right-nuke' => 'Xóa trang hàng loạt',
