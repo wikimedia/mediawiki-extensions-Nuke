@@ -44,6 +44,9 @@ class SpecialNuke extends SpecialPage {
 		}
 	}
 
+	/**
+	 * Prompt for a username or IP address
+	 */
 	function promptForm() {
 		global $wgOut;
 
@@ -61,6 +64,9 @@ class SpecialNuke extends SpecialPage {
 		$wgOut->addHTML( "</form>" );
 	}
 
+	/**
+	 * Display list of pages to delete
+	 */
 	function listForm( $username, $reason ) {
 		global $wgUser, $wgOut, $wgLang;
 
@@ -75,15 +81,50 @@ class SpecialNuke extends SpecialPage {
 		$nuke = $this->getTitle();
 		$submit = Xml::submitButton( wfMsg( 'nuke-submit-delete' ) );
 
+		$script = <<<JAVASCRIPT
+<script type="text/javascript">
+function selectPages( bool ) {
+	var inputs = document.getElementsByTagName("input");
+	for (i = 0; i < inputs.length; i++) {
+		if (inputs[i].type == "checkbox") {
+			inputs[i].checked = bool;
+		}
+	}
+}
+</script>
+JAVASCRIPT;
+		$wgOut->addScript( $script );
+
 		$wgOut->addHTML(
 			Xml::openElement( 'form', array(
 				'action' => $nuke->getLocalURL( 'action=delete' ),
-				'method' => 'post' )
+				'method' => 'post',
+				'name' => 'nukelist')
 			) .
 			Html::hidden( 'wpEditToken', $wgUser->editToken() ) .
-			Xml::inputLabel(
-				wfMsg( 'deletecomment' ), 'wpReason', 'wpReason', 60, $reason
-			) . '<br /><br />' .
+			Xml::tags( 'p',
+				null,
+				Xml::inputLabel(
+					wfMsg( 'deletecomment' ), 'wpReason', 'wpReason', 60, $reason
+				)
+			)
+		);
+
+		// Select: All, None
+		$links = array();
+		$links[] = '<a href="#" onclick="selectPages( true ); return false;">' . 
+			wfMsg( 'powersearch-toggleall' ) . '</a>';
+		$links[] = '<a href="#" onclick="selectPages( false ); return false;">' . 
+			wfMsg( 'powersearch-togglenone' ) . '</a>';
+		$wgOut->addHTML(
+			Xml::tags( 'p',
+				null,
+				wfMsg( 'nuke-select', $wgLang->commaList( $links ) )
+			)
+		);
+
+		// Delete button
+		$wgOut->addHTML(
 			Xml::submitButton( wfMsg( 'nuke-submit-delete' ) )
 		);
 

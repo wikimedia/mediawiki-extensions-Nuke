@@ -24,6 +24,7 @@ Input the username or IP address to get a list of pages to delete.',
 	'nuke-submit-user'   => 'Go',
 	'nuke-submit-delete' => 'Delete selected',
 	'right-nuke'         => 'Mass delete pages',
+	'nuke-select'        => 'Select: $1',
 );
 
 /** Message documentation (Message documentation)
@@ -36,6 +37,7 @@ $messages['qqq'] = array(
 	'nuke-desc' => '{{desc}}',
 	'nuke-submit-user' => '{{Identical|Go}}',
 	'right-nuke' => '{{doc-right}}',
+	'nuke-select' => '{{Identical|Select}}',
 );
 
 /** Niuean (ko e vagahau Niuē)
@@ -55,6 +57,7 @@ $messages['af'] = array(
 	'nuke-submit-user' => 'Laat waai',
 	'nuke-submit-delete' => 'Skrap geselekteerde',
 	'right-nuke' => 'Massa verwydering van bladsye',
+	'nuke-select' => 'Selekteer: $1',
 );
 
 /** Aragonese (Aragonés)
@@ -346,6 +349,7 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 	'nuke-submit-user' => 'Hole die Liste',
 	'nuke-submit-delete' => 'Ausgewählte Seiten löschen',
 	'right-nuke' => 'Massenlöschung von Seiten',
+	'nuke-select' => 'Auswählen: $1',
 );
 
 /** German (formal address) (Deutsch (Sie-Form))
