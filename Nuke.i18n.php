@@ -247,6 +247,7 @@ Merkañ un tamm notenn ha klikañ war ar bouton d'o diverkañ.",
 	'nuke-submit-user' => 'Mont',
 	'nuke-submit-delete' => 'Diverkañ diuzet',
 	'right-nuke' => 'Diverkañ pajennoù a-vras',
+	'nuke-select' => 'Diuzañ : $1',
 );
 
 /** Bosnian (Bosanski)
@@ -393,6 +394,7 @@ zapódaj komentar a klikni na tłocašk, aby je lašował.',
 	'nuke-submit-user' => 'W pórěźe',
 	'nuke-submit-delete' => 'Wubrane wulašowaś',
 	'right-nuke' => 'Boki z masami lašowaś',
+	'nuke-select' => 'Wubraś: $1',
 );
 
 /** Ewe (Eʋegbe) */
@@ -523,6 +525,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
  * @author IAlex
  * @author Jean-Frédéric
  * @author Louperivois
+ * @author Peter17
  * @author Sherbrooke
  * @author Zetud
  */
@@ -536,6 +539,7 @@ $messages['fr'] = array(
 	'nuke-submit-user' => 'Valider',
 	'nuke-submit-delete' => 'Supprimer la sélection',
 	'right-nuke' => 'Supprimer des pages en masse',
+	'nuke-select' => 'Sélectionnez : $1',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -691,6 +695,7 @@ $messages['hsb'] = array(
 	'nuke-submit-user' => 'W porjadku',
 	'nuke-submit-delete' => 'Wušmórnyć',
 	'right-nuke' => 'Masowe zničenje stronow',
+	'nuke-select' => 'Wubrać: $1',
 );
 
 /** Hungarian (Magyar)
@@ -790,6 +795,7 @@ $messages['it'] = array(
  * @author Hosiryuhosi
  * @author JtFuruhata
  * @author Muttley
+ * @author 青子守歌
  */
 $messages['ja'] = array(
 	'nuke' => 'まとめて削除',
@@ -801,6 +807,7 @@ $messages['ja'] = array(
 	'nuke-submit-user' => '一覧取得',
 	'nuke-submit-delete' => '選択されたページを削除',
 	'right-nuke' => 'ページの一括削除',
+	'nuke-select' => '選択：$1',
 );
 
 /** Jutish (Jysk)
@@ -944,6 +951,7 @@ $messages['lb'] = array(
 	'nuke-submit-user' => 'Lass',
 	'nuke-submit-delete' => 'Ugewielt läschen',
 	'right-nuke' => 'Vill Säite matenee läschen',
+	'nuke-select' => 'Eraussichen:$1',
 );
 
 /** Limburgish (Limburgs)
@@ -1016,6 +1024,7 @@ $messages['mk'] = array(
 	'nuke-submit-user' => 'Изврши',
 	'nuke-submit-delete' => 'Избриши ги избраните',
 	'right-nuke' => 'Групно бришење на страници',
+	'nuke-select' => 'Одбери: $1',
 );
 
 /** Malayalam (മലയാളം)
@@ -1225,6 +1234,7 @@ $messages['pl'] = array(
 	'nuke-submit-user' => 'Dalej',
 	'nuke-submit-delete' => 'Usuń zaznaczone',
 	'right-nuke' => 'Masowe usuwanie stron',
+	'nuke-select' => 'Wybierz: $1',
 );
 
 /** Piedmontese (Piemontèis)
@@ -1266,6 +1276,7 @@ $messages['pt'] = array(
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Eliminar as seleccionadas',
 	'right-nuke' => 'Eliminar páginas em massa',
+	'nuke-select' => 'Seleccionar: $1',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
@@ -1359,6 +1370,7 @@ $messages['ru'] = array(
 	'nuke-submit-user' => 'Выполнить',
 	'nuke-submit-delete' => 'Удалить выбранные',
 	'right-nuke' => 'множественное удаление страниц',
+	'nuke-select' => 'Выбор: $1',
 );
 
 /** Rusyn (Русиньскый)
@@ -1707,6 +1719,7 @@ Hãy nhập tên người dùng hoặc địa chỉ IP để lấy danh sách c�
 	'nuke-submit-user' => 'Tìm kiếm',
 	'nuke-submit-delete' => 'Xóa các trang đã chọn',
 	'right-nuke' => 'Xóa trang hàng loạt',
+	'nuke-select' => 'Chọn: $1',
 );
 
 /** Volapük (Volapük)
