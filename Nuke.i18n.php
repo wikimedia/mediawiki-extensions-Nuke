@@ -264,6 +264,7 @@ navedite razloge i komentare te kliknite na dugme da bi ste ih obrisali.',
 	'nuke-submit-user' => 'Idi',
 	'nuke-submit-delete' => 'Obriši označeno',
 	'right-nuke' => 'Masovno brisanje stranica',
+	'nuke-select' => 'Odaberi: $1',
 );
 
 /** Catalan (Català)
@@ -626,6 +627,7 @@ $messages['gv'] = array(
 
 /** Hebrew (עברית)
  * @author Rotem Liss
+ * @author YaronSh
  */
 $messages['he'] = array(
 	'nuke' => 'מחיקה מרובה',
@@ -639,6 +641,7 @@ $messages['he'] = array(
 	'nuke-submit-user' => 'הצגה',
 	'nuke-submit-delete' => 'מחיקת הדפים שנבחרו',
 	'right-nuke' => 'מחיקה מרובה של דפים',
+	'nuke-select' => 'בחירה: $1',
 );
 
 /** Hindi (हिन्दी)
@@ -730,6 +733,7 @@ Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler.'
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Deler seligites',
 	'right-nuke' => 'Deler paginas in massa',
+	'nuke-select' => 'Seliger: $1',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -747,6 +751,7 @@ $messages['id'] = array(
 	'nuke-submit-user' => 'Tuju ke',
 	'nuke-submit-delete' => 'Hapus yang terpilih',
 	'right-nuke' => 'Melakukan penghapusan masal halaman',
+	'nuke-select' => 'Pilih: $1',
 );
 
 /** Igbo (Igbo)
@@ -1042,6 +1047,7 @@ $messages['ml'] = array(
 	'nuke-submit-user' => 'പോകൂ',
 	'nuke-submit-delete' => 'തിരഞ്ഞെടുത്തവ മായ്ക്കുക',
 	'right-nuke' => 'താളുകൾ കൂട്ടത്തോടെ മായ്ക്കുക',
+	'nuke-select' => 'തിരഞ്ഞെടുക്കുക: $1',
 );
 
 /** Marathi (मराठी)
@@ -1147,6 +1153,7 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-submit-user' => 'OK',
 	'nuke-submit-delete' => 'Geselecteerde verwijderen',
 	'right-nuke' => "Massaal pagina's verwijderen",
+	'nuke-select' => 'Selectie: $1',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -1251,6 +1258,7 @@ $messages['pms'] = array(
 	'nuke-submit-user' => 'Va',
 	'nuke-submit-delete' => 'Scansela le selessionà',
 	'right-nuke' => 'Scansela le pàgine a baron',
+	'nuke-select' => 'Selessioné: $1',
 );
 
 /** Pashto (پښتو)
@@ -1450,6 +1458,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris.',
 	'nuke-submit-user' => 'Pojdi',
 	'nuke-submit-delete' => 'Izbriši izbrano',
 	'right-nuke' => 'Množično brisanje strani',
+	'nuke-select' => 'Izberite: $1',
 );
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
@@ -1755,6 +1764,7 @@ $messages['yue'] = array(
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gaoxuewei
  * @author Liangent
+ * @author PhiLiP
  * @author Shinjiman
  */
 $messages['zh-hans'] = array(
@@ -1769,6 +1779,7 @@ $messages['zh-hans'] = array(
 	'nuke-submit-user' => '执行',
 	'nuke-submit-delete' => '删除已选择的',
 	'right-nuke' => '大量删除页面',
+	'nuke-select' => '选定：$1',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
