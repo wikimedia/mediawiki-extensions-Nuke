@@ -199,6 +199,7 @@ $messages['be-tarask'] = array(
 	'nuke-submit-user' => 'Выканаць',
 	'nuke-submit-delete' => 'Выдаліць выбраныя',
 	'right-nuke' => 'масавае выдаленьне старонак',
+	'nuke-select' => 'Выбраць: $1',
 );
 
 /** Bulgarian (Български)
@@ -583,6 +584,7 @@ escriba un comentario e prema o botón para borralas.',
 	'nuke-submit-user' => 'Adiante',
 	'nuke-submit-delete' => 'Eliminar o seleccionado',
 	'right-nuke' => 'Borrar páxinas masivamente',
+	'nuke-select' => 'Seleccionar: $1',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -1290,6 +1292,7 @@ $messages['pt'] = array(
 /** Brazilian Portuguese (Português do Brasil)
  * @author Carla404
  * @author Eduardo.mps
+ * @author Giro720
  */
 $messages['pt-br'] = array(
 	'nuke' => 'Eliminar em massa',
@@ -1301,6 +1304,7 @@ $messages['pt-br'] = array(
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Eliminar as selecionadas',
 	'right-nuke' => 'Eliminar páginas em massa',
+	'nuke-select' => 'Selecionar: $1',
 );
 
 /** Quechua (Runa Simi)
