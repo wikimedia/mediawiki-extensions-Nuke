@@ -147,6 +147,7 @@ $messages['ba'] = array(
 	'nuke-submit-user' => 'Үтәргә',
 	'nuke-submit-delete' => 'Һайланғандарҙы юйырға',
 	'right-nuke' => 'Биттәрҙе күпләп юйыу',
+	'nuke-select' => 'Һайланған: $1',
 );
 
 /** Southern Balochi (بلوچی مکرانی)
