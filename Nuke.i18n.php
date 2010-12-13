@@ -619,6 +619,7 @@ gib e Kommentar yy un druck uf dr Leschchnopf.',
 	'nuke-submit-user' => 'Hol Lischt',
 	'nuke-submit-delete' => 'Lesche',
 	'right-nuke' => 'Masseleschig vu Syte',
+	'nuke-select' => 'Uuswehle: $1',
 );
 
 /** Manx (Gaelg)
