@@ -1367,6 +1367,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'nuke-submit-user' => 'Veje',
 	'nuke-submit-delete' => "Scangelle 'a selezione",
 	'right-nuke' => 'Scangellazione de masse de le pàggene',
+	'nuke-select' => 'Scacchie: $1',
 );
 
 /** Russian (Русский)
