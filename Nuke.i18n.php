@@ -1179,6 +1179,7 @@ Skriv inn eit brukarnamn eller ei IP-adressa for å få ei lista over sider som 
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
  * @author Jon Harald Søby
+ * @author Nghtwlkr
  */
 $messages['no'] = array(
 	'nuke' => 'Massesletting',
@@ -1190,6 +1191,7 @@ $messages['no'] = array(
 	'nuke-submit-user' => 'Gå',
 	'nuke-submit-delete' => 'Slett valgte',
 	'right-nuke' => 'Slette sider <i>en masse</i>',
+	'nuke-select' => 'Velg: $1',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
