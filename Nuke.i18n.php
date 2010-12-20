@@ -521,6 +521,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 	'nuke-submit-user' => 'Siirry',
 	'nuke-submit-delete' => 'Poista valitut',
 	'right-nuke' => 'Massapoistaa sivuja',
+	'nuke-select' => 'Valitse: $1',
 );
 
 /** French (Français)
@@ -1683,6 +1684,7 @@ $messages['ug-latn'] = array(
 
 /** Ukrainian (Українська)
  * @author Ahonc
+ * @author Тест
  */
 $messages['uk'] = array(
 	'nuke' => 'Масове вилучення',
@@ -1696,6 +1698,7 @@ $messages['uk'] = array(
 	'nuke-submit-user' => 'Виконати',
 	'nuke-submit-delete' => 'Вилучити обрані',
 	'right-nuke' => 'Масове вилучення сторінок',
+	'nuke-select' => 'Вибір: $1',
 );
 
 /** Vèneto (Vèneto)
