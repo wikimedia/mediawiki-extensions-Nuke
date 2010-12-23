@@ -319,6 +319,7 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 	'nuke-submit-user' => 'Provést',
 	'nuke-submit-delete' => 'Smazat vybrané',
 	'right-nuke' => 'Hromadné mazání stránek',
+	'nuke-select' => 'Vybrat: $1',
 );
 
 /** Danish (Dansk)
