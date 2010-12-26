@@ -689,6 +689,7 @@ $messages['hr'] = array(
 	'nuke-submit-user' => 'Kreni',
 	'nuke-submit-delete' => 'Obriši označeno',
 	'right-nuke' => 'Skupno brisanje stranica',
+	'nuke-select' => 'Odaberite: $1',
 );
 
 /** Upper Sorbian (Hornjoserbsce)
