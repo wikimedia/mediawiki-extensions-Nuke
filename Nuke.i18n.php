@@ -786,6 +786,7 @@ $messages['is'] = array(
 
 /** Italian (Italiano)
  * @author .anaconda
+ * @author Beta16
  * @author BrokenArrow
  * @author Darth Kule
  */
@@ -799,6 +800,7 @@ $messages['it'] = array(
 	'nuke-submit-user' => 'Vai',
 	'nuke-submit-delete' => 'Cancella la selezione',
 	'right-nuke' => 'Cancella pagine in massa',
+	'nuke-select' => 'Seleziona: $1',
 );
 
 /** Japanese (日本語)
