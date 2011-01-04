@@ -1477,6 +1477,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris.',
 
 /** Serbian Cyrillic ekavian (Српски (ћирилица))
  * @author Millosh
+ * @author Rancher
  * @author Жељко Тодоровић
  */
 $messages['sr-ec'] = array(
@@ -1486,7 +1487,7 @@ $messages['sr-ec'] = array(
 	'nuke-list' => 'Следеће странице је скоро направио корисник [[Special:Contributions/$1|$1]]; коментариши и притисни дугме за њихово брисање.',
 	'nuke-defaultreason' => 'Масовно брисање страница које је направио корисник $1',
 	'nuke-tools' => 'Ово оруђе омогућава масовно брисање страница које је скоро додао одређени корисник (регистрован или не). Унеси корисничко име или ИП адресу за добијање списка страница за брисање.',
-	'nuke-submit-user' => 'Иди',
+	'nuke-submit-user' => 'Пређи',
 	'nuke-submit-delete' => 'Обриши обележено',
 	'right-nuke' => 'масовно брисање страница',
 );
