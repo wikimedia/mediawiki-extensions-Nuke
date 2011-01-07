@@ -1418,6 +1418,7 @@ $messages['sah'] = array(
 	'nuke-submit-user' => 'Толор',
 	'nuke-submit-delete' => 'Талыллыбыты сот',
 	'right-nuke' => 'Сирэйдэри халҕаһалыы суох оҥоруу',
+	'nuke-select' => 'Талыы: $1',
 );
 
 /** Sicilian (Sicilianu)
