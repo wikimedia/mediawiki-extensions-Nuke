@@ -292,7 +292,10 @@ Introduïu el nom d'usuari o la IP per obtenir una llista de pàgines per esborr
  * @author Sasan700
  */
 $messages['ce'] = array(
+	'nuke' => 'Дуккха дIадайар',
+	'nuke-defaultreason' => 'Декъашхочо кхоьллина агIонаш, дуккха дIайайар $1',
 	'nuke-submit-delete' => 'Дlадайá хаьржнарш',
+	'right-nuke' => 'дуккха агIонаш дIайайар',
 );
 
 /** Chamorro (Chamoru)
