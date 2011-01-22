@@ -132,7 +132,7 @@ $messages['ast'] = array(
 	'right-nuke' => 'Esborráu masivu de páxines',
 );
 
-/** Bashkir (Башҡорт)
+/** Bashkir (Башҡортса)
  * @author Assele
  */
 $messages['ba'] = array(
@@ -185,7 +185,7 @@ $messages['be'] = array(
 	'right-nuke' => 'масава сціраць старонкі',
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца))
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  */
@@ -360,7 +360,7 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 	'nuke-select' => 'Auswählen: $1',
 );
 
-/** German (formal address) (Deutsch (Sie-Form))
+/** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Kghbln
  * @author Raimond Spekking
  */
@@ -1481,7 +1481,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris.',
 	'nuke-select' => 'Izberite: $1',
 );
 
-/** Serbian Cyrillic ekavian (Српски (ћирилица))
+/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
  * @author Millosh
  * @author Rancher
  * @author Жељко Тодоровић
@@ -1498,7 +1498,7 @@ $messages['sr-ec'] = array(
 	'right-nuke' => 'масовно брисање страница',
 );
 
-/** Serbian Latin ekavian (Srpski (latinica))
+/** Serbian Latin ekavian (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Жељко Тодоровић
  */
