@@ -861,6 +861,7 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
 /** Georgian (ქართული)
  * @author Alsandro
  * @author BRUTE
+ * @author Dawid Deutschland
  * @author Sopho
  */
 $messages['ka'] = array(
@@ -875,6 +876,7 @@ $messages['ka'] = array(
 	'nuke-submit-user' => 'გადასვლა',
 	'nuke-submit-delete' => 'არჩეულის წაშლა',
 	'right-nuke' => 'გვერდების მასობრივად წაშლა',
+	'nuke-select' => 'აირჩიეთ: $1',
 );
 
 /** Khmer (ភាសាខ្មែរ)
