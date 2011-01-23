@@ -79,7 +79,6 @@ class SpecialNuke extends SpecialPage {
 		$wgOut->addWikiMsg( 'nuke-list', $username );
 
 		$nuke = $this->getTitle();
-		$submit = Xml::submitButton( wfMsg( 'nuke-submit-delete' ) );
 
 		$script = <<<JAVASCRIPT
 <script type="text/javascript">
