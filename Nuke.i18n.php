@@ -346,7 +346,7 @@ Skriv et brugernavn eller en IP for at få en liste over sider at slette.',
  * @author Raimond Spekking
  */
 $messages['de'] = array(
-	'nuke' => 'Massenlöschung',
+	'nuke' => 'Massenlöschung von Seiten',
 	'nuke-desc' => 'Ergänzt eine [[Special:Nuke|Spezialseite]] zur Massenlöschung von Seiten',
 	'nuke-nopages' => 'Es gibt in den „Letzten Änderungen“ keine neuen Seiten von [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] angelegt.
@@ -954,6 +954,7 @@ Jif dä Metmaacher-Name udder de IP-Address dofun aan,
 	'nuke-submit-user' => 'Leß holle',
 	'nuke-submit-delete' => 'Donn de üßjewählte Sigge fottschmieße!',
 	'right-nuke' => 'Massich Sigge Fottschmieße',
+	'nuke-select' => 'Ußwähle: $1',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
