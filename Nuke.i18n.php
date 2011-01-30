@@ -247,7 +247,7 @@ Merkañ un tamm notenn ha klikañ war ar bouton d'o diverkañ.",
 	'nuke-defaultreason' => 'Diverkañ a-vras ar pajennoù bet ouzhpennet gant $1',
 	'nuke-tools' => "Talvezout a ra an ostilh-mañ da ziverkañ a-vras pajennoù bet ouzhpennet nevez zo gant un implijer enrollet pe gant ur chomlec'h IP. Merkañ ar c'homlec'h IP pe anv an implijer a-benn kaout roll ar pajennoù da ziverkañ :",
 	'nuke-submit-user' => 'Mont',
-	'nuke-submit-delete' => 'Diverkañ diuzet',
+	'nuke-submit-delete' => 'Dilemel ar re diuzet',
 	'right-nuke' => 'Diverkañ pajennoù a-vras',
 	'nuke-select' => 'Diuzañ : $1',
 );
@@ -741,7 +741,7 @@ entra un commento e clicca le button pro deler los.',
 	'nuke-tools' => 'Iste instrumento permitte le deletion in massa de paginas recentemente addite per un usator o IP specific.
 Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler.',
 	'nuke-submit-user' => 'Ir',
-	'nuke-submit-delete' => 'Deler seligites',
+	'nuke-submit-delete' => 'Deler selection',
 	'right-nuke' => 'Deler paginas in massa',
 	'nuke-select' => 'Seliger: $1',
 );
@@ -1495,7 +1495,7 @@ $messages['sr-ec'] = array(
 	'nuke-defaultreason' => 'Масовно брисање страница које је направио корисник $1',
 	'nuke-tools' => 'Ово оруђе омогућава масовно брисање страница које је скоро додао одређени корисник (регистрован или не). Унеси корисничко име или ИП адресу за добијање списка страница за брисање.',
 	'nuke-submit-user' => 'Пређи',
-	'nuke-submit-delete' => 'Обриши обележено',
+	'nuke-submit-delete' => 'Обриши изабрано',
 	'right-nuke' => 'масовно брисање страница',
 );
 
