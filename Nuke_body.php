@@ -133,7 +133,7 @@ JAVASCRIPT;
 		foreach( $pages as $info ) {
 			list( $title, $edits ) = $info;
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
-			$thumb = $image && $image->exists() ? $image->getThumbnail( 120, 120 ) : false;
+			$thumb = $image && $image->exists() ? $image->transform( array( 'width' => 120, 'height' => 120 ), 0 ) : false;
 
 			$changes = wfMsgExt( 'nchanges', 'parsemag', $wgLang->formatNum( $edits ) );
 			
