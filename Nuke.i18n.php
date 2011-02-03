@@ -1549,6 +1549,7 @@ tuliskeun pamanggih anjeun, terus pencét tombolna pikeun ngahapus.',
 
 /** Swedish (Svenska)
  * @author Lejonel
+ * @author Tobulos1
  */
 $messages['sv'] = array(
 	'nuke' => 'Massradering',
@@ -1561,6 +1562,7 @@ Ange ett användarnamn eller en IP-adress för att se en lista över sidor som k
 	'nuke-submit-user' => 'Visa',
 	'nuke-submit-delete' => 'Ta bort valda',
 	'right-nuke' => 'Massradera sidor',
+	'nuke-select' => 'Välj: $1',
 );
 
 /** Swahili (Kiswahili) */
