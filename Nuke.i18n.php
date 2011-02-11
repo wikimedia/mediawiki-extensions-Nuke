@@ -1668,6 +1668,7 @@ Ipasok ang pangalan ng tagagamit o IP upang makakuha ng isang talaan ng mga pahi
  * @author Erkan Yilmaz
  * @author Joseph
  * @author Srhat
+ * @author Tarikozket
  */
 $messages['tr'] = array(
 	'nuke' => 'Kitlesel silme',
@@ -1681,6 +1682,7 @@ Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin
 	'nuke-submit-user' => 'Git',
 	'nuke-submit-delete' => 'Seçileni sil',
 	'right-nuke' => 'Sayfaları kitlesel olarak sil',
+	'nuke-select' => 'Seçilmiş: $1',
 );
 
 /** ئۇيغۇرچە (ئۇيغۇرچە)
