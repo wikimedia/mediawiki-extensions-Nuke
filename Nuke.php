@@ -1,7 +1,10 @@
 <?php
 
-if( !defined( 'MEDIAWIKI' ) )
+if( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
+}
+
+define( 'Nuke_VERSION', '1.1' );
 
 $dir = dirname(__FILE__) . '/';
 
@@ -13,7 +16,8 @@ $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Nuke',
 	'descriptionmsg' => 'nuke-desc',
 	'author'         => 'Brion Vibber',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:Nuke'
+	'url'            => 'http://www.mediawiki.org/wiki/Extension:Nuke',
+	'version'        => Nuke_VERSION,
 );
 
 $wgGroupPermissions['sysop']['nuke'] = true;

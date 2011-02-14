@@ -18,13 +18,19 @@ $messages['en'] = array(
 	'nuke-nopages'       => "No new pages by [[Special:Contributions/$1|$1]] in recent changes.",
 	'nuke-list'          => "The following pages were recently created by [[Special:Contributions/$1|$1]];
 put in a comment and hit the button to delete them.",
+	'nuke-list-multiple' => 'The following pages were recently created;
+put in a comment and hit the button to delete them.',
 	'nuke-defaultreason' => "Mass deletion of pages added by $1",
 	'nuke-tools'         => 'This tool allows for mass deletions of pages recently added by a given user or an IP address.
-Input the username or IP address to get a list of pages to delete.',
+Input the username or IP address to get a list of pages to delete, or leave blank for all users.',
 	'nuke-submit-user'   => 'Go',
 	'nuke-submit-delete' => 'Delete selected',
 	'right-nuke'         => 'Mass delete pages',
 	'nuke-select'        => 'Select: $1',
+	'nuke-userorip'      => 'User, ip or blank: ',
+	'nuke-maxpages'      => 'Maximun amount of pages: ',
+	'nuke-multiplepeople'=> 'multiple people',
+	'nuke-editby'        => 'Created by [[Special:Contributions/$1|$1]]'
 );
 
 /** Message documentation (Message documentation)
