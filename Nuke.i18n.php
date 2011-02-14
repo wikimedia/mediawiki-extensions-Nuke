@@ -709,12 +709,18 @@ $messages['hsb'] = array(
 	'nuke-desc' => 'Zmóžnja administratoram [[Special:Nuke|masowe wušmórnjenje]] stronow',
 	'nuke-nopages' => 'W poslednich změnach njejsu nowe strony z [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Slědowace strony buchu runje přez [[Special:Contributions/$1|$1]] wutworjene; zapodaj komentar a klikń na tłóčatko wušmórnjenja.',
+	'nuke-list-multiple' => 'Slědowace strony su so runje wutowrili;
+napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
 	'nuke-defaultreason' => 'Masowe wušmórnjenje stronow, kotrež buchu wot $1 wutworjene',
-	'nuke-tools' => 'Tutón grat zmóžnja masowe wušmórnjenje stronow, kotrež buchu wot IP-adresy abo wužiwarja wutworjene. Zapodaj IP-adresu resp. wužiwarske mjeno, zo by lisćinu dóstał:',
+	'nuke-tools' => 'Tutón grat zmóžnja masowe wušmórnjenje stronow, kotrež buchu wot IP-adresy abo wužiwarja přidate. Zapodaj IP-adresu abo wužiwarske mjeno, zo by lisćinu stronow dóstał, kotrež maja so wušmórnyć.',
 	'nuke-submit-user' => 'W porjadku',
 	'nuke-submit-delete' => 'Wušmórnyć',
 	'right-nuke' => 'Masowe zničenje stronow',
 	'nuke-select' => 'Wubrać: $1',
+	'nuke-userorip' => 'Wužiwar, IP abo prózdny:',
+	'nuke-maxpages' => 'Maksimalna ličba stronow:',
+	'nuke-multiplepeople' => 'wjacori ludźo',
+	'nuke-editby' => 'Wutworjeny wot [[Special:Contributions/$1|$1]]',
 );
 
 /** Hungarian (Magyar)
@@ -1779,6 +1785,13 @@ $messages['vo'] = array(
 	'nuke-submit-user' => 'Ledunolöd',
 	'nuke-submit-delete' => 'Pevalöl ad pamoükön',
 	'right-nuke' => 'Moükön padamödoti',
+);
+
+/** Yiddish (ייִדיש)
+ * @author פוילישער
+ */
+$messages['yi'] = array(
+	'nuke-submit-user' => 'צייגן',
 );
 
 /** Cantonese (粵語)
