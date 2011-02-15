@@ -28,7 +28,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
 	'right-nuke'         => 'Mass delete pages',
 	'nuke-select'        => 'Select: $1',
 	'nuke-userorip'      => 'Username, IP address or blank:',
-	'nuke-maxpages'      => 'Maximun amount of pages:',
+	'nuke-maxpages'      => 'Maximum amount of pages:',
 	'nuke-multiplepeople'=> 'multiple users',
 	'nuke-editby'        => 'Created by [[Special:Contributions/$1|$1]]'
 );
