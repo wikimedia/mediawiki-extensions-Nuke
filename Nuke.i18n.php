@@ -211,6 +211,8 @@ $messages['be-tarask'] = array(
 	'nuke-select' => 'Выбраць: $1',
 	'nuke-userorip' => 'Удзельнік, IP-адрас ці пустое:',
 	'nuke-maxpages' => 'Максымальная колькасьць старонак:',
+	'nuke-multiplepeople' => 'некалькі ўдзельнікаў',
+	'nuke-editby' => 'Створана [[Special:Contributions/$1|$1]]',
 );
 
 /** Bulgarian (Български)
@@ -558,12 +560,18 @@ $messages['fr'] = array(
 	'nuke-desc' => 'Donne la possibilité aux administrateurs de [[Special:Nuke|supprimer en masse]] des pages',
 	'nuke-nopages' => 'Aucune nouvelle page créée par [[Special:Contributions/$1|$1]] dans la liste des changements récents.',
 	'nuke-list' => 'Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|$1]]; Indiquer un commentaire et cliquer sur le bouton pour les supprimer.',
+	'nuke-list-multiple' => 'Les pages suivantes ont été récemment créées ; 
+entrez un commentaire et cliquez sur le bouton pour les supprimer.',
 	'nuke-defaultreason' => 'Suppression en masse des pages ajoutées par $1',
-	'nuke-tools' => 'Cet outil autorise les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une adresse IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer :',
+	'nuke-tools' => 'Cet outil permet les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une adresse IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer, ou laisser blanc pour tous les utilisateurs.',
 	'nuke-submit-user' => 'Valider',
 	'nuke-submit-delete' => 'Supprimer la sélection',
 	'right-nuke' => 'Supprimer des pages en masse',
 	'nuke-select' => 'Sélectionnez : $1',
+	'nuke-userorip' => "Nom d'utilisateur, adresse IP ou vide :",
+	'nuke-maxpages' => 'Nombre maximal de pages :',
+	'nuke-multiplepeople' => 'plusieurs utilisateurs',
+	'nuke-editby' => 'Créé par [[Special:Contributions/$1|$1]]',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -840,6 +848,7 @@ $messages['it'] = array(
  * @author Hosiryuhosi
  * @author JtFuruhata
  * @author Muttley
+ * @author Ohgi
  * @author 青子守歌
  */
 $messages['ja'] = array(
@@ -847,12 +856,19 @@ $messages['ja'] = array(
 	'nuke-desc' => '{{int:group-sysop}}がページを[[Special:Nuke|まとめて削除]]できるようにする',
 	'nuke-nopages' => '最近の更新ページに[[Special:Contributions/$1|$1]]が新規作成したページはありません。',
 	'nuke-list' => '以下は、[[Special:Contributions/$1|$1]] によって最近作成されたページの一覧です。理由を記入しボタンを押すと、一気に削除されます。',
+	'nuke-list-multiple' => '最近作成されたページが表示されています。
+コメントを入力し、ボタンを押すと、削除されます。',
 	'nuke-defaultreason' => '$1 によって加えられたページを一括して削除',
-	'nuke-tools' => 'このツールを使うと、指定した利用者またはIPから最近追加されたページを、まとめて削除することができます。削除対象ページ一覧を取得する利用者名またはIPアドレスを入力してください:',
+	'nuke-tools' => 'このツールを使うと、指定した利用者またはIPアドレスによって最近作成されたページを、まとめて削除することができます。
+利用者名またはIPアドレスを入力すると、削除対象ページの一覧が生成されます。空にすると、すべての利用者によるものが対象になります。',
 	'nuke-submit-user' => '一覧取得',
 	'nuke-submit-delete' => '選択されたページを削除',
 	'right-nuke' => 'ページの一括削除',
 	'nuke-select' => '選択：$1',
+	'nuke-userorip' => '利用者名、IPアドレスまたは空白:',
+	'nuke-maxpages' => 'ページの最大量:',
+	'nuke-multiplepeople' => '複数の利用者',
+	'nuke-editby' => '[[Special:Contributions/$1|$1]]によって作成',
 );
 
 /** Jutish (Jysk)
@@ -1314,8 +1330,8 @@ Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. 
 	'nuke-submit-delete' => 'Usuń zaznaczone',
 	'right-nuke' => 'Masowe usuwanie stron',
 	'nuke-select' => 'Wybierz: $1',
-	'nuke-userorip' => 'Podaj nazwę użytkownika, adres IP lub pozostaw puste pole:',
-	'nuke-maxpages' => 'Maksymalna liczba stron:',
+	'nuke-userorip' => 'Podaj nazwę użytkownika, adres IP lub pozostaw puste pole',
+	'nuke-maxpages' => 'Maksymalna liczba stron',
 	'nuke-multiplepeople' => 'wielu użytkowników',
 	'nuke-editby' => 'Utworzona przez [[Special:Contributions/$1|$1]]',
 );
@@ -1878,9 +1894,11 @@ $messages['yue'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬)
  * @author Gaoxuewei
+ * @author Hydra
  * @author Liangent
  * @author PhiLiP
  * @author Shinjiman
+ * @author 阿pp
  */
 $messages['zh-hans'] = array(
 	'nuke' => '大量删除',
@@ -1888,13 +1906,19 @@ $messages['zh-hans'] = array(
 	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|$1]]所作的新页面。',
 	'nuke-list' => '以下页面是由[[Special:Contributions/$1|$1]]最新创建的；
 请留下摘要信息，并点击按钮删除这些页面。',
+	'nuke-list-multiple' => '最近创建以下页面 ；
+在注释中，点击要删除它们。',
 	'nuke-defaultreason' => '大量删除由$1所创建的页面',
-	'nuke-tools' => '这个工具允许根据提供的用户名称或IP大量删除它们最新添加的页面。
-请输入用户名或IP，以得到页面列表并作删除。',
+	'nuke-tools' => '此工具允许大规模删除指定用户或 IP 地址最近添加的页面。
+输入用户名或 IP 地址以获取可删除页面的列表，空白则检索所有用户。',
 	'nuke-submit-user' => '执行',
 	'nuke-submit-delete' => '删除已选择的',
 	'right-nuke' => '大量删除页面',
 	'nuke-select' => '选定：$1',
+	'nuke-userorip' => 'IP 地址或空白的用户名：',
+	'nuke-maxpages' => '最大页面：',
+	'nuke-multiplepeople' => '多个用户',
+	'nuke-editby' => '与 [[Special:Contributions/$1|$1]]创建的',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
