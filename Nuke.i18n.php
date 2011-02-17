@@ -773,13 +773,19 @@ $messages['ia'] = array(
 	'nuke-nopages' => 'Nulle nove paginas per [[Special:Contributions/$1|$1]] trovate in le modificationes recente.',
 	'nuke-list' => 'Le sequente paginas esseva recentemente create per [[Special:Contributions/$1|$1]];
 entra un commento e clicca le button pro deler los.',
+	'nuke-list-multiple' => 'Le sequente paginas esseva create recentemente;
+entra un commento e pulsa sur le button pro deler los.',
 	'nuke-defaultreason' => 'Deletion in massa de paginas addite per $1',
-	'nuke-tools' => 'Iste instrumento permitte le deletion in massa de paginas recentemente addite per un usator o IP specific.
-Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler.',
+	'nuke-tools' => 'Iste instrumento permitte le deletion in massa de paginas recentemente addite per un usator o adresse IP specific.
+Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler, o lassa vacue pro tote le usatores.',
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Deler selection',
 	'right-nuke' => 'Deler paginas in massa',
 	'nuke-select' => 'Seliger: $1',
+	'nuke-userorip' => 'Nomine de usator, adresse IP o vacue:',
+	'nuke-maxpages' => 'Numero maxime de paginas:',
+	'nuke-multiplepeople' => 'multiple usatores',
+	'nuke-editby' => 'Create per [[Special:Contributions/$1|$1]]',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1371,12 +1377,18 @@ $messages['pt'] = array(
 	'nuke-desc' => '[[Special:Nuke|Página especial]] que permite que os administradores apaguem páginas de forma massiva',
 	'nuke-nopages' => 'Não há páginas criadas por [[Special:Contributions/$1|$1]] nas mudanças recentes.',
 	'nuke-list' => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|$1]]; introduza um comentário e pressione o botão a seguir para eliminá-las.',
+	'nuke-list-multiple' => 'As seguintes páginas foram criadas recentemente;
+introduza um comentário e clique o botão para eliminá-las.',
 	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas por $1',
-	'nuke-tools' => 'Esta ferramenta permite a eliminação em massa de páginas recentemente criadas por um utilizador ou IP em específico. Forneça o nome de utilizador ou IP para obter uma lista de páginas a eliminar:',
+	'nuke-tools' => 'Esta ferramenta permite a eliminação em massa de páginas criadas recentemente por um utilizador ou IP específico. Forneça o nome de utilizador ou o IP para obter a lista de páginas a eliminar, ou deixe em branco para todos os utilizadores.',
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Eliminar as seleccionadas',
 	'right-nuke' => 'Eliminar páginas em massa',
 	'nuke-select' => 'Seleccionar: $1',
+	'nuke-userorip' => 'Utilizador, endereço IP, ou vazio:',
+	'nuke-maxpages' => 'Nº máximo de páginas:',
+	'nuke-multiplepeople' => 'vários utilizadores',
+	'nuke-editby' => 'Criada por [[Special:Contributions/$1|$1]]',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
