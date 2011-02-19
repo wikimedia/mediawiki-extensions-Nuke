@@ -616,12 +616,19 @@ $messages['gl'] = array(
 	'nuke-nopages' => 'Non hai novas páxinas feitas por [[Special:Contributions/$1|$1]] nos cambios recentes.',
 	'nuke-list' => '[[Special:Contributions/$1|$1]] creou nos últimos intres as seguintes páxinas;
 escriba un comentario e prema o botón para borralas.',
+	'nuke-list-multiple' => 'As seguintes páxinas creáronse recentemente;
+insira un comentario e prema o botón para borralas.',
 	'nuke-defaultreason' => 'Eliminación en masa das páxinas engadidas por $1',
-	'nuke-tools' => 'Esta ferramenta permite supresións masivas das páxinas engadidas recentemente por un determinado usuario ou enderezo IP. Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas para borrar.',
+	'nuke-tools' => 'Esta ferramenta permite borrar en masa as páxinas engadidas recentemente por un determinado usuario ou enderezo IP.
+Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas para borrar. Déixeo en branco para todos os usuarios.',
 	'nuke-submit-user' => 'Adiante',
 	'nuke-submit-delete' => 'Eliminar o seleccionado',
 	'right-nuke' => 'Borrar páxinas masivamente',
 	'nuke-select' => 'Seleccionar: $1',
+	'nuke-userorip' => 'Nome de usuario, enderezo IP ou en branco:',
+	'nuke-maxpages' => 'Número máximo de páxinas:',
+	'nuke-multiplepeople' => 'varios usuarios',
+	'nuke-editby' => 'Creado por [[Special:Contributions/$1|$1]]',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
