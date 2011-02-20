@@ -256,12 +256,19 @@ $messages['br'] = array(
 	'nuke-nopages' => "Pajenn nevez ebet bet krouet gant [[Special:Contributions/$1|$1]] er c'hemmoù diwezhañ.",
 	'nuke-list' => "Nevez zo eo bet krouet ar pajennoù da-heul gant [[Special:Contributions/$1|$1]];
 Merkañ un tamm notenn ha klikañ war ar bouton d'o diverkañ.",
+	'nuke-list-multiple' => 'Krouet e oa bet ar pajennoù da-heul nevez zo ;
+Lakait un notenn ha klikit war ar bouton evit o diverkañ.',
 	'nuke-defaultreason' => 'Diverkañ a-vras ar pajennoù bet ouzhpennet gant $1',
-	'nuke-tools' => "Talvezout a ra an ostilh-mañ da ziverkañ a-vras pajennoù bet ouzhpennet nevez zo gant un implijer enrollet pe gant ur chomlec'h IP. Merkañ ar c'homlec'h IP pe anv an implijer a-benn kaout roll ar pajennoù da ziverkañ :",
+	'nuke-tools' => "Talvezout a ra an ostilh-mañ da ziverkañ a-vras pajennoù bet ouzhpennet nevez zo gant un implijer enrollet pe gant ur chomlec'h IP. 
+Merkañ ar c'homlec'h IP pe anv an implijer evit kaout roll ar pajennoù da ziverkañ, pe lezel gwenn evit an holl implijerien.",
 	'nuke-submit-user' => 'Mont',
 	'nuke-submit-delete' => 'Dilemel ar re diuzet',
 	'right-nuke' => 'Diverkañ pajennoù a-vras',
 	'nuke-select' => 'Diuzañ : $1',
+	'nuke-userorip' => "Anv implijer, chomlec'h IP pe gwenn :",
+	'nuke-maxpages' => 'Niver brasañ a bajennoù :',
+	'nuke-multiplepeople' => 'meur a implijer',
+	'nuke-editby' => 'Savet gant [[Special:Contributions/$1|$1]]',
 );
 
 /** Bosnian (Bosanski)
@@ -529,7 +536,7 @@ $messages['fa'] = array(
 	'nuke-list' => 'صفحه‌های زیر به تازگی توسط [[Special:Contributions/$1|$1]] ایجاد شده‌اند؛ توضیحی ارائه کنید و دکمه را بزنید تا این صحفه‌ها حذف شوند.',
 	'nuke-defaultreason' => 'حذف دسته‌جمعی صفحه‌هایی که توسط $1 ایجاد شده‌اند',
 	'nuke-tools' => 'این ابزار امکان حذف دسته‌جمعی صفحه‌هایی که به تازگی توسط یک کاربر یا نشانی آی‌پی اضافه شده‌اند را فراهم می‌کند.
-نام کاربری یا نشانی آی‌پی موردنظر را وارد کنید تا فهرست صفحه‌هایی که حذف می‌شوند را ببینید:',
+نام کاربری یا نشانی آی‌پی موردنظر را وارد کنید، یا جعبه را خالی بگذارید تا تمام کاربرها در نظر گرفته شوند.',
 	'nuke-submit-user' => 'برو',
 	'nuke-submit-delete' => 'حذف موارد انتخاب شده',
 	'right-nuke' => 'حذف دسته‌جمعی صفحه‌ها',
@@ -978,12 +985,19 @@ $messages['ko'] = array(
 	'nuke-nopages' => '최근에 [[Special:Contributions/$1|$1]] 사용자가 만든 문서가 없습니다.',
 	'nuke-list' => '다음은 [[Special:Contributions/$1|$1]]이(가) 최근에 만든 문서입니다.
 삭제에 대한 이유를 입력한 다음 아래 버튼을 클릭해주세요.',
+	'nuke-list-multiple' => '다음은 최근에 생성된 문서입니다.
+문서를 삭제하려면 이유를 입력하고 삭제 버튼을 누르십시오.',
 	'nuke-defaultreason' => '$1이(가) 작성한 문서를 대량 삭제함',
-	'nuke-tools' => '특정 사용자나 IP 사용자가 최근 생성한 문서를 대량으로 삭제할 수 있습니다.
-아래에 이름을 입력하면 삭제할 문서 목록을 가져옵니다.',
+	'nuke-tools' => '이 도구를 이용해 특정 사용자나 IP 사용자가 최근 생성한 문서를 대량으로 삭제할 수 있습니다.
+삭제할 문서 목록을 가져오려면 계정 이름이나 IP 주소를 입력하십시오. 입력하지 않으면 모든 사용자를 대상으로 합니다.',
 	'nuke-submit-user' => '계속',
 	'nuke-submit-delete' => '선택한 문서 삭제',
 	'right-nuke' => '문서 대량 삭제',
+	'nuke-select' => '선택: $1',
+	'nuke-userorip' => '계정 이름이나 IP 주소 (혹은 공란으로 남겨 두십시오):',
+	'nuke-maxpages' => '문서의 최대 크기:',
+	'nuke-multiplepeople' => '다수의 편집자',
+	'nuke-editby' => '[[Special:Contributions/$1|$1]]이(가) 생성함',
 );
 
 /** Krio (Krio)
