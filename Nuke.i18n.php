@@ -428,12 +428,18 @@ $messages['dsb'] = array(
 	'nuke-nopages' => 'Žedne nowe boki wót [[Special:Contributions/$1|$1]] w aktualnych změnach',
 	'nuke-list' => 'Slědujuce boki su se nowo napórali wót [[Special:Contributions/$1|$1]];
 zapódaj komentar a klikni na tłocašk, aby je lašował.',
+	'nuke-list-multiple' => 'Slědujuce boki su se rowno napórali;
+zapódaj komentar a klikni na tłocašk, aby je wulašował.',
 	'nuke-defaultreason' => 'Masowe lašowanje bokow, kótarež $1 jo pśidał.',
-	'nuke-tools' => 'Toś ten rěd zmóžnja masowe lašowanja bokow, kótarež wěsty wužywaŕ abo IP jo rowno pśidał. Zapódaj wužywarske mě abo IP-adresu, aby dostał lisćinu bokow, kótarež maju se lašowaś.',
+	'nuke-tools' => 'Toś ten rěd zmóžnja masowe lašowanja bokow, kótarež wěsty wužywaŕ abo IP jo rowno pśidał. Zapódaj wužywarske mě abo IP-adresu, aby dostał lisćinu bokow, kótarež maju se lašowaś abo wóstaj pólo prozne, aby wubrał wšych wužywarjow.',
 	'nuke-submit-user' => 'W pórěźe',
 	'nuke-submit-delete' => 'Wubrane wulašowaś',
 	'right-nuke' => 'Boki z masami lašowaś',
 	'nuke-select' => 'Wubraś: $1',
+	'nuke-userorip' => 'Wužywarske mě, IP-adresa abo žedno pódaśe:',
+	'nuke-maxpages' => 'Maksimalna licba bokow:',
+	'nuke-multiplepeople' => 'někotare wužywarje',
+	'nuke-editby' => 'Napórany wót [[Special:Contributions/$1|$1]]',
 );
 
 /** Ewe (Eʋegbe) */
