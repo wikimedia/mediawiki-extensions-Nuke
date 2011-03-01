@@ -398,9 +398,11 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
  */
 $messages['de-formal'] = array(
 	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] angelegt.
-Geben Sie einen Kommentar ein und drücken Sie auf den Knopf zum Löschen der Seiten.',
+Geben Sie einen Kommentar bezüglich der Löschung an und klicken Sie auf die Schaltfläche, um die Seiten nun zu löschen.',
+	'nuke-list-multiple' => 'Die folgenden Seiten wurden vor kurzem erstellt.
+Geben Sie einen Kommentar bezüglich der Löschung an und klicken Sie auf die Schaltfläche, um die Seiten nun zu löschen.',
 	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden.
-Geben Sie die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten.',
+Geben Sie die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten. Sofern Sie keine Angabe machen, werden alle Benutzer ausgewählt.',
 );
 
 /** Zazaki (Zazaki)
