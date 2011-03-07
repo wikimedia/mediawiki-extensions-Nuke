@@ -1039,16 +1039,24 @@ $messages['ksh'] = array(
 	'nuke-list' => 'Hee di Sigge sen fum „[[Special:Contributions/$1|$1]]“ neu
 aanjelaat woode. Jiff enne Jrond för et Fottschmieße aan,
 un dann donn der Knopp zom Fottschmieße dröcke.',
+	'nuke-list-multiple' => 'Heh di Sigge woodte köözlesch aanjelaat.
+Jiv ene Jrond udder Zosammegfassung aan,
+un kleck op dä Knopp för se fott ze schmiiße.',
 	'nuke-defaultreason' => 'Fum $1 neu aanjelaate Sigge ang Block fottschmieße',
 	'nuke-tools' => 'Di Sigg hee hellef Der, angmaß Sigge fottzeschmieße,
 di ene bestemmpte enjeloggte udder namelose Metmaacher
-aanjalaat hät.
-Jif dä Metmaacher-Name udder de IP-Address dofun aan,
-öm en Liß met Sigge fun däm ze krijje.',
+köözlesch aanjalaat hät.
+Jif dä Metmaacher-Name udder de IP-Address fun däm Naameloose aan,
+öm en Liß met Sigge fun däm ze krijje,
+udder lohß dat Feld läddesch, dann kriß De en Leß vun Alle.',
 	'nuke-submit-user' => 'Leß holle',
 	'nuke-submit-delete' => 'Donn de üßjewählte Sigge fottschmieße!',
 	'right-nuke' => 'Massich Sigge Fottschmieße',
 	'nuke-select' => 'Ußwähle: $1',
+	'nuke-userorip' => 'Metmaacher_Name, <i lang="en">IP</i>-Addräß udder nix:',
+	'nuke-maxpages' => 'Nit mieh Sigge, wi:',
+	'nuke-multiplepeople' => 'ongerscheidlijje Metmaacher',
+	'nuke-editby' => 'Aanjelaat vum [[Special:Contributions/$1|$1]]',
 );
 
 /** Luxembourgish (Lëtzebuergesch)
