@@ -834,12 +834,19 @@ $messages['id'] = array(
 	'nuke-desc' => 'Memberikan kemampuan bagi pengurus untuk [[Special:Nuke|menghapus halaman secara massal]]',
 	'nuke-nopages' => 'Tak ditemukan halaman baru dari [[Special:Contributions/$1|$1]] di perubahan terbaru.',
 	'nuke-list' => 'Halaman berikut baru saja dibuat oleh [[Special:Contributions/$1|$1]]; masukkan suatu komentar dan tekan tombol untuk menghapus halaman-halaman tersebut.',
+	'nuke-list-multiple' => 'Halaman berikut baru dibuat; 
+masukkan suatu komentar dan tekan tombol untuk menghapus.',
 	'nuke-defaultreason' => 'Penghapusan massal halaman-halaman yang dibuat oleh $1',
-	'nuke-tools' => 'Perkakas ini memungkinkan penghapusan massal halaman-halaman yang baru saja dibuat oleh seorang pengguna atau IP. Masukkan nama pengguna atau IP untuk mendapat daftar halaman yang dapat dihapus:',
+	'nuke-tools' => 'Alat ini memungkinkan penghapusan massal halaman-halaman yang baru saja dibuat oleh seorang pengguna atau IP.
+Masukkan nama pengguna atau IP untuk mendapat daftar halaman yang dapat dihapus atau kosongkan untuk daftar halaman dari semua pengguna.',
 	'nuke-submit-user' => 'Tuju ke',
 	'nuke-submit-delete' => 'Hapus yang terpilih',
 	'right-nuke' => 'Melakukan penghapusan masal halaman',
 	'nuke-select' => 'Pilih: $1',
+	'nuke-userorip' => 'Nama pengguna, alamat IP, atau kosong:',
+	'nuke-maxpages' => 'Jumlah maksimum halaman:',
+	'nuke-multiplepeople' => 'beberapa pengguna',
+	'nuke-editby' => 'Dibuat oleh [[Special:Contributions/$1|$1]]',
 );
 
 /** Igbo (Igbo)
@@ -1815,12 +1822,19 @@ $messages['tl'] = array(
 	'nuke-nopages' => 'Walang bagong mga pahinang ginawa ni [[Special:Contributions/$1|$1]] na nasa loob ng kamakailang mga pagbabago.',
 	'nuke-list' => 'Ang sumusunod na mga pahina ay nilikha kamakailan lamang ni [[Special:Contributions/$1|$1]];
 maglagay/magpasok ng isang puna (kumento) at pindutin ang pindutan upang mabura ang mga ito.',
+	'nuke-list-multiple' => 'Ang sumusunod na mga pahina ay kamakailan lamang nalikha;
+maglagay ng isang puna at pindutin ang pindutan upang mabura ang mga ito.',
 	'nuke-defaultreason' => 'Idinagdag ni $1 ang malawakang pagbubura ng mga pahina',
-	'nuke-tools' => 'Nagpapahintulot ang kagamitang ito upang makapagbura nang malawakan ng mga pahinang idinagdag kamakailan ng isang ibinigay na tagagamit o IP.
-Ipasok ang pangalan ng tagagamit o IP upang makakuha ng isang talaan ng mga pahinang buburahin.',
+	'nuke-tools' => 'Nagpapahintulot ang kagamitang ito upang mabura ng malawakan ang mga pahinang idinagdag kamakailan ng isang ibinigay na tagagamit o tirahan ng IP.
+Ipasok ang pangalan ng tagagamit o tirahan ng IP upang makakuha ng isang talaan ng mga pahinang buburahin, o iwanang walang laman para sa lahat ng mga tagagamit.',
 	'nuke-submit-user' => 'Gawin',
 	'nuke-submit-delete' => 'Pinili ang pagbura',
 	'right-nuke' => 'Malawakang burahin ang mga pahina',
+	'nuke-select' => 'Piliin: $1',
+	'nuke-userorip' => 'Pangalan ng tagagamit, Tirahan ng IP o walang laman:',
+	'nuke-maxpages' => 'Pinakamaraming bilang ng mga pahina:',
+	'nuke-multiplepeople' => 'maramihang mga tagagamit',
+	'nuke-editby' => 'Nilikha ni [[Special:Contributions/$1|$1]]',
 );
 
 /** Turkish (Türkçe)
