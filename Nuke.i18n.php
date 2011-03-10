@@ -1584,6 +1584,10 @@ $messages['sah'] = array(
 	'nuke-submit-delete' => 'Талыллыбыты сот',
 	'right-nuke' => 'Сирэйдэри халҕаһалыы суох оҥоруу',
 	'nuke-select' => 'Талыы: $1',
+	'nuke-userorip' => 'Кыттааччы аата, IP-аадырыһа (кураанах хаалларыахха сөп):',
+	'nuke-maxpages' => 'Сирэй ахсаанын хааччаҕа (максимум):',
+	'nuke-multiplepeople' => 'элбэх кыттааччы',
+	'nuke-editby' => 'Оҥоһуллубуттар [[Special:Contributions/$1|$1]]',
 );
 
 /** Sicilian (Sicilianu)
