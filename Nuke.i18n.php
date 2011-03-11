@@ -1409,12 +1409,18 @@ $messages['pms'] = array(
 	'nuke-desc' => "A dà a j'aministrador l'abilitassion a [[Special:Nuke|scanselé a baron]] le pàgine",
 	'nuke-nopages' => "Gnun-a pàgine faite da [[Special:Contributions/$1|$1]] ant j'ùltim cambiament.",
 	'nuke-list' => "Ste pàgine-sì a son staite faite ant j'ùltim temp da [[Special:Contributions/$1|$1]]; ch'a lassa un coment e ch'a-i daga 'n colp ansima al boton për gaveje via tute d'amblé.",
+	'nuke-list-multiple' => "Le pàgine ch'a ven-o a son stàite creà da pòch;
+ansëriss un coment e sgnaca ël boton për scanseleje.",
 	'nuke-defaultreason' => "Scancelament d'amblé dle pàgine faite da $1",
-	'nuke-tools' => "St'utiss-sì a lassa scancelé d'amblé le pàgine gionta ant j'ùltim temp da un chèich utent ò da 'nt na chèich adrëssa IP. Ch'a buta lë stranòm ò l'adrëssa IP për tiré giù na lista dle pàgine da scancelé:",
+	'nuke-tools' => "St'utiss-sì a lassa scancelé d'amblé le pàgine giontà ant j'ùltim temp da un chèich utent ò da 'nt na chèich adrëssa IP. Ch'a buta lë stranòm ò l'adrëssa IP për tiré giù na lista dle pàgine da scancelé, o ch'a lassa an bianch për tùit j'utent.",
 	'nuke-submit-user' => 'Va',
 	'nuke-submit-delete' => 'Scansela le selessionà',
 	'right-nuke' => 'Scansela le pàgine a baron',
 	'nuke-select' => 'Selessioné: $1',
+	'nuke-userorip' => 'Nòm utent, adrëssa IP o bianch:',
+	'nuke-maxpages' => 'Màssim nùmer ëd pàgine:',
+	'nuke-multiplepeople' => 'pi utent',
+	'nuke-editby' => 'Creà da [[Special:Contributions/$1|$1]]',
 );
 
 /** Pashto (پښتو)
@@ -1578,8 +1584,11 @@ $messages['sah'] = array(
 	'nuke-desc' => 'Администраатардарга [[Special:Nuke|элбэх сирэйи биир дьайыыннан сотор]] кыаҕы биэрэр',
 	'nuke-nopages' => 'Кэнники көннөрүүлэр испииһэктэригэр [[Special:Contributions/$1|$1]] саҥа сирэйи оҥорбута көстүбэтэ.',
 	'nuke-list' => 'Бу сирэйдэри соторутааҕыта [[Special:Contributions/$1|$1]] кыттааччы оҥорбут. Сотуоххун баҕарар буоллаххына быһаарыыны оҥорон баран тимэҕи баттаа.',
+	'nuke-list-multiple' => 'Бу сирэйдэр соторутааҕыта оҥоһуллубуттар.
+Соторго быһаарыыта суруйан баран тимэҕи баттаа.',
 	'nuke-defaultreason' => '$1 кыттааччы айбыт сирэйдэрин бүтүннүү суох оҥоруу',
-	'nuke-tools' => 'Бу сирэй көмөтүнэн ханнык эмэ кыттааччы эбэтэр IP оҥорбут көннөрүүлэрин бүтүннүү суох гынахха сөп. Кыттааччы аатын эбэтэр IP-тын киллэрдэххинэ оҥорбут көннөрүүлэрин испииһэгэ тахсыа:',
+	'nuke-tools' => 'Бу сирэй көмөтүнэн ханнык эмэ кыттааччы оҥорбут көннөрүүлэрин эбэтэр биир IP-ттан оҥоһуллубут көннөрүүлэри бүтүннүү суох гынахха сөп. 
+Кыттааччы аатын эбэтэр IP-тын киллэрдэххинэ оҥорбут көннөрүүлэрин тиһигэ тахсыа, кураанах хааллардаххына бары кыттааччылар көннөрүүлэрэ көстүө.',
 	'nuke-submit-user' => 'Толор',
 	'nuke-submit-delete' => 'Талыллыбыты сот',
 	'right-nuke' => 'Сирэйдэри халҕаһалыы суох оҥоруу',
@@ -1860,6 +1869,14 @@ Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin
 	'nuke-submit-delete' => 'Seçileni sil',
 	'right-nuke' => 'Sayfaları kitlesel olarak sil',
 	'nuke-select' => 'Seçilmiş: $1',
+);
+
+/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+ * @author Ильнар
+ */
+$messages['tt-cyrl'] = array(
+	'nuke' => 'Күпләп бетерү',
+	'right-nuke' => 'битләрне күпләп бетерү',
 );
 
 /** ئۇيغۇرچە (ئۇيغۇرچە)
