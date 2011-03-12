@@ -1075,6 +1075,8 @@ $messages['lb'] = array(
 	'nuke-desc' => "Gëtt Administrateuren d'Méiglechkeet fir [[Special:Nuke|vill Säite mateneen ze läschen]]",
 	'nuke-nopages' => 'Et gëtt bei de läschten Ännerunge keng nei Säite vum [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|$1]] nei ugeluecht; gitt w.e.g. eng Bemierkung an, an dréckt op de Knäppche Läschen.',
+	'nuke-list-multiple' => 'Dës Säite goufe rezent gemaach;
+setzt eng Bemierkung derbäi a klickt op de Knäppche fir se ze läschen.',
 	'nuke-defaultreason' => 'Masse-Läschung vu Säiten, déi vum $1 ugefaang goufen',
 	'nuke-tools' => "Dësen Tool erlaabt vill Säite mateneen ze läschen, déi vun engem Benotzer oder vun enger IP-Adresse ugeluecht goufen.
 Gitt w.e.g. d'IP-Adress respektiv de Benotzer n fir eng Lescht vun de Säiten ze kréien déi geläscht solle ginn, oder loosst et eidel fir all Benotzer.",
@@ -1085,6 +1087,7 @@ Gitt w.e.g. d'IP-Adress respektiv de Benotzer n fir eng Lescht vun de Säiten ze
 	'nuke-userorip' => 'Benotzernumm, IP-Adress oder eidel:',
 	'nuke-maxpages' => 'Maximal Zuel vu Säiten:',
 	'nuke-multiplepeople' => 'méi Benotzer',
+	'nuke-editby' => 'Gemaach vum [[Special:Contributions/$1|$1]]',
 );
 
 /** Limburgish (Limburgs)
