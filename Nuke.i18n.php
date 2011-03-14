@@ -889,6 +889,8 @@ $messages['it'] = array(
 	'nuke-submit-delete' => 'Cancella la selezione',
 	'right-nuke' => 'Cancella pagine in massa',
 	'nuke-select' => 'Seleziona: $1',
+	'nuke-maxpages' => 'Numero massimo di pagine:',
+	'nuke-editby' => 'Creato da [[Special:Contributions/$1|$1]]',
 );
 
 /** Japanese (日本語)
@@ -1042,7 +1044,7 @@ $messages['krj'] = array(
 $messages['ksh'] = array(
 	'nuke' => 'Sigge fottschmieße ang Mass',
 	'nuke-desc' => 'Määd_et müjjelesch för de Wiki-Köbesse, [[Special:Nuke|angmass Sigge fottzeschmieße]].',
-	'nuke-nopages' => 'Mer han kein neu Sigge fum [[Special:Contributions/$1|$1]] en de {{lcfirst:{{int:Recentchanges}}}}.',
+	'nuke-nopages' => 'Mer han kein neu Sigge {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} [[Special:Contributions/$1|$1]] en de {{lcfirst:{{int:Recentchanges}}}}.',
 	'nuke-list' => 'Hee di Sigge sen fum „[[Special:Contributions/$1|$1]]“ neu
 aanjelaat woode. Jiff enne Jrond för et Fottschmieße aan,
 un dann donn der Knopp zom Fottschmieße dröcke.',
