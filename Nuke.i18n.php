@@ -1915,6 +1915,8 @@ $messages['uk'] = array(
 	'nuke-submit-delete' => 'Вилучити обрані',
 	'right-nuke' => 'Масове вилучення сторінок',
 	'nuke-select' => 'Вибір: $1',
+	'nuke-maxpages' => 'Максимальна кількість сторінок:',
+	'nuke-editby' => 'Створені [[Special:Contributions/$1|$1]]',
 );
 
 /** Vèneto (Vèneto)
