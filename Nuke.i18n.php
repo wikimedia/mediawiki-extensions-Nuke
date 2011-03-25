@@ -1635,7 +1635,8 @@ $messages['sk'] = array(
 	'nuke-nopages' => 'V posledných zmenách sa nenachádzajú nové stránky od [[Special:Contributions/$1|$1]].',
 	'nuke-list' => '[[Special:Contributions/$1|$1]] nedávno vytvoril nasledovné nové stránky; vyplňte komentár a stlačením tlačidla ich vymažete.',
 	'nuke-defaultreason' => 'Hromadné odstránenie stránok, ktoré pridal $1',
-	'nuke-tools' => 'Tento nástroj umožňuje hromadné odstránenie stránok, ktoré nedávno pridal zadaný používateľ alebo IP. Zadajte používateľa alebo IP a dostanente zoznam stránok na zmazanie:',
+	'nuke-tools' => 'Tento nástroj umožňuje hromadné odstránenie stránok, ktoré nedávno pridal zadaný používateľ alebo IP.
+Zadajte používateľa alebo IP a dostanete zoznam stránok na zmazanie. Ponechajte prázdne a použije sa na všetkých používateľov.',
 	'nuke-submit-user' => 'Vykonať',
 	'nuke-submit-delete' => 'Zmazať vybrané',
 	'right-nuke' => 'Hromadné mazanie stránok',
