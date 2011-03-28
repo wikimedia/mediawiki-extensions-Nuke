@@ -1236,7 +1236,7 @@ $messages['mt'] = array(
 daħħal kumment u agħfas il-buttuna sabiex tħassarhom.',
 	'nuke-defaultreason' => "Tħassir ta' massa ta' paġni miżjuda minn $1",
 	'nuke-tools' => "Din l-għodda tippermetti t-tħassir ta' massa ta' paġni li ġew miżjuda riċentament minn utent partikulari jew IP.
-Daħħal l-isem tal-utent jew l-IP biex tikseb lista ta' paġni li jridu jitħassru.",
+Daħħal l-isem tal-utent jew l-indirizz IP biex tikseb lista ta' paġni li jridu jitħassru, jew ħalliha votja sabiex issejjaħ l-utenti kollha.",
 	'nuke-submit-user' => 'Mur',
 	'nuke-submit-delete' => 'Ħassar dawk magħżula',
 	'right-nuke' => 'Ħassar paġni bil-massa',
