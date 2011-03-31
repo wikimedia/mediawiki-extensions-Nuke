@@ -1539,11 +1539,12 @@ $messages['roa-tara'] = array(
 mitte 'nu commende e cazze sus a 'u buttone pe scangellarle.",
 	'nuke-defaultreason' => 'Scangellazzione de masse de le pàggene aggiunde da $1',
 	'nuke-tools' => "Stu strumende permette le scangellazziune de masse de le pàggene aggiunde de recende da 'nu certe utende o IP.<br />
-Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de scangellà.",
+Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de scangellà, o lasse vianghe pe tutte l'utinde.",
 	'nuke-submit-user' => 'Veje',
 	'nuke-submit-delete' => "Scangelle 'a selezione",
 	'right-nuke' => 'Scangellazione de masse de le pàggene',
 	'nuke-select' => 'Scacchie: $1',
+	'nuke-userorip' => "Nome de l'utende, indirizze IP o vianghe:",
 );
 
 /** Russian (Русский)
