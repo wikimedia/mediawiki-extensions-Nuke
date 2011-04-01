@@ -883,13 +883,18 @@ $messages['it'] = array(
 	'nuke-desc' => 'Consente agli amministratori la [[Special:Nuke|cancellazione in massa]] delle pagine',
 	'nuke-nopages' => 'Non sono state trovate nuove pagine create da [[Special:Contributions/$1|$1]] tra le modifiche recenti.',
 	'nuke-list' => 'Le seguenti pagine sono state create di recente da [[Special:Contributions/$1|$1]]; inserisci un commento e conferma la cancellazione.',
+	'nuke-list-multiple' => 'Le seguenti pagine sono state create recentemente;
+inserisci un commento e premi il pulsante per cancellarle.',
 	'nuke-defaultreason' => 'Cancellazione di massa delle pagine create da $1',
-	'nuke-tools' => "Questo strumento permette la cancellazione in massa delle pagina create di recente da un determinato utente o IP. Inserisci il nome utente o l'IP per la lista delle pagine da cancellare.",
+	'nuke-tools' => "Questo strumento permette la cancellazione in massa delle pagina create di recente da un determinato utente registrato o anonimo (IP).
+Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellare, oppure lascia vuoto per tutti gli utenti.",
 	'nuke-submit-user' => 'Vai',
 	'nuke-submit-delete' => 'Cancella la selezione',
 	'right-nuke' => 'Cancella pagine in massa',
 	'nuke-select' => 'Seleziona: $1',
+	'nuke-userorip' => 'Nome utente, indirizzo IP o vuoto:',
 	'nuke-maxpages' => 'Numero massimo di pagine:',
+	'nuke-multiplepeople' => 'più utenti',
 	'nuke-editby' => 'Creato da [[Special:Contributions/$1|$1]]',
 );
 
