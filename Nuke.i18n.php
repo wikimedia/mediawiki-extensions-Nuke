@@ -1344,6 +1344,7 @@ $messages['no'] = array(
 	'nuke-submit-delete' => 'Slett valgte',
 	'right-nuke' => 'Slette sider <i>en masse</i>',
 	'nuke-select' => 'Velg: $1',
+	'nuke-editby' => 'Opprettet av [[Special:Contributions/$1|$1]]',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
