@@ -1957,7 +1957,7 @@ $messages['vep'] = array(
  */
 $messages['vi'] = array(
 	'nuke' => 'Xóa hàng loạt',
-	'nuke-desc' => 'Cung cấp cho người quản lý khả năng [[Special:Nuke|xóa trang hàng loạt]]',
+	'nuke-desc' => 'Cung cấp cho quản lý viên khả năng [[Special:Nuke|xóa trang hàng loạt]]',
 	'nuke-nopages' => 'Không có trang mới do [[Special:Contributions/$1|$1]] tạo ra trong thay đổi gần đây.',
 	'nuke-list' => 'Các trang sau do [[Special:Contributions/$1|$1]] tạo ra gần đây; hãy ghi lý do và nhấn nút để xóa tất cả những trang này.',
 	'nuke-list-multiple' => 'Các trang sau được tạo ra gần đây.
