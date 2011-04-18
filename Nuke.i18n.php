@@ -125,17 +125,25 @@ $messages['arz'] = array(
 
 /** Asturian (Asturianu)
  * @author Esbardu
+ * @author Xuacu
  */
 $messages['ast'] = array(
 	'nuke' => 'Esborráu masivu',
 	'nuke-desc' => "Da a los alministradores la capacidá d'[[Special:Nuke|esborrar páxines masivamente]]",
 	'nuke-nopages' => 'Nun hai páxines nueves de [[Special:Contributions/$1|$1]] nos cambeos recientes.',
 	'nuke-list' => 'Les páxines siguientes foron creaes recién por [[Special:Contributions/$1|$1]]; escribi un comentariu y calca nel botón pa esborrales.',
+	'nuke-list-multiple' => "Les páxines darréu se crearon recientemente;
+escribi un comentariu y calca'l botón pa desaniciales.",
 	'nuke-defaultreason' => 'Esborráu masivu de páxines añadíes por $1',
-	'nuke-tools' => "Esta ferramienta permite esborraos masivos de páxines añadíes recién por un usariu o una IP determinada. Escribi'l nome d'usuariu o la IP pa obtener una llista de páxines pa esborrar:",
+	'nuke-tools' => "Esta ferramienta permite desanicios masivos de páxines añadíes recién por un usuariu o una IP determinada. Escribi'l nome d'usuariu o la IP pa obtener una llista de páxines a desaniciar, o dexa en blanco pa tolos usuarios.",
 	'nuke-submit-user' => 'Dir',
 	'nuke-submit-delete' => 'Esborrar seleicionaes',
 	'right-nuke' => 'Esborráu masivu de páxines',
+	'nuke-select' => 'Seleicionar: $1',
+	'nuke-userorip' => "Nome d'usuariu, direición IP o en blanco:",
+	'nuke-maxpages' => 'Máximu númberu de páxines:',
+	'nuke-multiplepeople' => 'múltiples usuarios',
+	'nuke-editby' => 'Creáu por [[Special:Contributions/$1|$1]]',
 );
 
 /** Bashkir (Башҡортса)
