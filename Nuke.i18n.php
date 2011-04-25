@@ -1791,6 +1791,7 @@ $messages['te'] = array(
 	'right-nuke' => 'పేజీలను సామూహికంగా తొలగించడం',
 	'nuke-select' => 'ఎంచుకోండి: $1',
 	'nuke-maxpages' => 'గరిష్ఠ పుటల సంఖ్య:',
+	'nuke-multiplepeople' => 'పలు వాడుకరులు',
 );
 
 /** Tetum (Tetun)
