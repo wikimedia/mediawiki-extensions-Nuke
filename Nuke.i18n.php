@@ -1523,6 +1523,7 @@ $messages['rif'] = array(
 
 /** Romanian (Română)
  * @author Cin
+ * @author Firilacroco
  * @author KlaudiuMihaila
  * @author Mihai
  * @author Minisarm
@@ -1540,6 +1541,11 @@ Introduceți numele de utilizator sau adresa IP pentru a primi o listă cu pagin
 	'nuke-submit-user' => 'Du-te',
 	'nuke-submit-delete' => 'Șterge ce e marcat',
 	'right-nuke' => 'șterge pagini în masă',
+	'nuke-select' => 'Alegeți: $1',
+	'nuke-userorip' => 'Nume de utilizator, adresă IP sau necompletare:',
+	'nuke-maxpages' => 'Număr maxim de pagini:',
+	'nuke-multiplepeople' => 'mai mulți utilizatori',
+	'nuke-editby' => 'Creat de [[Special:Contributions/$1|$1]]',
 );
 
 /** Tarandíne (Tarandíne)
@@ -1551,6 +1557,8 @@ $messages['roa-tara'] = array(
 	'nuke-nopages' => "Nisciuna pàgena nove da [[Special:Contributions/$1|$1]] jndr'à l'urteme cangiaminde.",
 	'nuke-list' => "Le pàggene seguende onne state ccrejate recendemende da [[Special:Contributions/$1|$1]];
 mitte 'nu commende e cazze sus a 'u buttone pe scangellarle.",
+	'nuke-list-multiple' => "Le pàggene seguende onne state ccrejate recendemende;
+mitte 'nu commende e cazze 'u buttone pe scangellarle.",
 	'nuke-defaultreason' => 'Scangellazzione de masse de le pàggene aggiunde da $1',
 	'nuke-tools' => "Stu strumende permette le scangellazziune de masse de le pàggene aggiunde de recende da 'nu certe utende o IP.<br />
 Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de scangellà, o lasse vianghe pe tutte l'utinde.",
@@ -1559,6 +1567,9 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'right-nuke' => 'Scangellazione de masse de le pàggene',
 	'nuke-select' => 'Scacchie: $1',
 	'nuke-userorip' => "Nome de l'utende, indirizze IP o vianghe:",
+	'nuke-maxpages' => 'Numere massime de pàggene:',
+	'nuke-multiplepeople' => 'utinde multiple',
+	'nuke-editby' => 'Ccrejate da [[Special:Contributions/$1|$1]]',
 );
 
 /** Russian (Русский)
@@ -1649,12 +1660,19 @@ $messages['sk'] = array(
 	'nuke-desc' => 'Dáva správcom schopnosť [[Special:Nuke|hromadného mazania]] stránok',
 	'nuke-nopages' => 'V posledných zmenách sa nenachádzajú nové stránky od [[Special:Contributions/$1|$1]].',
 	'nuke-list' => '[[Special:Contributions/$1|$1]] nedávno vytvoril nasledovné nové stránky; vyplňte komentár a stlačením tlačidla ich vymažete.',
+	'nuke-list-multiple' => 'Tieto stránky boli nedávno vytvorené;
+vložením komentára a stlačením tlačidla ich môžete zmazať.',
 	'nuke-defaultreason' => 'Hromadné odstránenie stránok, ktoré pridal $1',
 	'nuke-tools' => 'Tento nástroj umožňuje hromadné odstránenie stránok, ktoré nedávno pridal zadaný používateľ alebo IP.
 Zadajte používateľa alebo IP a dostanete zoznam stránok na zmazanie. Ponechajte prázdne a použije sa na všetkých používateľov.',
 	'nuke-submit-user' => 'Vykonať',
 	'nuke-submit-delete' => 'Zmazať vybrané',
 	'right-nuke' => 'Hromadné mazanie stránok',
+	'nuke-select' => 'Vybrať: $1',
+	'nuke-userorip' => 'Používateľské meno, IP adresa alebo prázdne:',
+	'nuke-maxpages' => 'Maximálny počet strán:',
+	'nuke-multiplepeople' => 'viacerí používatelia',
+	'nuke-editby' => 'Vytvoril [[Special:Contributions/$1|$1]]',
 );
 
 /** Slovenian (Slovenščina)
@@ -1966,7 +1984,7 @@ $messages['vep'] = array(
  */
 $messages['vi'] = array(
 	'nuke' => 'Xóa hàng loạt',
-	'nuke-desc' => 'Cung cấp cho quản lý viên khả năng [[Special:Nuke|xóa trang hàng loạt]]',
+	'nuke-desc' => 'Cung cấp cho bảo quản viên khả năng [[Special:Nuke|xóa trang hàng loạt]]',
 	'nuke-nopages' => 'Không có trang mới do [[Special:Contributions/$1|$1]] tạo ra trong thay đổi gần đây.',
 	'nuke-list' => 'Các trang sau do [[Special:Contributions/$1|$1]] tạo ra gần đây; hãy ghi lý do và nhấn nút để xóa tất cả những trang này.',
 	'nuke-list-multiple' => 'Các trang sau được tạo ra gần đây.
