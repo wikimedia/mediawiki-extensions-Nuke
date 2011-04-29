@@ -490,6 +490,7 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
 	'nuke-submit-user' => 'Ek!',
 	'nuke-submit-delete' => 'Forigi elekton',
 	'right-nuke' => 'Amasforigi paĝojn',
+	'nuke-multiplepeople' => 'multaj uzantoj',
 );
 
 /** Spanish (Español)
