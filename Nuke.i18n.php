@@ -341,6 +341,7 @@ $messages['ch'] = array(
 
 /** Czech (Česky)
  * @author Danny B.
+ * @author Jkjk
  * @author Li-sung
  * @author Matěj Grabovský
  * @author Mormegil
@@ -357,6 +358,9 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 	'nuke-submit-delete' => 'Smazat vybrané',
 	'right-nuke' => 'Hromadné mazání stránek',
 	'nuke-select' => 'Vybrat: $1',
+	'nuke-maxpages' => 'Maximální počet stran:',
+	'nuke-multiplepeople' => 'více uživatelů',
+	'nuke-editby' => 'Vytvořili [[Special:Contributions/$1|$1]]',
 );
 
 /** Danish (Dansk)
@@ -490,7 +494,11 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
 	'nuke-submit-user' => 'Ek!',
 	'nuke-submit-delete' => 'Forigi elekton',
 	'right-nuke' => 'Amasforigi paĝojn',
+	'nuke-select' => 'Elektu: $1',
+	'nuke-userorip' => 'Salutnomo, IP-adreso, aŭ nenio:',
+	'nuke-maxpages' => 'Maksimuma nombro de paĝoj:',
 	'nuke-multiplepeople' => 'multaj uzantoj',
+	'nuke-editby' => 'Kreita de [[Special:Contributions/$1|$1]]',
 );
 
 /** Spanish (Español)
