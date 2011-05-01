@@ -242,6 +242,7 @@ $messages['bg'] = array(
 
 /** Bengali (বাংলা)
  * @author Bellayet
+ * @author Wikitanvir
  * @author Zaheen
  */
 $messages['bn'] = array(
@@ -253,6 +254,10 @@ $messages['bn'] = array(
 	'nuke-tools' => 'এই সরঞ্জামটি ব্যবহার করে আপনি একটি প্রদত্ত ব্যবহারকারীর বা আইপি ঠিকানার যোগ করা পাতাগুলি গণ আকারে মুছে ফেলতে পারবেন। পাতাগুলির তালিকা পেতে ব্যবহারকারী নাম বা আইপি ঠিকানাটি ইনপুট করুন:',
 	'nuke-submit-user' => 'যাও',
 	'nuke-submit-delete' => 'নির্বাচিত গুলো মুছে ফেলো',
+	'nuke-select' => 'নির্বাচন: $1',
+	'nuke-userorip' => 'ব্যবহারকারী নাম, আইপি ঠিকানা বা খালি:',
+	'nuke-maxpages' => 'সর্বোচ্চ সংখ্যক পাতাসমূহ:',
+	'nuke-multiplepeople' => 'একাধিক ব্যবহারকারী',
 );
 
 /** Breton (Brezhoneg)
@@ -623,8 +628,8 @@ $messages['frp'] = array(
 	'nuke-list' => 'Cetes pâges ont étâ fêtes dèrriérement per [[Special:Contributions/$1|$1]] ;
 buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
-	'nuke-tools' => 'Ceti outil ôtorise les suprèssions en massa de les pâges apondues dèrriérement per un utilisator encartâ ou ben per una adrèce IP.
-Buchiéd lo nom d’utilisator ou ben l’adrèce IP por avêr la lista de les pâges a suprimar :',
+	'nuke-tools' => 'Ceti outil pèrmèt les suprèssions en massa de les pâges apondues dèrriérement per un utilisator encartâ ou ben per una adrèce IP.
+Buchiér lo nom d’utilisator ou ben l’adrèce IP por avêr la lista de les pâges a suprimar, ou ben lèssiér blanc por tôs los utilisators.',
 	'nuke-submit-user' => 'Validar',
 	'nuke-submit-delete' => 'Suprèssion chouèsia',
 	'right-nuke' => 'Suprimar des pâges en massa',
