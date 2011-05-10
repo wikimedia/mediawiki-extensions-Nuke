@@ -1521,11 +1521,19 @@ $messages['qu'] = array(
 	'nuke-desc' => "Kamachiqkunata [[Special:Nuke|p'anqa tawqa qulluywan]] atichin",
 	'nuke-nopages' => "Manam kanchu [[Special:Contributions/$1|$1]]-pa musuqta kamarisqan p'anqakuna ñaqha hukchasqakunapi.",
 	'nuke-list' => "Kay qatiq p'anqakunataqa [[Special:Contributions/$1|$1]] ruraqmi kamarirqun; imarayku nispa butunta ñit'iy tawqalla qullunapaq.",
+	'nuke-list-multiple' => "Kay qatiq p'anqakunaqa ñaqha kamarisqam;
+imatapas willapuspa butunta ñit'ipay qullunapaq.",
 	'nuke-defaultreason' => "$1-pa rurasqan p'anqakunata tawqalla qulluy",
-	'nuke-tools' => "Kay llamk'anawanqa huk ruraqpa kamarisqan p'anqakunata tawqalla qulluytam atinki. Ruraqpa sutinta icha IP huchhanta yaykuchiy qulluna p'anqakunata rikunaykipaq.",
+	'nuke-tools' => "Kay llamk'anawanqa huk ruraqpa icha huk IP huchhap ñaqha kamarisqan p'anqakunata tawqalla qulluytam atinki.
+Ruraqpa sutinta icha IP huchhanta yaykuchiy qulluna p'anqakunata rikunaykipaq.",
 	'nuke-submit-user' => 'Riy',
 	'nuke-submit-delete' => 'Akllasqata qulluy',
 	'right-nuke' => "Tawqa qulluna p'anqakuna",
+	'nuke-select' => 'Akllay: $1',
+	'nuke-userorip' => "Ruraqpa sutin, IP huchha icha ch'usaq:",
+	'nuke-maxpages' => "Kay chhika p'anqakunamanta ama aswan kachunchu:",
+	'nuke-multiplepeople' => 'imaymana ruraqkuna',
+	'nuke-editby' => '[[Special:Contributions/$1|$1]] sutiyuqpa kamarisqan',
 );
 
 /** Tarifit (Tarifit)
