@@ -8,9 +8,7 @@
 
 $specialPageAliases = array();
 
-/** English
- * @author Brion Vibber
- */
+/** English (English) */
 $specialPageAliases['en'] = array(
 	'Nuke' => array( 'Nuke' ),
 );
@@ -25,7 +23,7 @@ $specialPageAliases['arz'] = array(
 	'Nuke' => array( 'مسح_كامل' ),
 );
 
-/** Belarusian (Taraškievica orthography) (Беларуская (тарашкевіца)) */
+/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬) */
 $specialPageAliases['be-tarask'] = array(
 	'Nuke' => array( 'Масавае_выдаленьне' ),
 );
@@ -78,6 +76,11 @@ $specialPageAliases['he'] = array(
 /** Upper Sorbian (Hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
 	'Nuke' => array( 'Masowe_wušmórnjenje' ),
+);
+
+/** Haitian (Kreyòl ayisyen) */
+$specialPageAliases['ht'] = array(
+	'Nuke' => array( 'Dechouke' ),
 );
 
 /** Hungarian (Magyar) */
@@ -188,6 +191,16 @@ $specialPageAliases['tl'] = array(
 /** Turkish (Türkçe) */
 $specialPageAliases['tr'] = array(
 	'Nuke' => array( 'Uçur' ),
+);
+
+/** Vietnamese (Tiếng Việt) */
+$specialPageAliases['vi'] = array(
+	'Nuke' => array( 'Xóa_hàng_loạt', 'Xoá_hàng_loạt' ),
+);
+
+/** Simplified Chinese (‪中文(简体)‬) */
+$specialPageAliases['zh-hans'] = array(
+	'Nuke' => array( '杜克鲁克' ),
 );
 
 /** Traditional Chinese (‪中文(繁體)‬) */
