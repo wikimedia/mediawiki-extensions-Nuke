@@ -631,8 +631,12 @@ buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-tools' => 'Ceti outil pèrmèt les suprèssions en massa de les pâges apondues dèrriérement per un utilisator encartâ ou ben per una adrèce IP.
 Buchiér lo nom d’utilisator ou ben l’adrèce IP por avêr la lista de les pâges a suprimar, ou ben lèssiér blanc por tôs los utilisators.',
 	'nuke-submit-user' => 'Validar',
-	'nuke-submit-delete' => 'Suprèssion chouèsia',
+	'nuke-submit-delete' => 'Suprimar lo chouèx',
 	'right-nuke' => 'Suprimar des pâges en massa',
+	'nuke-select' => 'Chouèsésséd : $1',
+	'nuke-userorip' => 'Nom d’utilisator, adrèce IP ou ben vouedo :',
+	'nuke-multiplepeople' => 'un mouél d’utilisators',
+	'nuke-editby' => 'Fêt per [[Special:Contributions/$1|$1]]',
 );
 
 /** Friulian (Furlan)
@@ -1434,6 +1438,7 @@ Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. 
 );
 
 /** Piedmontese (Piemontèis)
+ * @author Borichèt
  * @author Bèrto 'd Sèra
  * @author Dragonòt
  */
@@ -1442,15 +1447,15 @@ $messages['pms'] = array(
 	'nuke-desc' => "A dà a j'aministrador l'abilitassion a [[Special:Nuke|scanselé a baron]] le pàgine",
 	'nuke-nopages' => "Gnun-a pàgine faite da [[Special:Contributions/$1|$1]] ant j'ùltim cambiament.",
 	'nuke-list' => "Ste pàgine-sì a son staite faite ant j'ùltim temp da [[Special:Contributions/$1|$1]]; ch'a lassa un coment e ch'a-i daga 'n colp ansima al boton për gaveje via tute d'amblé.",
-	'nuke-list-multiple' => "Le pàgine ch'a ven-o a son stàite creà da pòch;
-ansëriss un coment e sgnaca ël boton për scanseleje.",
+	'nuke-list-multiple' => "Le pàgine sì-dapress a son stàite creà da pòch;
+ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
 	'nuke-defaultreason' => "Scancelament d'amblé dle pàgine faite da $1",
-	'nuke-tools' => "St'utiss-sì a lassa scancelé d'amblé le pàgine giontà ant j'ùltim temp da un chèich utent ò da 'nt na chèich adrëssa IP. Ch'a buta lë stranòm ò l'adrëssa IP për tiré giù na lista dle pàgine da scancelé, o ch'a lassa an bianch për tùit j'utent.",
+	'nuke-tools' => "St'utiss-sì a lassa scancelé d'amblé le pàgine giontà ant j'ùltim temp da un chèich utent ò da 'nt na chèicha adrëssa IP. Ch'a buta lë stranòm ò l'adrëssa IP për tiré giù na lista dle pàgine da scancelé, o ch'a lassa an bianch për tùit j'utent.",
 	'nuke-submit-user' => 'Va',
 	'nuke-submit-delete' => 'Scansela le selessionà',
 	'right-nuke' => 'Scansela le pàgine a baron',
 	'nuke-select' => 'Selessioné: $1',
-	'nuke-userorip' => 'Nòm utent, adrëssa IP o bianch:',
+	'nuke-userorip' => 'Nòm utent, adrëssa IP o gnente:',
 	'nuke-maxpages' => 'Màssim nùmer ëd pàgine:',
 	'nuke-multiplepeople' => 'pi utent',
 	'nuke-editby' => 'Creà da [[Special:Contributions/$1|$1]]',
