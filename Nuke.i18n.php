@@ -356,13 +356,16 @@ $messages['cs'] = array(
 	'nuke-desc' => 'Dává správcům možnost [[Special:Nuke|hromadného mazání]] stránek',
 	'nuke-nopages' => 'V posledních změnách nejsou žádné nové stránky od uživatele [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Následující stránky nedávno vytvořil uživatel [[Special:Contributions/$1|$1]]; vyplňte komentář a všechny smažte kliknutím na tlačítko.',
+	'nuke-list-multiple' => 'Nedávno byly vytvořeny následující stránky;
+zadáním komentáře a stisknutím tlačítka je smažete.',
 	'nuke-defaultreason' => 'Hromadné odstranění stránek, které vytvořil $1',
 	'nuke-tools' => 'Tento nástroj umožňuje hromadné smazání stránek nedávno vytvořených zadaným uživatelem nebo IP adresou.
-Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smazání.',
+Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smazání; případně ponechte prázdné pro všechny uživatele.',
 	'nuke-submit-user' => 'Provést',
 	'nuke-submit-delete' => 'Smazat vybrané',
 	'right-nuke' => 'Hromadné mazání stránek',
 	'nuke-select' => 'Vybrat: $1',
+	'nuke-userorip' => 'Uživatelské jméno, IP adresa nebo ponechte prázdné:',
 	'nuke-maxpages' => 'Maximální počet stran:',
 	'nuke-multiplepeople' => 'více uživatelů',
 	'nuke-editby' => 'Vytvořili [[Special:Contributions/$1|$1]]',
