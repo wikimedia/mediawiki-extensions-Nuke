@@ -1356,6 +1356,9 @@ Skriv inn eit brukarnamn eller ei IP-adressa for å få ei lista over sider som 
 	'nuke-submit-user' => 'Gå',
 	'nuke-submit-delete' => 'Slett valde',
 	'right-nuke' => 'Masseslett sider',
+	'nuke-select' => 'Vel: $1',
+	'nuke-multiplepeople' => 'fleire brukarar',
+	'nuke-editby' => 'Oppretta av [[Special:Contributions/$1|$1]]',
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
