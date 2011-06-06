@@ -511,6 +511,7 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
 
 /** Spanish (Español)
  * @author Aleator
+ * @author Crazymadlover
  * @author Dferg
  * @author Jatrobat
  * @author Remember the dot
@@ -524,7 +525,7 @@ $messages['es'] = array(
 escriba un comentario y haga clic en el botón para borrarlas.',
 	'nuke-defaultreason' => 'Eliminación en masa de páginas añadidas por $1',
 	'nuke-tools' => 'Esta herramienta permite borrados masivos de páginas creadas recientemente por un usuario o una dirección IP.
-Introduzca el nombre de usuario o la dirección IP para obtener la lista de páginas a borrar.',
+Introduzca el nombre de usuario o la dirección IP para obtener la lista de páginas a borrar, o déjelo en blanco para todos los usuarios.',
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Borrar lo seleccionado',
 	'right-nuke' => 'Borrar páginas masivamente',
