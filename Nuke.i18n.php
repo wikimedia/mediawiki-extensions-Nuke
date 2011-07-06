@@ -2079,6 +2079,7 @@ $messages['yue'] = array(
  * @author Liangent
  * @author PhiLiP
  * @author Shinjiman
+ * @author Xiaomingyan
  * @author 阿pp
  */
 $messages['zh-hans'] = array(
@@ -2092,7 +2093,7 @@ $messages['zh-hans'] = array(
 	'nuke-defaultreason' => '大量删除由$1所创建的页面',
 	'nuke-tools' => '此工具允许大规模删除指定用户或 IP 地址最近添加的页面。
 输入用户名或 IP 地址以获取可删除页面的列表，空白则检索所有用户。',
-	'nuke-submit-user' => '执行',
+	'nuke-submit-user' => '提交',
 	'nuke-submit-delete' => '删除已选择的',
 	'right-nuke' => '大量删除页面',
 	'nuke-select' => '选定：$1',
