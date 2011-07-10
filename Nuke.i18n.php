@@ -30,7 +30,9 @@ Input the username or IP address to get a list of pages to delete, or leave blan
 	'nuke-userorip'      => 'Username, IP address or blank:',
 	'nuke-maxpages'      => 'Maximum number of pages:',
 	'nuke-multiplepeople'=> 'multiple users',
-	'nuke-editby'        => 'Created by [[Special:Contributions/$1|$1]]'
+	'nuke-editby'        => 'Created by [[Special:Contributions/$1|$1]]',
+	'nuke-deleted'       => "Page '''$1''' has been deleted.",
+	'nuke-not-deleted'   => "Page [[$1]] '''could not''' be deleted.",
 );
 
 /** Message documentation (Message documentation)

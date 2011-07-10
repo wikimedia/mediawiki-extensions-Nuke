@@ -39,7 +39,7 @@ class SpecialNuke extends SpecialPage {
 				
 				if( $pages ) {
 					return $this->doDelete( $pages, $reason );
-				}				
+				}
 			}
 			else {
 				$this->listForm( $target, $reason, $wgRequest->getInt( 'limit' ) );
@@ -244,16 +244,25 @@ JAVASCRIPT;
 	 * @param string $reason
 	 */
 	protected function doDelete( array $pages, $reason ) {
+		global $wgOut;
+
+		$res = array();
 		foreach( $pages as $page ) {
 			$title = Title::newFromURL( $page );
-			$file = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
+			$file = $title->getNamespace() == NS_FILE ? wfLocalFile( $title ) : false;
 			if ( $file ) {
 				$oldimage = null; // Must be passed by reference
-				FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false );								
+				$ok = FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false )->isOK();
 			} else {
-				$article = new Article( $title );
-				$article->doDelete( $reason );
+				$article = new Article( $title, 0 );
+				$ok = $article->doDeleteArticle( $reason );
+			}
+			if ( $ok ) {
+				$res[] = wfMsgExt( 'nuke-deleted', array( 'parseinline' ), $title->getPrefixedText() );
+			} else {
+				$res[] = wfMsgExt( 'nuke-not-deleted', array( 'parseinline' ), $title->getPrefixedText() );
 			}
 		}
+		$wgOut->addHTML( "<ul>\n<li>" .implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
 	}
 }
