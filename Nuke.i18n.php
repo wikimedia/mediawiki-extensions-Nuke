@@ -32,7 +32,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
 	'nuke-multiplepeople'=> 'multiple users',
 	'nuke-editby'        => 'Created by [[Special:Contributions/$1|$1]]',
 	'nuke-deleted'       => "Page '''$1''' has been deleted.",
-	'nuke-not-deleted'   => "Page [[$1]] '''could not''' be deleted.",
+	'nuke-not-deleted'   => "Page [[:$1]] '''could not''' be deleted.",
 );
 
 /** Message documentation (Message documentation)
