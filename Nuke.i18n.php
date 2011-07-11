@@ -412,6 +412,8 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 	'nuke-maxpages' => 'Maximale Anzahl der Seiten:',
 	'nuke-multiplepeople' => 'mehrere Benutzer',
 	'nuke-editby' => 'Erstellt von [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => 'Seite „$1“ wurde gelöscht.',
+	'nuke-not-deleted' => "Seite [[:$1]] '''konnte nicht''' gelöscht werden.",
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
@@ -854,6 +856,8 @@ Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler, 
 	'nuke-maxpages' => 'Numero maxime de paginas:',
 	'nuke-multiplepeople' => 'multiple usatores',
 	'nuke-editby' => 'Create per [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Le pagina '''$1''' ha essite delite.",
+	'nuke-not-deleted' => "Le pagina [[:$1]] '''non poteva''' esser delite.",
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1206,6 +1210,8 @@ $messages['mk'] = array(
 	'nuke-maxpages' => 'Макс. број на страници:',
 	'nuke-multiplepeople' => 'повеќе лица',
 	'nuke-editby' => 'Создадено од [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Страницата '''$1''' е избришана.",
+	'nuke-not-deleted' => "Страницата [[:$1]] '''не можеше''' да се избрише.",
 );
 
 /** Malayalam (മലയാളം)
@@ -1230,6 +1236,8 @@ $messages['ml'] = array(
 	'nuke-maxpages' => 'പരമാവധി എത്ര താളുകൾ:',
 	'nuke-multiplepeople' => 'ഒന്നിലധികം പേർ',
 	'nuke-editby' => 'നിർമ്മിച്ചത് [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "'''$1''' എന്ന താൾ മായ്ച്ചു കഴിഞ്ഞു.",
+	'nuke-not-deleted' => "[[:$1]] എന്ന താൾ മായ്ക്കാൻ '''കഴിയില്ല'''.",
 );
 
 /** Marathi (मराठी)
@@ -1342,6 +1350,8 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-maxpages' => "Maximum aantal pagina's:",
 	'nuke-multiplepeople' => 'meerdere gebruikers',
 	'nuke-editby' => 'Aangemaakt door [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Pagina '''$1''' is verwijderd.",
+	'nuke-not-deleted' => "Pagina [[:$1]] '''kon niet''' worden verwijderd.",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
@@ -1500,6 +1510,8 @@ introduza um comentário e clique o botão para eliminá-las.',
 	'nuke-maxpages' => 'Nº máximo de páginas:',
 	'nuke-multiplepeople' => 'vários utilizadores',
 	'nuke-editby' => 'Criada por [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "A página '''$1''' foi eliminada.",
+	'nuke-not-deleted' => 'Não foi possível eliminar a página [[:$1]].',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
@@ -1631,6 +1643,8 @@ $messages['ru'] = array(
 	'nuke-maxpages' => 'Максимальное количество страниц:',
 	'nuke-multiplepeople' => 'нескольких участников',
 	'nuke-editby' => 'Созданные [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Страница '''$1''' была удалена.",
+	'nuke-not-deleted' => "Страницы  [[:$1]] '''не может''' быть удалена.",
 );
 
 /** Rusyn (Русиньскый)
@@ -1733,6 +1747,8 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
 	'nuke-maxpages' => 'Največje število strani:',
 	'nuke-multiplepeople' => 'več oseb',
 	'nuke-editby' => 'Ustvaril(-a) [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Stran '''$1''' je bila izbrisana.",
+	'nuke-not-deleted' => "Strani [[:$1]] '''ni bilo mogoče''' izbrisati.",
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
