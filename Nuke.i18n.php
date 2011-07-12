@@ -204,6 +204,7 @@ $messages['be'] = array(
 /** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
+ * @author Wizardist
  */
 $messages['be-tarask'] = array(
 	'nuke' => 'Масавае выдаленьне',
@@ -223,6 +224,8 @@ $messages['be-tarask'] = array(
 	'nuke-maxpages' => 'Максымальная колькасьць старонак:',
 	'nuke-multiplepeople' => 'некалькі ўдзельнікаў',
 	'nuke-editby' => 'Створана [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => 'Старонка «$1» выдаленая.',
+	'nuke-not-deleted' => "Старонка [[:$1]] '''ня можа''' быць выдаленая.",
 );
 
 /** Bulgarian (Български)
