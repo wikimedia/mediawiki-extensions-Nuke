@@ -754,6 +754,8 @@ $messages['he'] = array(
 	'nuke-maxpages' => 'מספר מרבי של דפים:',
 	'nuke-multiplepeople' => 'משתמשים מרובים',
 	'nuke-editby' => 'נוצר על ידי [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "הדף '''$1''' נמחק.",
+	'nuke-not-deleted' => "'''לא ניתן''' למחוק את הדף [[:$1]].",
 );
 
 /** Hindi (हिन्दी)
@@ -1134,6 +1136,8 @@ Gitt w.e.g. d'IP-Adress respektiv de Benotzer n fir eng Lescht vun de Säiten ze
 	'nuke-maxpages' => 'Maximal Zuel vu Säiten:',
 	'nuke-multiplepeople' => 'méi Benotzer',
 	'nuke-editby' => 'Gemaach vum [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "D'Säit '''$1''' gouf geläscht.",
+	'nuke-not-deleted' => "D'Säit [[:$1]] '''konnt net''' geläscht ginn.",
 );
 
 /** Limburgish (Limburgs)
