@@ -1461,6 +1461,8 @@ Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. 
 	'nuke-maxpages' => 'Maksymalna liczba stron',
 	'nuke-multiplepeople' => 'wielu użytkowników',
 	'nuke-editby' => 'Utworzona przez [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Strona '''$1''' została usunięta.",
+	'nuke-not-deleted' => "Strony [[:$1]] '''nie można''' usunąć.",
 );
 
 /** Piedmontese (Piemontèis)
