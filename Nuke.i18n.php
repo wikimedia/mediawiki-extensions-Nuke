@@ -1263,6 +1263,7 @@ $messages['mr'] = array(
 );
 
 /** Malay (Bahasa Melayu)
+ * @author Anakmalaysia
  * @author Aviator
  */
 $messages['ms'] = array(
@@ -1270,11 +1271,21 @@ $messages['ms'] = array(
 	'nuke-desc' => 'Membolehkan penyelia [[Special:Nuke|menghapuskan laman-laman]] secara pukal',
 	'nuke-nopages' => 'Tiada laman baru oleh [[Special:Contributions/$1|$1]] dalam senarai perubahan terkini.',
 	'nuke-list' => 'Laman-laman berikut dicipta oleh [[Special:Contributions/$1|$1]]; sila masukkan komen anda dan tekan butang untuk menghapuskannya.',
+	'nuke-list-multiple' => 'Laman-laman berikut baru diwujudkan;
+isikan komen dan tekan butang untuk menghapuskannya.',
 	'nuke-defaultreason' => 'Menghapuskan laman-laman yang ditambah oleh $1 secara pukal',
-	'nuke-tools' => 'Alat ini digunakan untuk menghapuskan laman-laman yang ditambah oleh pengguna atau IP yang dinyatakan secara pukal. Masukkan nama pengguna atau IP untuk mendapatkan senarai laman untuk dihapuskan:',
+	'nuke-tools' => 'Alat ini membolehkan penghapusan secara besar-besaran laman-laman yang dibuka oleh pengguna atau alamat IP tertentu.
+Isikan nama pengguna atau alamat IP untuk mendapat senarai laman yang hendak dikosongkan, atau biarkan kosong untuk semua pengguna.',
 	'nuke-submit-user' => 'Pergi',
 	'nuke-submit-delete' => 'Hapus',
 	'right-nuke' => 'Menghapuskan laman secara pukal',
+	'nuke-select' => 'Pilih: $1',
+	'nuke-userorip' => 'Nama pengguna, alamat IP atau kosong:',
+	'nuke-maxpages' => 'Bilangan halaman maksimum:',
+	'nuke-multiplepeople' => 'berbilang pengguna',
+	'nuke-editby' => 'Dibuat oleh [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Laman '''$1''' telah dihapuskan.",
+	'nuke-not-deleted' => "Laman [[:$1]] '''tidak dapat''' dihapuskan.",
 );
 
 /** Maltese (Malti)
@@ -2061,6 +2072,8 @@ Hãy nhập tên thành viên hoặc địa chỉ IP để lấy danh sách các
 	'nuke-maxpages' => 'Số trang tối đa:',
 	'nuke-multiplepeople' => 'hơn một người',
 	'nuke-editby' => 'Được tạo bởi [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Đã xóa trang '''$1'''.",
+	'nuke-not-deleted' => "'''Không thể''' xóa trang [[:$1]].",
 );
 
 /** Volapük (Volapük)
