@@ -607,6 +607,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
  * @author Jean-Frédéric
  * @author Louperivois
  * @author Peter17
+ * @author Seb35
  * @author Sherbrooke
  * @author Zetud
  */
@@ -627,6 +628,8 @@ entrez un commentaire et cliquez sur le bouton pour les supprimer.',
 	'nuke-maxpages' => 'Nombre maximal de pages :',
 	'nuke-multiplepeople' => 'plusieurs utilisateurs',
 	'nuke-editby' => 'Créé par [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "La page '''$1''' a été effacée.",
+	'nuke-not-deleted' => "La page [[:$1]] '''ne peut pas''' être effacée.",
 );
 
 /** Franco-Provençal (Arpetan)
