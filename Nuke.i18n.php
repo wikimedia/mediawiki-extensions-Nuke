@@ -940,6 +940,8 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
 	'nuke-maxpages' => 'Numero massimo di pagine:',
 	'nuke-multiplepeople' => 'più utenti',
 	'nuke-editby' => 'Creato da [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "La pagina '''$1''' è stata cancellata.",
+	'nuke-not-deleted' => "La pagina [[:$1]] '''non può''' essere cancellata.",
 );
 
 /** Japanese (日本語)
