@@ -373,7 +373,7 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 	'nuke-userorip' => 'Uživatelské jméno, IP adresa nebo ponechte prázdné:',
 	'nuke-maxpages' => 'Maximální počet stran:',
 	'nuke-multiplepeople' => 'více uživatelů',
-	'nuke-editby' => 'Vytvořili [[Special:Contributions/$1|$1]]',
+	'nuke-editby' => '{{gender:$1|Vytvořil|Vytvořila|Vytvořil}} [[Special:Contributions/$1|$1]]',
 );
 
 /** Danish (Dansk)
@@ -1398,6 +1398,7 @@ Skriv inn eit brukarnamn eller ei IP-adressa for å få ei lista over sider som 
 );
 
 /** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Event
  * @author Jon Harald Søby
  * @author Nghtwlkr
  */
@@ -1406,13 +1407,21 @@ $messages['no'] = array(
 	'nuke-desc' => 'Gir administratorer muligheten til å [[Special:Nuke|masseslette]] sider',
 	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringer.',
 	'nuke-list' => 'Følgende sider ble nylig opprettet av [[Special:Contributions/$1|$1]]; skriv inn en slettingsgrunn og trykk på knappen for å slette alle sidene.',
+	'nuke-list-multiple' => 'Følgende sider ble nylig opprettet;
+sett inn en kommentar og trykk på knappen for å slette dem.',
 	'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
-	'nuke-tools' => 'Dette verktøyet muliggjør massesletting av sider som nylig er lagt inn av en gitt bruker eller IP. Skriv et brukernavn eller en IP for å få en liste over sider som slettes:',
+	'nuke-tools' => 'Dette verktøyet muliggjør massesletting av sider som nylig er opprettet av gitt bruker eller IP-adresse.
+Skriv et brukernavn eller en IP-adresse for å få en liste over sider som kan slettes, eller angi tomt for alle brukere.',
 	'nuke-submit-user' => 'Gå',
 	'nuke-submit-delete' => 'Slett valgte',
 	'right-nuke' => 'Slette sider <i>en masse</i>',
 	'nuke-select' => 'Velg: $1',
+	'nuke-userorip' => 'Brukernavn, IP-adresse eller tomt:',
+	'nuke-maxpages' => 'Maksimalt antall sider:',
+	'nuke-multiplepeople' => 'flere brukere',
 	'nuke-editby' => 'Opprettet av [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Side '''$1''' ble slettet.",
+	'nuke-not-deleted' => "Side [[:$1]] ''kunne ikke''' slettes.",
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
