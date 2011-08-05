@@ -2138,23 +2138,22 @@ $messages['yue'] = array(
  */
 $messages['zh-hans'] = array(
 	'nuke' => '大量删除',
-	'nuke-desc' => '使系统管理员具有[[Special:Nuke|大量删除]]页面的能力',
-	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|$1]]所作的新页面。',
-	'nuke-list' => '以下页面是由[[Special:Contributions/$1|$1]]最新创建的；
-请留下摘要信息，并点击按钮删除这些页面。',
-	'nuke-list-multiple' => '最近创建以下页面 ；
-在注释中，点击要删除它们。',
-	'nuke-defaultreason' => '大量删除由$1所创建的页面',
-	'nuke-tools' => '此工具允许大规模删除指定用户或 IP 地址最近添加的页面。
-输入用户名或 IP 地址以获取可删除页面的列表，空白则检索所有用户。',
-	'nuke-submit-user' => '提交',
-	'nuke-submit-delete' => '删除已选择的',
+	'nuke-desc' => '让管理员可以[[Special:Nuke|大量删除]]页面',
+	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|$1]]创建的新页面。',
+	'nuke-list' => '以下为[[Special:Contributions/$1|$1]]最近创建的页面，请填写注释并点击按钮删除它们。',
+	'nuke-list-multiple' => '以下为最近创建的页面，请填写注释并点击按钮删除它们。',
+	'nuke-defaultreason' => '大量删除$1创建的页面',
+	'nuke-tools' => '此工具允许大量删除指定用户或IP地址在最近创建的页面。输入用户名或IP地址可获取可删除页面列表，留白则检索所有用户。',
+	'nuke-submit-user' => '执行',
+	'nuke-submit-delete' => '删除所选',
 	'right-nuke' => '大量删除页面',
-	'nuke-select' => '选定：$1',
-	'nuke-userorip' => 'IP 地址或空白的用户名：',
-	'nuke-maxpages' => '最大页面：',
+	'nuke-select' => '选择：$1',
+	'nuke-userorip' => '用户名、IP地址或空白：',
+	'nuke-maxpages' => '最多页面数：',
 	'nuke-multiplepeople' => '多个用户',
-	'nuke-editby' => '与 [[Special:Contributions/$1|$1]]创建的',
+	'nuke-editby' => '由[[Special:Contributions/$1|$1]]创建',
+	'nuke-deleted' => "已删除页面'''$1'''。",
+	'nuke-not-deleted' => "'''无法删除页面[[:$1]]。",
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
