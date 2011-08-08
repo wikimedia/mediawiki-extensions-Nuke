@@ -684,6 +684,8 @@ Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas pa
 	'nuke-maxpages' => 'Número máximo de páxinas:',
 	'nuke-multiplepeople' => 'varios usuarios',
 	'nuke-editby' => 'Creado por [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "A páxina \"'''\$1'''\" foi borrada.",
+	'nuke-not-deleted' => "A páxina \"[[:\$1]]\" '''non''' se pode borrar.",
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
