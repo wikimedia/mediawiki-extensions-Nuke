@@ -651,6 +651,7 @@ Buchiér lo nom d’utilisator ou ben l’adrèce IP por avêr la lista de les p
 	'nuke-userorip' => 'Nom d’utilisator, adrèce IP ou ben vouedo :',
 	'nuke-multiplepeople' => 'un mouél d’utilisators',
 	'nuke-editby' => 'Fêt per [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "La pâge '''$1''' at étâ suprimâ.",
 );
 
 /** Friulian (Furlan)
