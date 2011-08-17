@@ -519,6 +519,7 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
 /** Spanish (Español)
  * @author Aleator
  * @author Crazymadlover
+ * @author DJ Nietzsche
  * @author Dferg
  * @author Jatrobat
  * @author Remember the dot
@@ -530,12 +531,18 @@ $messages['es'] = array(
 	'nuke-nopages' => 'No hay páginas nuevas de [[Special:Contributions/$1|$1]] en los cambios recientes.',
 	'nuke-list' => '[[Special:Contributions/$1|$1]] creó recientemente las siguientes páginas;
 escriba un comentario y haga clic en el botón para borrarlas.',
+	'nuke-list-multiple' => 'Las siguientes páginas han sido creadas recientemente; introduce un comentario y pulsa el botón para eliminarlas.',
 	'nuke-defaultreason' => 'Eliminación en masa de páginas añadidas por $1',
 	'nuke-tools' => 'Esta herramienta permite borrados masivos de páginas creadas recientemente por un usuario o una dirección IP.
 Introduzca el nombre de usuario o la dirección IP para obtener la lista de páginas a borrar, o déjelo en blanco para todos los usuarios.',
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Borrar lo seleccionado',
 	'right-nuke' => 'Borrar páginas masivamente',
+	'nuke-select' => 'Seleccionar: $1',
+	'nuke-maxpages' => 'Número máximo de páginas:',
+	'nuke-multiplepeople' => 'varios usuarios',
+	'nuke-deleted' => "La página '''$1''' ha sido borrada.",
+	'nuke-not-deleted' => "La página [[:$1]] '''no se ha podido''' borrar.",
 );
 
 /** Estonian (Eesti)
@@ -1449,7 +1456,7 @@ $messages['oc'] = array(
 	'right-nuke' => 'Suprimir de paginas en massa',
 );
 
-/** Ossetic (Иронау)
+/** Ossetic (Ирон)
  * @author Amikeco
  */
 $messages['os'] = array(
@@ -1694,7 +1701,7 @@ $messages['rue'] = array(
 	'right-nuke' => 'Масове вылучіня сторінок',
 );
 
-/** Yakut (Саха тыла)
+/** Sakha (Саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
