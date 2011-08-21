@@ -146,6 +146,8 @@ escribi un comentariu y calca'l botón pa desaniciales.",
 	'nuke-maxpages' => 'Máximu númberu de páxines:',
 	'nuke-multiplepeople' => 'múltiples usuarios',
 	'nuke-editby' => 'Creáu por [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "La páxina '''$1''' se desanició.",
+	'nuke-not-deleted' => "La páxina [[:$1]] '''nun se pudo''' desaniciar.",
 );
 
 /** Bashkir (Башҡортса)
