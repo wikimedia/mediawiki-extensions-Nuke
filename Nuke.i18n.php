@@ -555,12 +555,19 @@ $messages['et'] = array(
 	'nuke-desc' => 'Võimaldab ülematel lehekülgede [[Special:Nuke|lauskustutamist]].',
 	'nuke-nopages' => 'Viimaste muudatuste all pole uusi kasutaja [[Special:Contributions/$1|$1]] loodud lehekülgi.',
 	'nuke-list' => 'Kasutaja [[Special:Contributions/$1|$1]] on hiljuti loonud järgnevad leheküljed. Enne kustutamist sisesta kommentaar.',
+	'nuke-list-multiple' => 'Järgmised leheküljed on hiljuti loodud.
+Sisesta kommentaar ja klõpsa kustutamisnuppu.',
 	'nuke-defaultreason' => 'Kasutaja $1 lisatud lehekülgede lauseemaldamine',
-	'nuke-tools' => 'See tööriist võimaldab ülesantud kasutaja või IP-aadressi lisatud leheküljed lauskustutada.
-Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-aadress.',
+	'nuke-tools' => 'See tööriist võimaldab kasutaja või IP-aadressi hiljuti lisatud leheküljed lauskustutada.
+Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-aadress. Kõigi kasutajate lisatud lehekülgede jaoks jäta väli tühjaks.',
 	'nuke-submit-user' => 'Mine',
 	'nuke-submit-delete' => 'Kustuta väljavalitud',
 	'right-nuke' => 'Lehekülgi lauskustutada',
+	'nuke-select' => 'Valik: $1',
+	'nuke-userorip' => 'Kasutajanimi, IP-aadress või tühemik:',
+	'nuke-maxpages' => 'Lehekülgede ülemmäär:',
+	'nuke-deleted' => "Lehekülg '''$1''' on kustutatud.",
+	'nuke-not-deleted' => "Lehekülge [[:$1]] '''ei saa''' kustutada.",
 );
 
 /** Basque (Euskara)
