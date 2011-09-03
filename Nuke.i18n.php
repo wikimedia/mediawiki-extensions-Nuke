@@ -505,6 +505,13 @@ $messages['el'] = array(
 	'nuke-submit-user' => 'Πήγαινε',
 	'nuke-submit-delete' => 'Διαγραφή επιλεγμένων',
 	'right-nuke' => 'Μαζική διαγραφή σελίδων',
+	'nuke-select' => 'Επιλογή: $1',
+	'nuke-userorip' => 'Όνομα χρήστη, διεύθυνση IP ή κενό:',
+	'nuke-maxpages' => 'Μέγιστος αριθμός σελίδων:',
+	'nuke-multiplepeople' => 'πολλαπλοί χρήστες',
+	'nuke-editby' => 'Δημιουργήθηκε από [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Η σελίδα '''$1''' έχει διαγραφεί.",
+	'nuke-not-deleted' => "Η σελίδα [[:$1]] '''δεν μπορούσε''' να διαγραφεί.",
 );
 
 /** Esperanto (Esperanto)
@@ -527,6 +534,7 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
 	'nuke-maxpages' => 'Maksimuma nombro de paĝoj:',
 	'nuke-multiplepeople' => 'multaj uzantoj',
 	'nuke-editby' => 'Kreita de [[Special:Contributions/$1|$1]]',
+	'nuke-not-deleted' => "Paĝo [[:$1]] '''ne eblis''' esti forigita.",
 );
 
 /** Spanish (Español)
@@ -686,6 +694,7 @@ Buchiér lo nom d’utilisator ou ben l’adrèce IP por avêr la lista de les p
 	'right-nuke' => 'Suprimar des pâges en massa',
 	'nuke-select' => 'Chouèsésséd : $1',
 	'nuke-userorip' => 'Nom d’utilisator, adrèce IP ou ben vouedo :',
+	'nuke-maxpages' => 'Nombro lo ples grant de pâges :',
 	'nuke-multiplepeople' => 'un mouél d’utilisators',
 	'nuke-editby' => 'Fêt per [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La pâge '''$1''' at étâ suprimâ.",
