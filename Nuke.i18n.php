@@ -1590,6 +1590,8 @@ ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
 	'nuke-maxpages' => 'Màssim nùmer ëd pàgine:',
 	'nuke-multiplepeople' => 'pi utent',
 	'nuke-editby' => 'Creà da [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "La pàgina '''$1''' a l'é stàita scancelà.",
+	'nuke-not-deleted' => "La pàgina [[:$1]] '''a peul pa''' esse scancelà.",
 );
 
 /** Pashto (پښتو)
