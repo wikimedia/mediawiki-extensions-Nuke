@@ -66,7 +66,12 @@ $messages['af'] = array(
 	'nuke-submit-delete' => 'Skrap geselekteerde',
 	'right-nuke' => 'Massa verwydering van bladsye',
 	'nuke-select' => 'Selekteer: $1',
+	'nuke-userorip' => 'Gebruikersnaam, IP-adres of leeg:',
+	'nuke-maxpages' => 'Maksimum aantal bladsye:',
 	'nuke-multiplepeople' => 'verskeie gebruikers',
+	'nuke-editby' => 'Geskep deur [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Bladsy '''$1''' is verwyder.",
+	'nuke-not-deleted' => "Bladsy [[:$1]] '''kon nie''' verwyder word nie.",
 );
 
 /** Aragonese (Aragonés)
@@ -2242,6 +2247,7 @@ $messages['yue'] = array(
 );
 
 /** Simplified Chinese (‪中文(简体)‬)
+ * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Hydra
  * @author Liangent
@@ -2267,10 +2273,11 @@ $messages['zh-hans'] = array(
 	'nuke-multiplepeople' => '多个用户',
 	'nuke-editby' => '由[[Special:Contributions/$1|$1]]创建',
 	'nuke-deleted' => "已删除页面'''$1'''。",
-	'nuke-not-deleted' => "'''无法删除页面[[:$1]]。",
+	'nuke-not-deleted' => "'''无法'''删除[[:$1]]页面。",
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
+ * @author Anakmalaysia
  * @author Mark85296341
  * @author Shinjiman
  */
@@ -2279,11 +2286,18 @@ $messages['zh-hant'] = array(
 	'nuke-desc' => '給操作員作出[[Special:Nuke|大量刪除]]的能力',
 	'nuke-nopages' => '在最近更改中沒有 [[Special:Contributions/$1|$1]] 所作的新頁面。',
 	'nuke-list' => '以下的頁面是由[[Special:Contributions/$1|$1]]在以前所寫的；記下一個註解再點擊按鈕去刪除它們。',
+	'nuke-list-multiple' => '以下為最近創建的頁面，請填寫註釋並點擊按鈕刪除它們。',
 	'nuke-defaultreason' => '大量刪除由 $1 所建立的頁面',
-	'nuke-tools' => '這個工具容許先前提供了的用戶或 IP 位址建立的頁面。輸入用戶名或IP去取得頁面列表以作刪除：',
+	'nuke-tools' => '此工具允許大量刪除指定用戶或IP地址在最近創建的頁面。輸入用戶名或IP地址可獲取可刪除頁面列表，留白則檢索所有用戶。',
 	'nuke-submit-user' => '執行',
 	'nuke-submit-delete' => '刪除已選擇的',
 	'right-nuke' => '大量刪除頁面',
 	'nuke-select' => '選擇：$1',
+	'nuke-userorip' => '用戶名、IP地址或空白：',
+	'nuke-maxpages' => '最多頁面數：',
+	'nuke-multiplepeople' => '多個用戶',
+	'nuke-editby' => '由[[Special:Contributions/$1|$1]]創建',
+	'nuke-deleted' => "'''$1'''頁面已刪除。",
+	'nuke-not-deleted' => "'''無法'''刪除[[:$1]]頁面。",
 );
 
