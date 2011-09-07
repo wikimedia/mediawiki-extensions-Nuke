@@ -40,9 +40,14 @@ Input the username or IP address to get a list of pages to delete, or leave blan
  * @author Meno25
  * @author Purodha
  * @author The Evil IP address
+ * @author Yekrats
  */
 $messages['qqq'] = array(
-	'nuke-desc' => '{{desc}}',
+	'nuke' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
+For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
+	'nuke-desc' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
+For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
+{{desc}}',
 	'nuke-submit-user' => '{{Identical|Go}}',
 	'right-nuke' => '{{doc-right}}',
 	'nuke-select' => '{{Identical|Select}}',
@@ -1742,6 +1747,8 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'nuke-maxpages' => 'Numere massime de pàggene:',
 	'nuke-multiplepeople' => 'utinde multiple',
 	'nuke-editby' => 'Ccrejate da [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Pàgene '''$1''' ha state scangellate.",
+	'nuke-not-deleted' => "Pàgene [[:$1]] '''non ge pò''' essere scangellate.",
 );
 
 /** Russian (Русский)
