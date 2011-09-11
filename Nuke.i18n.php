@@ -1043,26 +1043,30 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
  * @author JtFuruhata
  * @author Muttley
  * @author Ohgi
+ * @author Schu
  * @author 青子守歌
  */
 $messages['ja'] = array(
-	'nuke' => 'まとめて削除',
-	'nuke-desc' => '{{int:group-sysop}}がページを[[Special:Nuke|まとめて削除]]できるようにする',
+	'nuke' => '一括削除',
+	'nuke-desc' => '{{int:group-sysop}}がページを[[Special:Nuke|一括削除]]できる機能を提供します。',
 	'nuke-nopages' => '最近の更新ページに[[Special:Contributions/$1|$1]]が新規作成したページはありません。',
-	'nuke-list' => '以下は、[[Special:Contributions/$1|$1]] によって最近作成されたページの一覧です。理由を記入しボタンを押すと、一気に削除されます。',
+	'nuke-list' => '以下は、[[Special:Contributions/$1|$1]] によって最近作成されたページの一覧です；
+理由を記入しボタンを押すと、これらは削除されます。',
 	'nuke-list-multiple' => '最近作成されたページが表示されています。
 コメントを入力し、ボタンを押すと、削除されます。',
-	'nuke-defaultreason' => '$1 によって加えられたページを一括して削除',
+	'nuke-defaultreason' => '$1 によって加えられたページを一括削除',
 	'nuke-tools' => 'このツールを使うと、指定した利用者またはIPアドレスによって最近作成されたページを、まとめて削除することができます。
 利用者名またはIPアドレスを入力すると、削除対象ページの一覧が生成されます。空にすると、すべての利用者によるものが対象になります。',
 	'nuke-submit-user' => '一覧取得',
 	'nuke-submit-delete' => '選択されたページを削除',
 	'right-nuke' => 'ページの一括削除',
 	'nuke-select' => '選択：$1',
-	'nuke-userorip' => '利用者名、IPアドレスまたは空白:',
+	'nuke-userorip' => '利用者名、IP アドレスまたは空白:',
 	'nuke-maxpages' => 'ページの最大量:',
 	'nuke-multiplepeople' => '複数の利用者',
 	'nuke-editby' => '[[Special:Contributions/$1|$1]]によって作成',
+	'nuke-deleted' => "ページ  '''$1''' は削除されています。",
+	'nuke-not-deleted' => "Page [[:$1]] は削除'''出来ません''' 。",
 );
 
 /** Jutish (Jysk)
@@ -1806,6 +1810,8 @@ $messages['rue'] = array(
 	'nuke-maxpages' => 'Максімалне чісло сторінок:',
 	'nuke-multiplepeople' => 'дакілько хоснователїв',
 	'nuke-editby' => '{{gender:$1|Створивl|Створила|Створив}} [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Сторінка '''$1''' была змазана.",
+	'nuke-not-deleted' => "Сторінка [[:$1]] '''не може''' быти змазана.",
 );
 
 /** Sakha (Саха тыла)
