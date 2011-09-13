@@ -200,7 +200,7 @@ $specialPageAliases['vi'] = array(
 
 /** Simplified Chinese (‪中文(简体)‬) */
 $specialPageAliases['zh-hans'] = array(
-	'Nuke' => array( '杜克鲁克' ),
+	'Nuke' => array( '大量删除' ),
 );
 
 /** Traditional Chinese (‪中文(繁體)‬) */
