@@ -344,6 +344,7 @@ Unesite korisničko ime ili IP adresu za izlistavanje stranica koje se brišu il
 );
 
 /** Catalan (Català)
+ * @author Aleator
  * @author Paucabot
  * @author SMP
  * @author Toniher
@@ -356,7 +357,7 @@ $messages['ca'] = array(
 feu un comentari i cliqueu el botó per a esborrar-les.',
 	'nuke-defaultreason' => 'Esborrat massiu de pàgines creades per $1',
 	'nuke-tools' => "Aquesta eina permet l'eliminació massiva de pàgines creades recentment per un usuari o IP.
-Introduïu el nom d'usuari o la IP per obtenir una llista de pàgines per esborrar.",
+Per obtenir la llista de pàgines per esborrar podeu introduir el nom d'un usuari o una IP.",
 	'nuke-submit-user' => 'Vés-hi',
 	'nuke-submit-delete' => 'Esborra la selecció',
 	'right-nuke' => 'Esborrar pàgines de forma massiva',
