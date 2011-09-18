@@ -405,6 +405,8 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 	'nuke-maxpages' => 'Maximální počet stran:',
 	'nuke-multiplepeople' => 'více uživatelů',
 	'nuke-editby' => '{{gender:$1|Vytvořil|Vytvořila|Vytvořil}} [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Stránka '''$1''' byla smazána.",
+	'nuke-not-deleted' => "Stránka [[:$1]] '''nemohla být''' smazána.",
 );
 
 /** Danish (Dansk)
@@ -436,6 +438,7 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
 /** German (Deutsch)
  * @author Kghbln
  * @author Raimond Spekking
+ * @author SVG
  */
 $messages['de'] = array(
 	'nuke' => 'Massenlöschung von Seiten',
@@ -445,8 +448,8 @@ $messages['de'] = array(
 Gib einen Kommentar bezüglich der Löschung an und klicke auf die Schaltfläche, um die Seiten nun zu löschen.',
 	'nuke-list-multiple' => 'Die folgenden Seiten wurden vor kurzem erstellt.
 Gib einen Kommentar bezüglich der Löschung an und klicke auf die Schaltfläche, um die Seiten nun zu löschen.',
-	'nuke-defaultreason' => 'Massenlöschung der Seiten, die von „$1“ angelegt wurden',
-	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden.
+	'nuke-defaultreason' => 'Massenlöschung der Seiten, die von „$1“ angelegt worden',
+	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt worden.
 Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten. Sofern Du keine Angabe machst, werden alle Benutzer ausgewählt.',
 	'nuke-submit-user' => 'Hole die Liste',
 	'nuke-submit-delete' => 'Ausgewählte Seiten löschen',
@@ -463,13 +466,14 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
  * @author Kghbln
  * @author Raimond Spekking
+ * @author SVG
  */
 $messages['de-formal'] = array(
 	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] angelegt.
 Geben Sie einen Kommentar bezüglich der Löschung an und klicken Sie auf die Schaltfläche, um die Seiten nun zu löschen.',
 	'nuke-list-multiple' => 'Die folgenden Seiten wurden vor kurzem erstellt.
 Geben Sie einen Kommentar bezüglich der Löschung an und klicken Sie auf die Schaltfläche, um die Seiten nun zu löschen.',
-	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden.
+	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt worden.
 Geben Sie die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten. Sofern Sie keine Angabe machen, werden alle Benutzer ausgewählt.',
 );
 
