@@ -1262,6 +1262,7 @@ $messages['li'] = array(
 	'nuke-submit-user' => 'Gank',
 	'nuke-submit-delete' => 'Geslecteerd wisse',
 	'right-nuke' => "Massaal pagina's weggoeje",
+	'nuke-select' => 'Selecteer: $1',
 );
 
 /** Lithuanian (Lietuvių)
