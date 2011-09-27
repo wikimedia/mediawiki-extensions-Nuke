@@ -1,7 +1,7 @@
 <?php
 
 class SpecialNuke extends SpecialPage {
-	
+
 	public function __construct() {
 		parent::__construct( 'Nuke', 'nuke' );
 	}
@@ -16,10 +16,10 @@ class SpecialNuke extends SpecialPage {
 
 		$this->setHeaders();
 		$this->outputHeader();
-		
+
 		if( $wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 			$target = $wgRequest->getText( 'target', $par );
-				
+
 			// Normalise name
 			if ( $target !== '' ) {
 				$user = User::newFromName( $target );
@@ -33,19 +33,17 @@ class SpecialNuke extends SpecialPage {
 					$target === '' ? wfMsg( 'nuke-multiplepeople' ) : $target
 				)
 			);
-			
+
 			if ( $wgRequest->getVal( 'action' ) == 'delete' ) {
 				$pages = $wgRequest->getArray( 'pages' );
-				
+
 				if( $pages ) {
 					return $this->doDelete( $pages, $reason );
 				}
-			}
-			else {
+			} else {
 				$this->listForm( $target, $reason, $wgRequest->getInt( 'limit' ) );
 			}
-		}
-		else {
+		} else {
 			$this->promptForm();
 		}
 	}
@@ -57,7 +55,7 @@ class SpecialNuke extends SpecialPage {
 		global $wgOut, $wgUser;
 
 		$wgOut->addWikiMsg( 'nuke-tools' );
-		
+
 		$wgOut->addHTML(
 			Xml::openElement(
 				'form',
@@ -75,15 +73,15 @@ class SpecialNuke extends SpecialPage {
 			. '</tr><tr>'
 				. '<td></td>'
 				. '<td>' . Xml::submitButton( wfMsg( 'nuke-submit-user' ) ) . '</td>'
-			.'</tr></table>'  
-			. Html::hidden( 'wpEditToken', $wgUser->editToken() ) 
+			.'</tr></table>'
+			. Html::hidden( 'wpEditToken', $wgUser->editToken() )
 			. Xml::closeElement( 'form' )
 		);
 	}
 
 	/**
 	 * Display list of pages to delete.
-	 * 
+	 *
 	 * @param string $username
 	 * @param string $reason
 	 * @param integer $limit
@@ -97,11 +95,10 @@ class SpecialNuke extends SpecialPage {
 			$wgOut->addWikiMsg( 'nuke-nopages', $username );
 			return $this->promptForm();
 		}
-		
+
 		if ( $username == '' ) {
 			$wgOut->addWikiMsg( 'nuke-list-multiple' );
-		}
-		else {
+		} else {
 			$wgOut->addWikiMsg( 'nuke-list', $username );
 		}
 
@@ -138,9 +135,9 @@ JAVASCRIPT;
 
 		// Select: All, None
 		$links = array();
-		$links[] = '<a href="#" onclick="selectPages( true ); return false;">' . 
+		$links[] = '<a href="#" onclick="selectPages( true ); return false;">' .
 			wfMsg( 'powersearch-toggleall' ) . '</a>';
-		$links[] = '<a href="#" onclick="selectPages( false ); return false;">' . 
+		$links[] = '<a href="#" onclick="selectPages( false ); return false;">' .
 			wfMsg( 'powersearch-togglenone' ) . '</a>';
 		$wgOut->addHTML(
 			Xml::tags( 'p',
@@ -163,7 +160,7 @@ JAVASCRIPT;
 			$thumb = $image && $image->exists() ? $image->transform( array( 'width' => 120, 'height' => 120 ), 0 ) : false;
 
 			$changes = wfMsgExt( 'nchanges', 'parsemag', $wgLang->formatNum( $edits ) );
-			
+
 			$wgOut->addHTML( '<li>' .
 				Xml::check( 'pages[]', true,
 					array( 'value' =>  $title->getPrefixedDbKey() )
@@ -176,7 +173,7 @@ JAVASCRIPT;
 				$sk->makeKnownLinkObj( $title, $changes, 'action=history' ) .
 				")</li>\n" );
 		}
-		
+
 		$wgOut->addHTML(
 			"</ul>\n" .
 			Xml::submitButton( wfMsg( 'nuke-submit-delete' ) ) .
@@ -186,31 +183,30 @@ JAVASCRIPT;
 
 	/**
 	 * Gets a list of new pages by the specified user or everyone when none is specified.
-	 * 
+	 *
 	 * @param string $username
 	 * @param integer $limit
-	 * 
+	 *
 	 * @return array
 	 */
 	protected function getNewPages( $username, $limit ) {
 		$dbr = wfGetDB( DB_SLAVE );
-		
+
 		$what = array(
 			'rc_namespace',
 			'rc_title',
 			'rc_timestamp',
 			'COUNT(*) AS edits'
-		);		
-		
+		);
+
 		$where = array( "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" );
-		
+
 		if ( $username == '' ) {
 			$what[] = 'rc_user_text';
-		}
-		else {
+		} else {
 			$where['rc_user_text'] = $username;
 		}
-		
+
 		$result = $dbr->select( 'recentchanges',
 			$what,
 			$where,
@@ -221,9 +217,9 @@ JAVASCRIPT;
 				'LIMIT' => $limit
 			)
 		);
-		
+
 		$pages = array();
-		
+
 		foreach ( $result as $row ) {
 			$pages[] = array(
 				Title::makeTitle( $row->rc_namespace, $row->rc_title ),
@@ -231,15 +227,13 @@ JAVASCRIPT;
 				$username == '' ? $row->rc_user_text : false
 			);
 		}
-		
-		$dbr->freeResult( $result );
-		
+
 		return $pages;
 	}
 
 	/**
 	 * Does the actual deletion of the pages.
-	 * 
+	 *
 	 * @param array $pages The pages to delete
 	 * @param string $reason
 	 */
@@ -263,6 +257,6 @@ JAVASCRIPT;
 				$res[] = wfMsgExt( 'nuke-not-deleted', array( 'parseinline' ), $title->getPrefixedText() );
 			}
 		}
-		$wgOut->addHTML( "<ul>\n<li>" .implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
+		$wgOut->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
 	}
 }
