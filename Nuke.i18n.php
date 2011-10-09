@@ -40,6 +40,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
  * @author Meno25
  * @author Purodha
  * @author The Evil IP address
+ * @author Umherirrender
  * @author Yekrats
  */
 $messages['qqq'] = array(
@@ -49,7 +50,7 @@ For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
 {{desc}}',
 	'nuke-submit-user' => '{{Identical|Go}}',
-	'right-nuke' => '{{doc-right}}',
+	'right-nuke' => '{{doc-right|nuke}}',
 	'nuke-select' => '{{Identical|Select}}',
 );
 
