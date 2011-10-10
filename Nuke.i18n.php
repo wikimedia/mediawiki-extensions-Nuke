@@ -39,6 +39,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
  * @author Jon Harald Søby
  * @author Meno25
  * @author Purodha
+ * @author Siebrand
  * @author The Evil IP address
  * @author Umherirrender
  * @author Yekrats
@@ -49,9 +50,12 @@ For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
 	'nuke-desc' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
 {{desc}}',
+	'nuke-defaultreason' => 'Reason for deletion in logs. Parameters:
+* $1 is a username or {{msg-mw|nuke-multiplepeople}} in case pages by multiple users were deleted.',
 	'nuke-submit-user' => '{{Identical|Go}}',
 	'right-nuke' => '{{doc-right|nuke}}',
 	'nuke-select' => '{{Identical|Select}}',
+	'nuke-multiplepeople' => 'Substituted for $1 in {{msg-mw|nuke-defaultreason}} when pages created by multiple users were deleted.',
 );
 
 /** Niuean (ko e vagahau Niuē)
