@@ -1419,6 +1419,9 @@ Daħħal l-isem tal-utent jew l-indirizz IP biex tikseb lista ta' paġni li jrid
 	'nuke-submit-user' => 'Mur',
 	'nuke-submit-delete' => 'Ħassar dawk magħżula',
 	'right-nuke' => 'Ħassar paġni bil-massa',
+	'nuke-userorip' => 'Isem tal-utent, indirizz IP jew vojt:',
+	'nuke-maxpages' => "Numru massimu ta' paġni:",
+	'nuke-multiplepeople' => 'iktar minn utent wieħed',
 );
 
 /** Erzya (Эрзянь)
