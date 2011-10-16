@@ -807,6 +807,7 @@ $messages['grc'] = array(
 );
 
 /** Swiss German (Alemannisch)
+ * @author Als-Chlämens
  * @author Als-Holder
  */
 $messages['gsw'] = array(
@@ -827,6 +828,8 @@ Schryb e Kommentar un druck uf dr Chnopf go si lesche.',
 	'nuke-maxpages' => 'Maximali Sytezahl:',
 	'nuke-multiplepeople' => 'mehreri Benutzer',
 	'nuke-editby' => 'Aagleit vu [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => 'Syte „$1“ isch glescht wore.',
+	'nuke-not-deleted' => "Syte [[:$1]] '''het nit chönne''' glöscht werde.",
 );
 
 /** Manx (Gaelg)
