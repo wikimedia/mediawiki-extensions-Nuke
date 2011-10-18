@@ -17,41 +17,44 @@ class SpecialNuke extends SpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
-		if( $wgRequest->wasPosted() && $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
-			$target = $wgRequest->getText( 'target', $par );
+		$target = trim( $wgRequest->getText( 'target', $par ) );
+		
+		// Normalise name
+		if ( $target !== '' ) {
+			$user = User::newFromName( $target );
+			if ( $user ) $target = $user->getName();
+		}
+		
+		$reason = $wgRequest->getText(
+			'wpReason',
+			wfMsgForContent(
+				'nuke-defaultreason',
+				$target === '' ? wfMsg( 'nuke-multiplepeople' ) : $target
+			)
+		);
+		
+		if( $wgRequest->wasPosted() 
+			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
+			&& $wgRequest->getVal( 'action' ) == 'delete' ) {
+				
+			$pages = $wgRequest->getArray( 'pages' );
 
-			// Normalise name
-			if ( $target !== '' ) {
-				$user = User::newFromName( $target );
-				if ( $user ) $target = $user->getName();
+			if( $pages ) {
+				return $this->doDelete( $pages, $reason );
 			}
-
-			$reason = $wgRequest->getText(
-				'wpReason',
-				wfMsgForContent(
-					'nuke-defaultreason',
-					$target === '' ? wfMsg( 'nuke-multiplepeople' ) : $target
-				)
-			);
-
-			if ( $wgRequest->getVal( 'action' ) == 'delete' ) {
-				$pages = $wgRequest->getArray( 'pages' );
-
-				if( $pages ) {
-					return $this->doDelete( $pages, $reason );
-				}
-			} else {
-				$this->listForm( $target, $reason, $wgRequest->getInt( 'limit' ) );
-			}
-		} else {
+		}
+		else if ( $target === '' ) {
 			$this->promptForm();
+		}
+		else {
+			$this->listForm( $target, $reason, $wgRequest->getInt( 'limit', 500 ) );
 		}
 	}
 
 	/**
 	 * Prompt for a username or IP address.
 	 */
-	protected function promptForm() {
+	protected function promptForm( $userName = '' ) {
 		global $wgOut, $wgUser;
 
 		$wgOut->addWikiMsg( 'nuke-tools' );
@@ -66,7 +69,7 @@ class SpecialNuke extends SpecialPage {
 			)
 			. '<table><tr>'
 				. '<td>' . htmlspecialchars( wfMsg( 'nuke-userorip' ) ) . '</td>'
-				. '<td>' . Xml::input( 'target', 40 ) . '</td>'
+				. '<td>' . Xml::input( 'target', 40, $userName ) . '</td>'
 			. '</tr><tr>'
 				. '<td>' . htmlspecialchars( wfMsg( 'nuke-maxpages' ) ) . '</td>'
 				. '<td>' . Xml::input( 'limit', 7, '500' ) . '</td>'
@@ -93,7 +96,7 @@ class SpecialNuke extends SpecialPage {
 
 		if( count( $pages ) == 0 ) {
 			$wgOut->addWikiMsg( 'nuke-nopages', $username );
-			return $this->promptForm();
+			return $this->promptForm( $username );
 		}
 
 		if ( $username == '' ) {
@@ -257,6 +260,10 @@ JAVASCRIPT;
 				$res[] = wfMsgExt( 'nuke-not-deleted', array( 'parseinline' ), $title->getPrefixedText() );
 			}
 		}
+		
 		$wgOut->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
+		
+		$wgOut->addWikiMsg( 'nuke-delete-more' );
 	}
+	
 }
