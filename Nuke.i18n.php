@@ -467,6 +467,7 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 	'nuke-editby' => 'Erstellt von [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => 'Seite „$1“ wurde gelöscht.',
 	'nuke-not-deleted' => "Seite [[:$1]] '''konnte nicht''' gelöscht werden.",
+	'nuke-delete-more' => '[[Special:Nuke|Weitere Seiten löschen]]',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
@@ -699,6 +700,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 );
 
 /** French (Français)
+ * @author Gomoko
  * @author Grondin
  * @author IAlex
  * @author Jean-Frédéric
@@ -727,6 +729,7 @@ entrez un commentaire et cliquez sur le bouton pour les supprimer.',
 	'nuke-editby' => 'Créé par [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La page '''$1''' a été effacée.",
 	'nuke-not-deleted' => "La page [[:$1]] '''ne peut pas''' être effacée.",
+	'nuke-delete-more' => '[[Special:Nuke|Supprimer plus de pages]]',
 );
 
 /** Franco-Provençal (Arpetan)
@@ -788,6 +791,7 @@ Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas pa
 	'nuke-editby' => 'Creado por [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "A páxina \"'''\$1'''\" foi borrada.",
 	'nuke-not-deleted' => "A páxina \"[[:\$1]]\" '''non''' se pode borrar.",
+	'nuke-delete-more' => '[[Special:Nuke|Borrar máis páxinas]]',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -866,6 +870,7 @@ $messages['he'] = array(
 	'nuke-editby' => 'נוצר על ידי [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "הדף '''$1''' נמחק.",
 	'nuke-not-deleted' => "'''לא ניתן''' למחוק את הדף [[:$1]].",
+	'nuke-delete-more' => '[[Special:Nuke|למחוק עוד דפים]]',
 );
 
 /** Hindi (हिन्दी)
@@ -1339,6 +1344,7 @@ $messages['mk'] = array(
 	'nuke-editby' => 'Создадено од [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Страницата '''$1''' е избришана.",
 	'nuke-not-deleted' => "Страницата [[:$1]] '''не можеше''' да се избрише.",
+	'nuke-delete-more' => '[[Special:Nuke|Избриши уште страници]]',
 );
 
 /** Malayalam (മലയാളം)
@@ -1640,6 +1646,7 @@ ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
 $messages['ps'] = array(
 	'nuke-submit-user' => 'ورځه',
 	'nuke-submit-delete' => 'ټاکل شوی ړنګول',
+	'nuke-multiplepeople' => 'ګڼ کارنان',
 );
 
 /** Portuguese (Português)
@@ -1806,6 +1813,7 @@ $messages['ru'] = array(
 	'nuke-editby' => 'Созданные [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Страница '''$1''' была удалена.",
 	'nuke-not-deleted' => "Страницы  [[:$1]] '''не может''' быть удалена.",
+	'nuke-delete-more' => '[[Special:Nuke|Удаление нескольких страниц]]',
 );
 
 /** Rusyn (Русиньскый)
@@ -1925,6 +1933,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
 	'nuke-editby' => 'Ustvaril(-a) [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Stran '''$1''' je bila izbrisana.",
 	'nuke-not-deleted' => "Strani [[:$1]] '''ni bilo mogoče''' izbrisati.",
+	'nuke-delete-more' => '[[Special:Nuke|Izbriši več strani]]',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
@@ -2246,6 +2255,7 @@ Hãy nhập tên thành viên hoặc địa chỉ IP để lấy danh sách các
 	'nuke-editby' => 'Được tạo bởi [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Đã xóa trang '''$1'''.",
 	'nuke-not-deleted' => "'''Không thể''' xóa trang [[:$1]].",
+	'nuke-delete-more' => '[[Special:Nuke|Xóa thêm trang]]',
 );
 
 /** Volapük (Volapük)
