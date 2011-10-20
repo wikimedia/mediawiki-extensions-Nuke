@@ -613,7 +613,7 @@ Introduzca el nombre de usuario o la dirección IP para obtener la lista de pág
  */
 $messages['et'] = array(
 	'nuke' => 'Lauskustutamine',
-	'nuke-desc' => 'Võimaldab ülematel lehekülgede [[Special:Nuke|lauskustutamist]].',
+	'nuke-desc' => 'Võimaldab administraatoritel lehekülgede [[Special:Nuke|lauskustutamist]].',
 	'nuke-nopages' => 'Viimaste muudatuste all pole uusi kasutaja [[Special:Contributions/$1|$1]] loodud lehekülgi.',
 	'nuke-list' => 'Kasutaja [[Special:Contributions/$1|$1]] on hiljuti loonud järgnevad leheküljed. Enne kustutamist sisesta kommentaar.',
 	'nuke-list-multiple' => 'Järgmised leheküljed on hiljuti loodud.
@@ -756,6 +756,7 @@ Buchiér lo nom d’utilisator ou ben l’adrèce IP por avêr la lista de les p
 	'nuke-editby' => 'Fêt per [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La pâge '''$1''' at étâ suprimâ.",
 	'nuke-not-deleted' => "La pâge [[:$1]] '''pôt pas''' étre suprimâ.",
+	'nuke-delete-more' => '[[Special:Nuke|Suprimar més de pâges]]',
 );
 
 /** Friulian (Furlan)
@@ -1371,6 +1372,7 @@ $messages['ml'] = array(
 	'nuke-editby' => 'നിർമ്മിച്ചത് [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "'''$1''' എന്ന താൾ മായ്ച്ചു കഴിഞ്ഞു.",
 	'nuke-not-deleted' => "[[:$1]] എന്ന താൾ മായ്ക്കാൻ '''കഴിയില്ല'''.",
+	'nuke-delete-more' => '[[Special:Nuke|കൂടുതൽ താളുകൾ മായ്ക്കുക]]',
 );
 
 /** Marathi (मराठी)
