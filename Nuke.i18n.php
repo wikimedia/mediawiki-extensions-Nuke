@@ -979,6 +979,7 @@ Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler, 
 	'nuke-editby' => 'Create per [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Le pagina '''$1''' ha essite delite.",
 	'nuke-not-deleted' => "Le pagina [[:$1]] '''non poteva''' esser delite.",
+	'nuke-delete-more' => '[[Special:Nuke|Deler plus paginas]]',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1414,6 +1415,7 @@ Isikan nama pengguna atau alamat IP untuk mendapat senarai laman yang hendak dik
 	'nuke-editby' => 'Dibuat oleh [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Laman '''$1''' telah dihapuskan.",
 	'nuke-not-deleted' => "Laman [[:$1]] '''tidak dapat''' dihapuskan.",
+	'nuke-delete-more' => '[[Special:Nuke|Hapuskan lebih banyak laman]]',
 );
 
 /** Maltese (Malti)
@@ -1501,6 +1503,7 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-editby' => 'Aangemaakt door [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Pagina '''$1''' is verwijderd.",
 	'nuke-not-deleted' => "Pagina [[:$1]] '''kon niet''' worden verwijderd.",
+	'nuke-delete-more' => "[[Special:Nuke|Meer pagina's verwijderen]]",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
