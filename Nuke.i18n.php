@@ -836,6 +836,7 @@ Schryb e Kommentar un druck uf dr Chnopf go si lesche.',
 	'nuke-editby' => 'Aagleit vu [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => 'Syte „$1“ isch glescht wore.',
 	'nuke-not-deleted' => "Syte [[:$1]] '''het nit chönne''' glöscht werde.",
+	'nuke-delete-more' => '[[Special:Nuke|Wyteri Syte lösche]]',
 );
 
 /** Manx (Gaelg)
