@@ -175,6 +175,7 @@ escribi un comentariu y calca'l botón pa desaniciales.",
 	'nuke-editby' => 'Creáu por [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La páxina '''$1''' se desanició.",
 	'nuke-not-deleted' => "La páxina [[:$1]] '''nun se pudo''' desaniciar.",
+	'nuke-delete-more' => '[[Special:Nuke|Desaniciar más páxines]]',
 );
 
 /** Azerbaijani (Azərbaycanca)
@@ -439,6 +440,7 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
 	'nuke-editby' => 'Oprettet af [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Siden '''$1''' er blevet slettet.",
 	'nuke-not-deleted' => "Siden [[:$1]] '''kunne ikke''' slettes.",
+	'nuke-delete-more' => '[[Special:Nuke|Slet flere sider]]',
 );
 
 /** German (Deutsch)
