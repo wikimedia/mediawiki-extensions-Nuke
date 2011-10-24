@@ -1017,6 +1017,33 @@ $messages['ig'] = array(
 	'nuke-submit-user' => 'Gá',
 );
 
+/** Iloko (Ilokano)
+ * @author Lam-ang
+ */
+$messages['ilo'] = array(
+	'nuke' => 'Paga-adduan nga pinag-ikkat',
+	'nuke-desc' => 'Ikkan na ti administrador ti abilidad nga [[Special:Nuke|	paga-adduan nga pang-ikkat]] kadagit panid',
+	'nuke-nopages' => 'Awan dagiti baro nga panid [[Special:Contributions/$1|$1]] idiay kaudian nga balbaliw.',
+	'nuke-list' => 'Dagita sumaganad nga panid ket kaararamid ni [[Special:Contributions/$1|$1]];
+ikkam ti komento ken ikklik ti buton tapno maikkat dan.',
+	'nuke-list-multiple' => 'Dagiti sumaganad nga panid kaararamid;
+ikkam ti komento ken ikklik ti buton tapno maikkat dan.',
+	'nuke-defaultreason' => 'Dagiti paga-adduan nga pinag-ikkat ti panid ket inikkan ni $1',
+	'nuke-tools' => 'Daytoy nga ramit ket mangpabalin ti paga-adduan ti pinag-ikkat ti panid nga kinaikkan ti maysa nga agaramat wenno maysa nga IP address.
+Ikabil ti nagan ti agar-aramat wenno IP address tapno maalam dagiti listaan dagiti naikkat nga panid, wenno ibatim nga blanko kadagit amin nga agar-aramat.',
+	'nuke-submit-user' => 'Inkan',
+	'nuke-submit-delete' => 'Ikkatem dagita napili',
+	'right-nuke' => 'Ikkatem amin dagiti panid',
+	'nuke-select' => 'Agpili: $1',
+	'nuke-userorip' => 'Nagan ti agar-aramat, IP address wenno blanko:',
+	'nuke-maxpages' => 'Ti manu nga bilang dagiti panid:',
+	'nuke-multiplepeople' => 'adu nga agusar',
+	'nuke-editby' => 'Inaramid ni [Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Ti panid '''$1''' ket naikkaten.",
+	'nuke-not-deleted' => "Ti panid [[:$1]] '''saan nga''' maikkat.",
+	'nuke-delete-more' => '[[Special:Nuke|Agikkat ka pay kadagita nga panid]]',
+);
+
 /** Ido (Ido)
  * @author Malafaya
  */
@@ -1620,6 +1647,7 @@ Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. 
 	'nuke-editby' => 'Utworzona przez [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Strona '''$1''' została usunięta.",
 	'nuke-not-deleted' => "Strony [[:$1]] '''nie można''' usunąć.",
+	'nuke-delete-more' => '[[Special:Nuke|Usuń więcej stron]]',
 );
 
 /** Piedmontese (Piemontèis)
