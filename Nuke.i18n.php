@@ -939,6 +939,9 @@ napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
 	'nuke-maxpages' => 'Maksimalna ličba stronow:',
 	'nuke-multiplepeople' => 'wjacori ludźo',
 	'nuke-editby' => 'Wutworjeny wot [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Strona '''„$1“''' bu wušmórnjena.",
+	'nuke-not-deleted' => "Strona [[:$1]] ''njeda so''' wušmórnyć.",
+	'nuke-delete-more' => '[[Special:Nuke|Dalše strony wušmórnyć]]',
 );
 
 /** Hungarian (Magyar)
