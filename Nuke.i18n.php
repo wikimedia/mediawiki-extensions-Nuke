@@ -523,6 +523,9 @@ zapódaj komentar a klikni na tłocašk, aby je wulašował.',
 	'nuke-maxpages' => 'Maksimalna licba bokow:',
 	'nuke-multiplepeople' => 'někotare wužywarje',
 	'nuke-editby' => 'Napórany wót [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Bok '''$1''' jo se wulašował.",
+	'nuke-not-deleted' => "Bok [[:$1]] '''njejo dał''' se wulašowaś.",
+	'nuke-delete-more' => '[[Special:Nuke|Dalšne boki lašowaś]]',
 );
 
 /** Ewe (Eʋegbe) */
@@ -940,7 +943,7 @@ napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
 	'nuke-multiplepeople' => 'wjacori ludźo',
 	'nuke-editby' => 'Wutworjeny wot [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Strona '''„$1“''' bu wušmórnjena.",
-	'nuke-not-deleted' => "Strona [[:$1]] ''njeda so''' wušmórnyć.",
+	'nuke-not-deleted' => "Strona [[:$1]]  '''njeda so''' wušmórnyć.",
 	'nuke-delete-more' => '[[Special:Nuke|Dalše strony wušmórnyć]]',
 );
 
