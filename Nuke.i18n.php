@@ -978,7 +978,7 @@ entra un commento e pulsa sur le button pro deler los.',
 	'nuke-defaultreason' => 'Deletion in massa de paginas addite per $1',
 	'nuke-tools' => 'Iste instrumento permitte le deletion in massa de paginas recentemente addite per un usator o adresse IP specific.
 Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler, o lassa vacue pro tote le usatores.',
-	'nuke-submit-user' => 'Ir',
+	'nuke-submit-user' => 'Va',
 	'nuke-submit-delete' => 'Deler selection',
 	'right-nuke' => 'Deler paginas in massa',
 	'nuke-select' => 'Seliger: $1',
@@ -1297,6 +1297,7 @@ Gitt w.e.g. d'IP-Adress respektiv de Benotzer n fir eng Lescht vun de Säiten ze
 	'nuke-editby' => 'Gemaach vum [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "D'Säit '''$1''' gouf geläscht.",
 	'nuke-not-deleted' => "D'Säit [[:$1]] '''konnt net''' geläscht ginn.",
+	'nuke-delete-more' => '[[Special:Nuke|Méi Säite läschen]]',
 );
 
 /** Limburgish (Limburgs)
