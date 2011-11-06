@@ -686,7 +686,8 @@ $messages['fi'] = array(
 	'nuke' => 'Massapoisto',
 	'nuke-desc' => 'Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]].',
 	'nuke-nopages' => 'Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.',
-	'nuke-list' => 'Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut.',
+	'nuke-list' => 'Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut.
+Lisää kommentti ja poista napsauttamalla painiketta.',
 	'nuke-list-multiple' => 'Seuraavat sivut tehtiin äskettäin.
 Lisää kommentti ja poista napsauttamalla painiketta.',
 	'nuke-defaultreason' => 'Käyttäjän $1 lisäämien sivujen massapoistaminen',
@@ -702,6 +703,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 	'nuke-editby' => 'Tehnyt [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Sivu '''$1''' on poistettu.",
 	'nuke-not-deleted' => "Sivua [[:$1]] '''ei voitu''' poistaa.",
+	'nuke-delete-more' => '[[Special:Nuke|Poista lisää sivuja]]',
 );
 
 /** French (Français)
