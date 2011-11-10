@@ -34,13 +34,21 @@ class SpecialNuke extends SpecialPage {
 		);
 		
 		if( $wgRequest->wasPosted() 
-			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) )
-			&& $wgRequest->getVal( 'action' ) == 'delete' ) {
+			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
 				
-			$pages = $wgRequest->getArray( 'pages' );
+				
+			if ( $wgRequest->getVal( 'action' ) == 'delete' ) {
+				$pages = $wgRequest->getArray( 'pages' );
 
-			if( $pages ) {
-				return $this->doDelete( $pages, $reason );
+				if( $pages ) {
+					return $this->doDelete( $pages, $reason );
+				}
+			}
+			else if ( $wgRequest->getVal( 'action' ) == 'submit' ) {
+				$this->listForm( $target, $reason, $wgRequest->getInt( 'limit', 500 ) );
+			}
+			else {
+				$this->promptForm();
 			}
 		}
 		else if ( $target === '' ) {
@@ -71,6 +79,9 @@ class SpecialNuke extends SpecialPage {
 				. '<td>' . htmlspecialchars( wfMsg( 'nuke-userorip' ) ) . '</td>'
 				. '<td>' . Xml::input( 'target', 40, $userName ) . '</td>'
 			. '</tr><tr>'
+				. '<td>' . htmlspecialchars( wfMsg( 'nuke-pattern' ) ) . '</td>'
+				. '<td>' . Xml::input( 'pattern', 40 ) . '</td>'
+			. '</tr><tr>'
 				. '<td>' . htmlspecialchars( wfMsg( 'nuke-maxpages' ) ) . '</td>'
 				. '<td>' . Xml::input( 'limit', 7, '500' ) . '</td>'
 			. '</tr><tr>'
@@ -95,11 +106,17 @@ class SpecialNuke extends SpecialPage {
 		$pages = $this->getNewPages( $username, $limit );
 
 		if( count( $pages ) == 0 ) {
-			$wgOut->addWikiMsg( 'nuke-nopages', $username );
+			if ( $username === '' ) {
+				$wgOut->addWikiMsg( 'nuke-nopages-global' );
+			}
+			else {
+				$wgOut->addWikiMsg( 'nuke-nopages', $username );
+			}
+			
 			return $this->promptForm( $username );
 		}
 
-		if ( $username == '' ) {
+		if ( $username === '' ) {
 			$wgOut->addWikiMsg( 'nuke-list-multiple' );
 		} else {
 			$wgOut->addWikiMsg( 'nuke-list', $username );
@@ -156,7 +173,6 @@ JAVASCRIPT;
 
 		$wgOut->addHTML( '<ul>' );
 
-		$sk = $wgUser->getSkin();
 		foreach( $pages as $info ) {
 			list( $title, $edits, $userName ) = $info;
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
@@ -170,10 +186,10 @@ JAVASCRIPT;
 				) .
 				'&#160;' .
 				( $thumb ? $thumb->toHtml( array( 'desc-link' => true ) ) : '' ) .
-				$sk->makeKnownLinkObj( $title ) .
+				$this->getSkin()->makeKnownLinkObj( $title ) .
 				'&#160;(' .
 				( $userName ? wfMsgExt( 'nuke-editby', 'parseinline', $userName ) . ',&#160;' : '' ) .
-				$sk->makeKnownLinkObj( $title, $changes, 'action=history' ) .
+				$this->getSkin()->makeKnownLinkObj( $title, $changes, 'action=history' ) .
 				")</li>\n" );
 		}
 
@@ -204,10 +220,15 @@ JAVASCRIPT;
 
 		$where = array( "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" );
 
-		if ( $username == '' ) {
+		if ( $username === '' ) {
 			$what[] = 'rc_user_text';
 		} else {
 			$where['rc_user_text'] = $username;
+		}
+		
+		$pattern = $this->getRequest()->getText( 'pattern' );
+		if ( !is_null( $pattern ) && trim( $pattern ) !== '' ) {
+			$where[] = 'rc_title LIKE ' . $dbr->addQuotes( $pattern );
 		}
 
 		$result = $dbr->select( 'recentchanges',
