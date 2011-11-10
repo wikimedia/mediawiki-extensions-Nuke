@@ -40,6 +40,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
 );
 
 /** Message documentation (Message documentation)
+ * @author Jeroen De Dauw
  * @author Jon Harald Søby
  * @author Meno25
  * @author Purodha
@@ -47,11 +48,11 @@ Input the username or IP address to get a list of pages to delete, or leave blan
  * @author The Evil IP address
  * @author Umherirrender
  * @author Yekrats
- * @author Jeroen De Dauw
  */
 $messages['qqq'] = array(
 	'nuke' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
+	'action-nuke' => '"nuke pages" as in "You do not have permission to nuke pages"',
 	'nuke-desc' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
 {{desc}}',
@@ -61,7 +62,6 @@ For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
 	'right-nuke' => '{{doc-right|nuke}}',
 	'nuke-select' => '{{Identical|Select}}',
 	'nuke-multiplepeople' => 'Substituted for $1 in {{msg-mw|nuke-defaultreason}} when pages created by multiple users were deleted.',
-	'action-nuke'        => '"nuke pages" as in "You do not have permission to nuke pages"',
 );
 
 /** Niuean (ko e vagahau Niuē)
@@ -455,14 +455,15 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
  */
 $messages['de'] = array(
 	'nuke' => 'Massenlöschung von Seiten',
+	'action-nuke' => 'Seiten löschen',
 	'nuke-desc' => 'Ergänzt eine [[Special:Nuke|Spezialseite]] zur Massenlöschung von Seiten',
 	'nuke-nopages' => 'Es gibt in den „Letzten Änderungen“ keine neuen Seiten von [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] angelegt.
 Gib einen Kommentar bezüglich der Löschung an und klicke auf die Schaltfläche, um die Seiten nun zu löschen.',
 	'nuke-list-multiple' => 'Die folgenden Seiten wurden vor kurzem erstellt.
 Gib einen Kommentar bezüglich der Löschung an und klicke auf die Schaltfläche, um die Seiten nun zu löschen.',
-	'nuke-defaultreason' => 'Massenlöschung der Seiten, die von „$1“ angelegt worden',
-	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt worden.
+	'nuke-defaultreason' => 'Massenlöschung der Seiten, die von „$1“ angelegt wurden',
+	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden.
 Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten. Sofern Du keine Angabe machst, werden alle Benutzer ausgewählt.',
 	'nuke-submit-user' => 'Hole die Liste',
 	'nuke-submit-delete' => 'Ausgewählte Seiten löschen',
@@ -470,11 +471,13 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 	'nuke-select' => 'Auswählen: $1',
 	'nuke-userorip' => 'Benutzername, IP-Adresse oder keine Angabe:',
 	'nuke-maxpages' => 'Maximale Anzahl der Seiten:',
-	'nuke-multiplepeople' => 'mehrere Benutzer',
+	'nuke-multiplepeople' => 'mehreren Benutzern',
 	'nuke-editby' => 'Erstellt von [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => 'Seite „$1“ wurde gelöscht.',
 	'nuke-not-deleted' => "Seite [[:$1]] '''konnte nicht''' gelöscht werden.",
 	'nuke-delete-more' => '[[Special:Nuke|Weitere Seiten löschen]]',
+	'nuke-pattern' => 'Muster für den Seitennamen:',
+	'nuke-nopages-global' => 'Es gibt keine neuen Seiten unter den [[Special:RecentChanges|letzten Änderungen]].',
 );
 
 /** German (formal address) (‪Deutsch (Sie-Form)‬)
@@ -487,7 +490,7 @@ $messages['de-formal'] = array(
 Geben Sie einen Kommentar bezüglich der Löschung an und klicken Sie auf die Schaltfläche, um die Seiten nun zu löschen.',
 	'nuke-list-multiple' => 'Die folgenden Seiten wurden vor kurzem erstellt.
 Geben Sie einen Kommentar bezüglich der Löschung an und klicken Sie auf die Schaltfläche, um die Seiten nun zu löschen.',
-	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt worden.
+	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden.
 Geben Sie die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten. Sofern Sie keine Angabe machen, werden alle Benutzer ausgewählt.',
 );
 
@@ -976,6 +979,7 @@ $messages['hu'] = array(
  */
 $messages['ia'] = array(
 	'nuke' => 'Deletion in massa',
+	'action-nuke' => 'deler paginas in massa',
 	'nuke-desc' => 'Da le possibilitate al administratores de [[Special:Nuke|deler paginas in massa]]',
 	'nuke-nopages' => 'Nulle nove paginas per [[Special:Contributions/$1|$1]] trovate in le modificationes recente.',
 	'nuke-list' => 'Le sequente paginas esseva recentemente create per [[Special:Contributions/$1|$1]];
@@ -996,6 +1000,8 @@ Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler, 
 	'nuke-deleted' => "Le pagina '''$1''' ha essite delite.",
 	'nuke-not-deleted' => "Le pagina [[:$1]] '''non poteva''' esser delite.",
 	'nuke-delete-more' => '[[Special:Nuke|Deler plus paginas]]',
+	'nuke-pattern' => 'Patrono pro le nomine de pagina:',
+	'nuke-nopages-global' => 'Il non ha nove paginas in le [[Special:RecentChanges|modificationes recente]].',
 );
 
 /** Indonesian (Bahasa Indonesia)
@@ -1529,6 +1535,7 @@ $messages['nds-nl'] = array(
  */
 $messages['nl'] = array(
 	'nuke' => 'Massaal verwijderen',
+	'action-nuke' => "massaal pagina's verwijderen",
 	'nuke-desc' => "Geeft beheerders de mogelijkheid om [[Special:Nuke|massaal pagina's te verwijderen]]",
 	'nuke-nopages' => "Geen nieuwe pagina's van [[Special:Contributions/$1|$1]] in de recente wijzigingen.",
 	'nuke-list' => "De onderstaande pagina's zijn recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer een reden in en klik op de knop om ze te verwijderen.",
@@ -1548,6 +1555,8 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-deleted' => "Pagina '''$1''' is verwijderd.",
 	'nuke-not-deleted' => "Pagina [[:$1]] '''kon niet''' worden verwijderd.",
 	'nuke-delete-more' => "[[Special:Nuke|Meer pagina's verwijderen]]",
+	'nuke-pattern' => 'Patroon voor de paginanaam:',
+	'nuke-nopages-global' => "Er zijn geen nieuwe pagina's in de [[Special:RecentChanges|recent wijzigingen]].",
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
