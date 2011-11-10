@@ -123,19 +123,7 @@ class SpecialNuke extends SpecialPage {
 
 		$nuke = $this->getTitle();
 
-		$script = <<<JAVASCRIPT
-<script type="text/javascript">
-function selectPages( bool ) {
-	var inputs = document.getElementsByTagName("input");
-	for (i = 0; i < inputs.length; i++) {
-		if (inputs[i].type == "checkbox") {
-			inputs[i].checked = bool;
-		}
-	}
-}
-</script>
-JAVASCRIPT;
-		$out->addScript( $script );
+		$out->addModules( 'ext.nuke' );
 
 		$out->addHTML(
 			Xml::openElement( 'form', array(
@@ -154,9 +142,9 @@ JAVASCRIPT;
 
 		// Select: All, None
 		$links = array();
-		$links[] = '<a href="#" onclick="selectPages( true ); return false;">' .
+		$links[] = '<a href="#" id="toggleall">' .
 			wfMsg( 'powersearch-toggleall' ) . '</a>';
-		$links[] = '<a href="#" onclick="selectPages( false ); return false;">' .
+		$links[] = '<a href="#" id="togglenone">' .
 			wfMsg( 'powersearch-togglenone' ) . '</a>';
 		$out->addHTML(
 			Xml::tags( 'p',
@@ -174,6 +162,7 @@ JAVASCRIPT;
 
 		foreach( $pages as $info ) {
 			list( $title, $edits, $userName ) = $info;
+			
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 			$thumb = $image && $image->exists() ? $image->transform( array( 'width' => 120, 'height' => 120 ), 0 ) : false;
 

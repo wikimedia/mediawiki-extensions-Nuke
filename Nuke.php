@@ -4,7 +4,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-define( 'Nuke_VERSION', '1.1.1' );
+define( 'Nuke_VERSION', '1.1.2' );
 
 $dir = dirname(__FILE__) . '/';
 
@@ -26,3 +26,19 @@ $wgAvailableRights[] = 'nuke';
 $wgAutoloadClasses['SpecialNuke'] = $dir . 'Nuke_body.php';
 $wgSpecialPages['Nuke'] = 'SpecialNuke';
 $wgSpecialPageGroups['Nuke'] = 'pagetools';
+
+// Resource loader modules
+$moduleTemplate = array(
+	'localBasePath' => dirname( __FILE__ ) . '/',
+	'remoteExtPath' => 'Nuke/'
+);
+
+$wgResourceModules['ext.nuke'] = $moduleTemplate + array(
+	'scripts' => array(
+		'ext.nuke.js'
+	),
+	'messages' => array(
+	)
+);
+
+unset( $moduleTemplate );
