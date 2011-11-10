@@ -7,9 +7,7 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	public function execute( $par ){
-		global $wgUser, $wgRequest;
-
-		if( !$this->userCanExecute( $wgUser ) ){
+		if( !$this->userCanExecute( $this->getUser() ) ){
 			$this->displayRestrictionError();
 			return;
 		}
@@ -17,7 +15,9 @@ class SpecialNuke extends SpecialPage {
 		$this->setHeaders();
 		$this->outputHeader();
 
-		$target = trim( $wgRequest->getText( 'target', $par ) );
+		$req = $this->getRequest();
+		
+		$target = trim( $req->getText( 'target', $par ) );
 		
 		// Normalise name
 		if ( $target !== '' ) {
@@ -25,7 +25,7 @@ class SpecialNuke extends SpecialPage {
 			if ( $user ) $target = $user->getName();
 		}
 		
-		$reason = $wgRequest->getText(
+		$reason = $req->getText(
 			'wpReason',
 			wfMsgForContent(
 				'nuke-defaultreason',
@@ -33,19 +33,18 @@ class SpecialNuke extends SpecialPage {
 			)
 		);
 		
-		if( $wgRequest->wasPosted() 
-			&& $wgUser->matchEditToken( $wgRequest->getVal( 'wpEditToken' ) ) ) {
+		if( $req->wasPosted() 
+			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) ) ) {
 				
-				
-			if ( $wgRequest->getVal( 'action' ) == 'delete' ) {
-				$pages = $wgRequest->getArray( 'pages' );
+			if ( $req->getVal( 'action' ) == 'delete' ) {
+				$pages = $req->getArray( 'pages' );
 
 				if( $pages ) {
 					return $this->doDelete( $pages, $reason );
 				}
 			}
-			else if ( $wgRequest->getVal( 'action' ) == 'submit' ) {
-				$this->listForm( $target, $reason, $wgRequest->getInt( 'limit', 500 ) );
+			else if ( $req->getVal( 'action' ) == 'submit' ) {
+				$this->listForm( $target, $reason, $req->getInt( 'limit', 500 ) );
 			}
 			else {
 				$this->promptForm();
@@ -55,7 +54,7 @@ class SpecialNuke extends SpecialPage {
 			$this->promptForm();
 		}
 		else {
-			$this->listForm( $target, $reason, $wgRequest->getInt( 'limit', 500 ) );
+			$this->listForm( $target, $reason, $req->getInt( 'limit', 500 ) );
 		}
 	}
 
@@ -63,11 +62,11 @@ class SpecialNuke extends SpecialPage {
 	 * Prompt for a username or IP address.
 	 */
 	protected function promptForm( $userName = '' ) {
-		global $wgOut, $wgUser;
+		$out = $this->getOutput();
+		
+		$out->addWikiMsg( 'nuke-tools' );
 
-		$wgOut->addWikiMsg( 'nuke-tools' );
-
-		$wgOut->addHTML(
+		$out->addHTML(
 			Xml::openElement(
 				'form',
 				array(
@@ -88,7 +87,7 @@ class SpecialNuke extends SpecialPage {
 				. '<td></td>'
 				. '<td>' . Xml::submitButton( wfMsg( 'nuke-submit-user' ) ) . '</td>'
 			.'</tr></table>'
-			. Html::hidden( 'wpEditToken', $wgUser->editToken() )
+			. Html::hidden( 'wpEditToken', $this->getUser()->editToken() )
 			. Xml::closeElement( 'form' )
 		);
 	}
@@ -101,25 +100,25 @@ class SpecialNuke extends SpecialPage {
 	 * @param integer $limit
 	 */
 	protected function listForm( $username, $reason, $limit ) {
-		global $wgUser, $wgOut, $wgLang;
-
+		$out = $this->getOutput();
+		
 		$pages = $this->getNewPages( $username, $limit );
 
 		if( count( $pages ) == 0 ) {
 			if ( $username === '' ) {
-				$wgOut->addWikiMsg( 'nuke-nopages-global' );
+				$out->addWikiMsg( 'nuke-nopages-global' );
 			}
 			else {
-				$wgOut->addWikiMsg( 'nuke-nopages', $username );
+				$out->addWikiMsg( 'nuke-nopages', $username );
 			}
 			
 			return $this->promptForm( $username );
 		}
 
 		if ( $username === '' ) {
-			$wgOut->addWikiMsg( 'nuke-list-multiple' );
+			$out->addWikiMsg( 'nuke-list-multiple' );
 		} else {
-			$wgOut->addWikiMsg( 'nuke-list', $username );
+			$out->addWikiMsg( 'nuke-list', $username );
 		}
 
 		$nuke = $this->getTitle();
@@ -136,15 +135,15 @@ function selectPages( bool ) {
 }
 </script>
 JAVASCRIPT;
-		$wgOut->addScript( $script );
+		$out->addScript( $script );
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			Xml::openElement( 'form', array(
 				'action' => $nuke->getLocalURL( 'action=delete' ),
 				'method' => 'post',
 				'name' => 'nukelist')
 			) .
-			Html::hidden( 'wpEditToken', $wgUser->editToken() ) .
+			Html::hidden( 'wpEditToken', $this->getUser()->editToken() ) .
 			Xml::tags( 'p',
 				null,
 				Xml::inputLabel(
@@ -159,28 +158,28 @@ JAVASCRIPT;
 			wfMsg( 'powersearch-toggleall' ) . '</a>';
 		$links[] = '<a href="#" onclick="selectPages( false ); return false;">' .
 			wfMsg( 'powersearch-togglenone' ) . '</a>';
-		$wgOut->addHTML(
+		$out->addHTML(
 			Xml::tags( 'p',
 				null,
-				wfMsg( 'nuke-select', $wgLang->commaList( $links ) )
+				wfMsg( 'nuke-select', $this->getLang()->commaList( $links ) )
 			)
 		);
 
 		// Delete button
-		$wgOut->addHTML(
+		$out->addHTML(
 			Xml::submitButton( wfMsg( 'nuke-submit-delete' ) )
 		);
 
-		$wgOut->addHTML( '<ul>' );
+		$out->addHTML( '<ul>' );
 
 		foreach( $pages as $info ) {
 			list( $title, $edits, $userName ) = $info;
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 			$thumb = $image && $image->exists() ? $image->transform( array( 'width' => 120, 'height' => 120 ), 0 ) : false;
 
-			$changes = wfMsgExt( 'nchanges', 'parsemag', $wgLang->formatNum( $edits ) );
+			$changes = wfMsgExt( 'nchanges', 'parsemag', $this->getLang()->formatNum( $edits ) );
 
-			$wgOut->addHTML( '<li>' .
+			$out->addHTML( '<li>' .
 				Xml::check( 'pages[]', true,
 					array( 'value' =>  $title->getPrefixedDbKey() )
 				) .
@@ -193,7 +192,7 @@ JAVASCRIPT;
 				")</li>\n" );
 		}
 
-		$wgOut->addHTML(
+		$out->addHTML(
 			"</ul>\n" .
 			Xml::submitButton( wfMsg( 'nuke-submit-delete' ) ) .
 			"</form>"
@@ -262,9 +261,8 @@ JAVASCRIPT;
 	 * @param string $reason
 	 */
 	protected function doDelete( array $pages, $reason ) {
-		global $wgOut;
-
 		$res = array();
+		
 		foreach( $pages as $page ) {
 			$title = Title::newFromURL( $page );
 			$file = $title->getNamespace() == NS_FILE ? wfLocalFile( $title ) : false;
@@ -282,9 +280,9 @@ JAVASCRIPT;
 			}
 		}
 		
-		$wgOut->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
+		$this->getOutput()->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
 		
-		$wgOut->addWikiMsg( 'nuke-delete-more' );
+		$this->getOutput()->addWikiMsg( 'nuke-delete-more' );
 	}
 	
 }
