@@ -14,6 +14,7 @@ $messages = array();
  */
 $messages['en'] = array(
 	'nuke'               => 'Mass delete',
+	'action-nuke'        => 'nuke pages',
 	'nuke-desc'          => 'Gives administrators the ability to [[Special:Nuke|mass delete]] pages',
 	'nuke-nopages'       => "No new pages by [[Special:Contributions/$1|$1]] in recent changes.",
 	'nuke-list'          => "The following pages were recently created by [[Special:Contributions/$1|$1]];
@@ -44,6 +45,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
  * @author The Evil IP address
  * @author Umherirrender
  * @author Yekrats
+ * @author Jeroen De Dauw
  */
 $messages['qqq'] = array(
 	'nuke' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
@@ -57,6 +59,7 @@ For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
 	'right-nuke' => '{{doc-right|nuke}}',
 	'nuke-select' => '{{Identical|Select}}',
 	'nuke-multiplepeople' => 'Substituted for $1 in {{msg-mw|nuke-defaultreason}} when pages created by multiple users were deleted.',
+	'action-nuke'        => '"nuke pages" as in "You do not have permission to nuke pages"',
 );
 
 /** Niuean (ko e vagahau Niuē)
