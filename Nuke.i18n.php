@@ -427,6 +427,7 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
  */
 $messages['da'] = array(
 	'nuke' => 'Massesletning',
+	'action-nuke' => 'masseslette sider',
 	'nuke-desc' => 'Giver administratorer mulighed for at [[Special:Nuke|masseslette]] sider',
 	'nuke-nopages' => 'Der er ingen nye sider af [[Special:Contributions/$1|$1]] i seneste ændringer.',
 	'nuke-list' => 'Følgende sider er oprettet for nylig af [[Special:Contributions/$1|$1]]; skriv en kommentar og tryk på knappen for at slette dem.',
@@ -446,6 +447,8 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
 	'nuke-deleted' => "Siden '''$1''' er blevet slettet.",
 	'nuke-not-deleted' => "Siden [[:$1]] '''kunne ikke''' slettes.",
 	'nuke-delete-more' => '[[Special:Nuke|Slet flere sider]]',
+	'nuke-pattern' => 'Mønster for sidenavnet:',
+	'nuke-nopages-global' => 'Der er ikke nogen nye sider i [[Special:RecentChanges|de seneste ændringer]].',
 );
 
 /** German (Deutsch)
@@ -1377,6 +1380,7 @@ $messages['mg'] = array(
  */
 $messages['mk'] = array(
 	'nuke' => 'Групно бришење',
+	'action-nuke' => 'масовно бришење на страници',
 	'nuke-desc' => 'Им дава можност на администраторите да вршат [[Special:Nuke|групно бришење]] на страници',
 	'nuke-nopages' => 'Нема нови страници од [[Special:Contributions/$1|$1]] во скорешните промени.',
 	'nuke-list' => 'Следниве страници биле неодамна создадени од [[Special:Contributions/$1|$1]];
@@ -1397,6 +1401,8 @@ $messages['mk'] = array(
 	'nuke-deleted' => "Страницата '''$1''' е избришана.",
 	'nuke-not-deleted' => "Страницата [[:$1]] '''не можеше''' да се избрише.",
 	'nuke-delete-more' => '[[Special:Nuke|Избриши уште страници]]',
+	'nuke-pattern' => 'Мостра за име на страница:',
+	'nuke-nopages-global' => 'Нема нови страници во [[Special:RecentChanges|скорешните промени]].',
 );
 
 /** Malayalam (മലയാളം)
@@ -1447,6 +1453,7 @@ $messages['mr'] = array(
  */
 $messages['ms'] = array(
 	'nuke' => 'Hapus pukal',
+	'action-nuke' => 'menghapuskan laman secara besar-besaran',
 	'nuke-desc' => 'Membolehkan penyelia [[Special:Nuke|menghapuskan laman-laman]] secara pukal',
 	'nuke-nopages' => 'Tiada laman baru oleh [[Special:Contributions/$1|$1]] dalam senarai perubahan terkini.',
 	'nuke-list' => 'Laman-laman berikut dicipta oleh [[Special:Contributions/$1|$1]]; sila masukkan komen anda dan tekan butang untuk menghapuskannya.',
@@ -1466,6 +1473,8 @@ Isikan nama pengguna atau alamat IP untuk mendapat senarai laman yang hendak dik
 	'nuke-deleted' => "Laman '''$1''' telah dihapuskan.",
 	'nuke-not-deleted' => "Laman [[:$1]] '''tidak dapat''' dihapuskan.",
 	'nuke-delete-more' => '[[Special:Nuke|Hapuskan lebih banyak laman]]',
+	'nuke-pattern' => 'Pola nama laman:',
+	'nuke-nopages-global' => 'Tiada laman baru dalam [[Special:RecentChanges|perubahan terkini]].',
 );
 
 /** Maltese (Malti)
@@ -2296,6 +2305,7 @@ $messages['vep'] = array(
  */
 $messages['vi'] = array(
 	'nuke' => 'Xóa hàng loạt',
+	'action-nuke' => 'xóa hàng loạt trang',
 	'nuke-desc' => 'Cung cấp cho bảo quản viên khả năng [[Special:Nuke|xóa trang hàng loạt]]',
 	'nuke-nopages' => 'Không có trang mới do [[Special:Contributions/$1|$1]] tạo ra trong thay đổi gần đây.',
 	'nuke-list' => 'Các trang sau do [[Special:Contributions/$1|$1]] tạo ra gần đây; hãy ghi lý do và nhấn nút để xóa tất cả những trang này.',
@@ -2315,6 +2325,8 @@ Hãy nhập tên thành viên hoặc địa chỉ IP để lấy danh sách các
 	'nuke-deleted' => "Đã xóa trang '''$1'''.",
 	'nuke-not-deleted' => "'''Không thể''' xóa trang [[:$1]].",
 	'nuke-delete-more' => '[[Special:Nuke|Xóa thêm trang]]',
+	'nuke-pattern' => 'Mẫu tên trang:',
+	'nuke-nopages-global' => 'Không có trang mới trong các [[Special:RecentChanges|thay đổi gần đây]].',
 );
 
 /** Volapük (Volapük)
