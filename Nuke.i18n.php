@@ -329,6 +329,8 @@ Merkañ ar c'homlec'h IP pe anv an implijer evit kaout roll ar pajennoù da zive
 	'nuke-maxpages' => 'Niver brasañ a bajennoù :',
 	'nuke-multiplepeople' => 'meur a implijer',
 	'nuke-editby' => 'Savet gant [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Diverket eo bet ar bajenn '''$1'''.",
+	'nuke-pattern' => 'Patrom evit anv ar bajenn :',
 );
 
 /** Bosnian (Bosanski)
@@ -1076,10 +1078,33 @@ $messages['io'] = array(
 
 /** Icelandic (Íslenska)
  * @author S.Örvarr.S
+ * @author Snævar
  */
 $messages['is'] = array(
 	'nuke' => 'Fjöldaeyða',
+	'action-nuke' => 'fjöldaeyða síðum',
+	'nuke-desc' => 'Gefur möppudýrum kleyft að [[Special:Nuke|fjöldaeyða]] síðum.',
+	'nuke-nopages' => 'Engar nýjar síður eftir [[Special:Contributions/$1|$1]] í nýlegum breytingum.',
+	'nuke-list' => 'Eftirfarandi síður voru nýverið búnar til af [[Special:Contributions/$1|$1]];
+tilgreindu athugasemd og ýttu á takkann til að eyða þeim.',
+	'nuke-list-multiple' => 'Eftirfarandi síður voru nýlega búnar til;
+tilgreindu athugasemd og ýttu á takkann til að eyða þeim.',
+	'nuke-defaultreason' => 'Fjöldaeyðing síðna sem búnar voru til af $1',
+	'nuke-tools' => 'Hér er hægt að fjöldaeyða síðum sem voru nýlega búnar til af notanda eða vistfangi.
+Tilgreindu notendanafn eða vistfang til að fá lista yfir síður til að eyða, eða skildu reitinn eftir tóman til að fá lista yfir síður frá öllum notendum.',
 	'nuke-submit-user' => 'Áfram',
+	'nuke-submit-delete' => 'Eyða völdum síðum',
+	'right-nuke' => 'Fjöldaeyða síðum',
+	'nuke-select' => 'Velja: $1',
+	'nuke-userorip' => 'Notandanafn, vistfang eða tómt:',
+	'nuke-maxpages' => 'Hámarksfjöldi síðna:',
+	'nuke-multiplepeople' => 'margir notendur',
+	'nuke-editby' => 'Búnar til af [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "'''$1''' hefur verið eytt.",
+	'nuke-not-deleted' => 'Mistök við eyðingu síðunnar [[:$1]].',
+	'nuke-delete-more' => '[[Special:Nuke|Fjöldaeyða fleiri skrám]]',
+	'nuke-pattern' => 'Nafna mynstur:',
+	'nuke-nopages-global' => 'Það eru engar nýjar síður í [[Special:RecentChanges|nýjustu breytingum]].',
 );
 
 /** Italian (Italiano)
@@ -1430,6 +1455,8 @@ $messages['ml'] = array(
 	'nuke-deleted' => "'''$1''' എന്ന താൾ മായ്ച്ചു കഴിഞ്ഞു.",
 	'nuke-not-deleted' => "[[:$1]] എന്ന താൾ മായ്ക്കാൻ '''കഴിയില്ല'''.",
 	'nuke-delete-more' => '[[Special:Nuke|കൂടുതൽ താളുകൾ മായ്ക്കുക]]',
+	'nuke-pattern' => 'താളിന്റെ പേരിന്റെ ശൈലി:',
+	'nuke-nopages-global' => '[[Special:RecentChanges|സമീപകാലമാറ്റങ്ങളിൽ]] പുതിയ താളുകളൊന്നുമില്ല.',
 );
 
 /** Marathi (मराठी)
@@ -1982,6 +2009,7 @@ Zadajte používateľa alebo IP a dostanete zoznam stránok na zmazanie. Ponecha
  */
 $messages['sl'] = array(
 	'nuke' => 'Množični izbris',
+	'action-nuke' => 'množično brisanje',
 	'nuke-desc' => 'Da administratorjem zmožnost [[Special:Nuke|množičnega izbrisa]] strani',
 	'nuke-nopages' => 'Ni novih strani uporabnika [[Special:Contributions/$1|$1]] v zadnjih spremembah.',
 	'nuke-list' => 'Naslednje strani je nedavno ustvaril uporabnik [[Special:Contributions/$1|$1]];
@@ -2002,6 +2030,8 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
 	'nuke-deleted' => "Stran '''$1''' je bila izbrisana.",
 	'nuke-not-deleted' => "Strani [[:$1]] '''ni bilo mogoče''' izbrisati.",
 	'nuke-delete-more' => '[[Special:Nuke|Izbriši več strani]]',
+	'nuke-pattern' => 'Vzorec imena strani:',
+	'nuke-nopages-global' => 'V [[Special:RecentChanges|zadnjih spremembah]] ni novih strani.',
 );
 
 /** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
