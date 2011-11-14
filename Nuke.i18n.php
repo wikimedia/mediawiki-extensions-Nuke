@@ -330,7 +330,10 @@ Merkañ ar c'homlec'h IP pe anv an implijer evit kaout roll ar pajennoù da zive
 	'nuke-multiplepeople' => 'meur a implijer',
 	'nuke-editby' => 'Savet gant [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Diverket eo bet ar bajenn '''$1'''.",
+	'nuke-not-deleted' => "'''N'eus ket bet gallet''' diverkañ ar bajenn [[:$1]].",
+	'nuke-delete-more' => '[[Special:Nuke|Diverkañ pajennoù all]]',
 	'nuke-pattern' => 'Patrom evit anv ar bajenn :',
+	'nuke-nopages-global' => "N'eus pajenn nevez ebet er [[Special:RecentChanges|c'hemmoù diwezhañ]].",
 );
 
 /** Bosnian (Bosanski)
@@ -1678,6 +1681,7 @@ $messages['os'] = array(
  */
 $messages['pdc'] = array(
 	'nuke-submit-user' => 'Lischt hole',
+	'nuke-deleted' => 'Blatt „$1“ is glescht warre.',
 );
 
 /** Polish (Polski)
