@@ -735,6 +735,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
  */
 $messages['fr'] = array(
 	'nuke' => 'Suppression en masse',
+	'action-nuke' => 'pages nucléaires',
 	'nuke-desc' => 'Donne la possibilité aux administrateurs de [[Special:Nuke|supprimer en masse]] des pages',
 	'nuke-nopages' => 'Aucune nouvelle page créée par [[Special:Contributions/$1|$1]] dans la liste des changements récents.',
 	'nuke-list' => 'Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|$1]]; Indiquer un commentaire et cliquer sur le bouton pour les supprimer.',
@@ -753,6 +754,8 @@ entrez un commentaire et cliquez sur le bouton pour les supprimer.',
 	'nuke-deleted' => "La page '''$1''' a été effacée.",
 	'nuke-not-deleted' => "La page [[:$1]] '''ne peut pas''' être effacée.",
 	'nuke-delete-more' => '[[Special:Nuke|Supprimer plus de pages]]',
+	'nuke-pattern' => 'Modèle pour le nom de page:',
+	'nuke-nopages-global' => "Il n'y a pas de nouvelle page dans [[Special:RecentChanges|changements récents]].",
 );
 
 /** Franco-Provençal (Arpetan)
