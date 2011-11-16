@@ -163,6 +163,7 @@ $messages['arz'] = array(
  */
 $messages['ast'] = array(
 	'nuke' => 'Esborráu masivu',
+	'action-nuke' => 'desaniciar páxines en masa',
 	'nuke-desc' => "Da a los alministradores la capacidá d'[[Special:Nuke|esborrar páxines masivamente]]",
 	'nuke-nopages' => 'Nun hai páxines nueves de [[Special:Contributions/$1|$1]] nos cambeos recientes.',
 	'nuke-list' => 'Les páxines siguientes foron creaes recién por [[Special:Contributions/$1|$1]]; escribi un comentariu y calca nel botón pa esborrales.',
@@ -181,6 +182,8 @@ escribi un comentariu y calca'l botón pa desaniciales.",
 	'nuke-deleted' => "La páxina '''$1''' se desanició.",
 	'nuke-not-deleted' => "La páxina [[:$1]] '''nun se pudo''' desaniciar.",
 	'nuke-delete-more' => '[[Special:Nuke|Desaniciar más páxines]]',
+	'nuke-pattern' => 'Patrón pal nome de páxina:',
+	'nuke-nopages-global' => 'Nun hai páxines nueves nos [[Special:RecentChanges|cambios recientes]].',
 );
 
 /** Azerbaijani (Azərbaycanca)
@@ -799,6 +802,7 @@ $messages['fur'] = array(
  */
 $messages['gl'] = array(
 	'nuke' => 'Eliminar en masa',
+	'action-nuke' => 'borrar páxinas en masa',
 	'nuke-desc' => 'Dá aos administradores a posibilidade de [[Special:Nuke|borrar páxinas]] masivamente',
 	'nuke-nopages' => 'Non hai novas páxinas feitas por [[Special:Contributions/$1|$1]] nos cambios recentes.',
 	'nuke-list' => '[[Special:Contributions/$1|$1]] creou nos últimos intres as seguintes páxinas;
@@ -819,6 +823,8 @@ Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas pa
 	'nuke-deleted' => "A páxina \"'''\$1'''\" foi borrada.",
 	'nuke-not-deleted' => "A páxina \"[[:\$1]]\" '''non''' se pode borrar.",
 	'nuke-delete-more' => '[[Special:Nuke|Borrar máis páxinas]]',
+	'nuke-pattern' => 'Patrón para o nome de páxina:',
+	'nuke-nopages-global' => 'Non hai páxinas novas nos [[Special:RecentChanges|cambios recentes]].',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -948,6 +954,7 @@ $messages['hr'] = array(
  */
 $messages['hsb'] = array(
 	'nuke' => 'Masowe wušmórnjenje',
+	'action-nuke' => 'Strony zhašeć',
 	'nuke-desc' => 'Zmóžnja administratoram [[Special:Nuke|masowe wušmórnjenje]] stronow',
 	'nuke-nopages' => 'W poslednich změnach njejsu nowe strony z [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Slědowace strony buchu runje přez [[Special:Contributions/$1|$1]] wutworjene; zapodaj komentar a klikń na tłóčatko wušmórnjenja.',
@@ -966,6 +973,8 @@ napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
 	'nuke-deleted' => "Strona '''„$1“''' bu wušmórnjena.",
 	'nuke-not-deleted' => "Strona [[:$1]]  '''njeda so''' wušmórnyć.",
 	'nuke-delete-more' => '[[Special:Nuke|Dalše strony wušmórnyć]]',
+	'nuke-pattern' => 'Přikład za mjeno strony:',
+	'nuke-nopages-global' => 'Njejsu žane nowe strony w [[Special:RecentChanges|aktualnych změnach]].',
 );
 
 /** Hungarian (Magyar)
@@ -2041,7 +2050,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
 	'nuke-nopages-global' => 'V [[Special:RecentChanges|zadnjih spremembah]] ni novih strani.',
 );
 
-/** Serbian Cyrillic ekavian (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
  * @author Millosh
  * @author Rancher
  * @author Жељко Тодоровић
@@ -2052,7 +2061,8 @@ $messages['sr-ec'] = array(
 	'nuke-nopages' => 'Нема нових страница од стране корисника [[Special:Contributions/$1|$1]] у скорашњим изменама.',
 	'nuke-list' => 'Следеће странице је скоро направио корисник [[Special:Contributions/$1|$1]]; коментариши и притисни дугме за њихово брисање.',
 	'nuke-defaultreason' => 'Масовно брисање страница које је направио корисник $1',
-	'nuke-tools' => 'Ово оруђе омогућава масовно брисање страница које је скоро додао одређени корисник (регистрован или не). Унеси корисничко име или ИП адресу за добијање списка страница за брисање.',
+	'nuke-tools' => 'Ова алатка омогућава збирно брисање страница које је недавно додао одређени корисник (са налогом или без њега).
+Унесите корисничко име или ИП адресу да бисте добили списак страница за брисање, или оставите празно ако желите да се наведу сви корисници.',
 	'nuke-submit-user' => 'Иди',
 	'nuke-submit-delete' => 'Обриши изабрано',
 	'right-nuke' => 'масовно брисање страница',
