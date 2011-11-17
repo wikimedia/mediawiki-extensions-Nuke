@@ -766,6 +766,7 @@ entrez un commentaire et cliquez sur le bouton pour les supprimer.',
  */
 $messages['frp'] = array(
 	'nuke' => 'Suprèssion en massa',
+	'action-nuke' => 'suprimar des pâges en massa',
 	'nuke-desc' => 'Balye la possibilitât ux administrators de [[Special:Nuke|suprimar en massa]] des pâges.',
 	'nuke-nopages' => 'Gins de pâge novèla fêta per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.',
 	'nuke-list' => 'Cetes pâges ont étâ fêtes dèrriérement per [[Special:Contributions/$1|$1]] ;
