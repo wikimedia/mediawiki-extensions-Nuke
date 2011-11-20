@@ -1336,6 +1336,7 @@ udder lohß dat Feld läddesch, dann kriß De en Leß vun Alle.',
  */
 $messages['lb'] = array(
 	'nuke' => 'Masse-Läschung',
+	'action-nuke' => "Säiten 'en masse' ze läschen",
 	'nuke-desc' => "Gëtt Administrateuren d'Méiglechkeet fir [[Special:Nuke|vill Säite mateneen ze läschen]]",
 	'nuke-nopages' => 'Et gëtt bei de läschten Ännerunge keng nei Säite vum [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|$1]] nei ugeluecht; gitt w.e.g. eng Bemierkung an, an dréckt op de Knäppche Läschen.',
@@ -1355,6 +1356,8 @@ Gitt w.e.g. d'IP-Adress respektiv de Benotzer n fir eng Lescht vun de Säiten ze
 	'nuke-deleted' => "D'Säit '''$1''' gouf geläscht.",
 	'nuke-not-deleted' => "D'Säit [[:$1]] '''konnt net''' geläscht ginn.",
 	'nuke-delete-more' => '[[Special:Nuke|Méi Säite läschen]]',
+	'nuke-pattern' => 'Muster fir de Säitennumm:',
+	'nuke-nopages-global' => 'Et si keng nei Säiten an de [[Special:RecentChanges|rezenten Ännerungen]].',
 );
 
 /** Limburgish (Limburgs)
