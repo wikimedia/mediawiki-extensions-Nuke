@@ -1062,6 +1062,7 @@ $messages['ig'] = array(
  */
 $messages['ilo'] = array(
 	'nuke' => 'Paga-adduan nga pinag-ikkat',
+	'action-nuke' => 'ikkaten dagiti panid',
 	'nuke-desc' => 'Ikkan na ti administrador ti abilidad nga [[Special:Nuke|	paga-adduan nga pang-ikkat]] kadagit panid',
 	'nuke-nopages' => 'Awan dagiti baro nga panid [[Special:Contributions/$1|$1]] idiay kaudian nga balbaliw.',
 	'nuke-list' => 'Dagita sumaganad nga panid ket kaararamid ni [[Special:Contributions/$1|$1]];
@@ -1078,10 +1079,12 @@ Ikabil ti nagan ti agar-aramat wenno IP address tapno maalam dagiti listaan dagi
 	'nuke-userorip' => 'Nagan ti agar-aramat, IP address wenno blanko:',
 	'nuke-maxpages' => 'Ti manu nga bilang dagiti panid:',
 	'nuke-multiplepeople' => 'adu nga agusar',
-	'nuke-editby' => 'Inaramid ni [Special:Contributions/$1|$1]]',
+	'nuke-editby' => 'Inaramid ni [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Ti panid '''$1''' ket naikkaten.",
 	'nuke-not-deleted' => "Ti panid [[:$1]] '''saan nga''' maikkat.",
 	'nuke-delete-more' => '[[Special:Nuke|Agikkat ka pay kadagita nga panid]]',
+	'nuke-pattern' => 'Manipud a kita iti nagan ti panid:',
+	'nuke-nopages-global' => 'Awan dagiti baro a panid idiay [[Special:RecentChanges|kinaudian a pinagbaliw]].',
 );
 
 /** Ido (Ido)
@@ -2074,7 +2077,7 @@ $messages['sr-ec'] = array(
 	'right-nuke' => 'масовно брисање страница',
 );
 
-/** Serbian Latin ekavian (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪Srpski (latinica)‬)
  * @author Michaello
  * @author Жељко Тодоровић
  */
@@ -2186,7 +2189,7 @@ $messages['tet'] = array(
 	'nuke-submit-user' => 'Bá',
 );
 
-/** Tajik (Cyrillic) (Тоҷикӣ (Cyrillic))
+/** Tajik (Cyrillic script) (Тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -2201,7 +2204,7 @@ $messages['tg-cyrl'] = array(
 	'right-nuke' => 'Ҳазфи дастаҷамъии саҳифаҳо',
 );
 
-/** Tajik (Latin) (Тоҷикӣ (Latin))
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -2278,7 +2281,7 @@ Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin
 	'nuke-select' => 'Seçilmiş: $1',
 );
 
-/** Tatar (Cyrillic) (Татарча/Tatarça (Cyrillic))
+/** Tatar (Cyrillic script) (Татарча)
  * @author Ильнар
  */
 $messages['tt-cyrl'] = array(
@@ -2286,14 +2289,14 @@ $messages['tt-cyrl'] = array(
 	'right-nuke' => 'битләрне күпләп бетерү',
 );
 
-/** ئۇيغۇرچە (ئۇيغۇرچە)
+/** Uyghur (Arabic script) (ئۇيغۇرچە)
  * @author Alfredie
  */
 $messages['ug-arab'] = array(
 	'nuke-submit-user' => 'كۆچۈش',
 );
 
-/** Uighur (Latin) (ئۇيغۇرچە / Uyghurche‎ (Latin))
+/** Uyghur (Latin script) (Uyghurche‎)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
