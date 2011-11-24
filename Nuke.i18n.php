@@ -52,7 +52,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
 $messages['qqq'] = array(
 	'nuke' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
-	'action-nuke' => '"nuke pages" as in "You do not have permission to nuke pages"',
+	'action-nuke' => '{{doc-action|nuke}}',
 	'nuke-desc' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
 {{desc}}',
@@ -886,6 +886,7 @@ $messages['gv'] = array(
  */
 $messages['he'] = array(
 	'nuke' => 'מחיקה מרובה',
+	'action-nuke' => 'למחוק דפים מרובים',
 	'nuke-desc' => 'אפשרות למפעילי המערכת לבצע [[Special:Nuke|מחיקה מרובה]] של דפים',
 	'nuke-nopages' => 'אין דפים חדשים שנוצרו על ידי [[Special:Contributions/$1|$1]] in בשינויים האחרונים.',
 	'nuke-list' => 'הדפים הבאים נוצרו לאחרונה על ידי [[Special:Contributions/$1|$1]];
@@ -906,6 +907,8 @@ $messages['he'] = array(
 	'nuke-deleted' => "הדף '''$1''' נמחק.",
 	'nuke-not-deleted' => "'''לא ניתן''' למחוק את הדף [[:$1]].",
 	'nuke-delete-more' => '[[Special:Nuke|למחוק עוד דפים]]',
+	'nuke-pattern' => 'תבנית עבור שם הדף:',
+	'nuke-nopages-global' => 'אין דפים חדשים ב[[Special:RecentChanges|שינויים אחרונים]].',
 );
 
 /** Hindi (हिन्दी)
