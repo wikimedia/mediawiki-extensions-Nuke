@@ -16,15 +16,15 @@ class SpecialNuke extends SpecialPage {
 		$this->outputHeader();
 
 		$req = $this->getRequest();
-		
+
 		$target = trim( $req->getText( 'target', $par ) );
-		
+
 		// Normalise name
 		if ( $target !== '' ) {
 			$user = User::newFromName( $target );
 			if ( $user ) $target = $user->getName();
 		}
-		
+
 		$reason = $req->getText(
 			'wpReason',
 			wfMsgForContent(
@@ -32,10 +32,10 @@ class SpecialNuke extends SpecialPage {
 				$target === '' ? wfMsg( 'nuke-multiplepeople' ) : $target
 			)
 		);
-		
-		if( $req->wasPosted() 
+
+		if( $req->wasPosted()
 			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) ) ) {
-				
+
 			if ( $req->getVal( 'action' ) == 'delete' ) {
 				$pages = $req->getArray( 'pages' );
 
@@ -43,14 +43,14 @@ class SpecialNuke extends SpecialPage {
 					return $this->doDelete( $pages, $reason );
 				}
 			}
-			else if ( $req->getVal( 'action' ) == 'submit' ) {
+			elseif ( $req->getVal( 'action' ) == 'submit' ) {
 				$this->listForm( $target, $reason, $req->getInt( 'limit', 500 ) );
 			}
 			else {
 				$this->promptForm();
 			}
 		}
-		else if ( $target === '' ) {
+		elseif ( $target === '' ) {
 			$this->promptForm();
 		}
 		else {
@@ -63,7 +63,7 @@ class SpecialNuke extends SpecialPage {
 	 */
 	protected function promptForm( $userName = '' ) {
 		$out = $this->getOutput();
-		
+
 		$out->addWikiMsg( 'nuke-tools' );
 
 		$out->addHTML(
@@ -101,7 +101,7 @@ class SpecialNuke extends SpecialPage {
 	 */
 	protected function listForm( $username, $reason, $limit ) {
 		$out = $this->getOutput();
-		
+
 		$pages = $this->getNewPages( $username, $limit );
 
 		if( count( $pages ) == 0 ) {
@@ -111,7 +111,7 @@ class SpecialNuke extends SpecialPage {
 			else {
 				$out->addWikiMsg( 'nuke-nopages', $username );
 			}
-			
+
 			return $this->promptForm( $username );
 		}
 
@@ -162,7 +162,7 @@ class SpecialNuke extends SpecialPage {
 
 		foreach( $pages as $info ) {
 			list( $title, $edits, $userName ) = $info;
-			
+
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 			$thumb = $image && $image->exists() ? $image->transform( array( 'width' => 120, 'height' => 120 ), 0 ) : false;
 
@@ -213,7 +213,7 @@ class SpecialNuke extends SpecialPage {
 		} else {
 			$where['rc_user_text'] = $username;
 		}
-		
+
 		$pattern = $this->getRequest()->getText( 'pattern' );
 		if ( !is_null( $pattern ) && trim( $pattern ) !== '' ) {
 			$where[] = 'rc_title LIKE ' . $dbr->addQuotes( $pattern );
@@ -251,7 +251,7 @@ class SpecialNuke extends SpecialPage {
 	 */
 	protected function doDelete( array $pages, $reason ) {
 		$res = array();
-		
+
 		foreach( $pages as $page ) {
 			$title = Title::newFromURL( $page );
 			$file = $title->getNamespace() == NS_FILE ? wfLocalFile( $title ) : false;
@@ -268,10 +268,10 @@ class SpecialNuke extends SpecialPage {
 				$res[] = wfMsgExt( 'nuke-not-deleted', array( 'parseinline' ), $title->getPrefixedText() );
 			}
 		}
-		
+
 		$this->getOutput()->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
-		
+
 		$this->getOutput()->addWikiMsg( 'nuke-delete-more' );
 	}
-	
+
 }
