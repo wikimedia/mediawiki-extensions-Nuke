@@ -466,7 +466,7 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
  */
 $messages['de'] = array(
 	'nuke' => 'Massenlöschung von Seiten',
-	'action-nuke' => 'Seiten löschen',
+	'action-nuke' => 'Seiten massenhaft zu löschen',
 	'nuke-desc' => 'Ergänzt eine [[Special:Nuke|Spezialseite]] zur Massenlöschung von Seiten',
 	'nuke-nopages' => 'Es gibt in den „Letzten Änderungen“ keine neuen Seiten von [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|$1]] angelegt.
