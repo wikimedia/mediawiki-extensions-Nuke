@@ -672,6 +672,7 @@ $messages['eu'] = array(
 /** Persian (فارسی)
  * @author Huji
  * @author Mjbmr
+ * @author ZxxZxxZ
  */
 $messages['fa'] = array(
 	'nuke' => 'حذف دسته‌جمعی',
@@ -693,6 +694,8 @@ $messages['fa'] = array(
 	'nuke-editby' => 'ایجاد شده توسط [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "صفحهٔ '''$1''' حذف شده است.",
 	'nuke-not-deleted' => "صفحهٔ [[:$1]] را '''نمی‌توان''' حذف کرد.",
+	'nuke-pattern' => 'الگو برای نام صفحه:',
+	'nuke-nopages-global' => 'هیچ صفحهٔ جدیدی در [[Special:RecentChanges|فهرست تغییرات اخیر]] نیست.',
 );
 
 /** Finnish (Suomi)
