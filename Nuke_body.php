@@ -174,10 +174,10 @@ class SpecialNuke extends SpecialPage {
 				) .
 				'&#160;' .
 				( $thumb ? $thumb->toHtml( array( 'desc-link' => true ) ) : '' ) .
-				Linker::makeKnownLinkObj( $title ) .
+				Linker::linkKnown( $title ) .
 				'&#160;(' .
 				( $userName ? wfMsgExt( 'nuke-editby', 'parseinline', $userName ) . ',&#160;' : '' ) .
-				Linker::makeKnownLinkObj( $title, $changes, 'action=history' ) .
+				Linker::linkKnown( $title, $changes, array(), array('action' => 'history' ) ) .
 				")</li>\n" );
 		}
 
