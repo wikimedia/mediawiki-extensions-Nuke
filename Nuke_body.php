@@ -6,8 +6,8 @@ class SpecialNuke extends SpecialPage {
 		parent::__construct( 'Nuke', 'nuke' );
 	}
 
-	public function execute( $par ){
-		if( !$this->userCanExecute( $this->getUser() ) ){
+	public function execute( $par ) {
+		if( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
 		}
@@ -25,12 +25,10 @@ class SpecialNuke extends SpecialPage {
 			if ( $user ) $target = $user->getName();
 		}
 
-		$reason = $req->getText(
-			'wpReason',
-			wfMsgForContent(
-				'nuke-defaultreason',
-				$target === '' ? wfMsg( 'nuke-multiplepeople' ) : $target
-			)
+		$reason = $req->getText( 'wpReason',
+			$target === '' ?
+				wfMsgForContent( 'nuke-multiplepeople' ) :
+				wfMsgForContent( 'nuke-defaultreason', "[[Special:Contributions/$target|$target]]" )
 		);
 
 		if( $req->wasPosted()
@@ -60,6 +58,8 @@ class SpecialNuke extends SpecialPage {
 
 	/**
 	 * Prompt for a username or IP address.
+	 *
+	 * @param $userName string
 	 */
 	protected function promptForm( $userName = '' ) {
 		$out = $this->getOutput();
@@ -135,7 +135,7 @@ class SpecialNuke extends SpecialPage {
 			Xml::tags( 'p',
 				null,
 				Xml::inputLabel(
-					wfMsg( 'deletecomment' ), 'wpReason', 'wpReason', 60, $reason
+					wfMsg( 'deletecomment' ), 'wpReason', 'wpReason', 70, $reason
 				)
 			)
 		);
@@ -149,7 +149,7 @@ class SpecialNuke extends SpecialPage {
 		$out->addHTML(
 			Xml::tags( 'p',
 				null,
-				wfMsg( 'nuke-select', $this->getLang()->commaList( $links ) )
+				wfMsg( 'nuke-select', $this->getLanguage()->commaList( $links ) )
 			)
 		);
 
@@ -166,7 +166,7 @@ class SpecialNuke extends SpecialPage {
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 			$thumb = $image && $image->exists() ? $image->transform( array( 'width' => 120, 'height' => 120 ), 0 ) : false;
 
-			$changes = wfMsgExt( 'nchanges', 'parsemag', $this->getLang()->formatNum( $edits ) );
+			$changes = wfMsgExt( 'nchanges', 'parsemag', $this->getLanguage()->formatNum( $edits ) );
 
 			$out->addHTML( '<li>' .
 				Xml::check( 'pages[]', true,
@@ -174,10 +174,10 @@ class SpecialNuke extends SpecialPage {
 				) .
 				'&#160;' .
 				( $thumb ? $thumb->toHtml( array( 'desc-link' => true ) ) : '' ) .
-				$this->getSkin()->makeKnownLinkObj( $title ) .
+				Linker::makeKnownLinkObj( $title ) .
 				'&#160;(' .
 				( $userName ? wfMsgExt( 'nuke-editby', 'parseinline', $userName ) . ',&#160;' : '' ) .
-				$this->getSkin()->makeKnownLinkObj( $title, $changes, 'action=history' ) .
+				Linker::makeKnownLinkObj( $title, $changes, 'action=history' ) .
 				")</li>\n" );
 		}
 

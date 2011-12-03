@@ -22,6 +22,7 @@ put in a comment and hit the button to delete them.",
 	'nuke-list-multiple' => 'The following pages were recently created;
 put in a comment and hit the button to delete them.',
 	'nuke-defaultreason' => "Mass deletion of pages added by $1",
+	'nuke-multiplepeople'=> 'Mass deletion of recently added pages',
 	'nuke-tools'         => 'This tool allows for mass deletions of pages recently added by a given user or an IP address.
 Input the username or IP address to get a list of pages to delete, or leave blank for all users.',
 	'nuke-submit-user'   => 'Go',
@@ -30,7 +31,6 @@ Input the username or IP address to get a list of pages to delete, or leave blan
 	'nuke-select'        => 'Select: $1',
 	'nuke-userorip'      => 'Username, IP address or blank:',
 	'nuke-maxpages'      => 'Maximum number of pages:',
-	'nuke-multiplepeople'=> 'multiple users',
 	'nuke-editby'        => 'Created by [[Special:Contributions/$1|$1]]',
 	'nuke-deleted'       => "Page '''$1''' has been deleted.",
 	'nuke-not-deleted'   => "Page [[:$1]] '''could not''' be deleted.",
@@ -56,12 +56,11 @@ For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
 	'nuke-desc' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
 {{desc}}',
-	'nuke-defaultreason' => 'Reason for deletion in logs. Parameters:
-* $1 is a username or {{msg-mw|nuke-multiplepeople}} in case pages by multiple users were deleted.',
+	'nuke-defaultreason' => 'Reason for deletion in logs. Parameters: $1 is a username or IP address, with a link to their contributions.',
+	'nuke-multiplepeople' => 'Reason for deletion in logs, when pages created by multiple users were deleted.',
 	'nuke-submit-user' => '{{Identical|Go}}',
 	'right-nuke' => '{{doc-right|nuke}}',
 	'nuke-select' => '{{Identical|Select}}',
-	'nuke-multiplepeople' => 'Substituted for $1 in {{msg-mw|nuke-defaultreason}} when pages created by multiple users were deleted.',
 );
 
 /** Niuean (ko e vagahau Niuē)
