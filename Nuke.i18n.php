@@ -44,6 +44,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
  * @author Jon Harald Søby
  * @author Meno25
  * @author Purodha
+ * @author SPQRobin
  * @author Siebrand
  * @author The Evil IP address
  * @author Umherirrender
@@ -59,8 +60,11 @@ For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
 	'nuke-defaultreason' => 'Reason for deletion in logs. Parameters: $1 is a username or IP address, with a link to their contributions.',
 	'nuke-multiplepeople' => 'Reason for deletion in logs, when pages created by multiple users were deleted.',
 	'nuke-submit-user' => '{{Identical|Go}}',
+	'nuke-submit-delete' => 'Submit button to delete the selected pages.',
 	'right-nuke' => '{{doc-right|nuke}}',
-	'nuke-select' => '{{Identical|Select}}',
+	'nuke-select' => 'Parameter $1 are two links: {{msg-mw|powersearch-toggleall}} and {{msg-mw|powersearch-togglenone}} which respectively selects all pages and de-selects all pages.
+
+{{Identical|Select}}',
 );
 
 /** Niuean (ko e vagahau Niuē)
@@ -776,15 +780,15 @@ buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-list-multiple' => 'Cetes pâges ont étâ fêtes dèrriérement ;
 buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
-	'nuke-tools' => 'Ceti outil pèrmèt les suprèssions en massa de les pâges apondues dèrriérement per un utilisator encartâ ou ben per una adrèce IP.
-Buchiér lo nom d’utilisator ou ben l’adrèce IP por avêr la lista de les pâges a suprimar, ou ben lèssiér blanc por tôs los utilisators.',
+	'nuke-multiplepeople' => 'un mouél d’utilisators',
+	'nuke-tools' => 'Ceti outil pèrmèt les suprèssions en massa de les pâges apondues dèrriérement per un usanciér encartâ ou ben per una adrèce IP.
+Buchiér lo nom d’usanciér ou ben l’adrèce IP por avêr la lista de les pâges a suprimar, ou ben lèssiér blanc por tôs los usanciérs.',
 	'nuke-submit-user' => 'Validar',
 	'nuke-submit-delete' => 'Suprimar lo chouèx',
 	'right-nuke' => 'Suprimar des pâges en massa',
 	'nuke-select' => 'Chouèsésséd : $1',
 	'nuke-userorip' => 'Nom d’utilisator, adrèce IP ou ben vouedo :',
 	'nuke-maxpages' => 'Nombro lo ples grant de pâges :',
-	'nuke-multiplepeople' => 'un mouél d’utilisators',
 	'nuke-editby' => 'Fêt per [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La pâge '''$1''' at étâ suprimâ.",
 	'nuke-not-deleted' => "La pâge [[:$1]] '''pôt pas''' étre suprimâ.",
@@ -1599,22 +1603,22 @@ $messages['nds-nl'] = array(
  */
 $messages['nl'] = array(
 	'nuke' => 'Massaal verwijderen',
-	'action-nuke' => "massaal pagina's verwijderen",
+	'action-nuke' => "massaal pagina's te verwijderen",
 	'nuke-desc' => "Geeft beheerders de mogelijkheid om [[Special:Nuke|massaal pagina's te verwijderen]]",
 	'nuke-nopages' => "Geen nieuwe pagina's van [[Special:Contributions/$1|$1]] in de recente wijzigingen.",
 	'nuke-list' => "De onderstaande pagina's zijn recentelijk aangemaakt door [[Special:Contributions/$1|$1]]; voer een reden in en klik op de knop om ze te verwijderen.",
 	'nuke-list-multiple' => "De volgende pagina's zijn recentelijk aangemaakt.
 Geef een reden op en klik op de knop om ze te verwijderen.",
 	'nuke-defaultreason' => "Massaal verwijderen van pagina's van $1",
+	'nuke-multiplepeople' => 'meerdere gebruikers',
 	'nuke-tools' => "Dit hulpmiddel maakt het mogelijk pagina's die recentelijk zijn aangemaakt door een gebruiker of IP-adres massaal te verwijderen.
 Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagina's of laat leeg voor alle gebruikers.",
 	'nuke-submit-user' => 'OK',
-	'nuke-submit-delete' => 'Selectie verwijderen',
+	'nuke-submit-delete' => "Geselecteerde pagina's verwijderen",
 	'right-nuke' => "Massaal pagina's verwijderen",
 	'nuke-select' => 'Selectie: $1',
 	'nuke-userorip' => 'Gebruikersnaam, IP-adres of leeg:',
 	'nuke-maxpages' => "Maximum aantal pagina's:",
-	'nuke-multiplepeople' => 'meerdere gebruikers',
 	'nuke-editby' => 'Aangemaakt door [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Pagina '''$1''' is verwijderd.",
 	'nuke-not-deleted' => "Pagina [[:$1]] '''kon niet''' worden verwijderd.",
