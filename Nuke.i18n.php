@@ -978,7 +978,7 @@ $messages['hsb'] = array(
 	'nuke-list-multiple' => 'Slědowace strony su so runje wutowrili;
 napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
 	'nuke-defaultreason' => 'Masowe wušmórnjenje stronow, kotrež buchu wot $1 wutworjene',
-	'nuke-multiplepeople' => 'wjacori ludźo',
+	'nuke-multiplepeople' => 'Masowe zhašenje njedawno přidatych stronow',
 	'nuke-tools' => 'Tutón grat zmóžnja masowe wušmórnjenje stronow, kotrež buchu wot IP-adresy abo wužiwarja přidate. Zapodaj IP-adresu abo wužiwarske mjeno, zo by lisćinu stronow dóstał, kotrež maja so wušmórnyć.',
 	'nuke-submit-user' => 'W porjadku',
 	'nuke-submit-delete' => 'Wušmórnyć',
@@ -1526,7 +1526,7 @@ $messages['ms'] = array(
 	'nuke-list-multiple' => 'Laman-laman berikut baru diwujudkan;
 isikan komen dan tekan butang untuk menghapuskannya.',
 	'nuke-defaultreason' => 'Menghapuskan laman-laman yang ditambah oleh $1 secara pukal',
-	'nuke-multiplepeople' => 'berbilang pengguna',
+	'nuke-multiplepeople' => 'Penghapusan laman yang baru ditambahkan secara pukal',
 	'nuke-tools' => 'Alat ini membolehkan penghapusan secara besar-besaran laman-laman yang dibuka oleh pengguna atau alamat IP tertentu.
 Isikan nama pengguna atau alamat IP untuk mendapat senarai laman yang hendak dikosongkan, atau biarkan kosong untuk semua pengguna.',
 	'nuke-submit-user' => 'Pergi',
