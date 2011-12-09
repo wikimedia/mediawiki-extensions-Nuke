@@ -1482,7 +1482,7 @@ $messages['ml'] = array(
 	'nuke-list-multiple' => 'താഴെക്കൊടുത്തിരിക്കുന്ന താളുകൾ അടുത്തിടെ സൃഷ്ടിച്ചതാണ്;
 അഭിപ്രായമാക്കിയിട്ട് അവ മായ്ക്കാനായി ബട്ടൺ ഞെക്കുക.',
 	'nuke-defaultreason' => '$1 ചേർത്ത താളുകൾ മൊത്തമായി മായ്ക്കുന്നതിനുള്ള സം‌വിധാനം',
-	'nuke-multiplepeople' => 'ഒന്നിലധികം പേർ',
+	'nuke-multiplepeople' => 'സമീപകാലത്ത് ചേർത്ത താളുകളുടെ കൂട്ട മായ്ക്കൽ',
 	'nuke-tools' => 'ഏതെങ്കിലും ഒരു ഉപയോക്താവ് അല്ലെങ്കിൽ ഐ.പി. സമീപകാലത്തു സൃഷ്ടിച്ച താളുകൾ കൂട്ടമായി മായ്ക്കാനുള്ള സൗകര്യം ഈ സം‌വിധാനം നൽകുന്നു. ഉപയോക്തൃനാമം അല്ലെങ്കിൽ ഐ.പി. ഇവിടെ നൽകിയാൽ മായ്ക്കേണ്ട താളുകളുടെ പട്ടിക ലഭ്യമാകുന്നതാണ്, എല്ലാ ഉപയോക്താക്കളും സൃഷ്ടിച്ചിട്ടുള്ള താൾ മായ്ക്കാൻ ശൂന്യമായിടുക.',
 	'nuke-submit-user' => 'പോകൂ',
 	'nuke-submit-delete' => 'തിരഞ്ഞെടുത്തവ മായ്ക്കുക',
@@ -1851,7 +1851,7 @@ $messages['qu'] = array(
 	'nuke-list-multiple' => "Kay qatiq p'anqakunaqa ñaqha kamarisqam;
 imatapas willapuspa butunta ñit'ipay qullunapaq.",
 	'nuke-defaultreason' => "$1-pa rurasqan p'anqakunata tawqalla qulluy",
-	'nuke-multiplepeople' => 'imaymana ruraqkuna',
+	'nuke-multiplepeople' => "Ñaqha yapasqa p'anqakunata tawqa qulluy",
 	'nuke-tools' => "Kay llamk'anawanqa huk ruraqpa icha huk IP huchhap ñaqha kamarisqan p'anqakunata tawqalla qulluytam atinki.
 Ruraqpa sutinta icha IP huchhanta yaykuchiy qulluna p'anqakunata rikunaykipaq.",
 	'nuke-submit-user' => 'Riy',
@@ -1911,7 +1911,7 @@ mitte 'nu commende e cazze sus a 'u buttone pe scangellarle.",
 	'nuke-list-multiple' => "Le pàggene seguende onne state ccrejate recendemende;
 mitte 'nu commende e cazze 'u buttone pe scangellarle.",
 	'nuke-defaultreason' => 'Scangellazzione de masse de le pàggene aggiunde da $1',
-	'nuke-multiplepeople' => 'utinde multiple',
+	'nuke-multiplepeople' => 'Scangellazione massive de le pàggene aggiunde de recende',
 	'nuke-tools' => "Stu strumende permette le scangellazziune de masse de le pàggene aggiunde de recende da 'nu certe utende o IP.<br />
 Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de scangellà, o lasse vianghe pe tutte l'utinde.",
 	'nuke-submit-user' => 'Veje',
@@ -1923,6 +1923,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'nuke-editby' => 'Ccrejate da [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Pàgene '''$1''' ha state scangellate.",
 	'nuke-not-deleted' => "Pàgene [[:$1]] '''non ge pò''' essere scangellate.",
+	'nuke-pattern' => "Segnaposte pu nomed'a pàgene:",
 );
 
 /** Russian (Русский)
