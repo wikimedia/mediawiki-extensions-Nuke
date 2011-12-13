@@ -16,7 +16,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'name'           => 'Nuke',
 	'descriptionmsg' => 'nuke-desc',
 	'author'         => 'Brion Vibber',
-	'url'            => 'http://www.mediawiki.org/wiki/Extension:Nuke',
+	'url'            => 'https://www.mediawiki.org/wiki/Extension:Nuke',
 	'version'        => Nuke_VERSION,
 );
 
