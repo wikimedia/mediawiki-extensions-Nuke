@@ -1289,6 +1289,7 @@ $messages['kn'] = array(
  */
 $messages['ko'] = array(
 	'nuke' => '문서 대량 삭제',
+	'action-nuke' => '문서를 대량 삭제할',
 	'nuke-desc' => '관리자가 문서를 [[Special:Nuke|대량 삭제]]할 수 있는 기능을 추가합니다.',
 	'nuke-nopages' => '최근에 [[Special:Contributions/$1|$1]] 사용자가 만든 문서가 없습니다.',
 	'nuke-list' => '다음은 [[Special:Contributions/$1|$1]]이(가) 최근에 만든 문서입니다.
@@ -1296,7 +1297,7 @@ $messages['ko'] = array(
 	'nuke-list-multiple' => '다음은 최근에 생성된 문서입니다.
 문서를 삭제하려면 이유를 입력하고 삭제 버튼을 누르십시오.',
 	'nuke-defaultreason' => '$1이(가) 작성한 문서를 대량 삭제함',
-	'nuke-multiplepeople' => '다수의 편집자',
+	'nuke-multiplepeople' => '최근 작성된 문서를 대량 삭제함',
 	'nuke-tools' => '이 도구를 이용해 특정 사용자나 IP 사용자가 최근 생성한 문서를 대량으로 삭제할 수 있습니다.
 삭제할 문서 목록을 가져오려면 계정 이름이나 IP 주소를 입력하십시오. 입력하지 않으면 모든 사용자를 대상으로 합니다.',
 	'nuke-submit-user' => '계속',
@@ -1306,6 +1307,11 @@ $messages['ko'] = array(
 	'nuke-userorip' => '계정 이름이나 IP 주소 (혹은 공란으로 남겨 두십시오):',
 	'nuke-maxpages' => '문서의 최대 크기:',
 	'nuke-editby' => '[[Special:Contributions/$1|$1]]이(가) 생성함',
+	'nuke-deleted' => "문서 '''$1'''이(가) 삭제되었습니다.",
+	'nuke-not-deleted' => "문서 [[:$1]]를 삭제하지 '''못했습니다'''.",
+	'nuke-delete-more' => '[[Special:Nuke|더 많은 문서를 삭제하기]]',
+	'nuke-pattern' => '문서 이름의 패턴:',
+	'nuke-nopages-global' => '[[Special:RecentChanges|최근 바뀜]]에 새 문서가 없습니다.',
 );
 
 /** Krio (Krio)
