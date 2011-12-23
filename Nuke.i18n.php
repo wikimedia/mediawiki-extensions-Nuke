@@ -1936,6 +1936,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 );
 
 /** Russian (Русский)
+ * @author Eugrus
  * @author HalanTul
  * @author VasilievVV
  * @author Александр Сигачёв
@@ -1948,7 +1949,7 @@ $messages['ru'] = array(
 	'nuke-list-multiple' => 'Следующие страницы были недавно созданы.
 Оставьте примечание и нажмите кнопку, чтобы удалить их.',
 	'nuke-defaultreason' => 'Множественное удаление страниц, созданных участником $1',
-	'nuke-multiplepeople' => 'нескольких участников',
+	'nuke-multiplepeople' => 'Массовое удаление недавно добавленных страниц',
 	'nuke-tools' => 'Эта страница позволяет множественно удалять страницы, недавно созданные определённым участником или с заданного IP-адреса.
 Введите имя участника или IP-адрес, чтобы получить список страниц для удаления, или оставьте поле пустым, если хотите выбрать всех участников.',
 	'nuke-submit-user' => 'Выполнить',
@@ -1961,6 +1962,8 @@ $messages['ru'] = array(
 	'nuke-deleted' => "Страница '''$1''' была удалена.",
 	'nuke-not-deleted' => "Страницы  [[:$1]] '''не может''' быть удалена.",
 	'nuke-delete-more' => '[[Special:Nuke|Удаление нескольких страниц]]',
+	'nuke-pattern' => 'Шаблон для имени страницы:',
+	'nuke-nopages-global' => 'В [[Special:RecentChanges|недавних изменениях]] нет новых страниц.',
 );
 
 /** Rusyn (Русиньскый)
@@ -2114,7 +2117,8 @@ $messages['sr-el'] = array(
 	'nuke-nopages' => 'Nema novih stranica od strane korisnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.',
 	'nuke-list' => 'Sledeće stranice je skoro napravio korisnik [[Special:Contributions/$1|$1]]; komentariši i pritisni dugme za njihovo brisanje.',
 	'nuke-defaultreason' => 'Masovno brisanje stranica koje je napravio korisnik $1.',
-	'nuke-tools' => 'Ovo oruđe omogućava masovno brisanje stranica koje je skoro dodao određeni korisnik (registrovan ili ne). Unesi korisničko ime ili IP adresu za dobijanje spiska stranica za brisanje.',
+	'nuke-tools' => 'Ova alatka omogućava zbirno brisanje stranica koje je nedavno dodao određeni korisnik (sa nalogom ili bez njega).
+Unesite korisničko ime ili IP adresu da biste dobili spisak stranica za brisanje, ili ostavite prazno ako želite da se navedu svi korisnici.',
 	'nuke-submit-user' => 'Idi',
 	'nuke-submit-delete' => 'Obriši obeleženo',
 	'right-nuke' => 'Masovno brisanje strana.',
@@ -2461,6 +2465,7 @@ $messages['yue'] = array(
  */
 $messages['zh-hans'] = array(
 	'nuke' => '大量删除',
+	'action-nuke' => '大量删除页面',
 	'nuke-desc' => '让管理员可以[[Special:Nuke|大量删除]]页面',
 	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|$1]]创建的新页面。',
 	'nuke-list' => '以下为[[Special:Contributions/$1|$1]]最近创建的页面，请填写注释并点击按钮删除它们。',
@@ -2486,6 +2491,7 @@ $messages['zh-hans'] = array(
  */
 $messages['zh-hant'] = array(
 	'nuke' => '大量刪除',
+	'action-nuke' => '大量刪除頁面',
 	'nuke-desc' => '給操作員作出[[Special:Nuke|大量刪除]]的能力',
 	'nuke-nopages' => '在最近更改中沒有 [[Special:Contributions/$1|$1]] 所作的新頁面。',
 	'nuke-list' => '以下的頁面是由[[Special:Contributions/$1|$1]]在以前所寫的；記下一個註解再點擊按鈕去刪除它們。',
