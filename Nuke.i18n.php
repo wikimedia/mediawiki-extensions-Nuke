@@ -645,12 +645,14 @@ Introduzca el nombre de usuario o la dirección IP para obtener la lista de pág
  */
 $messages['et'] = array(
 	'nuke' => 'Lauskustutamine',
+	'action-nuke' => 'lehekülgi lauskustutada',
 	'nuke-desc' => 'Võimaldab administraatoritel lehekülgede [[Special:Nuke|lauskustutamist]].',
 	'nuke-nopages' => 'Viimaste muudatuste all pole uusi kasutaja [[Special:Contributions/$1|$1]] loodud lehekülgi.',
 	'nuke-list' => 'Kasutaja [[Special:Contributions/$1|$1]] on hiljuti loonud järgnevad leheküljed. Enne kustutamist sisesta kommentaar.',
 	'nuke-list-multiple' => 'Järgmised leheküljed on hiljuti loodud.
 Sisesta kommentaar ja klõpsa kustutamisnuppu.',
 	'nuke-defaultreason' => 'Kasutaja $1 lisatud lehekülgede lauseemaldamine',
+	'nuke-multiplepeople' => 'Hiljuti lisatud lehekülgede lauskustutamine',
 	'nuke-tools' => 'See tööriist võimaldab kasutaja või IP-aadressi hiljuti lisatud leheküljed lauskustutada.
 Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-aadress. Kõigi kasutajate lisatud lehekülgede jaoks jäta väli tühjaks.',
 	'nuke-submit-user' => 'Mine',
@@ -662,6 +664,8 @@ Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-a
 	'nuke-editby' => 'Alustanud [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Lehekülg '''$1''' on kustutatud.",
 	'nuke-not-deleted' => "Lehekülge [[:$1]] '''ei saa''' kustutada.",
+	'nuke-delete-more' => '[[Special:Nuke|Kustuta veel lehekülgi]]',
+	'nuke-nopages-global' => '[[Special:RecentChanges|Viimaste muudatuste]] all pole uusi lehekülgi.',
 );
 
 /** Basque (Euskara)
@@ -724,7 +728,7 @@ Lisää kommentti ja poista napsauttamalla painiketta.',
 	'nuke-list-multiple' => 'Seuraavat sivut tehtiin äskettäin.
 Lisää kommentti ja poista napsauttamalla painiketta.',
 	'nuke-defaultreason' => 'Käyttäjän $1 lisäämien sivujen massapoistaminen',
-	'nuke-multiplepeople' => 'monta käyttäjää',
+	'nuke-multiplepeople' => 'Äskettäin lisättyjen sivujen massapoistaminen',
 	'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP-osoitteen perusteella.
 Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista, tai jätä kenttä tyhjäksi niin saat kaikkien käyttäjien tekemät sivut.',
 	'nuke-submit-user' => 'Siirry',
@@ -737,6 +741,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 	'nuke-deleted' => "Sivu '''$1''' on poistettu.",
 	'nuke-not-deleted' => "Sivua [[:$1]] '''ei voitu''' poistaa.",
 	'nuke-delete-more' => '[[Special:Nuke|Poista lisää sivuja]]',
+	'nuke-pattern' => 'Sivun nimien etuliite:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|Tuoreissa muutoksissa]] ei ole uusia sivuja.',
 );
 
@@ -1150,6 +1155,7 @@ Tilgreindu notendanafn eða vistfang til að fá lista yfir síður til að eyð
  * @author Beta16
  * @author BrokenArrow
  * @author Darth Kule
+ * @author F. Cosoleto
  */
 $messages['it'] = array(
 	'nuke' => 'Cancellazione di massa',
@@ -1171,6 +1177,7 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
 	'nuke-editby' => 'Creato da [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La pagina '''$1''' è stata cancellata.",
 	'nuke-not-deleted' => "La pagina [[:$1]] '''non può''' essere cancellata.",
+	'nuke-nopages-global' => 'Non ci sono nuove pagine negli [[Special:RecentChanges|ultimi cambiamenti]].',
 );
 
 /** Japanese (日本語)
@@ -1587,6 +1594,33 @@ $messages['nah'] = array(
 	'nuke-submit-user' => 'Yāuh',
 );
 
+/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+ * @author Event
+ * @author Jon Harald Søby
+ * @author Nghtwlkr
+ */
+$messages['nb'] = array(
+	'nuke' => 'Massesletting',
+	'nuke-desc' => 'Gir administratorer muligheten til å [[Special:Nuke|masseslette]] sider',
+	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringer.',
+	'nuke-list' => 'Følgende sider ble nylig opprettet av [[Special:Contributions/$1|$1]]; skriv inn en slettingsgrunn og trykk på knappen for å slette alle sidene.',
+	'nuke-list-multiple' => 'Følgende sider ble nylig opprettet;
+sett inn en kommentar og trykk på knappen for å slette dem.',
+	'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
+	'nuke-multiplepeople' => 'flere brukere',
+	'nuke-tools' => 'Dette verktøyet muliggjør massesletting av sider som nylig er opprettet av gitt bruker eller IP-adresse.
+Skriv et brukernavn eller en IP-adresse for å få en liste over sider som kan slettes, eller angi tomt for alle brukere.',
+	'nuke-submit-user' => 'Gå',
+	'nuke-submit-delete' => 'Slett valgte',
+	'right-nuke' => 'Slette sider <i>en masse</i>',
+	'nuke-select' => 'Velg: $1',
+	'nuke-userorip' => 'Brukernavn, IP-adresse eller tomt:',
+	'nuke-maxpages' => 'Maksimalt antall sider:',
+	'nuke-editby' => 'Opprettet av [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Side '''$1''' ble slettet.",
+	'nuke-not-deleted' => "Side [[:$1]] ''kunne ikke''' slettes.",
+);
+
 /** Low German (Plattdüütsch)
  * @author Slomox
  */
@@ -1661,33 +1695,6 @@ Skriv inn eit brukarnamn eller ei IP-adressa for å få ei lista over sider som 
 	'right-nuke' => 'Masseslett sider',
 	'nuke-select' => 'Vel: $1',
 	'nuke-editby' => 'Oppretta av [[Special:Contributions/$1|$1]]',
-);
-
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
- * @author Event
- * @author Jon Harald Søby
- * @author Nghtwlkr
- */
-$messages['nb'] = array(
-	'nuke' => 'Massesletting',
-	'nuke-desc' => 'Gir administratorer muligheten til å [[Special:Nuke|masseslette]] sider',
-	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringer.',
-	'nuke-list' => 'Følgende sider ble nylig opprettet av [[Special:Contributions/$1|$1]]; skriv inn en slettingsgrunn og trykk på knappen for å slette alle sidene.',
-	'nuke-list-multiple' => 'Følgende sider ble nylig opprettet;
-sett inn en kommentar og trykk på knappen for å slette dem.',
-	'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
-	'nuke-multiplepeople' => 'flere brukere',
-	'nuke-tools' => 'Dette verktøyet muliggjør massesletting av sider som nylig er opprettet av gitt bruker eller IP-adresse.
-Skriv et brukernavn eller en IP-adresse for å få en liste over sider som kan slettes, eller angi tomt for alle brukere.',
-	'nuke-submit-user' => 'Gå',
-	'nuke-submit-delete' => 'Slett valgte',
-	'right-nuke' => 'Slette sider <i>en masse</i>',
-	'nuke-select' => 'Velg: $1',
-	'nuke-userorip' => 'Brukernavn, IP-adresse eller tomt:',
-	'nuke-maxpages' => 'Maksimalt antall sider:',
-	'nuke-editby' => 'Opprettet av [[Special:Contributions/$1|$1]]',
-	'nuke-deleted' => "Side '''$1''' ble slettet.",
-	'nuke-not-deleted' => "Side [[:$1]] ''kunne ikke''' slettes.",
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
@@ -2348,7 +2355,7 @@ $messages['uk'] = array(
 	'nuke-list-multiple' => 'Ці сторінки були нещодавно створені.
 Залиште примітку й натисніть кнопку, щоб вилучити.',
 	'nuke-defaultreason' => 'Масове вилучення сторінок, створених користувачем $1',
-	'nuke-multiplepeople' => 'декількох користувачів',
+	'nuke-multiplepeople' => 'Масове вилучення недавно доданих сторінок',
 	'nuke-tools' => "Цей інструмент дозволяє масово вилучати сторінки, створені певним користувачем або з певної IP-адреси.
 Уведіть ім'я користувача або IP-адресу для того, щоб отримати список сторінок для вилучення, або залиште поле порожнім для вибору усіх користувачів.",
 	'nuke-submit-user' => 'Виконати',
@@ -2471,7 +2478,7 @@ $messages['zh-hans'] = array(
 	'nuke-list' => '以下为[[Special:Contributions/$1|$1]]最近创建的页面，请填写注释并点击按钮删除它们。',
 	'nuke-list-multiple' => '以下为最近创建的页面，请填写注释并点击按钮删除它们。',
 	'nuke-defaultreason' => '大量删除$1创建的页面',
-	'nuke-multiplepeople' => '多个用户',
+	'nuke-multiplepeople' => '大量删除最近添加的页面',
 	'nuke-tools' => '此工具允许大量删除指定用户或IP地址在最近创建的页面。输入用户名或IP地址可获取可删除页面列表，留白则检索所有用户。',
 	'nuke-submit-user' => '执行',
 	'nuke-submit-delete' => '删除所选',
@@ -2482,6 +2489,9 @@ $messages['zh-hans'] = array(
 	'nuke-editby' => '由[[Special:Contributions/$1|$1]]创建',
 	'nuke-deleted' => "已删除页面'''$1'''。",
 	'nuke-not-deleted' => "'''无法'''删除[[:$1]]页面。",
+	'nuke-delete-more' => '[[Special:Nuke|删除更多页面]]',
+	'nuke-pattern' => '页面名称的模式：',
+	'nuke-nopages-global' => '[[Special:RecentChanges|最近更改]]中没有新的页面。',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
