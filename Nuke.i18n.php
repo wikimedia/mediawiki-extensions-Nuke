@@ -1668,7 +1668,7 @@ Skriv inn eit brukarnamn eller ei IP-adressa for å få ei lista over sider som 
  * @author Jon Harald Søby
  * @author Nghtwlkr
  */
-$messages['no'] = array(
+$messages['nb'] = array(
 	'nuke' => 'Massesletting',
 	'nuke-desc' => 'Gir administratorer muligheten til å [[Special:Nuke|masseslette]] sider',
 	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringer.',
