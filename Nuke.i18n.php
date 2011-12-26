@@ -1177,6 +1177,8 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
 	'nuke-editby' => 'Creato da [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La pagina '''$1''' è stata cancellata.",
 	'nuke-not-deleted' => "La pagina [[:$1]] '''non può''' essere cancellata.",
+	'nuke-delete-more' => '[[Special:Nuke|Elimina più pagine]]',
+	'nuke-pattern' => 'Modello per il titolo della pagina:',
 	'nuke-nopages-global' => 'Non ci sono nuove pagine negli [[Special:RecentChanges|ultimi cambiamenti]].',
 );
 
@@ -1797,9 +1799,18 @@ ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
-	'nuke-multiplepeople' => 'ګڼ کارنان',
+	'nuke' => 'ټول ړنګېدنه',
+	'action-nuke' => 'نيوک مخونه',
+	'nuke-multiplepeople' => 'د تازه راګډ شويو مخونو ټول ړنګېدنه',
 	'nuke-submit-user' => 'ورځه',
 	'nuke-submit-delete' => 'ټاکل شوی ړنګول',
+	'right-nuke' => 'د ټول ړنګېدنې مخونه',
+	'nuke-select' => 'ټاکل: $1',
+	'nuke-userorip' => 'کارن-نوم، آي پي پته يا تش:',
+	'nuke-maxpages' => 'د حد اکثر شمېر مخونه:',
+	'nuke-deleted' => "د '''$1''' مخ ړنګ شو.",
+	'nuke-not-deleted' => "د [[:$1]] مخ '''نشي''' ړنګېدلی.",
+	'nuke-delete-more' => '[[Special:Nuke|لا نور مخونه ړنګول]]',
 );
 
 /** Portuguese (Português)
