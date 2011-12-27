@@ -616,6 +616,7 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
  * @author Crazymadlover
  * @author DJ Nietzsche
  * @author Dferg
+ * @author Imre
  * @author Jatrobat
  * @author Remember the dot
  * @author Sanbec
@@ -635,9 +636,11 @@ Introduzca el nombre de usuario o la dirección IP para obtener la lista de pág
 	'nuke-submit-delete' => 'Borrar lo seleccionado',
 	'right-nuke' => 'Borrar páginas masivamente',
 	'nuke-select' => 'Seleccionar: $1',
+	'nuke-userorip' => 'Nombre de usuario, dirección IP o en blanco:',
 	'nuke-maxpages' => 'Número máximo de páginas:',
 	'nuke-deleted' => "La página '''$1''' ha sido borrada.",
 	'nuke-not-deleted' => "La página [[:$1]] '''no se ha podido''' borrar.",
+	'nuke-delete-more' => '[[Special:Nuke|Borrar más páginas]]',
 );
 
 /** Estonian (Eesti)
@@ -1159,6 +1162,7 @@ Tilgreindu notendanafn eða vistfang til að fá lista yfir síður til að eyð
  */
 $messages['it'] = array(
 	'nuke' => 'Cancellazione di massa',
+	'action-nuke' => 'cancellare in massa le pagine',
 	'nuke-desc' => 'Consente agli amministratori la [[Special:Nuke|cancellazione in massa]] delle pagine',
 	'nuke-nopages' => 'Non sono state trovate nuove pagine create da [[Special:Contributions/$1|$1]] tra le modifiche recenti.',
 	'nuke-list' => 'Le seguenti pagine sono state create di recente da [[Special:Contributions/$1|$1]]; inserisci un commento e conferma la cancellazione.',
@@ -1177,7 +1181,7 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
 	'nuke-editby' => 'Creato da [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La pagina '''$1''' è stata cancellata.",
 	'nuke-not-deleted' => "La pagina [[:$1]] '''non può''' essere cancellata.",
-	'nuke-delete-more' => '[[Special:Nuke|Elimina più pagine]]',
+	'nuke-delete-more' => '[[Special:Nuke|Cancella più pagine]]',
 	'nuke-pattern' => 'Modello per il titolo della pagina:',
 	'nuke-nopages-global' => 'Non ci sono nuove pagine negli [[Special:RecentChanges|ultimi cambiamenti]].',
 );
@@ -2518,7 +2522,7 @@ $messages['zh-hant'] = array(
 	'nuke-list' => '以下的頁面是由[[Special:Contributions/$1|$1]]在以前所寫的；記下一個註解再點擊按鈕去刪除它們。',
 	'nuke-list-multiple' => '以下為最近創建的頁面，請填寫註釋並點擊按鈕刪除它們。',
 	'nuke-defaultreason' => '大量刪除由 $1 所建立的頁面',
-	'nuke-multiplepeople' => '多個用戶',
+	'nuke-multiplepeople' => '大量刪除最近添加的頁面',
 	'nuke-tools' => '此工具允許大量刪除指定用戶或IP地址在最近創建的頁面。輸入用戶名或IP地址可獲取可刪除頁面列表，留白則檢索所有用戶。',
 	'nuke-submit-user' => '執行',
 	'nuke-submit-delete' => '刪除已選擇的',
@@ -2529,5 +2533,8 @@ $messages['zh-hant'] = array(
 	'nuke-editby' => '由[[Special:Contributions/$1|$1]]創建',
 	'nuke-deleted' => "'''$1'''頁面已刪除。",
 	'nuke-not-deleted' => "'''無法'''刪除[[:$1]]頁面。",
+	'nuke-delete-more' => '[[Special:Nuke|刪除更多頁面]]',
+	'nuke-pattern' => '頁面名稱的模式：',
+	'nuke-nopages-global' => '[[Special:RecentChanges|最近更改]]中沒有新的頁面。',
 );
 
