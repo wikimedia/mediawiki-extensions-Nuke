@@ -936,6 +936,7 @@ $messages['he'] = array(
 );
 
 /** Hindi (हिन्दी)
+ * @author Ansumang
  * @author Kaustubh
  * @author Shyam
  */
@@ -950,6 +951,7 @@ $messages['hi'] = array(
 	'nuke-submit-user' => 'जायें',
 	'nuke-submit-delete' => 'चुने हुए हटायें',
 	'right-nuke' => 'बहुतसे पन्ने एकसाथ हटायें',
+	'nuke-select' => 'चयन करें: $1',
 );
 
 /** Hiligaynon (Ilonggo)
@@ -1007,6 +1009,7 @@ napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
 
 /** Hungarian (Magyar)
  * @author Dani
+ * @author Dj
  * @author Dorgan
  * @author KossuthRad
  */
@@ -1016,7 +1019,7 @@ $messages['hu'] = array(
 	'nuke-nopages' => 'Nincsenek új oldalak [[Special:Contributions/$1|$1]] az aktuális események között.',
 	'nuke-list' => 'Az alábbi lapokat nem rég készítette [[Special:Contributions/$1|$1]]; adj meg egy indoklást, és kattints a gombra a törlésükhöz.',
 	'nuke-defaultreason' => '$1 által készített lapok tömeges eltávolítása',
-	'nuke-tools' => 'Ez az eszköz lehetővé teszi egy adott felhasználó vagy IP által nem rég készített lapok tömeges törlését. Add meg a felhasználónevet vagy az IP-címet, hogy lekérd a törlendő lapok listáját:',
+	'nuke-tools' => 'Ez az eszköz lehetővé teszi egy adott felhasználó vagy IP által nem rég készített lapok tömeges törlését. Add meg a felhasználónevet vagy az IP-címet, hogy lekérd a törlendő lapok listáját, vagy hagyd üresen az összes felhasználóhoz.',
 	'nuke-submit-user' => 'Menj',
 	'nuke-submit-delete' => 'Kijelöltek törlése',
 	'right-nuke' => 'oldalak tömeges törlése',
@@ -1746,6 +1749,7 @@ $messages['pdc'] = array(
  * @author Derbeth
  * @author Leinad
  * @author Nux
+ * @author Olgak85
  * @author Sp5uhe
  */
 $messages['pl'] = array(
@@ -1757,7 +1761,7 @@ $messages['pl'] = array(
 	'nuke-list-multiple' => 'Poniższa lista przedstawia ostatnio dodane strony.
 Wpisz powód, a następnie zatwierdź usunięcie stron.',
 	'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1',
-	'nuke-multiplepeople' => 'wielu użytkowników',
+	'nuke-multiplepeople' => 'Masowe usuwanie ostatnio dodanych stron',
 	'nuke-tools' => 'Narzędzie pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika.
 Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. Możesz także nic nie wpisywać, wtedy będzie można masowo usunąć wkład wszystkich użytkowników.',
 	'nuke-submit-user' => 'Dalej',
@@ -1770,6 +1774,7 @@ Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. 
 	'nuke-deleted' => "Strona '''$1''' została usunięta.",
 	'nuke-not-deleted' => "Strony [[:$1]] '''nie można''' usunąć.",
 	'nuke-delete-more' => '[[Special:Nuke|Usuń więcej stron]]',
+	'nuke-pattern' => 'Wzór dla nazwy strony:',
 	'nuke-nopages-global' => 'Brak nowych stron w [[Special:RecentChanges|ostatnich zmianach]].',
 );
 
@@ -2053,9 +2058,11 @@ $messages['scn'] = array(
 
 /** Sinhala (සිංහල)
  * @author නන්දිමිතුරු
+ * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
 	'nuke-submit-user' => 'යන්න',
+	'nuke-select' => 'තෝරන්න: $1',
 );
 
 /** Slovak (Slovenčina)
@@ -2118,6 +2125,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
  */
 $messages['sr-ec'] = array(
 	'nuke' => 'Масовно брисање',
+	'action-nuke' => 'масовно брисање страница',
 	'nuke-desc' => 'Даје администратору могућност да [[Special:Nuke|масовно брише]] странице.',
 	'nuke-nopages' => 'Нема нових страница од стране корисника [[Special:Contributions/$1|$1]] у скорашњим изменама.',
 	'nuke-list' => 'Следеће странице је скоро направио корисник [[Special:Contributions/$1|$1]]; коментариши и притисни дугме за њихово брисање.',
@@ -2191,7 +2199,7 @@ $messages['sv'] = array(
 	'nuke-list-multiple' => 'Följande sidor skapades nyligen;
 skriv in en kommentar och tryck på knappen för att radera dem.',
 	'nuke-defaultreason' => 'Massradering av sidor skapade av $1',
-	'nuke-multiplepeople' => 'flera användare',
+	'nuke-multiplepeople' => 'Massradering av nyligen tillagda sidor',
 	'nuke-tools' => 'Det här verktyget gör det möjligt att massradera sidor som nyligen skapats av en viss användare eller IP-adress.
 Ange användarnamnet eller IP-adressen för att se en lista över sidor som kan tas bort, eller lämna tomt för alla användare.',
 	'nuke-submit-user' => 'Visa',
