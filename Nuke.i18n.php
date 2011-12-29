@@ -618,18 +618,20 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
  * @author Dferg
  * @author Imre
  * @author Jatrobat
+ * @author Platonides
  * @author Remember the dot
  * @author Sanbec
  */
 $messages['es'] = array(
 	'nuke' => 'Borrado en masa',
+	'action-nuke' => 'Destruir páginas',
 	'nuke-desc' => 'Da a los administradores la posibilidad de [[Special:Nuke|borrar páginas de forma masiva]]',
 	'nuke-nopages' => 'No hay páginas nuevas de [[Special:Contributions/$1|$1]] en los cambios recientes.',
 	'nuke-list' => '[[Special:Contributions/$1|$1]] creó recientemente las siguientes páginas;
 escriba un comentario y haga clic en el botón para borrarlas.',
 	'nuke-list-multiple' => 'Las siguientes páginas han sido creadas recientemente; introduce un comentario y pulsa el botón para eliminarlas.',
 	'nuke-defaultreason' => 'Eliminación en masa de páginas añadidas por $1',
-	'nuke-multiplepeople' => 'varios usuarios',
+	'nuke-multiplepeople' => 'Eliminación masiva de páginas nuevas de múltiples usuarios',
 	'nuke-tools' => 'Esta herramienta permite borrados masivos de páginas creadas recientemente por un usuario o una dirección IP.
 Introduzca el nombre de usuario o la dirección IP para obtener la lista de páginas a borrar, o déjelo en blanco para todos los usuarios.',
 	'nuke-submit-user' => 'Ir',
@@ -638,9 +640,12 @@ Introduzca el nombre de usuario o la dirección IP para obtener la lista de pág
 	'nuke-select' => 'Seleccionar: $1',
 	'nuke-userorip' => 'Nombre de usuario, dirección IP o en blanco:',
 	'nuke-maxpages' => 'Número máximo de páginas:',
+	'nuke-editby' => 'Creado por [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La página '''$1''' ha sido borrada.",
 	'nuke-not-deleted' => "La página [[:$1]] '''no se ha podido''' borrar.",
 	'nuke-delete-more' => '[[Special:Nuke|Borrar más páginas]]',
+	'nuke-pattern' => 'Patrón del título de la página:',
+	'nuke-nopages-global' => 'No hay nuevas páginas en los [[Special:RecentChanges|cambios recientes]].',
 );
 
 /** Estonian (Eesti)
@@ -744,7 +749,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 	'nuke-deleted' => "Sivu '''$1''' on poistettu.",
 	'nuke-not-deleted' => "Sivua [[:$1]] '''ei voitu''' poistaa.",
 	'nuke-delete-more' => '[[Special:Nuke|Poista lisää sivuja]]',
-	'nuke-pattern' => 'Sivun nimien etuliite:',
+	'nuke-pattern' => 'Sivun nimien etuliite',
 	'nuke-nopages-global' => '[[Special:RecentChanges|Tuoreissa muutoksissa]] ei ole uusia sivuja.',
 );
 
@@ -1441,7 +1446,10 @@ $messages['lt'] = array(
 	'nuke-submit-delete' => 'Ištrinti pasirinktus(ą)',
 	'right-nuke' => 'Masinis puslapių trynėjas',
 	'nuke-select' => 'Pasirinkite: $1',
+	'nuke-userorip' => 'Vartotojo vardas, IP adresas arba tuščia:',
 	'nuke-maxpages' => 'Didžiausias puslapių skaičius:',
+	'nuke-deleted' => "Puslapis '''$1''' buvo ištrintas.",
+	'nuke-not-deleted' => "Puslapis [[:$1]] '''negalimas''' ištrinti.",
 );
 
 /** Literary Chinese (文言) */
@@ -1726,6 +1734,23 @@ $messages['oc'] = array(
 	'nuke-submit-user' => 'Validar',
 	'nuke-submit-delete' => 'Supression seleccionada',
 	'right-nuke' => 'Suprimir de paginas en massa',
+);
+
+/** Oriya (ଓଡ଼ିଆ)
+ * @author Jnanaranjan Sahu
+ * @author Psubhashish
+ */
+$messages['or'] = array(
+	'nuke-submit-user' => 'ଯିବେ',
+	'nuke-submit-delete' => 'ବାଛିଥିବାଗୁଡିକ ଲିଭାଇବେ',
+	'right-nuke' => 'ସମୂହପୃଷ୍ଠା ଲିଭେଇବେ',
+	'nuke-select' => 'ବାଛିବେ : $1',
+	'nuke-userorip' => 'ବ୍ୟବହାରକାରୀ ନାମ, ଆଇପି ଠିକଣା କିମ୍ବା ଖାଲି :',
+	'nuke-maxpages' => 'ଅତ୍ୟଧିକ ସଂଖ୍ୟକ ପୃଷ୍ଠା :',
+	'nuke-editby' => '[[Special:Contributions/$1|$1]]ଙ୍କ ଦ୍ଵାରା ତିଆରିକରାଯାଇଛି',
+	'nuke-deleted' => "'''$1'''ପୃଷ୍ଠାଟିକୁ ଲିଭାଇ ଦିଆଗଲା ।",
+	'nuke-pattern' => 'ପୃଷ୍ଠା ନାମ ପାଇଁ ଶୈଳୀ:',
+	'nuke-nopages-global' => '[[Special:RecentChanges|ନଗଦ ବଦଳ]]ରେ ଗୋଟିଏ ବି ନୂଆ ପୃଷ୍ଠା ନାହିଁ ।',
 );
 
 /** Ossetic (Ирон)
@@ -2062,6 +2087,7 @@ $messages['scn'] = array(
  */
 $messages['si'] = array(
 	'nuke-submit-user' => 'යන්න',
+	'nuke-submit-delete' => 'තෝරාගත් දෑ මකන්න',
 	'nuke-select' => 'තෝරන්න: $1',
 );
 
