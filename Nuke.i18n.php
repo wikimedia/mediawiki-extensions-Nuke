@@ -803,14 +803,14 @@ buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-list-multiple' => 'Cetes pâges ont étâ fêtes dèrriérement ;
 buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1',
-	'nuke-multiplepeople' => 'un mouél d’utilisators',
+	'nuke-multiplepeople' => 'Suprèssions en massa de les pâges apondues dèrriérement',
 	'nuke-tools' => 'Ceti outil pèrmèt les suprèssions en massa de les pâges apondues dèrriérement per un usanciér encartâ ou ben per una adrèce IP.
 Buchiér lo nom d’usanciér ou ben l’adrèce IP por avêr la lista de les pâges a suprimar, ou ben lèssiér blanc por tôs los usanciérs.',
 	'nuke-submit-user' => 'Validar',
 	'nuke-submit-delete' => 'Suprimar lo chouèx',
 	'right-nuke' => 'Suprimar des pâges en massa',
 	'nuke-select' => 'Chouèsésséd : $1',
-	'nuke-userorip' => 'Nom d’utilisator, adrèce IP ou ben vouedo :',
+	'nuke-userorip' => 'Nom d’usanciér, adrèce IP ou ben vouedo :',
 	'nuke-maxpages' => 'Nombro lo ples grant de pâges :',
 	'nuke-editby' => 'Fêt per [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La pâge '''$1''' at étâ suprimâ.",
@@ -1810,13 +1810,14 @@ Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. 
  */
 $messages['pms'] = array(
 	'nuke' => "Scancelament d'amblé",
+	'action-nuke' => 'canselé pagine a baron',
 	'nuke-desc' => "A dà a j'aministrador l'abilitassion a [[Special:Nuke|scanselé a baron]] le pàgine",
 	'nuke-nopages' => "Gnun-a pàgine faite da [[Special:Contributions/$1|$1]] ant j'ùltim cambiament.",
 	'nuke-list' => "Ste pàgine-sì a son staite faite ant j'ùltim temp da [[Special:Contributions/$1|$1]]; ch'a lassa un coment e ch'a-i daga 'n colp ansima al boton për gaveje via tute d'amblé.",
 	'nuke-list-multiple' => "Le pàgine sì-dapress a son stàite creà da pòch;
 ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
 	'nuke-defaultreason' => "Scancelament d'amblé dle pàgine faite da $1",
-	'nuke-multiplepeople' => 'pi utent',
+	'nuke-multiplepeople' => 'Scanselassion a baron ëd pagine giontà da pòch',
 	'nuke-tools' => "St'utiss-sì a lassa scancelé d'amblé le pàgine giontà ant j'ùltim temp da un chèich utent ò da 'nt na chèicha adrëssa IP. Ch'a buta lë stranòm ò l'adrëssa IP për tiré giù na lista dle pàgine da scancelé, o ch'a lassa an bianch për tùit j'utent.",
 	'nuke-submit-user' => 'Va',
 	'nuke-submit-delete' => 'Scansela le selessionà',
@@ -1827,6 +1828,9 @@ ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
 	'nuke-editby' => 'Creà da [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "La pàgina '''$1''' a l'é stàita scancelà.",
 	'nuke-not-deleted' => "La pàgina [[:$1]] '''a peul pa''' esse scancelà.",
+	'nuke-delete-more' => '[[Special:Nuke|Scanselé pagine a baron]]',
+	'nuke-pattern' => 'Model për ël nòm pagina:',
+	'nuke-nopages-global' => 'A-i é pa gnun-e pagine neuve an [[Special:RecentChanges|cambiament recent]].',
 );
 
 /** Pashto (پښتو)
