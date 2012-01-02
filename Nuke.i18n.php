@@ -2102,9 +2102,14 @@ $messages['scn'] = array(
  * @author පසිඳු කාවින්ද
  */
 $messages['si'] = array(
+	'nuke' => 'සමස්ත මැකීම',
+	'action-nuke' => 'පිටු න්‍යෂ්ටිකරණය',
 	'nuke-submit-user' => 'යන්න',
 	'nuke-submit-delete' => 'තෝරාගත් දෑ මකන්න',
+	'right-nuke' => 'සමස්ත මැකුම් පිටු',
 	'nuke-select' => 'තෝරන්න: $1',
+	'nuke-maxpages' => 'උපරිම පිටු ගණන:',
+	'nuke-delete-more' => '[[Special:Nuke|තවත් පිටු මකන්න]]',
 );
 
 /** Slovak (Slovenčina)
@@ -2504,10 +2509,12 @@ $messages['vo'] = array(
 );
 
 /** Yiddish (ייִדיש)
+ * @author Imre
  * @author פוילישער
  */
 $messages['yi'] = array(
 	'nuke-submit-user' => 'צייגן',
+	'nuke-select' => 'אויסוויילן: $1',
 );
 
 /** Cantonese (粵語)
