@@ -2104,12 +2104,21 @@ $messages['scn'] = array(
 $messages['si'] = array(
 	'nuke' => 'සමස්ත මැකීම',
 	'action-nuke' => 'පිටු න්‍යෂ්ටිකරණය',
+	'nuke-desc' => 'පිටුවල [[Special:Nuke|සමස්ත මැකීම]] සඳහා පරිපාලකවරුන්ට අවස්ථාව දෙන්න',
+	'nuke-defaultreason' => '$1 විසින් සමස්ත මැකුම් සඳහා පිටු එක් කරන ලදී',
+	'nuke-multiplepeople' => 'මෑතකදී එක් කල පිටු සඳහා සමස්ත මැකුම',
 	'nuke-submit-user' => 'යන්න',
 	'nuke-submit-delete' => 'තෝරාගත් දෑ මකන්න',
 	'right-nuke' => 'සමස්ත මැකුම් පිටු',
 	'nuke-select' => 'තෝරන්න: $1',
+	'nuke-userorip' => 'පරිශීලකනාමය, අයිපී ලිපිනය හෝ හිස්තැන:',
 	'nuke-maxpages' => 'උපරිම පිටු ගණන:',
+	'nuke-editby' => '[[Special:Contributions/$1|$1]] විසින් තනන ලදී',
+	'nuke-deleted' => "'''$1''' පිටුව මකා දමන ලදි.",
+	'nuke-not-deleted' => "[[:$1]] පිටුව මැකිය '''නොහැක'''.",
 	'nuke-delete-more' => '[[Special:Nuke|තවත් පිටු මකන්න]]',
+	'nuke-pattern' => 'පිටුවේ නම සඳහා රටාව:',
+	'nuke-nopages-global' => '[[Special:RecentChanges|මෑත වෙනස්වීම්වල]]  නව පිටු නොමැත.',
 );
 
 /** Slovak (Slovenčina)
