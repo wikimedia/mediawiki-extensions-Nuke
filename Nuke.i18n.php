@@ -80,10 +80,13 @@ $messages['niu'] = array(
 
 /** Afrikaans (Afrikaans)
  * @author Naudefj
+ * @author පසිඳු කාවින්ද
  */
 $messages['af'] = array(
 	'nuke' => 'Massa verwyder',
 	'nuke-nopages' => 'Geen nuwe bladsye [[Special:Contributions/$1|$1]] in onlangse wysigings.',
+	'nuke-list-multiple' => "Die volgende bladsye is onlangs geskep word;
+sit dit in 'n kommentaar en druk die knoppie om dit te skrap.",
 	'nuke-defaultreason' => 'Massa verwydering van bladsye van $1',
 	'nuke-multiplepeople' => 'verskeie gebruikers',
 	'nuke-submit-user' => 'Laat waai',
@@ -95,6 +98,7 @@ $messages['af'] = array(
 	'nuke-editby' => 'Geskep deur [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Bladsy '''$1''' is verwyder.",
 	'nuke-not-deleted' => "Bladsy [[:$1]] '''kon nie''' verwyder word nie.",
+	'nuke-pattern' => 'Patroon vir die naam:',
 );
 
 /** Aragonese (Aragonés)
@@ -963,6 +967,9 @@ $messages['hi'] = array(
 	'nuke-submit-delete' => 'चुने हुए हटायें',
 	'right-nuke' => 'बहुतसे पन्ने एकसाथ हटायें',
 	'nuke-select' => 'चयन करें: $1',
+	'nuke-userorip' => 'सदस्यनाम, आईपी पते या खाली:',
+	'nuke-maxpages' => 'अधिकतम पृष्ठ संख्या:',
+	'nuke-deleted' => "पृष्ठ '''$1''' को हटा दिया गया हैं।",
 );
 
 /** Hiligaynon (Ilonggo)
