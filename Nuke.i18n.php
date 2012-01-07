@@ -264,6 +264,7 @@ $messages['be'] = array(
  */
 $messages['be-tarask'] = array(
 	'nuke' => 'Масавае выдаленьне',
+	'action-nuke' => 'масавае выдаленьне старонак',
 	'nuke-desc' => 'Дае адміністратарам магчымасьць [[Special:Nuke|масавага выдаленьня]] старонак',
 	'nuke-nopages' => 'У апошніх зьменах няма новых старонак, створаных [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Наступныя старонкі былі нядаўна створаны ўдзельнікам [[Special:Contributions/$1|$1]];
@@ -282,6 +283,9 @@ $messages['be-tarask'] = array(
 	'nuke-editby' => 'Створана [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => 'Старонка «$1» выдаленая.',
 	'nuke-not-deleted' => "Старонка [[:$1]] '''ня можа''' быць выдаленая.",
+	'nuke-delete-more' => '[[Special:Nuke|Масавае выдаленьне старонак]]',
+	'nuke-pattern' => 'Узор для назвы старонкі?',
+	'nuke-nopages-global' => 'У [[Special:RecentChanges|апошніх зьменах]] больш няма новых старонак.',
 );
 
 /** Bulgarian (Български)
