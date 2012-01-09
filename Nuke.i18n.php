@@ -284,7 +284,7 @@ $messages['be-tarask'] = array(
 	'nuke-deleted' => 'Старонка «$1» выдаленая.',
 	'nuke-not-deleted' => "Старонка [[:$1]] '''ня можа''' быць выдаленая.",
 	'nuke-delete-more' => '[[Special:Nuke|Масавае выдаленьне старонак]]',
-	'nuke-pattern' => 'Узор для назвы старонкі?',
+	'nuke-pattern' => 'Узор для назвы старонкі:',
 	'nuke-nopages-global' => 'У [[Special:RecentChanges|апошніх зьменах]] больш няма новых старонак.',
 );
 
