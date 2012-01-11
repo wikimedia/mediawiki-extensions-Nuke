@@ -7,6 +7,7 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	public function execute( $par ) {
+		
 		if( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
@@ -184,7 +185,7 @@ class SpecialNuke extends SpecialPage {
 		$out->addHTML(
 			"</ul>\n" .
 			Xml::submitButton( wfMsg( 'nuke-submit-delete' ) ) .
-			"</form>"
+			'</form>'
 		);
 	}
 
@@ -203,7 +204,6 @@ class SpecialNuke extends SpecialPage {
 			'rc_namespace',
 			'rc_title',
 			'rc_timestamp',
-			'COUNT(*) AS edits'
 		);
 
 		$where = array( "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" );
@@ -233,11 +233,28 @@ class SpecialNuke extends SpecialPage {
 		$pages = array();
 
 		foreach ( $result as $row ) {
+			// Note: 'COUNT(*) AS edits' here does not work. For some unknown reason,
+			// there sometimes are duplicate entries in recentchanges (possibly caused by importing stuff).
+			$resultEdits = $dbr->select(
+				'recentchanges',
+				array(
+					'rc_timestamp',
+				),
+				array(
+					'rc_title' => $row->rc_title,
+					'rc_namespace' => $row->rc_namespace,
+				),
+				__METHOD__,
+				array( 'DISTINCT' )
+			);
+
 			$pages[] = array(
 				Title::makeTitle( $row->rc_namespace, $row->rc_title ),
-				$row->edits,
+				$resultEdits->numRows(),
 				$username == '' ? $row->rc_user_text : false
 			);
+			
+			$dbr->freeResult( $resultEdits );
 		}
 
 		return $pages;

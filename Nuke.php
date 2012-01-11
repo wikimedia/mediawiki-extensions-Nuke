@@ -4,7 +4,7 @@ if( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-define( 'Nuke_VERSION', '1.1.3' );
+define( 'Nuke_VERSION', '1.1.4' );
 
 $dir = dirname(__FILE__) . '/';
 
@@ -15,7 +15,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'path'           => __FILE__,
 	'name'           => 'Nuke',
 	'descriptionmsg' => 'nuke-desc',
-	'author'         => 'Brion Vibber',
+	'author'         => array( 'Brion Vibber', 'Jeroen De Dauw' ),
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Nuke',
 	'version'        => Nuke_VERSION,
 );
