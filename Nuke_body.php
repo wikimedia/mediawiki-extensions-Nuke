@@ -7,7 +7,6 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	public function execute( $par ) {
-		
 		if( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
 			return;
@@ -39,20 +38,17 @@ class SpecialNuke extends SpecialPage {
 				$pages = $req->getArray( 'pages' );
 
 				if( $pages ) {
-					return $this->doDelete( $pages, $reason );
+					$this->doDelete( $pages, $reason );
+					return;
 				}
-			}
-			elseif ( $req->getVal( 'action' ) == 'submit' ) {
+			} elseif ( $req->getVal( 'action' ) == 'submit' ) {
 				$this->listForm( $target, $reason, $req->getInt( 'limit', 500 ) );
-			}
-			else {
+			} else {
 				$this->promptForm();
 			}
-		}
-		elseif ( $target === '' ) {
+		} elseif ( $target === '' ) {
 			$this->promptForm();
-		}
-		else {
+		} else {
 			$this->listForm( $target, $reason, $req->getInt( 'limit', 500 ) );
 		}
 	}
@@ -108,12 +104,12 @@ class SpecialNuke extends SpecialPage {
 		if( count( $pages ) == 0 ) {
 			if ( $username === '' ) {
 				$out->addWikiMsg( 'nuke-nopages-global' );
-			}
-			else {
+			} else {
 				$out->addWikiMsg( 'nuke-nopages', $username );
 			}
 
-			return $this->promptForm( $username );
+			$this->promptForm( $username );
+			return;
 		}
 
 		if ( $username === '' ) {
@@ -162,6 +158,9 @@ class SpecialNuke extends SpecialPage {
 		$out->addHTML( '<ul>' );
 
 		foreach( $pages as $info ) {
+			/**
+			 * @var $title title
+			 */
 			list( $title, $edits, $userName ) = $info;
 
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
@@ -253,8 +252,6 @@ class SpecialNuke extends SpecialPage {
 				$resultEdits->numRows(),
 				$username == '' ? $row->rc_user_text : false
 			);
-			
-			$dbr->freeResult( $resultEdits );
 		}
 
 		return $pages;
