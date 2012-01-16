@@ -1034,6 +1034,7 @@ napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
  * @author Dj
  * @author Dorgan
  * @author KossuthRad
+ * @author Misibacsi
  */
 $messages['hu'] = array(
 	'nuke' => 'Halmozott törlés',
@@ -1041,7 +1042,7 @@ $messages['hu'] = array(
 	'nuke-nopages' => 'Nincsenek új oldalak [[Special:Contributions/$1|$1]] az aktuális események között.',
 	'nuke-list' => 'Az alábbi lapokat nem rég készítette [[Special:Contributions/$1|$1]]; adj meg egy indoklást, és kattints a gombra a törlésükhöz.',
 	'nuke-defaultreason' => '$1 által készített lapok tömeges eltávolítása',
-	'nuke-tools' => 'Ez az eszköz lehetővé teszi egy adott felhasználó vagy IP által nem rég készített lapok tömeges törlését. Add meg a felhasználónevet vagy az IP-címet, hogy lekérd a törlendő lapok listáját, vagy hagyd üresen az összes felhasználóhoz.',
+	'nuke-tools' => 'Ez az eszköz lehetővé teszi egy adott felhasználó vagy IP által nemrég készített lapok tömeges törlését. Add meg a felhasználónevet vagy az IP-címet, ezzel megkapod a törölhető lapok listáját. Ha nem adsz meg nevet, az összes felhasználót listázza.',
 	'nuke-submit-user' => 'Menj',
 	'nuke-submit-delete' => 'Kijelöltek törlése',
 	'right-nuke' => 'oldalak tömeges törlése',
