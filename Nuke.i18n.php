@@ -2018,11 +2018,13 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 /** Russian (Русский)
  * @author Eugrus
  * @author HalanTul
+ * @author KPu3uC B Poccuu
  * @author VasilievVV
  * @author Александр Сигачёв
  */
 $messages['ru'] = array(
 	'nuke' => 'Множественное удаление',
+	'action-nuke' => 'массовое удаление страниц',
 	'nuke-desc' => 'Даёт администраторам возможность [[Special:Nuke|множественного удаления]] страниц',
 	'nuke-nopages' => 'Созданий страниц участником [[Special:Contributions/$1|$1]] не найдено в свежих правках.',
 	'nuke-list' => 'Следующие страницы были недавно созданы участником [[Special:Contributions/$1|$1]]. Введите комментарий и нажмите на кнопку для того, чтобы удалить их.',
@@ -2041,7 +2043,7 @@ $messages['ru'] = array(
 	'nuke-editby' => 'Созданные [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Страница '''$1''' была удалена.",
 	'nuke-not-deleted' => "Страницы  [[:$1]] '''не может''' быть удалена.",
-	'nuke-delete-more' => '[[Special:Nuke|Удаление нескольких страниц]]',
+	'nuke-delete-more' => '[[Special:Nuke|Множественное удаление страниц]]',
 	'nuke-pattern' => 'Шаблон для имени страницы:',
 	'nuke-nopages-global' => 'В [[Special:RecentChanges|недавних изменениях]] нет новых страниц.',
 );
