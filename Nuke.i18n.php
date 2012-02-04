@@ -1738,22 +1738,33 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
  * @author Harald Khan
+ * @author Njardarlogar
  */
 $messages['nn'] = array(
 	'nuke' => 'Massesletting',
+	'action-nuke' => 'massesletta sider',
 	'nuke-desc' => 'Gjev administratorane moglegheita til å [[Special:Nuke|massesletta]] sider',
 	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringar.',
 	'nuke-list' => 'Følgjande sider blei nyleg oppretta av [[Special:Contributions/$1|$1]]. 
 Skriv inn ei sletteårsak og trykk på knappen for å sletta alle sidene.',
+	'nuke-list-multiple' => 'Dei fylgjande sidene vart nyleg oppretta;
+skriv ein kommentar og trykk på knappen for å sletta dei.',
 	'nuke-defaultreason' => 'Massesletting av sider lagde inn av $1',
-	'nuke-multiplepeople' => 'fleire brukarar',
-	'nuke-tools' => 'Dette verktøyet mogleggjer massesletting av sider som nyleg er lagde inn av ein viss brukar eller ei viss IP-adressa. 
-Skriv inn eit brukarnamn eller ei IP-adressa for å få ei lista over sider som ein kan sletta her.',
+	'nuke-multiplepeople' => 'Massesletting av nyleg oppretta sider',
+	'nuke-tools' => 'Dette verktøyet mogeleggjer massesletting av sider som nyleg er lagde inn av ein viss brukar eller ei viss IP-adresse. 
+Skriv inn eit brukarnamn eller ei IP-adresse for å få ei liste over sider som kan verta sletta, eller lat feltet stå tomt for alle brukarar.',
 	'nuke-submit-user' => 'Gå',
 	'nuke-submit-delete' => 'Slett valde',
 	'right-nuke' => 'Masseslett sider',
 	'nuke-select' => 'Vel: $1',
+	'nuke-userorip' => 'Brukarnamn, IP-adresse eller tomt:',
+	'nuke-maxpages' => 'Høgste talet på sider:',
 	'nuke-editby' => 'Oppretta av [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Sida '''$1''' vart sletta.",
+	'nuke-not-deleted' => "Sida [[:$1]] ''kunne ikkje''' verta sletta.",
+	'nuke-delete-more' => '[[Special:Nuke|Slett fleire sider]]',
+	'nuke-pattern' => 'Mønster for sidenamnet:',
+	'nuke-nopages-global' => 'Det er ingen nye sider i [[Special:RecentChanges|siste endringane]].',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
