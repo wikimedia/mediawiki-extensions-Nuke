@@ -184,7 +184,7 @@ escribi un comentariu y calca'l botón pa desaniciales.",
 	'nuke-multiplepeople' => 'Desaniciu en masa de páxines nueves',
 	'nuke-tools' => "Esta ferramienta permite desanicios masivos de páxines añadíes recién por un usuariu o una IP determinada. Escribi'l nome d'usuariu o la IP pa obtener una llista de páxines a desaniciar, o dexa en blanco pa tolos usuarios.",
 	'nuke-submit-user' => 'Dir',
-	'nuke-submit-delete' => 'Esborrar seleicionaes',
+	'nuke-submit-delete' => 'Desaniciar seleicionaes',
 	'right-nuke' => 'Esborráu masivu de páxines',
 	'nuke-select' => 'Seleicionar: $1',
 	'nuke-userorip' => "Nome d'usuariu, direición IP o en blanco:",
@@ -1744,9 +1744,9 @@ $messages['nn'] = array(
 	'nuke' => 'Massesletting',
 	'action-nuke' => 'massesletta sider',
 	'nuke-desc' => 'Gjev administratorane moglegheita til å [[Special:Nuke|massesletta]] sider',
-	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringar.',
-	'nuke-list' => 'Følgjande sider blei nyleg oppretta av [[Special:Contributions/$1|$1]]. 
-Skriv inn ei sletteårsak og trykk på knappen for å sletta alle sidene.',
+	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringane.',
+	'nuke-list' => 'Dei fylgjande sidene vart nyleg oppretta av [[Special:Contributions/$1|$1]];
+skriv inn ei sletteårsak og trykk på knappen for å sletta dei.',
 	'nuke-list-multiple' => 'Dei fylgjande sidene vart nyleg oppretta;
 skriv ein kommentar og trykk på knappen for å sletta dei.',
 	'nuke-defaultreason' => 'Massesletting av sider lagde inn av $1',
