@@ -1223,6 +1223,7 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
  * @author Fievarsty
  * @author Hosiryuhosi
  * @author JtFuruhata
+ * @author Marine-Blue
  * @author Muttley
  * @author Ohgi
  * @author Schu
@@ -1248,7 +1249,8 @@ $messages['ja'] = array(
 	'nuke-maxpages' => 'ページの最大量:',
 	'nuke-editby' => '[[Special:Contributions/$1|$1]]によって作成',
 	'nuke-deleted' => "ページ  '''$1''' は削除されています。",
-	'nuke-not-deleted' => "Page [[:$1]] は削除'''出来ません''' 。",
+	'nuke-not-deleted' => "ページ [[:$1]] は削除'''出来ません''' 。",
+	'nuke-delete-more' => '[[Special:Nuke|他のページも削除する]]',
 );
 
 /** Jutish (Jysk)
