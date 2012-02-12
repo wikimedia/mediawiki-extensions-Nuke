@@ -161,15 +161,15 @@ class SpecialNuke extends SpecialPage {
 			/**
 			 * @var $title Title
 			 */
-			list( $title, $edits, $userName ) = $info;
+			list( $title, $userName ) = $info;
 
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 			$thumb = $image && $image->exists() ? $image->transform( array( 'width' => 120, 'height' => 120 ), 0 ) : false;
 
-			$changes = wfMsgExt( 'nchanges', 'parsemag', $this->getLanguage()->formatNum( $edits ) );
-
 			$out->addHTML( '<li>' .
-				Xml::check( 'pages[]', true,
+				Xml::check(
+					'pages[]',
+					true,
 					array( 'value' =>  $title->getPrefixedDbKey() )
 				) .
 				'&#160;' .
@@ -177,7 +177,12 @@ class SpecialNuke extends SpecialPage {
 				Linker::linkKnown( $title ) .
 				'&#160;(' .
 				( $userName ? wfMsgExt( 'nuke-editby', 'parseinline', $userName ) . ',&#160;' : '' ) .
-				Linker::linkKnown( $title, $changes, array(), array('action' => 'history' ) ) .
+				Linker::linkKnown(
+					$title,
+					wfMsg( 'nuke-viewchanges' ), 
+					array(),
+					array( 'action' => 'history' ) 
+				) .
 				")</li>\n" );
 		}
 
@@ -203,7 +208,6 @@ class SpecialNuke extends SpecialPage {
 			'rc_namespace',
 			'rc_title',
 			'rc_timestamp',
-			'COUNT(*) AS edits'
 		);
 
 		$where = array( "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" );
@@ -235,8 +239,7 @@ class SpecialNuke extends SpecialPage {
 		foreach ( $result as $row ) {
 			$pages[] = array(
 				Title::makeTitle( $row->rc_namespace, $row->rc_title ),
-				$row->edits,
-				$username == '' ? $row->rc_user_text : false
+				$username === '' ? $row->rc_user_text : false
 			);
 		}
 
@@ -255,6 +258,7 @@ class SpecialNuke extends SpecialPage {
 		foreach( $pages as $page ) {
 			$title = Title::newFromURL( $page );
 			$file = $title->getNamespace() == NS_FILE ? wfLocalFile( $title ) : false;
+			
 			if ( $file ) {
 				$oldimage = null; // Must be passed by reference
 				$ok = FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false )->isOK();
@@ -262,6 +266,7 @@ class SpecialNuke extends SpecialPage {
 				$article = new Article( $title, 0 );
 				$ok = $article->doDeleteArticle( $reason );
 			}
+			
 			if ( $ok ) {
 				$res[] = wfMsgExt( 'nuke-deleted', array( 'parseinline' ), $title->getPrefixedText() );
 			} else {
