@@ -1230,6 +1230,7 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
 	'nuke-delete-more' => '[[Special:Nuke|Cancella più pagine]]',
 	'nuke-pattern' => 'Modello per il titolo della pagina:',
 	'nuke-nopages-global' => 'Non ci sono nuove pagine negli [[Special:RecentChanges|ultimi cambiamenti]].',
+	'nuke-viewchanges' => 'vedi modifiche',
 );
 
 /** Japanese (日本語)
@@ -2233,6 +2234,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
 	'nuke-delete-more' => '[[Special:Nuke|Izbriši več strani]]',
 	'nuke-pattern' => 'Vzorec imena strani:',
 	'nuke-nopages-global' => 'V [[Special:RecentChanges|zadnjih spremembah]] ni novih strani.',
+	'nuke-viewchanges' => 'ogled sprememb',
 );
 
 /** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
