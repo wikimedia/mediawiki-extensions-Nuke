@@ -1448,6 +1448,7 @@ Gitt w.e.g. d'IP-Adress respektiv de Benotzer n fir eng Lescht vun de Säiten ze
 	'nuke-delete-more' => '[[Special:Nuke|Méi Säite läschen]]',
 	'nuke-pattern' => 'Muster fir de Säitennumm:',
 	'nuke-nopages-global' => 'Et si keng nei Säiten an de [[Special:RecentChanges|rezenten Ännerungen]].',
+	'nuke-viewchanges' => 'Ännerunge weisen',
 );
 
 /** Limburgish (Limburgs)
