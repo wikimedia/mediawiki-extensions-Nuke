@@ -1755,6 +1755,7 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-delete-more' => "[[Special:Nuke|Meer pagina's verwijderen]]",
 	'nuke-pattern' => 'Patroon voor de paginanaam:',
 	'nuke-nopages-global' => "Er zijn geen nieuwe pagina's in de [[Special:RecentChanges|recente wijzigingen]].",
+	'nuke-viewchanges' => 'wijzigingen bekijken',
 );
 
 /** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
