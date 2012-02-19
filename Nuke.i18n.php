@@ -174,19 +174,19 @@ $messages['arz'] = array(
  * @author Xuacu
  */
 $messages['ast'] = array(
-	'nuke' => 'Esborráu masivu',
+	'nuke' => 'Desaniciar en masa',
 	'action-nuke' => 'desaniciar páxines en masa',
-	'nuke-desc' => "Da a los alministradores la capacidá d'[[Special:Nuke|esborrar páxines masivamente]]",
-	'nuke-nopages' => 'Nun hai páxines nueves de [[Special:Contributions/$1|$1]] nos cambeos recientes.',
-	'nuke-list' => 'Les páxines siguientes foron creaes recién por [[Special:Contributions/$1|$1]]; escribi un comentariu y calca nel botón pa esborrales.',
-	'nuke-list-multiple' => "Les páxines darréu se crearon recientemente;
-escribi un comentariu y calca'l botón pa desaniciales.",
-	'nuke-defaultreason' => 'Esborráu masivu de páxines añadíes por $1',
-	'nuke-multiplepeople' => 'Desaniciu en masa de páxines nueves',
-	'nuke-tools' => "Esta ferramienta permite desanicios masivos de páxines añadíes recién por un usuariu o una IP determinada. Escribi'l nome d'usuariu o la IP pa obtener una llista de páxines a desaniciar, o dexa en blanco pa tolos usuarios.",
+	'nuke-desc' => 'Da a los alministradores la capacidá de [[Special:Nuke|desaniciar páxines en masa]]',
+	'nuke-nopages' => 'Nun hai páxines nueves de [[Special:Contributions/$1|$1]] nos cambios recientes.',
+	'nuke-list' => '[[Special:Contributions/$1|$1]] recién creó les páxines siguientes; escribi un comentariu y calca nel botón pa desaniciales.',
+	'nuke-list-multiple' => 'Les páxines darréu se crearon recién; escribi
+un comentariu y calca nel botón pa desaniciales.',
+	'nuke-defaultreason' => 'Desaniciu en masa de páxines amestaes por $1',
+	'nuke-multiplepeople' => 'Desaniciu en masa de páxines recién amestaes',
+	'nuke-tools' => "Esta ferramienta permite desanicios en masa de páxines añadíes recién por un usuariu o una IP determinada. Escribi'l nome d'usuariu o la IP pa ver una llista de páxines a desaniciar, o dexalo balero pa tolos usuarios.",
 	'nuke-submit-user' => 'Dir',
 	'nuke-submit-delete' => 'Desaniciar seleicionaes',
-	'right-nuke' => 'Esborráu masivu de páxines',
+	'right-nuke' => 'Desaniciu en masa de páxines',
 	'nuke-select' => 'Seleicionar: $1',
 	'nuke-userorip' => "Nome d'usuariu, direición IP o en blanco:",
 	'nuke-maxpages' => 'Máximu númberu de páxines:',
@@ -196,6 +196,7 @@ escribi un comentariu y calca'l botón pa desaniciales.",
 	'nuke-delete-more' => '[[Special:Nuke|Desaniciar más páxines]]',
 	'nuke-pattern' => 'Patrón pal nome de páxina:',
 	'nuke-nopages-global' => 'Nun hai páxines nueves nos [[Special:RecentChanges|cambios recientes]].',
+	'nuke-viewchanges' => 'ver los cambios',
 );
 
 /** Azerbaijani (Azərbaycanca)
@@ -1846,6 +1847,7 @@ $messages['pdc'] = array(
 );
 
 /** Polish (Polski)
+ * @author BeginaFelicysym
  * @author Derbeth
  * @author Leinad
  * @author Nux
@@ -1876,6 +1878,7 @@ Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. 
 	'nuke-delete-more' => '[[Special:Nuke|Usuń więcej stron]]',
 	'nuke-pattern' => 'Wzór dla nazwy strony:',
 	'nuke-nopages-global' => 'Brak nowych stron w [[Special:RecentChanges|ostatnich zmianach]].',
+	'nuke-viewchanges' => 'widok zmian',
 );
 
 /** Piedmontese (Piemontèis)
