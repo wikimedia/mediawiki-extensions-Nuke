@@ -741,6 +741,7 @@ $messages['fa'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|حذف صفحه‌های بیشتر]]',
 	'nuke-pattern' => 'الگو برای نام صفحه:',
 	'nuke-nopages-global' => 'هیچ صفحهٔ جدیدی در [[Special:RecentChanges|فهرست تغییرات اخیر]] نیست.',
+	'nuke-viewchanges' => 'نمایش تغییرات',
 );
 
 /** Finnish (Suomi)
@@ -2071,6 +2072,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 );
 
 /** Russian (Русский)
+ * @author DR
  * @author Eugrus
  * @author HalanTul
  * @author KPu3uC B Poccuu
@@ -2101,6 +2103,7 @@ $messages['ru'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|Множественное удаление страниц]]',
 	'nuke-pattern' => 'Шаблон для имени страницы:',
 	'nuke-nopages-global' => 'В [[Special:RecentChanges|недавних изменениях]] нет новых страниц.',
+	'nuke-viewchanges' => 'Внесённые изменения',
 );
 
 /** Rusyn (Русиньскый)
@@ -2570,6 +2573,7 @@ Hãy nhập tên thành viên hoặc địa chỉ IP để lấy danh sách các
 	'nuke-delete-more' => '[[Special:Nuke|Xóa thêm trang]]',
 	'nuke-pattern' => 'Mẫu tên trang:',
 	'nuke-nopages-global' => 'Không có trang mới trong các [[Special:RecentChanges|thay đổi gần đây]].',
+	'nuke-viewchanges' => 'xem thay đổi',
 );
 
 /** Volapük (Volapük)
