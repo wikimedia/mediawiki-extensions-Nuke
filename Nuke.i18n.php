@@ -1849,6 +1849,7 @@ $messages['pdc'] = array(
 );
 
 /** Polish (Polski)
+ * @author Beau
  * @author BeginaFelicysym
  * @author Derbeth
  * @author Leinad
@@ -1865,7 +1866,7 @@ $messages['pl'] = array(
 	'nuke-list-multiple' => 'Poniższa lista przedstawia ostatnio dodane strony.
 Wpisz powód, a następnie zatwierdź usunięcie stron.',
 	'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1',
-	'nuke-multiplepeople' => 'Masowe usuwanie ostatnio dodanych stron',
+	'nuke-multiplepeople' => 'Masowe usuwanie ostatnio utworzonych stron',
 	'nuke-tools' => 'Narzędzie pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika.
 Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. Możesz także nic nie wpisywać, wtedy będzie można masowo usunąć wkład wszystkich użytkowników.',
 	'nuke-submit-user' => 'Dalej',
@@ -1878,7 +1879,7 @@ Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. 
 	'nuke-deleted' => "Strona '''$1''' została usunięta.",
 	'nuke-not-deleted' => "Strony [[:$1]] '''nie można''' usunąć.",
 	'nuke-delete-more' => '[[Special:Nuke|Usuń więcej stron]]',
-	'nuke-pattern' => 'Wzór dla nazwy strony:',
+	'nuke-pattern' => 'Wzór nazwy strony:',
 	'nuke-nopages-global' => 'Brak nowych stron w [[Special:RecentChanges|ostatnich zmianach]].',
 	'nuke-viewchanges' => 'widok zmian',
 );
@@ -1911,6 +1912,7 @@ ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
 	'nuke-delete-more' => "[[Special:Nuke|Scancelé pì 'd pàgine]]",
 	'nuke-pattern' => 'Model për ël nòm ëd pàgina:',
 	'nuke-nopages-global' => "A-i é pa 'd pàgine neuve an [[Special:RecentChanges|ùltime modìfiche]].",
+	'nuke-viewchanges' => 'varda modìfiche',
 );
 
 /** Pashto (پښتو)
