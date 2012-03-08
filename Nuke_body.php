@@ -229,7 +229,7 @@ class SpecialNuke extends SpecialPage {
 			__METHOD__,
 			array(
 				'ORDER BY' => 'rc_timestamp DESC',
-				'GROUP BY' => 'rc_namespace, rc_title',
+				'GROUP BY' => 'rc_namespace, rc_timestamp, rc_title',
 				'LIMIT' => $limit
 			)
 		);
