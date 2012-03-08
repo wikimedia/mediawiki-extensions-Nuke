@@ -1306,6 +1306,7 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
 /** Georgian (ქართული)
  * @author Alsandro
  * @author BRUTE
+ * @author David1010
  * @author Dawid Deutschland
  * @author Sopho
  */
@@ -1322,6 +1323,10 @@ $messages['ka'] = array(
 	'nuke-submit-delete' => 'არჩეულის წაშლა',
 	'right-nuke' => 'გვერდების მასობრივად წაშლა',
 	'nuke-select' => 'აირჩიეთ: $1',
+	'nuke-userorip' => 'მომხმარებლის სახელი, IP-მისამართი (შესაძლებელია ცარიელის დატოვება):',
+	'nuke-maxpages' => 'გვერდების მაქსიმალური რაოდენობა:',
+	'nuke-deleted' => "გვერდი '''$1''' წაიშალა.",
+	'nuke-not-deleted' => "გვერდი [[:$1]] წაშლა '''შეუძლებელია'''.",
 );
 
 /** Khmer (ភាសាខ្មែរ)
