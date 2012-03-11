@@ -222,6 +222,7 @@ class SpecialNuke extends SpecialPage {
 		if ( !is_null( $pattern ) && trim( $pattern ) !== '' ) {
 			$where[] = 'rc_title LIKE ' . $dbr->addQuotes( $pattern );
 		}
+		$group = implode( ', ', $what );
 
 		$result = $dbr->select( 'recentchanges',
 			$what,
@@ -229,7 +230,7 @@ class SpecialNuke extends SpecialPage {
 			__METHOD__,
 			array(
 				'ORDER BY' => 'rc_timestamp DESC',
-				'GROUP BY' => 'rc_namespace, rc_timestamp, rc_title',
+				'GROUP BY' => $group,
 				'LIMIT' => $limit
 			)
 		);
