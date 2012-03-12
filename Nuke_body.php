@@ -161,10 +161,12 @@ class SpecialNuke extends SpecialPage {
 			/**
 			 * @var $title Title
 			 */
-			list( $title, $userName ) = $info;
+			list( $title, $userName, $edits ) = $info;
 
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 			$thumb = $image && $image->exists() ? $image->transform( array( 'width' => 120, 'height' => 120 ), 0 ) : false;
+
+			$changes = wfMsgExt( 'nchanges', 'parsemag', $this->getLanguage()->formatNum( $edits ) );
 
 			$out->addHTML( '<li>' .
 				Xml::check(
@@ -179,7 +181,7 @@ class SpecialNuke extends SpecialPage {
 				( $userName ? wfMsgExt( 'nuke-editby', 'parseinline', $userName ) . ',&#160;' : '' ) .
 				Linker::linkKnown(
 					$title,
-					wfMsg( 'nuke-viewchanges' ), 
+					$changes, 
 					array(),
 					array( 'action' => 'history' ) 
 				) .
@@ -204,13 +206,29 @@ class SpecialNuke extends SpecialPage {
 	protected function getNewPages( $username, $limit ) {
 		$dbr = wfGetDB( DB_SLAVE );
 
+	/**
+	 * This is the worst-case query:
+	 *
+	 * SELECT rc_user_text, rc_namespace, rc_title, SUM(1) AS edits, MAX(rc_new) 
+	 * FROM recentchanges 
+	 * WHERE (rc_log_type IS NULL OR (rc_log_type = 'upload' AND rc_log_action='upload')) 
+	 *   AND rc_title LIKE 'Test%'
+	 * GROUP BY rc_user_text, rc_namespace, rc_title 
+	 * HAVING MIN(CASE 
+	 *      WHEN rc_log_type IS NULL THEN 2 
+	 *      WHEN rc_log_type = 'upload' THEN 1
+	 *      ELSE 0 END) = 1 
+	 *  OR MAX(rc_new) = 1
+	 * ORDER BY min(rc_timestamp) DESC;
+	 *
+	 */
+
 		$what = array(
 			'rc_namespace',
 			'rc_title',
-			'rc_timestamp',
 		);
 
-		$where = array( "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" );
+		$where = array( "(rc_log_type IS NULL) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" );
 
 		if ( $username === '' ) {
 			$what[] = 'rc_user_text';
@@ -222,16 +240,23 @@ class SpecialNuke extends SpecialPage {
 		if ( !is_null( $pattern ) && trim( $pattern ) !== '' ) {
 			$where[] = 'rc_title LIKE ' . $dbr->addQuotes( $pattern );
 		}
-		$group = implode( ', ', $what );
+		$group  = implode( ', ', $what );
+		$what[] = "sum(1) AS edits";
 
 		$result = $dbr->select( 'recentchanges',
 			$what,
 			$where,
 			__METHOD__,
 			array(
-				'ORDER BY' => 'rc_timestamp DESC',
 				'GROUP BY' => $group,
-				'LIMIT' => $limit
+				'LIMIT' => $limit,
+				'ORDER BY' => 'MIN(rc_timestamp) DESC',
+				'HAVING'   => <<<QUERY
+					MIN(CASE WHEN rc_log_type IS NULL    THEN 2 
+					         WHEN rc_log_type = 'upload' THEN 1 
+					    ELSE 0 END) = 1 
+					    OR MAX(rc_new) = 1
+QUERY
 			)
 		);
 
@@ -240,7 +265,8 @@ class SpecialNuke extends SpecialPage {
 		foreach ( $result as $row ) {
 			$pages[] = array(
 				Title::makeTitle( $row->rc_namespace, $row->rc_title ),
-				$username === '' ? $row->rc_user_text : false
+				$username === '' ? $row->rc_user_text : false,
+				$row->edits,
 			);
 		}
 
