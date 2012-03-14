@@ -1,9 +1,13 @@
 These are the release notes for the Nuke extension.
-	
+
 Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:Nuke
 Latest version of the release notes: http://svn.wikimedia.org/viewvc/mediawiki/trunk/extensions/Nuke/RELEASE-NOTES?view=co
 
-
+=== Version 1.1.5 ==
+(2012-03-14)
+* (bug 35214) Special:Nuke allows deletions even when blocked
+* (bug 16985) Show number of recent edits in Special:Nuke
+* (bug 23600) Nuke extension w/PostgreSQL: column "recentchanges.rc_timestamp" should be in GROUP BY
 
 === Version 1.1.4 ===
 (2012-2-12)
