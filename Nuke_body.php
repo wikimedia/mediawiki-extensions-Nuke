@@ -7,14 +7,18 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	public function execute( $par ) {
-		if( !$this->userCanExecute( $this->getUser() ) ) {
+		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
-			return;
 		}
-
 		$this->setHeaders();
 		$this->outputHeader();
 
+		if ( $this->getUser()->isBlocked() ) {
+			$block = $this->getUser()->getBlock();
+			throw new UserBlockedError( $block );
+		}
+		$this->checkReadOnly();	
+		
 		$req = $this->getRequest();
 
 		$target = trim( $req->getText( 'target', $par ) );
@@ -286,6 +290,12 @@ QUERY
 			$title = Title::newFromURL( $page );
 			$file = $title->getNamespace() == NS_FILE ? wfLocalFile( $title ) : false;
 			
+			$permission_errors = $title->getUserPermissionsErrors( 'delete', $this->getUser());
+
+			if ( count( $permission_errors )) {
+				throw new PermissionsError( 'delete', $permission_errors );
+			}
+
 			if ( $file ) {
 				$oldimage = null; // Must be passed by reference
 				$ok = FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false )->isOK();
