@@ -2607,12 +2607,13 @@ $messages['yue'] = array(
  * @author PhiLiP
  * @author Shinjiman
  * @author Xiaomingyan
+ * @author Yfdyh000
  * @author 阿pp
  */
 $messages['zh-hans'] = array(
 	'nuke' => '大量删除',
 	'action-nuke' => '大量删除页面',
-	'nuke-desc' => '让管理员可以[[Special:Nuke|大量删除]]页面',
+	'nuke-desc' => '让管理员可以[[Special:Nuke|批量删除]]页面',
 	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|$1]]创建的新页面。',
 	'nuke-list' => '以下为[[Special:Contributions/$1|$1]]最近创建的页面，请填写注释并点击按钮删除它们。',
 	'nuke-list-multiple' => '以下为最近创建的页面，请填写注释并点击按钮删除它们。',
