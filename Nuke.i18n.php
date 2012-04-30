@@ -1246,30 +1246,35 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
  * @author Muttley
  * @author Ohgi
  * @author Schu
+ * @author Shirayuki
  * @author 青子守歌
  */
 $messages['ja'] = array(
 	'nuke' => '一括削除',
-	'nuke-desc' => '{{int:group-sysop}}がページを[[Special:Nuke|一括削除]]できる機能を提供します。',
-	'nuke-nopages' => '最近の更新ページに[[Special:Contributions/$1|$1]]が新規作成したページはありません。',
-	'nuke-list' => '以下は、[[Special:Contributions/$1|$1]] によって最近作成されたページの一覧です；
-理由を記入しボタンを押すと、これらは削除されます。',
+	'action-nuke' => 'ページを一括削除',
+	'nuke-desc' => '{{int:group-sysop}}がページを[[Special:Nuke|一括削除]]する機能を提供します。',
+	'nuke-nopages' => '最近の更新に[[Special:Contributions/$1|$1]]が新規作成したページはありません。',
+	'nuke-list' => '[[Special:Contributions/$1|$1]] は最近、以下のページを作成しました；
+これらを削除するには、理由を記入してボタンを押してください。',
 	'nuke-list-multiple' => '最近作成されたページが表示されています。
 コメントを入力し、ボタンを押すと、削除されます。',
-	'nuke-defaultreason' => '$1 によって加えられたページを一括削除',
-	'nuke-multiplepeople' => '複数の利用者',
-	'nuke-tools' => 'このツールを使うと、指定した利用者またはIPアドレスによって最近作成されたページを、まとめて削除することができます。
-利用者名またはIPアドレスを入力すると、削除対象ページの一覧が生成されます。空にすると、すべての利用者によるものが対象になります。',
+	'nuke-defaultreason' => '$1が追加したページの一括削除',
+	'nuke-multiplepeople' => '最近追加されたページの一括削除',
+	'nuke-tools' => '指定した利用者またはIPアドレスが最近作成したページを、このツールで一括削除できます。
+利用者名またはIPアドレスを入力すると、削除対象ページの一覧が生成されます。空にすると全利用者が対象になります。',
 	'nuke-submit-user' => '一覧取得',
 	'nuke-submit-delete' => '選択されたページを削除',
-	'right-nuke' => 'ページの一括削除',
+	'right-nuke' => 'ページを一括削除',
 	'nuke-select' => '選択：$1',
 	'nuke-userorip' => '利用者名、IP アドレスまたは空白:',
-	'nuke-maxpages' => 'ページの最大量:',
-	'nuke-editby' => '[[Special:Contributions/$1|$1]]によって作成',
-	'nuke-deleted' => "ページ  '''$1''' は削除されています。",
-	'nuke-not-deleted' => "ページ [[:$1]] は削除'''出来ません''' 。",
-	'nuke-delete-more' => '[[Special:Nuke|他のページも削除する]]',
+	'nuke-maxpages' => '最大ページ数：',
+	'nuke-editby' => '[[Special:Contributions/$1|$1]]が作成',
+	'nuke-deleted' => "ページ  '''$1''' は削除されました。",
+	'nuke-not-deleted' => "ページ [[:$1]] を削除'''できませんでした''' 。",
+	'nuke-delete-more' => '[[Special:Nuke|他のページも削除]]',
+	'nuke-pattern' => 'ページ名のパターン：',
+	'nuke-nopages-global' => '[[Special:RecentChanges|最近の更新]]には新しいページはありません。',
+	'nuke-viewchanges' => '差分を表示',
 );
 
 /** Jutish (Jysk)
@@ -1969,6 +1974,7 @@ introduza um comentário e clique o botão para eliminá-las.',
  * @author Eduardo.mps
  * @author Giro720
  * @author MetalBrasil
+ * @author 555
  */
 $messages['pt-br'] = array(
 	'nuke' => 'Eliminar em massa',
@@ -1978,7 +1984,7 @@ $messages['pt-br'] = array(
 	'nuke-list-multiple' => 'As seguintes páginas foram criadas recentemente;
 introduza um comentário e clique o botão para eliminá-las.',
 	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas por $1',
-	'nuke-multiplepeople' => 'vários usuários',
+	'nuke-multiplepeople' => 'Eliminação em massa de páginas recentemente adicionadas',
 	'nuke-tools' => 'Esta ferramenta permite a eliminação em massa de páginas criadas recentemente por um usuário ou IP específico.
 Forneça o nome de usuário ou o IP para obter a lista de páginas a eliminar, ou deixe em branco para todos os usuários.',
 	'nuke-submit-user' => 'Ir',
