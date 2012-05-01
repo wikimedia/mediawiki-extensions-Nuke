@@ -1970,11 +1970,11 @@ introduza um comentário e clique o botão para eliminá-las.',
 );
 
 /** Brazilian Portuguese (Português do Brasil)
+ * @author 555
  * @author Carla404
  * @author Eduardo.mps
  * @author Giro720
  * @author MetalBrasil
- * @author 555
  */
 $messages['pt-br'] = array(
 	'nuke' => 'Eliminar em massa',
