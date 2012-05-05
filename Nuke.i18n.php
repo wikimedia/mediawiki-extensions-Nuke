@@ -1977,21 +1977,22 @@ introduza um comentário e clique o botão para eliminá-las.',
  * @author MetalBrasil
  */
 $messages['pt-br'] = array(
-	'nuke' => 'Eliminar em massa',
-	'nuke-desc' => 'Dá aos sysops a possibilidade de [[Special:Nuke|apagar páginas em massa]]',
+	'nuke' => 'Eliminar de forma massiva',
+	'nuke-desc' => '[[Special:Nuke|Página especial]] que permite que administradores apaguem páginas de forma massiva',
 	'nuke-nopages' => 'Não há novas páginas criadas por [[Special:Contributions/$1|$1]] nas mudanças recentes.',
-	'nuke-list' => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|$1]]; forneça uma justificativa e pressione o botão a seguir para eliminá-las.',
-	'nuke-list-multiple' => 'As seguintes páginas foram criadas recentemente;
-introduza um comentário e clique o botão para eliminá-las.',
-	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas por $1',
+	'nuke-list' => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|$1]];
+forneça uma justificativa e clique no botão equivalente para eliminá-las.',
+	'nuke-list-multiple' => 'As páginas a seguir foram criadas recentemente;
+forneça uma justificativa e clique no botão equivalente para eliminá-las.',
+	'nuke-defaultreason' => 'Eliminação de forma massiva de páginas criadas por $1',
 	'nuke-multiplepeople' => 'Eliminação em massa de páginas recentemente adicionadas',
-	'nuke-tools' => 'Esta ferramenta permite a eliminação em massa de páginas criadas recentemente por um usuário ou IP específico.
-Forneça o nome de usuário ou o IP para obter a lista de páginas a eliminar, ou deixe em branco para todos os usuários.',
+	'nuke-tools' => 'Esta ferramenta permite que páginas criadas recentemente por um usuário ou IP específico sejam eliminadas de forma massiva.
+Insira um nome de usuário ou IP para listar páginas a eliminar; deixe em branco se deseja listar de todos os usuários.',
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Eliminar as selecionadas',
-	'right-nuke' => 'Eliminar páginas em massa',
+	'right-nuke' => 'Eliminar páginas de forma massiva',
 	'nuke-select' => 'Selecionar: $1',
-	'nuke-userorip' => 'Nome de usuário, endereço IP, ou vazio:',
+	'nuke-userorip' => 'Nome de usuário, endereço IP ou em branco:',
 	'nuke-maxpages' => 'Número máximo de páginas:',
 	'nuke-editby' => 'Criada por [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => 'A página ""$1"" foi excluída.',
