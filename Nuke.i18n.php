@@ -1187,7 +1187,7 @@ tilgreindu athugasemd og ýttu á takkann til að eyða þeim.',
 	'nuke-list-multiple' => 'Eftirfarandi síður voru nýlega búnar til;
 tilgreindu athugasemd og ýttu á takkann til að eyða þeim.',
 	'nuke-defaultreason' => 'Fjöldaeyðing síðna sem búnar voru til af $1',
-	'nuke-multiplepeople' => 'margir notendur',
+	'nuke-multiplepeople' => 'Fjöldaeyðing nýjustu greina',
 	'nuke-tools' => 'Hér er hægt að fjöldaeyða síðum sem voru nýlega búnar til af notanda eða vistfangi.
 Tilgreindu notendanafn eða vistfang til að fá lista yfir síður til að eyða, eða skildu reitinn eftir tóman til að fá lista yfir síður frá öllum notendum.',
 	'nuke-submit-user' => 'Áfram',
@@ -1202,6 +1202,7 @@ Tilgreindu notendanafn eða vistfang til að fá lista yfir síður til að eyð
 	'nuke-delete-more' => '[[Special:Nuke|Fjöldaeyða fleiri skrám]]',
 	'nuke-pattern' => 'Nafna mynstur:',
 	'nuke-nopages-global' => 'Það eru engar nýjar síður í [[Special:RecentChanges|nýjustu breytingum]].',
+	'nuke-viewchanges' => 'skoða breytingar',
 );
 
 /** Italian (Italiano)
@@ -1587,6 +1588,7 @@ $messages['ml'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|കൂടുതൽ താളുകൾ മായ്ക്കുക]]',
 	'nuke-pattern' => 'താളിന്റെ പേരിന്റെ ശൈലി:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|സമീപകാലമാറ്റങ്ങളിൽ]] പുതിയ താളുകളൊന്നുമില്ല.',
+	'nuke-viewchanges' => 'മാറ്റങ്ങൾ കാണുക',
 );
 
 /** Marathi (मराठी)
@@ -1923,7 +1925,7 @@ ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
 	'nuke-delete-more' => "[[Special:Nuke|Scancelé pì 'd pàgine]]",
 	'nuke-pattern' => 'Model për ël nòm ëd pàgina:',
 	'nuke-nopages-global' => "A-i é pa 'd pàgine neuve an [[Special:RecentChanges|ùltime modìfiche]].",
-	'nuke-viewchanges' => 'varda modìfiche',
+	'nuke-viewchanges' => 'vëdde le modìfiche',
 );
 
 /** Pashto (پښتو)
@@ -2409,7 +2411,7 @@ $messages['tg-cyrl'] = array(
 	'right-nuke' => 'Ҳазфи дастаҷамъии саҳифаҳо',
 );
 
-/** Tajik (Latin script) (tojikī)
+/** Tajik (Latin script) (Tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -2469,6 +2471,7 @@ Ipasok ang pangalan ng tagagamit o tirahan ng IP upang makakuha ng isang talaan 
  * @author Erkan Yilmaz
  * @author Joseph
  * @author Srhat
+ * @author Suelnur
  * @author Tarikozket
  */
 $messages['tr'] = array(
@@ -2484,6 +2487,7 @@ Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin
 	'nuke-submit-delete' => 'Seçileni sil',
 	'right-nuke' => 'Sayfaları kitlesel olarak sil',
 	'nuke-select' => 'Seçilmiş: $1',
+	'nuke-deleted' => "'''$1''' sayfası silindi.",
 );
 
 /** Tatar (Cyrillic script) (Татарча)
@@ -2501,7 +2505,7 @@ $messages['ug-arab'] = array(
 	'nuke-submit-user' => 'كۆچۈش',
 );
 
-/** Uyghur (Latin script) (Uyghurche‎)
+/** Uyghur (Latin script) (Uyghurche)
  * @author Jose77
  */
 $messages['ug-latn'] = array(
@@ -2517,8 +2521,8 @@ $messages['uk'] = array(
 	'nuke' => 'Масове вилучення',
 	'nuke-desc' => 'Дає адміністраторам можливість [[Special:Nuke|масового вилучення]] сторінок',
 	'nuke-nopages' => 'У нових редагуваннях не знайдено сторінок, створених користувачем [[Special:Contributions/$1|$1]].',
-	'nuke-list' => 'Наступні сторінки були нещодавно створені користувачем [[Special:Contributions/$1|$1]].
-Уведіть коментар і натисніть на кнопку для того, щоб вилучити їх.',
+	'nuke-list' => 'Такі сторінки були нещодавно створені користувачем [[Special:Contributions/$1|$1]];
+уведіть коментар і натисніть на кнопку для того, щоб вилучити їх.',
 	'nuke-list-multiple' => 'Ці сторінки були нещодавно створені.
 Залиште примітку й натисніть кнопку, щоб вилучити.',
 	'nuke-defaultreason' => 'Масове вилучення сторінок, створених користувачем $1',
@@ -2551,7 +2555,7 @@ $messages['vec'] = array(
 	'right-nuke' => 'Scancelassion de massa de le pagine',
 );
 
-/** Veps (Vepsan kel')
+/** Veps (Vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
@@ -2663,6 +2667,7 @@ $messages['zh-hans'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|删除更多页面]]',
 	'nuke-pattern' => '页面名称的模式：',
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近更改]]中没有新的页面。',
+	'nuke-viewchanges' => '查看变更',
 );
 
 /** Traditional Chinese (‪中文(繁體)‬)
