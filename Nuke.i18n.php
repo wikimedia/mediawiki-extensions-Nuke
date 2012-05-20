@@ -2514,11 +2514,13 @@ $messages['ug-latn'] = array(
 
 /** Ukrainian (Українська)
  * @author Ahonc
+ * @author Base
  * @author Dim Grits
  * @author Тест
  */
 $messages['uk'] = array(
 	'nuke' => 'Масове вилучення',
+	'action-nuke' => 'масове вилучення сторінок',
 	'nuke-desc' => 'Дає адміністраторам можливість [[Special:Nuke|масового вилучення]] сторінок',
 	'nuke-nopages' => 'У нових редагуваннях не знайдено сторінок, створених користувачем [[Special:Contributions/$1|$1]].',
 	'nuke-list' => 'Такі сторінки були нещодавно створені користувачем [[Special:Contributions/$1|$1]];
