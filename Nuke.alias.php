@@ -28,6 +28,11 @@ $specialPageAliases['be-tarask'] = array(
 	'Nuke' => array( 'Масавае_выдаленьне' ),
 );
 
+/** Banjar (Bahasa Banjar) */
+$specialPageAliases['bjn'] = array(
+	'Nuke' => array( 'Nuklir' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'Nuke' => array( 'Massenlöschung' ),
@@ -71,6 +76,11 @@ $specialPageAliases['haw'] = array(
 /** Hebrew (עברית) */
 $specialPageAliases['he'] = array(
 	'Nuke' => array( 'מחיקה_מרובה' ),
+);
+
+/** Hindi (हिन्दी) */
+$specialPageAliases['hi'] = array(
+	'Nuke' => array( 'कई_पृष्ठ_हटाएँ', 'कई_पृष्ठ_हटायें', 'न्यूक' ),
 );
 
 /** Upper Sorbian (Hornjoserbsce) */
@@ -128,6 +138,11 @@ $specialPageAliases['lb'] = array(
 	'Nuke' => array( 'Masseläschung' ),
 );
 
+/** Literary Chinese (文言) */
+$specialPageAliases['lzh'] = array(
+	'Nuke' => array( '量刪' ),
+);
+
 /** Macedonian (Македонски) */
 $specialPageAliases['mk'] = array(
 	'Nuke' => array( 'Нукирање' ),
@@ -166,6 +181,16 @@ $specialPageAliases['nn'] = array(
 /** Polish (Polski) */
 $specialPageAliases['pl'] = array(
 	'Nuke' => array( 'Masowe_usuwanie' ),
+);
+
+/** Portuguese (Português) */
+$specialPageAliases['pt'] = array(
+	'Nuke' => array( 'Eliminar_em_massa' ),
+);
+
+/** Brazilian Portuguese (Português do Brasil) */
+$specialPageAliases['pt-br'] = array(
+	'Nuke' => array( 'Eliminar_em_massa' ),
 );
 
 /** Sanskrit (संस्कृतम्) */
