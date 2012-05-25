@@ -435,7 +435,7 @@ $messages['cs'] = array(
 	'nuke-list-multiple' => 'Nedávno byly vytvořeny následující stránky;
 zadáním komentáře a stisknutím tlačítka je smažete.',
 	'nuke-defaultreason' => 'Hromadné odstranění stránek, které vytvořil $1',
-	'nuke-multiplepeople' => 'více uživatelů',
+	'nuke-multiplepeople' => 'Hromadné odstranění nedávno založených stránek',
 	'nuke-tools' => 'Tento nástroj umožňuje hromadné smazání stránek nedávno vytvořených zadaným uživatelem nebo IP adresou.
 Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smazání; případně ponechte prázdné pro všechny uživatele.',
 	'nuke-submit-user' => 'Provést',
@@ -447,6 +447,10 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 	'nuke-editby' => '{{gender:$1|Vytvořil|Vytvořila|Vytvořil}} [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Stránka '''$1''' byla smazána.",
 	'nuke-not-deleted' => "Stránka [[:$1]] '''nemohla být''' smazána.",
+	'nuke-delete-more' => '[[Special:Nuke|Odstranit další stránky]]',
+	'nuke-pattern' => 'Vzor pro název stránky:',
+	'nuke-nopages-global' => 'V [[Special:RecentChanges|posledních změnách]] nejsou žádné nové stránky.',
+	'nuke-viewchanges' => 'ukázat změny',
 );
 
 /** Danish (Dansk)
