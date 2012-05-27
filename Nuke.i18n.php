@@ -876,7 +876,7 @@ insira un comentario e prema o botón para borralas.',
 	'nuke-multiplepeople' => 'Eliminación en masa de páxinas recentes',
 	'nuke-tools' => 'Esta ferramenta permite borrar en masa as páxinas engadidas recentemente por un determinado usuario ou enderezo IP.
 Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas para borrar. Déixeo en branco para todos os usuarios.',
-	'nuke-submit-user' => 'Adiante',
+	'nuke-submit-user' => 'Continuar',
 	'nuke-submit-delete' => 'Eliminar a selección',
 	'right-nuke' => 'Borrar páxinas masivamente',
 	'nuke-select' => 'Seleccionar: $1',
