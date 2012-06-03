@@ -420,7 +420,7 @@ $messages['ch'] = array(
 	'nuke-submit-user' => 'Hånao',
 );
 
-/** Czech (Česky)
+/** Czech (česky)
  * @author Danny B.
  * @author Jkjk
  * @author Li-sung
