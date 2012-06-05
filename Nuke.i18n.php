@@ -2522,7 +2522,8 @@ $messages['ug-latn'] = array(
 	'nuke-submit-user' => 'Köchüsh',
 );
 
-/** Ukrainian (Українська)
+/** Ukrainian (українська)
+ * @author AS
  * @author Ahonc
  * @author Base
  * @author Dim Grits
@@ -2550,6 +2551,7 @@ $messages['uk'] = array(
 	'nuke-editby' => 'Створені [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Сторінка '''$1''' була вилучена.",
 	'nuke-not-deleted' => "Сторінка [[:$1]] '''не може''' бути вилучена.",
+	'nuke-pattern' => 'Шаблон назви сторінки:',
 );
 
 /** Vèneto (Vèneto)
