@@ -1262,7 +1262,7 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
 $messages['ja'] = array(
 	'nuke' => '一括削除',
 	'action-nuke' => 'ページを一括削除',
-	'nuke-desc' => '{{int:group-sysop}}がページを[[Special:Nuke|一括削除]]する機能を提供します。',
+	'nuke-desc' => '{{int:group-sysop}}がページを[[Special:Nuke|一括削除]]できるようにする',
 	'nuke-nopages' => '最近の更新に[[Special:Contributions/$1|$1]]が新規作成したページはありません。',
 	'nuke-list' => '[[Special:Contributions/$1|$1]] は最近、以下のページを作成しました；
 これらを削除するには、理由を記入してボタンを押してください。',
