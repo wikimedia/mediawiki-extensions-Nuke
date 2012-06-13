@@ -1446,6 +1446,13 @@ udder lohß dat Feld läddesch, dann kriß De en Leß vun Alle.',
 	'nuke-editby' => 'Aanjelaat vum [[Special:Contributions/$1|$1]]',
 );
 
+/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+ * @author George Animal
+ */
+$messages['ku-latn'] = array(
+	'nuke-submit-user' => 'Biçe',
+);
+
 /** Luxembourgish (Lëtzebuergesch)
  * @author Les Meloures
  * @author Robby
