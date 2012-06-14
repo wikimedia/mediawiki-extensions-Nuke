@@ -169,7 +169,7 @@ $messages['arz'] = array(
 	'right-nuke' => 'مسح كبير للصفحات',
 );
 
-/** Asturian (Asturianu)
+/** Asturian (asturianu)
  * @author Esbardu
  * @author Xuacu
  */
@@ -199,7 +199,7 @@ un comentariu y calca nel botón pa desaniciales.',
 	'nuke-viewchanges' => 'ver los cambios',
 );
 
-/** Azerbaijani (Azərbaycanca)
+/** Azerbaijani (azərbaycanca)
  * @author Cekli829
  */
 $messages['az'] = array(
@@ -241,7 +241,7 @@ $messages['bcc'] = array(
 	'right-nuke' => 'حذف جمعی صفحات',
 );
 
-/** Belarusian (Беларуская)
+/** Belarusian (беларуская)
  * @author Yury Tarasievich
  * @author Хомелка
  */
@@ -291,7 +291,7 @@ $messages['be-tarask'] = array(
 	'nuke-viewchanges' => 'праглядзець зьмены',
 );
 
-/** Bulgarian (Български)
+/** Bulgarian (български)
  * @author Borislav
  * @author DCLXVI
  * @author Spiritia
@@ -328,7 +328,7 @@ $messages['bn'] = array(
 	'nuke-maxpages' => 'সর্বোচ্চ সংখ্যক পাতাসমূহ:',
 );
 
-/** Breton (Brezhoneg)
+/** Breton (brezhoneg)
  * @author Fulup
  */
 $messages['br'] = array(
@@ -359,7 +359,7 @@ Merkañ ar c'homlec'h IP pe anv an implijer evit kaout roll ar pajennoù da zive
 	'nuke-viewchanges' => "Diskouez ar c'hemmoù",
 );
 
-/** Bosnian (Bosanski)
+/** Bosnian (bosanski)
  * @author CERminator
  */
 $messages['bs'] = array(
@@ -383,7 +383,7 @@ Unesite korisničko ime ili IP adresu za izlistavanje stranica koje se brišu il
 	'nuke-editby' => 'Napravio [[Special:Contributions/$1|$1]]',
 );
 
-/** Catalan (Català)
+/** Catalan (català)
  * @author Aleator
  * @author Paucabot
  * @author SMP
@@ -453,7 +453,7 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 	'nuke-viewchanges' => 'ukázat změny',
 );
 
-/** Danish (Dansk)
+/** Danish (dansk)
  * @author Byrial
  * @author Peter Alberti
  */
@@ -576,7 +576,7 @@ zapódaj komentar a klikni na tłocašk, aby je wulašował.',
 	'nuke-viewchanges' => 'změny pokazaś',
 );
 
-/** Ewe (Eʋegbe) */
+/** Ewe (eʋegbe) */
 $messages['ee'] = array(
 	'nuke-submit-user' => 'Yi',
 );
@@ -636,7 +636,7 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
 	'nuke-pattern' => 'Modelo por la paĝonomo:',
 );
 
-/** Spanish (Español)
+/** Spanish (español)
  * @author Aleator
  * @author Armando-Martin
  * @author Crazymadlover
@@ -675,7 +675,7 @@ Introduzca el nombre de usuario o la dirección IP para obtener la lista de pág
 	'nuke-viewchanges' => 'Mostrar cambios',
 );
 
-/** Estonian (Eesti)
+/** Estonian (eesti)
  * @author Pikne
  */
 $messages['et'] = array(
@@ -704,7 +704,7 @@ Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-a
 	'nuke-viewchanges' => 'vaata muudatusi',
 );
 
-/** Basque (Euskara)
+/** Basque (euskara)
  * @author Theklan
  * @author Unai Fdz. de Betoño
  */
@@ -749,7 +749,7 @@ $messages['fa'] = array(
 	'nuke-viewchanges' => 'نمایش تغییرات',
 );
 
-/** Finnish (Suomi)
+/** Finnish (suomi)
  * @author Crt
  * @author Jaakonam
  * @author Nike
@@ -782,7 +782,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 	'nuke-nopages-global' => '[[Special:RecentChanges|Tuoreissa muutoksissa]] ei ole uusia sivuja.',
 );
 
-/** French (Français)
+/** French (français)
  * @author Crochet.david
  * @author Gomoko
  * @author Grondin
@@ -821,7 +821,7 @@ entrez un commentaire et cliquez sur le bouton pour les supprimer.',
 	'nuke-viewchanges' => 'voir les modifications',
 );
 
-/** Franco-Provençal (Arpetan)
+/** Franco-Provençal (arpetan)
  * @author ChrisPtDe
  */
 $messages['frp'] = array(
@@ -851,7 +851,7 @@ Buchiér lo nom d’usanciér ou ben l’adrèce IP por avêr la lista de les p�
 	'nuke-nopages-global' => 'Y at gins de pâge novèla dedens los [[Special:RecentChanges|dèrriérs changements]].',
 );
 
-/** Friulian (Furlan)
+/** Friulian (furlan)
  * @author Klenje
  */
 $messages['fur'] = array(
@@ -1008,7 +1008,7 @@ $messages['hil'] = array(
 	'nuke-submit-user' => 'Lakat',
 );
 
-/** Croatian (Hrvatski)
+/** Croatian (hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
  * @author SpeedyGonsales
@@ -1055,7 +1055,7 @@ napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
 	'nuke-viewchanges' => 'změny pokazać',
 );
 
-/** Hungarian (Magyar)
+/** Hungarian (magyar)
  * @author Dani
  * @author Dj
  * @author Dorgan
@@ -1080,7 +1080,7 @@ $messages['hu'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|További oldalak törlése]]',
 );
 
-/** Interlingua (Interlingua)
+/** Interlingua (interlingua)
  * @author McDutchie
  */
 $messages['ia'] = array(
@@ -1181,7 +1181,7 @@ $messages['io'] = array(
 	'nuke-submit-delete' => 'Efacez selektiti',
 );
 
-/** Icelandic (Íslenska)
+/** Icelandic (íslenska)
  * @author S.Örvarr.S
  * @author Snævar
  */
@@ -1213,7 +1213,7 @@ Tilgreindu notendanafn eða vistfang til að fá lista yfir síður til að eyð
 	'nuke-viewchanges' => 'skoða breytingar',
 );
 
-/** Italian (Italiano)
+/** Italian (italiano)
  * @author .anaconda
  * @author Beta16
  * @author BrokenArrow
@@ -1287,7 +1287,7 @@ $messages['ja'] = array(
 	'nuke-viewchanges' => '差分を表示',
 );
 
-/** Jutish (Jysk)
+/** Jutish (jysk)
  * @author Huslåke
  */
 $messages['jut'] = array(
@@ -1503,7 +1503,7 @@ $messages['li'] = array(
 	'nuke-select' => 'Selecteer: $1',
 );
 
-/** Lithuanian (Lietuvių)
+/** Lithuanian (lietuvių)
  * @author Eitvys200
  * @author Homo
  * @author Matasg
@@ -1546,7 +1546,7 @@ $messages['mg'] = array(
 	'right-nuke' => 'Mamafa pejy maro',
 );
 
-/** Macedonian (Македонски)
+/** Macedonian (македонски)
  * @author Bjankuloski06
  */
 $messages['mk'] = array(
@@ -1791,7 +1791,7 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-viewchanges' => 'wijzigingen bekijken',
 );
 
-/** Norwegian Nynorsk (‪Norsk (nynorsk)‬)
+/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
  * @author Harald Khan
  * @author Njardarlogar
  */
@@ -1829,7 +1829,7 @@ $messages['nso'] = array(
 	'nuke-submit-user' => 'Sepela',
 );
 
-/** Occitan (Occitan)
+/** Occitan (occitan)
  * @author Cedric31
  */
 $messages['oc'] = array(
@@ -1878,7 +1878,7 @@ $messages['pdc'] = array(
 	'nuke-deleted' => 'Blatt „$1“ is glescht warre.',
 );
 
-/** Polish (Polski)
+/** Polish (polski)
  * @author Beau
  * @author BeginaFelicysym
  * @author Derbeth
@@ -1963,7 +1963,7 @@ $messages['ps'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|لا نور مخونه ړنګول]]',
 );
 
-/** Portuguese (Português)
+/** Portuguese (português)
  * @author 555
  * @author Hamilton Abreu
  * @author Malafaya
@@ -1989,7 +1989,7 @@ introduza um comentário e clique o botão para eliminá-las.',
 	'nuke-not-deleted' => 'Não foi possível eliminar a página [[:$1]].',
 );
 
-/** Brazilian Portuguese (Português do Brasil)
+/** Brazilian Portuguese (português do Brasil)
  * @author 555
  * @author Carla404
  * @author Eduardo.mps
@@ -2049,7 +2049,7 @@ $messages['rif'] = array(
 	'nuke-submit-user' => 'Raḥ ɣa',
 );
 
-/** Romanian (Română)
+/** Romanian (română)
  * @author Cin
  * @author Firilacroco
  * @author KlaudiuMihaila
@@ -2078,7 +2078,7 @@ Introduceți numele de utilizator sau adresa IP pentru a primi o listă cu pagin
 	'nuke-not-deleted' => "Pagina [[:$1]] '''nu a putut''' fi ștearsă.",
 );
 
-/** Tarandíne (Tarandíne)
+/** tarandíne (tarandíne)
  * @author Joetaras
  */
 $messages['roa-tara'] = array(
@@ -2105,7 +2105,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'nuke-pattern' => "Segnaposte pu nomed'a pàgene:",
 );
 
-/** Russian (Русский)
+/** Russian (русский)
  * @author DR
  * @author Eugrus
  * @author HalanTul
@@ -2165,7 +2165,7 @@ $messages['rue'] = array(
 	'nuke-not-deleted' => "Сторінка [[:$1]] '''не може''' быти змазана.",
 );
 
-/** Sakha (Саха тыла)
+/** Sakha (саха тыла)
  * @author HalanTul
  */
 $messages['sah'] = array(
@@ -2188,7 +2188,7 @@ $messages['sah'] = array(
 	'nuke-editby' => 'Оҥоһуллубуттар [[Special:Contributions/$1|$1]]',
 );
 
-/** Sicilian (Sicilianu)
+/** Sicilian (sicilianu)
  * @author Santu
  */
 $messages['scn'] = array(
@@ -2227,7 +2227,7 @@ $messages['si'] = array(
 	'nuke-nopages-global' => '[[Special:RecentChanges|මෑත වෙනස්වීම්වල]]  නව පිටු නොමැත.',
 );
 
-/** Slovak (Slovenčina)
+/** Slovak (slovenčina)
  * @author Helix84
  */
 $messages['sk'] = array(
@@ -2250,7 +2250,7 @@ Zadajte používateľa alebo IP a dostanete zoznam stránok na zmazanie. Ponecha
 	'nuke-editby' => 'Vytvoril [[Special:Contributions/$1|$1]]',
 );
 
-/** Slovenian (Slovenščina)
+/** Slovenian (slovenščina)
  * @author Dbc334
  */
 $messages['sl'] = array(
@@ -2281,7 +2281,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
 	'nuke-viewchanges' => 'ogled sprememb',
 );
 
-/** Serbian (Cyrillic script) (‪Српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
  * @author Millosh
  * @author Rancher
  * @author Жељко Тодоровић
@@ -2300,7 +2300,7 @@ $messages['sr-ec'] = array(
 	'right-nuke' => 'масовно брисање страница',
 );
 
-/** Serbian (Latin script) (‪Srpski (latinica)‬)
+/** Serbian (Latin script) (‪srpski (latinica)‬)
  * @author Michaello
  * @author Жељко Тодоровић
  */
@@ -2349,7 +2349,7 @@ tuliskeun pamanggih anjeun, terus pencét tombolna pikeun ngahapus.',
 	'right-nuke' => 'Ngahapus masal kaca',
 );
 
-/** Swedish (Svenska)
+/** Swedish (svenska)
  * @author Lejonel
  * @author Tobulos1
  * @author WikiPhoenix
@@ -2406,14 +2406,14 @@ $messages['te'] = array(
 	'nuke-maxpages' => 'గరిష్ఠ పుటల సంఖ్య:',
 );
 
-/** Tetum (Tetun)
+/** Tetum (tetun)
  * @author MF-Warburg
  */
 $messages['tet'] = array(
 	'nuke-submit-user' => 'Bá',
 );
 
-/** Tajik (Cyrillic script) (Тоҷикӣ)
+/** Tajik (Cyrillic script) (тоҷикӣ)
  * @author Ibrahim
  */
 $messages['tg-cyrl'] = array(
@@ -2428,7 +2428,7 @@ $messages['tg-cyrl'] = array(
 	'right-nuke' => 'Ҳазфи дастаҷамъии саҳифаҳо',
 );
 
-/** Tajik (Latin script) (Tojikī)
+/** Tajik (Latin script) (tojikī)
  * @author Liangent
  */
 $messages['tg-latn'] = array(
@@ -2507,7 +2507,7 @@ Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin
 	'nuke-deleted' => "'''$1''' sayfası silindi.",
 );
 
-/** Tatar (Cyrillic script) (Татарча)
+/** Tatar (Cyrillic script) (татарча)
  * @author Ильнар
  */
 $messages['tt-cyrl'] = array(
@@ -2561,7 +2561,7 @@ $messages['uk'] = array(
 	'nuke-pattern' => 'Шаблон назви сторінки:',
 );
 
-/** Vèneto (Vèneto)
+/** vèneto (vèneto)
  * @author Candalua
  */
 $messages['vec'] = array(
@@ -2655,7 +2655,7 @@ $messages['yue'] = array(
 	'right-nuke' => '大量刪頁',
 );
 
-/** Simplified Chinese (‪中文(简体)‬)
+/** Simplified Chinese (‪中文（简体）‬)
  * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Hydra
@@ -2691,7 +2691,7 @@ $messages['zh-hans'] = array(
 	'nuke-viewchanges' => '查看变更',
 );
 
-/** Traditional Chinese (‪中文(繁體)‬)
+/** Traditional Chinese (‪中文（繁體）‬)
  * @author Anakmalaysia
  * @author Mark85296341
  * @author Shinjiman
