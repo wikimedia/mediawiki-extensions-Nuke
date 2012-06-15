@@ -17,7 +17,11 @@ class SpecialNuke extends SpecialPage {
 			$block = $this->getUser()->getBlock();
 			throw new UserBlockedError( $block );
 		}
-		$this->checkReadOnly();
+
+		if ( method_exists( $this, 'checkReadOnly' ) ) {
+			// checkReadOnly was introduced only in 1.19
+			$this->checkReadOnly();
+		}
 
 		$req = $this->getRequest();
 
@@ -266,7 +270,7 @@ class SpecialNuke extends SpecialPage {
 
 			$permission_errors = $title->getUserPermissionsErrors( 'delete', $this->getUser());
 
-			if ( count( $permission_errors )) {
+			if ( $permission_errors !== array() ) {
 				throw new PermissionsError( 'delete', $permission_errors );
 			}
 
