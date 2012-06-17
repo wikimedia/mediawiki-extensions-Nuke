@@ -2668,7 +2668,7 @@ $messages['yue'] = array(
  */
 $messages['zh-hans'] = array(
 	'nuke' => '大量删除',
-	'action-nuke' => '大量删除页面',
+	'action-nuke' => '删除大量页面',
 	'nuke-desc' => '让管理员可以[[Special:Nuke|批量删除]]页面',
 	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|$1]]创建的新页面。',
 	'nuke-list' => '以下为[[Special:Contributions/$1|$1]]最近创建的页面，请填写注释并点击按钮删除它们。',
@@ -2678,7 +2678,7 @@ $messages['zh-hans'] = array(
 	'nuke-tools' => '此工具允许大量删除指定用户或IP地址在最近创建的页面。输入用户名或IP地址可获取可删除页面列表，留白则检索所有用户。',
 	'nuke-submit-user' => '执行',
 	'nuke-submit-delete' => '删除所选',
-	'right-nuke' => '大量删除页面',
+	'right-nuke' => '删除大量页面',
 	'nuke-select' => '选择：$1',
 	'nuke-userorip' => '用户名、IP地址或空白：',
 	'nuke-maxpages' => '最多页面数：',
