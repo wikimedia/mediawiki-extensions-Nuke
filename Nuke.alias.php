@@ -23,7 +23,7 @@ $specialPageAliases['arz'] = array(
 	'Nuke' => array( 'مسح_كامل' ),
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬) */
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬) */
 $specialPageAliases['be-tarask'] = array(
 	'Nuke' => array( 'Масавае_выдаленьне' ),
 );
@@ -43,7 +43,7 @@ $specialPageAliases['diq'] = array(
 	'Nuke' => array( 'Pıperne' ),
 );
 
-/** Lower Sorbian (Dolnoserbski) */
+/** Lower Sorbian (dolnoserbski) */
 $specialPageAliases['dsb'] = array(
 	'Nuke' => array( 'Wulašowanje_z_kopicami' ),
 );
@@ -88,7 +88,7 @@ $specialPageAliases['hi'] = array(
 	'Nuke' => array( 'कई_पृष्ठ_हटाएँ', 'कई_पृष्ठ_हटायें', 'न्यूक' ),
 );
 
-/** Upper Sorbian (Hornjoserbsce) */
+/** Upper Sorbian (hornjoserbsce) */
 $specialPageAliases['hsb'] = array(
 	'Nuke' => array( 'Masowe_wušmórnjenje' ),
 );
