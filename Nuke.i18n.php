@@ -102,7 +102,7 @@ sit dit in 'n kommentaar en druk die knoppie om dit te skrap.",
 	'nuke-pattern' => 'Patroon vir die naam:',
 );
 
-/** Aragonese (Aragonés)
+/** Aragonese (aragonés)
  * @author Juanpabl
  */
 $messages['an'] = array(
@@ -259,7 +259,7 @@ $messages['be'] = array(
 	'right-nuke' => 'масава сціраць старонкі',
 );
 
-/** Belarusian (Taraškievica orthography) (‪Беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -546,7 +546,7 @@ Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin
 	'right-nuke' => 'pelan yew hew de hewnaker',
 );
 
-/** Lower Sorbian (Dolnoserbski)
+/** Lower Sorbian (dolnoserbski)
  * @author Michawiki
  */
 $messages['dsb'] = array(
@@ -858,7 +858,7 @@ $messages['fur'] = array(
 	'nuke-submit-user' => 'Va',
 );
 
-/** Galician (Galego)
+/** Galician (galego)
  * @author Alma
  * @author Toliño
  * @author Xosé
@@ -1026,7 +1026,7 @@ $messages['hr'] = array(
 	'nuke-select' => 'Odaberite: $1',
 );
 
-/** Upper Sorbian (Hornjoserbsce)
+/** Upper Sorbian (hornjoserbsce)
  * @author Michawiki
  */
 $messages['hsb'] = array(
@@ -2141,7 +2141,7 @@ $messages['ru'] = array(
 	'nuke-viewchanges' => 'Внесённые изменения',
 );
 
-/** Rusyn (Русиньскый)
+/** Rusyn (русиньскый)
  * @author Gazeb
  */
 $messages['rue'] = array(
