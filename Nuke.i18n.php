@@ -2473,7 +2473,7 @@ maglagay/magpasok ng isang puna (kumento) at pindutin ang pindutan upang mabura 
 	'nuke-list-multiple' => 'Ang sumusunod na mga pahina ay kamakailan lamang nalikha;
 maglagay ng isang puna at pindutin ang pindutan upang mabura ang mga ito.',
 	'nuke-defaultreason' => 'Idinagdag ni $1 ang malawakang pagbubura ng mga pahina',
-	'nuke-multiplepeople' => 'maramihang mga tagagamit',
+	'nuke-multiplepeople' => 'Maramihang pagbubura ng kamakailang idinagdag na mga pahina',
 	'nuke-tools' => 'Nagpapahintulot ang kagamitang ito upang mabura ng malawakan ang mga pahinang idinagdag kamakailan ng isang ibinigay na tagagamit o tirahan ng IP.
 Ipasok ang pangalan ng tagagamit o tirahan ng IP upang makakuha ng isang talaan ng mga pahinang buburahin, o iwanang walang laman para sa lahat ng mga tagagamit.',
 	'nuke-submit-user' => 'Gawin',
