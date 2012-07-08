@@ -1424,6 +1424,7 @@ $messages['krj'] = array(
  */
 $messages['ksh'] = array(
 	'nuke' => 'Sigge fottschmieße ang Mass',
+	'action-nuke' => 'pöngelswies Sigge fottschmiiße.',
 	'nuke-desc' => 'Määd_et müjjelesch för de Wiki-Köbesse, [[Special:Nuke|angmass Sigge fottzeschmieße]].',
 	'nuke-nopages' => 'Mer han kein neu Sigge {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} [[Special:Contributions/$1|$1]] en de {{lcfirst:{{int:Recentchanges}}}}.',
 	'nuke-list' => 'Hee di Sigge sen fum „[[Special:Contributions/$1|$1]]“ neu
@@ -1433,7 +1434,7 @@ un dann donn der Knopp zom Fottschmieße dröcke.',
 Jiv ene Jrond udder Zosammegfassung aan,
 un kleck op dä Knopp för se fott ze schmiiße.',
 	'nuke-defaultreason' => 'Fum $1 neu aanjelaate Sigge ang Block fottschmieße',
-	'nuke-multiplepeople' => 'ongerscheidlijje Metmaacher',
+	'nuke-multiplepeople' => 'Köözlesch aanjelaate Sigge ang Blok fottjeschmeße.',
 	'nuke-tools' => 'Di Sigg hee hellef Der, angmaß Sigge fottzeschmieße,
 di ene bestemmpte enjeloggte udder namelose Metmaacher
 köözlesch aanjalaat hät.
@@ -1447,6 +1448,12 @@ udder lohß dat Feld läddesch, dann kriß De en Leß vun Alle.',
 	'nuke-userorip' => 'Metmaacher_Name, <i lang="en">IP</i>-Addräß udder nix:',
 	'nuke-maxpages' => 'Nit mieh Sigge, wi:',
 	'nuke-editby' => 'Aanjelaat vum [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Di Sigg '''„$1“''' es fottjeschmeße.",
+	'nuke-not-deleted' => "Di Sigg „[[:$1]]“ '''kunnt nit''' fottjeschmeße wääde.",
+	'nuke-delete-more' => '[[Special:Nuke|Noch mieh Sigge fottschmiiße]]',
+	'nuke-pattern' => 'Et Moster för dä Sigge iere Naame:',
+	'nuke-nopages-global' => 'Mer han kein neue Sigge en de [[Special:RecentChanges|neuste Änderonge]].',
+	'nuke-viewchanges' => 'de Ungerscheide zeije',
 );
 
 /** Kurdish (Latin script) (‪Kurdî (latînî)‬)
