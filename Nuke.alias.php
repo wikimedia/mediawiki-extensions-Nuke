@@ -220,7 +220,7 @@ $specialPageAliases['sv'] = array(
 
 /** Tagalog (Tagalog) */
 $specialPageAliases['tl'] = array(
-	'Nuke' => array( 'Malawakang pagbura' ),
+	'Nuke' => array( 'Malawakang_pagbura' ),
 );
 
 /** Turkish (Türkçe) */
