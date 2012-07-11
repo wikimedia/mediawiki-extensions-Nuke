@@ -206,7 +206,7 @@ $messages['az'] = array(
 	'nuke-select' => 'Seçin: $1',
 );
 
-/** Bashkir (Башҡортса)
+/** Bashkir (башҡортса)
  * @author Assele
  */
 $messages['ba'] = array(
@@ -403,7 +403,7 @@ Per obtenir la llista de pàgines per esborrar podeu introduir el nom d'un usuar
 	'right-nuke' => 'Esborrar pàgines de forma massiva',
 );
 
-/** Chechen (Нохчийн)
+/** Chechen (нохчийн)
  * @author Sasan700
  */
 $messages['ce'] = array(
@@ -1684,7 +1684,7 @@ Daħħal l-isem tal-utent jew l-indirizz IP biex tikseb lista ta' paġni li jrid
 	'nuke-maxpages' => "Numru massimu ta' paġni:",
 );
 
-/** Erzya (Эрзянь)
+/** Erzya (эрзянь)
  * @author Botuzhaleny-sodamo
  */
 $messages['myv'] = array(
@@ -1699,20 +1699,20 @@ $messages['nah'] = array(
 	'nuke-submit-user' => 'Yāuh',
 );
 
-/** Norwegian (bokmål)‬ (‪Norsk (bokmål)‬)
+/** Norwegian Bokmål (‪norsk (bokmål)‬)
  * @author Event
- * @author Jon Harald Søby
  * @author Nghtwlkr
  */
 $messages['nb'] = array(
 	'nuke' => 'Massesletting',
+	'action-nuke' => 'masseslette sider',
 	'nuke-desc' => 'Gir administratorer muligheten til å [[Special:Nuke|masseslette]] sider',
 	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringer.',
 	'nuke-list' => 'Følgende sider ble nylig opprettet av [[Special:Contributions/$1|$1]]; skriv inn en slettingsgrunn og trykk på knappen for å slette alle sidene.',
 	'nuke-list-multiple' => 'Følgende sider ble nylig opprettet;
 sett inn en kommentar og trykk på knappen for å slette dem.',
 	'nuke-defaultreason' => 'Massesletting av sider lagt inn av $1',
-	'nuke-multiplepeople' => 'flere brukere',
+	'nuke-multiplepeople' => 'Massesletting av nylig opprettede sider',
 	'nuke-tools' => 'Dette verktøyet muliggjør massesletting av sider som nylig er opprettet av gitt bruker eller IP-adresse.
 Skriv et brukernavn eller en IP-adresse for å få en liste over sider som kan slettes, eller angi tomt for alle brukere.',
 	'nuke-submit-user' => 'Gå',
@@ -1724,6 +1724,9 @@ Skriv et brukernavn eller en IP-adresse for å få en liste over sider som kan s
 	'nuke-editby' => 'Opprettet av [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Side '''$1''' ble slettet.",
 	'nuke-not-deleted' => "Side [[:$1]] ''kunne ikke''' slettes.",
+	'nuke-delete-more' => '[[Special:Nuke|Slett flere sider]]',
+	'nuke-pattern' => 'Mønster for sidenavnet:',
+	'nuke-nopages-global' => 'Det er ingen sider i  [[Special:RecentChanges|siste endringer]].',
 );
 
 /** Low German (Plattdüütsch)
@@ -2475,6 +2478,7 @@ bir teswir ýazyň we öçürmek üçin düwmä basyň.',
  */
 $messages['tl'] = array(
 	'nuke' => 'Malawakang pagbura',
+	'action-nuke' => 'mga pahinang nukleyar',
 	'nuke-desc' => "Nagbibigay sa mga ''sysop'' ng kakayahang [[Special:Nuke|magburang pangmalawakan]] ng mga pahina",
 	'nuke-nopages' => 'Walang bagong mga pahinang ginawa ni [[Special:Contributions/$1|$1]] na nasa loob ng kamakailang mga pagbabago.',
 	'nuke-list' => 'Ang sumusunod na mga pahina ay nilikha kamakailan lamang ni [[Special:Contributions/$1|$1]];
@@ -2492,6 +2496,12 @@ Ipasok ang pangalan ng tagagamit o tirahan ng IP upang makakuha ng isang talaan 
 	'nuke-userorip' => 'Pangalan ng tagagamit, Tirahan ng IP o walang laman:',
 	'nuke-maxpages' => 'Pinakamaraming bilang ng mga pahina:',
 	'nuke-editby' => 'Nilikha ni [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Nabura na ang pahinang '''$1'''.",
+	'nuke-not-deleted' => "'''Hindi mabura''' ang pahinang [[:$1]].",
+	'nuke-delete-more' => '[[Special:Nuke|Magbura ng marami pang mga pahina]]',
+	'nuke-pattern' => 'Padron para sa pangalan ng pahina:',
+	'nuke-nopages-global' => 'Walang bagong mga pahina sa loob ng [[Special:RecentChanges|kamakailang mga pagbabago]].',
+	'nuke-viewchanges' => 'tingnan ang mga pagbabago',
 );
 
 /** Turkish (Türkçe)
@@ -2586,7 +2596,7 @@ $messages['vec'] = array(
 	'right-nuke' => 'Scancelassion de massa de le pagine',
 );
 
-/** Veps (Vepsän kel’)
+/** Veps (vepsän kel’)
  * @author Игорь Бродский
  */
 $messages['vep'] = array(
