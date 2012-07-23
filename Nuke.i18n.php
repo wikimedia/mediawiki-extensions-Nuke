@@ -169,6 +169,13 @@ $messages['arz'] = array(
 	'right-nuke' => 'مسح كبير للصفحات',
 );
 
+/** Assamese (অসমীয়া)
+ * @author Bishnu Saikia
+ */
+$messages['as'] = array(
+	'nuke-submit-user' => 'যাওক',
+);
+
 /** Asturian (asturianu)
  * @author Esbardu
  * @author Xuacu
@@ -1396,7 +1403,7 @@ $messages['ko'] = array(
 	'nuke-select' => '선택: $1',
 	'nuke-userorip' => '계정 이름이나 IP 주소 또는 빈 칸:',
 	'nuke-maxpages' => '문서의 최대 크기:',
-	'nuke-editby' => '[[Special:Contributions/$1|$1]]  사용자가 만듦',
+	'nuke-editby' => '[[Special:Contributions/$1|$1]] 사용자가 만듦',
 	'nuke-deleted' => "'''$1''' 문서가 삭제되었습니다.",
 	'nuke-not-deleted' => "[[:$1]] 문서를 삭제하지 '''못했습니다'''.",
 	'nuke-delete-more' => '[[Special:Nuke|더 많은 문서를 삭제하기]]',

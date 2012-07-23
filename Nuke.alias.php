@@ -228,6 +228,11 @@ $specialPageAliases['tr'] = array(
 	'Nuke' => array( 'Uçur' ),
 );
 
+/** Ukrainian (українська) */
+$specialPageAliases['uk'] = array(
+	'Nuke' => array( 'Масове_вилучення' ),
+);
+
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = array(
 	'Nuke' => array( 'Xóa_hàng_loạt', 'Xoá_hàng_loạt' ),
