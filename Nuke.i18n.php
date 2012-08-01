@@ -1404,7 +1404,7 @@ $messages['ko'] = array(
 	'nuke-userorip' => '계정 이름이나 IP 주소 또는 빈 칸:',
 	'nuke-maxpages' => '문서의 최대 크기:',
 	'nuke-editby' => '[[Special:Contributions/$1|$1]] 사용자가 만듦',
-	'nuke-deleted' => "'''$1''' 문서가 삭제되었습니다.",
+	'nuke-deleted' => "'''$1''' 문서를 삭제했습니다.",
 	'nuke-not-deleted' => "[[:$1]] 문서를 삭제하지 '''못했습니다'''.",
 	'nuke-delete-more' => '[[Special:Nuke|더 많은 문서를 삭제하기]]',
 	'nuke-pattern' => '문서 이름의 패턴:',
@@ -1756,10 +1756,10 @@ $messages['nds'] = array(
  */
 $messages['nds-nl'] = array(
 	'nuke' => 'Massaal vortdoon',
-	'nuke-desc' => "Hiermee kunnen beheerders [[Special:Nuke|massaal pagina's vortdoon]]",
-	'nuke-nopages' => "Gien nieje pagina's van [[Special:Contributions/$1|$1]] in de leste wiezigingen.",
-	'nuke-defaultreason' => "Massaal pagina's van $1 vortdoon",
-	'right-nuke' => "Massaal pagina's vortdoon",
+	'nuke-desc' => 'Hiermee kunnen beheerders [[Special:Nuke|massaal ziejen vortdoon]]',
+	'nuke-nopages' => 'Gien nieje ziejen van [[Special:Contributions/$1|$1]] in de leste wiezigingen.',
+	'nuke-defaultreason' => 'Massaal ziejen van $1 vortdoon',
+	'right-nuke' => 'Massaal ziejen vortdoon',
 );
 
 /** Nepali (नेपाली)
