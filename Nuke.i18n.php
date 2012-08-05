@@ -540,15 +540,16 @@ Geben Sie die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu lösch
 
 /** Zazaki (Zazaki)
  * @author Aspar
+ * @author Erdemaslancan
  */
 $messages['diq'] = array(
 	'nuke' => 'pêropiya hewnakeno..',
 	'nuke-desc' => 'Hizmetlilere, sayfaları [[Special:Nuke|kitlesel silme]] yeteneği verir',
 	'nuke-nopages' => 'vuriyayişê ke hetê ıney ra [[Special:Contributions/$1|$1]] biye tede çı pelê neweyi çini .',
 	'nuke-list' => 'pelê ke cêr de yê hetê ıney ra [[Special:Contributions/$1|$1]]  yew tarixo nızdi de  vıraziyayi; mışore bıkerê u qey hewnakerdışi yew tuş bıtıknê.',
-	'nuke-defaultreason' => 'Mass removal of pages added by $1',
-	'nuke-tools' => 'Bu araç, bir kullanıcı ya da IP tarafından yakın zamanda eklenen sayfaların kitlesel silinmelerine izin verir.
-Silinecek sayfaların listesini almak için kullanıcı adını ya da IPyi girin.',
+	'nuke-defaultreason' => 'Peleyê ke $1 dekerdê de ena pêron hewadayış',
+	'nuke-tools' => 'Na hacet, peleyê ke nezdı ra yew karber yana ip ra akerdê êna pêrun rê esternayış de cı rê mısade dano.
+Listanê peleyê ke besternaya vinayışi rê namey karberi yana ip adresi dekere de.',
 	'nuke-submit-user' => 'şo',
 	'nuke-submit-delete' => 'nişanbiyayeyi hewnaker',
 	'right-nuke' => 'pelan yew hew de hewnaker',
