@@ -113,6 +113,11 @@ $specialPageAliases['id'] = array(
 	'Nuke' => array( 'Nuklir' ),
 );
 
+/** Icelandic (íslenska) */
+$specialPageAliases['is'] = array(
+	'Nuke' => array( 'Fjöldaeyða' ),
+);
+
 /** Italian (italiano) */
 $specialPageAliases['it'] = array(
 	'Nuke' => array( 'CancellazioneMassiva' ),
