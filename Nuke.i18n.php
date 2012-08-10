@@ -215,6 +215,7 @@ $messages['az'] = array(
 
 /** Bashkir (башҡортса)
  * @author Assele
+ * @author Haqmar
  */
 $messages['ba'] = array(
 	'nuke' => 'Күпләп юйыу',
@@ -229,6 +230,7 @@ $messages['ba'] = array(
 	'nuke-submit-delete' => 'Һайланғандарҙы юйырға',
 	'right-nuke' => 'Биттәрҙе күпләп юйыу',
 	'nuke-select' => 'Һайланған: $1',
+	'nuke-deleted' => "'''$1''' бите юйылды.",
 );
 
 /** Southern Balochi (بلوچی مکرانی)
@@ -2247,6 +2249,7 @@ $messages['si'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|තවත් පිටු මකන්න]]',
 	'nuke-pattern' => 'පිටුවේ නම සඳහා රටාව:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|මෑත වෙනස්වීම්වල]]  නව පිටු නොමැත.',
+	'nuke-viewchanges' => 'වෙනස්කිරීම් පෙන්වන්න',
 );
 
 /** Slovak (slovenčina)
