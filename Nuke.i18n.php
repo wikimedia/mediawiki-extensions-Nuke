@@ -123,6 +123,7 @@ $messages['an'] = array(
  */
 $messages['ar'] = array(
 	'nuke' => 'حذف كمي',
+	'action-nuke' => 'حذف الصفحات كميا',
 	'nuke-desc' => 'يعطي مدراء النظام القدرة على [[Special:Nuke|الحذف الكمي]] للصفحات',
 	'nuke-nopages' => 'لا صفحات جديدة بواسطة [[Special:Contributions/$1|$1]] في أحدث التغييرات.',
 	'nuke-list' => 'الصفحات التالية تم إنشاؤها حديثا بواسطة [[Special:Contributions/$1|$1]]؛
@@ -130,7 +131,7 @@ $messages['ar'] = array(
 	'nuke-list-multiple' => 'الصفحات التالية أنشئت حديثا؛
 علق عليها واضغط الزر لحذفها',
 	'nuke-defaultreason' => 'إزالة كمية للصفحات المضافة بواسطة $1',
-	'nuke-multiplepeople' => 'مستخدمون كثر',
+	'nuke-multiplepeople' => 'حذف كمي لصفحات مضافة حديثا',
 	'nuke-tools' => 'هذه الأداة تسمح بالحذف الكمي للصفحات المضافة حديثا بواسطة مستخدم أو أيبي معطى.
 أدخل اسم المستخدم أو الأيبي لعرض قائمة بالصفحات للحذف، أو اترك فارغة لكل المستخدمين.',
 	'nuke-submit-user' => 'اذهب',
@@ -142,6 +143,7 @@ $messages['ar'] = array(
 	'nuke-editby' => 'من إنشاء [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "صفحة '''$1''' حذفت.",
 	'nuke-not-deleted' => "صفحة [[:$1]] '''لا''' تحذف.",
+	'nuke-viewchanges' => 'عرض التغييرات',
 );
 
 /** Aramaic (ܐܪܡܝܐ)
@@ -553,7 +555,7 @@ $messages['diq'] = array(
 	'nuke-tools' => 'Na hacet, peleyê ke nezdı ra yew karber yana ip ra akerdê êna pêrun rê esternayış de cı rê mısade dano.
 Listanê peleyê ke besternaya vinayışi rê namey karberi yana ip adresi dekere de.',
 	'nuke-submit-user' => 'şo',
-	'nuke-submit-delete' => 'nişanbiyayeyi hewnaker',
+	'nuke-submit-delete' => 'Weçinayi esterne',
 	'right-nuke' => 'pelan yew hew de hewnaker',
 );
 
@@ -1986,6 +1988,7 @@ $messages['ps'] = array(
 	'nuke-deleted' => "د '''$1''' مخ ړنګ شو.",
 	'nuke-not-deleted' => "د [[:$1]] مخ '''نشي''' ړنګېدلی.",
 	'nuke-delete-more' => '[[Special:Nuke|لا نور مخونه ړنګول]]',
+	'nuke-viewchanges' => 'بدلونونه کتل',
 );
 
 /** Portuguese (português)
@@ -2433,6 +2436,10 @@ $messages['te'] = array(
 	'right-nuke' => 'పేజీలను సామూహికంగా తొలగించడం',
 	'nuke-select' => 'ఎంచుకోండి: $1',
 	'nuke-maxpages' => 'గరిష్ఠ పుటల సంఖ్య:',
+	'nuke-deleted' => "'''$1''' పేజీని తొలగించారు.",
+	'nuke-delete-more' => '[[Special:Nuke|మరిన్ని పేజీలను తొలగించండి]]',
+	'nuke-nopages-global' => '[[Special:RecentChanges|ఇటీవలి మార్పుల]]లో కొత్త పేజీలు ఏమీ లేవు.',
+	'nuke-viewchanges' => 'మార్పులను చూడండి',
 );
 
 /** Tetum (tetun)
