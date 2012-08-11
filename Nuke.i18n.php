@@ -737,7 +737,7 @@ $messages['eu'] = array(
  */
 $messages['fa'] = array(
 	'nuke' => 'حذف دسته‌جمعی',
-	'action-nuke' => 'صفحه‌های نوک',
+	'action-nuke' => 'حذف دسته‌جمعی صفحه‌ها',
 	'nuke-desc' => 'به مدیران امکان [[Special:Nuke|حذف دسته‌جمعی]] صفحه‌ها را می‌دهد',
 	'nuke-nopages' => 'صفحهٔ جدیدی از [[Special:Contributions/$1|$1]] در تغییرات اخیر وجود ندارد.',
 	'nuke-list' => 'صفحه‌های زیر به تازگی توسط [[Special:Contributions/$1|$1]] ایجاد شده‌اند؛ توضیحی ارائه کنید و دکمه را بزنید تا این صحفه‌ها حذف شوند.',
@@ -1685,12 +1685,13 @@ $messages['mt'] = array(
 	'nuke-list' => 'Il-paġni segwenti ġew riċentament maħluqa minn [[Special:Contributions/$1|$1]];
 daħħal kumment u agħfas il-buttuna sabiex tħassarhom.',
 	'nuke-defaultreason' => "Tħassir ta' massa ta' paġni miżjuda minn $1",
-	'nuke-multiplepeople' => 'iktar minn utent wieħed',
+	'nuke-multiplepeople' => "Tħassir tal-massa ta' paġni miżjuda riċenta",
 	'nuke-tools' => "Din l-għodda tippermetti t-tħassir ta' massa ta' paġni li ġew miżjuda riċentament minn utent partikulari jew IP.
 Daħħal l-isem tal-utent jew l-indirizz IP biex tikseb lista ta' paġni li jridu jitħassru, jew ħalliha votja sabiex issejjaħ l-utenti kollha.",
 	'nuke-submit-user' => 'Mur',
 	'nuke-submit-delete' => 'Ħassar dawk magħżula',
 	'right-nuke' => 'Ħassar paġni bil-massa',
+	'nuke-select' => 'Agħżel: $1',
 	'nuke-userorip' => 'Isem tal-utent, indirizz IP jew vojt:',
 	'nuke-maxpages' => "Numru massimu ta' paġni:",
 );
@@ -2083,10 +2084,13 @@ $messages['rif'] = array(
  */
 $messages['ro'] = array(
 	'nuke' => 'Ştergere în masă',
+	'action-nuke' => 'pagini în masă',
 	'nuke-desc' => 'Oferă administratorilor abilitatea de [[Special:Nuke|a șterge în masă]] pagini',
 	'nuke-nopages' => 'Nicio pagină nouă de către [[Special:Contributions/$1|$1]] în schimbările recente.',
 	'nuke-list' => 'Aceste pagini au fost recent create de [[Special:Contributions/$1|$1]];
 adăugați un comentariu și apăsați butonul pentru a le șterge.',
+	'nuke-list-multiple' => 'Următoarele pagini au fost create recent;
+postează un comentariu și apasă butonul pentru a le șterge.',
 	'nuke-defaultreason' => 'Ștergere în masă a paginilor adăugate de $1',
 	'nuke-multiplepeople' => 'Ștergere în masă a paginilor recent adăugate',
 	'nuke-tools' => 'Această unealtă permite ștergeri în masă a paginilor recent adăugate de către un utilizator dat sau adresă IP.
