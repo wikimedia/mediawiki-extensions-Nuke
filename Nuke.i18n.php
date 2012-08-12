@@ -714,6 +714,7 @@ Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-a
 	'nuke-deleted' => "Lehekülg '''$1''' on kustutatud.",
 	'nuke-not-deleted' => "Lehekülge [[:$1]] '''ei saa''' kustutada.",
 	'nuke-delete-more' => '[[Special:Nuke|Kustuta veel lehekülgi]]',
+	'nuke-pattern' => 'Lehekülje pealkirja kuju:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|Viimaste muudatuste]] all pole uusi lehekülgi.',
 	'nuke-viewchanges' => 'vaata muudatusi',
 );
@@ -2414,10 +2415,15 @@ $messages['sw'] = array(
 );
 
 /** Tamil (தமிழ்)
+ * @author Karthi.dr
  * @author TRYPPN
  */
 $messages['ta'] = array(
 	'nuke-submit-user' => 'செல்',
+	'nuke-submit-delete' => 'தேர்ந்தெடுத்ததை நீக்கு',
+	'nuke-select' => 'தேர்ந்தெடுக்கவும்:$1',
+	'nuke-maxpages' => 'அதிகபட்ச பக்கங்களின் எண்ணிக்கை:',
+	'nuke-viewchanges' => 'மாற்றங்களைப் பார்',
 );
 
 /** Telugu (తెలుగు)
