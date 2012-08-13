@@ -2326,11 +2326,20 @@ $messages['sr-ec'] = array(
 	'nuke-nopages' => 'Нема нових страница од стране корисника [[Special:Contributions/$1|$1]] у скорашњим изменама.',
 	'nuke-list' => 'Следеће странице је скоро направио корисник [[Special:Contributions/$1|$1]]; коментариши и притисни дугме за њихово брисање.',
 	'nuke-defaultreason' => 'Масовно брисање страница које је направио корисник $1',
+	'nuke-multiplepeople' => 'Масовно брисање недавно додатих страница',
 	'nuke-tools' => 'Ова алатка омогућава збирно брисање страница које је недавно додао одређени корисник (са налогом или без њега).
 Унесите корисничко име или ИП адресу да бисте добили списак страница за брисање, или оставите празно ако желите да се наведу сви корисници.',
 	'nuke-submit-user' => 'Иди',
 	'nuke-submit-delete' => 'Обриши изабрано',
 	'right-nuke' => 'масовно брисање страница',
+	'nuke-select' => 'Изабери: $1',
+	'nuke-userorip' => 'Корисничко име, ИП адреса или празно:',
+	'nuke-maxpages' => 'Највећи број страница:',
+	'nuke-editby' => 'Направио [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Страница '''$1''' је обрисана.",
+	'nuke-not-deleted' => "'''Не могу''' да обришем страницу [[:$1]].",
+	'nuke-delete-more' => '[[Special:Nuke|Обриши још страница]]',
+	'nuke-pattern' => 'Образац за назив странице:',
 );
 
 /** Serbian (Latin script) (‪srpski (latinica)‬)
@@ -2407,6 +2416,9 @@ Ange användarnamnet eller IP-adressen för att se en lista över sidor som kan 
 	'nuke-editby' => 'Skapades av [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Sidan '''$1''' har raderats.",
 	'nuke-not-deleted' => "Sidan [[:$1]] '''kunde inte''' raderas.",
+	'nuke-delete-more' => '[[Special:Nuke|Radera fler sidor]]',
+	'nuke-nopages-global' => 'Det finns inga nya sidor i [[Special:RecentChanges|senaste ändringar]].',
+	'nuke-viewchanges' => 'visa ändringar',
 );
 
 /** Swahili (Kiswahili) */
