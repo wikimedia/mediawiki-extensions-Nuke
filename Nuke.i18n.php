@@ -2135,6 +2135,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'nuke-deleted' => "Pàgene '''$1''' ha state scangellate.",
 	'nuke-not-deleted' => "Pàgene [[:$1]] '''non ge pò''' essere scangellate.",
 	'nuke-pattern' => "Segnaposte pu nomed'a pàgene:",
+	'nuke-viewchanges' => 'vide le cangiaminde',
 );
 
 /** Russian (русский)
@@ -2429,12 +2430,15 @@ $messages['sw'] = array(
 /** Tamil (தமிழ்)
  * @author Karthi.dr
  * @author TRYPPN
+ * @author மதனாஹரன்
  */
 $messages['ta'] = array(
 	'nuke-submit-user' => 'செல்',
 	'nuke-submit-delete' => 'தேர்ந்தெடுத்ததை நீக்கு',
 	'nuke-select' => 'தேர்ந்தெடுக்கவும்:$1',
 	'nuke-maxpages' => 'அதிகபட்ச பக்கங்களின் எண்ணிக்கை:',
+	'nuke-deleted' => "பக்கம் '''$1''' அழிக்கப்பட்டுள்ளது.",
+	'nuke-delete-more' => '[[Special:Nuke|இன்னும் பக்கங்களை அழிக்கவும்]]',
 	'nuke-viewchanges' => 'மாற்றங்களைப் பார்',
 );
 
