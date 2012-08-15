@@ -865,6 +865,7 @@ Buchiér lo nom d’usanciér ou ben l’adrèce IP por avêr la lista de les p�
 	'nuke-delete-more' => '[[Special:Nuke|Suprimar més de pâges]]',
 	'nuke-pattern' => 'Modèlo por lo nom de pâge :',
 	'nuke-nopages-global' => 'Y at gins de pâge novèla dedens los [[Special:RecentChanges|dèrriérs changements]].',
+	'nuke-viewchanges' => 'vêre los changements',
 );
 
 /** Friulian (furlan)
@@ -1344,6 +1345,7 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
  */
 $messages['ka'] = array(
 	'nuke' => 'მასობრივი წაშლა',
+	'action-nuke' => 'გვერდების მასიური წაშლა',
 	'nuke-desc' => 'ადმინისტრატორებს აძლევს გვერდების [[Special:Nuke|მასობრივად წაშლის]] საშუალებას',
 	'nuke-nopages' => 'ბოლო ცვლილებებში არ არის ახალი გვერდები [[Special:Contributions/$1|$1]]-ის მიერ.',
 	'nuke-list' => 'ეს გვერდები შეიქმნა [[Special:Contributions/$1|$1]]-ის მიერ;
@@ -1359,6 +1361,8 @@ $messages['ka'] = array(
 	'nuke-maxpages' => 'გვერდების მაქსიმალური რაოდენობა:',
 	'nuke-deleted' => "გვერდი '''$1''' წაიშალა.",
 	'nuke-not-deleted' => "გვერდი [[:$1]] წაშლა '''შეუძლებელია'''.",
+	'nuke-delete-more' => '[[Special:Nuke|მრავალრიცხოვანი გვერდების წაშლა]]',
+	'nuke-viewchanges' => 'ცვლილებების ჩვენება',
 );
 
 /** Khmer (ភាសាខ្មែរ)
