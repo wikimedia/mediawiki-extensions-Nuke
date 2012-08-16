@@ -33,19 +33,19 @@ class SpecialNuke extends SpecialPage {
 			if ( $user ) $target = $user->getName();
 		}
 
-		$reason = $req->getText( 'wpReason',
-			$target === '' ?
-				wfMsgForContent( 'nuke-multiplepeople' ) :
-				wfMsgForContent( 'nuke-defaultreason', "[[Special:Contributions/$target|$target]]" )
-		);
+		$msg = $target === '' ?
+			$this->msg( 'nuke-multiplepeople' )->inContentLanguage()->text() :
+			$this->msg( 'nuke-defaultreason', "[[Special:Contributions/$target|$target]]" )->
+				inContentLanguage()->text();
+		$reason = $req->getText( 'wpReason', $msg );
 
-		if( $req->wasPosted()
+		if ( $req->wasPosted()
 			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) ) ) {
 
 			if ( $req->getVal( 'action' ) == 'delete' ) {
 				$pages = $req->getArray( 'pages' );
 
-				if( $pages ) {
+				if ( $pages ) {
 					$this->doDelete( $pages, $reason );
 					return;
 				}
@@ -80,18 +80,18 @@ class SpecialNuke extends SpecialPage {
 				)
 			)
 			. '<table><tr>'
-				. '<td>' . Xml::label( wfMsg( 'nuke-userorip' ), 'nuke-target' ) . '</td>'
+				. '<td>' . Xml::label( $this->msg( 'nuke-userorip' )->text(), 'nuke-target' ) . '</td>'
 				. '<td>' . Xml::input( 'target', 40, $userName, array( 'id' => 'nuke-target' ) ) . '</td>'
 			. '</tr><tr>'
-				. '<td>' . Xml::label( wfMsg( 'nuke-pattern' ), 'nuke-pattern' ) . '</td>'
+				. '<td>' . Xml::label( $this->msg( 'nuke-pattern' )->text(), 'nuke-pattern' ) . '</td>'
 				. '<td>' . Xml::input( 'pattern', 40, '', array( 'id' => 'nuke-pattern' ) ) . '</td>'
 			. '</tr><tr>'
-				. '<td>' . Xml::label( wfMsg( 'nuke-maxpages' ), 'nuke-limit' ) . '</td>'
+				. '<td>' . Xml::label( $this->msg( 'nuke-maxpages' )->text(), 'nuke-limit' ) . '</td>'
 				. '<td>' . Xml::input( 'limit', 7, '500', array( 'id' => 'nuke-limit' ) ) . '</td>'
 			. '</tr><tr>'
 				. '<td></td>'
-				. '<td>' . Xml::submitButton( wfMsg( 'nuke-submit-user' ) ) . '</td>'
-			.'</tr></table>'
+				. '<td>' . Xml::submitButton( $this->msg( 'nuke-submit-user' )->text() ) . '</td>'
+			. '</tr></table>'
 			. Html::hidden( 'wpEditToken', $this->getUser()->editToken() )
 			. Xml::closeElement( 'form' )
 		);
@@ -109,7 +109,7 @@ class SpecialNuke extends SpecialPage {
 
 		$pages = $this->getNewPages( $username, $limit );
 
-		if( count( $pages ) == 0 ) {
+		if ( count( $pages ) == 0 ) {
 			if ( $username === '' ) {
 				$out->addWikiMsg( 'nuke-nopages-global' );
 			} else {
@@ -134,13 +134,13 @@ class SpecialNuke extends SpecialPage {
 			Xml::openElement( 'form', array(
 				'action' => $nuke->getLocalURL( 'action=delete' ),
 				'method' => 'post',
-				'name' => 'nukelist')
+				'name' => 'nukelist' )
 			) .
 			Html::hidden( 'wpEditToken', $this->getUser()->editToken() ) .
 			Xml::tags( 'p',
 				null,
 				Xml::inputLabel(
-					wfMsg( 'deletecomment' ), 'wpReason', 'wpReason', 70, $reason
+					$this->msg( 'deletecomment' )->text(), 'wpReason', 'wpReason', 70, $reason
 				)
 			)
 		);
@@ -148,24 +148,27 @@ class SpecialNuke extends SpecialPage {
 		// Select: All, None
 		$links = array();
 		$links[] = '<a href="#" id="toggleall">' .
-			wfMsg( 'powersearch-toggleall' ) . '</a>';
+			$this->msg( 'powersearch-toggleall' )->text() . '</a>';
 		$links[] = '<a href="#" id="togglenone">' .
-			wfMsg( 'powersearch-togglenone' ) . '</a>';
+			$this->msg( 'powersearch-togglenone' )->text() . '</a>';
 		$out->addHTML(
 			Xml::tags( 'p',
 				null,
-				wfMsg( 'nuke-select', $this->getLanguage()->commaList( $links ) )
+				$this->msg( 'nuke-select', $this->getLanguage()->commaList( $links ) )->text()
 			)
 		);
 
 		// Delete button
 		$out->addHTML(
-			Xml::submitButton( wfMsg( 'nuke-submit-delete' ) )
+			Xml::submitButton( $this->msg( 'nuke-submit-delete' )->text() )
 		);
 
 		$out->addHTML( '<ul>' );
 
-		foreach( $pages as $info ) {
+		$wordSeparator = $this->msg( 'word-separator' )->text();
+		$commaSeparator = $this->msg( 'comma-separator' )->text();
+
+		foreach ( $pages as $info ) {
 			/**
 			 * @var $title Title
 			 */
@@ -174,29 +177,28 @@ class SpecialNuke extends SpecialPage {
 			$image = $title->getNamespace() == NS_IMAGE ? wfLocalFile( $title ) : false;
 			$thumb = $image && $image->exists() ? $image->transform( array( 'width' => 120, 'height' => 120 ), 0 ) : false;
 
+			$userNameText = $userName ? $this->msg( 'nuke-editby', $userName )->parse() . $commaSeparator : '';
+			$changesLink = Linker::linkKnown(
+				$title,
+				$this->msg( 'nuke-viewchanges' )->text(),
+				array(),
+				array( 'action' => 'history' )
+			);
 			$out->addHTML( '<li>' .
 				Xml::check(
 					'pages[]',
 					true,
 					array( 'value' =>  $title->getPrefixedDbKey() )
-				) .
-				'&#160;' .
+				) . '&#160;' .
 				( $thumb ? $thumb->toHtml( array( 'desc-link' => true ) ) : '' ) .
-				Linker::linkKnown( $title ) .
-				'&#160;(' .
-				( $userName ? wfMsgExt( 'nuke-editby', 'parseinline', $userName ) . ',&#160;' : '' ) .
-				Linker::linkKnown(
-					$title,
-					wfMsg( 'nuke-viewchanges' ),
-					array(),
-					array( 'action' => 'history' )
-				) .
-				")</li>\n" );
+				Linker::linkKnown( $title ) . $wordSeparator .
+				$this->msg( 'parentheses' )->rawParams( $userNameText . $changesLink )->escaped() .
+				"</li>\n" );
 		}
 
 		$out->addHTML(
 			"</ul>\n" .
-			Xml::submitButton( wfMsg( 'nuke-submit-delete' ) ) .
+			Xml::submitButton( wfMessage( 'nuke-submit-delete' )->text() ) .
 			'</form>'
 		);
 	}
@@ -260,15 +262,16 @@ class SpecialNuke extends SpecialPage {
 	 *
 	 * @param array $pages The pages to delete
 	 * @param string $reason
+	 * @throws PermissionsError
 	 */
 	protected function doDelete( array $pages, $reason ) {
 		$res = array();
 
-		foreach( $pages as $page ) {
+		foreach ( $pages as $page ) {
 			$title = Title::newFromURL( $page );
 			$file = $title->getNamespace() == NS_FILE ? wfLocalFile( $title ) : false;
 
-			$permission_errors = $title->getUserPermissionsErrors( 'delete', $this->getUser());
+			$permission_errors = $title->getUserPermissionsErrors( 'delete', $this->getUser() );
 
 			if ( $permission_errors !== array() ) {
 				throw new PermissionsError( 'delete', $permission_errors );
@@ -283,15 +286,13 @@ class SpecialNuke extends SpecialPage {
 			}
 
 			if ( $ok ) {
-				$res[] = wfMsgExt( 'nuke-deleted', array( 'parseinline' ), $title->getPrefixedText() );
+				$res[] = wfMessage( 'nuke-deleted', $title->getPrefixedText() )->parse();
 			} else {
-				$res[] = wfMsgExt( 'nuke-not-deleted', array( 'parseinline' ), $title->getPrefixedText() );
+				$res[] = wfMessage( 'nuke-not-deleted', $title->getPrefixedText() )->parse();
 			}
 		}
 
 		$this->getOutput()->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
-
 		$this->getOutput()->addWikiMsg( 'nuke-delete-more' );
 	}
-
 }
