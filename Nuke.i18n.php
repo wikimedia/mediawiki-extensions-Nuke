@@ -766,6 +766,7 @@ $messages['fa'] = array(
 );
 
 /** Finnish (suomi)
+ * @author Beluga
  * @author Crt
  * @author Jaakonam
  * @author Nike
@@ -796,6 +797,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 	'nuke-delete-more' => '[[Special:Nuke|Poista lisää sivuja]]',
 	'nuke-pattern' => 'Sivun nimien etuliite',
 	'nuke-nopages-global' => '[[Special:RecentChanges|Tuoreissa muutoksissa]] ei ole uusia sivuja.',
+	'nuke-viewchanges' => 'näytä muutokset',
 );
 
 /** French (français)
@@ -1321,6 +1323,7 @@ $messages['jut'] = array(
 
 /** Javanese (Basa Jawa)
  * @author Meursault2004
+ * @author NoiX180
  */
 $messages['jv'] = array(
 	'nuke' => 'Busak massal',
@@ -1334,6 +1337,16 @@ Lebokna jeneng panganggo utawa alamat IP kanggo olèh daftar kaca-kaca sing bisa
 	'nuke-submit-user' => 'Lakokna',
 	'nuke-submit-delete' => 'Busaken sing kapilih',
 	'right-nuke' => 'Pambusakan masal',
+	'nuke-select' => 'Pilih: $1',
+	'nuke-userorip' => 'Jeneng panganggo, alamat IP utawa kosong:',
+	'nuke-maxpages' => 'Cacahé kaca maksimal:',
+	'nuke-editby' => 'Digawé déning [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Kaca '''$1''' wis dibusak.",
+	'nuke-not-deleted' => "Kaca [[:$1]] '''ora bisa''' dibusak.",
+	'nuke-delete-more' => '[[Special:Nuke|Busak kaca luwih akèh]]',
+	'nuke-pattern' => 'Pola kanggo jeneng kaca:',
+	'nuke-nopages-global' => 'Ora ana kaca anyar nèng [[Special:RecentChanges|owah-owahan paling anyar]].',
+	'nuke-viewchanges' => 'delok owah-owahan',
 );
 
 /** Georgian (ქართული)
@@ -1736,7 +1749,7 @@ sett inn en kommentar og trykk på knappen for å slette dem.',
 Skriv et brukernavn eller en IP-adresse for å få en liste over sider som kan slettes, eller angi tomt for alle brukere.',
 	'nuke-submit-user' => 'Gå',
 	'nuke-submit-delete' => 'Slett valgte',
-	'right-nuke' => 'Slette sider <i>en masse</i>',
+	'right-nuke' => 'Slette sider <em>en masse</em>',
 	'nuke-select' => 'Velg: $1',
 	'nuke-userorip' => 'Brukernavn, IP-adresse eller tomt:',
 	'nuke-maxpages' => 'Maksimalt antall sider:',
