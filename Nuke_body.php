@@ -92,7 +92,7 @@ class SpecialNuke extends SpecialPage {
 				. '<td></td>'
 				. '<td>' . Xml::submitButton( $this->msg( 'nuke-submit-user' )->text() ) . '</td>'
 			. '</tr></table>'
-			. Html::hidden( 'wpEditToken', $this->getUser()->editToken() )
+			. Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() )
 			. Xml::closeElement( 'form' )
 		);
 	}
@@ -136,7 +136,7 @@ class SpecialNuke extends SpecialPage {
 				'method' => 'post',
 				'name' => 'nukelist' )
 			) .
-			Html::hidden( 'wpEditToken', $this->getUser()->editToken() ) .
+			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			Xml::tags( 'p',
 				null,
 				Xml::inputLabel(
