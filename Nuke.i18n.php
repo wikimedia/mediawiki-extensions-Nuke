@@ -22,7 +22,7 @@ put in a comment and hit the button to delete them.",
 	'nuke-list-multiple' => 'The following pages were recently created;
 put in a comment and hit the button to delete them.',
 	'nuke-defaultreason' => "Mass deletion of pages added by $1",
-	'nuke-multiplepeople'=> 'Mass deletion of recently added pages',
+	'nuke-multiplepeople' => 'Mass deletion of recently added pages',
 	'nuke-tools'         => 'This tool allows for mass deletions of pages recently added by a given user or an IP address.
 Input the username or IP address to get a list of pages to delete, or leave blank for all users.',
 	'nuke-submit-user'   => 'Go',
@@ -36,7 +36,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
 	'nuke-not-deleted'   => "Page [[:$1]] '''could not''' be deleted.",
 	'nuke-delete-more'	 => '[[Special:Nuke|Delete more pages]]',
 	'nuke-pattern'       => 'Pattern for the page name:',
-	'nuke-nopages-global'=> 'There are no new pages in [[Special:RecentChanges|recent changes]].',
+	'nuke-nopages-global' => 'There are no new pages in [[Special:RecentChanges|recent changes]].',
 	'nuke-viewchanges'   => 'view changes',
 );
 
