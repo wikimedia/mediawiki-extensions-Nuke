@@ -2643,6 +2643,18 @@ $messages['uk'] = array(
 	'nuke-pattern' => 'Шаблон назви сторінки:',
 );
 
+/** Urdu (اردو)
+ * @author පසිඳු කාවින්ද
+ */
+$messages['ur'] = array(
+	'nuke' => 'بڑے پیمانے پر خارج',
+	'nuke-submit-user' => 'چلو',
+	'nuke-submit-delete' => 'منتخب شدہ خارج',
+	'right-nuke' => 'بڑے پیمانے پر صفحات کو حذف',
+	'nuke-maxpages' => 'صفحات کی زیادہ سے زیادہ تعداد:',
+	'nuke-viewchanges' => 'قول تبدیلیاں',
+);
+
 /** vèneto (vèneto)
  * @author Candalua
  */
