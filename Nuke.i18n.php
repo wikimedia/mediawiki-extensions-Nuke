@@ -150,7 +150,11 @@ $messages['ar'] = array(
  * @author Basharh
  */
 $messages['arc'] = array(
+	'nuke' => 'ܫܝܦܐ ܟܡܢܝܐ',
+	'action-nuke' => 'ܫܝܦܐ ܟܡܢܝܐ ܕܦܐܬܬ̈ܐ',
+	'nuke-desc' => 'ܗܒ ܡܕܒܪ̈ܢܐ ܫܘܠܛܢܐ ܥܠ [[Special:Nuke|ܫܝܦܐ ܟܡܢܝܐ]] ܕܦܐܬܬ̈ܐ',
 	'nuke-submit-user' => 'ܙܠ',
+	'nuke-select' => 'ܓܒܝ: $1',
 );
 
 /** Egyptian Spoken Arabic (مصرى)
