@@ -2109,16 +2109,16 @@ $messages['rif'] = array(
  */
 $messages['ro'] = array(
 	'nuke' => 'Ştergere în masă',
-	'action-nuke' => 'pagini în masă',
+	'action-nuke' => 'să ștergeți pagini în masă',
 	'nuke-desc' => 'Oferă administratorilor abilitatea de [[Special:Nuke|a șterge în masă]] pagini',
 	'nuke-nopages' => 'Nicio pagină nouă de către [[Special:Contributions/$1|$1]] în schimbările recente.',
 	'nuke-list' => 'Aceste pagini au fost recent create de [[Special:Contributions/$1|$1]];
 adăugați un comentariu și apăsați butonul pentru a le șterge.',
 	'nuke-list-multiple' => 'Următoarele pagini au fost create recent;
-postează un comentariu și apasă butonul pentru a le șterge.',
+adăugați un comentariu și apăsați butonul pentru a le șterge.',
 	'nuke-defaultreason' => 'Ștergere în masă a paginilor adăugate de $1',
 	'nuke-multiplepeople' => 'Ștergere în masă a paginilor recent adăugate',
-	'nuke-tools' => 'Această unealtă permite ștergeri în masă a paginilor recent adăugate de către un utilizator dat sau adresă IP.
+	'nuke-tools' => 'Această unealtă permite ștergeri în masă a paginilor recent adăugate de către un utilizator dat sau o adresă IP.
 Introduceți numele de utilizator sau adresa IP pentru a primi o listă cu paginile de șters sau nu completați nimic pentru a lua în calcul toți utilizatorii.',
 	'nuke-submit-user' => 'Du-te',
 	'nuke-submit-delete' => 'Șterge ce e marcat',
