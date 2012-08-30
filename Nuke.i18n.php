@@ -1376,6 +1376,7 @@ $messages['ka'] = array(
 	'nuke-select' => 'აირჩიეთ: $1',
 	'nuke-userorip' => 'მომხმარებლის სახელი, IP-მისამართი (შესაძლებელია ცარიელის დატოვება):',
 	'nuke-maxpages' => 'გვერდების მაქსიმალური რაოდენობა:',
+	'nuke-editby' => 'შექმნილია [[Special:Contributions/$1|$1]]-ის მიერ',
 	'nuke-deleted' => "გვერდი '''$1''' წაიშალა.",
 	'nuke-not-deleted' => "გვერდი [[:$1]] წაშლა '''შეუძლებელია'''.",
 	'nuke-delete-more' => '[[Special:Nuke|მრავალრიცხოვანი გვერდების წაშლა]]',
