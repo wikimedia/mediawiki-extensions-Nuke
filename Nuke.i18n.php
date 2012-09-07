@@ -548,6 +548,7 @@ Geben Sie die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu lösch
 /** Zazaki (Zazaki)
  * @author Aspar
  * @author Erdemaslancan
+ * @author Mirzali
  */
 $messages['diq'] = array(
 	'nuke' => 'pêropiya hewnakeno..',
@@ -557,7 +558,7 @@ $messages['diq'] = array(
 	'nuke-defaultreason' => 'Peleyê ke $1 dekerdê de ena pêron hewadayış',
 	'nuke-tools' => 'Na hacet, peleyê ke nezdı ra yew karber yana ip ra akerdê êna pêrun rê esternayış de cı rê mısade dano.
 Listanê peleyê ke besternaya vinayışi rê namey karberi yana ip adresi dekere de.',
-	'nuke-submit-user' => 'şo',
+	'nuke-submit-user' => 'Şo',
 	'nuke-submit-delete' => 'Weçinayi esterne',
 	'right-nuke' => 'pelan yew hew de hewnaker',
 );
