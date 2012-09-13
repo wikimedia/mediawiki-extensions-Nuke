@@ -1034,13 +1034,14 @@ $messages['hil'] = array(
 /** Croatian (hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
+ * @author Roberta F.
  * @author SpeedyGonsales
  */
 $messages['hr'] = array(
 	'nuke' => 'Skupno brisanje',
 	'nuke-desc' => 'Daje administratorima mogućnost [[Special:Nuke|skupnog brisanja]] stranica',
 	'nuke-nopages' => 'Nema novih stranica suradnika [[Special:Contributions/$1|$1]] među nedavnim promjenama.',
-	'nuke-list' => 'Slijedeće stranice je stvorio suradnik [[Special:Contributions/$1|$1]]; napišite zaključak i kliknite gumb za njihovo brisanje.',
+	'nuke-list' => 'Sljedeće stranice stvorio je suradnik [[Special:Contributions/$1|$1]]; napišite zaključak i pritisnite puce za njihovo brisanje.',
 	'nuke-defaultreason' => 'Skupno brisanje stranica suradnika $1',
 	'nuke-tools' => 'Ova ekstenzija omogućava skupno brisanje stranica (članaka) nekog prijavljenog ili neprijavljenog suradnika. Upišite ime ili IP adresu za dobivanje popisa stranica koje je moguće obrisati:',
 	'nuke-submit-user' => 'Kreni',
