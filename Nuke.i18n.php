@@ -2622,6 +2622,7 @@ $messages['ug-latn'] = array(
  * @author Ahonc
  * @author Base
  * @author Dim Grits
+ * @author Microcell
  * @author Тест
  */
 $messages['uk'] = array(
@@ -2646,6 +2647,7 @@ $messages['uk'] = array(
 	'nuke-editby' => 'Створені [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Сторінка '''$1''' була вилучена.",
 	'nuke-not-deleted' => "Сторінка [[:$1]] '''не може''' бути вилучена.",
+	'nuke-delete-more' => '[[Special:Nuke|Масове вилучення сторінок]]',
 	'nuke-pattern' => 'Шаблон назви сторінки:',
 );
 
