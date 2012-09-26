@@ -2366,21 +2366,31 @@ $messages['sr-ec'] = array(
 	'nuke-pattern' => 'Образац за назив странице:',
 );
 
-/** Serbian (Latin script) (‪srpski (latinica)‬)
+/** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
  * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
 	'nuke' => 'Masovno brisanje',
+	'action-nuke' => 'masovno brisanje stranica',
 	'nuke-desc' => 'Daje administratoru mogućnost da [[Special:Nuke|masovno briše]] stranice.',
 	'nuke-nopages' => 'Nema novih stranica od strane korisnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.',
 	'nuke-list' => 'Sledeće stranice je skoro napravio korisnik [[Special:Contributions/$1|$1]]; komentariši i pritisni dugme za njihovo brisanje.',
 	'nuke-defaultreason' => 'Masovno brisanje stranica koje je napravio korisnik $1.',
+	'nuke-multiplepeople' => 'Masovno brisanje nedavno dodatih stranica',
 	'nuke-tools' => 'Ova alatka omogućava zbirno brisanje stranica koje je nedavno dodao određeni korisnik (sa nalogom ili bez njega).
 Unesite korisničko ime ili IP adresu da biste dobili spisak stranica za brisanje, ili ostavite prazno ako želite da se navedu svi korisnici.',
 	'nuke-submit-user' => 'Idi',
 	'nuke-submit-delete' => 'Obriši obeleženo',
 	'right-nuke' => 'Masovno brisanje strana.',
+	'nuke-select' => 'Izaberi: $1',
+	'nuke-userorip' => 'Korisničko ime, IP adresa ili prazno:',
+	'nuke-maxpages' => 'Najveći broj stranica:',
+	'nuke-editby' => 'Napravio [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Stranica '''$1''' je obrisana.",
+	'nuke-not-deleted' => "'''Ne mogu''' da obrišem stranicu [[:$1]].",
+	'nuke-delete-more' => '[[Special:Nuke|Obriši još stranica]]',
+	'nuke-pattern' => 'Obrazac za naziv stranice:',
 );
 
 /** Seeltersk (Seeltersk)
@@ -2793,7 +2803,7 @@ $messages['zh-hans'] = array(
 	'nuke-viewchanges' => '查看变更',
 );
 
-/** Traditional Chinese (‪中文（繁體）‬)
+/** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
  * @author Mark85296341
  * @author Shinjiman
@@ -2820,5 +2830,6 @@ $messages['zh-hant'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|刪除更多頁面]]',
 	'nuke-pattern' => '頁面名稱的模式：',
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近更改]]中沒有新的頁面。',
+	'nuke-viewchanges' => '查看變更',
 );
 
