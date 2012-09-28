@@ -1842,7 +1842,7 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-viewchanges' => 'wijzigingen bekijken',
 );
 
-/** Norwegian Nynorsk (‪norsk (nynorsk)‬)
+/** Norwegian Nynorsk (norsk (nynorsk)‎)
  * @author Harald Khan
  * @author Njardarlogar
  */
@@ -1871,6 +1871,7 @@ Skriv inn eit brukarnamn eller ei IP-adresse for å få ei liste over sider som 
 	'nuke-delete-more' => '[[Special:Nuke|Slett fleire sider]]',
 	'nuke-pattern' => 'Mønster for sidenamnet:',
 	'nuke-nopages-global' => 'Det er ingen nye sider i [[Special:RecentChanges|siste endringane]].',
+	'nuke-viewchanges' => 'vis endringar',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
