@@ -273,7 +273,7 @@ $messages['be'] = array(
 	'right-nuke' => 'масава сціраць старонкі',
 );
 
-/** Belarusian (Taraškievica orthography) (‪беларуская (тарашкевіца)‬)
+/** Belarusian (Taraškievica orthography) (беларуская (тарашкевіца)‎)
  * @author EugeneZelenko
  * @author Jim-by
  * @author Wizardist
@@ -531,7 +531,7 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 	'nuke-viewchanges' => 'Änderungen ansehen',
 );
 
-/** German (formal address) (‪Deutsch (Sie-Form)‬)
+/** German (formal address) (Deutsch (Sie-Form)‎)
  * @author Kghbln
  * @author Raimond Spekking
  * @author SVG
@@ -1493,7 +1493,7 @@ udder lohß dat Feld läddesch, dann kriß De en Leß vun Alle.',
 	'nuke-viewchanges' => 'de Ungerscheide zeije',
 );
 
-/** Kurdish (Latin script) (‪Kurdî (latînî)‬)
+/** Kurdish (Latin script) (Kurdî (latînî)‎)
  * @author George Animal
  */
 $messages['ku-latn'] = array(
@@ -1737,7 +1737,7 @@ $messages['nah'] = array(
 	'nuke-submit-user' => 'Yāuh',
 );
 
-/** Norwegian Bokmål (‪norsk (bokmål)‬)
+/** Norwegian Bokmål (norsk (bokmål)‎)
  * @author Event
  * @author Nghtwlkr
  */
@@ -2339,7 +2339,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
 	'nuke-viewchanges' => 'ogled sprememb',
 );
 
-/** Serbian (Cyrillic script) (‪српски (ћирилица)‬)
+/** Serbian (Cyrillic script) (српски (ћирилица)‎)
  * @author Millosh
  * @author Rancher
  * @author Жељко Тодоровић
@@ -2768,7 +2768,7 @@ $messages['yue'] = array(
 	'right-nuke' => '大量刪頁',
 );
 
-/** Simplified Chinese (‪中文（简体）‬)
+/** Simplified Chinese (中文（简体）‎)
  * @author Anakmalaysia
  * @author Gaoxuewei
  * @author Hydra
