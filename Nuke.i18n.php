@@ -11,33 +11,35 @@ $messages = array();
 
 /** English
  * @author Brion Vibber
+ * @author Jeroen De Dauw
  */
 $messages['en'] = array(
-	'nuke'               => 'Mass delete',
-	'action-nuke'        => 'nuke pages',
-	'nuke-desc'          => 'Gives administrators the ability to [[Special:Nuke|mass delete]] pages',
-	'nuke-nopages'       => "No new pages by [[Special:Contributions/$1|$1]] in recent changes.",
-	'nuke-list'          => "The following pages were recently created by [[Special:Contributions/$1|$1]];
+	'nuke' => 'Mass delete',
+	'action-nuke' => 'nuke pages',
+	'nuke-desc' => 'Gives administrators the ability to [[Special:Nuke|mass delete]] pages',
+	'nuke-nopages' => "No new pages by [[Special:Contributions/$1|$1]] in recent changes.",
+	'nuke-list' => "The following pages were recently created by [[Special:Contributions/$1|$1]];
 put in a comment and hit the button to delete them.",
 	'nuke-list-multiple' => 'The following pages were recently created;
 put in a comment and hit the button to delete them.',
 	'nuke-defaultreason' => "Mass deletion of pages added by $1",
 	'nuke-multiplepeople' => 'Mass deletion of recently added pages',
-	'nuke-tools'         => 'This tool allows for mass deletions of pages recently added by a given user or an IP address.
+	'nuke-tools' => 'This tool allows for mass deletions of pages recently added by a given user or an IP address.
 Input the username or IP address to get a list of pages to delete, or leave blank for all users.',
-	'nuke-submit-user'   => 'Go',
+	'nuke-submit-user' => 'Go',
 	'nuke-submit-delete' => 'Delete selected',
-	'right-nuke'         => 'Mass delete pages',
-	'nuke-select'        => 'Select: $1',
-	'nuke-userorip'      => 'Username, IP address or blank:',
-	'nuke-maxpages'      => 'Maximum number of pages:',
-	'nuke-editby'        => 'Created by [[Special:Contributions/$1|$1]]',
-	'nuke-deleted'       => "Page '''$1''' has been deleted.",
-	'nuke-not-deleted'   => "Page [[:$1]] '''could not''' be deleted.",
-	'nuke-delete-more'	 => '[[Special:Nuke|Delete more pages]]',
-	'nuke-pattern'       => 'Pattern for the page name:',
+	'right-nuke' => 'Mass delete pages',
+	'nuke-select' => 'Select: $1',
+	'nuke-userorip' => 'Username, IP address or blank:',
+	'nuke-maxpages' => 'Maximum number of pages:',
+	'nuke-editby' => 'Created by [[Special:Contributions/$1|$1]]',
+	'nuke-deleted' => "Page '''$1''' has been deleted.",
+	'nuke-not-deleted' => "Page [[:$1]] '''could not''' be deleted.",
+	'nuke-delete-more' => '[[Special:Nuke|Delete more pages]]',
+	'nuke-pattern' => 'Pattern for the page name:',
 	'nuke-nopages-global' => 'There are no new pages in [[Special:RecentChanges|recent changes]].',
-	'nuke-viewchanges'   => 'view changes',
+	'nuke-viewchanges' => 'view changes',
+	'nuke-namespace' => 'Limit to namespace:',
 );
 
 /** Message documentation (Message documentation)
@@ -69,6 +71,7 @@ For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
 	'nuke-select' => 'Parameter $1 are two links: {{msg-mw|powersearch-toggleall}} and {{msg-mw|powersearch-togglenone}} which respectively selects all pages and de-selects all pages.
 
 {{Identical|Select}}',
+	'nuke-namespace' => 'Label shown on Special:Nuke in front of the namespace input that allows choosing a namespace to filter the search by',
 );
 
 /** Niuean (ko e vagahau Niuē)

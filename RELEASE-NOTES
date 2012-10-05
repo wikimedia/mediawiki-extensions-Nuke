@@ -3,7 +3,12 @@ These are the release notes for the Nuke extension.
 Extension page on mediawiki.org: https://www.mediawiki.org/wiki/Extension:Nuke
 Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=mediawiki/extensions/Nuke.git;a=blob;f=RELEASE-NOTES
 
-=== Version 1.1.6 ==
+=== Version 1.1.7 ===
+(2012-10-05)
+
+* Added option to limit page selection by namespace.
+
+=== Version 1.1.6 ===
 (2012-08-14)
 
 * Making use of of the new message methods introduced in MW 1.18 instead of wfMsg*.
@@ -11,7 +16,7 @@ Latest version of the release notes: https://gerrit.wikimedia.org/r/gitweb?p=med
 * Updated release notes, readme and install to reflect the Git migration.
 * Changed minimum required MediaWiki version from 1.18 to 1.19.
 
-=== Version 1.1.5 ==
+=== Version 1.1.5 ===
 (2012-03-14)
 
 * (bug 35214) Special:Nuke allows deletions even when blocked

@@ -39,6 +39,10 @@ class SpecialNuke extends SpecialPage {
 				inContentLanguage()->text();
 		$reason = $req->getText( 'wpReason', $msg );
 
+		$limit = $req->getInt( 'limit', 500 );
+		$namespace = $req->getVal( 'namespace' );
+		$namespace = ctype_digit( $namespace ) ? (int)$namespace : null;
+
 		if ( $req->wasPosted()
 			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) ) ) {
 
@@ -50,14 +54,14 @@ class SpecialNuke extends SpecialPage {
 					return;
 				}
 			} elseif ( $req->getVal( 'action' ) == 'submit' ) {
-				$this->listForm( $target, $reason, $req->getInt( 'limit', 500 ) );
+				$this->listForm( $target, $reason, $limit, $namespace );
 			} else {
 				$this->promptForm();
 			}
 		} elseif ( $target === '' ) {
 			$this->promptForm();
 		} else {
-			$this->listForm( $target, $reason, $req->getInt( 'limit', 500 ) );
+			$this->listForm( $target, $reason, $limit, $namespace );
 		}
 	}
 
@@ -85,6 +89,9 @@ class SpecialNuke extends SpecialPage {
 			. '</tr><tr>'
 				. '<td>' . Xml::label( $this->msg( 'nuke-pattern' )->text(), 'nuke-pattern' ) . '</td>'
 				. '<td>' . Xml::input( 'pattern', 40, '', array( 'id' => 'nuke-pattern' ) ) . '</td>'
+				. '</tr><tr>'
+				. '<td>' . Xml::label( $this->msg( 'nuke-namespace' )->text(), 'nuke-namespace' ) . '</td>'
+				. '<td>' . Html::namespaceSelector( array( 'all' => 'all' ), array( 'name' => 'namespace' ) ) . '</td>'
 			. '</tr><tr>'
 				. '<td>' . Xml::label( $this->msg( 'nuke-maxpages' )->text(), 'nuke-limit' ) . '</td>'
 				. '<td>' . Xml::input( 'limit', 7, '500', array( 'id' => 'nuke-limit' ) ) . '</td>'
@@ -103,11 +110,12 @@ class SpecialNuke extends SpecialPage {
 	 * @param string $username
 	 * @param string $reason
 	 * @param integer $limit
+	 * @param integer|null $namespace
 	 */
-	protected function listForm( $username, $reason, $limit ) {
+	protected function listForm( $username, $reason, $limit, $namespace = null ) {
 		$out = $this->getOutput();
 
-		$pages = $this->getNewPages( $username, $limit );
+		$pages = $this->getNewPages( $username, $limit, $namespace );
 
 		if ( count( $pages ) == 0 ) {
 			if ( $username === '' ) {
@@ -208,10 +216,11 @@ class SpecialNuke extends SpecialPage {
 	 *
 	 * @param string $username
 	 * @param integer $limit
+	 * @param integer|null $namespace
 	 *
 	 * @return array
 	 */
-	protected function getNewPages( $username, $limit ) {
+	protected function getNewPages( $username, $limit, $namespace = null ) {
 		$dbr = wfGetDB( DB_SLAVE );
 
 		$what = array(
@@ -226,6 +235,10 @@ class SpecialNuke extends SpecialPage {
 			$what[] = 'rc_user_text';
 		} else {
 			$where['rc_user_text'] = $username;
+		}
+
+		if ( $namespace !== null ) {
+			$where['rc_namespace'] = $namespace;
 		}
 
 		$pattern = $this->getRequest()->getText( 'pattern' );
