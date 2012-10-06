@@ -1625,6 +1625,7 @@ $messages['mk'] = array(
 	'nuke-pattern' => 'Мостра за име на страница:',
 	'nuke-nopages-global' => 'Нема нови страници во [[Special:RecentChanges|скорешните промени]].',
 	'nuke-viewchanges' => 'прикажи промени',
+	'nuke-namespace' => 'Само во имен. простор:',
 );
 
 /** Malayalam (മലയാളം)
@@ -2431,11 +2432,13 @@ tuliskeun pamanggih anjeun, terus pencét tombolna pikeun ngahapus.',
 
 /** Swedish (svenska)
  * @author Lejonel
+ * @author Martinwiss
  * @author Tobulos1
  * @author WikiPhoenix
  */
 $messages['sv'] = array(
 	'nuke' => 'Massradering',
+	'action-nuke' => 'massradera sidor',
 	'nuke-desc' => 'Gör det möjligt för administratörer att [[Special:Nuke|massradera]] sidor',
 	'nuke-nopages' => 'Inga nya sidor av [[Special:Contributions/$1|$1]] bland de senaste ändringarna.',
 	'nuke-list' => 'Följande sidor har nyligen skapats av [[Special:Contributions/$1|$1]]. Skriv en raderingskommentar och klicka på knappen för att ta bort dem.',
@@ -2455,6 +2458,7 @@ Ange användarnamnet eller IP-adressen för att se en lista över sidor som kan 
 	'nuke-deleted' => "Sidan '''$1''' har raderats.",
 	'nuke-not-deleted' => "Sidan [[:$1]] '''kunde inte''' raderas.",
 	'nuke-delete-more' => '[[Special:Nuke|Radera fler sidor]]',
+	'nuke-pattern' => 'Mönster för sidnamn:',
 	'nuke-nopages-global' => 'Det finns inga nya sidor i [[Special:RecentChanges|senaste ändringar]].',
 	'nuke-viewchanges' => 'visa ändringar',
 );
