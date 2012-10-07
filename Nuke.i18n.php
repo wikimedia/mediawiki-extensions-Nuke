@@ -532,6 +532,7 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 	'nuke-pattern' => 'Muster für den Seitennamen:',
 	'nuke-nopages-global' => 'Es gibt keine neuen Seiten unter den [[Special:RecentChanges|letzten Änderungen]].',
 	'nuke-viewchanges' => 'Änderungen ansehen',
+	'nuke-namespace' => 'Auf den folgenden Namensraum begrenzen:',
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
@@ -1303,14 +1304,14 @@ $messages['ja'] = array(
 	'nuke-submit-user' => '一覧取得',
 	'nuke-submit-delete' => '選択されたページを削除',
 	'right-nuke' => 'ページを一括削除',
-	'nuke-select' => '選択：$1',
-	'nuke-userorip' => '利用者名、IP アドレスまたは空欄：',
-	'nuke-maxpages' => '最大ページ数：',
+	'nuke-select' => '選択: $1',
+	'nuke-userorip' => '利用者名、IP アドレス、空欄のいずれか:',
+	'nuke-maxpages' => '最大ページ数:',
 	'nuke-editby' => '[[Special:Contributions/$1|$1]]が作成',
 	'nuke-deleted' => "ページ  '''$1''' は削除されました。",
 	'nuke-not-deleted' => "ページ [[:$1]] は削除'''できません''' 。",
 	'nuke-delete-more' => '[[Special:Nuke|他のページも削除]]',
-	'nuke-pattern' => 'ページ名のパターン：',
+	'nuke-pattern' => 'ページ名のパターン:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近の更新]]には新しいページはありません。',
 	'nuke-viewchanges' => '差分を表示',
 );
