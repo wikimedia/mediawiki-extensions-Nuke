@@ -695,6 +695,7 @@ Introduzca el nombre de usuario o la dirección IP para obtener la lista de pág
 	'nuke-pattern' => 'Patrón del título de la página:',
 	'nuke-nopages-global' => 'No hay nuevas páginas en los [[Special:RecentChanges|cambios recientes]].',
 	'nuke-viewchanges' => 'Mostrar cambios',
+	'nuke-namespace' => 'Límite al espacio de nombres',
 );
 
 /** Estonian (eesti)
@@ -1444,6 +1445,7 @@ $messages['ko'] = array(
 	'nuke-pattern' => '문서 이름의 패턴:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|최근 바뀜]]에 새 문서가 없습니다.',
 	'nuke-viewchanges' => '차이 보기',
+	'nuke-namespace' => '이름공간 제한:',
 );
 
 /** Krio (Krio)
@@ -2735,6 +2737,7 @@ Hãy nhập tên thành viên hoặc địa chỉ IP để lấy danh sách các
 	'nuke-pattern' => 'Mẫu tên trang:',
 	'nuke-nopages-global' => 'Không có trang mới trong các [[Special:RecentChanges|thay đổi gần đây]].',
 	'nuke-viewchanges' => 'xem thay đổi',
+	'nuke-namespace' => 'Giới hạn theo không gian tên:',
 );
 
 /** Volapük (Volapük)
