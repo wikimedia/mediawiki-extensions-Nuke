@@ -306,6 +306,7 @@ $messages['be-tarask'] = array(
 	'nuke-pattern' => 'Узор для назвы старонкі:',
 	'nuke-nopages-global' => 'У [[Special:RecentChanges|апошніх зьменах]] больш няма новых старонак.',
 	'nuke-viewchanges' => 'праглядзець зьмены',
+	'nuke-namespace' => 'Абмежаваць прасторай назваў:',
 );
 
 /** Bulgarian (български)
@@ -917,6 +918,7 @@ Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas pa
 	'nuke-pattern' => 'Patrón para o nome de páxina:',
 	'nuke-nopages-global' => 'Non hai páxinas novas nos [[Special:RecentChanges|cambios recentes]].',
 	'nuke-viewchanges' => 'ollar os cambios',
+	'nuke-namespace' => 'Limitar ao espazo de nomes:',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -1005,6 +1007,7 @@ $messages['he'] = array(
 	'nuke-pattern' => 'תבנית עבור שם הדף:',
 	'nuke-nopages-global' => 'אין דפים חדשים ב[[Special:RecentChanges|שינויים אחרונים]].',
 	'nuke-viewchanges' => 'הצגת שינויים',
+	'nuke-namespace' => 'להגביל למרחב השמות הבא:',
 );
 
 /** Hindi (हिन्दी)
