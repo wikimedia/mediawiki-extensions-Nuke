@@ -1709,6 +1709,7 @@ Isikan nama pengguna atau alamat IP untuk mendapat senarai laman yang hendak dik
 	'nuke-pattern' => 'Pola nama laman:',
 	'nuke-nopages-global' => 'Tiada laman baru dalam [[Special:RecentChanges|perubahan terkini]].',
 	'nuke-viewchanges' => 'lihat perubahan',
+	'nuke-namespace' => 'Had ruang nama:',
 );
 
 /** Maltese (Malti)
