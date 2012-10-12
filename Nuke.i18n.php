@@ -212,6 +212,7 @@ un comentariu y calca nel botón pa desaniciales.',
 	'nuke-pattern' => 'Patrón pal nome de páxina:',
 	'nuke-nopages-global' => 'Nun hai páxines nueves nos [[Special:RecentChanges|cambios recientes]].',
 	'nuke-viewchanges' => 'ver los cambios',
+	'nuke-namespace' => 'Llendar al espaciu de nomes:',
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -1278,6 +1279,7 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
 	'nuke-pattern' => 'Modello per il titolo della pagina:',
 	'nuke-nopages-global' => 'Non ci sono nuove pagine negli [[Special:RecentChanges|ultimi cambiamenti]].',
 	'nuke-viewchanges' => 'vedi modifiche',
+	'nuke-namespace' => 'Limita al namespace:',
 );
 
 /** Japanese (日本語)
@@ -1825,6 +1827,7 @@ $messages['ne'] = array(
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
+ * @author Wiki13
  */
 $messages['nl'] = array(
 	'nuke' => 'Massaal verwijderen',
@@ -1851,6 +1854,7 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-pattern' => 'Patroon voor de paginanaam:',
 	'nuke-nopages-global' => "Er zijn geen nieuwe pagina's in de [[Special:RecentChanges|recente wijzigingen]].",
 	'nuke-viewchanges' => 'wijzigingen bekijken',
+	'nuke-namespace' => 'Beperk tot naamruimte:',
 );
 
 /** Norwegian Nynorsk (norsk (nynorsk)‎)
