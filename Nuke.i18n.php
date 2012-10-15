@@ -2126,7 +2126,7 @@ $messages['rif'] = array(
  * @author Stelistcristi
  */
 $messages['ro'] = array(
-	'nuke' => 'Ştergere în masă',
+	'nuke' => 'Ștergere în masă',
 	'action-nuke' => 'să ștergeți pagini în masă',
 	'nuke-desc' => 'Oferă administratorilor abilitatea de [[Special:Nuke|a șterge în masă]] pagini',
 	'nuke-nopages' => 'Nicio pagină nouă de către [[Special:Contributions/$1|$1]] în schimbările recente.',
@@ -2136,8 +2136,8 @@ adăugați un comentariu și apăsați butonul pentru a le șterge.',
 adăugați un comentariu și apăsați butonul pentru a le șterge.',
 	'nuke-defaultreason' => 'Ștergere în masă a paginilor adăugate de $1',
 	'nuke-multiplepeople' => 'Ștergere în masă a paginilor recent adăugate',
-	'nuke-tools' => 'Această unealtă permite ștergeri în masă a paginilor recent adăugate de către un utilizator dat sau o adresă IP.
-Introduceți numele de utilizator sau adresa IP pentru a primi o listă cu paginile de șters sau nu completați nimic pentru a lua în calcul toți utilizatorii.',
+	'nuke-tools' => 'Această unealtă permite ștergerea în masă a paginilor create recent de un anumit utilizator sau o anumită adresă IP.
+Introduceți numele utilizatorului sau adresa IP pentru a obține o listă a paginilor de șters sau nu completați nimic pentru a lua în calcul toți utilizatorii.',
 	'nuke-submit-user' => 'Du-te',
 	'nuke-submit-delete' => 'Șterge ce e marcat',
 	'right-nuke' => 'șterge pagini în masă',
@@ -2147,6 +2147,7 @@ Introduceți numele de utilizator sau adresa IP pentru a primi o listă cu pagin
 	'nuke-editby' => 'Creat de [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Pagina '''$1''' a fost ștearsă.",
 	'nuke-not-deleted' => "Pagina [[:$1]] '''nu a putut''' fi ștearsă.",
+	'nuke-pattern' => 'Model pentru numele paginii:',
 );
 
 /** tarandíne (tarandíne)
