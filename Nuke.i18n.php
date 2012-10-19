@@ -475,6 +475,7 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 
 /** Danish (dansk)
  * @author Byrial
+ * @author Kaare
  * @author Peter Alberti
  */
 $messages['da'] = array(
@@ -486,7 +487,7 @@ $messages['da'] = array(
 	'nuke-list-multiple' => 'De følgende sider blev oprettet fornylig;
 skriv en kommentar ind og tryk på knappen for at slette dem.',
 	'nuke-defaultreason' => 'Massesletning af sider, som er oprettet af $1',
-	'nuke-multiplepeople' => 'flere brugere',
+	'nuke-multiplepeople' => 'Massesletning af nyligt oprettede sider',
 	'nuke-tools' => 'Dette værktøj muliggør massesletning af sider, som for nylig er oprettet af en bestemt bruger eller IP-adresse.
 Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette eller lad stå tom for alle brugere.',
 	'nuke-submit-user' => 'Udfør',
@@ -501,6 +502,8 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
 	'nuke-delete-more' => '[[Special:Nuke|Slet flere sider]]',
 	'nuke-pattern' => 'Mønster for sidenavnet:',
 	'nuke-nopages-global' => 'Der er ikke nogen nye sider i [[Special:RecentChanges|de seneste ændringer]].',
+	'nuke-viewchanges' => 'vis ændringer',
+	'nuke-namespace' => 'Begræns til navnerum:',
 );
 
 /** German (Deutsch)
