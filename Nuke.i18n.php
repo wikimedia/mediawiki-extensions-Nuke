@@ -1505,6 +1505,7 @@ udder lohß dat Feld läddesch, dann kriß De en Leß vun Alle.',
 	'nuke-pattern' => 'Et Moster för dä Sigge iere Naame:',
 	'nuke-nopages-global' => 'Mer han kein neue Sigge en de [[Special:RecentChanges|neuste Änderonge]].',
 	'nuke-viewchanges' => 'de Ungerscheide zeije',
+	'nuke-namespace' => 'Beschränke op dat Appachtemang:',
 );
 
 /** Kurdish (Latin script) (Kurdî (latînî)‎)
