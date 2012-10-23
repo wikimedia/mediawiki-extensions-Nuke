@@ -1074,11 +1074,11 @@ $messages['hsb'] = array(
 	'nuke' => 'Masowe wušmórnjenje',
 	'action-nuke' => 'Strony z masami zhašeć',
 	'nuke-desc' => 'Zmóžnja administratoram [[Special:Nuke|masowe wušmórnjenje]] stronow',
-	'nuke-nopages' => 'W poslednich změnach njejsu nowe strony z [[Special:Contributions/$1|$1]].', # Fuzzy
-	'nuke-list' => 'Slědowace strony buchu runje přez [[Special:Contributions/$1|$1]] wutworjene; zapodaj komentar a klikń na tłóčatko wušmórnjenja.', # Fuzzy
+	'nuke-nopages' => 'Žane nowe strony wot [[Special:Contributions/$1|{{GENDER:$1|$1}}]] w aktualnych změnach.',
+	'nuke-list' => 'Slědowace strony buchu runje přez [[Special:Contributions/$1|{{GENDER:$1|$1}}]] wutworjene; zapodaj komentar a klikń na tłóčatko, zo by je zhašał.',
 	'nuke-list-multiple' => 'Slědowace strony su so runje wutowrili;
 napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
-	'nuke-defaultreason' => 'Masowe wušmórnjenje stronow, kotrež buchu wot $1 wutworjene', # Fuzzy
+	'nuke-defaultreason' => 'Masowe zhašenje stronow, kotrež buchu wot [[Special:Contributions/$1|{{GENDER:$1|$1}}]] přidate',
 	'nuke-multiplepeople' => 'Masowe zhašenje njedawno přidatych stronow',
 	'nuke-tools' => 'Tutón grat zmóžnja masowe wušmórnjenje stronow, kotrež buchu wot IP-adresy abo wužiwarja přidate. Zapodaj IP-adresu abo wužiwarske mjeno, zo by lisćinu stronow dóstał, kotrež maja so wušmórnyć.',
 	'nuke-submit-user' => 'W porjadku',
@@ -1087,7 +1087,7 @@ napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
 	'nuke-select' => 'Wubrać: $1',
 	'nuke-userorip' => 'Wužiwar, IP abo prózdny:',
 	'nuke-maxpages' => 'Maksimalna ličba stronow:',
-	'nuke-editby' => 'Wutworjeny wot [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Wutworjeny wot [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Strona '''„$1“''' bu wušmórnjena.",
 	'nuke-not-deleted' => "Strona [[:$1]]  '''njeda so''' wušmórnyć.",
 	'nuke-delete-more' => '[[Special:Nuke|Dalše strony wušmórnyć]]',
