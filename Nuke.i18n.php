@@ -761,7 +761,7 @@ $messages['fa'] = array(
 	'nuke' => 'حذف دسته‌جمعی',
 	'action-nuke' => 'حذف دسته‌جمعی صفحه‌ها',
 	'nuke-desc' => 'به مدیران امکان [[Special:Nuke|حذف دسته‌جمعی]] صفحه‌ها را می‌دهد',
-	'nuke-nopages' => 'صفحهٔ جدیدی از [[Special:Contributions/$1|$1]] در تغییرات اخیر وجود ندارد.', # Fuzzy
+	'nuke-nopages' => 'صفحهٔ جدیدی از [[Special:Contributions/$1|{{GENDER:$1|$1}}]] در تغییرات اخیر وجود ندارد.',
 	'nuke-list' => 'صفحه‌های زیر به تازگی توسط [[Special:Contributions/$1|$1]] ایجاد شده‌اند؛ توضیحی ارائه کنید و دکمه را بزنید تا این صحفه‌ها حذف شوند.', # Fuzzy
 	'nuke-list-multiple' => 'صفحه‌های مقابل اخیراً ایجاد شده‌اند؛
 یک توضیح قرار دهید و برای حذف کلید را فشار دهید.',
@@ -2349,12 +2349,12 @@ $messages['sl'] = array(
 	'nuke' => 'Množični izbris',
 	'action-nuke' => 'množično brisanje',
 	'nuke-desc' => 'Da administratorjem zmožnost [[Special:Nuke|množičnega izbrisa]] strani',
-	'nuke-nopages' => 'Ni novih strani uporabnika [[Special:Contributions/$1|$1]] v zadnjih spremembah.', # Fuzzy
-	'nuke-list' => 'Naslednje strani je nedavno ustvaril uporabnik [[Special:Contributions/$1|$1]];
-vnesite komentar in pritisnite gumb za njihov izbris.', # Fuzzy
+	'nuke-nopages' => 'V zadnjih spremembah ni novih strani {{GENDER:$1|uporabnika|uporabnice}} [[Special:Contributions/$1|$1]].',
+	'nuke-list' => 'Naslednje strani je nedavno {{GENDER:$1|ustvaril uporabnik|ustvarila uporabnica}} [[Special:Contributions/$1|$1]];
+vnesite pripombo in pritisnite gumb za njihov izbris.',
 	'nuke-list-multiple' => 'Naslednje strani so bile pred kratkim ustvarjene;
 vnesite pripombo in kliknite gumb, da jih izbrišete.',
-	'nuke-defaultreason' => 'Množično brisanje strani, ki jih je dodal $1', # Fuzzy
+	'nuke-defaultreason' => 'Množično brisanje strani, ki jih je {{GENDER:$1|dodal|dodala}} [[Special:Contributions/$1|$1]]',
 	'nuke-multiplepeople' => 'Množični izbris nedavno dodanih strani',
 	'nuke-tools' => 'To orodje omogoča množični izbris strani, ki jih je nedavno ustvaril določen uporabnik ali IP.
 Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pustite prazno za vse uporabnike.',
@@ -2364,13 +2364,14 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
 	'nuke-select' => 'Izberite: $1',
 	'nuke-userorip' => 'Uporabniško ime, IP-naslov ali prazno:',
 	'nuke-maxpages' => 'Največje število strani:',
-	'nuke-editby' => 'Ustvaril(-a) [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => '{{GENDER:$1|Ustvaril|Ustvarila|Ustvaril(-a)}} [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Stran '''$1''' je bila izbrisana.",
 	'nuke-not-deleted' => "Strani [[:$1]] '''ni bilo mogoče''' izbrisati.",
 	'nuke-delete-more' => '[[Special:Nuke|Izbriši več strani]]',
 	'nuke-pattern' => 'Vzorec imena strani:',
 	'nuke-nopages-global' => 'V [[Special:RecentChanges|zadnjih spremembah]] ni novih strani.',
 	'nuke-viewchanges' => 'ogled sprememb',
+	'nuke-namespace' => 'Omeji na imenski prostor:',
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
