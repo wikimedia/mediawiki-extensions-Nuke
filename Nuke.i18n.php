@@ -796,11 +796,11 @@ $messages['fi'] = array(
 	'action-nuke' => 'massapoistaa sivuja',
 	'nuke-desc' => 'Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]].',
 	'nuke-nopages' => 'Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.', # Fuzzy
-	'nuke-list' => 'Käyttäjä [[Special:Contributions/$1|$1]] on äskettäin luonut seuraavat sivut.
-Lisää kommentti ja poista napsauttamalla painiketta.', # Fuzzy
+	'nuke-list' => 'Käyttäjä [[Special:Contributions/$1|{{GENDER:$1|$1}}]] on äskettäin luonut seuraavat sivut.
+Lisää kommentti ja poista napsauttamalla painiketta.',
 	'nuke-list-multiple' => 'Seuraavat sivut tehtiin äskettäin.
 Lisää kommentti ja poista napsauttamalla painiketta.',
-	'nuke-defaultreason' => 'Käyttäjän $1 lisäämien sivujen massapoistaminen', # Fuzzy
+	'nuke-defaultreason' => 'Käyttäjän [[Special:Contributions/$1|{{GENDER:$1|$1}}]] lisäämien sivujen massapoistaminen',
 	'nuke-multiplepeople' => 'Äskettäin lisättyjen sivujen massapoistaminen',
 	'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP-osoitteen perusteella.
 Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista, tai jätä kenttä tyhjäksi niin saat kaikkien käyttäjien tekemät sivut.',
@@ -836,11 +836,11 @@ $messages['fr'] = array(
 	'nuke' => 'Suppression en masse',
 	'action-nuke' => 'pages nucléaires',
 	'nuke-desc' => 'Donne la possibilité aux administrateurs de [[Special:Nuke|supprimer en masse]] des pages',
-	'nuke-nopages' => 'Aucune nouvelle page créée par [[Special:Contributions/$1|$1]] dans la liste des changements récents.', # Fuzzy
-	'nuke-list' => 'Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|$1]]; Indiquer un commentaire et cliquer sur le bouton pour les supprimer.', # Fuzzy
+	'nuke-nopages' => 'Aucune nouvelle page créée par [[Special:Contributions/$1|{{GENDER:$1|$1}}]] dans la liste des changements récents.',
+	'nuke-list' => 'Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; saisissez un commentaire et cliquez sur le bouton pour les supprimer.',
 	'nuke-list-multiple' => 'Les pages suivantes ont été récemment créées ; 
 entrez un commentaire et cliquez sur le bouton pour les supprimer.',
-	'nuke-defaultreason' => 'Suppression en masse des pages ajoutées par $1', # Fuzzy
+	'nuke-defaultreason' => 'Suppression en masse des pages ajoutées par [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Suppression de masse de pages récemment ajoutées',
 	'nuke-tools' => 'Cet outil permet les suppressions en masse des pages ajoutées récemment par un utilisateur enregistré ou par une adresse IP. Indiquer l’adresse IP afin d’obtenir la liste des pages à supprimer, ou laisser blanc pour tous les utilisateurs.',
 	'nuke-submit-user' => 'Valider',
@@ -849,13 +849,14 @@ entrez un commentaire et cliquez sur le bouton pour les supprimer.',
 	'nuke-select' => 'Sélectionnez : $1',
 	'nuke-userorip' => "Nom d'utilisateur, adresse IP ou vide :",
 	'nuke-maxpages' => 'Nombre maximal de pages :',
-	'nuke-editby' => 'Créé par [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Créé par [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "La page '''$1''' a été effacée.",
 	'nuke-not-deleted' => "La page [[:$1]] '''ne peut pas''' être effacée.",
 	'nuke-delete-more' => '[[Special:Nuke|Supprimer plus de pages]]',
 	'nuke-pattern' => 'Modèle pour le nom de page:',
 	'nuke-nopages-global' => "Il n'y a pas de nouvelle page dans [[Special:RecentChanges|changements récents]].",
 	'nuke-viewchanges' => 'voir les modifications',
+	'nuke-namespace' => "Se limiter à l'espace de nommage:",
 );
 
 /** Franco-Provençal (arpetan)
