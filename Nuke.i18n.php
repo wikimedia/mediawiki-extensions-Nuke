@@ -2746,11 +2746,11 @@ $messages['vi'] = array(
 	'nuke' => 'Xóa hàng loạt',
 	'action-nuke' => 'xóa hàng loạt trang',
 	'nuke-desc' => 'Cung cấp cho bảo quản viên khả năng [[Special:Nuke|xóa trang hàng loạt]]',
-	'nuke-nopages' => 'Không có trang mới do [[Special:Contributions/$1|$1]] tạo ra trong thay đổi gần đây.', # Fuzzy
-	'nuke-list' => 'Các trang sau do [[Special:Contributions/$1|$1]] tạo ra gần đây; hãy ghi lý do và nhấn nút để xóa tất cả những trang này.', # Fuzzy
+	'nuke-nopages' => '{{GENDER:$1}}Không có trang mới do [[Special:Contributions/$1|$1]] tạo ra trong thay đổi gần đây.',
+	'nuke-list' => '{{GENDER:$1}}Các trang sau do [[Special:Contributions/$1|$1]] tạo ra gần đây; hãy ghi lý do và nhấn nút để xóa tất cả những trang này.',
 	'nuke-list-multiple' => 'Các trang sau được tạo ra gần đây.
 Đưa vào lý do và bấm nút để xóa chúng.',
-	'nuke-defaultreason' => 'Xóa hàng loạt các trang do $1 tạo ra', # Fuzzy
+	'nuke-defaultreason' => '{{GENDER:$1}}Xóa hàng loạt các trang do [[Special:Contributions/$1|$1]] tạo ra',
 	'nuke-multiplepeople' => 'Xóa hàng loạt các trang được tạo gần đây',
 	'nuke-tools' => 'Công cụ này cho phép xóa hàng loạt các trang do một thành viên hoặc người dùng địa chỉ IP nào đó tạo ra gần đây.
 Hãy nhập tên thành viên hoặc địa chỉ IP để lấy danh sách các trang sẽ xóa, hoặc để trống để xem các trang của mọi người dùng.',
@@ -2760,7 +2760,7 @@ Hãy nhập tên thành viên hoặc địa chỉ IP để lấy danh sách các
 	'nuke-select' => 'Chọn: $1',
 	'nuke-userorip' => 'Tên thành viên, địa chỉ IP, hoặc trống:',
 	'nuke-maxpages' => 'Số trang tối đa:',
-	'nuke-editby' => 'Được tạo bởi [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => '{{GENDER:$1}}Được tạo bởi [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Đã xóa trang '''$1'''.",
 	'nuke-not-deleted' => "'''Không thể''' xóa trang [[:$1]].",
 	'nuke-delete-more' => '[[Special:Nuke|Xóa thêm trang]]',
