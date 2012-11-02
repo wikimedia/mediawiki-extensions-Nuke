@@ -612,6 +612,7 @@ $messages['ee'] = array(
 );
 
 /** Greek (Ελληνικά)
+ * @author Aitolos
  * @author Dead3y3
  * @author Glavkos
  * @author ZaDiak
@@ -619,7 +620,7 @@ $messages['ee'] = array(
 $messages['el'] = array(
 	'nuke' => 'Μαζική διαγραφή',
 	'nuke-desc' => 'Δίνει στους διαχειριστές την ικανότητα να [[Special:Nuke|διαγράφουν μαζικά]] σελίδες',
-	'nuke-nopages' => 'Καμία νέα σελίδα από τον/την [[Special:Contributions/$1|$1]] στις πρόσφατες αλλαγές.', # Fuzzy
+	'nuke-nopages' => 'Καμία νέα σελίδα από τον/την [[Special:Contributions/$1|$1]] στις πρόσφατες αλλαγές.',
 	'nuke-list' => 'Οι ακόλουθες σελίδες δημιουργήθηκαν προσφατα από τον/την [[Special:Contributions/$1|$1]]·
 βάλτε ένα σχόλιο και πατήστε το κουμπί για να τις διαγράψετε.', # Fuzzy
 	'nuke-defaultreason' => 'Μαζική αφαίρεση σελίδων προστιθέμενων από τον/την $1', # Fuzzy
@@ -632,7 +633,7 @@ $messages['el'] = array(
 	'nuke-select' => 'Επιλογή: $1',
 	'nuke-userorip' => 'Όνομα χρήστη, διεύθυνση IP ή κενό:',
 	'nuke-maxpages' => 'Μέγιστος αριθμός σελίδων:',
-	'nuke-editby' => 'Δημιουργήθηκε από [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Δημιουργήθηκε από [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Η σελίδα '''$1''' έχει διαγραφεί.",
 	'nuke-not-deleted' => "Η σελίδα [[:$1]] '''δεν μπορούσε''' να διαγραφεί.",
 );
@@ -795,7 +796,7 @@ $messages['fi'] = array(
 	'nuke' => 'Massapoisto',
 	'action-nuke' => 'massapoistaa sivuja',
 	'nuke-desc' => 'Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]].',
-	'nuke-nopages' => 'Ei käyttäjän [[Special:Contributions/$1|$1]] lisäämiä uusia sivuja tuoreissa muutoksissa.', # Fuzzy
+	'nuke-nopages' => 'Ei käyttäjän [[Special:Contributions/$1|{{GENDER:$1|$1}}]] lisäämiä uusia sivuja tuoreissa muutoksissa.',
 	'nuke-list' => 'Käyttäjä [[Special:Contributions/$1|{{GENDER:$1|$1}}]] on äskettäin luonut seuraavat sivut.
 Lisää kommentti ja poista napsauttamalla painiketta.',
 	'nuke-list-multiple' => 'Seuraavat sivut tehtiin äskettäin.
