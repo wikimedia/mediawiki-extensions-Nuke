@@ -2464,6 +2464,7 @@ tuliskeun pamanggih anjeun, terus pencét tombolna pikeun ngahapus.', # Fuzzy
 );
 
 /** Swedish (svenska)
+ * @author Cybjit
  * @author Lejonel
  * @author Martinwiss
  * @author Tobulos1
@@ -2473,11 +2474,11 @@ $messages['sv'] = array(
 	'nuke' => 'Massradering',
 	'action-nuke' => 'massradera sidor',
 	'nuke-desc' => 'Gör det möjligt för administratörer att [[Special:Nuke|massradera]] sidor',
-	'nuke-nopages' => 'Inga nya sidor av [[Special:Contributions/$1|$1]] bland de senaste ändringarna.', # Fuzzy
-	'nuke-list' => 'Följande sidor har nyligen skapats av [[Special:Contributions/$1|$1]]. Skriv en raderingskommentar och klicka på knappen för att ta bort dem.', # Fuzzy
+	'nuke-nopages' => 'Inga nya sidor av [[Special:Contributions/$1|{{GENDER:$1|$1}}]] bland de senaste ändringarna.',
+	'nuke-list' => 'Följande sidor har nyligen skapats av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; skriv in en kommentar och klicka på knappen för att ta bort dem.',
 	'nuke-list-multiple' => 'Följande sidor skapades nyligen;
 skriv in en kommentar och tryck på knappen för att radera dem.',
-	'nuke-defaultreason' => 'Massradering av sidor skapade av $1', # Fuzzy
+	'nuke-defaultreason' => 'Massradering av sidor skapade av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Massradering av nyligen tillagda sidor',
 	'nuke-tools' => 'Det här verktyget gör det möjligt att massradera sidor som nyligen skapats av en viss användare eller IP-adress.
 Ange användarnamnet eller IP-adressen för att se en lista över sidor som kan tas bort, eller lämna tomt för alla användare.',
@@ -2487,13 +2488,14 @@ Ange användarnamnet eller IP-adressen för att se en lista över sidor som kan 
 	'nuke-select' => 'Välj: $1',
 	'nuke-userorip' => 'Användarnamn, IP-adress eller tomt:',
 	'nuke-maxpages' => 'Maximalt antal sidor:',
-	'nuke-editby' => 'Skapades av [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Skapades av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Sidan '''$1''' har raderats.",
 	'nuke-not-deleted' => "Sidan [[:$1]] '''kunde inte''' raderas.",
 	'nuke-delete-more' => '[[Special:Nuke|Radera fler sidor]]',
 	'nuke-pattern' => 'Mönster för sidnamn:',
 	'nuke-nopages-global' => 'Det finns inga nya sidor i [[Special:RecentChanges|senaste ändringar]].',
 	'nuke-viewchanges' => 'visa ändringar',
+	'nuke-namespace' => 'Begränsa till namnrymd:',
 );
 
 /** Swahili (Kiswahili)
@@ -2844,10 +2846,12 @@ $messages['zh-hans'] = array(
 	'nuke-pattern' => '页面名称的模式：',
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近更改]]中没有新的页面。',
 	'nuke-viewchanges' => '查看变更',
+	'nuke-namespace' => '限制名字空间为：',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
+ * @author Liangent
  * @author Mark85296341
  * @author Shinjiman
  */
@@ -2874,4 +2878,5 @@ $messages['zh-hant'] = array(
 	'nuke-pattern' => '頁面名稱的模式：',
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近更改]]中沒有新的頁面。',
 	'nuke-viewchanges' => '查看變更',
+	'nuke-namespace' => '限制名字空間為：',
 );
