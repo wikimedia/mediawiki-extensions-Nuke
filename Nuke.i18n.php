@@ -452,11 +452,12 @@ $messages['cs'] = array(
 	'nuke' => 'Hromadné mazání',
 	'action-nuke' => 'hromadně mazat stránky',
 	'nuke-desc' => 'Dává správcům možnost [[Special:Nuke|hromadného mazání]] stránek',
-	'nuke-nopages' => 'V posledních změnách nejsou žádné nové stránky od uživatele [[Special:Contributions/$1|$1]].', # Fuzzy
-	'nuke-list' => 'Následující stránky nedávno vytvořil uživatel [[Special:Contributions/$1|$1]]; vyplňte komentář a všechny smažte kliknutím na tlačítko.', # Fuzzy
+	'nuke-nopages' => 'V posledních změnách nejsou žádné nové stránky od {{GENDER:$1|uživatele|uživatelky}} [[Special:Contributions/$1|$1]].',
+	'nuke-list' => 'Následující stránky nedávno {{GENDER:$1|vytvořil|vytvořila}} [[Special:Contributions/$1|$1]];
+vyplňte komentář a všechny smažte kliknutím na tlačítko.',
 	'nuke-list-multiple' => 'Nedávno byly vytvořeny následující stránky;
 zadáním komentáře a stisknutím tlačítka je smažete.',
-	'nuke-defaultreason' => 'Hromadné odstranění stránek, které vytvořil $1', # Fuzzy
+	'nuke-defaultreason' => 'Hromadné odstranění stránek, které {{GENDER:$1|vytvořil|vytvořila}}  [[Special:Contributions/$1|$1]]',
 	'nuke-multiplepeople' => 'Hromadné odstranění nedávno založených stránek',
 	'nuke-tools' => 'Tento nástroj umožňuje hromadné smazání stránek nedávno vytvořených zadaným uživatelem nebo IP adresou.
 Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smazání; případně ponechte prázdné pro všechny uživatele.',
@@ -466,13 +467,14 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 	'nuke-select' => 'Vybrat: $1',
 	'nuke-userorip' => 'Uživatelské jméno, IP adresa nebo ponechte prázdné:',
 	'nuke-maxpages' => 'Maximální počet stran:',
-	'nuke-editby' => '{{gender:$1|Vytvořil|Vytvořila|Vytvořil}} [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => '{{GENDER:$1|Vytvořil|Vytvořila}} [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Stránka '''$1''' byla smazána.",
 	'nuke-not-deleted' => "Stránka [[:$1]] '''nemohla být''' smazána.",
 	'nuke-delete-more' => '[[Special:Nuke|Odstranit další stránky]]',
 	'nuke-pattern' => 'Vzor pro název stránky:',
 	'nuke-nopages-global' => 'V [[Special:RecentChanges|posledních změnách]] nejsou žádné nové stránky.',
 	'nuke-viewchanges' => 'ukázat změny',
+	'nuke-namespace' => 'Omezit na jmenný prostor:',
 );
 
 /** Danish (dansk)
@@ -529,7 +531,7 @@ Gib einen Kommentar bezüglich der Löschung an und klicke auf die Schaltfläche
 Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten. Sofern Du keine Angabe machst, werden alle Benutzer ausgewählt.',
 	'nuke-submit-user' => 'Abrufen',
 	'nuke-submit-delete' => 'Ausgewählte Seiten löschen',
-	'right-nuke' => 'Massenlöschung von Seiten',
+	'right-nuke' => 'Massenlöschungen von Seiten',
 	'nuke-select' => 'Auswählen: $1',
 	'nuke-userorip' => 'Benutzername, IP-Adresse oder keine Angabe:',
 	'nuke-maxpages' => 'Maximale Anzahl der Seiten:',
