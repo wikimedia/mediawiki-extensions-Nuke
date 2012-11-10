@@ -1196,12 +1196,12 @@ $messages['ilo'] = array(
 	'nuke' => 'Paga-adduan nga pinag-ikkat',
 	'action-nuke' => 'ikkaten dagiti panid',
 	'nuke-desc' => 'Ikkan na ti administrador ti abilidad nga [[Special:Nuke|	paga-adduan nga pang-ikkat]] kadagit panid',
-	'nuke-nopages' => 'Awan dagiti baro nga panid [[Special:Contributions/$1|$1]] idiay kaudian nga balbaliw.', # Fuzzy
-	'nuke-list' => 'Dagita sumaganad nga panid ket kaararamid ni [[Special:Contributions/$1|$1]];
-ikkam ti komento ken ikklik ti buton tapno maikkat dan.', # Fuzzy
+	'nuke-nopages' => 'Awan dagiti baro a panid babaen ni [[Special:Contributions/$1|{{GENDER:$1|$1}}]] idiay kaudian abalbaliw.',
+	'nuke-list' => 'Dagiti sumaganad a panid ket kadamdamaan a pinartuat babaen ni [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
+ikkam ti komentario ken pindutem ti buton tapno maikkatda.',
 	'nuke-list-multiple' => 'Dagiti sumaganad nga panid kaararamid;
 ikkam ti komento ken ikklik ti buton tapno maikkat dan.',
-	'nuke-defaultreason' => 'Dagiti paga-adduan nga pinag-ikkat ti panid ket inikkan ni $1', # Fuzzy
+	'nuke-defaultreason' => 'Adu a panagikkat kadagiti panid nga innayon babaen ni [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Pagaaduan a panagikkat kadagiti kinaudi a nainayon a pampanid',
 	'nuke-tools' => 'Daytoy nga ramit ket mangpabalin ti paga-adduan ti pinag-ikkat ti panid nga kinaikkan ti maysa nga agaramat wenno maysa nga IP address.
 Ikabil ti nagan ti agar-aramat wenno IP address tapno maalam dagiti listaan dagiti naikkat nga panid, wenno ibatim nga blanko kadagit amin nga agar-aramat.',
@@ -1211,7 +1211,7 @@ Ikabil ti nagan ti agar-aramat wenno IP address tapno maalam dagiti listaan dagi
 	'nuke-select' => 'Agpili: $1',
 	'nuke-userorip' => 'Nagan ti agar-aramat, IP address wenno blanko:',
 	'nuke-maxpages' => 'Ti manu nga bilang dagiti panid:',
-	'nuke-editby' => 'Inaramid ni [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Pinartuat babaen ni [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Ti panid '''$1''' ket naikkaten.",
 	'nuke-not-deleted' => "Ti panid [[:$1]] '''saan nga''' maikkat.",
 	'nuke-delete-more' => '[[Special:Nuke|Agikkat ka pay kadagita nga panid]]',
