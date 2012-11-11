@@ -479,6 +479,7 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 
 /** Danish (dansk)
  * @author Byrial
+ * @author Christian List
  * @author Kaare
  * @author Peter Alberti
  */
@@ -486,11 +487,11 @@ $messages['da'] = array(
 	'nuke' => 'Massesletning',
 	'action-nuke' => 'masseslette sider',
 	'nuke-desc' => 'Giver administratorer mulighed for at [[Special:Nuke|masseslette]] sider',
-	'nuke-nopages' => 'Der er ingen nye sider af [[Special:Contributions/$1|$1]] i seneste ændringer.', # Fuzzy
-	'nuke-list' => 'Følgende sider er oprettet for nylig af [[Special:Contributions/$1|$1]]; skriv en kommentar og tryk på knappen for at slette dem.', # Fuzzy
+	'nuke-nopages' => 'Der er ingen nye sider af [[Special:Contributions/$1|{{GENDER:$1|$1}}]] i seneste ændringer.',
+	'nuke-list' => 'Følgende sider er oprettet for nylig af [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; skriv en kommentar og tryk på knappen for at slette dem.',
 	'nuke-list-multiple' => 'De følgende sider blev oprettet fornylig;
 skriv en kommentar ind og tryk på knappen for at slette dem.',
-	'nuke-defaultreason' => 'Massesletning af sider, som er oprettet af $1', # Fuzzy
+	'nuke-defaultreason' => 'Massesletning af sider, som er oprettet af [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Massesletning af nyligt oprettede sider',
 	'nuke-tools' => 'Dette værktøj muliggør massesletning af sider, som for nylig er oprettet af en bestemt bruger eller IP-adresse.
 Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette eller lad stå tom for alle brugere.',
@@ -500,7 +501,7 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
 	'nuke-select' => 'Vælg: $1',
 	'nuke-userorip' => 'Brugernavn, IP-adresse eller tom:',
 	'nuke-maxpages' => 'Maksimalt antal sider:',
-	'nuke-editby' => 'Oprettet af [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Oprettet af [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Siden '''$1''' er blevet slettet.",
 	'nuke-not-deleted' => "Siden [[:$1]] '''kunne ikke''' slettes.",
 	'nuke-delete-more' => '[[Special:Nuke|Slet flere sider]]',
@@ -1533,7 +1534,7 @@ $messages['lb'] = array(
 	'nuke' => 'Masse-Läschung',
 	'action-nuke' => "Säiten 'en masse' ze läschen",
 	'nuke-desc' => "Gëtt Administrateuren d'Méiglechkeet fir [[Special:Nuke|vill Säite mateneen ze läschen]]",
-	'nuke-nopages' => 'Et gëtt bei de läschten Ännerunge keng nei Säite vum [[Special:Contributions/$1|$1]].', # Fuzzy
+	'nuke-nopages' => 'Et gëtt bei de rezenten Ännerunge keng nei Säite vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]].',
 	'nuke-list' => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|$1]] nei ugeluecht; gitt w.e.g. eng Bemierkung an, an dréckt op de Knäppche Läschen.', # Fuzzy
 	'nuke-list-multiple' => 'Dës Säite goufe rezent gemaach;
 setzt eng Bemierkung derbäi a klickt op de Knäppche fir se ze läschen.',
@@ -1547,7 +1548,7 @@ Gitt w.e.g. d'IP-Adress respektiv de Benotzer n fir eng Lescht vun de Säiten ze
 	'nuke-select' => 'Eraussichen:$1',
 	'nuke-userorip' => 'Benotzernumm, IP-Adress oder eidel:',
 	'nuke-maxpages' => 'Maximal Zuel vu Säiten:',
-	'nuke-editby' => 'Gemaach vum [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Gemaach vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "D'Säit '''$1''' gouf geläscht.",
 	'nuke-not-deleted' => "D'Säit [[:$1]] '''konnt net''' geläscht ginn.",
 	'nuke-delete-more' => '[[Special:Nuke|Méi Säite läschen]]',
