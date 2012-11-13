@@ -1735,11 +1735,14 @@ Isikan nama pengguna atau alamat IP untuk mendapat senarai laman yang hendak dik
  */
 $messages['mt'] = array(
 	'nuke' => 'Tħassir tal-massa',
+	'action-nuke' => 'tħassar paġni bil-massa',
 	'nuke-desc' => "Jagħti lill-amministraturi l-għodda li [[Special:Nuke|jħassru bil-massa]] numru ta' paġni.",
-	'nuke-nopages' => 'Ma nstabu l-ebda paġni ġodda maħluqa minn [[Special:Contributions/$1|$1]] fost it-tibdil riċenti.', # Fuzzy
-	'nuke-list' => 'Il-paġni segwenti ġew riċentament maħluqa minn [[Special:Contributions/$1|$1]];
-daħħal kumment u agħfas il-buttuna sabiex tħassarhom.', # Fuzzy
-	'nuke-defaultreason' => "Tħassir ta' massa ta' paġni miżjuda minn $1", # Fuzzy
+	'nuke-nopages' => 'Ma nstabu l-ebda paġni ġodda maħluqa minn [[Special:Contributions/$1|{{GENDER:$1|$1}}]] fost it-tibdil riċenti.',
+	'nuke-list' => 'Il-paġni segwenti ġew riċentament maħluqa minn [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
+daħħal kumment u agħfas il-buttuna sabiex tħassarhom.',
+	'nuke-list-multiple' => 'Il-paġni segwenti ġew maħluqa riċentament;
+daħħal kumment u agħfas il-buttuna sabiex tħassarhom.',
+	'nuke-defaultreason' => "Tħassir tal-massa ta' paġni miżjuda minn [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	'nuke-multiplepeople' => "Tħassir tal-massa ta' paġni miżjuda riċenta",
 	'nuke-tools' => "Din l-għodda tippermetti t-tħassir ta' massa ta' paġni li ġew miżjuda riċentament minn utent partikulari jew IP.
 Daħħal l-isem tal-utent jew l-indirizz IP biex tikseb lista ta' paġni li jridu jitħassru, jew ħalliha votja sabiex issejjaħ l-utenti kollha.",
@@ -1749,6 +1752,14 @@ Daħħal l-isem tal-utent jew l-indirizz IP biex tikseb lista ta' paġni li jrid
 	'nuke-select' => 'Agħżel: $1',
 	'nuke-userorip' => 'Isem tal-utent, indirizz IP jew vojt:',
 	'nuke-maxpages' => "Numru massimu ta' paġni:",
+	'nuke-editby' => 'Maħluqa minn [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-deleted' => "Il-paġna '''$1''' ġiet imħassra.",
+	'nuke-not-deleted' => "Il-paġna [[:$1]] '''ma setgħetx''' tiġi mħassra.",
+	'nuke-delete-more' => '[[Special:Nuke|Ħassar aktar paġni]]',
+	'nuke-pattern' => 'Mudell għat-titlu tal-paġna:',
+	'nuke-nopages-global' => "M'hemm l-ebda paġna ġdida fit-[[Special:RecentChanges|tibdil riċenti]].",
+	'nuke-viewchanges' => 'uri t-tibdiliet',
+	'nuke-namespace' => 'Illimita skont l-ispazju tal-isem:',
 );
 
 /** Erzya (эрзянь)
