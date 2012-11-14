@@ -794,6 +794,7 @@ $messages['fa'] = array(
  * @author Jaakonam
  * @author Nike
  * @author Olli
+ * @author Stryn
  */
 $messages['fi'] = array(
 	'nuke' => 'Massapoisto',
@@ -821,6 +822,7 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 	'nuke-pattern' => 'Sivun nimien etuliite',
 	'nuke-nopages-global' => '[[Special:RecentChanges|Tuoreissa muutoksissa]] ei ole uusia sivuja.',
 	'nuke-viewchanges' => 'näytä muutokset',
+	'nuke-namespace' => 'Rajoita nimiavaruuteen:',
 );
 
 /** French (français)
@@ -2865,6 +2867,7 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
+ * @author Justincheng12345
  * @author Liangent
  * @author Mark85296341
  * @author Shinjiman
@@ -2873,10 +2876,10 @@ $messages['zh-hant'] = array(
 	'nuke' => '大量刪除',
 	'action-nuke' => '大量刪除頁面',
 	'nuke-desc' => '給操作員作出[[Special:Nuke|大量刪除]]的能力',
-	'nuke-nopages' => '在最近更改中沒有 [[Special:Contributions/$1|$1]] 所作的新頁面。', # Fuzzy
-	'nuke-list' => '以下的頁面是由[[Special:Contributions/$1|$1]]在以前所寫的；記下一個註解再點擊按鈕去刪除它們。', # Fuzzy
+	'nuke-nopages' => '在最近更改中沒有 [[Special:Contributions/$1|$1]] 所作的新頁面。',
+	'nuke-list' => '以下的頁面是由[[Special:Contributions/$1|$1]]在以前所寫的；記下一個註解再點擊按鈕去刪除它們。',
 	'nuke-list-multiple' => '以下為最近創建的頁面，請填寫註釋並點擊按鈕刪除它們。',
-	'nuke-defaultreason' => '大量刪除由 $1 所建立的頁面', # Fuzzy
+	'nuke-defaultreason' => '大量刪除由[[Special:Contributions/$1|$1]]所建立的頁面',
 	'nuke-multiplepeople' => '大量刪除最近添加的頁面',
 	'nuke-tools' => '此工具允許大量刪除指定用戶或IP地址在最近創建的頁面。輸入用戶名或IP地址可獲取可刪除頁面列表，留白則檢索所有用戶。',
 	'nuke-submit-user' => '執行',
@@ -2885,7 +2888,7 @@ $messages['zh-hant'] = array(
 	'nuke-select' => '選擇：$1',
 	'nuke-userorip' => '用戶名、IP地址或空白：',
 	'nuke-maxpages' => '最多頁面數：',
-	'nuke-editby' => '由[[Special:Contributions/$1|$1]]創建', # Fuzzy
+	'nuke-editby' => '由[[Special:Contributions/$1|$1]]創建',
 	'nuke-deleted' => "'''$1'''頁面已刪除。",
 	'nuke-not-deleted' => "'''無法'''刪除[[:$1]]頁面。",
 	'nuke-delete-more' => '[[Special:Nuke|刪除更多頁面]]',
