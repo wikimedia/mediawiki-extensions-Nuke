@@ -585,12 +585,12 @@ $messages['dsb'] = array(
 	'nuke' => 'Masowe lašowanje',
 	'action-nuke' => 'Boki z masami lašowaś',
 	'nuke-desc' => 'Zmóžnja admininistratoram boki [[Special:Nuke|z masami lašowaś]]',
-	'nuke-nopages' => 'Žedne nowe boki wót [[Special:Contributions/$1|$1]] w aktualnych změnach', # Fuzzy
-	'nuke-list' => 'Slědujuce boki su se nowo napórali wót [[Special:Contributions/$1|$1]];
-zapódaj komentar a klikni na tłocašk, aby je lašował.', # Fuzzy
+	'nuke-nopages' => 'Žedne nowe boki wót [[Special:Contributions/$1|{{GENDER:$1|$1}}]] w aktualnych změnach.',
+	'nuke-list' => 'Slědujuce boki su se nowo napórali wót [[Special:Contributions/$1|{{GENDER:$1$1}}]];
+zapódaj komentar a klikni na tłocašk, aby je lašował.',
 	'nuke-list-multiple' => 'Slědujuce boki su se rowno napórali;
 zapódaj komentar a klikni na tłocašk, aby je wulašował.',
-	'nuke-defaultreason' => 'Masowe lašowanje bokow, kótarež $1 jo pśidał.', # Fuzzy
+	'nuke-defaultreason' => 'Masowe lašowanje bokow, kótarež [[Special:Contributions/$1|{{GENDER:$1|$1}}]] jo pśidał.',
 	'nuke-multiplepeople' => 'Masowe wulašowanje njedawno pśidanych bokow',
 	'nuke-tools' => 'Toś ten rěd zmóžnja masowe lašowanja bokow, kótarež wěsty wužywaŕ abo IP jo rowno pśidał. Zapódaj wužywarske mě abo IP-adresu, aby dostał lisćinu bokow, kótarež maju se lašowaś abo wóstaj pólo prozne, aby wubrał wšych wužywarjow.',
 	'nuke-submit-user' => 'W pórěźe',
@@ -599,13 +599,14 @@ zapódaj komentar a klikni na tłocašk, aby je wulašował.',
 	'nuke-select' => 'Wubraś: $1',
 	'nuke-userorip' => 'Wužywarske mě, IP-adresa abo žedno pódaśe:',
 	'nuke-maxpages' => 'Maksimalna licba bokow:',
-	'nuke-editby' => 'Napórany wót [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Napórany wót [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Bok '''$1''' jo se wulašował.",
 	'nuke-not-deleted' => "Bok [[:$1]] '''njejo dał''' se wulašowaś.",
 	'nuke-delete-more' => '[[Special:Nuke|Dalšne boki lašowaś]]',
 	'nuke-pattern' => 'Pśikład za bokowe mě:',
 	'nuke-nopages-global' => 'Njejsu žedne nowe boki w [[Special:RecentChanges|aktualnych změnach]].',
 	'nuke-viewchanges' => 'změny pokazaś',
+	'nuke-namespace' => 'Na slědujucy mjenjowy rum wobgranicowaś:',
 );
 
 /** Ewe (eʋegbe)
