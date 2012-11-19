@@ -567,15 +567,19 @@ Geben Sie die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu lösch
  */
 $messages['diq'] = array(
 	'nuke' => 'pêropiya hewnakeno..',
+	'action-nuke' => 'perê nuke',
 	'nuke-desc' => 'Hizmetlilere, sayfaları [[Special:Nuke|kitlesel silme]] yeteneği verir',
-	'nuke-nopages' => 'vuriyayişê ke hetê ıney ra [[Special:Contributions/$1|$1]] biye tede çı pelê neweyi çini .', # Fuzzy
-	'nuke-list' => 'pelê ke cêr de yê hetê ıney ra [[Special:Contributions/$1|$1]]  yew tarixo nızdi de  vıraziyayi; mışore bıkerê u qey hewnakerdışi yew tuş bıtıknê.', # Fuzzy
-	'nuke-defaultreason' => 'Peleyê ke $1 dekerdê de ena pêron hewadayış', # Fuzzy
+	'nuke-nopages' => 'Vuriyayişê ke hetê ıney ra [[Special:Contributions/$1|{{GENDER:$1|$1}}]] biye tede çı pelê neweyi çini .',
+	'nuke-list' => 'Pelê ke cêr de yê hetê ıney ra [[Special:Contributions/$1|{{GENDER:$1|$1}}]]  yew tarixo nızdi de  vıraziyayi; mışore bıkerê u qey hewnakerdışi yew tuş bıtıknê.',
+	'nuke-defaultreason' => 'Peleyê ke [[Special:Contributions/$1|{{GENDER:$1|$1}}]] dekerdê de ena pêron hewadayış',
 	'nuke-tools' => 'Na hacet, peleyê ke nezdı ra yew karber yana ip ra akerdê êna pêrun rê esternayış de cı rê mısade dano.
 Listanê peleyê ke besternaya vinayışi rê namey karberi yana ip adresi dekere de.',
 	'nuke-submit-user' => 'Şo',
 	'nuke-submit-delete' => 'Weçinayi esterne',
 	'right-nuke' => 'pelan yew hew de hewnaker',
+	'nuke-select' => 'Weçinaye: $1',
+	'nuke-delete-more' => '[[Special:Nuke|Zewbi pera besterne]]',
+	'nuke-viewchanges' => 'Vurnayışa bıvin',
 );
 
 /** Lower Sorbian (dolnoserbski)
