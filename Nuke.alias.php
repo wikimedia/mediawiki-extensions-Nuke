@@ -218,6 +218,11 @@ $specialPageAliases['sa'] = array(
 	'Nuke' => array( 'न्यूक' ),
 );
 
+/** Sicilian (sicilianu) */
+$specialPageAliases['scn'] = array(
+	'Nuke' => array( 'CancellazioneMassiva' ),
+);
+
 /** Slovak (slovenčina) */
 $specialPageAliases['sk'] = array(
 	'Nuke' => array( 'Zničenie' ),
