@@ -178,7 +178,7 @@ $specialPageAliases['nb'] = array(
 	'Nuke' => array( 'Massesletting' ),
 );
 
-/** Nedersaksisch (Nedersaksisch) */
+/** Nedersaksies (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'Nuke' => array( 'Massaal_vortdoon' ),
 );
