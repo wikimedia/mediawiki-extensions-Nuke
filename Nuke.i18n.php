@@ -750,10 +750,13 @@ Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-a
 /** Basque (euskara)
  * @author Theklan
  * @author Unai Fdz. de Betoño
+ * @author Xabier Armendaritz
  */
 $messages['eu'] = array(
 	'nuke' => 'Ezabaketa masiboa',
 	'nuke-nopages' => 'Aldaketa berrietan ez dago [[Special:Contributions/$1|$1]](r)en orri berririk.', # Fuzzy
+	'nuke-list' => 'Ondorengo orri hauek sortu berri ditu [[Special:Contributions/$1|{{GENDER:$1|$1}}]] wikilariak;
+idatz ezazu ohar bat, eta sakatu botoia orri horiek ezabatzeko.',
 	'nuke-defaultreason' => '$1(e)k sortutako orrien ezabaketa masiboa', # Fuzzy
 	'nuke-submit-user' => 'Joan',
 	'nuke-submit-delete' => 'Aukeratutakoa ezabatu',
