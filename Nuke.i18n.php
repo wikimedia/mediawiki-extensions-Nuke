@@ -58,9 +58,8 @@ $messages['qqq'] = array(
 	'nuke' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
 	'action-nuke' => '{{doc-action|nuke}}',
-	'nuke-desc' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
-For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
-{{desc}}',
+	'nuke-desc' => '{{desc|name=Nuke|url=http://www.mediawiki.org/wiki/Extension:Nuke}}
+The Nuke extension allows for sysops to delete a large number of pages ("Mass delete").',
 	'nuke-nopages' => 'Parameters:
 * $1 is a username',
 	'nuke-list' => 'Parameters:
