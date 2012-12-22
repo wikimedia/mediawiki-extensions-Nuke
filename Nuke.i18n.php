@@ -723,11 +723,11 @@ $messages['et'] = array(
 	'nuke' => 'Lauskustutamine',
 	'action-nuke' => 'lehekülgi lauskustutada',
 	'nuke-desc' => 'Võimaldab administraatoritel lehekülgede [[Special:Nuke|lauskustutamist]].',
-	'nuke-nopages' => 'Viimaste muudatuste all pole uusi kasutaja [[Special:Contributions/$1|$1]] loodud lehekülgi.', # Fuzzy
-	'nuke-list' => 'Kasutaja [[Special:Contributions/$1|$1]] on hiljuti loonud järgnevad leheküljed. Enne kustutamist sisesta kommentaar.', # Fuzzy
+	'nuke-nopages' => 'Viimaste muudatuste all pole uusi kasutaja [[Special:Contributions/$1|$1]] loodud lehekülgi.',
+	'nuke-list' => 'Kasutaja [[Special:Contributions/$1|$1]] on hiljuti loonud järgmised leheküljed. Enne kustutamist sisesta kommentaar.',
 	'nuke-list-multiple' => 'Järgmised leheküljed on hiljuti loodud.
 Sisesta kommentaar ja klõpsa kustutamisnuppu.',
-	'nuke-defaultreason' => 'Kasutaja $1 lisatud lehekülgede lauseemaldamine', # Fuzzy
+	'nuke-defaultreason' => 'Kasutaja [[Special:Contributions/$1|$1]] lisatud lehekülgede lauseemaldamine',
 	'nuke-multiplepeople' => 'Hiljuti lisatud lehekülgede lauskustutamine',
 	'nuke-tools' => 'See tööriist võimaldab kasutaja või IP-aadressi hiljuti lisatud leheküljed lauskustutada.
 Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-aadress. Kõigi kasutajate lisatud lehekülgede jaoks jäta väli tühjaks.',
@@ -737,7 +737,7 @@ Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-a
 	'nuke-select' => 'Valik: $1',
 	'nuke-userorip' => 'Kasutajanimi, IP-aadress või tühemik:',
 	'nuke-maxpages' => 'Lehekülgede ülemmäär:',
-	'nuke-editby' => 'Alustanud [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Alustanud [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Lehekülg '''$1''' on kustutatud.",
 	'nuke-not-deleted' => "Lehekülge [[:$1]] '''ei saa''' kustutada.",
 	'nuke-delete-more' => '[[Special:Nuke|Kustuta veel lehekülgi]]',
@@ -2191,6 +2191,7 @@ Introduceți numele utilizatorului sau adresa IP pentru a obține o listă a pag
 	'nuke-deleted' => "Pagina '''$1''' a fost ștearsă.",
 	'nuke-not-deleted' => "Pagina [[:$1]] '''nu a putut''' fi ștearsă.",
 	'nuke-pattern' => 'Model pentru numele paginii:',
+	'nuke-viewchanges' => 'vizualizează modificările',
 );
 
 /** tarandíne (tarandíne)
@@ -2853,10 +2854,10 @@ $messages['zh-hans'] = array(
 	'nuke' => '大量删除',
 	'action-nuke' => '删除大量页面',
 	'nuke-desc' => '让管理员可以[[Special:Nuke|批量删除]]页面',
-	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|$1]]创建的新页面。', # Fuzzy
-	'nuke-list' => '以下为[[Special:Contributions/$1|$1]]最近创建的页面，请填写注释并点击按钮删除它们。', # Fuzzy
+	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|{{GENDER:$1|$1}}]]创建的新页面。',
+	'nuke-list' => '以下为[[Special:Contributions/$1|{{GENDER:$1|$1}}]]最近创建的页面，请填写注释并点击按钮删除它们。',
 	'nuke-list-multiple' => '以下为最近创建的页面，请填写注释并点击按钮删除它们。',
-	'nuke-defaultreason' => '大量删除$1创建的页面', # Fuzzy
+	'nuke-defaultreason' => '大量删除[[Special:Contributions/$1|{{GENDER:$1|$1}}]]创建的页面',
 	'nuke-multiplepeople' => '大量删除最近添加的页面',
 	'nuke-tools' => '此工具允许大量删除指定用户或IP地址在最近创建的页面。输入用户名或IP地址可获取可删除页面列表，留白则检索所有用户。',
 	'nuke-submit-user' => '执行',
@@ -2865,7 +2866,7 @@ $messages['zh-hans'] = array(
 	'nuke-select' => '选择：$1',
 	'nuke-userorip' => '用户名、IP地址或空白：',
 	'nuke-maxpages' => '最多页面数：',
-	'nuke-editby' => '由[[Special:Contributions/$1|$1]]创建', # Fuzzy
+	'nuke-editby' => '由[[Special:Contributions/$1|{{GENDER:$1|$1}}]]创建',
 	'nuke-deleted' => "已删除页面'''$1'''。",
 	'nuke-not-deleted' => "'''无法'''删除[[:$1]]页面。",
 	'nuke-delete-more' => '[[Special:Nuke|删除更多页面]]',
