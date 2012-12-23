@@ -1609,6 +1609,13 @@ $messages['lt'] = array(
 	'nuke-not-deleted' => "Puslapis [[:$1]] '''negalimas''' ištrinti.",
 );
 
+/** Latvian (latviešu)
+ * @author Papuass
+ */
+$messages['lv'] = array(
+	'nuke-viewchanges' => 'skatīt izmaiņas',
+);
+
 /** Literary Chinese (文言)
  */
 $messages['lzh'] = array(
@@ -1993,6 +2000,7 @@ $messages['pdc'] = array(
  * @author BeginaFelicysym
  * @author Derbeth
  * @author Leinad
+ * @author Matma Rex
  * @author Nux
  * @author Olgak85
  * @author Sp5uhe
@@ -2001,8 +2009,8 @@ $messages['pl'] = array(
 	'nuke' => 'Masowe usuwanie',
 	'action-nuke' => 'masowego usuwania stron',
 	'nuke-desc' => 'Dodaje administratorom funkcję równoczesnego [[Special:Nuke|usuwania dużej liczby stron]]',
-	'nuke-nopages' => 'Brak nowych stron autorstwa [[Special:Contributions/$1|$1]] w ostatnich zmianach.', # Fuzzy
-	'nuke-list' => 'Następujące strony zostały ostatnio utworzone przez [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk by usunąć je.', # Fuzzy
+	'nuke-nopages' => 'Brak nowych stron autorstwa [[Special:Contributions/$1|$1]] w ostatnich zmianach.',
+	'nuke-list' => 'Następujące strony zostały ostatnio utworzone przez {{GENDER:$1|użytkownika|użytkowniczkę}} [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk, by je usunąć.',
 	'nuke-list-multiple' => 'Poniższa lista przedstawia ostatnio dodane strony.
 Wpisz powód, a następnie zatwierdź usunięcie stron.',
 	'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1', # Fuzzy
@@ -2015,13 +2023,14 @@ Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. 
 	'nuke-select' => 'Wybierz: $1',
 	'nuke-userorip' => 'Podaj nazwę użytkownika, adres IP lub pozostaw puste pole',
 	'nuke-maxpages' => 'Maksymalna liczba stron',
-	'nuke-editby' => 'Utworzona przez [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Utworzona przez {{GENDER:$1|użytkownika|użytkowniczkę}} [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Strona '''$1''' została usunięta.",
 	'nuke-not-deleted' => "Strony [[:$1]] '''nie można''' usunąć.",
 	'nuke-delete-more' => '[[Special:Nuke|Usuń więcej stron]]',
 	'nuke-pattern' => 'Wzór nazwy strony:',
 	'nuke-nopages-global' => 'Brak nowych stron w [[Special:RecentChanges|ostatnich zmianach]].',
 	'nuke-viewchanges' => 'widok zmian',
+	'nuke-namespace' => 'Tylko w przestrzeni nazw:',
 );
 
 /** Piedmontese (Piemontèis)
