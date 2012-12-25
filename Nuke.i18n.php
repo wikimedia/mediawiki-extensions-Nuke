@@ -2539,10 +2539,13 @@ $messages['sw'] = array(
 
 /** Tamil (தமிழ்)
  * @author Karthi.dr
+ * @author Shanmugamp7
  * @author TRYPPN
  * @author மதனாஹரன்
  */
 $messages['ta'] = array(
+	'nuke' => 'ஒட்டு மொத்த நீக்கல்',
+	'action-nuke' => 'பக்கங்களை மொத்தமாக நீக்கு',
 	'nuke-submit-user' => 'செல்',
 	'nuke-submit-delete' => 'தேர்ந்தெடுத்ததை நீக்கு',
 	'nuke-select' => 'தேர்ந்தெடுக்கவும்:$1',
