@@ -1123,7 +1123,10 @@ $messages['hu'] = array(
 	'nuke-desc' => 'Lehetővé teszi az adminisztrátorok számára a lapok [[Special:Nuke|tömeges törlését]].',
 	'nuke-nopages' => 'Nincsenek új oldalak [[Special:Contributions/$1|$1]] az aktuális események között.', # Fuzzy
 	'nuke-list' => 'Az alábbi lapokat nem rég készítette [[Special:Contributions/$1|$1]]; adj meg egy indoklást, és kattints a gombra a törlésükhöz.', # Fuzzy
-	'nuke-defaultreason' => '$1 által készített lapok tömeges eltávolítása', # Fuzzy
+	'nuke-list-multiple' => 'Az alábbi lapok találhatók a friss változtatásokban;
+adjál hozzá megjegyzést, és a törléshez nyomd meg a gombot.',
+	'nuke-defaultreason' => '[[Special:Contributions/$1|{{GENDER:$1|$1}}]] által készített lapok tömeges eltávolítása',
+	'nuke-multiplepeople' => 'Frissen hozzáadott oldalak tömeges törlése',
 	'nuke-tools' => 'Ez az eszköz lehetővé teszi egy adott felhasználó vagy IP által nemrég készített lapok tömeges törlését. Add meg a felhasználónevet vagy az IP-címet, ezzel megkapod a törölhető lapok listáját. Ha nem adsz meg nevet, az összes felhasználót listázza.',
 	'nuke-submit-user' => 'Menj',
 	'nuke-submit-delete' => 'Kijelöltek törlése',
@@ -1131,9 +1134,14 @@ $messages['hu'] = array(
 	'nuke-select' => 'Kiválasztás: $1',
 	'nuke-userorip' => 'Felhasználónév, IP-cím vagy üres:',
 	'nuke-maxpages' => 'Lapok maximális száma:',
+	'nuke-editby' => '[[Special:Contributions/$1|{{GENDER:$1|$1}}]] által létrehozott',
 	'nuke-deleted' => "'''$1''' oldal törölve lett.",
 	'nuke-not-deleted' => "[[:$1]] oldalt ''nem sikerült''' törölni.",
 	'nuke-delete-more' => '[[Special:Nuke|További oldalak törlése]]',
+	'nuke-pattern' => 'Lapnév minta:',
+	'nuke-nopages-global' => 'Nincsenek új lapok a [[Special:RecentChanges|friss változtatásokban]].',
+	'nuke-viewchanges' => 'változtatások megtekintése',
+	'nuke-namespace' => 'Csak az alábbi névtérben:',
 );
 
 /** Interlingua (interlingua)
@@ -2209,12 +2217,12 @@ Introduceți numele utilizatorului sau adresa IP pentru a obține o listă a pag
 $messages['roa-tara'] = array(
 	'nuke' => 'Scangellazione de masse',
 	'nuke-desc' => "Dà a l'amministrature l'abbilità de [[Special:Nuke|scangellà massivamende]] le pàggene",
-	'nuke-nopages' => "Nisciuna pàgena nove da [[Special:Contributions/$1|$1]] jndr'à l'urteme cangiaminde.", # Fuzzy
-	'nuke-list' => "Le pàggene seguende onne state ccrejate recendemende da [[Special:Contributions/$1|$1]];
-mitte 'nu commende e cazze sus a 'u buttone pe scangellarle.", # Fuzzy
+	'nuke-nopages' => "Nisciuna pàgena nove da [[Special:Contributions/$1|{{GENDER:$1|$1}}]] jndr'à l'urteme cangiaminde.",
+	'nuke-list' => "Le pàggene seguende onne state ccrejate recendemende da [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
+mitte 'nu commende e cazze sus a 'u buttone pe scangellarle.",
 	'nuke-list-multiple' => "Le pàggene seguende onne state ccrejate recendemende;
 mitte 'nu commende e cazze 'u buttone pe scangellarle.",
-	'nuke-defaultreason' => 'Scangellazzione de masse de le pàggene aggiunde da $1', # Fuzzy
+	'nuke-defaultreason' => 'Scangellazzione de masse de le pàggene aggiunde da [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Scangellazione massive de le pàggene aggiunde de recende',
 	'nuke-tools' => "Stu strumende permette le scangellazziune de masse de le pàggene aggiunde de recende da 'nu certe utende o IP.<br />
 Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de scangellà, o lasse vianghe pe tutte l'utinde.",
@@ -2224,7 +2232,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'nuke-select' => 'Scacchie: $1',
 	'nuke-userorip' => "Nome de l'utende, indirizze IP o vianghe:",
 	'nuke-maxpages' => 'Numere massime de pàggene:',
-	'nuke-editby' => 'Ccrejate da [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Ccrejate da [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Pàgene '''$1''' ha state scangellate.",
 	'nuke-not-deleted' => "Pàgene [[:$1]] '''non ge pò''' essere scangellate.",
 	'nuke-pattern' => "Segnaposte pu nomed'a pàgene:",
