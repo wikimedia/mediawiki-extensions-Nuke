@@ -2050,11 +2050,11 @@ $messages['pms'] = array(
 	'nuke' => "Scancelament d'amblé",
 	'action-nuke' => 'scancelé dle pàgine a baron',
 	'nuke-desc' => "A dà a j'aministrador l'abilitassion a [[Special:Nuke|scanselé a baron]] le pàgine",
-	'nuke-nopages' => "Gnun-a pàgine faite da [[Special:Contributions/$1|$1]] ant j'ùltim cambiament.", # Fuzzy
-	'nuke-list' => "Ste pàgine-sì a son staite faite ant j'ùltim temp da [[Special:Contributions/$1|$1]]; ch'a lassa un coment e ch'a-i daga 'n colp ansima al boton për gaveje via tute d'amblé.", # Fuzzy
+	'nuke-nopages' => "Gnun-a pàgine neuve da [[Special:Contributions/$1|{{GENDER:$1|$1}}]] ant j'ùltim cambiament.",
+	'nuke-list' => "Ste pàgine-sì a son staite faite ant j'ùltim temp da [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; ch'a lassa un coment e ch'a-i daga 'n colp ansima al boton për gaveje via tute d'amblé.",
 	'nuke-list-multiple' => "Le pàgine sì-dapress a son stàite creà da pòch;
 ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
-	'nuke-defaultreason' => "Scancelament d'amblé dle pàgine faite da $1", # Fuzzy
+	'nuke-defaultreason' => "Scancelament d'amblé dle pàgine faite da [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	'nuke-multiplepeople' => 'Scancelassion a baron ëd pàgine giontà da pòch',
 	'nuke-tools' => "St'utiss-sì a lassa scancelé d'amblé le pàgine giontà ant j'ùltim temp da un chèich utent ò da 'nt na chèicha adrëssa IP. Ch'a buta lë stranòm ò l'adrëssa IP për tiré giù na lista dle pàgine da scancelé, o ch'a lassa an bianch për tùit j'utent.",
 	'nuke-submit-user' => 'Va',
@@ -2063,13 +2063,14 @@ ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
 	'nuke-select' => 'Selessioné: $1',
 	'nuke-userorip' => 'Nòm utent, adrëssa IP o gnente:',
 	'nuke-maxpages' => 'Màssim nùmer ëd pàgine:',
-	'nuke-editby' => 'Creà da [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Creà da [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "La pàgina '''$1''' a l'é stàita scancelà.",
 	'nuke-not-deleted' => "La pàgina [[:$1]] '''a peul pa''' esse scancelà.",
 	'nuke-delete-more' => "[[Special:Nuke|Scancelé pì 'd pàgine]]",
 	'nuke-pattern' => 'Model për ël nòm ëd pàgina:',
 	'nuke-nopages-global' => "A-i é pa 'd pàgine neuve an [[Special:RecentChanges|ùltime modìfiche]].",
 	'nuke-viewchanges' => 'vëdde le modìfiche',
+	'nuke-namespace' => 'Lìmita a lë spassi nominal:',
 );
 
 /** Pashto (پښتو)
