@@ -643,6 +643,7 @@ $messages['el'] = array(
 	'nuke-editby' => 'Δημιουργήθηκε από [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Η σελίδα '''$1''' έχει διαγραφεί.",
 	'nuke-not-deleted' => "Η σελίδα [[:$1]] '''δεν μπορούσε''' να διαγραφεί.",
+	'nuke-viewchanges' => 'προβολή αλλαγών',
 );
 
 /** Esperanto (Esperanto)
@@ -2361,6 +2362,7 @@ $messages['si'] = array(
 	'nuke-pattern' => 'පිටුවේ නම සඳහා රටාව:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|මෑත වෙනස්වීම්වල]]  නව පිටු නොමැත.',
 	'nuke-viewchanges' => 'වෙනස්කිරීම් පෙන්වන්න',
+	'nuke-namespace' => 'නාමඅවකාශයට සීමා කරන්න:',
 );
 
 /** Slovak (slovenčina)
