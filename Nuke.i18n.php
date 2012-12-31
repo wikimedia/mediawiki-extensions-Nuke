@@ -880,12 +880,12 @@ $messages['frp'] = array(
 	'nuke' => 'Suprèssion en massa',
 	'action-nuke' => 'suprimar des pâges en massa',
 	'nuke-desc' => 'Balye la possibilitât ux administrators de [[Special:Nuke|suprimar en massa]] des pâges.',
-	'nuke-nopages' => 'Gins de pâge novèla fêta per [[Special:Contributions/$1|$1]] dens la lista des dèrriérs changements.', # Fuzzy
-	'nuke-list' => 'Cetes pâges ont étâ fêtes dèrriérement per [[Special:Contributions/$1|$1]] ;
-buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.', # Fuzzy
+	'nuke-nopages' => 'Niona pâge novèla per [[Special:Contributions/$1|{{GENDER:$1|$1}}]] dedens los dèrriérs changements.',
+	'nuke-list' => 'Dês pou cetes pâges sont étâyes fêtes per [[Special:Contributions/$1|{{GENDER:$1|$1}}]] ;
+buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
 	'nuke-list-multiple' => 'Cetes pâges ont étâ fêtes dèrriérement ;
 buchiéd un comentèro et pués clicâd sur lo boton por les suprimar.',
-	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per $1', # Fuzzy
+	'nuke-defaultreason' => 'Suprèssion en massa de les pâges apondues per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Suprèssions en massa de les pâges apondues dèrriérement',
 	'nuke-tools' => 'Ceti outil pèrmèt les suprèssions en massa de les pâges apondues dèrriérement per un usanciér encartâ ou ben per una adrèce IP.
 Buchiér lo nom d’usanciér ou ben l’adrèce IP por avêr la lista de les pâges a suprimar, ou ben lèssiér blanc por tôs los usanciérs.',
@@ -895,13 +895,14 @@ Buchiér lo nom d’usanciér ou ben l’adrèce IP por avêr la lista de les p�
 	'nuke-select' => 'Chouèsésséd : $1',
 	'nuke-userorip' => 'Nom d’usanciér, adrèce IP ou ben vouedo :',
 	'nuke-maxpages' => 'Nombro lo ples grant de pâges :',
-	'nuke-editby' => 'Fêt per [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Fêt per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "La pâge '''$1''' at étâ suprimâ.",
 	'nuke-not-deleted' => "La pâge [[:$1]] '''pôt pas''' étre suprimâ.",
 	'nuke-delete-more' => '[[Special:Nuke|Suprimar més de pâges]]',
 	'nuke-pattern' => 'Modèlo por lo nom de pâge :',
 	'nuke-nopages-global' => 'Y at gins de pâge novèla dedens los [[Special:RecentChanges|dèrriérs changements]].',
 	'nuke-viewchanges' => 'vêre los changements',
+	'nuke-namespace' => 'Sè limitar a cet’èspâço de noms :',
 );
 
 /** Friulian (furlan)
@@ -2708,9 +2709,11 @@ $messages['tt-cyrl'] = array(
 
 /** Uyghur (Arabic script) (ئۇيغۇرچە)
  * @author Alfredie
+ * @author Sahran
  */
 $messages['ug-arab'] = array(
-	'nuke-submit-user' => 'كۆچۈش',
+	'nuke-submit-user' => 'يۆتكەل',
+	'nuke-select' => 'تاللاڭ: $1',
 );
 
 /** Uyghur (Latin script) (Uyghurche)
