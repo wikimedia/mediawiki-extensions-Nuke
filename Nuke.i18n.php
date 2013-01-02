@@ -2013,6 +2013,7 @@ $messages['pdc'] = array(
  * @author Matma Rex
  * @author Nux
  * @author Olgak85
+ * @author Rezonansowy
  * @author Sp5uhe
  */
 $messages['pl'] = array(
