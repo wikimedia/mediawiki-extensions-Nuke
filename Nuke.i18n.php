@@ -2015,6 +2015,7 @@ $messages['pdc'] = array(
  * @author Olgak85
  * @author Rezonansowy
  * @author Sp5uhe
+ * @author Woytecr
  */
 $messages['pl'] = array(
 	'nuke' => 'Masowe usuwanie',
@@ -2024,7 +2025,7 @@ $messages['pl'] = array(
 	'nuke-list' => 'Następujące strony zostały ostatnio utworzone przez {{GENDER:$1|użytkownika|użytkowniczkę}} [[Special:Contributions/$1|$1]]; wpisz komentarz i wciśnij przycisk, by je usunąć.',
 	'nuke-list-multiple' => 'Poniższa lista przedstawia ostatnio dodane strony.
 Wpisz powód, a następnie zatwierdź usunięcie stron.',
-	'nuke-defaultreason' => 'Masowe usunięcie stron dodanych przez $1', # Fuzzy
+	'nuke-defaultreason' => 'Masowe usunięcie stron stworzonych przez [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Masowe usuwanie ostatnio utworzonych stron',
 	'nuke-tools' => 'Narzędzie pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika.
 Wpisz nazwę użytkownika lub adres IP by otrzymać listę stron do usunięcia. Możesz także nic nie wpisywać, wtedy będzie można masowo usunąć wkład wszystkich użytkowników.',
