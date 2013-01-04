@@ -1323,6 +1323,7 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
  * @author Marine-Blue
  * @author Muttley
  * @author Ohgi
+ * @author Penn Station
  * @author Schu
  * @author Shirayuki
  * @author 青子守歌
@@ -1353,6 +1354,7 @@ $messages['ja'] = array(
 	'nuke-pattern' => 'ページ名のパターン:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近の更新]]には新しいページはありません。',
 	'nuke-viewchanges' => '差分を表示',
+	'nuke-namespace' => '名前空間:',
 );
 
 /** Jutish (jysk)
