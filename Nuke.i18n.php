@@ -62,8 +62,18 @@ For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
 The Nuke extension allows for sysops to delete a large number of pages ("Mass delete").',
 	'nuke-nopages' => 'Parameters:
 * $1 is a username',
-	'nuke-list' => 'Parameters:
-* $1 is a username.',
+	'nuke-list' => 'This message refers to:
+* the comment (reason) field which has the label {{msg-mw|deletecomment}}
+* the button labeled {{msg-mw|nuke-submit-delete}}.
+Parameters:
+* $1 - username
+See also:
+* {{msg-mw|Nuke-list-multiple}}',
+	'nuke-list-multiple' => 'This message refers to:
+* the comment (reason) field which has the label {{msg-mw|deletecomment}}
+* the button labeled {{msg-mw|nuke-submit-delete}}.
+See also:
+* {{msg-mw|Nuke-list}}',
 	'nuke-defaultreason' => 'Reason for deletion in logs. {{msg-mw|nuke-multiplepeople}} is used when pages created by multiple people are deleted. Parameters:
 * $1 is a username or IP address, with a link to their contributions.',
 	'nuke-multiplepeople' => 'Reason for deletion in logs, when pages created by multiple users were deleted.
@@ -1333,10 +1343,10 @@ $messages['ja'] = array(
 	'action-nuke' => 'ページの一括削除',
 	'nuke-desc' => '{{int:group-sysop}}がページを[[Special:Nuke|一括削除]]できるようにする',
 	'nuke-nopages' => '最近の更新に [[Special:Contributions/$1|$1]] が新規作成したページはありません。',
-	'nuke-list' => '[[Special:Contributions/$1|$1]] は最近、以下のページを作成しました。
+	'nuke-list' => '[[Special:Contributions/$1|{{GENDER:$1|$1}}]] は最近、以下のページを作成しました。
 これらを削除するには、理由を記入してボタンを押してください。',
-	'nuke-list-multiple' => '最近作成されたページが表示されています。
-コメントを入力し、ボタンを押すと、削除されます。',
+	'nuke-list-multiple' => '以下のページが最近作成されました。
+これらを削除するには、理由を記入してボタンを押してください。',
 	'nuke-defaultreason' => '[[Special:Contributions/$1|$1]] が追加したページの一括削除',
 	'nuke-multiplepeople' => '最近追加されたページの一括削除',
 	'nuke-tools' => '指定した利用者またはIPアドレスが最近作成したページを、このツールで一括削除できます。
