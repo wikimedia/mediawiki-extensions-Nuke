@@ -2169,12 +2169,13 @@ Insira um nome de usuário ou IP para listar páginas a eliminar; deixe em branc
  */
 $messages['qu'] = array(
 	'nuke' => 'Tawqa qulluy',
+	'action-nuke' => "p'anqakunata k'asuyachiy",
 	'nuke-desc' => "Kamachiqkunata [[Special:Nuke|p'anqa tawqa qulluywan]] atichin",
-	'nuke-nopages' => "Manam kanchu [[Special:Contributions/$1|$1]]-pa musuqta kamarisqan p'anqakuna ñaqha hukchasqakunapi.", # Fuzzy
-	'nuke-list' => "Kay qatiq p'anqakunataqa [[Special:Contributions/$1|$1]] ruraqmi kamarirqun; imarayku nispa butunta ñit'iy tawqalla qullunapaq.", # Fuzzy
+	'nuke-nopages' => "Manam kanchu [[Special:Contributions/$1|$1]]-pa musuqta kamarisqan p'anqakuna ñaqha hukchasqakunapi.",
+	'nuke-list' => "Kay qatiq p'anqakunataqa [[Special:Contributions/$1|{{GENDER:$1|$1}}]] sutiyuq ruraqmi ñaqha kamarirqan; imarayku nispa butunta ñit'iy tawqalla qullunapaq.",
 	'nuke-list-multiple' => "Kay qatiq p'anqakunaqa ñaqha kamarisqam;
 imatapas willapuspa butunta ñit'ipay qullunapaq.",
-	'nuke-defaultreason' => "$1-pa rurasqan p'anqakunata tawqalla qulluy", # Fuzzy
+	'nuke-defaultreason' => "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] sutiyuqpa yapasqan p'anqakunata tawqalla qulluy",
 	'nuke-multiplepeople' => "Ñaqha yapasqa p'anqakunata tawqa qulluy",
 	'nuke-tools' => "Kay llamk'anawanqa huk ruraqpa icha huk IP huchhap ñaqha kamarisqan p'anqakunata tawqalla qulluytam atinki.
 Ruraqpa sutinta icha IP huchhanta yaykuchiy qulluna p'anqakunata rikunaykipaq.",
@@ -2184,7 +2185,14 @@ Ruraqpa sutinta icha IP huchhanta yaykuchiy qulluna p'anqakunata rikunaykipaq.",
 	'nuke-select' => 'Akllay: $1',
 	'nuke-userorip' => "Ruraqpa sutin, IP huchha icha ch'usaq:",
 	'nuke-maxpages' => "Kay chhika p'anqakunamanta ama aswan kachunchu:",
-	'nuke-editby' => '[[Special:Contributions/$1|$1]] sutiyuqpa kamarisqan', # Fuzzy
+	'nuke-editby' => '[[Special:Contributions/$1|{{GENDER:$1|$1}}]] sutiyuqpa kamarisqan',
+	'nuke-deleted' => "'''$1''' sutiyuq p'anqaqa qullusqañam.",
+	'nuke-not-deleted' => "[[:$1]] sutiyuq p'anqataqa qulluyta '''manam atinichu'''.",
+	'nuke-delete-more' => "[[Special:Nuke|Aswan p'anqakunata qulluy]]",
+	'nuke-pattern' => "P'anqa sutip qatinallan",
+	'nuke-nopages-global' => "[[Special:RecentChanges|Ñaqha hukchasqakunapiqa]] manam musuq p'anqakuna kanchu.",
+	'nuke-viewchanges' => 'hukchasqakunata qhaway',
+	'nuke-namespace' => 'Kay sutisuyullapi:',
 );
 
 /** Tarifit (Tarifit)
