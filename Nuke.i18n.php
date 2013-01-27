@@ -1860,7 +1860,7 @@ $messages['nds'] = array(
 	'right-nuke' => 'Groten Hümpel Sieden wegsmieten',
 );
 
-/** Nedersaksisch (Nedersaksisch)
+/** Nedersaksies (Nedersaksies)
  * @author Servien
  */
 $messages['nds-nl'] = array(
