@@ -178,7 +178,7 @@ $specialPageAliases['nb'] = array(
 	'Nuke' => array( 'Massesletting' ),
 );
 
-/** Nedersaksies (Nedersaksies) */
+/** Low Saxon (Netherlands) (Nedersaksies) */
 $specialPageAliases['nds-nl'] = array(
 	'Nuke' => array( 'Massaal_vortdoon' ),
 );
