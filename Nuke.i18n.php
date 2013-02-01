@@ -2262,6 +2262,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'nuke-not-deleted' => "Pàgene [[:$1]] '''non ge pò''' essere scangellate.",
 	'nuke-pattern' => "Segnaposte pu nomed'a pàgene:",
 	'nuke-viewchanges' => 'vide le cangiaminde',
+	'nuke-namespace' => 'Limite a namespace:',
 );
 
 /** Russian (русский)
