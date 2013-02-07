@@ -173,7 +173,7 @@ $specialPageAliases['ms'] = array(
 	'Nuke' => array( 'Hapus_pukal' ),
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎) */
+/** Norwegian Bokmål (norsk bokmål) */
 $specialPageAliases['nb'] = array(
 	'Nuke' => array( 'Massesletting' ),
 );
@@ -188,7 +188,7 @@ $specialPageAliases['nl'] = array(
 	'Nuke' => array( 'MassaalVerwijderen' ),
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎) */
+/** Norwegian Nynorsk (norsk nynorsk) */
 $specialPageAliases['nn'] = array(
 	'Nuke' => array( 'Massesletting' ),
 );
