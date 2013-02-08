@@ -2241,6 +2241,7 @@ Introduceți numele utilizatorului sau adresa IP pentru a obține o listă a pag
  */
 $messages['roa-tara'] = array(
 	'nuke' => 'Scangellazione de masse',
+	'action-nuke' => 'pàggene da accidere',
 	'nuke-desc' => "Dà a l'amministrature l'abbilità de [[Special:Nuke|scangellà massivamende]] le pàggene",
 	'nuke-nopages' => "Nisciuna pàgena nove da [[Special:Contributions/$1|{{GENDER:$1|$1}}]] jndr'à l'urteme cangiaminde.",
 	'nuke-list' => "Le pàggene seguende onne state ccrejate recendemende da [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
@@ -2260,7 +2261,9 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'nuke-editby' => 'Ccrejate da [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Pàgene '''$1''' ha state scangellate.",
 	'nuke-not-deleted' => "Pàgene [[:$1]] '''non ge pò''' essere scangellate.",
+	'nuke-delete-more' => '[[Special:Nuke|Scangille cchiù pàggene]]',
 	'nuke-pattern' => "Segnaposte pu nomed'a pàgene:",
+	'nuke-nopages-global' => "Non ge stonne pàggene nove jndr'à le [[Special:RecentChanges|cangiaminde recende]].",
 	'nuke-viewchanges' => 'vide le cangiaminde',
 	'nuke-namespace' => 'Limite a namespace:',
 );
