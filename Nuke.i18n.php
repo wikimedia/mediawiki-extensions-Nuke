@@ -692,6 +692,7 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
  * @author Crazymadlover
  * @author DJ Nietzsche
  * @author Dferg
+ * @author Fitoschido
  * @author Imre
  * @author Jatrobat
  * @author Platonides
@@ -703,11 +704,11 @@ $messages['es'] = array(
 	'nuke' => 'Borrado en masa',
 	'action-nuke' => 'Destruir páginas',
 	'nuke-desc' => 'Da a los administradores la posibilidad de [[Special:Nuke|borrar páginas de forma masiva]]',
-	'nuke-nopages' => 'No hay páginas nuevas hechas por [[Special:Contributions/$1|$1]] en cambios recientes.',
+	'nuke-nopages' => 'No hay páginas nuevas creadas por [[Special:Contributions/$1|$1]] en cambios recientes.',
 	'nuke-list' => 'Las siguientes páginas han sido creadas recientemente por [[Special:Contributions/$1|$1]];
 añade un comentario y haz clic sobre el botón para vaciarlas.',
 	'nuke-list-multiple' => 'Las siguientes páginas han sido creadas recientemente; introduce un comentario y pulsa el botón para eliminarlas.',
-	'nuke-defaultreason' => 'Elimininación en masa de páginas agregadas por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-defaultreason' => 'Eliminación en masa de páginas añadidas por [[Special:Contributions/$1|$1]]',
 	'nuke-multiplepeople' => 'Eliminación masiva de páginas nuevas de múltiples usuarios',
 	'nuke-tools' => 'Esta herramienta permite borrados masivos de páginas creadas recientemente por un usuario o una dirección IP.
 Introduzca el nombre de usuario o la dirección IP para obtener la lista de páginas a borrar, o déjelo en blanco para todos los usuarios.',
