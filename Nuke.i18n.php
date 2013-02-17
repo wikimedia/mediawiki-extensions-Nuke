@@ -89,7 +89,7 @@ See also:
 * $1 is a username.',
 	'nuke-deleted' => '*$1 - page title',
 	'nuke-not-deleted' => '*$1 - page title',
-	'nuke-namespace' => 'Label shown on Special:Nuke in front of the namespace input that allows choosing a namespace to filter the search by',
+	'nuke-namespace' => 'Label shown on [[Special:Nuke]] in front of the namespace input that allows choosing a namespace to filter the search by',
 );
 
 /** Afrikaans (Afrikaans)
