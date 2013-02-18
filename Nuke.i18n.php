@@ -1930,20 +1930,20 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-namespace' => 'Beperk tot naamruimte:',
 );
 
-/** Norwegian Nynorsk (norsk (nynorsk)‎)
+/** Norwegian Nynorsk (norsk nynorsk)
  * @author Harald Khan
  * @author Njardarlogar
  */
 $messages['nn'] = array(
 	'nuke' => 'Massesletting',
 	'action-nuke' => 'massesletta sider',
-	'nuke-desc' => 'Gjev administratorane moglegheita til å [[Special:Nuke|massesletta]] sider',
-	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|$1]] i siste endringane.', # Fuzzy
-	'nuke-list' => 'Dei fylgjande sidene vart nyleg oppretta av [[Special:Contributions/$1|$1]];
-skriv inn ei sletteårsak og trykk på knappen for å sletta dei.', # Fuzzy
-	'nuke-list-multiple' => 'Dei fylgjande sidene vart nyleg oppretta;
-skriv ein kommentar og trykk på knappen for å sletta dei.',
-	'nuke-defaultreason' => 'Massesletting av sider lagde inn av $1', # Fuzzy
+	'nuke-desc' => 'Gjev administratorane evna til å [[Special:Nuke|massesletta]] sider',
+	'nuke-nopages' => 'Ingen nye sider av [[Special:Contributions/$1|{{GENDER:$1|$1}}]] i siste endringane.',
+	'nuke-list' => 'Desse sidene vart nyleg oppretta av [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
+skriv inn ei sletteårsak og trykk på knappen for å sletta dei.',
+	'nuke-list-multiple' => 'Desse sidene vart nyleg oppretta;
+skriv inn ein kommentar og trykk på knappen for å sletta dei.',
+	'nuke-defaultreason' => 'Massesletting av sider lagde inn av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Massesletting av nyleg oppretta sider',
 	'nuke-tools' => 'Dette verktøyet mogeleggjer massesletting av sider som nyleg er lagde inn av ein viss brukar eller ei viss IP-adresse. 
 Skriv inn eit brukarnamn eller ei IP-adresse for å få ei liste over sider som kan verta sletta, eller lat feltet stå tomt for alle brukarar.',
@@ -1953,13 +1953,14 @@ Skriv inn eit brukarnamn eller ei IP-adresse for å få ei liste over sider som 
 	'nuke-select' => 'Vel: $1',
 	'nuke-userorip' => 'Brukarnamn, IP-adresse eller tomt:',
 	'nuke-maxpages' => 'Høgste talet på sider:',
-	'nuke-editby' => 'Oppretta av [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Oppretta av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Sida '''$1''' vart sletta.",
 	'nuke-not-deleted' => "Sida [[:$1]] ''kunne ikkje''' verta sletta.",
 	'nuke-delete-more' => '[[Special:Nuke|Slett fleire sider]]',
 	'nuke-pattern' => 'Mønster for sidenamnet:',
 	'nuke-nopages-global' => 'Det er ingen nye sider i [[Special:RecentChanges|siste endringane]].',
 	'nuke-viewchanges' => 'vis endringar',
+	'nuke-namespace' => 'Avgrens til namnerom:',
 );
 
 /** Northern Sotho (Sesotho sa Leboa)
