@@ -73,6 +73,11 @@ $specialPageAliases['fi'] = array(
 	'Nuke' => array( 'Massapoisto' ),
 );
 
+/** Galician (galego) */
+$specialPageAliases['gl'] = array(
+	'Nuke' => array( 'Eliminar_en_masa' ),
+);
+
 /** Swiss German (Alemannisch) */
 $specialPageAliases['gsw'] = array(
 	'Nuke' => array( 'Masseleschig' ),
