@@ -756,6 +756,7 @@ Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-a
 	'nuke-pattern' => 'Lehekülje pealkirja kuju:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|Viimaste muudatuste]] all pole uusi lehekülgi.',
 	'nuke-viewchanges' => 'vaata muudatusi',
+	'nuke-namespace' => 'Nimeruumipiirang:',
 );
 
 /** Basque (euskara)
