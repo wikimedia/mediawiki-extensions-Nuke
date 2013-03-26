@@ -60,8 +60,13 @@ For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
 	'action-nuke' => '{{doc-action|nuke}}',
 	'nuke-desc' => '{{desc|name=Nuke|url=http://www.mediawiki.org/wiki/Extension:Nuke}}
 The Nuke extension allows for sysops to delete a large number of pages ("Mass delete").',
-	'nuke-nopages' => 'Parameters:
-* $1 is a username',
+	'nuke-nopages' => 'Used if there are no pages to delete and the username is not empty.
+
+Parameters:
+* $1 - a username
+
+See also:
+* {{msg-mw|Nuke-nopages-global}}',
 	'nuke-list' => 'This message refers to:
 * the comment (reason) field which has the label {{msg-mw|deletecomment}}
 * the button labeled {{msg-mw|nuke-submit-delete}}.
@@ -74,21 +79,41 @@ See also:
 * the button labeled {{msg-mw|nuke-submit-delete}}.
 See also:
 * {{msg-mw|Nuke-list}}',
-	'nuke-defaultreason' => 'Reason for deletion in logs. {{msg-mw|nuke-multiplepeople}} is used when pages created by multiple people are deleted. Parameters:
-* $1 is a username or IP address, with a link to their contributions.',
+	'nuke-defaultreason' => 'Reason for deletion in logs. {{msg-mw|nuke-multiplepeople}} is used when pages created by multiple people are deleted.
+
+Parameters:
+* $1 - a username or IP address, with a link to their contributions',
 	'nuke-multiplepeople' => 'Reason for deletion in logs, when pages created by multiple users were deleted.
 
 {{msg-mw|nuke-defaultreason}} is used when pages created by only 1 user are deleted.',
+	'nuke-tools' => 'Used as intro text for the Nuke (mass deletion) form.',
 	'nuke-submit-user' => '{{Identical|Go}}',
 	'nuke-submit-delete' => 'Submit button to delete the selected pages.',
 	'right-nuke' => '{{doc-right|nuke}}',
 	'nuke-select' => 'Parameter $1 are two links: {{msg-mw|powersearch-toggleall}} and {{msg-mw|powersearch-togglenone}} which respectively selects all pages and de-selects all pages.
 
 {{Identical|Select}}',
-	'nuke-editby' => 'Parameters:
-* $1 is a username.',
+	'nuke-userorip' => 'Used as label for "target" input box.',
+	'nuke-maxpages' => 'Used as label for "nuke limit" input box.',
+	'nuke-editby' => 'This message is followed by {{msg-mw|Comma-separator}} and {{msg-mw|Nuke-viewchanges}}.
+
+Parameters:
+* $1 - a username',
 	'nuke-deleted' => '*$1 - page title',
 	'nuke-not-deleted' => '*$1 - page title',
+	'nuke-delete-more' => 'Used at the bottom of the Nuke (mass deletion) result page.',
+	'nuke-pattern' => 'Used as label for "nuke pattern" input box.',
+	'nuke-nopages-global' => 'Used if there are no pages to delete and the username is empty.
+
+See also:
+* {{msg-mw|Nuke-nopages}}',
+	'nuke-viewchanges' => 'Used as link text.
+
+The link points to History page of the page.
+
+This message follows:
+* {{msg-mw|nuke-editby}} and {{msg-mw|comma-separator}}
+* or empty string (if username is empty).',
 	'nuke-namespace' => 'Label shown on [[Special:Nuke]] in front of the namespace input that allows choosing a namespace to filter the search by',
 );
 
@@ -1365,7 +1390,7 @@ $messages['ja'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|他のページも削除]]',
 	'nuke-pattern' => 'ページ名のパターン:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近の更新]]には新しいページはありません。',
-	'nuke-viewchanges' => '差分を表示',
+	'nuke-viewchanges' => '履歴を表示',
 	'nuke-namespace' => '名前空間:',
 );
 
