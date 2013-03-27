@@ -55,7 +55,8 @@ Input the username or IP address to get a list of pages to delete, or leave blan
  * @author Yekrats
  */
 $messages['qqq'] = array(
-	'nuke' => 'The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
+	'nuke' => '{{doc-special|Nuke}}
+The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
 	'action-nuke' => '{{doc-action|nuke}}',
 	'nuke-desc' => '{{desc|name=Nuke|url=http://www.mediawiki.org/wiki/Extension:Nuke}}
