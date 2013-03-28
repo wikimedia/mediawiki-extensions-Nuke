@@ -124,6 +124,7 @@ This message follows:
  */
 $messages['af'] = array(
 	'nuke' => 'Massa verwyder',
+	'action-nuke' => 'massa verwydering van bladsye',
 	'nuke-nopages' => 'Geen nuwe bladsye [[Special:Contributions/$1|$1]] in onlangse wysigings.', # Fuzzy
 	'nuke-list-multiple' => "Die volgende bladsye is onlangs geskep word;
 sit dit in 'n kommentaar en druk die knoppie om dit te skrap.",
@@ -138,7 +139,11 @@ sit dit in 'n kommentaar en druk die knoppie om dit te skrap.",
 	'nuke-editby' => 'Geskep deur [[Special:Contributions/$1|$1]]', # Fuzzy
 	'nuke-deleted' => "Bladsy '''$1''' is verwyder.",
 	'nuke-not-deleted' => "Bladsy [[:$1]] '''kon nie''' verwyder word nie.",
+	'nuke-delete-more' => '[[Special:Nuke|Skrap meer bladsy]]',
 	'nuke-pattern' => 'Patroon vir die naam:',
+	'nuke-nopages-global' => 'Daar is nie nuwe bladsye in [[Special:RecentChanges|onlangse wysigings]] nie.',
+	'nuke-viewchanges' => 'wys veranderings',
+	'nuke-namespace' => 'Beperk tot naamruimte:',
 );
 
 /** Aragonese (aragonés)
