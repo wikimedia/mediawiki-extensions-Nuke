@@ -1551,7 +1551,7 @@ $messages['krj'] = array(
 $messages['ksh'] = array(
 	'nuke' => 'Sigge fottschmieße ang Mass',
 	'action-nuke' => 'pöngelswies Sigge fottschmiiße.',
-	'nuke-desc' => 'Määd_et müjjelesch för de Wiki-Köbesse, [[Special:Nuke|angmass Sigge fottzeschmieße]].',
+	'nuke-desc' => 'Määd_et möjjelesch för de Wiki-Köbesse, [[Special:Nuke|angmass Sigge fottzeschmieße]].',
 	'nuke-nopages' => 'Mer han kein neu Sigge {{GENDER:$1|vum|vum|vum Metmaacher|vun dä|vum}} [[Special:Contributions/$1|$1]] en de {{lcfirst:{{int:Recentchanges}}}}.', # Fuzzy
 	'nuke-list' => 'Hee di Sigge sen fum „[[Special:Contributions/$1|$1]]“ neu
 aanjelaat woode. Jiff enne Jrond för et Fottschmieße aan,
