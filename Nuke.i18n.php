@@ -1223,26 +1223,34 @@ Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler, 
 /** Indonesian (Bahasa Indonesia)
  * @author Bennylin
  * @author IvanLanin
+ * @author Iwan Novirion
  * @author Rex
  */
 $messages['id'] = array(
-	'nuke' => 'Penghapusan massal',
+	'nuke' => 'Penghapusan masal',
 	'nuke-desc' => 'Memberikan kemampuan bagi pengurus untuk [[Special:Nuke|menghapus halaman secara massal]]',
-	'nuke-nopages' => 'Tak ditemukan halaman baru dari [[Special:Contributions/$1|$1]] di perubahan terbaru.', # Fuzzy
-	'nuke-list' => 'Halaman berikut baru saja dibuat oleh [[Special:Contributions/$1|$1]]; masukkan suatu komentar dan tekan tombol untuk menghapus halaman-halaman tersebut.', # Fuzzy
+	'nuke-nopages' => 'Tak ditemukan halaman baru dari [[Special:Contributions/$1|{{GENDER:$1|$1}}]] di perubahan terbaru.',
+	'nuke-list' => 'Halaman berikut baru saja dibuat oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; berikan komentar dan tekan tombol untuk menghapus halaman-halaman tersebut.',
 	'nuke-list-multiple' => 'Halaman berikut baru dibuat; 
-masukkan suatu komentar dan tekan tombol untuk menghapus.',
-	'nuke-defaultreason' => 'Penghapusan massal halaman-halaman yang dibuat oleh $1', # Fuzzy
-	'nuke-multiplepeople' => 'beberapa pengguna', # Fuzzy
-	'nuke-tools' => 'Alat ini memungkinkan penghapusan massal halaman-halaman yang baru saja dibuat oleh seorang pengguna atau IP.
-Masukkan nama pengguna atau IP untuk mendapat daftar halaman yang dapat dihapus atau kosongkan untuk daftar halaman dari semua pengguna.',
-	'nuke-submit-user' => 'Tuju ke',
+berikan komentar dan tekan tombol untuk menghapus.',
+	'nuke-defaultreason' => 'Penghapusan masal halaman-halaman yang dibuat oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-multiplepeople' => 'Penghapusan masal halaman yang baru saja ditambahkan',
+	'nuke-tools' => 'Perkakas ini memungkinkan penghapusan masal halaman-halaman yang baru saja dibuat oleh seorang pengguna ataupun alamat IP.
+Masukkan nama pengguna atau alamat IP untuk mendapat daftar halaman yang dapat dihapus atau kosongkan untuk semua pengguna.',
+	'nuke-submit-user' => 'Jalankan',
 	'nuke-submit-delete' => 'Hapus yang terpilih',
 	'right-nuke' => 'Melakukan penghapusan masal halaman',
 	'nuke-select' => 'Pilih: $1',
 	'nuke-userorip' => 'Nama pengguna, alamat IP, atau kosong:',
 	'nuke-maxpages' => 'Jumlah maksimum halaman:',
-	'nuke-editby' => 'Dibuat oleh [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Dibuat oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-deleted' => "Halaman '''$1''' sudah dihapus.",
+	'nuke-not-deleted' => "Halaman [[:$1]] '''tidak bisa''' dihapus.",
+	'nuke-delete-more' => '[[Special:Nuke|Hapus lagi]]',
+	'nuke-pattern' => 'Pola untuk nama halaman:',
+	'nuke-nopages-global' => 'Tidak ditemukan halaman baru dalam [[Special:RecentChanges|perubahan terbaru]].',
+	'nuke-viewchanges' => 'lihat perubahan',
+	'nuke-namespace' => 'Batasan dari ruang nama:',
 );
 
 /** Igbo (Igbo)
@@ -1689,6 +1697,22 @@ $messages['lzh'] = array(
  */
 $messages['mg'] = array(
 	'right-nuke' => 'Mamafa pejy maro',
+);
+
+/** Minangkabau (Baso Minangkabau)
+ * @author Iwan Novirion
+ */
+$messages['min'] = array(
+	'nuke' => 'Panghapuihan masal',
+	'nuke-tools' => 'Pakakeh ko mamungkinkan panghapuihan masal laman-laman nan baru sajo dibuek jo sorang pangguno atau alamaik IP.
+Masuakan namo pangguno atau alamaik IP untuak mandapek daftar laman nan dapek dihapuih atau kosongkan untuak kasado pangguno.',
+	'nuke-submit-user' => 'Jalankan',
+	'nuke-userorip' => 'Namo pangguno, alamaik IP, atau kosong:',
+	'nuke-maxpages' => 'Jumlah maksimum laman:',
+	'nuke-editby' => 'Dibuek dek [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-deleted' => "Laman '''$1''' alah dihapuih.",
+	'nuke-pattern' => 'Pola untuak namo laman:',
+	'nuke-namespace' => 'Bateh dari ruang namo:',
 );
 
 /** Macedonian (македонски)
