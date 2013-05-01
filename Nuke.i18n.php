@@ -2168,6 +2168,7 @@ $messages['ps'] = array(
 
 /** Portuguese (português)
  * @author Hamilton Abreu
+ * @author Luckas
  * @author Malafaya
  * @author 555
  */
@@ -2184,7 +2185,7 @@ introduza um comentário e clique o botão para eliminá-las.',
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Eliminar as seleccionadas',
 	'right-nuke' => 'Eliminar páginas em massa',
-	'nuke-select' => 'Seleccionar: $1',
+	'nuke-select' => 'Selecionar: $1',
 	'nuke-userorip' => 'Utilizador, endereço IP, ou vazio:',
 	'nuke-maxpages' => 'Nº máximo de páginas:',
 	'nuke-editby' => 'Criada por [[Special:Contributions/$1|$1]]', # Fuzzy
