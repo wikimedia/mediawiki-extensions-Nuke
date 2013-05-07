@@ -1703,10 +1703,11 @@ $messages['mg'] = array(
  * @author Iwan Novirion
  */
 $messages['min'] = array(
-	'nuke' => 'Panghapuihan masal',
-	'nuke-tools' => 'Pakakeh ko mamungkinkan panghapuihan masal laman-laman nan baru sajo dibuek jo sorang pangguno atau alamaik IP.
+	'nuke' => 'Pangapuihan masal',
+	'nuke-tools' => 'Pakakeh ko mamungkinkan pangapuihan masal laman-laman nan baru sajo dibuek jo sorang pangguno atau alamaik IP.
 Masuakan namo pangguno atau alamaik IP untuak mandapek daftar laman nan dapek dihapuih atau kosongkan untuak kasado pangguno.',
 	'nuke-submit-user' => 'Jalankan',
+	'right-nuke' => 'Mangapuih laman sacaro masal',
 	'nuke-userorip' => 'Namo pangguno, alamaik IP, atau kosong:',
 	'nuke-maxpages' => 'Jumlah maksimum laman:',
 	'nuke-editby' => 'Dibuek dek [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
