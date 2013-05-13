@@ -1704,6 +1704,9 @@ $messages['mg'] = array(
  */
 $messages['min'] = array(
 	'nuke' => 'Pangapuihan masal',
+	'nuke-list-multiple' => 'Laman ko baru sajo dibuek; 
+agiah komentar dan takan tombol untuak mangapuih.',
+	'nuke-defaultreason' => 'Pangapuihan masal laman-laman nan dibuek dek [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-tools' => 'Pakakeh ko mamungkinkan pangapuihan masal laman-laman nan baru sajo dibuek jo sorang pangguno atau alamaik IP.
 Masuakan namo pangguno atau alamaik IP untuak mandapek daftar laman nan dapek dihapuih atau kosongkan untuak kasado pangguno.',
 	'nuke-submit-user' => 'Jalankan',
@@ -1712,7 +1715,9 @@ Masuakan namo pangguno atau alamaik IP untuak mandapek daftar laman nan dapek di
 	'nuke-maxpages' => 'Jumlah maksimum laman:',
 	'nuke-editby' => 'Dibuek dek [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Laman '''$1''' alah dihapuih.",
+	'nuke-not-deleted' => "Laman [[:$1]] '''indak dapek''' dihapuih.",
 	'nuke-pattern' => 'Pola untuak namo laman:',
+	'nuke-viewchanges' => 'caliak parubahan',
 	'nuke-namespace' => 'Bateh dari ruang namo:',
 );
 
