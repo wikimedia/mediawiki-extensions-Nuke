@@ -1718,7 +1718,7 @@ Masuakan namo pangguno atau alamaik IP untuak mandapek daftar laman nan dapek di
 	'nuke-not-deleted' => "Laman [[:$1]] '''indak dapek''' dihapuih.",
 	'nuke-pattern' => 'Pola untuak namo laman:',
 	'nuke-viewchanges' => 'caliak parubahan',
-	'nuke-namespace' => 'Bateh dari ruang namo:',
+	'nuke-namespace' => 'Bateh dari ruangnamo:',
 );
 
 /** Macedonian (македонски)
