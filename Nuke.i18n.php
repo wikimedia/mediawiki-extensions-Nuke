@@ -1289,6 +1289,7 @@ Ikabil ti nagan ti agar-aramat wenno IP address tapno maalam dagiti listaan dagi
 	'nuke-pattern' => 'Manipud a kita iti nagan ti panid:',
 	'nuke-nopages-global' => 'Awan dagiti baro a panid idiay [[Special:RecentChanges|kinaudian a pinagbaliw]].',
 	'nuke-viewchanges' => 'kitaen dagiti sinukatan',
+	'nuke-namespace' => 'Patingga iti nagan a lugar:',
 );
 
 /** Ido (Ido)
