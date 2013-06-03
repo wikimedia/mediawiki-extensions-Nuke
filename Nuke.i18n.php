@@ -219,7 +219,7 @@ $messages['arz'] = array(
 	'right-nuke' => 'مسح كبير للصفحات',
 );
 
-/** Assamese (অসমীয়া)
+/** Assamese (অসমীয়া)
  * @author Bishnu Saikia
  */
 $messages['as'] = array(
@@ -726,6 +726,7 @@ Enigu la salutnomon aŭ IP-adreson por akiri liston de paĝoj forigi, aŭ lasu �
  * @author Fitoschido
  * @author Imre
  * @author Jatrobat
+ * @author MarcoAurelio
  * @author Platonides
  * @author Ralgis
  * @author Remember the dot
@@ -1879,7 +1880,7 @@ $messages['nah'] = array(
 	'nuke-submit-user' => 'Yāuh',
 );
 
-/** Norwegian Bokmål (norsk (bokmål)‎)
+/** Norwegian Bokmål (norsk bokmål)
  * @author Event
  * @author Nghtwlkr
  */
@@ -1924,7 +1925,7 @@ $messages['nds'] = array(
 	'right-nuke' => 'Groten Hümpel Sieden wegsmieten',
 );
 
-/** Nedersaksies (Nedersaksies)
+/** Low Saxon (Netherlands) (Nedersaksies)
  * @author Servien
  */
 $messages['nds-nl'] = array(
@@ -2048,7 +2049,7 @@ $messages['oc'] = array(
 	'right-nuke' => 'Suprimir de paginas en massa',
 );
 
-/** Oriya (ଓଡ଼ିଆ)
+/** Oriya (ଓଡ଼ିଆ)
  * @author Jnanaranjan Sahu
  * @author Psubhashish
  */
