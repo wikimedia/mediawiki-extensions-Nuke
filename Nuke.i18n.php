@@ -267,10 +267,11 @@ $messages['az'] = array(
 /** Bashkir (башҡортса)
  * @author Assele
  * @author Haqmar
+ * @author Рустам Нурыев
  */
 $messages['ba'] = array(
 	'nuke' => 'Күпләп юйыу',
-	'nuke-desc' => 'Хәкимдәргә биттәрҙе [[Special:Nuke|күпләп юйыу]] мөмкинлеген бирә',
+	'nuke-desc' => 'Хакимдәргә биттәрҙе [[Special:Nuke|күпләп юйыу]] мөмкинлеген бирә',
 	'nuke-nopages' => 'Һуңғы үҙгәртеүҙәрҙә [[Special:Contributions/$1|$1]] тарафынан булдырылған биттәр юҡ.', # Fuzzy
 	'nuke-list' => 'Түбәндәге биттәр [[Special:Contributions/$1|$1]] тарафынан яңыраҡ булдырылған.
 Уларҙы юйыр өсөн, аңлатма керетегеҙ һәм төймәгә баҫығыҙ.', # Fuzzy
