@@ -554,6 +554,7 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
 );
 
 /** German (Deutsch)
+ * @author Geitost
  * @author Kghbln
  * @author Metalhead64
  * @author Raimond Spekking
@@ -571,7 +572,7 @@ Gib einen Kommentar bezüglich der Löschung an und klicke auf die Schaltfläche
 	'nuke-defaultreason' => 'Massenlöschung der Seiten, die von „[[Special:Contributions/$1|{{GENDER:$1|$1}}]]“ angelegt wurden',
 	'nuke-multiplepeople' => 'Massenlöschung kürzlich erstellter Seiten',
 	'nuke-tools' => 'Diese Arbeitshilfe ermöglicht die Massenlöschung von Seiten, die von einer IP-Adresse oder einem Benutzer angelegt wurden.
-Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten. Sofern Du keine Angabe machst, werden alle Benutzer ausgewählt.',
+Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden Seiten zu erhalten. Sofern du keine Angabe machst, werden alle Benutzer ausgewählt.',
 	'nuke-submit-user' => 'Abrufen',
 	'nuke-submit-delete' => 'Ausgewählte Seiten löschen',
 	'right-nuke' => 'Massenlöschungen von Seiten',
