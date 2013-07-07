@@ -1661,6 +1661,7 @@ Gitt w.e.g. d'IP-Adress respektiv de Benotzer u fir eng Lëscht vun de Säiten z
 	'nuke-pattern' => 'Muster fir de Säitennumm:',
 	'nuke-nopages-global' => 'Et si keng nei Säiten an de [[Special:RecentChanges|rezenten Ännerungen]].',
 	'nuke-viewchanges' => 'Ännerunge weisen',
+	'nuke-namespace' => 'Op dësen Nummraum limitéieren:',
 );
 
 /** Limburgish (Limburgs)
