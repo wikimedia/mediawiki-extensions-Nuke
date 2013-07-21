@@ -1965,8 +1965,8 @@ $messages['nds'] = array(
 $messages['nds-nl'] = array(
 	'nuke' => 'Massaal vortdoon',
 	'nuke-desc' => 'Hiermee kunnen beheerders [[Special:Nuke|massaal ziejen vortdoon]]',
-	'nuke-nopages' => 'Gien nieje ziejen van [[Special:Contributions/$1|$1]] in de leste wiezigingen.', # Fuzzy
-	'nuke-defaultreason' => 'Massaal ziejen van $1 vortdoon', # Fuzzy
+	'nuke-nopages' => 'Gien nieje ziejen van [[Special:Contributions/$1|{{GENDER:$1|$1}}]] in de leste wiezigingen.',
+	'nuke-defaultreason' => 'Massaal ziejen van [[Special:Contributions/$1|{{GENDER:$1|$1}}]] vortdoon',
 	'right-nuke' => 'Massaal ziejen vortdoon',
 );
 
