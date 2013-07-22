@@ -38,6 +38,11 @@ $specialPageAliases['bjn'] = array(
 	'Nuke' => array( 'Nuklir' ),
 );
 
+/** Chechen (нохчийн) */
+$specialPageAliases['ce'] = array(
+	'Nuke' => array( 'Дуккха_дӀяккхар' ),
+);
+
 /** German (Deutsch) */
 $specialPageAliases['de'] = array(
 	'Nuke' => array( 'Massenlöschung' ),
