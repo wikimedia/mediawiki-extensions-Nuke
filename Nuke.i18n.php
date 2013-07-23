@@ -472,10 +472,11 @@ Per obtenir la llista de pàgines per esborrar podeu introduir el nom d'un usuar
  */
 $messages['ce'] = array(
 	'nuke' => 'Дуккха дӀяккхар',
+	'action-nuke' => 'дуккха агIонаш дӀаяхар',
 	'nuke-defaultreason' => 'Декъашхочо $1 кхоьллина агIонаш, дуккха дӀаяхар', # Fuzzy
 	'nuke-submit-user' => 'Кхочушдé',
 	'nuke-submit-delete' => 'ДӀаяха хаьржнарш',
-	'right-nuke' => 'дуккха агIонаш дIайайар',
+	'right-nuke' => 'дуккха агIонаш дӀаяхар',
 	'nuke-userorip' => 'Декъашхочун цӀе, IP-адрес (еса йита мега):',
 	'nuke-maxpages' => 'АгӀонашан максимальни дукхалла:',
 	'nuke-pattern' => 'Кеп агӀона цӀеран:',
