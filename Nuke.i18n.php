@@ -473,13 +473,19 @@ Per obtenir la llista de pàgines per esborrar podeu introduir el nom d'un usuar
 $messages['ce'] = array(
 	'nuke' => 'Дуккха дӀяккхар',
 	'action-nuke' => 'дуккха агIонаш дӀаяхар',
+	'nuke-list-multiple' => 'Лахахь гайтина агӀонаш дукху хан йоцуш кхолийна.
+Уьш дӀаяха билгалонаш Ӏадйите тӀетаӀе кнопка.',
 	'nuke-defaultreason' => 'Декъашхочо $1 кхоьллина агIонаш, дуккха дӀаяхар', # Fuzzy
+	'nuke-multiplepeople' => 'Дуккха агӀонаш дӀаяхар',
+	'nuke-tools' => 'ХӀокху агӀонехь йиш ю дуккха агӀонаш дӀаяха, дукх хан йоцуш кхолийна йолу.',
 	'nuke-submit-user' => 'Кхочушдé',
 	'nuke-submit-delete' => 'ДӀаяха хаьржнарш',
 	'right-nuke' => 'дуккха агIонаш дӀаяхар',
 	'nuke-userorip' => 'Декъашхочун цӀе, IP-адрес (еса йита мега):',
 	'nuke-maxpages' => 'АгӀонашан максимальни дукхалла:',
+	'nuke-editby' => 'Кхолийна {{GENDER:$1|декъашхочо}} [[Special:Contributions/$1|$1]]',
 	'nuke-pattern' => 'Кеп агӀона цӀеран:',
+	'nuke-viewchanges' => 'ХӀоттина болу хийцам',
 	'nuke-namespace' => 'Къастае ана цӀераш:',
 );
 
@@ -488,6 +494,13 @@ $messages['ce'] = array(
  */
 $messages['ch'] = array(
 	'nuke-submit-user' => 'Hånao',
+);
+
+/** Sorani Kurdish (کوردی)
+ * @author Calak
+ */
+$messages['ckb'] = array(
+	'right-nuke' => 'سڕینەوەی پەڕەکان بەکۆمەڵ',
 );
 
 /** Czech (česky)
