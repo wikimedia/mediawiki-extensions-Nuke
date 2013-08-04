@@ -393,6 +393,7 @@ $messages['bn'] = array(
 
 /** Breton (brezhoneg)
  * @author Fulup
+ * @author Y-M D
  */
 $messages['br'] = array(
 	'nuke' => "Diverkañ a-vloc'h",
@@ -419,7 +420,7 @@ Merkañ ar c'homlec'h IP pe anv an implijer evit kaout roll ar pajennoù da zive
 	'nuke-delete-more' => '[[Special:Nuke|Diverkañ pajennoù all]]',
 	'nuke-pattern' => 'Patrom evit anv ar bajenn :',
 	'nuke-nopages-global' => "N'eus pajenn nevez ebet er [[Special:RecentChanges|c'hemmoù diwezhañ]].",
-	'nuke-viewchanges' => "Diskouez ar c'hemmoù",
+	'nuke-viewchanges' => "diskouez ar c'hemmoù",
 );
 
 /** Bosnian (bosanski)
