@@ -1221,12 +1221,12 @@ $messages['ia'] = array(
 	'nuke' => 'Deletion in massa',
 	'action-nuke' => 'deler paginas in massa',
 	'nuke-desc' => 'Da le possibilitate al administratores de [[Special:Nuke|deler paginas in massa]]',
-	'nuke-nopages' => 'Nulle nove paginas per [[Special:Contributions/$1|$1]] trovate in le modificationes recente.', # Fuzzy
-	'nuke-list' => 'Le sequente paginas esseva recentemente create per [[Special:Contributions/$1|$1]];
-entra un commento e clicca le button pro deler los.', # Fuzzy
+	'nuke-nopages' => 'Nulle nove pagina create per [[Special:Contributions/$1|{{GENDER:$1|$1}}]] trovate in le modificationes recente.',
+	'nuke-list' => 'Le sequente paginas esseva recentemente create per [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
+entra un commento e clicca le button pro deler los.',
 	'nuke-list-multiple' => 'Le sequente paginas esseva create recentemente;
 entra un commento e pulsa sur le button pro deler los.',
-	'nuke-defaultreason' => 'Deletion in massa de paginas addite per $1', # Fuzzy
+	'nuke-defaultreason' => 'Deletion in massa de paginas addite per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Deletion in massa de paginas addite recentemente',
 	'nuke-tools' => 'Iste instrumento permitte le deletion in massa de paginas recentemente addite per un usator o adresse IP specific.
 Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler, o lassa vacue pro tote le usatores.',
@@ -1236,7 +1236,7 @@ Entra le nomine de usator o adresse IP pro obtener un lista de paginas a deler, 
 	'nuke-select' => 'Seliger: $1',
 	'nuke-userorip' => 'Nomine de usator, adresse IP o vacue:',
 	'nuke-maxpages' => 'Numero maxime de paginas:',
-	'nuke-editby' => 'Create per [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Create per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Le pagina '''$1''' ha essite delite.",
 	'nuke-not-deleted' => "Le pagina [[:$1]] '''non poteva''' esser delite.",
 	'nuke-delete-more' => '[[Special:Nuke|Deler plus paginas]]',
