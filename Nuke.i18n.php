@@ -1838,6 +1838,7 @@ $messages['ml'] = array(
 	'nuke-pattern' => 'താളിന്റെ പേരിന്റെ ശൈലി:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|സമീപകാലമാറ്റങ്ങളിൽ]] പുതിയ താളുകളൊന്നുമില്ല.',
 	'nuke-viewchanges' => 'മാറ്റങ്ങൾ കാണുക',
+	'nuke-namespace' => 'ഈ നാമമേഖലയിൽ ഒതുക്കുക:',
 );
 
 /** Marathi (मराठी)
