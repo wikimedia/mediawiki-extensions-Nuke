@@ -1568,7 +1568,7 @@ $messages['kn'] = array(
 $messages['ko'] = array(
 	'nuke' => '문서 대량 삭제',
 	'action-nuke' => '문서를 대량 삭제할',
-	'nuke-desc' => '관리자가 문서를 [[Special:Nuke|대량 삭제]]할 수 있는 기능을 추가',
+	'nuke-desc' => '관리자가 문서를 [[Special:Nuke|대량 삭제]]할 수 있는 기능을 줍니다',
 	'nuke-nopages' => '최근에 [[Special:Contributions/$1|{{GENDER:$1|$1}}]] 사용자가 만든 문서가 없습니다.',
 	'nuke-list' => '다음은 [[Special:Contributions/$1|{{GENDER:$1|$1}}]] 사용자가 최근에 만든 문서입니다.
 삭제에 대한 이유를 입력한 다음 아래 버튼을 클릭해주세요.',
