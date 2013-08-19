@@ -2572,6 +2572,7 @@ Vnesite uporabniško ime ali IP, da pridobite seznam strani za izbris, ali pusti
 );
 
 /** Serbian (Cyrillic script) (српски (ћирилица)‎)
+ * @author Milicevic01
  * @author Millosh
  * @author Rancher
  * @author Жељко Тодоровић
@@ -2581,7 +2582,7 @@ $messages['sr-ec'] = array(
 	'action-nuke' => 'масовно брисање страница',
 	'nuke-desc' => 'Даје администратору могућност да [[Special:Nuke|масовно брише]] странице.',
 	'nuke-nopages' => 'Нема нових страница од стране корисника [[Special:Contributions/$1|$1]] у скорашњим изменама.', # Fuzzy
-	'nuke-list' => 'Следеће странице је скоро направио корисник [[Special:Contributions/$1|$1]]; коментариши и притисни дугме за њихово брисање.', # Fuzzy
+	'nuke-list' => 'Следеће странице је скоро направио корисник [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; оставите коментар и притисните дугме за њихово брисање.',
 	'nuke-defaultreason' => 'Масовно брисање страница које је направио корисник $1', # Fuzzy
 	'nuke-multiplepeople' => 'Масовно брисање недавно додатих страница',
 	'nuke-tools' => 'Ова алатка омогућава збирно брисање страница које је недавно додао одређени корисник (са налогом или без њега).
@@ -2601,6 +2602,7 @@ $messages['sr-ec'] = array(
 
 /** Serbian (Latin script) (srpski (latinica)‎)
  * @author Michaello
+ * @author Milicevic01
  * @author Жељко Тодоровић
  */
 $messages['sr-el'] = array(
@@ -2608,7 +2610,7 @@ $messages['sr-el'] = array(
 	'action-nuke' => 'masovno brisanje stranica',
 	'nuke-desc' => 'Daje administratoru mogućnost da [[Special:Nuke|masovno briše]] stranice.',
 	'nuke-nopages' => 'Nema novih stranica od strane korisnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.', # Fuzzy
-	'nuke-list' => 'Sledeće stranice je skoro napravio korisnik [[Special:Contributions/$1|$1]]; komentariši i pritisni dugme za njihovo brisanje.', # Fuzzy
+	'nuke-list' => 'Sledeće stranice je skoro napravio korisnik [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; ostavite komentar i pritisnite dugme za njihovo brisanje.',
 	'nuke-defaultreason' => 'Masovno brisanje stranica koje je napravio korisnik $1.', # Fuzzy
 	'nuke-multiplepeople' => 'Masovno brisanje nedavno dodatih stranica',
 	'nuke-tools' => 'Ova alatka omogućava zbirno brisanje stranica koje je nedavno dodao određeni korisnik (sa nalogom ili bez njega).
