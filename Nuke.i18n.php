@@ -100,8 +100,14 @@ Parameters:
 
 Parameters:
 * $1 - a username',
-	'nuke-deleted' => '*$1 - page title',
-	'nuke-not-deleted' => '*$1 - page title',
+	'nuke-deleted' => 'Used as success result of deletion. Parameters:
+* $1 - page title
+See also:
+* {{msg-mw|Nuke-not-deleted}}',
+	'nuke-not-deleted' => 'Used as failure result of deletion. Parameters:
+* $1 - page title
+See also:
+* {{msg-mw|Nuke-deleted}}',
 	'nuke-delete-more' => 'Used at the bottom of the Nuke (mass deletion) result page.',
 	'nuke-pattern' => 'Used as label for "nuke pattern" input box.',
 	'nuke-nopages-global' => 'Used if there are no pages to delete and the username is empty.
@@ -1425,8 +1431,8 @@ $messages['ja'] = array(
 	'nuke-userorip' => '利用者名、IP アドレス、空欄のいずれか:',
 	'nuke-maxpages' => '最大ページ数:',
 	'nuke-editby' => '[[Special:Contributions/$1|$1]] が作成',
-	'nuke-deleted' => "ページ  '''$1''' は削除されました。",
-	'nuke-not-deleted' => "ページ [[:$1]] は削除'''できません''' 。",
+	'nuke-deleted' => "ページ  '''$1''' を削除しました。",
+	'nuke-not-deleted' => "ページ [[:$1]] を削除'''できませんでした'''。",
 	'nuke-delete-more' => '[[Special:Nuke|他のページも削除]]',
 	'nuke-pattern' => 'ページ名のパターン:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近の更新]]には新しいページはありません。',
@@ -2258,6 +2264,7 @@ introduza um comentário e clique o botão para eliminá-las.',
 );
 
 /** Brazilian Portuguese (português do Brasil)
+ * @author Cainamarques
  * @author Carla404
  * @author Eduardo.mps
  * @author Giro720
@@ -2268,11 +2275,11 @@ $messages['pt-br'] = array(
 	'nuke' => 'Eliminar de forma massiva',
 	'nuke-desc' => '[[Special:Nuke|Página especial]] que permite que administradores apaguem páginas de forma massiva',
 	'nuke-nopages' => 'Não há novas páginas criadas por [[Special:Contributions/$1|$1]] nas mudanças recentes.', # Fuzzy
-	'nuke-list' => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|$1]];
-forneça uma justificativa e clique no botão equivalente para eliminá-las.', # Fuzzy
+	'nuke-list' => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
+forneça uma justificativa e clique no botão equivalente para eliminá-las.',
 	'nuke-list-multiple' => 'As páginas a seguir foram criadas recentemente;
 forneça uma justificativa e clique no botão equivalente para eliminá-las.',
-	'nuke-defaultreason' => 'Eliminação de forma massiva de páginas criadas por $1', # Fuzzy
+	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Eliminação em massa de páginas recentemente adicionadas',
 	'nuke-tools' => 'Esta ferramenta permite que páginas criadas recentemente por um usuário ou IP específico sejam eliminadas de forma massiva.
 Insira um nome de usuário ou IP para listar páginas a eliminar; deixe em branco se deseja listar de todos os usuários.',
@@ -2282,7 +2289,7 @@ Insira um nome de usuário ou IP para listar páginas a eliminar; deixe em branc
 	'nuke-select' => 'Selecionar: $1',
 	'nuke-userorip' => 'Nome de usuário, endereço IP ou em branco:',
 	'nuke-maxpages' => 'Número máximo de páginas:',
-	'nuke-editby' => 'Criada por [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Criada por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => 'A página ""$1"" foi excluída.',
 	'nuke-not-deleted' => "A página [[:$1]] '''não pôde''' ser excluída.",
 );
