@@ -91,8 +91,9 @@ Parameters:
 	'nuke-submit-user' => '{{Identical|Go}}',
 	'nuke-submit-delete' => 'Submit button to delete the selected pages.',
 	'right-nuke' => '{{doc-right|nuke}}',
-	'nuke-select' => 'Parameter $1 are two links: {{msg-mw|powersearch-toggleall}} and {{msg-mw|powersearch-togglenone}} which respectively selects all pages and de-selects all pages.
-
+	'nuke-select' => 'Parameters:
+* $1 - two links: {{msg-mw|Powersearch-toggleall}} and {{msg-mw|Powersearch-togglenone}} which respectively selects all pages and de-selects all 
+pages
 {{Identical|Select}}',
 	'nuke-userorip' => 'Used as label for "target" input box.',
 	'nuke-maxpages' => 'Used as label for "nuke limit" input box.',
@@ -2104,7 +2105,7 @@ $messages['oc'] = array(
 	'nuke-nopages' => 'Cap de pagina novèla creada per [[Special:Contributions/$1|$1]] dins la lista dels darrièrs cambiaments.', # Fuzzy
 	'nuke-list' => 'Las paginas seguentas son estadas creadas recentament per [[Special:Contributions/$1|$1]]; Indicatz un comentari e clicatz sul boton per los suprimir.', # Fuzzy
 	'nuke-defaultreason' => 'Supression en massa de las paginas apondudas per $1', # Fuzzy
-	'nuke-tools' => 'Aquesta aisina autoriza las supressions en massa de las paginas apondudas recentament per un utilizaire enregistrat o per una adreça IP. Indicatz l’adreça IP per obténer la tièra de las paginas de suprimir :', # Fuzzy
+	'nuke-tools' => 'Aquesta aisina autoriza las supressions en massa de las paginas apondudas recentament per un utilizaire enregistrat o per una adreça IP. Indicatz l’adreça IP per obténer la lista de las paginas de suprimir, o daissar blanc per totes los utilizaires.',
 	'nuke-submit-user' => 'Validar',
 	'nuke-submit-delete' => 'Supression seleccionada',
 	'right-nuke' => 'Suprimir de paginas en massa',
