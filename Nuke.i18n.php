@@ -839,6 +839,7 @@ idatz ezazu ohar bat, eta sakatu botoia orri horiek ezabatzeko.',
 );
 
 /** Persian (فارسی)
+ * @author Ebraminio
  * @author Huji
  * @author Mjbmr
  * @author Reza1615
@@ -849,10 +850,11 @@ $messages['fa'] = array(
 	'action-nuke' => 'حذف دسته‌جمعی صفحه‌ها',
 	'nuke-desc' => 'به مدیران امکان [[Special:Nuke|حذف دسته‌جمعی]] صفحه‌ها را می‌دهد',
 	'nuke-nopages' => 'صفحهٔ جدیدی از [[Special:Contributions/$1|{{GENDER:$1|$1}}]] در تغییرات اخیر وجود ندارد.',
-	'nuke-list' => 'صفحه‌های زیر به تازگی توسط [[Special:Contributions/$1|$1]] ایجاد شده‌اند؛ توضیحی ارائه کنید و دکمه را بزنید تا این صحفه‌ها حذف شوند.', # Fuzzy
+	'nuke-list' => 'صفحه‌های زیر به تازگی توسط [[Special:Contributions/$1|{{GENDER:$1|$1}}]] ایجاد شده‌اند؛
+توضیحی ارائه کنید و دکمه را بزنید تا این صحفه‌ها حذف شوند.',
 	'nuke-list-multiple' => 'صفحه‌های مقابل اخیراً ایجاد شده‌اند؛
 یک توضیح قرار دهید و برای حذف کلید را فشار دهید.',
-	'nuke-defaultreason' => 'حذف دسته‌جمعی صفحه‌هایی که توسط $1 ایجاد شده‌اند', # Fuzzy
+	'nuke-defaultreason' => 'حذف دسته‌جمعی صفحه‌هایی که توسط [[Special:Contributions/$1|{{GENDER:$1|$1}}]] ایجاد شده‌اند',
 	'nuke-multiplepeople' => 'حذف توده‌ای صفحه‌های به‌تازگی افزوده‌شده',
 	'nuke-tools' => 'این ابزار امکان حذف دسته‌جمعی صفحه‌هایی که به تازگی توسط یک کاربر یا نشانی آی‌پی اضافه شده‌اند را فراهم می‌کند.
 نام کاربری یا نشانی آی‌پی موردنظر را وارد کنید، یا جعبه را خالی بگذارید تا تمام کاربرها در نظر گرفته شوند.',
@@ -862,13 +864,14 @@ $messages['fa'] = array(
 	'nuke-select' => 'انتخاب: $1',
 	'nuke-userorip' => 'نام کاربری، نشانی آی‌پی یا خالی:',
 	'nuke-maxpages' => 'حداکثر تعداد صفحه‌ها:',
-	'nuke-editby' => 'ایجاد شده توسط [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'ایجاد شده توسط [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "صفحهٔ '''$1''' حذف شده است.",
 	'nuke-not-deleted' => "صفحهٔ [[:$1]] را '''نمی‌توان''' حذف کرد.",
 	'nuke-delete-more' => '[[Special:Nuke|حذف صفحه‌های بیشتر]]',
 	'nuke-pattern' => 'الگو برای نام صفحه:',
 	'nuke-nopages-global' => 'هیچ صفحهٔ جدیدی در [[Special:RecentChanges|فهرست تغییرات اخیر]] نیست.',
 	'nuke-viewchanges' => 'نمایش تغییرات',
+	'nuke-namespace' => 'محدودیت به فضای نام:',
 );
 
 /** Finnish (suomi)
