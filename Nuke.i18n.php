@@ -1373,6 +1373,7 @@ Tilgreindu notendanafn eða vistfang til að fá lista yfir síður til að eyð
  * @author BrokenArrow
  * @author Darth Kule
  * @author F. Cosoleto
+ * @author Nemo bis
  */
 $messages['it'] = array(
 	'nuke' => 'Cancellazione di massa',
@@ -1395,7 +1396,7 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
 	'nuke-editby' => 'Creata da [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "La pagina '''$1''' è stata cancellata.",
 	'nuke-not-deleted' => "La pagina [[:$1]] '''non può''' essere cancellata.",
-	'nuke-delete-more' => '[[Special:Nuke|Cancella più pagine]]',
+	'nuke-delete-more' => '[[Special:Nuke|Cancella altre pagine]]',
 	'nuke-pattern' => 'Modello per il titolo della pagina:',
 	'nuke-nopages-global' => 'Non ci sono nuove pagine negli [[Special:RecentChanges|ultimi cambiamenti]].',
 	'nuke-viewchanges' => 'vedi modifiche',
