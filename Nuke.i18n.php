@@ -1081,6 +1081,7 @@ $messages['gv'] = array(
 
 /** Hebrew (עברית)
  * @author Amire80
+ * @author Guycn1
  * @author Rotem Liss
  * @author YaronSh
  */
@@ -1093,7 +1094,7 @@ $messages['he'] = array(
 אנא כתבו הסבר למחיקה ולחצו על הכפתור כדי למחוק אותם.',
 	'nuke-list-multiple' => 'הדפים הבאים נוצרו לאחרונה;
 אנא כתבו נימוק למחיקה ולחצו על הכפתור כדי למחוק אותם.',
-	'nuke-defaultreason' => 'הסרה מרובה של דפים שנוספו על־ידי [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-defaultreason' => 'הסרה מרובה של דפים שנוצרו על־ידי [[Special:Contributions/$1|$1]]',
 	'nuke-multiplepeople' => 'מחיקה מרובה של דפים שנוספו לאחרונה',
 	'nuke-tools' => 'כלי זה מאפשר מחיקות המוניות של דפים שנוספו לאחרונה על ידי משתמש או כתובת IP מסוימים.
 כתבו את שם המשתמש או כתובת ה־IP כדי לקבל את רשימת הדפים למחיקה או השאירו את השדה הזה ריק עבור כל המשתמשים.',
@@ -2230,14 +2231,14 @@ $messages['ps'] = array(
 	'action-nuke' => 'نيوک مخونه',
 	'nuke-multiplepeople' => 'د تازه راګډ شويو مخونو ټول ړنګېدنه',
 	'nuke-submit-user' => 'ورځه',
-	'nuke-submit-delete' => 'ټاکل شوی ړنګول',
+	'nuke-submit-delete' => 'ټاکل شوی ړنگول',
 	'right-nuke' => 'د ډله ايز ړنګون مخونه',
 	'nuke-select' => 'ټاکل: $1',
 	'nuke-userorip' => 'کارن-نوم، آي پي پته يا تش:',
 	'nuke-maxpages' => 'د حد اکثر شمېر مخونه:',
 	'nuke-deleted' => "د '''$1''' مخ ړنګ شو.",
 	'nuke-not-deleted' => "د [[:$1]] مخ '''نشي''' ړنګېدلی.",
-	'nuke-delete-more' => '[[Special:Nuke|لا نور مخونه ړنګول]]',
+	'nuke-delete-more' => '[[Special:Nuke|لا نور مخونه ړنگول]]',
 	'nuke-viewchanges' => 'بدلونونه کتل',
 );
 
