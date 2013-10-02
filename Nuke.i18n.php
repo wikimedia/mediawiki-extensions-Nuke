@@ -3072,6 +3072,7 @@ $messages['zh-hans'] = array(
 
 /** Traditional Chinese (中文（繁體）‎)
  * @author Anakmalaysia
+ * @author Cwlin0416
  * @author Justincheng12345
  * @author Liangent
  * @author Mark85296341
@@ -3085,7 +3086,7 @@ $messages['zh-hant'] = array(
 	'nuke-list' => '以下的頁面是由[[Special:Contributions/$1|$1]]在以前所寫的；記下一個註解再點擊按鈕去刪除它們。',
 	'nuke-list-multiple' => '以下為最近創建的頁面，請填寫註釋並點擊按鈕刪除它們。',
 	'nuke-defaultreason' => '大量刪除由[[Special:Contributions/$1|$1]]所建立的頁面',
-	'nuke-multiplepeople' => '大量刪除最近添加的頁面',
+	'nuke-multiplepeople' => '大量刪除最近新增的頁面',
 	'nuke-tools' => '此工具允許大量刪除指定用戶或IP地址在最近創建的頁面。輸入用戶名或IP地址可獲取可刪除頁面列表，留白則檢索所有用戶。',
 	'nuke-submit-user' => '執行',
 	'nuke-submit-delete' => '刪除已選擇的',
