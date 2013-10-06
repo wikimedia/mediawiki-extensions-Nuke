@@ -2279,25 +2279,31 @@ introduza um comentário e clique o botão para eliminá-las.',
  */
 $messages['pt-br'] = array(
 	'nuke' => 'Eliminar de forma massiva',
+	'action-nuke' => 'eliminar páginas de forma massiva',
 	'nuke-desc' => '[[Special:Nuke|Página especial]] que permite que administradores apaguem páginas de forma massiva',
-	'nuke-nopages' => 'Não há novas páginas criadas por [[Special:Contributions/$1|$1]] nas mudanças recentes.', # Fuzzy
-	'nuke-list' => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
+	'nuke-nopages' => 'Não há novas páginas criadas [[Special:Contributions/$1|{{GENDER:$1|pelo usuário $1|pela usuária $1|por $1}}]] nas mudanças recentes.',
+	'nuke-list' => 'As páginas a seguir foram recentemente criadas  [[Special:Contributions/$1|{{GENDER:$1|pelo usuário $1|pela usuária $1|por $1}}]];
 forneça uma justificativa e clique no botão equivalente para eliminá-las.',
 	'nuke-list-multiple' => 'As páginas a seguir foram criadas recentemente;
 forneça uma justificativa e clique no botão equivalente para eliminá-las.',
-	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
-	'nuke-multiplepeople' => 'Eliminação em massa de páginas recentemente adicionadas',
+	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas [[Special:Contributions/$1|{{GENDER:$1|pelo usuário $1|pela usuária $1|por $1}}]]',
+	'nuke-multiplepeople' => 'Eliminação em massa de páginas criadas recentemente',
 	'nuke-tools' => 'Esta ferramenta permite que páginas criadas recentemente por um usuário ou IP específico sejam eliminadas de forma massiva.
 Insira um nome de usuário ou IP para listar páginas a eliminar; deixe em branco se deseja listar de todos os usuários.',
 	'nuke-submit-user' => 'Ir',
-	'nuke-submit-delete' => 'Eliminar as selecionadas',
+	'nuke-submit-delete' => 'Eliminar selecionadas',
 	'right-nuke' => 'Eliminar páginas de forma massiva',
 	'nuke-select' => 'Selecionar: $1',
 	'nuke-userorip' => 'Nome de usuário, endereço IP ou em branco:',
 	'nuke-maxpages' => 'Número máximo de páginas:',
-	'nuke-editby' => 'Criada por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-editby' => 'Criada [[Special:Contributions/$1|{{GENDER:$1|pelo usuário $1|pela usuária $1|por $1}}]]',
 	'nuke-deleted' => 'A página ""$1"" foi excluída.',
 	'nuke-not-deleted' => "A página [[:$1]] '''não pôde''' ser excluída.",
+	'nuke-delete-more' => '[[Special:Nuke|Eliminar mais páginas]]',
+	'nuke-pattern' => 'Padrão em nomes de páginas:',
+	'nuke-nopages-global' => 'Não há novas páginas nas [[Special:RecentChanges|mudanças recentes]].',
+	'nuke-viewchanges' => 'ver alterações',
+	'nuke-namespace' => 'Limitar ao espaço nominal:',
 );
 
 /** Quechua (Runa Simi)
