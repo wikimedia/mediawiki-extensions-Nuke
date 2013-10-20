@@ -2240,9 +2240,9 @@ ch'a buta un coment e ch'a sgnaca ël boton për scanceleje.",
  * @author Ahmed-Najib-Biabani-Ibrahimkhel
  */
 $messages['ps'] = array(
-	'nuke' => 'ټول ړنګېدنه',
+	'nuke' => 'ټول ړنگېدنه',
 	'action-nuke' => 'نيوک مخونه',
-	'nuke-multiplepeople' => 'د تازه راګډ شويو مخونو ټول ړنګېدنه',
+	'nuke-multiplepeople' => 'د تازه راگډ شويو مخونو ټول ړنگېدنه',
 	'nuke-submit-user' => 'ورځه',
 	'nuke-submit-delete' => 'ټاکل شوی ړنگول',
 	'right-nuke' => 'د ډله ايز ړنګون مخونه',
