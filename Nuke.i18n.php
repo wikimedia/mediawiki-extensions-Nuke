@@ -1868,17 +1868,18 @@ $messages['ml'] = array(
 
 /** Marathi (मराठी)
  * @author Kaustubh
+ * @author V.narsikar
  */
 $messages['mr'] = array(
 	'nuke' => 'एकदम खूप पाने वगळा',
-	'nuke-desc' => 'प्रबंधकांना एकाचवेळी [[Special:Nuke|अनेक पाने वगळण्याची]] परवानगी देते',
+	'nuke-desc' => 'प्रबंधकांना  [[Special:Nuke|गठ्ठ्याने वगळण्याची(मास डिलीट)]] क्षमता देते',
 	'nuke-nopages' => '[[Special:Contributions/$1|$1]] कडून अलीकडील बदलांमध्ये नवीन पाने नाहीत.', # Fuzzy
 	'nuke-list' => 'खालील पाने ही [[Special:Contributions/$1|$1]] ने अलिकडे वाढविलेली आहेत; शेरा द्या व वगळण्यासाठी कळीवर टिचकी द्या.', # Fuzzy
 	'nuke-defaultreason' => '$1 ने नवीन वाढविलेली अनेक पाने एकावेळी वगळा', # Fuzzy
 	'nuke-tools' => 'हे उपकरण एखाद्या विशिष्ट सदस्य अथवा अंकपत्त्याद्वारे नवीन तयार करण्यात आलेल्या पानांना एकाचवेळी वगळण्याची संधी देते. सदस्य नाव अथवा अंकपत्ता दिल्यास वगळण्यासाठी पानांची यादी मिळेल:', # Fuzzy
 	'nuke-submit-user' => 'जा',
 	'nuke-submit-delete' => 'निवडलेले वगळा',
-	'right-nuke' => 'खूप पाने एकत्र वगळा',
+	'right-nuke' => 'गठ्ठ्याने पाने वगळा',
 );
 
 /** Malay (Bahasa Melayu)
