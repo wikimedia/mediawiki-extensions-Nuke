@@ -3015,14 +3015,15 @@ Hãy nhập tên thành viên hoặc địa chỉ IP để lấy danh sách các
 );
 
 /** Volapük (Volapük)
+ * @author Malafaya
  * @author Smeira
  */
 $messages['vo'] = array(
 	'nuke' => 'Moükön pademi',
 	'nuke-desc' => 'Gevon guvanes fägi ad moükön padamödotis',
-	'nuke-nopages' => 'Pads nonik fa geban: [[Special:Contributions/$1|$1]] pejaföls binons su lised votükamas nulik.', # Fuzzy
-	'nuke-list' => 'Pads sököl pejafons brefabüo fa geban: [[Special:Contributions/$1|$1]]; penolös küpeti e klikolös gnobi ad moükön onis.', # Fuzzy
-	'nuke-defaultreason' => 'Moükam padas fa geban: $1 pejafölas', # Fuzzy
+	'nuke-nopages' => 'Pads nonik fa geban: [[Special:Contributions/$1|{{GENDER:$1|$1}}]] pejaföls binons su lised votükamas nulik.',
+	'nuke-list' => 'Pads sököl pejafons brefabüo fa geban: [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; penolös küpeti e klikolös gnobi ad moükön onis.',
+	'nuke-defaultreason' => 'Moükam masifik padas fa [[Special:Contributions/$1|{{GENDER:$1|$1}}]] pejafölas',
 	'nuke-tools' => 'Stum at kanon moükön mödoti padas fa geban u ladet-IP semik brefabüo pejafölas. Penolös gebananemi u ladeti-IP ad dagetön lisedi padas moükovik:', # Fuzzy
 	'nuke-submit-user' => 'Ledunolöd',
 	'nuke-submit-delete' => 'Pevalöl ad pamoükön',
