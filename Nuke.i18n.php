@@ -880,23 +880,24 @@ $messages['fa'] = array(
  * @author Jaakonam
  * @author Nike
  * @author Olli
+ * @author Pxos
  * @author Stryn
  */
 $messages['fi'] = array(
 	'nuke' => 'Massapoisto',
 	'action-nuke' => 'massapoistaa sivuja',
-	'nuke-desc' => 'Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]].',
+	'nuke-desc' => 'Antaa ylläpitäjille mahdollisuuden sivujen [[Special:Nuke|massapoistamiseen]]',
 	'nuke-nopages' => 'Ei käyttäjän [[Special:Contributions/$1|{{GENDER:$1|$1}}]] lisäämiä uusia sivuja tuoreissa muutoksissa.',
 	'nuke-list' => 'Käyttäjä [[Special:Contributions/$1|{{GENDER:$1|$1}}]] on äskettäin luonut seuraavat sivut.
-Lisää kommentti ja poista napsauttamalla painiketta.',
-	'nuke-list-multiple' => 'Seuraavat sivut tehtiin äskettäin.
-Lisää kommentti ja poista napsauttamalla painiketta.',
+Lisää kommentti ja poista sivut napsauttamalla painiketta.',
+	'nuke-list-multiple' => 'Seuraavat sivut on luotu äskettäin.
+Lisää kommentti ja poista sivut napsauttamalla painiketta.',
 	'nuke-defaultreason' => 'Käyttäjän [[Special:Contributions/$1|{{GENDER:$1|$1}}]] lisäämien sivujen massapoistaminen',
 	'nuke-multiplepeople' => 'Äskettäin lisättyjen sivujen massapoistaminen',
 	'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP-osoitteen perusteella.
 Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista, tai jätä kenttä tyhjäksi niin saat kaikkien käyttäjien tekemät sivut.',
 	'nuke-submit-user' => 'Siirry',
-	'nuke-submit-delete' => 'Poista valitut',
+	'nuke-submit-delete' => 'Poista valitsemasi sivut',
 	'right-nuke' => 'Massapoistaa sivuja',
 	'nuke-select' => 'Valinta: $1',
 	'nuke-userorip' => 'Käyttäjänimi tai IP-osoite (voi jättää myös tyhjäksi):',
@@ -904,8 +905,8 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 	'nuke-editby' => 'Luonut [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "Sivu '''$1''' on poistettu.",
 	'nuke-not-deleted' => "Sivua [[:$1]] '''ei voitu''' poistaa.",
-	'nuke-delete-more' => '[[Special:Nuke|Poista lisää sivuja]]',
-	'nuke-pattern' => 'Sivun nimien etuliite',
+	'nuke-delete-more' => '[[Special:Nuke|Poista enemmän sivuja]]',
+	'nuke-pattern' => 'Malli sivun nimelle:',
 	'nuke-nopages-global' => '[[Special:RecentChanges|Tuoreissa muutoksissa]] ei ole uusia sivuja.',
 	'nuke-viewchanges' => 'näytä muutokset',
 	'nuke-namespace' => 'Rajoita nimiavaruuteen:',
@@ -981,6 +982,39 @@ Buchiér lo nom d’usanciér ou ben l’adrèce IP por avêr la lista de les p�
 	'nuke-nopages-global' => 'Y at gins de pâge novèla dedens los [[Special:RecentChanges|dèrriérs changements]].',
 	'nuke-viewchanges' => 'vêre los changements',
 	'nuke-namespace' => 'Sè limitar a cet’èspâço de noms :',
+);
+
+/** Northern Frisian (Nordfriisk)
+ * @author Murma174
+ */
+$messages['frr'] = array(
+	'nuke' => 'Sidjen bonkerwiis strik',
+	'action-nuke' => 'sidjen bonkerwiis tu striken',
+	'nuke-desc' => 'Administratooren kön diarmä sidjen [[Special:Nuke|bonkerwiis strik]]',
+	'nuke-nopages' => 'Bi a „leetst feranrangen“ san nian nei sidjen faan [[Special:Contributions/$1|{{GENDER:$1|$1}}]].',
+	'nuke-list' => 'Jodiar sidjen san faan [[Special:Contributions/$1|{{GENDER:$1|$1}}]] skrewen wurden.
+Skriiw ap, huaram dü jo strikst, an do trak üüb di knoop tu striken.',
+	'nuke-list-multiple' => 'Jodiar sidjen san jüst skrewen wurden.
+Skriiw ap, huaram dü jo strikst, an do trak üüb di knoop tu striken.',
+	'nuke-defaultreason' => 'Sidjen faan [[Special:Contributions/$1|{{GENDER:$1|$1}}]] bonkerwiis strik',
+	'nuke-multiplepeople' => 'Jüst skrewen sidjen bonkerwiis strik',
+	'nuke-tools' => 'Diarmä kön sidjen, diar faan en was IP of en wasen brüker skrewen wurden san, bonkerwiis stregen wurd.
+Skriiw diar det IP-adres of di brükernööm iin, an do könst dü det list faan sidjen sä, diar stregen wurd kön.
+Wan dü diar niks henskrafst, wurd aal a brükern uunwiset.',
+	'nuke-submit-user' => 'Widjer',
+	'nuke-submit-delete' => 'Enkelten strik',
+	'right-nuke' => 'Sidjen bonkerwiis strik',
+	'nuke-select' => 'Schük ütj: $1',
+	'nuke-userorip' => 'Brükernööm, IP-adres of niks:',
+	'nuke-maxpages' => 'Ei muar sidjen üs:',
+	'nuke-editby' => 'Skrewen faan [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-deleted' => "Sidj '''„$1“''' as stregen wurden.",
+	'nuke-not-deleted' => "Sidj [[:$1]] '''küd ei''' stregen wurd.",
+	'nuke-delete-more' => '[[Special:Nuke|Muar sidjen strik]]',
+	'nuke-pattern' => 'Münster för di sidjnööm:',
+	'nuke-nopages-global' => 'Diar san nian sidjen uun a [[Special:RecentChanges|leetst feranrangen]].',
+	'nuke-viewchanges' => 'Feranrangen wise',
+	'nuke-namespace' => 'Bluas uun di nöömrüm:',
 );
 
 /** Friulian (furlan)
