@@ -492,6 +492,7 @@ $messages['ce'] = array(
 	'nuke-userorip' => 'Декъашхочун цӀе, IP-адрес (еса йита мега):',
 	'nuke-maxpages' => 'АгӀонашан максимальни дукхалла:',
 	'nuke-editby' => 'Кхолийна {{GENDER:$1|декъашхочо}} [[Special:Contributions/$1|$1]]',
+	'nuke-delete-more' => '[[Special:Nuke|Дуккха агӀонаш дӀаяхар]]',
 	'nuke-pattern' => 'Кеп агӀона цӀеран:',
 	'nuke-viewchanges' => 'ХӀоттина болу хийцам',
 	'nuke-namespace' => 'Къастае ана цӀераш:',
@@ -1347,9 +1348,9 @@ $messages['ig'] = array(
  * @author Lam-ang
  */
 $messages['ilo'] = array(
-	'nuke' => 'Paga-adduan nga pinag-ikkat',
+	'nuke' => 'Paga-adduan nga panagikkat',
 	'action-nuke' => 'ikkaten dagiti panid',
-	'nuke-desc' => 'Ikkan na ti administrador ti abilidad nga [[Special:Nuke|	paga-adduan nga pang-ikkat]] kadagit panid',
+	'nuke-desc' => 'Ikkanna ti administrador ti abilidad iti [[Special:Nuke|adu a panagikkat]] kadagiti panid',
 	'nuke-nopages' => 'Awan dagiti baro a panid babaen ni [[Special:Contributions/$1|{{GENDER:$1|$1}}]] idiay kaudian abalbaliw.',
 	'nuke-list' => 'Dagiti sumaganad a panid ket kadamdamaan a pinartuat babaen ni [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
 ikkam ti komentario ken pindutem ti buton tapno maikkatda.',
