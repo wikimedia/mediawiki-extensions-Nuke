@@ -879,6 +879,7 @@ $messages['fa'] = array(
  * @author Beluga
  * @author Crt
  * @author Jaakonam
+ * @author Mies
  * @author Nike
  * @author Olli
  * @author Pxos
@@ -887,7 +888,7 @@ $messages['fa'] = array(
 $messages['fi'] = array(
 	'nuke' => 'Massapoisto',
 	'action-nuke' => 'massapoistaa sivuja',
-	'nuke-desc' => 'Antaa ylläpitäjille mahdollisuuden sivujen [[Special:Nuke|massapoistamiseen]]',
+	'nuke-desc' => 'Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]].',
 	'nuke-nopages' => 'Ei käyttäjän [[Special:Contributions/$1|{{GENDER:$1|$1}}]] lisäämiä uusia sivuja tuoreissa muutoksissa.',
 	'nuke-list' => 'Käyttäjä [[Special:Contributions/$1|{{GENDER:$1|$1}}]] on äskettäin luonut seuraavat sivut.
 Lisää kommentti ja poista sivut napsauttamalla painiketta.',
@@ -2946,6 +2947,7 @@ $messages['ug-latn'] = array(
 
 /** Ukrainian (українська)
  * @author AS
+ * @author Aced
  * @author Ahonc
  * @author Base
  * @author Dim Grits
@@ -2969,7 +2971,7 @@ $messages['uk'] = array(
 	'nuke-submit-delete' => 'Вилучити обрані',
 	'right-nuke' => 'Масове вилучення сторінок',
 	'nuke-select' => 'Вибір: $1',
-	'nuke-userorip' => "Ім'я користувача, IP-адреса (за бажанням):",
+	'nuke-userorip' => "Ім'я користувача, IP-адреса (необов'язковий параметр):",
 	'nuke-maxpages' => 'Максимальна кількість сторінок:',
 	'nuke-editby' => 'Створено {{GENDER:$1|користувачем|користувачкою}} [[Special:Contributions/$1|$1]]',
 	'nuke-deleted' => "Сторінка '''$1''' була вилучена.",
