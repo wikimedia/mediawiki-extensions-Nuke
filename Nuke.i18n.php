@@ -512,10 +512,11 @@ $messages['ckb'] = array(
 	'right-nuke' => 'سڕینەوەی پەڕەکان بەکۆمەڵ',
 );
 
-/** Czech (česky)
+/** Czech (čeština)
  * @author Danny B.
  * @author Jkjk
  * @author Li-sung
+ * @author Littledogboy
  * @author Matěj Grabovský
  * @author Mormegil
  */
@@ -528,8 +529,8 @@ $messages['cs'] = array(
 vyplňte komentář a všechny smažte kliknutím na tlačítko.',
 	'nuke-list-multiple' => 'Nedávno byly vytvořeny následující stránky;
 zadáním komentáře a stisknutím tlačítka je smažete.',
-	'nuke-defaultreason' => 'Hromadné odstranění stránek, které {{GENDER:$1|vytvořil|vytvořila}}  [[Special:Contributions/$1|$1]]',
-	'nuke-multiplepeople' => 'Hromadné odstranění nedávno založených stránek',
+	'nuke-defaultreason' => 'Hromadné smazání stránek, které {{GENDER:$1|vytvořil|vytvořila}}  [[Special:Contributions/$1|$1]]',
+	'nuke-multiplepeople' => 'Hromadné smazání nedávno založených stránek',
 	'nuke-tools' => 'Tento nástroj umožňuje hromadné smazání stránek nedávno vytvořených zadaným uživatelem nebo IP adresou.
 Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smazání; případně ponechte prázdné pro všechny uživatele.',
 	'nuke-submit-user' => 'Provést',
