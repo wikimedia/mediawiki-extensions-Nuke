@@ -201,7 +201,7 @@ $specialPageAliases['nl'] = array(
 
 /** Norwegian Nynorsk (norsk nynorsk) */
 $specialPageAliases['nn'] = array(
-	'Nuke' => array( 'Massesletting' ),
+	'Nuke' => array( 'Massesletting', 'Masseslett' ),
 );
 
 /** Polish (polski) */
