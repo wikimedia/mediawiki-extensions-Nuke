@@ -456,6 +456,7 @@ Unesite korisničko ime ili IP adresu za izlistavanje stranica koje se brišu il
 
 /** Catalan (català)
  * @author Aleator
+ * @author Alvaro Vidal-Abarca
  * @author Paucabot
  * @author SMP
  * @author Toniher
@@ -463,7 +464,7 @@ Unesite korisničko ime ili IP adresu za izlistavanje stranica koje se brišu il
 $messages['ca'] = array(
 	'nuke' => 'Eliminació massiva',
 	'nuke-desc' => "Dóna als administradors l'habilitat d'[[Special:Nuke|esborrar pàgines massivament]]",
-	'nuke-nopages' => 'No hi ha pàgines noves de [[Special:Contributions/$1|$1]] als canvis recents.', # Fuzzy
+	'nuke-nopages' => 'No hi ha pàgines noves de [[Special:Contributions/$1|{{GENDER:$1|$1}}]] als canvis recents.',
 	'nuke-list' => 'Les següents pàgines han estat creades recentment per [[Special:Contributions/$1|$1]];
 feu un comentari i cliqueu el botó per a esborrar-les.', # Fuzzy
 	'nuke-defaultreason' => 'Esborrat massiu de pàgines creades per $1', # Fuzzy
