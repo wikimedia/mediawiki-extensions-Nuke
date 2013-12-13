@@ -61,7 +61,7 @@ $specialPageAliases['dsb'] = array(
 
 /** Spanish (español) */
 $specialPageAliases['es'] = array(
-	'Nuke' => array( 'BorradoMasivo', 'Borrado_en_masa' ),
+	'Nuke' => array( 'BorradoMasivo', 'Borrado_en_masa', 'Borrado_masivo' ),
 );
 
 /** Estonian (eesti) */
