@@ -1720,6 +1720,7 @@ $messages['ku-latn'] = array(
 /** Luxembourgish (Lëtzebuergesch)
  * @author Les Meloures
  * @author Robby
+ * @author Soued031
  */
 $messages['lb'] = array(
 	'nuke' => 'Masseläschung',
@@ -1728,9 +1729,9 @@ $messages['lb'] = array(
 	'nuke-nopages' => 'Et gëtt bei de rezenten Ännerunge keng nei Säite vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]].',
 	'nuke-list' => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]] nei ugeluecht; gitt w.e.g. eng Bemierkung an, an dréckt op de Knäppche Läschen.',
 	'nuke-list-multiple' => 'Dës Säite goufe rezent gemaach;
-setzt eng Bemierkung derbäi a klickt op de Knäppche fir se ze läschen.',
+setzt eng Bemierkung dobäi a klickt op de Knäppche fir se ze läschen.',
 	'nuke-defaultreason' => 'Masseläschung vu Säiten, déi vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]] ugefaang goufen',
-	'nuke-multiplepeople' => 'Masse-Läschung vu Säiten déi rezent derbäi gesat goufen',
+	'nuke-multiplepeople' => 'Masse-Läschung vu Säiten déi rezent dobäigesat goufen',
 	'nuke-tools' => "Dësen Tool erlaabt vill Säite mateneen ze läschen, déi vun engem Benotzer oder vun enger IP-Adress ugeluecht goufen.
 Gitt w.e.g. d'IP-Adress respektiv de Benotzer u fir eng Lëscht vun de Säiten ze kréien déi geläscht solle ginn, oder loosst et eidel fir all Benotzer.",
 	'nuke-submit-user' => 'Lass',
@@ -2285,7 +2286,7 @@ $messages['ps'] = array(
 	'nuke-multiplepeople' => 'د تازه راگډ شويو مخونو ټول ړنگېدنه',
 	'nuke-submit-user' => 'ورځه',
 	'nuke-submit-delete' => 'ټاکل شوی ړنگول',
-	'right-nuke' => 'د ډله ايز ړنګون مخونه',
+	'right-nuke' => 'د ډله ايز ړنگون مخونه',
 	'nuke-select' => 'ټاکل: $1',
 	'nuke-userorip' => 'کارن-نوم، آي پي پته يا تش:',
 	'nuke-maxpages' => 'د حد اکثر شمېر مخونه:',
