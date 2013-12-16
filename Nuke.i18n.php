@@ -1135,8 +1135,8 @@ $messages['he'] = array(
 אנא כתבו נימוק למחיקה ולחצו על הכפתור כדי למחוק אותם.',
 	'nuke-defaultreason' => 'הסרה מרובה של דפים שנוצרו על־ידי [[Special:Contributions/$1|$1]]',
 	'nuke-multiplepeople' => 'מחיקה מרובה של דפים שנוספו לאחרונה',
-	'nuke-tools' => 'כלי זה מאפשר מחיקות המוניות של דפים שנוספו לאחרונה על ידי משתמש או כתובת IP מסוימים.
-כתבו את שם המשתמש או כתובת ה־IP כדי לקבל את רשימת הדפים למחיקה או השאירו את השדה הזה ריק עבור כל המשתמשים.',
+	'nuke-tools' => 'כלי זה מאפשר מחיקות המוניות של דפים שנוספו לאחרונה על־ידי משתמש או כתובת IP מסוימים.
+כתבו את שם המשתמש או כתובת ה־IP כדי לקבל את רשימת הדפים למחיקה, או השאירו את השדה ריק עבור כל המשתמשים.',
 	'nuke-submit-user' => 'הצגה',
 	'nuke-submit-delete' => 'מחיקת הדפים שנבחרו',
 	'right-nuke' => 'מחיקה מרובה של דפים',
@@ -1729,9 +1729,9 @@ $messages['lb'] = array(
 	'nuke-nopages' => 'Et gëtt bei de rezenten Ännerunge keng nei Säite vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]].',
 	'nuke-list' => 'Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]] nei ugeluecht; gitt w.e.g. eng Bemierkung an, an dréckt op de Knäppche Läschen.',
 	'nuke-list-multiple' => 'Dës Säite goufe rezent gemaach;
-setzt eng Bemierkung dobäi a klickt op de Knäppche fir se ze läschen.',
+setzt eng Bemierkung derbäi a klickt op de Knäppche fir se ze läschen.',
 	'nuke-defaultreason' => 'Masseläschung vu Säiten, déi vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]] ugefaang goufen',
-	'nuke-multiplepeople' => 'Masse-Läschung vu Säiten déi rezent dobäigesat goufen',
+	'nuke-multiplepeople' => 'Masse-Läschung vu Säiten déi rezent derbäigesat goufen',
 	'nuke-tools' => "Dësen Tool erlaabt vill Säite mateneen ze läschen, déi vun engem Benotzer oder vun enger IP-Adress ugeluecht goufen.
 Gitt w.e.g. d'IP-Adress respektiv de Benotzer u fir eng Lëscht vun de Säiten ze kréien déi geläscht solle ginn, oder loosst et eidel fir all Benotzer.",
 	'nuke-submit-user' => 'Lass',
