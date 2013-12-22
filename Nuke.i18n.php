@@ -2691,7 +2691,7 @@ $messages['sr-el'] = array(
 Unesite korisničko ime ili IP adresu da biste dobili spisak stranica za brisanje, ili ostavite prazno ako želite da se navedu svi korisnici.',
 	'nuke-submit-user' => 'Idi',
 	'nuke-submit-delete' => 'Obriši obeleženo',
-	'right-nuke' => 'Masovno brisanje strana.',
+	'right-nuke' => 'masovno brisanje strana',
 	'nuke-select' => 'Izaberi: $1',
 	'nuke-userorip' => 'Korisničko ime, IP adresa ili prazno:',
 	'nuke-maxpages' => 'Najveći broj stranica:',
