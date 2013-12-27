@@ -228,8 +228,10 @@ $messages['arz'] = array(
 
 /** Assamese (অসমীয়া)
  * @author Bishnu Saikia
+ * @author Gitartha.bordoloi
  */
 $messages['as'] = array(
+	'nuke' => 'সমূহীয়া বিলোপন',
 	'nuke-submit-user' => 'যাওক',
 );
 
