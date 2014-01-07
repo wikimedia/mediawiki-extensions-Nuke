@@ -655,7 +655,7 @@ Listanê peleyê ke besternaya vinayışi rê namey karberi yana ip adresi deker
 	'right-nuke' => 'pelan yew hew de hewnaker',
 	'nuke-select' => 'Weçinaye: $1',
 	'nuke-delete-more' => '[[Special:Nuke|Zewbi pera besterne]]',
-	'nuke-viewchanges' => 'Vurnayışa bıvin',
+	'nuke-viewchanges' => 'vurnayışan bıvêne',
 );
 
 /** Lower Sorbian (dolnoserbski)
