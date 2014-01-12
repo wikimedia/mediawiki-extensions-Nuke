@@ -121,7 +121,8 @@ The link points to History page of the page.
 
 This message follows:
 * {{msg-mw|nuke-editby}} and {{msg-mw|comma-separator}}
-* or empty string (if username is empty).',
+* or empty string (if username is empty).
+{{Identical|View changes}}',
 	'nuke-namespace' => 'Label shown on [[Special:Nuke]] in front of the namespace input that allows choosing a namespace to filter the search by',
 );
 
@@ -1569,7 +1570,9 @@ $messages['ka'] = array(
 	'nuke-deleted' => "გვერდი '''$1''' წაიშალა.",
 	'nuke-not-deleted' => "გვერდი [[:$1]] წაშლა '''შეუძლებელია'''.",
 	'nuke-delete-more' => '[[Special:Nuke|მრავალრიცხოვანი გვერდების წაშლა]]',
+	'nuke-pattern' => 'გვერდის სახელის თარგი:',
 	'nuke-viewchanges' => 'ცვლილებების ჩვენება',
+	'nuke-namespace' => 'სახელთა სივრცის შეზღუდვა:',
 );
 
 /** Kazakh (Cyrillic script) (қазақша (кирил)‎)
