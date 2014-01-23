@@ -485,6 +485,7 @@ Per obtenir la llista de pàgines per esborrar podeu introduir el nom d'un usuar
 $messages['ce'] = array(
 	'nuke' => 'Дуккха дӀяккхар',
 	'action-nuke' => 'дуккха агIонаш дӀаяхар',
+	'nuke-desc' => 'Куьйгалхошна таро хуьлуьйту  [[Special:Nuke|дуккха агӀонаш]] дӀаяха',
 	'nuke-list-multiple' => 'Лахахь гайтина агӀонаш дукху хан йоцуш кхолийна.
 Уьш дӀаяха билгалонаш Ӏадйите тӀетаӀе кнопка.',
 	'nuke-defaultreason' => 'Декъашхочо $1 кхоьллина агIонаш, дуккха дӀаяхар', # Fuzzy
