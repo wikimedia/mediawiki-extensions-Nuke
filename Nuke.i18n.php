@@ -2570,6 +2570,20 @@ $messages['scn'] = array(
 	'right-nuke' => "Scancella pàggini 'n massa",
 );
 
+/** Serbo-Croatian (srpskohrvatski / српскохрватски)
+ * @author Kolega2357
+ */
+$messages['sh'] = array(
+	'nuke' => 'Masovno brisanje',
+	'action-nuke' => 'masovno brisanje stranica',
+	'nuke-desc' => 'Daje administratoru mogućnost da [[Special:Nuke|masovno briše]] stranice.',
+	'nuke-nopages' => 'Nema novih stranica od strane korisnika [[Special:Contributions/$1|$1]] u skorašnjim izmenama.',
+	'nuke-list' => 'Sledeće stranice je skoro napravio korisnik [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; ostavite komentar i pritisnite dugme za njihovo brisanje.',
+	'nuke-submit-user' => 'Idi',
+	'nuke-submit-delete' => 'Obriši izabrano',
+	'nuke-select' => 'Izaberi: $1',
+);
+
 /** Sinhala (සිංහල)
  * @author නන්දිමිතුරු
  * @author පසිඳු කාවින්ද
