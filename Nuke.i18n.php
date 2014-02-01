@@ -40,6 +40,8 @@ Input the username or IP address to get a list of pages to delete, or leave blan
 	'nuke-nopages-global' => 'There are no new pages in [[Special:RecentChanges|recent changes]].',
 	'nuke-viewchanges' => 'view changes',
 	'nuke-namespace' => 'Limit to namespace:',
+	'nuke-linkoncontribs' => 'mass delete',
+	'nuke-linkoncontribs-text' => "Mass delete pages where this user is the only author",
 );
 
 /** Message documentation (Message documentation)
@@ -56,7 +58,7 @@ Input the username or IP address to get a list of pages to delete, or leave blan
  */
 $messages['qqq'] = array(
 	'nuke' => '{{doc-special|Nuke}}
-The Nuke extension allows for sysops to delete a large number of pages ("Mass delete"). 
+The Nuke extension allows for sysops to delete a large number of pages ("Mass delete").
 For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
 	'action-nuke' => '{{doc-action|nuke}}',
 	'nuke-desc' => '{{desc|name=Nuke|url=http://www.mediawiki.org/wiki/Extension:Nuke}}
@@ -92,7 +94,7 @@ Parameters:
 	'nuke-submit-delete' => 'Submit button to delete the selected pages.',
 	'right-nuke' => '{{doc-right|nuke}}',
 	'nuke-select' => 'Parameters:
-* $1 - two links: {{msg-mw|Powersearch-toggleall}} and {{msg-mw|Powersearch-togglenone}} which respectively selects all pages and de-selects all 
+* $1 - two links: {{msg-mw|Powersearch-toggleall}} and {{msg-mw|Powersearch-togglenone}} which respectively selects all pages and de-selects all
 pages
 {{Identical|Select}}',
 	'nuke-userorip' => 'Used as label for "target" input box.',
@@ -124,6 +126,9 @@ This message follows:
 * or empty string (if username is empty).
 {{Identical|View changes}}',
 	'nuke-namespace' => 'Label shown on [[Special:Nuke]] in front of the namespace input that allows choosing a namespace to filter the search by',
+	'nuke-linkoncontribs' => 'Link description used on [[Special:Contributions]] and [[Special:DeletedContributions]]. Only added if a user has rights to nuke pages.
+{{Identical|nuke}}',
+	'nuke-linkoncontribs-text' => "Tooltip for {{msg-mw|nuke-linkoncontribs}}.",
 );
 
 /** Afrikaans (Afrikaans)
@@ -416,7 +421,7 @@ Merkañ un tamm notenn ha klikañ war ar bouton d'o diverkañ.", # Fuzzy
 Lakait un notenn ha klikit war ar bouton evit o diverkañ.',
 	'nuke-defaultreason' => 'Diverkañ a-vras ar pajennoù bet ouzhpennet gant $1', # Fuzzy
 	'nuke-multiplepeople' => 'Diverkañ a-vras ar pajennoù nevez-ouzhpennet',
-	'nuke-tools' => "Talvezout a ra an ostilh-mañ da ziverkañ a-vras pajennoù bet ouzhpennet nevez zo gant un implijer enrollet pe gant ur chomlec'h IP. 
+	'nuke-tools' => "Talvezout a ra an ostilh-mañ da ziverkañ a-vras pajennoù bet ouzhpennet nevez zo gant un implijer enrollet pe gant ur chomlec'h IP.
 Merkañ ar c'homlec'h IP pe anv an implijer evit kaout roll ar pajennoù da ziverkañ, pe lezel gwenn evit an holl implijerien.",
 	'nuke-submit-user' => 'Mont',
 	'nuke-submit-delete' => 'Dilemel ar re diuzet',
@@ -446,7 +451,7 @@ navedite razloge i komentare te kliknite na dugme da bi ste ih obrisali.', # Fuz
 stavite ih u komentar i pritisnite dugme za njihovo brisanje.',
 	'nuke-defaultreason' => 'Masovno uklanjanje stranica koje je dodao $1', # Fuzzy
 	'nuke-multiplepeople' => 'više korisnika', # Fuzzy
-	'nuke-tools' => 'Ovaj alat omogućuje masovno brisanje stranica koje je nedavno dodao određeni korisnik ili IP adresa. 
+	'nuke-tools' => 'Ovaj alat omogućuje masovno brisanje stranica koje je nedavno dodao određeni korisnik ili IP adresa.
 Unesite korisničko ime ili IP adresu za izlistavanje stranica koje se brišu ili ostavite prazno za prikaz svih korisnika.',
 	'nuke-submit-user' => 'Idi',
 	'nuke-submit-delete' => 'Obriši označeno',
@@ -939,7 +944,7 @@ $messages['fr'] = array(
 	'nuke-desc' => 'Donne la possibilité aux administrateurs de [[Special:Nuke|supprimer en masse]] des pages',
 	'nuke-nopages' => 'Aucune nouvelle page créée par [[Special:Contributions/$1|{{GENDER:$1|$1}}]] dans la liste des changements récents.',
 	'nuke-list' => 'Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; saisissez un commentaire et cliquez sur le bouton pour les supprimer.',
-	'nuke-list-multiple' => 'Les pages suivantes ont été récemment créées ; 
+	'nuke-list-multiple' => 'Les pages suivantes ont été récemment créées ;
 entrez un commentaire et cliquez sur le bouton pour les supprimer.',
 	'nuke-defaultreason' => 'Suppression en masse des pages ajoutées par [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Suppression de masse de pages récemment ajoutées',
@@ -1323,7 +1328,7 @@ $messages['id'] = array(
 	'nuke-desc' => 'Memberikan kemampuan bagi pengurus untuk [[Special:Nuke|menghapus halaman secara massal]]',
 	'nuke-nopages' => 'Tak ditemukan halaman baru dari [[Special:Contributions/$1|{{GENDER:$1|$1}}]] di perubahan terbaru.',
 	'nuke-list' => 'Halaman berikut baru saja dibuat oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; berikan komentar dan tekan tombol untuk menghapus halaman-halaman tersebut.',
-	'nuke-list-multiple' => 'Halaman berikut baru dibuat; 
+	'nuke-list-multiple' => 'Halaman berikut baru dibuat;
 berikan komentar dan tekan tombol untuk menghapus.',
 	'nuke-defaultreason' => 'Penghapusan masal halaman-halaman yang dibuat oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Penghapusan masal halaman yang baru saja ditambahkan',
@@ -1831,7 +1836,7 @@ $messages['mg'] = array(
  */
 $messages['min'] = array(
 	'nuke' => 'Pangapuihan masal',
-	'nuke-list-multiple' => 'Laman ko baru sajo dibuek; 
+	'nuke-list-multiple' => 'Laman ko baru sajo dibuek;
 agiah komentar dan takan tombol untuak mangapuih.',
 	'nuke-defaultreason' => 'Pangapuihan masal laman-laman nan dibuek dek [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-tools' => 'Pakakeh ko mamungkinkan pangapuihan masal laman-laman nan baru sajo dibuek jo sorang pangguno atau alamaik IP.
@@ -2136,7 +2141,7 @@ skriv inn ei sletteårsak og trykk på knappen for å sletta dei.',
 skriv inn ein kommentar og trykk på knappen for å sletta dei.',
 	'nuke-defaultreason' => 'Massesletting av sider lagde inn av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-multiplepeople' => 'Massesletting av nyleg oppretta sider',
-	'nuke-tools' => 'Dette verktøyet mogeleggjer massesletting av sider som nyleg er lagde inn av ein viss brukar eller ei viss IP-adresse. 
+	'nuke-tools' => 'Dette verktøyet mogeleggjer massesletting av sider som nyleg er lagde inn av ein viss brukar eller ei viss IP-adresse.
 Skriv inn eit brukarnamn eller ei IP-adresse for å få ei liste over sider som kan verta sletta, eller lat feltet stå tomt for alle brukarar.',
 	'nuke-submit-user' => 'Gå',
 	'nuke-submit-delete' => 'Slett valde',
@@ -2544,7 +2549,7 @@ $messages['sah'] = array(
 Соторго быһаарыыта суруйан баран тимэҕи баттаа.',
 	'nuke-defaultreason' => '$1 кыттааччы айбыт сирэйдэрин бүтүннүү суох оҥоруу', # Fuzzy
 	'nuke-multiplepeople' => 'элбэх кыттааччы', # Fuzzy
-	'nuke-tools' => 'Бу сирэй көмөтүнэн ханнык эмэ кыттааччы оҥорбут көннөрүүлэрин эбэтэр биир IP-ттан оҥоһуллубут көннөрүүлэри бүтүннүү суох гынахха сөп. 
+	'nuke-tools' => 'Бу сирэй көмөтүнэн ханнык эмэ кыттааччы оҥорбут көннөрүүлэрин эбэтэр биир IP-ттан оҥоһуллубут көннөрүүлэри бүтүннүү суох гынахха сөп.
 Кыттааччы аатын эбэтэр IP-тын киллэрдэххинэ оҥорбут көннөрүүлэрин тиһигэ тахсыа, кураанах хааллардаххына бары кыттааччылар көннөрүүлэрэ көстүө.',
 	'nuke-submit-user' => 'Толор',
 	'nuke-submit-delete' => 'Талыллыбыты сот',
