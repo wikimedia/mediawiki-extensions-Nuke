@@ -59,7 +59,8 @@ Input the username or IP address to get a list of pages to delete, or leave blan
 $messages['qqq'] = array(
 	'nuke' => '{{doc-special|Nuke}}
 The Nuke extension allows for sysops to delete a large number of pages ("Mass delete").
-For more information, see http://www.mediawiki.org/wiki/Extension:Nuke',
+For more information, see http://www.mediawiki.org/wiki/Extension:Nuke
+{{Identical|Mass delete}}',
 	'action-nuke' => '{{doc-action|nuke}}',
 	'nuke-desc' => '{{desc|name=Nuke|url=http://www.mediawiki.org/wiki/Extension:Nuke}}
 The Nuke extension allows for sysops to delete a large number of pages ("Mass delete").',
@@ -126,9 +127,13 @@ This message follows:
 * or empty string (if username is empty).
 {{Identical|View changes}}',
 	'nuke-namespace' => 'Label shown on [[Special:Nuke]] in front of the namespace input that allows choosing a namespace to filter the search by',
-	'nuke-linkoncontribs' => 'Link description used on [[Special:Contributions]] and [[Special:DeletedContributions]]. Only added if a user has rights to nuke pages.
-{{Identical|nuke}}',
-	'nuke-linkoncontribs-text' => "Tooltip for {{msg-mw|nuke-linkoncontribs}}.",
+	'nuke-linkoncontribs' => 'Used as link text which is used on [[Special:Contributions]] and [[Special:DeletedContributions]].
+
+Only added if a user has rights to nuke pages.
+
+The link has the tooltip {{msg-mw|Nuke-linkoncontribs-text}}.
+{{Identical|Mass delete}}',
+	'nuke-linkoncontribs-text' => 'Tooltip for the link which is labeled {{msg-mw|Nuke-linkoncontribs}}.',
 );
 
 /** Afrikaans (Afrikaans)
@@ -488,7 +493,7 @@ Per obtenir la llista de pàgines per esborrar podeu introduir el nom d'un usuar
  * @author Умар
  */
 $messages['ce'] = array(
-	'nuke' => 'Дуккха дӀяккхар',
+	'nuke' => 'Дуккха дӀаяккхар',
 	'action-nuke' => 'дуккха агIонаш дӀаяхар',
 	'nuke-desc' => 'Куьйгалхошна таро хуьлуьйту  [[Special:Nuke|дуккха агӀонаш]] дӀаяха',
 	'nuke-list-multiple' => 'Лахахь гайтина агӀонаш дукху хан йоцуш кхолийна.
@@ -506,6 +511,8 @@ $messages['ce'] = array(
 	'nuke-pattern' => 'Кеп агӀона цӀеран:',
 	'nuke-viewchanges' => 'ХӀоттина болу хийцам',
 	'nuke-namespace' => 'Къастае ана цӀераш:',
+	'nuke-linkoncontribs' => 'дуккха дӀаяккхар',
+	'nuke-linkoncontribs-text' => 'ХӀокху декъашхочо кхоьллина агӀонаш массо дӀаяха',
 );
 
 /** Chamorro (Chamoru)
@@ -627,6 +634,8 @@ Gib die IP-Adresse oder den Benutzernamen ein, um eine Liste der zu löschenden 
 	'nuke-nopages-global' => 'Es gibt keine neuen Seiten unter den [[Special:RecentChanges|letzten Änderungen]].',
 	'nuke-viewchanges' => 'Änderungen ansehen',
 	'nuke-namespace' => 'Auf den folgenden Namensraum begrenzen:',
+	'nuke-linkoncontribs' => 'Massenlöschungen',
+	'nuke-linkoncontribs-text' => 'Massengelöschte Seiten, bei denen dieser Benutzer der einzige Autor ist.',
 );
 
 /** German (formal address) (Deutsch (Sie-Form)‎)
@@ -963,6 +972,8 @@ entrez un commentaire et cliquez sur le bouton pour les supprimer.',
 	'nuke-nopages-global' => "Il n'y a pas de nouvelle page dans [[Special:RecentChanges|changements récents]].",
 	'nuke-viewchanges' => 'voir les modifications',
 	'nuke-namespace' => "Se limiter à l'espace de nommage:",
+	'nuke-linkoncontribs' => 'suppression de masse',
+	'nuke-linkoncontribs-text' => 'Supprimer des pages en masse quand cet utilisateur est l’unique auteur',
 );
 
 /** Franco-Provençal (arpetan)
@@ -1132,6 +1143,7 @@ $messages['gv'] = array(
  * @author Guycn2
  * @author Rotem Liss
  * @author YaronSh
+ * @author Yona b
  */
 $messages['he'] = array(
 	'nuke' => 'מחיקה מרובה',
@@ -1160,6 +1172,8 @@ $messages['he'] = array(
 	'nuke-nopages-global' => 'אין דפים חדשים ב[[Special:RecentChanges|שינויים אחרונים]].',
 	'nuke-viewchanges' => 'הצגת שינויים',
 	'nuke-namespace' => 'להגביל למרחב השמות הבא:',
+	'nuke-linkoncontribs' => 'מחיקה מרובה',
+	'nuke-linkoncontribs-text' => 'מחיקת דפים רבים בהם משתמש זה הוא הכותב היחיד',
 );
 
 /** Hindi (हिन्दी)
@@ -1463,6 +1477,8 @@ Inserisci il nome utente o l'indirizzo IP per la lista delle pagine da cancellar
 	'nuke-nopages-global' => 'Non ci sono nuove pagine negli [[Special:RecentChanges|ultimi cambiamenti]].',
 	'nuke-viewchanges' => 'vedi modifiche',
 	'nuke-namespace' => 'Limita al namespace:',
+	'nuke-linkoncontribs' => 'cancella massivamente',
+	'nuke-linkoncontribs-text' => "Cancella massivamente le pagine dove questo utente è l'unico contributore",
 );
 
 /** Japanese (日本語)
@@ -1505,6 +1521,7 @@ $messages['ja'] = array(
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近の更新]]には新しいページはありません。',
 	'nuke-viewchanges' => '履歴を表示',
 	'nuke-namespace' => '名前空間:',
+	'nuke-linkoncontribs' => '一括削除',
 );
 
 /** Jutish (jysk)
@@ -1637,6 +1654,7 @@ $messages['kn'] = array(
  * @author Albamhandae
  * @author Klutzy
  * @author Kwj2772
+ * @author Priviet
  * @author ToePeu
  * @author 아라
  */
@@ -1667,6 +1685,8 @@ $messages['ko'] = array(
 	'nuke-nopages-global' => '[[Special:RecentChanges|최근 바뀜]]에 새 문서가 없습니다.',
 	'nuke-viewchanges' => '차이 보기',
 	'nuke-namespace' => '이름공간 제한:',
+	'nuke-linkoncontribs' => '문서 대량 삭제',
+	'nuke-linkoncontribs-text' => '이 사용자가 유일한 기여자인 문서를 대량 삭제',
 );
 
 /** Krio (Krio)
@@ -1759,6 +1779,8 @@ Gitt w.e.g. d'IP-Adress respektiv de Benotzer u fir eng Lëscht vun de Säiten z
 	'nuke-nopages-global' => 'Et si keng nei Säiten an de [[Special:RecentChanges|rezenten Ännerungen]].',
 	'nuke-viewchanges' => 'Ännerunge weisen',
 	'nuke-namespace' => 'Op dësen Nummraum limitéieren:',
+	'nuke-linkoncontribs' => 'Masseläschungen',
+	'nuke-linkoncontribs-text' => 'Massegeläschte Säite wou dëse Benotzer den eenzegen Auteur ass',
 );
 
 /** Limburgish (Limburgs)
@@ -1883,6 +1905,8 @@ $messages['mk'] = array(
 	'nuke-nopages-global' => 'Нема нови страници во [[Special:RecentChanges|скорешните промени]].',
 	'nuke-viewchanges' => 'прикажи промени',
 	'nuke-namespace' => 'Само во имен. простор:',
+	'nuke-linkoncontribs' => 'масовно бришење',
+	'nuke-linkoncontribs-text' => 'Масовното бришење на страници чиј единствен автор е овој корисник',
 );
 
 /** Malayalam (മലയാളം)
@@ -2040,6 +2064,8 @@ Skriv et brukernavn eller en IP-adresse for å få en liste over sider som kan s
 	'nuke-delete-more' => '[[Special:Nuke|Slett flere sider]]',
 	'nuke-pattern' => 'Mønster for sidenavnet:',
 	'nuke-nopages-global' => 'Det er ingen sider i  [[Special:RecentChanges|siste endringer]].',
+	'nuke-linkoncontribs' => 'masseslett',
+	'nuke-linkoncontribs-text' => 'Masseslett sider der denne brukeren er den eneste oppretteren',
 );
 
 /** Low German (Plattdüütsch)
@@ -2481,6 +2507,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
  * @author HalanTul
  * @author KPu3uC B Poccuu
  * @author Kaganer
+ * @author Okras
  * @author VasilievVV
  * @author Александр Сигачёв
  */
@@ -2510,6 +2537,8 @@ $messages['ru'] = array(
 	'nuke-nopages-global' => 'В [[Special:RecentChanges|недавних изменениях]] нет новых страниц.',
 	'nuke-viewchanges' => 'Внесённые изменения',
 	'nuke-namespace' => 'Ограничить пространством имён:',
+	'nuke-linkoncontribs' => 'множественное удаление',
+	'nuke-linkoncontribs-text' => 'Массово удалить страницы, где этот участник является единственным автором',
 );
 
 /** Rusyn (русиньскый)
@@ -3152,8 +3181,8 @@ $messages['zh-hans'] = array(
 	'action-nuke' => '删除大量页面',
 	'nuke-desc' => '让管理员可以[[Special:Nuke|批量删除]]页面',
 	'nuke-nopages' => '在最近更改中没有[[Special:Contributions/$1|{{GENDER:$1|$1}}]]创建的新页面。',
-	'nuke-list' => '以下为[[Special:Contributions/$1|{{GENDER:$1|$1}}]]最近创建的页面，请填写注释并点击按钮删除它们。',
-	'nuke-list-multiple' => '以下为最近创建的页面，请填写注释并点击按钮删除它们。',
+	'nuke-list' => '以下为[[Special:Contributions/$1|{{GENDER:$1|$1}}]]最近创建的页面，请填写注释再点击按钮删除它们。',
+	'nuke-list-multiple' => '以下为最近创建的页面，请填写注释再点击按钮删除它们。',
 	'nuke-defaultreason' => '大量删除[[Special:Contributions/$1|{{GENDER:$1|$1}}]]创建的页面',
 	'nuke-multiplepeople' => '大量删除最近添加的页面',
 	'nuke-tools' => '此工具允许大量删除指定用户或IP地址在最近创建的页面。输入用户名或IP地址可获取可删除页面列表，留白则检索所有用户。',
@@ -3171,6 +3200,8 @@ $messages['zh-hans'] = array(
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近更改]]中没有新的页面。',
 	'nuke-viewchanges' => '查看变更',
 	'nuke-namespace' => '限制名字空间为：',
+	'nuke-linkoncontribs' => '大量删除',
+	'nuke-linkoncontribs-text' => '大量删除仅此用户为作者的页面',
 );
 
 /** Traditional Chinese (中文（繁體）‎)
