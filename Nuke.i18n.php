@@ -275,6 +275,8 @@ un comentariu y calca nel botón pa desaniciales.',
 	'nuke-nopages-global' => 'Nun hai páxines nueves nos [[Special:RecentChanges|cambios recientes]].',
 	'nuke-viewchanges' => 'ver los cambios',
 	'nuke-namespace' => 'Llendar al espaciu de nomes:',
+	'nuke-linkoncontribs' => 'desaniciar en masa',
+	'nuke-linkoncontribs-text' => "Desaniciar en masa les páxines nes qu'esti usuariu ye l'únicu autor",
 );
 
 /** Azerbaijani (azərbaycanca)
@@ -841,6 +843,8 @@ Kustutatavate lehekülgede nimekirja näitamiseks sisesta kasutajanimi või IP-a
 	'nuke-nopages-global' => '[[Special:RecentChanges|Viimaste muudatuste]] all pole uusi lehekülgi.',
 	'nuke-viewchanges' => 'vaata muudatusi',
 	'nuke-namespace' => 'Nimeruumipiirang:',
+	'nuke-linkoncontribs' => 'lauskustutamine',
+	'nuke-linkoncontribs-text' => 'Lauskustuta leheküljed, mille ainus autor on see kasutaja',
 );
 
 /** Basque (euskara)
@@ -3023,6 +3027,7 @@ $messages['ug-latn'] = array(
  * @author AS
  * @author Aced
  * @author Ahonc
+ * @author Andriykopanytsia
  * @author Base
  * @author Dim Grits
  * @author Microcell
@@ -3055,6 +3060,8 @@ $messages['uk'] = array(
 	'nuke-nopages-global' => 'У [[Special:RecentChanges|нових редагуваннях]] немає нових сторінок.',
 	'nuke-viewchanges' => 'переглянути зміни',
 	'nuke-namespace' => 'Обмежити за простором назв:',
+	'nuke-linkoncontribs' => 'масове вилучення',
+	'nuke-linkoncontribs-text' => 'Масове вилучення сторінок, де цей користувач є єдиним автором',
 );
 
 /** Urdu (اردو)
@@ -3123,6 +3130,8 @@ Hãy nhập tên thành viên hoặc địa chỉ IP để lấy danh sách các
 	'nuke-nopages-global' => 'Không có trang mới trong các [[Special:RecentChanges|thay đổi gần đây]].',
 	'nuke-viewchanges' => 'xem thay đổi',
 	'nuke-namespace' => 'Giới hạn theo không gian tên:',
+	'nuke-linkoncontribs' => 'xóa hàng loạt',
+	'nuke-linkoncontribs-text' => 'Xóa hàng loạt các trang có người dùng này là tác giả duy nhất',
 );
 
 /** Volapük (Volapük)
