@@ -1695,9 +1695,11 @@ $messages['ko'] = array(
 
 /** Krio (Krio)
  * @author Jose77
+ * @author Protostar
  */
 $messages['kri'] = array(
 	'nuke-submit-user' => 'Go to am',
+	'nuke-linkoncontribs' => 'mass delet',
 );
 
 /** Kinaray-a (Kinaray-a)
@@ -1991,6 +1993,8 @@ Isikan nama pengguna atau alamat IP untuk mendapat senarai laman yang hendak dik
 	'nuke-nopages-global' => 'Tiada laman baru dalam [[Special:RecentChanges|perubahan terkini]].',
 	'nuke-viewchanges' => 'lihat perubahan',
 	'nuke-namespace' => 'Had ruang nama:',
+	'nuke-linkoncontribs' => 'hapus pukal',
+	'nuke-linkoncontribs-text' => 'Hapus pukal halaman-halaman di mana pengguna ini satu-satunya pengarangnya',
 );
 
 /** Maltese (Malti)
@@ -2503,6 +2507,7 @@ Mitte 'u nome de l'utende o l'indirizze IP pe avè 'n'elenghe de le pàggene de 
 	'nuke-nopages-global' => "Non ge stonne pàggene nove jndr'à le [[Special:RecentChanges|cangiaminde recende]].",
 	'nuke-viewchanges' => 'vide le cangiaminde',
 	'nuke-namespace' => 'Limite a namespace:',
+	'nuke-linkoncontribs' => 'scangellazione de masse',
 );
 
 /** Russian (русский)
