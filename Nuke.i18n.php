@@ -1084,6 +1084,8 @@ Introduza o nome do usuario ou enderezo IP para obter unha lista das páxinas pa
 	'nuke-nopages-global' => 'Non hai páxinas novas nos [[Special:RecentChanges|cambios recentes]].',
 	'nuke-viewchanges' => 'ollar os cambios',
 	'nuke-namespace' => 'Limitar ao espazo de nomes:',
+	'nuke-linkoncontribs' => 'eliminar en masa',
+	'nuke-linkoncontribs-text' => 'Eliminar en masa as páxinas das que este usuario é o único autor',
 );
 
 /** Ancient Greek (Ἀρχαία ἑλληνικὴ)
@@ -2343,6 +2345,7 @@ $messages['ps'] = array(
 
 /** Portuguese (português)
  * @author Hamilton Abreu
+ * @author Imperadeiro98
  * @author Luckas
  * @author Malafaya
  * @author 555
@@ -2366,6 +2369,8 @@ introduza um comentário e clique o botão para eliminá-las.',
 	'nuke-editby' => 'Criada por [[Special:Contributions/$1|$1]]', # Fuzzy
 	'nuke-deleted' => "A página '''$1''' foi eliminada.",
 	'nuke-not-deleted' => 'Não foi possível eliminar a página [[:$1]].',
+	'nuke-linkoncontribs' => 'eliminação em massa',
+	'nuke-linkoncontribs-text' => 'Eliminar em massa páginas em que este utilizador é o único autor',
 );
 
 /** Brazilian Portuguese (português do Brasil)
