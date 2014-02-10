@@ -864,6 +864,7 @@ idatz ezazu ohar bat, eta sakatu botoia orri horiek ezabatzeko.',
 );
 
 /** Persian (فارسی)
+ * @author Armin1392
  * @author Ebraminio
  * @author Huji
  * @author Mjbmr
@@ -897,6 +898,7 @@ $messages['fa'] = array(
 	'nuke-nopages-global' => 'هیچ صفحهٔ جدیدی در [[Special:RecentChanges|فهرست تغییرات اخیر]] نیست.',
 	'nuke-viewchanges' => 'نمایش تغییرات',
 	'nuke-namespace' => 'محدودیت به فضای نام:',
+	'nuke-linkoncontribs' => 'حذف گروه',
 );
 
 /** Finnish (suomi)
@@ -1947,6 +1949,8 @@ $messages['ml'] = array(
 	'nuke-nopages-global' => '[[Special:RecentChanges|സമീപകാലമാറ്റങ്ങളിൽ]] പുതിയ താളുകളൊന്നുമില്ല.',
 	'nuke-viewchanges' => 'മാറ്റങ്ങൾ കാണുക',
 	'nuke-namespace' => 'ഈ നാമമേഖലയിൽ ഒതുക്കുക:',
+	'nuke-linkoncontribs' => 'കൂട്ട മായ്ക്കൽ',
+	'nuke-linkoncontribs-text' => 'ഈ ഉപയോക്താവ് കൂട്ടത്തോടെ മായ്ച്ച താളുകൾ',
 );
 
 /** Marathi (मराठी)
