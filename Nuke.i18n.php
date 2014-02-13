@@ -606,13 +606,14 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
  * @author Geitost
  * @author Kghbln
  * @author Metalhead64
+ * @author Purodha
  * @author Raimond Spekking
  * @author SVG
  */
 $messages['de'] = array(
 	'nuke' => 'Massenlöschung von Seiten',
 	'action-nuke' => 'Seiten massenhaft zu löschen',
-	'nuke-desc' => 'Ergänzt eine [[Special:Nuke|Spezialseite]] zur Massenlöschung von Seiten',
+	'nuke-desc' => '[[Special:Nuke|Spezialseite]] zur Massenlöschung von Seiten',
 	'nuke-nopages' => 'Es gibt in den „Letzten Änderungen“ keine neuen Seiten von [[Special:Contributions/$1|{{GENDER:$1|$1}}]].',
 	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|{{GENDER:$1|$1}}]] angelegt.
 Gib einen Kommentar bezüglich der Löschung an und klicke auf die Schaltfläche, um die Seiten nun zu löschen.',
@@ -2650,6 +2651,7 @@ Unesite korisničko ime ili IP adresu da biste dobili spisak stranica za brisanj
 	'nuke-nopages-global' => 'Nema novih stranica u [[Special:RecentChanges|skorašnjim izmenama]].',
 	'nuke-viewchanges' => 'pogledaj izmene',
 	'nuke-namespace' => 'Ograničenja na imenskim prostorima:',
+	'nuke-linkoncontribs' => 'masovno brisanje',
 );
 
 /** Sinhala (සිංහල)
@@ -2824,6 +2826,7 @@ tuliskeun pamanggih anjeun, terus pencét tombolna pikeun ngahapus.', # Fuzzy
 
 /** Swedish (svenska)
  * @author Cybjit
+ * @author Hangsna
  * @author Lejonel
  * @author Martinwiss
  * @author Tobulos1
@@ -2855,6 +2858,8 @@ Ange användarnamnet eller IP-adressen för att se en lista över sidor som kan 
 	'nuke-nopages-global' => 'Det finns inga nya sidor i [[Special:RecentChanges|senaste ändringar]].',
 	'nuke-viewchanges' => 'visa ändringar',
 	'nuke-namespace' => 'Begränsa till namnrymd:',
+	'nuke-linkoncontribs' => 'massradering',
+	'nuke-linkoncontribs-text' => 'Radera alla sidor där användaren är ensam bidragsgivare',
 );
 
 /** Swahili (Kiswahili)
@@ -3232,6 +3237,7 @@ $messages['zh-hans'] = array(
  * @author Cwlin0416
  * @author Justincheng12345
  * @author Liangent
+ * @author Liuxinyu970226
  * @author Mark85296341
  * @author Shinjiman
  */
@@ -3259,4 +3265,6 @@ $messages['zh-hant'] = array(
 	'nuke-nopages-global' => '[[Special:RecentChanges|最近更改]]中沒有新的頁面。',
 	'nuke-viewchanges' => '查看變更',
 	'nuke-namespace' => '限制名字空間為：',
+	'nuke-linkoncontribs' => '大量刪除',
+	'nuke-linkoncontribs-text' => '大量刪除僅此用戶創建之頁面',
 );
