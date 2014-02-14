@@ -1230,6 +1230,7 @@ $messages['hil'] = array(
 /** Croatian (hrvatski)
  * @author Dalibor Bosits
  * @author Dnik
+ * @author MaGa
  * @author Roberta F.
  * @author SpeedyGonsales
  */
@@ -1244,6 +1245,8 @@ $messages['hr'] = array(
 	'nuke-submit-delete' => 'Obriši označeno',
 	'right-nuke' => 'Skupno brisanje stranica',
 	'nuke-select' => 'Odaberite: $1',
+	'nuke-linkoncontribs' => 'skupno brisanje',
+	'nuke-linkoncontribs-text' => 'Skupno brisanje stranica kojima je ovaj suradnik jedini autor',
 );
 
 /** Upper Sorbian (hornjoserbsce)
