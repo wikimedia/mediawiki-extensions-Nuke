@@ -926,7 +926,7 @@ Lisää kommentti ja poista sivut napsauttamalla painiketta.',
 	'nuke-tools' => 'Tämä työkalu mahdollistaa äskettäin lisättyjen sivujen massapoistamisen käyttäjänimen tai IP-osoitteen perusteella.
 Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista, tai jätä kenttä tyhjäksi niin saat kaikkien käyttäjien tekemät sivut.',
 	'nuke-submit-user' => 'Siirry',
-	'nuke-submit-delete' => 'Poista valitsemasi sivut',
+	'nuke-submit-delete' => 'Poista valitut sivut',
 	'right-nuke' => 'Massapoistaa sivuja',
 	'nuke-select' => 'Valinta: $1',
 	'nuke-userorip' => 'Käyttäjänimi tai IP-osoite (voi jättää myös tyhjäksi):',
@@ -939,6 +939,8 @@ Kirjoita käyttäjänimi tai IP-osoite, niin saat listan poistettavista sivuista
 	'nuke-nopages-global' => '[[Special:RecentChanges|Tuoreissa muutoksissa]] ei ole uusia sivuja.',
 	'nuke-viewchanges' => 'näytä muutokset',
 	'nuke-namespace' => 'Rajoita nimiavaruuteen:',
+	'nuke-linkoncontribs' => 'massapoisto',
+	'nuke-linkoncontribs-text' => 'Massapoista ne sivut, joissa tämä käyttäjä on ainoa sivuja muokannut',
 );
 
 /** French (français)
@@ -1046,6 +1048,8 @@ Wan dü diar niks henskrafst, wurd aal a brükern uunwiset.',
 	'nuke-nopages-global' => 'Diar san nian sidjen uun a [[Special:RecentChanges|leetst feranrangen]].',
 	'nuke-viewchanges' => 'Feranrangen wise',
 	'nuke-namespace' => 'Bluas uun di nöömrüm:',
+	'nuke-linkoncontribs' => 'Bonkerwiis strik',
+	'nuke-linkoncontribs-text' => 'Bonkerwiis stregen sidjen, huar di brüker di iansagst skriiwer as.',
 );
 
 /** Friulian (furlan)
@@ -2140,6 +2144,7 @@ $messages['niu'] = array(
 /** Dutch (Nederlands)
  * @author SPQRobin
  * @author Siebrand
+ * @author Sjoerddebruin
  * @author Wiki13
  */
 $messages['nl'] = array(
@@ -2168,6 +2173,7 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-nopages-global' => "Er zijn geen nieuwe pagina's in de [[Special:RecentChanges|recente wijzigingen]].",
 	'nuke-viewchanges' => 'wijzigingen bekijken',
 	'nuke-namespace' => 'Beperk tot naamruimte:',
+	'nuke-linkoncontribs' => 'massaal verwijderen',
 );
 
 /** Norwegian Nynorsk (norsk nynorsk)
