@@ -2276,6 +2276,7 @@ $messages['pdc'] = array(
  * @author Olgak85
  * @author Rezonansowy
  * @author Sp5uhe
+ * @author WTM
  * @author Woytecr
  */
 $messages['pl'] = array(
@@ -2304,6 +2305,8 @@ Wpisz nazwę użytkownika lub adres IP, by otrzymać listę stron do usunięcia.
 	'nuke-nopages-global' => 'Brak nowych stron w [[Special:RecentChanges|ostatnich zmianach]].',
 	'nuke-viewchanges' => 'widok zmian',
 	'nuke-namespace' => 'Tylko w przestrzeni nazw:',
+	'nuke-linkoncontribs' => 'masowe usuwanie',
+	'nuke-linkoncontribs-text' => 'Masowe usuwanie stron, których jedynym autorem jest ten użytkownik',
 );
 
 /** Piedmontese (Piemontèis)
