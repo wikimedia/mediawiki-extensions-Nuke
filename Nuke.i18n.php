@@ -566,6 +566,8 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
 	'nuke-nopages-global' => 'V [[Special:RecentChanges|posledních změnách]] nejsou žádné nové stránky.',
 	'nuke-viewchanges' => 'ukázat změny',
 	'nuke-namespace' => 'Omezit na jmenný prostor:',
+	'nuke-linkoncontribs' => 'hromadné mazání',
+	'nuke-linkoncontribs-text' => 'Hromadně smazat stránky, jichž je tento uživatel jediným autorem',
 );
 
 /** Danish (dansk)
@@ -706,6 +708,8 @@ zapódaj komentar a klikni na tłocašk, aby je wulašował.',
 	'nuke-nopages-global' => 'Njejsu žedne nowe boki w [[Special:RecentChanges|aktualnych změnach]].',
 	'nuke-viewchanges' => 'změny pokazaś',
 	'nuke-namespace' => 'Na slědujucy mjenjowy rum wobgranicowaś:',
+	'nuke-linkoncontribs' => 'masowe wulašowanje',
+	'nuke-linkoncontribs-text' => 'Bok masowego wulašowanja, źož toś ten wužywaŕ jo jadnučki awtor',
 );
 
 /** Ewe (eʋegbe)
@@ -1281,6 +1285,8 @@ napisaj komentar a klikń na tłóčatko, zo by je wušmórnył.',
 	'nuke-nopages-global' => 'Njejsu žane nowe strony w [[Special:RecentChanges|aktualnych změnach]].',
 	'nuke-viewchanges' => 'změny pokazać',
 	'nuke-namespace' => 'Na slědowacy mjenowy rum wobmjezować:',
+	'nuke-linkoncontribs' => 'masowe zhašenje',
+	'nuke-linkoncontribs-text' => 'Strony masoweho zhašenja, hdźež tutón wužiwar je jenički awtor',
 );
 
 /** Hungarian (magyar)
