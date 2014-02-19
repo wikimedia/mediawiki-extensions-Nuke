@@ -475,19 +475,37 @@ Unesite korisničko ime ili IP adresu za izlistavanje stranica koje se brišu il
  * @author Paucabot
  * @author SMP
  * @author Toniher
+ * @author Vriullop
  */
 $messages['ca'] = array(
 	'nuke' => 'Eliminació massiva',
+	'action-nuke' => 'eliminació massiva',
 	'nuke-desc' => "Dóna als administradors l'habilitat d'[[Special:Nuke|esborrar pàgines massivament]]",
 	'nuke-nopages' => 'No hi ha pàgines noves de [[Special:Contributions/$1|{{GENDER:$1|$1}}]] als canvis recents.',
-	'nuke-list' => 'Les següents pàgines han estat creades recentment per [[Special:Contributions/$1|$1]];
-feu un comentari i cliqueu el botó per a esborrar-les.', # Fuzzy
-	'nuke-defaultreason' => 'Esborrat massiu de pàgines creades per $1', # Fuzzy
+	'nuke-list' => 'Les següents pàgines han estat creades recentment per [[Special:Contributions/$1|{{GENDER:$1|$1}}]];
+afegiu un comentari i cliqueu el botó per a esborrar-les.',
+	'nuke-list-multiple' => 'Les següents pàgines han estat creades recentment;
+afegiu un comentari i cliqueu el botó per a esborrar-les.',
+	'nuke-defaultreason' => 'Esborrat massiu de pàgines creades per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-multiplepeople' => 'Esborrat massiu de pàgines creades recentment',
 	'nuke-tools' => "Aquesta eina permet l'eliminació massiva de pàgines creades recentment per un usuari o IP.
-Per obtenir la llista de pàgines per esborrar podeu introduir el nom d'un usuari o una IP.",
+Indiqueu el nom d'usuari o adreça IP per obtenir la llista de pàgines a esborrar, o deixeu-ho en blanc per tots els usuaris.",
 	'nuke-submit-user' => 'Vés-hi',
-	'nuke-submit-delete' => 'Esborra la selecció',
+	'nuke-submit-delete' => 'Esborra els seleccionats',
 	'right-nuke' => 'Esborrar pàgines de forma massiva',
+	'nuke-select' => 'Selecciona: $1',
+	'nuke-userorip' => "Nom d'usuari, adreça IP o en blanc:",
+	'nuke-maxpages' => 'Nombre màxim de pàgines:',
+	'nuke-editby' => 'Creada per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
+	'nuke-deleted' => "La pàgina '''$1''' ha estat esborrada.",
+	'nuke-not-deleted' => "La pàgina [[:$1]] '''no s'ha pogut''' esborrar.",
+	'nuke-delete-more' => '[[Special:Nuke|Esborra més pàgines]]',
+	'nuke-pattern' => 'Patró pel nom de pàgina:',
+	'nuke-nopages-global' => 'No hi ha cap pàgina nova als [[Special:RecentChanges|canvis recents]].',
+	'nuke-viewchanges' => 'mostra els canvis',
+	'nuke-namespace' => "Limitat a l'espai de noms:",
+	'nuke-linkoncontribs' => 'eliminació massiva',
+	'nuke-linkoncontribs-text' => "Eliminació massiva de pàgines on aquest usuari és l'únic autor",
 );
 
 /** Chechen (нохчийн)
@@ -1253,6 +1271,7 @@ $messages['hr'] = array(
 	'nuke-submit-delete' => 'Obriši označeno',
 	'right-nuke' => 'Skupno brisanje stranica',
 	'nuke-select' => 'Odaberite: $1',
+	'nuke-viewchanges' => 'prikaži promjene',
 	'nuke-linkoncontribs' => 'skupno brisanje',
 	'nuke-linkoncontribs-text' => 'Skupno brisanje stranica kojima je ovaj suradnik jedini autor',
 );
@@ -1981,6 +2000,8 @@ $messages['mr'] = array(
 	'nuke-submit-user' => 'जा',
 	'nuke-submit-delete' => 'निवडलेले वगळा',
 	'right-nuke' => 'गठ्ठ्याने पाने वगळा',
+	'nuke-linkoncontribs' => 'एकगठ्ठा वगळा',
+	'nuke-linkoncontribs-text' => 'ती पाने एकगठ्ठा वगळा, ज्यांचा हा सदस्य एकमेव लेखक आहे',
 );
 
 /** Malay (Bahasa Melayu)
