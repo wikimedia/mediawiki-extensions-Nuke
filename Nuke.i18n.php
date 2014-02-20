@@ -633,7 +633,7 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
 $messages['de'] = array(
 	'nuke' => 'Massenlöschung von Seiten',
 	'action-nuke' => 'Seiten massenhaft zu löschen',
-	'nuke-desc' => '[[Special:Nuke|Spezialseite]] zur Massenlöschung von Seiten',
+	'nuke-desc' => 'Ergänzt eine [[Special:Nuke|Spezialseite]] zur Massenlöschung von Seiten',
 	'nuke-nopages' => 'Es gibt in den „Letzten Änderungen“ keine neuen Seiten von [[Special:Contributions/$1|{{GENDER:$1|$1}}]].',
 	'nuke-list' => 'Die folgenden Seiten wurden von [[Special:Contributions/$1|{{GENDER:$1|$1}}]] angelegt.
 Gib einen Kommentar bezüglich der Löschung an und klicke auf die Schaltfläche, um die Seiten nun zu löschen.',
@@ -922,6 +922,7 @@ $messages['fa'] = array(
 	'nuke-viewchanges' => 'نمایش تغییرات',
 	'nuke-namespace' => 'محدودیت به فضای نام:',
 	'nuke-linkoncontribs' => 'حذف گروه',
+	'nuke-linkoncontribs-text' => 'حذف دستهٔ صفحات جایی که این کاربر تنها نویسنده است',
 );
 
 /** Finnish (suomi)
@@ -2662,6 +2663,14 @@ $messages['scn'] = array(
 	'right-nuke' => "Scancella pàggini 'n massa",
 );
 
+/** Scots (Scots)
+ * @author John Reid
+ */
+$messages['sco'] = array(
+	'nuke-linkoncontribs' => 'nuke-delete',
+	'nuke-linkoncontribs-text' => 'nuke-delete pages whaur this uiser is the yinly author',
+);
+
 /** Serbo-Croatian (srpskohrvatski / српскохрватски)
  * @author Kolega2357
  */
@@ -2928,6 +2937,7 @@ $messages['ta'] = array(
 );
 
 /** Telugu (తెలుగు)
+ * @author Ravichandra
  * @author Veeven
  */
 $messages['te'] = array(
@@ -2947,6 +2957,7 @@ $messages['te'] = array(
 	'nuke-delete-more' => '[[Special:Nuke|మరిన్ని పేజీలను తొలగించండి]]',
 	'nuke-nopages-global' => '[[Special:RecentChanges|ఇటీవలి మార్పుల]]లో కొత్త పేజీలు ఏమీ లేవు.',
 	'nuke-viewchanges' => 'మార్పులను చూడండి',
+	'nuke-linkoncontribs' => 'మూకుమ్మడి తొలగింపు',
 );
 
 /** Tetum (tetun)
