@@ -2810,6 +2810,9 @@ $messages['sr-ec'] = array(
 	'nuke-not-deleted' => "'''Не могу''' да обришем страницу [[:$1]].",
 	'nuke-delete-more' => '[[Special:Nuke|Обриши још страница]]',
 	'nuke-pattern' => 'Образац за назив странице:',
+	'nuke-viewchanges' => 'прикажи измене',
+	'nuke-linkoncontribs' => 'масовно брисање',
+	'nuke-linkoncontribs-text' => 'Скупно брисање страница чије једини аутор овај корисник',
 );
 
 /** Serbian (Latin script) (srpski (latinica)‎)
@@ -2838,6 +2841,9 @@ Unesite korisničko ime ili IP adresu da biste dobili spisak stranica za brisanj
 	'nuke-not-deleted' => "'''Ne mogu''' da obrišem stranicu [[:$1]].",
 	'nuke-delete-more' => '[[Special:Nuke|Obriši još stranica]]',
 	'nuke-pattern' => 'Obrazac za naziv stranice:',
+	'nuke-viewchanges' => 'prikaži izmene',
+	'nuke-linkoncontribs' => 'masovno brisanje',
+	'nuke-linkoncontribs-text' => 'Skupno brisanje stranica čije jedini autor ovaj korisnik',
 );
 
 /** Seeltersk (Seeltersk)
