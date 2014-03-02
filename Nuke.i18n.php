@@ -693,7 +693,7 @@ Listanê peleyê ke besternaya vinayışi rê namey karberi yana ip adresi deker
 	'nuke-submit-delete' => 'Weçinayi esterne',
 	'right-nuke' => 'pelan yew hew de hewnaker',
 	'nuke-select' => 'Weçinaye: $1',
-	'nuke-delete-more' => '[[Special:Nuke|Zewbi pera besterne]]',
+	'nuke-delete-more' => '[[Special:Nuke|Zêde pelan bestere]]',
 	'nuke-viewchanges' => 'vurnayışan bıvêne',
 );
 
@@ -1738,7 +1738,7 @@ $messages['ko'] = array(
  * @author Protostar
  */
 $messages['kri'] = array(
-	'nuke-submit-user' => 'Go to am',
+	'nuke-submit-user' => 'Go',
 	'nuke-linkoncontribs' => 'mass delet',
 );
 
@@ -2669,7 +2669,7 @@ $messages['scn'] = array(
  * @author John Reid
  */
 $messages['sco'] = array(
-	'nuke-linkoncontribs' => 'nuke-delete',
+	'nuke-linkoncontribs' => 'nuke-delyte',
 	'nuke-linkoncontribs-text' => 'nuke-delete pages whaur this uiser is the yinly author',
 );
 
