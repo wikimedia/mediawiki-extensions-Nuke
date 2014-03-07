@@ -593,6 +593,7 @@ Zadejte uživatelské jméno nebo IP adresu, zobrazí se seznam stránek ke smaz
  * @author Christian List
  * @author Kaare
  * @author Peter Alberti
+ * @author Sarrus
  */
 $messages['da'] = array(
 	'nuke' => 'Massesletning',
@@ -620,6 +621,8 @@ Skriv et brugernavn eller en IP-adresse for at få en liste over sider at slette
 	'nuke-nopages-global' => 'Der er ikke nogen nye sider i [[Special:RecentChanges|de seneste ændringer]].',
 	'nuke-viewchanges' => 'vis ændringer',
 	'nuke-namespace' => 'Begræns til navnerum:',
+	'nuke-linkoncontribs' => 'massesletning',
+	'nuke-linkoncontribs-text' => 'Masseslet sider, hvor denne bruger er den eneste bidragyder',
 );
 
 /** German (Deutsch)
