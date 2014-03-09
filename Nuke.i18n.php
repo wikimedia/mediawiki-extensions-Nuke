@@ -2403,7 +2403,7 @@ $messages['ps'] = array(
 $messages['pt'] = array(
 	'nuke' => 'Eliminação em massa',
 	'nuke-desc' => '[[Special:Nuke|Página especial]] que permite que os administradores apaguem páginas de forma massiva',
-	'nuke-nopages' => 'Não há páginas criadas por [[Special:Contributions/$1|$1]] nas mudanças recentes.', # Fuzzy
+	'nuke-nopages' => 'Não há novas páginas de [[Special:Contributions/$1|{{GENDER:$1|$1}}]] nas mudanças recentes.',
 	'nuke-list' => 'As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|$1]]; introduza um comentário e pressione o botão a seguir para eliminá-las.', # Fuzzy
 	'nuke-list-multiple' => 'As seguintes páginas foram criadas recentemente;
 introduza um comentário e clique o botão para eliminá-las.',
