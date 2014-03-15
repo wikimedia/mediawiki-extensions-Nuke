@@ -1672,6 +1672,8 @@ $messages['kk-cyrl'] = array(
 	'nuke-nopages-global' => '[[Special:RecentChanges|Жуықтағы өзгерістерде]] жаңа беттер жоқ.',
 	'nuke-viewchanges' => 'өзгерістерін көру',
 	'nuke-namespace' => 'Есім кеңістігіндегі шектеулер',
+	'nuke-linkoncontribs' => 'жаппай жою',
+	'nuke-linkoncontribs-text' => 'Тек бұл қатысушы авторы болатын беттерді  жаппай жою',
 );
 
 /** Khmer (ភាសាខ្មែរ)
