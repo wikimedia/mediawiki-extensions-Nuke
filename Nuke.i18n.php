@@ -2817,6 +2817,7 @@ $messages['sr-ec'] = array(
 	'nuke-not-deleted' => "'''Не могу''' да обришем страницу [[:$1]].",
 	'nuke-delete-more' => '[[Special:Nuke|Обриши још страница]]',
 	'nuke-pattern' => 'Образац за назив странице:',
+	'nuke-nopages-global' => 'Нема нових страница у [[Special:RecentChanges|скорашњим изменама]].',
 	'nuke-viewchanges' => 'прикажи измене',
 	'nuke-linkoncontribs' => 'масовно брисање',
 	'nuke-linkoncontribs-text' => 'Скупно брисање страница чије једини аутор овај корисник',
