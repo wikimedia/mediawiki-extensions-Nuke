@@ -838,6 +838,7 @@ Introduzca el nombre de usuario o la dirección IP para obtener la lista de pág
 	'nuke-nopages-global' => 'No hay nuevas páginas en los [[Special:RecentChanges|cambios recientes]].',
 	'nuke-viewchanges' => 'Mostrar cambios',
 	'nuke-namespace' => 'Límite al espacio de nombres',
+	'nuke-linkoncontribs' => 'borrado masivo',
 );
 
 /** Estonian (eesti)

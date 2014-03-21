@@ -51,7 +51,7 @@ $specialPageAliases['de'] = array(
 
 /** Zazaki (Zazaki) */
 $specialPageAliases['diq'] = array(
-	'Nuke' => array( 'Pıperne' ),
+	'Nuke' => array( 'Bıperne' ),
 );
 
 /** Lower Sorbian (dolnoserbski) */
