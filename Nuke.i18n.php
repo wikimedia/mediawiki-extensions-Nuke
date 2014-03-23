@@ -2210,6 +2210,7 @@ Voer de gebruikersnaam of het IP-adres in voor een lijst van te verwijderen pagi
 	'nuke-viewchanges' => 'wijzigingen bekijken',
 	'nuke-namespace' => 'Beperk tot naamruimte:',
 	'nuke-linkoncontribs' => 'massaal verwijderen',
+	'nuke-linkoncontribs-text' => "Pagina's waar deze gebruiker de enige auteur is massaal verwijderen",
 );
 
 /** Norwegian Nynorsk (norsk nynorsk)
