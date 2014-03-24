@@ -2412,7 +2412,7 @@ $messages['pt'] = array(
 	'nuke-list-multiple' => 'As seguintes páginas foram criadas recentemente;
 introduza um comentário e clique o botão para eliminá-las.',
 	'nuke-defaultreason' => 'Eliminação em massa de páginas criadas por $1', # Fuzzy
-	'nuke-multiplepeople' => 'vários utilizadores', # Fuzzy
+	'nuke-multiplepeople' => 'Eliminação em massa de páginas recentemente adicionadas',
 	'nuke-tools' => 'Esta ferramenta permite a eliminação em massa de páginas criadas recentemente por um utilizador ou IP específico. Forneça o nome de utilizador ou o IP para obter a lista de páginas a eliminar, ou deixe em branco para todos os utilizadores.',
 	'nuke-submit-user' => 'Ir',
 	'nuke-submit-delete' => 'Eliminar as selecionadas',
@@ -2420,7 +2420,7 @@ introduza um comentário e clique o botão para eliminá-las.',
 	'nuke-select' => 'Selecionar: $1',
 	'nuke-userorip' => 'Utilizador, endereço IP, ou vazio:',
 	'nuke-maxpages' => 'Nº máximo de páginas:',
-	'nuke-editby' => 'Criada por [[Special:Contributions/$1|$1]]', # Fuzzy
+	'nuke-editby' => 'Criada por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]',
 	'nuke-deleted' => "A página '''$1''' foi eliminada.",
 	'nuke-not-deleted' => 'Não foi possível eliminar a página [[:$1]].',
 	'nuke-linkoncontribs' => 'eliminação em massa',
