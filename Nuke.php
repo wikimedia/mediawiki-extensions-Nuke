@@ -4,10 +4,11 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-define( 'Nuke_VERSION', '1.1.8' );
+define( 'Nuke_VERSION', '1.2.0' );
 
 $dir = dirname( __FILE__ ) . '/';
 
+$wgMessagesDirs['Nuke'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['Nuke'] = $dir . 'Nuke.i18n.php';
 $wgExtensionMessagesFiles['NukeAlias'] = $dir . 'Nuke.alias.php';
 
