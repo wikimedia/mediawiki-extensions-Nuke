@@ -16,7 +16,7 @@
     "nuke-tools": "Dette verktøyet muliggjør massesletting av sider som nylig er opprettet av gitt bruker eller IP-adresse.\nSkriv et brukernavn eller en IP-adresse for å få en liste over sider som kan slettes, eller angi tomt for alle brukere.",
     "nuke-submit-user": "Gå",
     "nuke-submit-delete": "Slett valgte",
-    "right-nuke": "Slette sider <em>en masse</em>",
+    "right-nuke": "Slette sider \u003Cem\u003Een masse\u003C/em\u003E",
     "nuke-select": "Velg: $1",
     "nuke-userorip": "Brukernavn, IP-adresse eller tomt:",
     "nuke-maxpages": "Maksimalt antall sider:",

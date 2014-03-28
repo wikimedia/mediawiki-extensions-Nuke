@@ -23,7 +23,7 @@
     "nuke-list-multiple": "Poniższa lista przedstawia ostatnio dodane strony.\nWpisz powód, a następnie zatwierdź usunięcie stron.",
     "nuke-defaultreason": "Masowe usunięcie stron stworzonych przez [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
     "nuke-multiplepeople": "Masowe usuwanie ostatnio utworzonych stron",
-    "nuke-tools": "Narzędzie pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika.<br />\nWpisz nazwę użytkownika lub adres IP, by otrzymać listę stron do usunięcia. Możesz także nic nie wpisywać, wtedy będzie można masowo usunąć wkład wszystkich użytkowników.",
+    "nuke-tools": "Narzędzie pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika.\u003Cbr /\u003E\nWpisz nazwę użytkownika lub adres IP, by otrzymać listę stron do usunięcia. Możesz także nic nie wpisywać, wtedy będzie można masowo usunąć wkład wszystkich użytkowników.",
     "nuke-submit-user": "Dalej",
     "nuke-submit-delete": "Usuń zaznaczone",
     "right-nuke": "Masowe usuwanie stron",

@@ -29,5 +29,7 @@
     "nuke-pattern": "पृष्ठ नाम के लिए पैटर्न:",
     "nuke-nopages-global": "[[Special:RecentChanges|हाल में हुए बदलावों]] में कोई नए पृष्ठ नहीं हैं।",
     "nuke-viewchanges": "बदलाव देखें",
-    "nuke-namespace": "इस नामस्थान में सीमित करें:"
+    "nuke-namespace": "इस नामस्थान में सीमित करें:",
+    "nuke-linkoncontribs": "एक साथ हटाएँ",
+    "nuke-linkoncontribs-text": "उन पृष्ठों को एक साथ हटाएँ जहाँ यह सदस्य इकलौता लेखक है"
 }
