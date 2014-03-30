@@ -27,5 +27,6 @@
     "nuke-pattern": "Mønster for sidenamnet:",
     "nuke-nopages-global": "Det er ingen nye sider i [[Special:RecentChanges|siste endringane]].",
     "nuke-viewchanges": "vis endringar",
-    "nuke-namespace": "Avgrens til namnerom:"
+    "nuke-namespace": "Avgrens til namnerom:",
+    "nuke-linkoncontribs": "masseslett"
 }
