@@ -28,5 +28,6 @@
     "nuke-nopages-global": "Det er ingen nye sider i [[Special:RecentChanges|siste endringane]].",
     "nuke-viewchanges": "vis endringar",
     "nuke-namespace": "Avgrens til namnerom:",
-    "nuke-linkoncontribs": "masseslett"
+    "nuke-linkoncontribs": "masseslett",
+    "nuke-linkoncontribs-text": "Masseslett sider der denne brukaren er den einaste bidragsytaren"
 }
