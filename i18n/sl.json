@@ -26,5 +26,7 @@
 	"nuke-pattern": "Vzorec imena strani:",
 	"nuke-nopages-global": "V [[Special:RecentChanges|zadnjih spremembah]] ni novih strani.",
 	"nuke-viewchanges": "ogled sprememb",
-	"nuke-namespace": "Omeji na imenski prostor:"
+	"nuke-namespace": "Omeji na imenski prostor:",
+	"nuke-linkoncontribs": "množični izbris",
+	"nuke-linkoncontribs-text": "Množični izbris strani, katerih edini avtor je ta uporabnik"
 }
