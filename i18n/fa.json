@@ -32,6 +32,6 @@
 	"nuke-nopages-global": "هیچ صفحهٔ جدیدی در [[Special:RecentChanges|فهرست تغییرات اخیر]] نیست.",
 	"nuke-viewchanges": "نمایش تغییرات",
 	"nuke-namespace": "محدودیت به فضای نام:",
-	"nuke-linkoncontribs": "حذف گروه",
+	"nuke-linkoncontribs": "حذف گروهی",
 	"nuke-linkoncontribs-text": "حذف دستهٔ صفحات جایی که این کاربر تنها نویسنده است"
 }
