@@ -13,7 +13,7 @@
 	},
 	"nuke": "Massapoisto",
 	"action-nuke": "massapoistaa sivuja",
-	"nuke-desc": "Mahdollistaa ylläpitäjille sivujen [[Special:Nuke|massapoistamisen]].",
+	"nuke-desc": "Antaa ylläpitäjille mahdollisuuden sivujen [[Special:Nuke|massapoistamiseen]]",
 	"nuke-nopages": "Ei käyttäjän [[Special:Contributions/$1|{{GENDER:$1|$1}}]] lisäämiä uusia sivuja tuoreissa muutoksissa.",
 	"nuke-list": "Käyttäjä [[Special:Contributions/$1|{{GENDER:$1|$1}}]] on äskettäin luonut seuraavat sivut.\nLisää kommentti ja poista sivut napsauttamalla painiketta.",
 	"nuke-list-multiple": "Seuraavat sivut on luotu äskettäin.\nLisää kommentti ja poista sivut napsauttamalla painiketta.",
