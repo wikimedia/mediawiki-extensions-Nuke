@@ -15,7 +15,7 @@
 		]
 	},
 	"nuke": "Suppression en masse",
-	"action-nuke": "pages nucléaires",
+	"action-nuke": "supprimer des pages en masse",
 	"nuke-desc": "Donne la possibilité aux administrateurs de [[Special:Nuke|supprimer en masse]] des pages",
 	"nuke-nopages": "Aucune nouvelle page créée par [[Special:Contributions/$1|{{GENDER:$1|$1}}]] dans la liste des changements récents.",
 	"nuke-list": "Les pages suivantes ont été créées récemment par [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; saisissez un commentaire et cliquez sur le bouton pour les supprimer.",
