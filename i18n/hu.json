@@ -5,13 +5,15 @@
 			"Dj",
 			"Dorgan",
 			"KossuthRad",
-			"Misibacsi"
+			"Misibacsi",
+			"Tacsipacsi"
 		]
 	},
 	"nuke": "Halmozott törlés",
+	"action-nuke": "oldalak tömeges törlése",
 	"nuke-desc": "Lehetővé teszi az adminisztrátorok számára a lapok [[Special:Nuke|tömeges törlését]].",
 	"nuke-nopages": "Nincsenek új oldalak [[Special:Contributions/$1|$1]] az aktuális események között.",
-	"nuke-list": "Az alábbi lapokat nem rég készítette [[Special:Contributions/$1|$1]]; adj meg egy indoklást, és kattints a gombra a törlésükhöz.",
+	"nuke-list": "Az alábbi lapokat nem rég készítette [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; adj meg egy indoklást, és kattints a gombra a törlésükhöz.",
 	"nuke-list-multiple": "Az alábbi lapok találhatók a friss változtatásokban;\nadjál hozzá megjegyzést, és a törléshez nyomd meg a gombot.",
 	"nuke-defaultreason": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] által készített lapok tömeges eltávolítása",
 	"nuke-multiplepeople": "Frissen hozzáadott oldalak tömeges törlése",
