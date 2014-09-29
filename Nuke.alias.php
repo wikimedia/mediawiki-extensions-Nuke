@@ -76,7 +76,7 @@ $specialPageAliases['fa'] = array(
 
 /** Finnish (suomi) */
 $specialPageAliases['fi'] = array(
-	'Nuke' => array( 'Massapoisto' ),
+	'Nuke' => array( 'Massapoista' ),
 );
 
 /** Galician (galego) */
