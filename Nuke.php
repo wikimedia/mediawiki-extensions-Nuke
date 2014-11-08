@@ -6,7 +6,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 
 define( 'Nuke_VERSION', '1.2.0' );
 
-$dir = dirname( __FILE__ ) . '/';
+$dir = __DIR__ . '/';
 
 $wgMessagesDirs['Nuke'] = __DIR__ . '/i18n';
 $wgExtensionMessagesFiles['Nuke'] = $dir . 'Nuke.i18n.php';
@@ -33,7 +33,7 @@ $wgHooks['ContributionsToolLinks'][] = 'NukeHooks::nukeContributionsLinks';
 
 // Resource loader modules
 $moduleTemplate = array(
-	'localBasePath' => dirname( __FILE__ ) . '/',
+	'localBasePath' => __DIR__ . '/',
 	'remoteExtPath' => 'Nuke/'
 );
 
