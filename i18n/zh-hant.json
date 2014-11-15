@@ -7,7 +7,8 @@
 			"Liangent",
 			"Liuxinyu970226",
 			"Mark85296341",
-			"Shinjiman"
+			"Shinjiman",
+			"LNDDYL"
 		]
 	},
 	"nuke": "大量刪除",
@@ -25,7 +26,7 @@
 	"nuke-select": "選擇：$1",
 	"nuke-userorip": "使用者名稱、IP 位址或空白：",
 	"nuke-maxpages": "頁面數量上限：",
-	"nuke-editby": "由 [[Special:Contributions/$1|$1]] 所建立",
+	"nuke-editby": "由 [[Special:Contributions/$1|$1]] 建立",
 	"nuke-deleted": "已刪除頁面 '''$1'''。",
 	"nuke-not-deleted": "'''無法'''刪除頁面 [[:$1]]。",
 	"nuke-delete-more": "[[Special:Nuke|刪除更多頁面]]",
