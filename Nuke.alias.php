@@ -264,6 +264,11 @@ $specialPageAliases['vi'] = array(
 	'Nuke' => array( 'Xóa_hàng_loạt', 'Xoá_hàng_loạt' ),
 );
 
+/** Chinese (中文) */
+$specialPageAliases['zh'] = array(
+	'Nuke' => array( '大量删除', '大量刪除' ),
+);
+
 /** Simplified Chinese (中文（简体）‎) */
 $specialPageAliases['zh-hans'] = array(
 	'Nuke' => array( '大量删除' ),
