@@ -27,5 +27,6 @@
 	"nuke-nopages-global": "Non ge stonne pàggene nove jndr'à le [[Special:RecentChanges|cangiaminde recende]].",
 	"nuke-viewchanges": "vide le cangiaminde",
 	"nuke-namespace": "Limite a namespace:",
-	"nuke-linkoncontribs": "scangellazione de masse"
+	"nuke-linkoncontribs": "scangellazione de masse",
+	"nuke-linkoncontribs-text": "Pàggene da scangellà massive addò stu utende jè 'u sole autore"
 }
