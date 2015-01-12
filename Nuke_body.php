@@ -156,12 +156,14 @@ class SpecialNuke extends SpecialPage {
 			)
 		);
 
-		// Select: All, None
+		// Select: All, None, Invert
 		$links = array();
 		$links[] = '<a href="#" id="toggleall">' .
 			$this->msg( 'powersearch-toggleall' )->escaped() . '</a>';
 		$links[] = '<a href="#" id="togglenone">' .
 			$this->msg( 'powersearch-togglenone' )->escaped() . '</a>';
+		$links[] = '<a href="#" id="toggleinvert">' .
+			$this->msg( 'nuke-toggleinvert' )->escaped() . '</a>';
 		$out->addHTML(
 			Xml::tags( 'p',
 				null,

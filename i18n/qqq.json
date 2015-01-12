@@ -23,6 +23,7 @@
 	"nuke-multiplepeople": "Reason for deletion in logs, when pages created by multiple users were deleted.\n\n{{msg-mw|nuke-defaultreason}} is used when pages created by only 1 user are deleted.",
 	"nuke-tools": "Used as intro text for the Nuke (mass deletion) form.",
 	"nuke-submit-user": "{{Identical|Go}}",
+	"nuke-toggleinvert": "Used to invert checkbox selection.",
 	"nuke-submit-delete": "Submit button to delete the selected pages.",
 	"right-nuke": "{{doc-right|nuke}}",
 	"nuke-select": "Parameters:\n* $1 - two links: {{msg-mw|Powersearch-toggleall}} and {{msg-mw|Powersearch-togglenone}} which respectively selects all pages and de-selects all\npages\n{{Identical|Select}}",
