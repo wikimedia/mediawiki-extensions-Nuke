@@ -24,6 +24,11 @@ $specialPageAliases['arz'] = array(
 	'Nuke' => array( 'مسح_كامل' ),
 );
 
+/** Avaric (авар) */
+$specialPageAliases['av'] = array(
+	'Nuke' => array( 'Множественное_удаление' ),
+);
+
 /** Bashkir (башҡортса) */
 $specialPageAliases['ba'] = array(
 	'Nuke' => array( 'Nuke' ),
