@@ -159,13 +159,14 @@ class SpecialNuke extends SpecialPage {
 		// Select: All, None
 		$links = array();
 		$links[] = '<a href="#" id="toggleall">' .
-			$this->msg( 'powersearch-toggleall' )->text() . '</a>';
+			$this->msg( 'powersearch-toggleall' )->escaped() . '</a>';
 		$links[] = '<a href="#" id="togglenone">' .
-			$this->msg( 'powersearch-togglenone' )->text() . '</a>';
+			$this->msg( 'powersearch-togglenone' )->escaped() . '</a>';
 		$out->addHTML(
 			Xml::tags( 'p',
 				null,
-				$this->msg( 'nuke-select', $this->getLanguage()->commaList( $links ) )->text()
+				$this->msg( 'nuke-select' )
+					->rawParams( $this->getLanguage()->commaList( $links ) )->escaped()
 			)
 		);
 
@@ -176,8 +177,8 @@ class SpecialNuke extends SpecialPage {
 
 		$out->addHTML( '<ul>' );
 
-		$wordSeparator = $this->msg( 'word-separator' )->text();
-		$commaSeparator = $this->msg( 'comma-separator' )->text();
+		$wordSeparator = $this->msg( 'word-separator' )->escaped();
+		$commaSeparator = $this->msg( 'comma-separator' )->escaped();
 
 		foreach ( $pages as $info ) {
 			/**
@@ -191,7 +192,7 @@ class SpecialNuke extends SpecialPage {
 			$userNameText = $userName ? $this->msg( 'nuke-editby', $userName )->parse() . $commaSeparator : '';
 			$changesLink = Linker::linkKnown(
 				$title,
-				$this->msg( 'nuke-viewchanges' )->text(),
+				$this->msg( 'nuke-viewchanges' )->escaped(),
 				array(),
 				array( 'action' => 'history' )
 			);
