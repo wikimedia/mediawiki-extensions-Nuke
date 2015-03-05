@@ -19,7 +19,7 @@
 	"nuke-list-multiple": "下列為最近建立的頁面，\n請填寫評論並且點選按鈕刪除。",
 	"nuke-defaultreason": "大量刪除由 [[Special:Contributions/$1|$1]] 所建立的頁面",
 	"nuke-multiplepeople": "大量刪除最近新增的頁面",
-	"nuke-tools": "此工具可大量刪除指定使用者或 IP 位址最近新增的頁面。\n請輸入使用者名稱或 IP 位址取得欲刪除的頁面清單，或空白代表不指定。",
+	"nuke-tools": "此工具可大量刪除指定使用者或 IP 位址最近新增的頁面。\n請輸入使用者名稱或 IP 位址取得欲刪除的頁面清單，或留空代表所有使用者。",
 	"nuke-submit-user": "執行",
 	"nuke-submit-delete": "刪除已選擇",
 	"right-nuke": "大量刪除頁面",
@@ -35,5 +35,5 @@
 	"nuke-viewchanges": "檢視變更",
 	"nuke-namespace": "限制命名空間為：",
 	"nuke-linkoncontribs": "大量刪除",
-	"nuke-linkoncontribs-text": "只大量刪除此使用者為作者的頁面"
+	"nuke-linkoncontribs-text": "大量刪除此使用者是唯一作者的頁面"
 }
