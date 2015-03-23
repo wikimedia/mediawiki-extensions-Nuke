@@ -16,7 +16,7 @@
 	},
 	"nuke": "{{doc-special|Nuke}}\nThe Nuke extension allows for sysops to delete a large number of pages (\"Mass delete\").\nFor more information, see http://www.mediawiki.org/wiki/Extension:Nuke\n{{Identical|Mass delete}}",
 	"action-nuke": "{{doc-action|nuke}}",
-	"nuke-desc": "{{desc|name=Nuke|url=http://www.mediawiki.org/wiki/Extension:Nuke}}\nThe Nuke extension allows for sysops to delete a large number of pages (\"Mass delete\").",
+	"nuke-desc": "{{desc|name=Nuke|url=https://www.mediawiki.org/wiki/Extension:Nuke}}\nThe Nuke extension allows for sysops to delete a large number of pages (\"Mass delete\").",
 	"nuke-nopages": "Used if there are no pages to delete and the username is not empty.\n\nParameters:\n* $1 - a username\n\nSee also:\n* {{msg-mw|Nuke-nopages-global}}",
 	"nuke-list": "This message refers to:\n* the comment (reason) field which has the label {{msg-mw|deletecomment}}\n* the button labeled {{msg-mw|nuke-submit-delete}}.\nParameters:\n* $1 - username\nSee also:\n* {{msg-mw|Nuke-list-multiple}}",
 	"nuke-list-multiple": "This message refers to:\n* the comment (reason) field which has the label {{msg-mw|deletecomment}}\n* the button labeled {{msg-mw|nuke-submit-delete}}.\nSee also:\n* {{msg-mw|Nuke-list}}",
