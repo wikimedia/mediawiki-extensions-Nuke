@@ -169,6 +169,11 @@ $specialPageAliases['lb'] = array(
 	'Nuke' => array( 'Masseläschung' ),
 );
 
+/** لوری (لوری) */
+$specialPageAliases['lrc'] = array(
+	'Nuke' => array( 'اتمی' ),
+);
+
 /** Literary Chinese (文言) */
 $specialPageAliases['lzh'] = array(
 	'Nuke' => array( '量刪' ),
