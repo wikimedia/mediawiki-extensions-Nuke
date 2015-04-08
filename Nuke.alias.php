@@ -39,6 +39,11 @@ $specialPageAliases['be-tarask'] = array(
 	'Nuke' => array( 'Масавае_выдаленьне' ),
 );
 
+/** Western Balochi (بلوچی رخشانی) */
+$specialPageAliases['bgn'] = array(
+	'Nuke' => array( 'دسته_جمین_پاک_کورتین' ),
+);
+
 /** Banjar (Bahasa Banjar) */
 $specialPageAliases['bjn'] = array(
 	'Nuke' => array( 'Nuklir' ),
