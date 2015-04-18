@@ -51,7 +51,7 @@ $specialPageAliases['bjn'] = array(
 
 /** Chechen (нохчийн) */
 $specialPageAliases['ce'] = array(
-	'Nuke' => array( 'Дуккха_дӀаяккхар' ),
+	'Nuke' => array( 'Дуккха_дӀаяхар' ),
 );
 
 /** German (Deutsch) */
