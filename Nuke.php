@@ -4,8 +4,6 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 	die( 'Not an entry point.' );
 }
 
-define( 'Nuke_VERSION', '1.2.0' );
-
 $dir = __DIR__ . '/';
 
 $wgMessagesDirs['Nuke'] = __DIR__ . '/i18n';
@@ -18,7 +16,7 @@ $wgExtensionCredits['specialpage'][] = array(
 	'descriptionmsg' => 'nuke-desc',
 	'author'         => array( 'Brion Vibber', 'Jeroen De Dauw' ),
 	'url'            => 'https://www.mediawiki.org/wiki/Extension:Nuke',
-	'version'        => Nuke_VERSION,
+	'version'        => '1.2.0',
 );
 
 $wgGroupPermissions['sysop']['nuke'] = true;
