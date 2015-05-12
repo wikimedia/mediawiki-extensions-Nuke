@@ -19,7 +19,7 @@ $specialPageAliases['ar'] = array(
 	'Nuke' => array( 'حذف_كمي' ),
 );
 
-/** Egyptian Spoken Arabic (مصرى) */
+/** Egyptian Arabic (مصرى) */
 $specialPageAliases['arz'] = array(
 	'Nuke' => array( 'مسح_كامل' ),
 );
@@ -174,7 +174,7 @@ $specialPageAliases['lb'] = array(
 	'Nuke' => array( 'Masseläschung' ),
 );
 
-/** لوری (لوری) */
+/** لوری مینجایی (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'Nuke' => array( 'اتمی' ),
 );
