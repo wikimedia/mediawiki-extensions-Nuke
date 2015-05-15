@@ -32,9 +32,6 @@
 		"localBasePath": "",
 		"remoteExtPath": "Nuke"
 	},
-	"SpecialPageGroups": {
-		"Nuke": "pagetools"
-	},
 	"GroupPermissions": {
 		"sysop": {
 			"nuke": true

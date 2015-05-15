@@ -314,4 +314,8 @@ class SpecialNuke extends SpecialPage {
 		$this->getOutput()->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
 		$this->getOutput()->addWikiMsg( 'nuke-delete-more' );
 	}
+
+	protected function getGroupName() {
+		return 'pagetools';
+	}
 }
