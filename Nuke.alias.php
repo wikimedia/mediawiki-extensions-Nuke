@@ -174,7 +174,7 @@ $specialPageAliases['lb'] = array(
 	'Nuke' => array( 'Masseläschung' ),
 );
 
-/** لوری مینجایی (لوری مینجایی) */
+/** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
 	'Nuke' => array( 'اتمی' ),
 );
