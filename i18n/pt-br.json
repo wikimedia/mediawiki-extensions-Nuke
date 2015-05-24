@@ -34,5 +34,6 @@
 	"nuke-nopages-global": "Não há novas páginas nas [[Special:RecentChanges|mudanças recentes]].",
 	"nuke-viewchanges": "ver alterações",
 	"nuke-namespace": "Limitar ao espaço nominal:",
-	"nuke-linkoncontribs": "excluir em massa"
+	"nuke-linkoncontribs": "excluir em massa",
+	"nuke-linkoncontribs-text": "Excluir em massa páginas em que este usuário é o único autor"
 }
