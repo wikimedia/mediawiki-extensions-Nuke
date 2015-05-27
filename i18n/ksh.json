@@ -24,7 +24,7 @@
 	"nuke-deleted": "Di Sigg '''„$1“''' es fottjeschmeße.",
 	"nuke-not-deleted": "Di Sigg „[[:$1]]“ '''kunnt nit''' fottjeschmeße wääde.",
 	"nuke-delete-more": "[[Special:Nuke|Noch mih Sigge fottschmiiße]]",
-	"nuke-pattern": "Et Moster för dä Sigge iere Naame:",
+	"nuke-pattern": "Et Moster för dä Sigge iere Nahme:",
 	"nuke-nopages-global": "Mer han kein neue Sigge en de [[Special:RecentChanges|neuste Änderonge]].",
 	"nuke-viewchanges": "de Ungerscheide zeije",
 	"nuke-namespace": "Beschränke op dat Appachtemang:",
