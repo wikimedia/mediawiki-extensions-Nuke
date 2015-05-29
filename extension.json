@@ -46,5 +46,6 @@
 	"AutoloadClasses": {
 		"SpecialNuke": "Nuke_body.php",
 		"NukeHooks": "Nuke.hooks.php"
-	}
+	},
+	"manifest_version": 1
 }
