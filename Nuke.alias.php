@@ -176,7 +176,7 @@ $specialPageAliases['lb'] = array(
 
 /** Northern Luri (لوری مینجایی) */
 $specialPageAliases['lrc'] = array(
-	'Nuke' => array( 'اتمی' ),
+	'Nuke' => array( 'أتومی' ),
 );
 
 /** Literary Chinese (文言) */
