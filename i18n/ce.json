@@ -21,6 +21,7 @@
 	"nuke-userorip": "Декъашхочун цӀе, IP-адрес (еса йита мега):",
 	"nuke-maxpages": "АгӀонийн максимальни дукхалла:",
 	"nuke-editby": "Кхолийна {{GENDER:$1|декъашхочо}} [[Special:Contributions/$1|$1]]",
+	"nuke-deleted": "'''$1''' агӀо дӀаяьккхина.",
 	"nuke-delete-more": "[[Special:Nuke|Дуккха агӀонаш дӀаяхар]]",
 	"nuke-pattern": "Кеп агӀона цӀеран:",
 	"nuke-viewchanges": "ХӀоттина болу хийцам",
