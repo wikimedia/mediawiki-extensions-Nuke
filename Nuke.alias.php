@@ -174,7 +174,7 @@ $specialPageAliases['lb'] = array(
 	'Nuke' => array( 'Masseläschung' ),
 );
 
-/** Northern Luri (لوری مینجایی) */
+/** Northern Luri (لۊری شومالی) */
 $specialPageAliases['lrc'] = array(
 	'Nuke' => array( 'أتومی' ),
 );
