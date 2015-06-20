@@ -6,3 +6,4 @@
 !.gitignore
 !.gitreview
 !.jshintrc
+node_modules/
