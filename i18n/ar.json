@@ -26,6 +26,6 @@
 	"nuke-deleted": "صفحة '''$1''' حذفت.",
 	"nuke-not-deleted": "صفحة [[:$1]] '''لا''' تحذف.",
 	"nuke-viewchanges": "عرض التغييرات",
-	"nuke-linkoncontribs": "حذف جماعي",
-	"nuke-linkoncontribs-text": "حذف جماعي للصفحات التي يكون هذا المستخدم مؤلفها الوحيد"
+	"nuke-linkoncontribs": "حذف كمي",
+	"nuke-linkoncontribs-text": "حذف كمي للصفحات التي يكون هذا المستخدم مؤلفها الوحيد"
 }
