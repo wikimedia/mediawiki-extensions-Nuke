@@ -40,7 +40,7 @@
 	"nuke-pattern": "Patrón del título de la página:",
 	"nuke-nopages-global": "No hay nuevas páginas en los [[Special:RecentChanges|cambios recientes]].",
 	"nuke-viewchanges": "Mostrar cambios",
-	"nuke-namespace": "Límite al espacio de nombres",
+	"nuke-namespace": "Límite al espacio de nombres:",
 	"nuke-linkoncontribs": "borrado masivo",
 	"nuke-linkoncontribs-text": "Eliminar masivamente las páginas donde este usuario sea el único autor"
 }
