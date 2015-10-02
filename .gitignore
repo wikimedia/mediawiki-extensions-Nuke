@@ -2,8 +2,6 @@
 *~
 *.kate-swp
 .*.swp
-
-!.gitignore
-!.gitreview
-!.jshintrc
 node_modules/
+/composer.lock
+/vendor/
