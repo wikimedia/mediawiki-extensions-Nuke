@@ -306,7 +306,7 @@ class SpecialNuke extends SpecialPage {
 		$res = array();
 
 		foreach ( $pages as $page ) {
-			$title = Title::newFromURL( $page );
+			$title = Title::newFromText( $page );
 			$file = $title->getNamespace() === NS_FILE ? wfLocalFile( $title ) : false;
 
 			$permission_errors = $title->getUserPermissionsErrors( 'delete', $this->getUser() );
