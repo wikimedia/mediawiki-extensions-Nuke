@@ -292,6 +292,17 @@ class SpecialNuke extends SpecialPage {
 			);
 		}
 
+		// Allows other extensions to provide pages to be nuked that don't use
+		// the recentchanges table the way mediawiki-core does
+		Hooks::run( 'NukeGetNewPages', array( $username, $pattern, $namespace, $limit, &$pages ) );
+
+		// Re-enforcing the limit *after* the hook because other extensions
+		// may add and/or remove pages. We need to make sure we don't end up
+		// with more pages than $limit.
+		if ( count( $pages ) > $limit ) {
+			$pages = array_slice( $pages, 0, $limit );
+		}
+
 		return $pages;
 	}
 
@@ -307,8 +318,18 @@ class SpecialNuke extends SpecialPage {
 
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page );
-			$file = $title->getNamespace() === NS_FILE ? wfLocalFile( $title ) : false;
 
+			$deletionResult = false;
+			if ( !Hooks::run( 'NukeDeletePage', array( $title, $reason, &$deletionResult ) ) ) {
+				if ( $deletionResult ) {
+					$res[] = wfMessage( 'nuke-deleted', $title->getPrefixedText() )->parse();
+				} else {
+					$res[] = wfMessage( 'nuke-not-deleted', $title->getPrefixedText() )->parse();
+				}
+				continue;
+			}
+
+			$file = $title->getNamespace() === NS_FILE ? wfLocalFile( $title ) : false;
 			$permission_errors = $title->getUserPermissionsErrors( 'delete', $this->getUser() );
 
 			if ( $permission_errors !== array() ) {
