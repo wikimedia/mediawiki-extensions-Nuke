@@ -6,6 +6,10 @@ class SpecialNuke extends SpecialPage {
 		parent::__construct( 'Nuke', 'nuke' );
 	}
 
+	public function doesWrites() {
+		return true;
+	}
+
 	public function execute( $par ) {
 		if ( !$this->userCanExecute( $this->getUser() ) ) {
 			$this->displayRestrictionError();
