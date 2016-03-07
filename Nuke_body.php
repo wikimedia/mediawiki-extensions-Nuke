@@ -225,7 +225,7 @@ class SpecialNuke extends SpecialPage {
 				Xml::check(
 					'pages[]',
 					true,
-					array( 'value' => $title->getPrefixedDBKey() )
+					array( 'value' => $title->getPrefixedDBkey() )
 				) . '&#160;' .
 				( $thumb ? $thumb->toHtml( array( 'desc-link' => true ) ) : '' ) .
 				Linker::linkKnown( $title ) . $wordSeparator .
