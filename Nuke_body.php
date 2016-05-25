@@ -11,24 +11,18 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	public function execute( $par ) {
-		if ( !$this->userCanExecute( $this->getUser() ) ) {
-			$this->displayRestrictionError();
-		}
 		$this->setHeaders();
+		$this->checkPermissions();
+		$this->checkReadOnly();
 		$this->outputHeader();
 
-		if ( $this->getUser()->isBlocked() ) {
-			$block = $this->getUser()->getBlock();
+		$currentUser = $this->getUser();
+		if ( $currentUser->isBlocked() ) {
+			$block = $currentUser->getBlock();
 			throw new UserBlockedError( $block );
 		}
 
-		if ( method_exists( $this, 'checkReadOnly' ) ) {
-			// checkReadOnly was introduced only in 1.19
-			$this->checkReadOnly();
-		}
-
 		$req = $this->getRequest();
-
 		$target = trim( $req->getText( 'target', $par ) );
 
 		// Normalise name
@@ -50,7 +44,7 @@ class SpecialNuke extends SpecialPage {
 		$namespace = ctype_digit( $namespace ) ? (int)$namespace : null;
 
 		if ( $req->wasPosted()
-			&& $this->getUser()->matchEditToken( $req->getVal( 'wpEditToken' ) )
+			&& $currentUser->matchEditToken( $req->getVal( 'wpEditToken' ) )
 		) {
 
 			if ( $req->getVal( 'action' ) === 'delete' ) {
