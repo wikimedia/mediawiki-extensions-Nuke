@@ -158,8 +158,6 @@ class SpecialNuke extends SpecialPage {
 
 		$nuke = $this->getPageTitle();
 
-		$out->addModules( 'ext.nuke' );
-
 		$out->addHTML(
 			Xml::openElement( 'form', [
 					'action' => $nuke->getLocalURL( 'action=delete' ),
@@ -176,23 +174,31 @@ class SpecialNuke extends SpecialPage {
 		);
 
 		// Select: All, None, Invert
-		$links = [];
-		$links[] = '<a href="#" id="toggleall">' .
-			$this->msg( 'powersearch-toggleall' )->escaped() . '</a>';
-		$links[] = '<a href="#" id="togglenone">' .
-			$this->msg( 'powersearch-togglenone' )->escaped() . '</a>';
-		$links[] = '<a href="#" id="toggleinvert">' .
-			$this->msg( 'nuke-toggleinvert' )->escaped() . '</a>';
-		$out->addHTML(
-			Xml::tags( 'p',
+		// ListToggle was introduced in 1.27, old code kept for B/C
+		if ( class_exists( 'ListToggle' ) ) {
+			$listToggle = new ListToggle( $this->getOutput() );
+			$selectLinks = $listToggle->getHTML();
+		} else {
+			$out->addModules( 'ext.nuke' );
+
+			$links = [];
+			$links[] = '<a href="#" id="toggleall">' .
+				$this->msg( 'powersearch-toggleall' )->escaped() . '</a>';
+			$links[] = '<a href="#" id="togglenone">' .
+				$this->msg( 'powersearch-togglenone' )->escaped() . '</a>';
+			$links[] = '<a href="#" id="toggleinvert">' .
+				$this->msg( 'nuke-toggleinvert' )->escaped() . '</a>';
+
+			$selectLinks = Xml::tags( 'p',
 				null,
 				$this->msg( 'nuke-select' )
 					->rawParams( $this->getLanguage()->commaList( $links ) )->escaped()
-			)
-		);
+			);
+		}
 
-		// Delete button
+		// Select checkboxes and delete button
 		$out->addHTML(
+			$selectLinks .
 			Xml::submitButton( $this->msg( 'nuke-submit-delete' )->text() )
 		);
 
