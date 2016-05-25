@@ -241,7 +241,7 @@ class SpecialNuke extends SpecialPage {
 
 		$out->addHTML(
 			"</ul>\n" .
-			Xml::submitButton( wfMessage( 'nuke-submit-delete' )->text() ) .
+			Xml::submitButton( $this->msg( 'nuke-submit-delete' )->text() ) .
 			'</form>'
 		);
 	}
@@ -332,9 +332,9 @@ class SpecialNuke extends SpecialPage {
 			$deletionResult = false;
 			if ( !Hooks::run( 'NukeDeletePage', [ $title, $reason, &$deletionResult ] ) ) {
 				if ( $deletionResult ) {
-					$res[] = wfMessage( 'nuke-deleted', $title->getPrefixedText() )->parse();
+					$res[] = $this->msg( 'nuke-deleted', $title->getPrefixedText() )->parse();
 				} else {
-					$res[] = wfMessage( 'nuke-not-deleted', $title->getPrefixedText() )->parse();
+					$res[] = $this->msg( 'nuke-not-deleted', $title->getPrefixedText() )->parse();
 				}
 				continue;
 			}
@@ -355,9 +355,9 @@ class SpecialNuke extends SpecialPage {
 			}
 
 			if ( $ok ) {
-				$res[] = wfMessage( 'nuke-deleted', $title->getPrefixedText() )->parse();
+				$res[] = $this->msg( 'nuke-deleted', $title->getPrefixedText() )->parse();
 			} else {
-				$res[] = wfMessage( 'nuke-not-deleted', $title->getPrefixedText() )->parse();
+				$res[] = $this->msg( 'nuke-not-deleted', $title->getPrefixedText() )->parse();
 			}
 		}
 
