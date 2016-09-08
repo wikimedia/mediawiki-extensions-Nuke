@@ -19,12 +19,12 @@
 	"nuke-submit-delete": "Weçinayi esterne",
 	"right-nuke": "pelan yew hew de hewnaker",
 	"nuke-select": "Weçinaye: $1",
-	"nuke-userorip": "Namey karberi, adresa IP yana nênışanyaye:",
-	"nuke-maxpages": "Azami amorena peran:",
+	"nuke-userorip": "Nameyê karberi, adresa IP ya zi veng:",
+	"nuke-maxpages": "Amarê pelanê zêdeyêran:",
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] vıraşt bi",
-	"nuke-deleted": "Pera '''$1''' esteriyë.",
-	"nuke-not-deleted": "Pera  [[:$1]] '''nê''' esterêna.",
-	"nuke-delete-more": "[[Special:Nuke|Vëşi peran bıestern]]",
-	"nuke-pattern": "Namey modela perer:",
-	"nuke-viewchanges": "vurriyayışan bıvin"
+	"nuke-deleted": "Pela '''$1''' esteriye.",
+	"nuke-not-deleted": "Pela  [[:$1]] '''nêşena''' ke besteriyo.",
+	"nuke-delete-more": "[[Special:Nuke|Tayêna pelan bestere]]",
+	"nuke-pattern": "Nameyê pele rê nımune:",
+	"nuke-viewchanges": "vurriyayışan bıvêne"
 }
