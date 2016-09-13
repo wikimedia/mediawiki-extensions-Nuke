@@ -190,13 +190,10 @@ class SpecialNuke extends SpecialPage {
 			);
 		}
 
-		// Select checkboxes and delete button
 		$out->addHTML(
 			$selectLinks .
-			Xml::submitButton( $this->msg( 'nuke-submit-delete' )->text() )
+			'<ul>'
 		);
-
-		$out->addHTML( '<ul>' );
 
 		$wordSeparator = $this->msg( 'word-separator' )->escaped();
 		$commaSeparator = $this->msg( 'comma-separator' )->escaped();
