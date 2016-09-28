@@ -204,7 +204,7 @@ class SpecialNuke extends SpecialPage {
 			 */
 			list( $title, $userName ) = $info;
 
-			$image = $title->getNamespace() === NS_IMAGE ? wfLocalFile( $title ) : false;
+			$image = $title->inNamespace( NS_FILE ) ? wfLocalFile( $title ) : false;
 			$thumb = $image && $image->exists() ?
 				$image->transform( [ 'width' => 120, 'height' => 120 ], 0 ) :
 				false;
