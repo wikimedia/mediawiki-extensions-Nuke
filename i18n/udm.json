@@ -1,9 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kaganer"
+			"Kaganer",
+			"Irus"
 		]
 	},
+	"nuke-defaultreason": "Палэнэ кылдӥзы уно {{GENDER:$1|участник|куакеч}} [[Special:Contributions/$1|$1]] бам.",
 	"nuke-toggleinvert": "Воштыны интыен",
 	"nuke-select": "Бырйыны: $1"
 }
