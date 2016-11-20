@@ -25,7 +25,7 @@
 	"nuke-deleted": "Puslapis '''$1''' buvo ištrintas.",
 	"nuke-not-deleted": "Puslapis [[:$1]] '''negalimas''' ištrinti.",
 	"nuke-pattern": "Šablonas puslapio pavadinimui:",
-	"nuke-viewchanges": "žiūrėti istoriją",
+	"nuke-viewchanges": "žiūrėti pakeitimus",
 	"nuke-namespace": "Apriboti vardų sritį:",
 	"nuke-linkoncontribs": "masinis trynimas"
 }
