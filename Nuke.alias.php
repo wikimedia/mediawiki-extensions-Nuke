@@ -276,7 +276,7 @@ $specialPageAliases['tr'] = array(
 
 /** Ukrainian (українська) */
 $specialPageAliases['uk'] = array(
-	'Nuke' => array( 'Масове_вилучення' ),
+	'Nuke' => array( 'Масове_вилучення', 'Множественное_удаление' ),
 );
 
 /** Vietnamese (Tiếng Việt) */
