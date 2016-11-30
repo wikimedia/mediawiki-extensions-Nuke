@@ -49,6 +49,11 @@ $specialPageAliases['bjn'] = array(
 	'Nuke' => array( 'Nuklir' ),
 );
 
+/** Bengali (বাংলা) */
+$specialPageAliases['bn'] = array(
+	'Nuke' => array( 'গণ_অপসারণ' ),
+);
+
 /** Chechen (нохчийн) */
 $specialPageAliases['ce'] = array(
 	'Nuke' => array( 'Дуккха_дӀаяхар' ),
