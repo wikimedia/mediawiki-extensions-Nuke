@@ -74,49 +74,48 @@ class SpecialNuke extends SpecialPage {
 	 */
 	protected function promptForm( $userName = '' ) {
 		$out = $this->getOutput();
-		$out->addModules( 'mediawiki.userSuggest' );
 
 		$out->addWikiMsg( 'nuke-tools' );
 
-		$out->addHTML(
-			Xml::openElement(
-				'form',
-				[
-					'action' => $this->getPageTitle()->getLocalURL( 'action=submit' ),
-					'method' => 'post'
-				]
-			)
-			. '<table><tr>'
-			. '<td>' . Xml::label( $this->msg( 'nuke-userorip' )->text(), 'nuke-target' ) . '</td>'
-			. '<td>' . Xml::input(
-				'target',
-				40,
-				$userName,
-				[
-					'id' => 'nuke-target',
-					'class' => 'mw-autocomplete-user',
-					'autofocus' => true
-				]
-			) . '</td>'
-			. '</tr><tr>'
-			. '<td>' . Xml::label( $this->msg( 'nuke-pattern' )->text(), 'nuke-pattern' ) . '</td>'
-			. '<td>' . Xml::input( 'pattern', 40, '', [ 'id' => 'nuke-pattern' ] ) . '</td>'
-			. '</tr><tr>'
-			. '<td>' . Xml::label( $this->msg( 'nuke-namespace' )->text(), 'nuke-namespace' ) . '</td>'
-			. '<td>' . Html::namespaceSelector(
-				[ 'all' => 'all' ],
-				[ 'name' => 'namespace' ]
-			) . '</td>'
-			. '</tr><tr>'
-			. '<td>' . Xml::label( $this->msg( 'nuke-maxpages' )->text(), 'nuke-limit' ) . '</td>'
-			. '<td>' . Xml::input( 'limit', 7, '500', [ 'id' => 'nuke-limit' ] ) . '</td>'
-			. '</tr><tr>'
-			. '<td></td>'
-			. '<td>' . Xml::submitButton( $this->msg( 'nuke-submit-user' )->text() ) . '</td>'
-			. '</tr></table>'
-			. Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() )
-			. Xml::closeElement( 'form' )
-		);
+		$formDescriptor = [
+			'nuke-target' => [
+				'id' => 'nuke-target',
+				'default' => $userName,
+				'label' => $this->msg( 'nuke-userorip' )->text(),
+				'type' => 'user',
+			],
+			'nuke-pattern' => [
+				'id' => 'nuke-pattern',
+				'label' => $this->msg( 'nuke-pattern' )->text(),
+				'maxLength' => 40,
+				'type' => 'text'
+			],
+			'namespace' => [
+				'id' => 'nuke-namespace',
+				'type' => 'namespaceselect',
+				'label' => $this->msg( 'nuke-namespace' )->text(),
+				'all' => 'all'
+			],
+			'limit' => [
+				'id' => 'nuke-limit',
+				'maxLength' => 7,
+				'default' => 500,
+				'label' => $this->msg( 'nuke-maxpages' )->text(),
+				'type' => 'int'
+			]
+		];
+
+		HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
+			->setName( 'massdelete' )
+			->setFormIdentifier( 'massdelete' )
+			->setWrapperLegendMsg( 'nuke' )
+			->setSubmitTextMsg( 'nuke-submit-user' )
+			->setSubmitName( 'nuke-submit-user' )
+			->setAction( $this->getPageTitle()->getLocalURL( 'action=submit' ) )
+			->setMethod( 'post' )
+			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
