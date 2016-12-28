@@ -1,6 +1,7 @@
 {
 	"predef": [
-		"jQuery"
+		"jQuery",
+		"mediaWiki"
 	],
 	/* Common */
 
