@@ -2,10 +2,11 @@
 	"@metadata": {
 		"authors": [
 			"Kaganer",
-			"Irus"
+			"Irus",
+			"Wadorgurt"
 		]
 	},
-	"nuke-defaultreason": "Палэнэ кылдӥзы уно {{GENDER:$1|участник|куакеч}} [[Special:Contributions/$1|$1]] бам.",
+	"nuke-defaultreason": "[[Special:Contributions/$1|$1]] {{GENDER:$1|викиавторен}} ватсам бамъёсты тросэн быдтон",
 	"nuke-toggleinvert": "Воштыны интыен",
 	"nuke-select": "Бырйыны: $1"
 }
