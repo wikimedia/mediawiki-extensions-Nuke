@@ -23,7 +23,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$req = $this->getRequest();
-		$target = trim( $req->getText( 'target', $par ) );
+		$target = trim( $req->getText( 'nuke-target', $par ) );
 
 		// Normalise name
 		if ( $target !== '' ) {
@@ -266,7 +266,7 @@ class SpecialNuke extends SpecialPage {
 			$where['rc_namespace'] = $namespace;
 		}
 
-		$pattern = $this->getRequest()->getText( 'pattern' );
+		$pattern = $this->getRequest()->getText( 'nuke-pattern' );
 		if ( !is_null( $pattern ) && trim( $pattern ) !== '' ) {
 			$where[] = 'rc_title ' . $dbr->buildLike( $pattern );
 		}
