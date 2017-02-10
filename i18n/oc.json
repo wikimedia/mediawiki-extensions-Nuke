@@ -13,5 +13,6 @@
 	"nuke-submit-user": "Listar las paginas",
 	"nuke-submit-delete": "Supression seleccionada",
 	"right-nuke": "Suprimir de paginas en massa",
+	"nuke-delete-more": "[[Special:Nuke|Suprimir mai de paginas]]",
 	"nuke-linkoncontribs": "supression en massa"
 }
