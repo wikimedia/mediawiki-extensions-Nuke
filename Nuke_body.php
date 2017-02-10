@@ -23,7 +23,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$req = $this->getRequest();
-		$target = trim( $req->getText( 'nuke-target', $par ) );
+		$target = trim( $req->getText( 'wpnuke-target', $par ) );
 
 		// Normalise name
 		if ( $target !== '' ) {
@@ -39,8 +39,8 @@ class SpecialNuke extends SpecialPage {
 			inContentLanguage()->text();
 		$reason = $req->getText( 'wpReason', $msg );
 
-		$limit = $req->getInt( 'limit', 500 );
-		$namespace = $req->getVal( 'namespace' );
+		$limit = $req->getInt( 'wplimit', 500 );
+		$namespace = $req->getVal( 'wpnamespace' );
 		$namespace = ctype_digit( $namespace ) ? (int)$namespace : null;
 
 		if ( $req->wasPosted()
