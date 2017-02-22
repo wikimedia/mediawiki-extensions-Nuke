@@ -23,7 +23,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$req = $this->getRequest();
-		$target = trim( $req->getText( 'wpnuke-target', $par ) );
+		$target = trim( $req->getText( 'target', $par ) );
 
 		// Normalise name
 		if ( $target !== '' ) {
@@ -39,8 +39,8 @@ class SpecialNuke extends SpecialPage {
 			inContentLanguage()->text();
 		$reason = $req->getText( 'wpReason', $msg );
 
-		$limit = $req->getInt( 'wplimit', 500 );
-		$namespace = $req->getVal( 'wpnamespace' );
+		$limit = $req->getInt( 'limit', 500 );
+		$namespace = $req->getVal( 'namespace' );
 		$namespace = ctype_digit( $namespace ) ? (int)$namespace : null;
 
 		if ( $req->wasPosted()
@@ -83,25 +83,29 @@ class SpecialNuke extends SpecialPage {
 				'default' => $userName,
 				'label' => $this->msg( 'nuke-userorip' )->text(),
 				'type' => 'user',
+				'name' => 'target'
 			],
 			'nuke-pattern' => [
 				'id' => 'nuke-pattern',
 				'label' => $this->msg( 'nuke-pattern' )->text(),
 				'maxLength' => 40,
-				'type' => 'text'
+				'type' => 'text',
+				'name' => 'pattern'
 			],
 			'namespace' => [
 				'id' => 'nuke-namespace',
 				'type' => 'namespaceselect',
 				'label' => $this->msg( 'nuke-namespace' )->text(),
-				'all' => 'all'
+				'all' => 'all',
+				'name' => 'namespace'
 			],
 			'limit' => [
 				'id' => 'nuke-limit',
 				'maxLength' => 7,
 				'default' => 500,
 				'label' => $this->msg( 'nuke-maxpages' )->text(),
-				'type' => 'int'
+				'type' => 'int',
+				'name' => 'limit'
 			]
 		];
 
@@ -266,7 +270,7 @@ class SpecialNuke extends SpecialPage {
 			$where['rc_namespace'] = $namespace;
 		}
 
-		$pattern = $this->getRequest()->getText( 'nuke-pattern' );
+		$pattern = $this->getRequest()->getText( 'pattern' );
 		if ( !is_null( $pattern ) && trim( $pattern ) !== '' ) {
 			$where[] = 'rc_title ' . $dbr->buildLike( $pattern );
 		}
