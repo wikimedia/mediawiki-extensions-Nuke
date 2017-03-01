@@ -201,6 +201,7 @@ class SpecialNuke extends SpecialPage {
 		$wordSeparator = $this->msg( 'word-separator' )->escaped();
 		$commaSeparator = $this->msg( 'comma-separator' )->escaped();
 
+		$linkRenderer = $this->getLinkRenderer();
 		foreach ( $pages as $info ) {
 			/**
 			 * @var $title Title
@@ -215,9 +216,9 @@ class SpecialNuke extends SpecialPage {
 			$userNameText = $userName ?
 				$this->msg( 'nuke-editby', $userName )->parse() . $commaSeparator :
 				'';
-			$changesLink = Linker::linkKnown(
+			$changesLink = $linkRenderer->makeKnownLink(
 				$title,
-				$this->msg( 'nuke-viewchanges' )->escaped(),
+				$this->msg( 'nuke-viewchanges' )->text(),
 				[],
 				[ 'action' => 'history' ]
 			);
@@ -228,7 +229,7 @@ class SpecialNuke extends SpecialPage {
 					[ 'value' => $title->getPrefixedDBkey() ]
 				) . '&#160;' .
 				( $thumb ? $thumb->toHtml( [ 'desc-link' => true ] ) : '' ) .
-				Linker::linkKnown( $title ) . $wordSeparator .
+				$linkRenderer->makeKnownLink( $title ) . $wordSeparator .
 				$this->msg( 'parentheses' )->rawParams( $userNameText . $changesLink )->escaped() .
 				"</li>\n" );
 		}
