@@ -17,7 +17,8 @@ class NukeHooks {
 			$toolLinks['nuke'] = $sp->getLinkRenderer()->makeKnownLink(
 				SpecialPage::getTitleFor( 'Nuke' ),
 				$sp->msg( 'nuke-linkoncontribs' )->text(),
-				[ 'title' => $sp->msg( 'nuke-linkoncontribs-text' )->text() ],
+				[ 'title' => $sp->msg( 'nuke-linkoncontribs-text',
+					$userPageTitle->getText() )->text() ],
 				[ 'target' => $userPageTitle->getText() ]
 			);
 		}
