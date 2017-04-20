@@ -268,7 +268,9 @@ class SpecialNuke extends SpecialPage {
 
 		$pattern = $this->getRequest()->getText( 'pattern' );
 		if ( !is_null( $pattern ) && trim( $pattern ) !== '' ) {
-			$where[] = 'rc_title ' . $dbr->buildLike( $pattern );
+			// $pattern is a SQL pattern supporting wildcards, so buildLike
+			// will not work.
+			$where[] = 'rc_title LIKE ' . $dbr->addQuotes( $pattern );
 		}
 		$group = implode( ', ', $what );
 
