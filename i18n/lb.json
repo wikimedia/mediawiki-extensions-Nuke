@@ -27,7 +27,7 @@
 	"nuke-not-deleted": "D'Säit [[:$1]] '''konnt net''' geläscht ginn.",
 	"nuke-delete-more": "[[Special:Nuke|Méi Säite läschen]]",
 	"nuke-pattern": "Muster fir de Säitennumm:",
-	"nuke-nopages-global": "Et si keng nei Säiten an de [[Special:RecentChanges|rezenten Ännerungen]].",
+	"nuke-nopages-global": "Et gëtt keng Säitentitelen déi deem entsprieche wat Dir sicht.",
 	"nuke-viewchanges": "Ännerunge weisen",
 	"nuke-namespace": "Op dësen Nummraum limitéieren:",
 	"nuke-linkoncontribs": "Masseläschungen",

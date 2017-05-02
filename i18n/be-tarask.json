@@ -28,7 +28,7 @@
 	"nuke-not-deleted": "Старонка [[:$1]] '''ня можа''' быць выдаленая.",
 	"nuke-delete-more": "[[Special:Nuke|Масавае выдаленьне старонак]]",
 	"nuke-pattern": "Узор для назвы старонкі:",
-	"nuke-nopages-global": "У [[Special:RecentChanges|апошніх зьменах]] больш няма новых старонак.",
+	"nuke-nopages-global": "Няма назваў старонак, якія адпавядаюць вашаму пошуку.",
 	"nuke-viewchanges": "праглядзець зьмены",
 	"nuke-namespace": "Абмежаваць прасторай назваў:",
 	"nuke-linkoncontribs": "масавае выдаленьне",

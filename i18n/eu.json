@@ -5,7 +5,8 @@
 			"Unai Fdz. de Betoño",
 			"Xabier Armendaritz",
 			"An13sa",
-			"Sator"
+			"Sator",
+			"Subi"
 		]
 	},
 	"nuke": "Ezabaketa masiboa",
@@ -16,5 +17,6 @@
 	"nuke-submit-delete": "Aukeratutakoa ezabatu",
 	"right-nuke": "Masiboki ezabatutako orrialdeak",
 	"nuke-delete-more": "[[Special:Nuke|Ezabatu orri gehiago]]",
+	"nuke-nopages-global": "Ez dago zure bilaketarekin bat datorren orrialde-izenbururik.",
 	"nuke-viewchanges": "Aldaketak ikusi"
 }
