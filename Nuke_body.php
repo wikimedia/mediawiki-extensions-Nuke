@@ -46,7 +46,6 @@ class SpecialNuke extends SpecialPage {
 		if ( $req->wasPosted()
 			&& $currentUser->matchEditToken( $req->getVal( 'wpEditToken' ) )
 		) {
-
 			if ( $req->getVal( 'action' ) === 'delete' ) {
 				$pages = $req->getArray( 'pages' );
 
