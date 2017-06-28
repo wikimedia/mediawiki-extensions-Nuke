@@ -30,7 +30,7 @@
 	"nuke-not-deleted": "Pagina [[:$1]] '''kon niet''' worden verwijderd.",
 	"nuke-delete-more": "[[Special:Nuke|Meer pagina's verwijderen]]",
 	"nuke-pattern": "Patroon voor de paginanaam:",
-	"nuke-nopages-global": "Er zijn geen nieuwe pagina's in de [[Special:RecentChanges|recente wijzigingen]].",
+	"nuke-nopages-global": "Er zijn geen pagina titels die met uw zoekterm overeenkomen.",
 	"nuke-viewchanges": "wijzigingen bekijken",
 	"nuke-namespace": "Beperk tot naamruimte:",
 	"nuke-linkoncontribs": "massaal verwijderen",
