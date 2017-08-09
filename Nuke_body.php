@@ -69,7 +69,7 @@ class SpecialNuke extends SpecialPage {
 	/**
 	 * Prompt for a username or IP address.
 	 *
-	 * @param $userName string
+	 * @param string $userName
 	 */
 	protected function promptForm( $userName = '' ) {
 		$out = $this->getOutput();
@@ -126,8 +126,8 @@ class SpecialNuke extends SpecialPage {
 	 *
 	 * @param string $username
 	 * @param string $reason
-	 * @param integer $limit
-	 * @param integer|null $namespace
+	 * @param int $limit
+	 * @param int|null $namespace
 	 */
 	protected function listForm( $username, $reason, $limit, $namespace = null ) {
 		$out = $this->getOutput();
@@ -244,8 +244,8 @@ class SpecialNuke extends SpecialPage {
 	 * Gets a list of new pages by the specified user or everyone when none is specified.
 	 *
 	 * @param string $username
-	 * @param integer $limit
-	 * @param integer|null $namespace
+	 * @param int $limit
+	 * @param int|null $namespace
 	 *
 	 * @return array
 	 */

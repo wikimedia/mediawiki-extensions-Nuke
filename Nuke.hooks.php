@@ -7,7 +7,7 @@ class NukeHooks {
 	 *
 	 * @param int $userId
 	 * @param Title $userPageTitle
-	 * @param string[] $toolLinks
+	 * @param string[] &$toolLinks
 	 * @param SpecialPage $sp
 	 */
 	public static function nukeContributionsLinks( $userId, $userPageTitle, &$toolLinks,
