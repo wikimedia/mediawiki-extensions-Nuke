@@ -22,7 +22,7 @@
 	"action-nuke": "Destruir páginas",
 	"nuke-desc": "Da a los administradores la posibilidad de [[Special:Nuke|borrar páginas de forma masiva]]",
 	"nuke-nopages": "No hay páginas nuevas creadas por [[Special:Contributions/$1|$1]] en cambios recientes.",
-	"nuke-list": "Las siguientes páginas han sido creadas recientemente por [[Special:Contributions/$1|$1]];\nañade un comentario y haz clic sobre el botón para vaciarlas.",
+	"nuke-list": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] ha creado recientemente las páginas siguientes;\nañade un comentario y pulsa sobre el botón para borrarlas.",
 	"nuke-list-multiple": "Las siguientes páginas han sido creadas recientemente; escribe un comentario y pulsa el botón para eliminarlas.",
 	"nuke-defaultreason": "Eliminación en masa de páginas añadidas por [[Special:Contributions/$1|$1]]",
 	"nuke-multiplepeople": "Eliminación masiva de páginas nuevas de múltiples usuarios",
