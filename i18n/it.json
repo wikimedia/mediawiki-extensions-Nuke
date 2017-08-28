@@ -34,5 +34,5 @@
 	"nuke-viewchanges": "vedi modifiche",
 	"nuke-namespace": "Limita al namespace:",
 	"nuke-linkoncontribs": "cancella massivamente",
-	"nuke-linkoncontribs-text": "Cancella massivamente le pagine dove questo utente è l'unico contributore"
+	"nuke-linkoncontribs-text": "Cancella massivamente le pagine dove questo utente è {{GENDER:$1|l'unico contributore|l'unica contributrice}}"
 }

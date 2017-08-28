@@ -34,5 +34,5 @@
 	"nuke-viewchanges": "הצגת שינויים",
 	"nuke-namespace": "להגביל למרחב השמות הבא:",
 	"nuke-linkoncontribs": "מחיקה מרובה",
-	"nuke-linkoncontribs-text": "מחיקת דפים רבים בהם משתמש זה הוא הכותב היחיד"
+	"nuke-linkoncontribs-text": "מחיקת דפים רבים {{GENDER:$1|שהמשתמש הזה הוא הכותב היחיד|שהמשתמשת הזאת היא הכותבת היחידה}} שלהם"
 }
