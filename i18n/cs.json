@@ -36,5 +36,5 @@
 	"nuke-viewchanges": "ukázat změny",
 	"nuke-namespace": "Omezit na jmenný prostor:",
 	"nuke-linkoncontribs": "hromadné mazání",
-	"nuke-linkoncontribs-text": "Hromadně smazat stránky, jichž je tento uživatel jediným autorem"
+	"nuke-linkoncontribs-text": "Hromadně smazat stránky, jichž je {{GENDER:$1|tento uživatel jediným autorem|tato uživatelka jedinou autorkou}}"
 }
