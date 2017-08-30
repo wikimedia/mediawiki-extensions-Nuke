@@ -29,5 +29,5 @@
 	"nuke-viewchanges": "vaata muudatusi",
 	"nuke-namespace": "Nimeruumipiirang:",
 	"nuke-linkoncontribs": "lauskustutamine",
-	"nuke-linkoncontribs-text": "Lauskustuta leheküljed, mille ainus autor on see kasutaja"
+	"nuke-linkoncontribs-text": "Lauskustuta leheküljed, mille ainus autor on see {{GENDER:$1|kasutaja}}"
 }
