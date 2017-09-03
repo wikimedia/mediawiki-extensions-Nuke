@@ -29,5 +29,5 @@
 	"nuke-viewchanges": "ogled sprememb",
 	"nuke-namespace": "Omeji na imenski prostor:",
 	"nuke-linkoncontribs": "množični izbris",
-	"nuke-linkoncontribs-text": "Množični izbris strani, katerih edini avtor je ta uporabnik"
+	"nuke-linkoncontribs-text": "Množični izbris strani, katerih {{GENDER:$1|edini avtor je ta uporabnik|edina avtorica je ta uporabnica}}"
 }
