@@ -43,5 +43,5 @@
 	"nuke-viewchanges": "Mostrar cambios",
 	"nuke-namespace": "Límite al espacio de nombres:",
 	"nuke-linkoncontribs": "borrado masivo",
-	"nuke-linkoncontribs-text": "Eliminar masivamente las páginas donde este usuario sea el único autor"
+	"nuke-linkoncontribs-text": "Eliminar masivamente las páginas donde {{GENDER:$1|este usuario sea el único autor|esta usuaria sea la única autora}}"
 }
