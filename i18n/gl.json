@@ -33,5 +33,5 @@
 	"nuke-viewchanges": "ollar os cambios",
 	"nuke-namespace": "Limitar ao espazo de nomes:",
 	"nuke-linkoncontribs": "eliminar en masa",
-	"nuke-linkoncontribs-text": "Eliminar en masa as páxinas das que este usuario é o único autor"
+	"nuke-linkoncontribs-text": "Eliminar en masa as páxinas das que {{GENDER:$1|este usuario é o único autor|esta usuaria é a única autora}}"
 }
