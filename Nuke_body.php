@@ -250,7 +250,7 @@ class SpecialNuke extends SpecialPage {
 	 * @return array
 	 */
 	protected function getNewPages( $username, $limit, $namespace = null ) {
-		$dbr = wfGetDB( DB_SLAVE );
+		$dbr = wfGetDB( DB_REPLICA );
 
 		$what = [
 			'rc_namespace',
