@@ -34,5 +34,6 @@
 	"nuke-viewchanges": "ver alterações",
 	"nuke-namespace": "Limitar ao espaço nominal:",
 	"nuke-linkoncontribs": "eliminação em massa",
-	"nuke-linkoncontribs-text": "Eliminar em massa páginas em que este utilizador é o único autor"
+	"nuke-linkoncontribs-text": "Eliminar em massa páginas em que {{GENDER:$1|este utilizador é o único autor|esta utilizadora é a única autora}}",
+	"nuke-confirm": "Está prestes a eliminar {{PLURAL:$1|uma página|$1 páginas}}. Tem a certeza de que pretende {{PLURAL:$1|eliminá-la|eliminá-las}}?"
 }

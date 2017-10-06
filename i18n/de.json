@@ -34,5 +34,6 @@
 	"nuke-viewchanges": "Änderungen ansehen",
 	"nuke-namespace": "Auf den folgenden Namensraum begrenzen:",
 	"nuke-linkoncontribs": "Massenlöschungen",
-	"nuke-linkoncontribs-text": "Massengelöschte Seiten, bei denen {{GENDER:$1|dieser Benutzer der einzige Autor|diese Benutzerin die einzige Autorin}} ist."
+	"nuke-linkoncontribs-text": "Massengelöschte Seiten, bei denen {{GENDER:$1|dieser Benutzer der einzige Autor|diese Benutzerin die einzige Autorin}} ist.",
+	"nuke-confirm": "Du bist gerade dabei, {{PLURAL:$1|eine Seite|$1 Seiten}} zu löschen. Möchtest du wirklich fortfahren?"
 }

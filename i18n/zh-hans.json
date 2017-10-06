@@ -40,5 +40,6 @@
 	"nuke-viewchanges": "查看变更",
 	"nuke-namespace": "限制名字空间为：",
 	"nuke-linkoncontribs": "大量删除",
-	"nuke-linkoncontribs-text": "大量删除仅{{GENDER:$1|此用户}}为作者的页面"
+	"nuke-linkoncontribs-text": "大量删除仅{{GENDER:$1|此用户}}为作者的页面",
+	"nuke-confirm": "您将要删除{{PLURAL:$1|$1个页面}}。您确定要删除么？"
 }
