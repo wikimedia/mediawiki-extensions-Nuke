@@ -146,6 +146,8 @@ class SpecialNuke extends SpecialPage {
 			return;
 		}
 
+		$out->addModules( 'ext.nuke.confirm' );
+
 		if ( $username === '' ) {
 			$out->addWikiMsg( 'nuke-list-multiple' );
 		} else {

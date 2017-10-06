@@ -30,5 +30,6 @@
 	"nuke-viewchanges": "view changes",
 	"nuke-namespace": "Limit to namespace:",
 	"nuke-linkoncontribs": "mass delete",
-	"nuke-linkoncontribs-text": "Mass delete pages where {{GENDER:$1|this user}} is the only author"
+	"nuke-linkoncontribs-text": "Mass delete pages where {{GENDER:$1|this user}} is the only author",
+	"nuke-confirm": "You are about to delete {{PLURAL:$1|one page|$1 pages}}. Are you sure that you want to delete?"
 }
