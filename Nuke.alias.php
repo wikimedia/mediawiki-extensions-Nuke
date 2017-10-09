@@ -283,6 +283,11 @@ $specialPageAliases['uk'] = [
 	'Nuke' => [ 'Масове_вилучення', 'Множественное_удаление' ],
 ];
 
+/** Urdu (اردو) */
+$specialPageAliases['ur'] = [
+	'Nuke' => [ 'اجتماعی_حذف_شدگی' ],
+];
+
 /** Vietnamese (Tiếng Việt) */
 $specialPageAliases['vi'] = [
 	'Nuke' => [ 'Xóa_hàng_loạt', 'Xoá_hàng_loạt' ],
