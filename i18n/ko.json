@@ -38,5 +38,6 @@
 	"nuke-viewchanges": "차이 보기",
 	"nuke-namespace": "이름공간 제한:",
 	"nuke-linkoncontribs": "문서 대량 삭제",
-	"nuke-linkoncontribs-text": "{{GENDER:$1|이 사용자}}가 유일한 기여자인 문서를 대량 삭제"
+	"nuke-linkoncontribs-text": "{{GENDER:$1|이 사용자}}가 유일한 기여자인 문서를 대량 삭제",
+	"nuke-confirm": "{{PLURAL:$1|문서 한 개|문서 $1개}}를 삭제하려고 합니다. 정말 삭제하시겠습니까?"
 }

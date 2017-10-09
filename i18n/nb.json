@@ -33,5 +33,6 @@
 	"nuke-viewchanges": "vis endringer",
 	"nuke-namespace": "Begrens til navnerom:",
 	"nuke-linkoncontribs": "masseslett",
-	"nuke-linkoncontribs-text": "Masseslett sider der denne {{GENDER:$1|brukeren}} er den eneste forfatteren"
+	"nuke-linkoncontribs-text": "Masseslett sider der denne {{GENDER:$1|brukeren}} er den eneste forfatteren",
+	"nuke-confirm": "Du er i ferd med å slette {{PLURAL:$1|éi side|$1 sider}}. Er du sikker på at du vil gjøre dette?"
 }
