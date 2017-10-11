@@ -26,9 +26,10 @@
 	"nuke-not-deleted": "La páxina [[:$1]] '''nun se pudo''' desaniciar.",
 	"nuke-delete-more": "[[Special:Nuke|Desaniciar más páxines]]",
 	"nuke-pattern": "Patrón pal nome de páxina:",
-	"nuke-nopages-global": "Nun hai páxines nueves nos [[Special:RecentChanges|cambios recientes]].",
+	"nuke-nopages-global": "Nun hai títulos de páxina que casen cola gueta.",
 	"nuke-viewchanges": "ver los cambios",
 	"nuke-namespace": "Llendar al espaciu de nomes:",
 	"nuke-linkoncontribs": "desaniciar en masa",
-	"nuke-linkoncontribs-text": "Desaniciar en masa les páxines nes qu'esti usuariu ye l'únicu autor"
+	"nuke-linkoncontribs-text": "Desaniciar en masa les páxines nes qu'{{GENDER:$1|esti usuariu ye l'únicu autor|esta usuaria ye la única autora}}",
+	"nuke-confirm": "Tas a piques de desaniciar {{PLURAL:$1|una páxina|$1 páxines}}. ¿Seguro que quies desaniciar?"
 }
