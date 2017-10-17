@@ -15,7 +15,8 @@
 			"Remember the dot",
 			"Sanbec",
 			"Macofe",
-			"Dgstranz"
+			"Dgstranz",
+			"RicardoSGZ"
 		]
 	},
 	"nuke": "Borrado en masa",
@@ -43,5 +44,6 @@
 	"nuke-viewchanges": "Mostrar cambios",
 	"nuke-namespace": "Límite al espacio de nombres:",
 	"nuke-linkoncontribs": "borrado masivo",
-	"nuke-linkoncontribs-text": "Eliminar masivamente las páginas donde {{GENDER:$1|este usuario sea el único autor|esta usuaria sea la única autora}}"
+	"nuke-linkoncontribs-text": "Eliminar masivamente las páginas donde {{GENDER:$1|este usuario sea el único autor|esta usuaria sea la única autora}}",
+	"nuke-confirm": "Estás a punto de eliminar {{PLURAL:$1|una página|$1 páginas}}. ¿Estás seguro de que quieres eliminarlo?"
 }
