@@ -33,5 +33,6 @@
 	"nuke-viewchanges": "ollar os cambios",
 	"nuke-namespace": "Limitar ao espazo de nomes:",
 	"nuke-linkoncontribs": "eliminar en masa",
-	"nuke-linkoncontribs-text": "Eliminar en masa as páxinas das que {{GENDER:$1|este usuario é o único autor|esta usuaria é a única autora}}"
+	"nuke-linkoncontribs-text": "Eliminar en masa as páxinas das que {{GENDER:$1|este usuario é o único autor|esta usuaria é a única autora}}",
+	"nuke-confirm": "Está a piques de eliminar {{PLURAL:$1|unha páxina|$1 páxinas}}. Está seguro de que quere facer o borrado?"
 }

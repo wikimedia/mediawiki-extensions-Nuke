@@ -13,7 +13,7 @@
 	"action-nuke": "eliminar páginas em massa",
 	"nuke-desc": "[[Special:Nuke|Página especial]] que permite que os administradores apaguem páginas de forma massiva",
 	"nuke-nopages": "Não há novas páginas de [[Special:Contributions/$1|{{GENDER:$1|$1}}]] nas mudanças recentes.",
-	"nuke-list": "As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; \nintroduza um comentário e pressione o botão a seguir para eliminá-las.",
+	"nuke-list": "As páginas a seguir foram criadas recentemente por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; \nintroduza um comentário e pressione o botão para eliminá-las.",
 	"nuke-list-multiple": "As seguintes páginas foram criadas recentemente;\nintroduza um comentário e clique o botão para eliminá-las.",
 	"nuke-defaultreason": "Eliminação em massa de páginas criadas por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-multiplepeople": "Eliminação em massa de páginas recentemente adicionadas",
