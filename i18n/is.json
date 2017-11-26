@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"S.Örvarr.S",
-			"Snævar"
+			"Snævar",
+			"Maxí"
 		]
 	},
 	"nuke": "Fjöldaeyða",
@@ -26,5 +27,6 @@
 	"nuke-delete-more": "[[Special:Nuke|Fjöldaeyða fleiri skrám]]",
 	"nuke-pattern": "Nafna mynstur:",
 	"nuke-nopages-global": "Það eru engar nýjar síður í [[Special:RecentChanges|nýjustu breytingum]].",
-	"nuke-viewchanges": "skoða breytingar"
+	"nuke-viewchanges": "skoða breytingar",
+	"nuke-linkoncontribs": "fjöldaeyða"
 }
