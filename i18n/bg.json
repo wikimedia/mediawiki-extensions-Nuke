@@ -4,7 +4,8 @@
 			"Borislav",
 			"DCLXVI",
 			"Spiritia",
-			"Termininja"
+			"Termininja",
+			"ShockD"
 		]
 	},
 	"nuke": "Масово изтриване",
@@ -16,8 +17,11 @@
 	"nuke-submit-user": "Отваряне",
 	"nuke-submit-delete": "Изтриване на избраните",
 	"right-nuke": "Масово изтриване на страници",
+	"nuke-select": "Избиране: $1",
 	"nuke-userorip": "Потребителско име, IP адрес или празно:",
 	"nuke-maxpages": "Максимален брой страници:",
+	"nuke-deleted": "Страницата '''$1''' е изтрита.",
+	"nuke-delete-more": "[[Special:Nuke|Изтриване на още страници]]",
 	"nuke-pattern": "Обща част (pattern) в заглавията:",
 	"nuke-namespace": "Ограничение по именно пространство:",
 	"nuke-linkoncontribs": "масово изтриване",
