@@ -8,7 +8,8 @@
 			"MetalBrasil",
 			"555",
 			"Araceletorres",
-			"Felipe L. Ewald"
+			"Felipe L. Ewald",
+			"Eduardo Addad de Oliveira"
 		]
 	},
 	"nuke": "Eliminar de forma massiva",
@@ -36,5 +37,5 @@
 	"nuke-viewchanges": "ver alterações",
 	"nuke-namespace": "Limitar ao espaço nominal:",
 	"nuke-linkoncontribs": "excluir em massa",
-	"nuke-linkoncontribs-text": "Excluir em massa páginas em que este usuário é o único autor"
+	"nuke-linkoncontribs-text": "Eliminar em massa páginas em que {{GENDER:$1|este usuário é o único autor|esta usuária é a única autora}}"
 }
