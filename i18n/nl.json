@@ -34,5 +34,6 @@
 	"nuke-viewchanges": "wijzigingen bekijken",
 	"nuke-namespace": "Beperk tot naamruimte:",
 	"nuke-linkoncontribs": "massaal verwijderen",
-	"nuke-linkoncontribs-text": "Pagina's waar {{GENDER:$1|deze gebruiker}} de enige auteur is massaal verwijderen"
+	"nuke-linkoncontribs-text": "Pagina's waar {{GENDER:$1|deze gebruiker}} de enige auteur is massaal verwijderen",
+	"nuke-confirm": "U staat op het punt om {{PLURAL:$1|een pagina| $1 pagina's}} te verwijderen. Weet u zeker dat u deze pagina's wilt verwijderen?"
 }
