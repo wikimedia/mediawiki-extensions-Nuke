@@ -6,7 +6,8 @@
 			"Wikitanvir",
 			"Zaheen",
 			"Aftabuzzaman",
-			"Elias Ahmmad"
+			"Elias Ahmmad",
+			"Bodhisattwa"
 		]
 	},
 	"nuke": "গণ অপসারণ",
@@ -34,5 +35,6 @@
 	"nuke-viewchanges": "পরিবর্তনসমূহ দেখুন",
 	"nuke-namespace": "নামস্থানে সীমা:",
 	"nuke-linkoncontribs": "গণ অপসারণ",
-	"nuke-linkoncontribs-text": "পাতা গণ অপসারণ করুন যেখানে {{GENDER:$1|এই ব্যবহারকারী}} একমাত্র লেখক"
+	"nuke-linkoncontribs-text": "পাতা গণ অপসারণ করুন যেখানে {{GENDER:$1|এই ব্যবহারকারী}} একমাত্র লেখক",
+	"nuke-confirm": "আপনি {{PLURAL:$1|একটি পাতা|$1 পাতাগুলি}} অপসারণ করতে চলছেন। আপনি কি অপসারণ করার ব্যাপারে নিশ্চিত?"
 }
