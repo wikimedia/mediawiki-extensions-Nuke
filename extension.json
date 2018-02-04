@@ -56,8 +56,8 @@
 		"Nuke": "SpecialNuke"
 	},
 	"AutoloadClasses": {
-		"SpecialNuke": "Nuke_body.php",
-		"NukeHooks": "Nuke.hooks.php"
+		"SpecialNuke": "includes/SpecialNuke.php",
+		"NukeHooks": "includes/NukeHooks.php"
 	},
 	"manifest_version": 1
 }
