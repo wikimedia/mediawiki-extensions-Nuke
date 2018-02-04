@@ -10,6 +10,9 @@ class SpecialNuke extends SpecialPage {
 		return true;
 	}
 
+	/**
+	 * @param null|string $par
+	 */
 	public function execute( $par ) {
 		$this->setHeaders();
 		$this->checkPermissions();
