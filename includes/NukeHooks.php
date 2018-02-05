@@ -13,13 +13,13 @@ class NukeHooks {
 	public static function nukeContributionsLinks( $userId, $userPageTitle, &$toolLinks,
 		SpecialPage $sp
 	) {
-		if ( $sp->getUser()->isAllowed( 'nuke' ) ) {
+		$username = $userPageTitle->getText();
+		if ( $sp->getUser()->isAllowed( 'nuke' ) && !IP::isValidRange( $username ) ) {
 			$toolLinks['nuke'] = $sp->getLinkRenderer()->makeKnownLink(
 				SpecialPage::getTitleFor( 'Nuke' ),
 				$sp->msg( 'nuke-linkoncontribs' )->text(),
-				[ 'title' => $sp->msg( 'nuke-linkoncontribs-text',
-					$userPageTitle->getText() )->text() ],
-				[ 'target' => $userPageTitle->getText() ]
+				[ 'title' => $sp->msg( 'nuke-linkoncontribs-text', $username )->text() ],
+				[ 'target' => $username ]
 			);
 		}
 	}
