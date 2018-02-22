@@ -3,7 +3,8 @@
 		"authors": [
 			"S.Örvarr.S",
 			"Snævar",
-			"Maxí"
+			"Maxí",
+			"Sveinn í Felli"
 		]
 	},
 	"nuke": "Fjöldaeyða",
@@ -16,6 +17,7 @@
 	"nuke-multiplepeople": "Fjöldaeyðing nýjustu greina",
 	"nuke-tools": "Hér er hægt að fjöldaeyða síðum sem voru nýlega búnar til af notanda eða vistfangi.\nTilgreindu notendanafn eða vistfang til að fá lista yfir síður til að eyða, eða skildu reitinn eftir tóman til að fá lista yfir síður frá öllum notendum.",
 	"nuke-submit-user": "Lista síður",
+	"nuke-toggleinvert": "Umhverfa",
 	"nuke-submit-delete": "Eyða völdum síðum",
 	"right-nuke": "Fjöldaeyða síðum",
 	"nuke-select": "Velja: $1",
@@ -26,7 +28,7 @@
 	"nuke-not-deleted": "Mistök við eyðingu síðunnar [[:$1]].",
 	"nuke-delete-more": "[[Special:Nuke|Fjöldaeyða fleiri skrám]]",
 	"nuke-pattern": "Nafna mynstur:",
-	"nuke-nopages-global": "Það eru engar nýjar síður í [[Special:RecentChanges|nýjustu breytingum]].",
+	"nuke-nopages-global": "Það eru engir síðutitlar sem samsvara leitinni þinni.",
 	"nuke-viewchanges": "skoða breytingar",
 	"nuke-linkoncontribs": "fjöldaeyða"
 }
