@@ -265,10 +265,22 @@ class SpecialNuke extends SpecialPage {
 
 		$where = [ "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" ];
 
-		if ( $username === '' ) {
-			$what[] = 'rc_user_text';
+		if ( class_exists( 'ActorMigration' ) ) {
+			if ( $username === '' ) {
+				$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
+				$what['rc_user_text'] = $actorQuery['fields']['rc_user_text'];
+			} else {
+				$actorQuery = ActorMigration::newMigration()
+					->getWhere( $dbr, 'rc_user', User::newFromName( $username, false ) );
+				$where[] = $actorQuery['conds'];
+			}
 		} else {
-			$where['rc_user_text'] = $username;
+			$actorQuery = [ 'tables' => [], 'joins' => [] ];
+			if ( $username === '' ) {
+				$what[] = 'rc_user_text';
+			} else {
+				$where['rc_user_text'] = $username;
+			}
 		}
 
 		if ( $namespace !== null ) {
@@ -283,7 +295,8 @@ class SpecialNuke extends SpecialPage {
 		}
 		$group = implode( ', ', $what );
 
-		$result = $dbr->select( 'recentchanges',
+		$result = $dbr->select(
+			[ 'recentchanges' ] + $actorQuery['tables'],
 			$what,
 			$where,
 			__METHOD__,
@@ -291,7 +304,8 @@ class SpecialNuke extends SpecialPage {
 				'ORDER BY' => 'rc_timestamp DESC',
 				'GROUP BY' => $group,
 				'LIMIT' => $limit
-			]
+			],
+			$actorQuery['joins']
 		);
 
 		$pages = [];
