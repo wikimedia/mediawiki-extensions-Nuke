@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ahmed-Najib-Biabani-Ibrahimkhel"
+			"Ahmed-Najib-Biabani-Ibrahimkhel",
+			"Baloch Khan"
 		]
 	},
 	"nuke": "ټول ړنگېدنه",
@@ -16,5 +17,6 @@
 	"nuke-deleted": "د '''$1''' مخ ړنگ شو.",
 	"nuke-not-deleted": "د [[:$1]] مخ '''نشي''' ړنګېدلی.",
 	"nuke-delete-more": "[[Special:Nuke|لا نور مخونه ړنگول]]",
-	"nuke-viewchanges": "بدلونونه کتل"
+	"nuke-viewchanges": "بدلونونه کتل",
+	"nuke-linkoncontribs": "ټول ړنگېدنه"
 }
