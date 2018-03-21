@@ -26,7 +26,12 @@
 	"nuke-editby": "من إنشاء [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "صفحة '''$1''' حذفت.",
 	"nuke-not-deleted": "صفحة [[:$1]] '''لا''' تحذف.",
+	"nuke-delete-more": "[[Special:Nuke|حذف المزيد من الصفحات]]",
+	"nuke-pattern": "نمط لاسم الصفحة:",
+	"nuke-nopages-global": "لا توجد عناوين صفحات تطابق بحثك.",
 	"nuke-viewchanges": "عرض التغييرات",
+	"nuke-namespace": "حد للنطاق:",
 	"nuke-linkoncontribs": "حذف كمي",
-	"nuke-linkoncontribs-text": "حذف كمي للصفحات التي يكون هذا المستخدم مؤلفها الوحيد"
+	"nuke-linkoncontribs-text": "حذف كمي للصفحات التي {{GENDER:$1|يكون هذا المستخدم مؤلفها الوحيد|تكون هذه المستخدمة مؤلفتها الوحيدة}}",
+	"nuke-confirm": "أنت على وشك حذف {{PLURAL:$1|صفحة واحدة|$1 صفحة}}، هل أنت متأكد من أنك تريد الحذف؟"
 }
