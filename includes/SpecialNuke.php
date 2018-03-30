@@ -85,7 +85,8 @@ class SpecialNuke extends SpecialPage {
 				'default' => $userName,
 				'label' => $this->msg( 'nuke-userorip' )->text(),
 				'type' => 'user',
-				'name' => 'target'
+				'name' => 'target',
+				'autofocus' => true
 			],
 			'nuke-pattern' => [
 				'id' => 'nuke-pattern',
