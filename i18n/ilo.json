@@ -25,9 +25,10 @@
 	"nuke-not-deleted": "Ti panid [[:$1]] '''saan nga''' maikkat.",
 	"nuke-delete-more": "[[Special:Nuke|Agikkat ka pay kadagita nga panid]]",
 	"nuke-pattern": "Tabas para iti nagan ti panid:",
-	"nuke-nopages-global": "Awan dagiti baro a panid idiay [[Special:RecentChanges|kinaudian a pinagbaliw]].",
+	"nuke-nopages-global": "Awan dagiti titulo ti panid a maipada iti panagbirukmo.",
 	"nuke-viewchanges": "kitaen dagiti sinukatan",
 	"nuke-namespace": "Patingga iti nagan a lugar:",
 	"nuke-linkoncontribs": "agikkat ti adu",
-	"nuke-linkoncontribs-text": "Agikkat ti adu a pampanid a ti agar-aramat ket isu laeng ti nagsurat"
+	"nuke-linkoncontribs-text": "Agikkat iti adu a pampanid a {{GENDER:$1|daytoy nga agar-aramat}} ket isu laeng ti nagsurat",
+	"nuke-confirm": "Agik-ikkatkan {{PLURAL:$1|iti maysa a panid|kadagiti $1 a panid}}. Siguradoka kadi a kayatmo nga ikkaten?"
 }
