@@ -26,5 +26,7 @@
 	"nuke-pattern": "P'anqa sutip qatinallan",
 	"nuke-nopages-global": "[[Special:RecentChanges|Ñaqha hukchasqakunapiqa]] manam musuq p'anqakuna kanchu.",
 	"nuke-viewchanges": "hukchasqakunata qhaway",
-	"nuke-namespace": "Kay sutisuyullapi:"
+	"nuke-namespace": "Kay sutisuyullapi:",
+	"nuke-linkoncontribs": "tawqa qulluy",
+	"nuke-linkoncontribs-text": "{{GENDER:$1|Kay ruraqllap}} llamk'apusqan p'anqakunata tawqa qulluy"
 }
