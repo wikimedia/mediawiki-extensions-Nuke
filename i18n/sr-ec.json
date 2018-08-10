@@ -23,7 +23,7 @@
 	"nuke-submit-delete": "Обриши изабрано",
 	"right-nuke": "масовно брисање страница",
 	"nuke-select": "Изабери: $1",
-	"nuke-userorip": "Корисничко име, ИП адреса или празно:",
+	"nuke-userorip": "Корисничко име, IP адреса или оставите празно:",
 	"nuke-maxpages": "Највећи број страница:",
 	"nuke-editby": "{{GENDER:$1|Направио|Направила}} [[Special:Contributions/$1|$1]]",
 	"nuke-deleted": "Страница '''$1''' је обрисана.",
