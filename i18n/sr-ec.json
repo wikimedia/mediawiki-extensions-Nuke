@@ -7,7 +7,8 @@
 			"Жељко Тодоровић",
 			"Сербијана",
 			"Obsuser",
-			"BadDog"
+			"BadDog",
+			"Zoranzoki21"
 		]
 	},
 	"nuke": "Масовно брисање",
@@ -34,5 +35,5 @@
 	"nuke-viewchanges": "прикажи измене",
 	"nuke-namespace": "Именски простор:",
 	"nuke-linkoncontribs": "масовно брисање",
-	"nuke-linkoncontribs-text": "Скупно брисање страница чије једини аутор овај корисник"
+	"nuke-linkoncontribs-text": "Скупно брисање страница чији је једини аутор овај корисник"
 }
