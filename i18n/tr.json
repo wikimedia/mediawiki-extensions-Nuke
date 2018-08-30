@@ -7,7 +7,8 @@
 			"Suelnur",
 			"Tarikozket",
 			"Vito Genovese",
-			"Bulgu"
+			"Bulgu",
+			"TmY e12"
 		]
 	},
 	"nuke": "Toplu sil",
@@ -20,7 +21,11 @@
 	"nuke-submit-delete": "Seçileni sil",
 	"right-nuke": "Sayfaları kitlesel olarak sil",
 	"nuke-select": "Seçilmiş: $1",
+	"nuke-userorip": "Kullanıcı adı, IP adresi veya boş:",
+	"nuke-maxpages": "Maksimum sayfa sayısı:",
 	"nuke-deleted": "'''$1''' sayfası silindi.",
+	"nuke-pattern": "Sayfa adı için desen:",
 	"nuke-nopages-global": "Aramanızla eşleşen bir sayfa başlığı yoktur.",
+	"nuke-namespace": "Ad alanına sınırla:",
 	"nuke-linkoncontribs": "toplu sil"
 }
