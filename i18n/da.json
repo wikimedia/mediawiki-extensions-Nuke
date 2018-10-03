@@ -5,7 +5,8 @@
 			"Christian List",
 			"Kaare",
 			"Peter Alberti",
-			"Sarrus"
+			"Sarrus",
+			"Saederup92"
 		]
 	},
 	"nuke": "Massesletning",
@@ -17,7 +18,7 @@
 	"nuke-defaultreason": "Massesletning af sider, som er oprettet af [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-multiplepeople": "Massesletning af nyligt oprettede sider",
 	"nuke-tools": "Dette værktøj muliggør massesletning af sider, som for nylig er oprettet af en bestemt bruger eller IP-adresse.\nSkriv et brugernavn eller en IP-adresse for at få en liste over sider at slette eller lad stå tom for alle brugere.",
-	"nuke-submit-user": "Udfør",
+	"nuke-submit-user": "Liste over sider",
 	"nuke-submit-delete": "Slet valgte",
 	"right-nuke": "masseslette sider",
 	"nuke-select": "Vælg: $1",
