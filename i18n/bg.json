@@ -24,6 +24,7 @@
 	"nuke-deleted": "Страницата '''$1''' е изтрита.",
 	"nuke-delete-more": "[[Special:Nuke|Изтриване на още страници]]",
 	"nuke-pattern": "Обща част (pattern) в заглавията:",
+	"nuke-viewchanges": "преглед на промените",
 	"nuke-namespace": "Ограничение по именно пространство:",
 	"nuke-linkoncontribs": "масово изтриване",
 	"nuke-linkoncontribs-text": "Масово изтриване на страници, на които {{GENDER:$1|потребителят}} е единствен автор"
