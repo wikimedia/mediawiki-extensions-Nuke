@@ -29,5 +29,6 @@
 	"nuke-viewchanges": "vaata muudatusi",
 	"nuke-namespace": "Nimeruumipiirang:",
 	"nuke-linkoncontribs": "lauskustutamine",
-	"nuke-linkoncontribs-text": "Lauskustuta leheküljed, mille ainus autor on see {{GENDER:$1|kasutaja}}"
+	"nuke-linkoncontribs-text": "Lauskustuta leheküljed, mille ainus autor on see {{GENDER:$1|kasutaja}}",
+	"nuke-confirm": "Oled kustutamas {{PLURAL:$1|üht lehekülge|$1 lehekülge}}. Kas oled kindel, et tahad kustutada?"
 }
