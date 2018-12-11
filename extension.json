@@ -35,6 +35,9 @@
 			"scripts": [
 				"ext.nuke.confirm.js"
 			],
+			"dependencies": [
+				"mediawiki.jqueryMsg"
+			],
 			"messages": [
 				"nuke-confirm"
 			]
