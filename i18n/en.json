@@ -25,7 +25,7 @@
 	"nuke-deleted": "Page '''$1''' has been deleted.",
 	"nuke-not-deleted": "Page [[:$1]] '''could not''' be deleted.",
 	"nuke-delete-more": "[[Special:Nuke|Delete more pages]]",
-	"nuke-pattern": "Pattern for the page name:",
+	"nuke-pattern": "SQL LIKE pattern (e.g. %) for the page name:",
 	"nuke-nopages-global": "There are no page titles matching your search.",
 	"nuke-viewchanges": "view changes",
 	"nuke-namespace": "Limit to namespace:",
