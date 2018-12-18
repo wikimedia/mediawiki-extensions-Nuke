@@ -29,7 +29,7 @@
 	"nuke-deleted": "Seite „$1“ wurde gelöscht.",
 	"nuke-not-deleted": "Seite [[:$1]] '''konnte nicht''' gelöscht werden.",
 	"nuke-delete-more": "[[Special:Nuke|Weitere Seiten löschen]]",
-	"nuke-pattern": "Muster für den Seitennamen:",
+	"nuke-pattern": "SQL-LIKE-Muster (z.&nbsp;B. %) für den Seitennamen:",
 	"nuke-nopages-global": "Es gibt keine Seitentitel, die deiner Suche entsprechen.",
 	"nuke-viewchanges": "Änderungen ansehen",
 	"nuke-namespace": "Auf den folgenden Namensraum begrenzen:",
