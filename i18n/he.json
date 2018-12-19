@@ -29,7 +29,7 @@
 	"nuke-deleted": "הדף '''$1''' נמחק.",
 	"nuke-not-deleted": "'''לא ניתן''' למחוק את הדף [[:$1]].",
 	"nuke-delete-more": "[[Special:Nuke|למחוק עוד דפים]]",
-	"nuke-pattern": "תבנית עבור שם הדף:",
+	"nuke-pattern": "תבנית SQL LIKE (למשל %) עבור שם הדף:",
 	"nuke-nopages-global": "אין כותרות דפים שמתאימים לחיפוש שלך.",
 	"nuke-viewchanges": "הצגת שינויים",
 	"nuke-namespace": "להגביל למרחב השמות הבא:",

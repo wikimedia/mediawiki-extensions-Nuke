@@ -35,7 +35,7 @@
 	"nuke-deleted": "已刪除頁面 '''$1'''。",
 	"nuke-not-deleted": "'''無法'''刪除頁面 [[:$1]]。",
 	"nuke-delete-more": "[[Special:Nuke|刪除更多頁面]]",
-	"nuke-pattern": "頁面名稱模式：",
+	"nuke-pattern": "用於頁面名稱的 SQL LIKE 模式（例如 %）：",
 	"nuke-nopages-global": "沒有頁面標題符合您的搜尋。",
 	"nuke-viewchanges": "檢視變更",
 	"nuke-namespace": "限制命名空間為：",

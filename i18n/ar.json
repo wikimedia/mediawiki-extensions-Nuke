@@ -27,7 +27,7 @@
 	"nuke-deleted": "صفحة '''$1''' حذفت.",
 	"nuke-not-deleted": "صفحة [[:$1]] '''لا''' تحذف.",
 	"nuke-delete-more": "[[Special:Nuke|حذف المزيد من الصفحات]]",
-	"nuke-pattern": "نمط لاسم الصفحة:",
+	"nuke-pattern": "نمط يشبه إس كيو إل (على سبيل المثال %) لاسم الصفحة:",
 	"nuke-nopages-global": "لا توجد عناوين صفحات تطابق بحثك.",
 	"nuke-viewchanges": "عرض التغييرات",
 	"nuke-namespace": "حد للنطاق:",
