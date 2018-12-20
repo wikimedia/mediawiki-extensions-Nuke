@@ -37,7 +37,7 @@
 	"nuke-deleted": "La page '''$1''' a été effacée.",
 	"nuke-not-deleted": "La page [[:$1]] '''ne peut pas''' être effacée.",
 	"nuke-delete-more": "[[Special:Nuke|Supprimer plus de pages]]",
-	"nuke-pattern": "Modèle pour le nom de page&nbsp;:",
+	"nuke-pattern": "Modèle au FORMAT SQL (par ex. %) pour le nom de page :",
 	"nuke-nopages-global": "Il n'y a pas de titres de pages correspondant à votre recherche.",
 	"nuke-viewchanges": "voir les modifications",
 	"nuke-namespace": "Se limiter à l'espace de noms&nbsp;:",
