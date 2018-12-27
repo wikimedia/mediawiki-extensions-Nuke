@@ -31,7 +31,7 @@
 	"nuke-deleted": "Stránka '''$1''' byla smazána.",
 	"nuke-not-deleted": "Stránka [[:$1]] '''nemohla být''' smazána.",
 	"nuke-delete-more": "[[Special:Nuke|Odstranit další stránky]]",
-	"nuke-pattern": "Vzor pro název stránky:",
+	"nuke-pattern": "SQL LIKE vzor (např. %) pro název stránky:",
 	"nuke-nopages-global": "Pro hledaný výraz nebyly nalezeny žádné názvy stránek.",
 	"nuke-viewchanges": "ukázat změny",
 	"nuke-namespace": "Omezit na jmenný prostor:",
