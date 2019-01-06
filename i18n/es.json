@@ -39,7 +39,7 @@
 	"nuke-deleted": "La página '''$1''' ha sido borrada.",
 	"nuke-not-deleted": "La página [[:$1]] '''no se ha podido''' borrar.",
 	"nuke-delete-more": "[[Special:Nuke|Borrar más páginas]]",
-	"nuke-pattern": "Patrón del título de la página:",
+	"nuke-pattern": "Patrón de LIKE de SQL (p. ej., %) del título de la página:",
 	"nuke-nopages-global": "No hay títulos de páginas que coincidan con tu búsqueda.",
 	"nuke-viewchanges": "Mostrar cambios",
 	"nuke-namespace": "Límite al espacio de nombres:",
