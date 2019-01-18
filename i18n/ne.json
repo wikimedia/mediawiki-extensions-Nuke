@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"RajeshPandey",
-			"Parbat subedi"
+			"Parbat subedi",
+			"Nirajan pant"
 		]
 	},
 	"nuke": "धेरैवटा हटाउने",
@@ -15,6 +16,6 @@
 	"nuke-deleted": "'''$1''' पृष्ठ मेटिएको छ।",
 	"nuke-not-deleted": "[[:$1]] पृष्ठ मेट्न '''सकिएन'''।",
 	"nuke-delete-more": "[[Special:Nuke|अरू पृष्ठहरू मेट्नुहोस]]",
-	"nuke-pattern": "पृष्ठको नामको लागि स्वरूप :",
+	"nuke-pattern": "पृष्ठको नामको लागि SQL LIKE ढाँचा (e.g. %):",
 	"nuke-nopages-global": "[[Special:RecentChanges|नयाँ परिवर्तनहरू]]मा कुनै नयाँ पृष्ठ छैनन।"
 }
