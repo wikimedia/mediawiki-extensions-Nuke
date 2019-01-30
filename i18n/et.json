@@ -24,7 +24,7 @@
 	"nuke-deleted": "Lehekülg '''$1''' on kustutatud.",
 	"nuke-not-deleted": "Lehekülge [[:$1]] '''ei saa''' kustutada.",
 	"nuke-delete-more": "[[Special:Nuke|Kustuta veel lehekülgi]]",
-	"nuke-pattern": "Lehekülje pealkirja kuju:",
+	"nuke-pattern": "Lehekülje pealkirja LIKE-kuju (SQL, nt %):",
 	"nuke-nopages-global": "Sinu otsingule vastavad leheküljepealkirjad puuduvad.",
 	"nuke-viewchanges": "vaata muudatusi",
 	"nuke-namespace": "Nimeruumipiirang:",
