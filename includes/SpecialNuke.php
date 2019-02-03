@@ -275,10 +275,17 @@ class SpecialNuke extends SpecialPage {
 		$what = [
 			'rc_namespace',
 			'rc_title',
-			'rc_timestamp',
 		];
 
-		$where = [ "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" ];
+		$where = [
+			$dbr->makeList( [
+				'rc_new' => 1,
+				$dbr->makeList( [
+					'rc_log_type' => 'upload',
+					'rc_log_action' => 'upload',
+				], LIST_AND ),
+			], LIST_OR ),
+		];
 
 		if ( $username === '' ) {
 			$what['rc_user_text'] = 'actor_name';
@@ -296,7 +303,6 @@ class SpecialNuke extends SpecialPage {
 			// will not work.
 			$where[] = 'rc_title LIKE ' . $dbr->addQuotes( $pattern );
 		}
-		$group = implode( ', ', $what );
 
 		$result = $dbr->select(
 			[ 'recentchanges', 'actor' ],
@@ -305,7 +311,6 @@ class SpecialNuke extends SpecialPage {
 			__METHOD__,
 			[
 				'ORDER BY' => 'rc_timestamp DESC',
-				'GROUP BY' => $group,
 				'LIMIT' => $limit
 			],
 			[ 'actor' => [ 'JOIN', 'actor_id=rc_actor' ] ]
