@@ -9,7 +9,6 @@
 	"nuke": "धेरैवटा हटाउने",
 	"action-nuke": "न्युक पृष्ठहरू",
 	"nuke-submit-user": "जाउ",
-	"nuke-select": "$1 छान्नुहोस:",
 	"nuke-userorip": "प्रयोगकर्ता, आइपी ठेगाना वा खाली:",
 	"nuke-maxpages": "पृष्ठहरूको उच्चतम संख्या:",
 	"nuke-editby": "[[Special:Contributions/$1|$1]] द्वारा सिर्जना गरिएको",

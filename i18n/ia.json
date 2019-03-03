@@ -16,7 +16,6 @@
 	"nuke-submit-user": "Listar paginas",
 	"nuke-submit-delete": "Deler selection",
 	"right-nuke": "Deler paginas in massa",
-	"nuke-select": "Seliger: $1",
 	"nuke-userorip": "Nomine de usator, adresse IP o vacue:",
 	"nuke-maxpages": "Numero maxime de paginas:",
 	"nuke-editby": "Create per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
