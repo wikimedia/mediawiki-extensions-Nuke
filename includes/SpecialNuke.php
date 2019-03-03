@@ -266,7 +266,7 @@ class SpecialNuke extends SpecialPage {
 
 		$where = [ "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" ];
 
-		if ( class_exists( 'ActorMigration' ) ) {
+		if ( class_exists( ActorMigration::class ) ) {
 			if ( $username === '' ) {
 				$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
 				$what['rc_user_text'] = $actorQuery['fields']['rc_user_text'];
