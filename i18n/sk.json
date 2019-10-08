@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Helix84",
-			"Teslaton"
+			"Teslaton",
+			"Vlad5250"
 		]
 	},
 	"nuke": "Hromadné mazanie",
@@ -23,7 +24,7 @@
 	"nuke-deleted": "Stránka '''$1''' bola zmazaná.",
 	"nuke-not-deleted": "Stránka [[:$1]] '''nemohla byť''' zmazaná.",
 	"nuke-delete-more": "[[Special:Nuke|Odstrániť ďalšie stránky]]",
-	"nuke-pattern": "Vzor pre názov stránky:",
+	"nuke-pattern": "SQL LIKE vzor (napr. %) pre názov stránky:",
 	"nuke-nopages-global": "V [[Special:RecentChanges|posledných úpravách]] nie sú žiadne nové stránky.",
 	"nuke-viewchanges": "zobraziť zmeny",
 	"nuke-namespace": "Obmedziť na menný priestor:",
