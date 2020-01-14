@@ -270,7 +270,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$pattern = $this->getRequest()->getText( 'pattern' );
-		if ( !is_null( $pattern ) && trim( $pattern ) !== '' ) {
+		if ( $pattern !== null && trim( $pattern ) !== '' ) {
 			// $pattern is a SQL pattern supporting wildcards, so buildLike
 			// will not work.
 			$where[] = 'rc_title LIKE ' . $dbr->addQuotes( $pattern );
