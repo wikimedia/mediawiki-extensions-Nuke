@@ -3,7 +3,8 @@
 		"authors": [
 			"Blahma",
 			"Yekrats",
-			"Gamliel Fishkin"
+			"Gamliel Fishkin",
+			"Robin van der Vliet"
 		]
 	},
 	"nuke": "Amasforigi",
@@ -18,7 +19,7 @@
 	"nuke-submit-user": "Ek!",
 	"nuke-submit-delete": "Forigi elekton",
 	"right-nuke": "Amasforigi paĝojn",
-	"nuke-userorip": "Salutnomo, IP-adreso, aŭ nenio:",
+	"nuke-userorip": "Uzantnomo, IP-adreso, aŭ nenio:",
 	"nuke-maxpages": "Maksimuma nombro de paĝoj:",
 	"nuke-editby": "Kreita de [[Special:Contributions/$1|$1]]",
 	"nuke-deleted": "Paĝo '''$1''' estis forigita.",
