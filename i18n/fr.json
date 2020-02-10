@@ -32,7 +32,7 @@
 	"nuke-userorip": "Nom d'utilisateur, adresse IP ou vide :",
 	"nuke-maxpages": "Nombre maximal de pages&nbsp;:",
 	"nuke-editby": "Créé par [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
-	"nuke-deleted": "La page '''$1''' a été effacée.",
+	"nuke-deleted": "La page '''$1''' a été supprimée.",
 	"nuke-not-deleted": "La page [[:$1]] '''ne peut pas''' être effacée.",
 	"nuke-delete-more": "[[Special:Nuke|Supprimer plus de pages]]",
 	"nuke-pattern": "Modèle au FORMAT SQL (par ex. %) pour le nom de page :",
