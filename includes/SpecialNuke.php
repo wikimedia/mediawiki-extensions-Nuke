@@ -1,5 +1,7 @@
 <?php
 
+use MediaWiki\MediaWikiServices;
+
 class SpecialNuke extends SpecialPage {
 
 	public function __construct() {
@@ -337,7 +339,8 @@ class SpecialNuke extends SpecialPage {
 			}
 
 			$file = $title->getNamespace() === NS_FILE ? wfLocalFile( $title ) : false;
-			$permission_errors = $title->getUserPermissionsErrors( 'delete', $this->getUser() );
+			$permission_errors = MediaWikiServices::getInstance()->getPermissionManager()
+				->getPermissionErrors( 'delete', $this->getUser(), $title );
 
 			if ( $permission_errors !== [] ) {
 				throw new PermissionsError( 'delete', $permission_errors );
