@@ -36,6 +36,6 @@
 	"nuke-viewchanges": "değişiklikleri görüntüle",
 	"nuke-namespace": "Ad alanına sınırla:",
 	"nuke-linkoncontribs": "toplu sil",
-	"nuke-linkoncontribs-text": "{{GENDER:$1|Bu kullanıcnın}} tek yazar olduğu sayfaları toplu olarak silin",
+	"nuke-linkoncontribs-text": "{{GENDER:$1|Bu kullanıcının}} tek yazar olduğu sayfaları toplu olarak silin",
 	"nuke-confirm": "{{PLURAL:$1|Bir sayfa|$1 sayfa}} silmek üzeresiniz. Silmek istediğinize emin misiniz?"
 }
