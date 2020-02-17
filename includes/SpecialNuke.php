@@ -43,6 +43,7 @@ class SpecialNuke extends SpecialPage {
 			$this->msg( 'nuke-multiplepeople' )->inContentLanguage()->text() :
 			$this->msg( 'nuke-defaultreason', $target )->
 			inContentLanguage()->text();
+
 		$reason = $req->getText( 'wpReason', $msg );
 
 		$limit = $req->getInt( 'limit', 500 );
@@ -172,7 +173,11 @@ class SpecialNuke extends SpecialPage {
 			Xml::tags( 'p',
 				null,
 				Xml::inputLabel(
-					$this->msg( 'deletecomment' )->text(), 'wpReason', 'wpReason', 70, $reason
+					$this->msg( 'deletecomment' )->text(),
+					'wpReason',
+					'wpReason',
+					70,
+					$reason
 				)
 			)
 		);
@@ -358,8 +363,8 @@ class SpecialNuke extends SpecialPage {
 					$user
 				)->isOK();
 			} else {
-				$article = new Article( $title, 0 );
-				$ok = $article->doDeleteArticle( $reason );
+				$ok = WikiPage::factory( $title )
+					->doDeleteArticle( $reason );
 			}
 
 			if ( $ok ) {
@@ -369,7 +374,8 @@ class SpecialNuke extends SpecialPage {
 			}
 		}
 
-		$this->getOutput()->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) . "</li>\n</ul>\n" );
+		$this->getOutput()->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) .
+			"</li>\n</ul>\n" );
 		$this->getOutput()->addWikiMsg( 'nuke-delete-more' );
 	}
 
@@ -387,6 +393,7 @@ class SpecialNuke extends SpecialPage {
 			// No prefix suggestion for invalid user
 			return [];
 		}
+
 		// Autocomplete subpage as user list - public to allow caching
 		return UserNamePrefixSearch::search( 'public', $search, $limit, $offset );
 	}
