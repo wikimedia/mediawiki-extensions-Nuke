@@ -338,9 +338,10 @@ class SpecialNuke extends SpecialPage {
 				continue;
 			}
 
+			$user = $this->getUser();
 			$file = $title->getNamespace() === NS_FILE ? wfLocalFile( $title ) : false;
 			$permission_errors = MediaWikiServices::getInstance()->getPermissionManager()
-				->getPermissionErrors( 'delete', $this->getUser(), $title );
+				->getPermissionErrors( 'delete', $user, $title );
 
 			if ( $permission_errors !== [] ) {
 				throw new PermissionsError( 'delete', $permission_errors );
@@ -348,7 +349,14 @@ class SpecialNuke extends SpecialPage {
 
 			if ( $file ) {
 				$oldimage = null; // Must be passed by reference
-				$ok = FileDeleteForm::doDelete( $title, $file, $oldimage, $reason, false )->isOK();
+				$ok = FileDeleteForm::doDelete(
+					$title,
+					$file,
+					$oldimage,
+					$reason,
+					false,
+					$user
+				)->isOK();
 			} else {
 				$article = new Article( $title, 0 );
 				$ok = $article->doDeleteArticle( $reason );
