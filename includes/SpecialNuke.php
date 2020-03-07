@@ -347,6 +347,7 @@ class SpecialNuke extends SpecialPage {
 	 */
 	protected function doDelete( array $pages, $reason ) {
 		$res = [];
+		$user = $this->getUser();
 
 		$services = MediaWikiServices::getInstance();
 		$localRepo = $services->getRepoGroup()->getLocalRepo();
@@ -364,14 +365,13 @@ class SpecialNuke extends SpecialPage {
 				continue;
 			}
 
-			$user = $this->getUser();
-			$file = $title->getNamespace() === NS_FILE ? $localRepo->newFile( $title ) : false;
 			$permission_errors = $permissionManager->getPermissionErrors( 'delete', $user, $title );
 
 			if ( $permission_errors !== [] ) {
 				throw new PermissionsError( 'delete', $permission_errors );
 			}
 
+			$file = $title->getNamespace() === NS_FILE ? wfLocalFile( $title ) : false;
 			if ( $file ) {
 				$oldimage = null; // Must be passed by reference
 				$status = FileDeleteForm::doDelete(
@@ -394,8 +394,11 @@ class SpecialNuke extends SpecialPage {
 			}
 		}
 
-		$this->getOutput()->addHTML( "<ul>\n<li>" . implode( "</li>\n<li>", $res ) .
-			"</li>\n</ul>\n" );
+		$this->getOutput()->addHTML(
+			"<ul>\n<li>" .
+			implode( "</li>\n<li>", $res ) .
+			"</li>\n</ul>\n"
+		);
 		$this->getOutput()->addWikiMsg( 'nuke-delete-more' );
 	}
 
