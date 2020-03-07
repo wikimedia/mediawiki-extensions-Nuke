@@ -466,6 +466,11 @@ class SpecialNuke extends SpecialPage {
 		return UserNamePrefixSearch::search( 'public', $search, $limit, $offset );
 	}
 
+	/**
+	 * Group Special:Nuke with pagetools
+	 *
+	 * @return string
+	 */
 	protected function getGroupName() {
 		return 'pagetools';
 	}
