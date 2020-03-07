@@ -21,9 +21,7 @@
 		]
 	},
 	"Hooks": {
-		"ContributionsToolLinks": [
-			"NukeHooks::nukeContributionsLinks"
-		]
+		"ContributionsToolLinks": "NukeHooks::nukeContributionsLinks"
 	},
 	"ResourceModules": {
 		"ext.nuke.confirm": {
