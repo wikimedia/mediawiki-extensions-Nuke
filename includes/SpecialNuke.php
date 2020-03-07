@@ -23,8 +23,14 @@ class SpecialNuke extends SpecialPage {
 		$this->addHelpLink( 'Help:Extension:Nuke' );
 
 		$currentUser = $this->getUser();
-		if ( $currentUser->isBlocked() ) {
-			$block = $currentUser->getBlock();
+		$block = $currentUser->getBlock();
+
+		// appliesToRight is presently a no-op, since there is no handling for `delete`,
+		// and so will return `null`. `true` will be returned if the block actively
+		// applies to `delete`, and both `null` and `true` should result in an error
+		if ( $block && ( $block->isSitewide() ||
+			( $block->appliesToRight( 'delete' ) !== false ) )
+		) {
 			throw new UserBlockedError( $block );
 		}
 
