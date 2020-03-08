@@ -48,6 +48,11 @@
 	"AvailableRights": [
 		"nuke"
 	],
+	"GrantPermissions": {
+		"delete": {
+			"nuke": true
+		}
+	},
 	"SpecialPages": {
 		"Nuke": "SpecialNuke"
 	},
