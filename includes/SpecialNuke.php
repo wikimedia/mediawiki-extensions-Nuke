@@ -195,13 +195,14 @@ class SpecialNuke extends SpecialPage {
 		$commaSeparator = $this->msg( 'comma-separator' )->escaped();
 
 		$linkRenderer = $this->getLinkRenderer();
+		$localRepo = MediaWikiServices::getInstance()->getRepoGroup()->getLocalRepo();
 		foreach ( $pages as $info ) {
 			/**
 			 * @var $title Title
 			 */
 			list( $title, $userName ) = $info;
 
-			$image = $title->inNamespace( NS_FILE ) ? wfLocalFile( $title ) : false;
+			$image = $title->inNamespace( NS_FILE ) ? $localRepo->newFile( $title ) : false;
 			$thumb = $image && $image->exists() ?
 				$image->transform( [ 'width' => 120, 'height' => 120 ], 0 ) :
 				false;
@@ -330,6 +331,9 @@ class SpecialNuke extends SpecialPage {
 	protected function doDelete( array $pages, $reason ) {
 		$res = [];
 
+		$services = MediaWikiServices::getInstance();
+		$localRepo = $services->getRepoGroup()->getLocalRepo();
+		$permissionManager = $services->getPermissionManager();
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page );
 
@@ -344,9 +348,8 @@ class SpecialNuke extends SpecialPage {
 			}
 
 			$user = $this->getUser();
-			$file = $title->getNamespace() === NS_FILE ? wfLocalFile( $title ) : false;
-			$permission_errors = MediaWikiServices::getInstance()->getPermissionManager()
-				->getPermissionErrors( 'delete', $user, $title );
+			$file = $title->getNamespace() === NS_FILE ? $localRepo->newFile( $title ) : false;
+			$permission_errors = $permissionManager->getPermissionErrors( 'delete', $user, $title );
 
 			if ( $permission_errors !== [] ) {
 				throw new PermissionsError( 'delete', $permission_errors );
