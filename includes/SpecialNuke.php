@@ -357,20 +357,20 @@ class SpecialNuke extends SpecialPage {
 
 			if ( $file ) {
 				$oldimage = null; // Must be passed by reference
-				$ok = FileDeleteForm::doDelete(
+				$status = FileDeleteForm::doDelete(
 					$title,
 					$file,
 					$oldimage,
 					$reason,
 					false,
 					$user
-				)->isOK();
+				);
 			} else {
-				$ok = WikiPage::factory( $title )
-					->doDeleteArticle( $reason );
+				$status = WikiPage::factory( $title )
+					->doDeleteArticleReal( $reason, $user );
 			}
 
-			if ( $ok ) {
+			if ( $status->isOK() ) {
 				$res[] = $this->msg( 'nuke-deleted', $title->getPrefixedText() )->parse();
 			} else {
 				$res[] = $this->msg( 'nuke-not-deleted', $title->getPrefixedText() )->parse();
