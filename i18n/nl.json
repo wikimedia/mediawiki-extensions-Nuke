@@ -1,12 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"JensRiskin",
+			"Mainframe98",
 			"SPQRobin",
 			"Siebrand",
 			"Sjoerddebruin",
-			"Wiki13",
-			"JensRiskin",
-			"Mainframe98"
+			"Wiki13"
 		]
 	},
 	"nuke": "Massaal verwijderen",
