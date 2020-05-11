@@ -60,5 +60,5 @@
 		"SpecialNuke": "includes/SpecialNuke.php",
 		"NukeHooks": "includes/NukeHooks.php"
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
