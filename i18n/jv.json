@@ -3,12 +3,13 @@
 		"authors": [
 			"Bennylin",
 			"Meursault2004",
+			"N219",
 			"NoiX180"
 		]
 	},
 	"nuke": "Busak gedhèn-gedhèn",
 	"action-nuke": "busak gedhèn-gedhèn",
-	"nuke-desc": "Awèh pangurus kabisan [[Special:Nuke|mbusak kaca gedhèn-gedhèn]]",
+	"nuke-desc": "Awèh panata kuwasa kanggo [[Special:Nuke|mbusak kaca gedhèn-gedhèn]]",
 	"nuke-nopages": "Ora ana kaca anyar garapané [[Special:Contributions/$1|$1]] ing owah-owahan.",
 	"nuke-list": "Kaca-kaca ing ngisor iki mentas digawé [[Special:Contributions/$1|$1]]; awèh tanggepan lan pencèt tombol saperlu mbusak.",
 	"nuke-list-multiple": "Kaca-kaca ing ngisor iki mentas kagawé;\nawèh tanggepan lan pencèn tombol saperlu mbusak.",
