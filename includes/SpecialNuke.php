@@ -265,22 +265,13 @@ class SpecialNuke extends SpecialPage {
 
 		$where = [ "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" ];
 
-		if ( class_exists( ActorMigration::class ) ) {
-			if ( $username === '' ) {
-				$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
-				$what['rc_user_text'] = $actorQuery['fields']['rc_user_text'];
-			} else {
-				$actorQuery = ActorMigration::newMigration()
-					->getWhere( $dbr, 'rc_user', User::newFromName( $username, false ) );
-				$where[] = $actorQuery['conds'];
-			}
+		if ( $username === '' ) {
+			$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
+			$what['rc_user_text'] = $actorQuery['fields']['rc_user_text'];
 		} else {
-			$actorQuery = [ 'tables' => [], 'joins' => [] ];
-			if ( $username === '' ) {
-				$what[] = 'rc_user_text';
-			} else {
-				$where['rc_user_text'] = $username;
-			}
+			$actorQuery = ActorMigration::newMigration()
+				->getWhere( $dbr, 'rc_user', User::newFromName( $username, false ) );
+			$where[] = $actorQuery['conds'];
 		}
 
 		if ( $namespace !== null ) {
