@@ -1,6 +1,22 @@
 <?php
 
+namespace MediaWiki\Extension\Nuke;
+
+use ActorMigration;
+use FileDeleteForm;
+use Html;
+use HTMLForm;
+use ListToggle;
+use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\MediaWikiServices;
+use PermissionsError;
+use SpecialPage;
+use Title;
+use User;
+use UserBlockedError;
+use UserNamePrefixSearch;
+use WikiPage;
+use Xml;
 
 class SpecialNuke extends SpecialPage {
 

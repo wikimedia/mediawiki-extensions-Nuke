@@ -1,8 +1,12 @@
 <?php
 
+namespace MediaWiki\Extension\Nuke;
+
+use SpecialPage;
+use Title;
 use Wikimedia\IPUtils;
 
-class NukeHooks {
+class Hooks {
 
 	/**
 	 * Shows link to Special:Nuke on Special:Contributions/username if applicable

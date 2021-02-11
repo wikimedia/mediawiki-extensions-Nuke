@@ -1,6 +1,9 @@
 <?php
 
+namespace MediaWiki\Extension\Nuke\Hooks;
+
 use MediaWiki\HookContainer\HookContainer;
+use Title;
 
 /**
  * Handle running Nuke's hooks

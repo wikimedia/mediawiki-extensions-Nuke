@@ -1,5 +1,7 @@
 <?php
 
+namespace MediaWiki\Extension\Nuke\Hooks;
+
 interface NukeGetNewPagesHook {
 
 	/**

@@ -20,7 +20,7 @@
 		]
 	},
 	"Hooks": {
-		"ContributionsToolLinks": "NukeHooks::nukeContributionsLinks"
+		"ContributionsToolLinks": "MediaWiki\\Extension\\Nuke\\Hooks::nukeContributionsLinks"
 	},
 	"ResourceModules": {
 		"ext.nuke.confirm": {
@@ -53,14 +53,10 @@
 		}
 	},
 	"SpecialPages": {
-		"Nuke": "SpecialNuke"
+		"Nuke": "MediaWiki\\Extension\\Nuke\\SpecialNuke"
 	},
-	"AutoloadClasses": {
-		"SpecialNuke": "includes/SpecialNuke.php",
-		"NukeHooks": "includes/NukeHooks.php",
-		"NukeDeletePageHook": "includes/hook/NukeDeletePageHook.php",
-		"NukeGetNewPagesHook": "includes/hook/NukeGetNewPagesHook.php",
-		"NukeHookRunner": "includes/hook/NukeHookRunner.php"
+	"AutoloadNamespaces": {
+		"MediaWiki\\Extension\\Nuke\\": "includes/"
 	},
 	"manifest_version": 2
 }

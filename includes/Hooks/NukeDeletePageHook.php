@@ -1,5 +1,9 @@
 <?php
 
+namespace MediaWiki\Extension\Nuke\Hooks;
+
+use Title;
+
 interface NukeDeletePageHook {
 
 	/**
