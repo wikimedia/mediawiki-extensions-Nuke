@@ -15,7 +15,7 @@
 	},
 	"nuke": "Ștergere în masă",
 	"action-nuke": "ștergeți pagini în masă",
-	"nuke-desc": "Oferă administratorilor abilitatea de [[Special:Nuke|a șterge în masă]] pagini",
+	"nuke-desc": "Oferă administratorilor abilitatea de a [[Special:Nuke|șterge în masă]] pagini",
 	"nuke-nopages": "Nicio pagină nouă creată de [[Special:Contributions/$1|{{GENDER:$1|$1}}]] în schimbările recente.",
 	"nuke-list": "Aceste pagini au fost recent create de [[Special:Contributions/$1|{{GENDER:$1|$1}}]];\nadăugați un comentariu și apăsați butonul pentru a le șterge.",
 	"nuke-list-multiple": "Următoarele pagini au fost create recent;\nadăugați un comentariu și apăsați butonul pentru a le șterge.",
