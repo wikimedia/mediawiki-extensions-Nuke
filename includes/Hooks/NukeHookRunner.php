@@ -22,15 +22,7 @@ class NukeHookRunner implements NukeDeletePageHook, NukeGetNewPagesHook {
 	}
 
 	/**
-	 * Hook runner for the `NukeDeletePage` hook
-	 *
-	 * Allows other extensions to handle the deletion of titles
-	 * Return true to let Nuke handle the deletion or false if it was already handled in the hook.
-	 *
-	 * @param Title $title title to delete
-	 * @param string $reason reason for deletion
-	 * @param bool &$deletionResult Whether the deletion was successful or not
-	 * @return bool|void
+	 * @inheritDoc
 	 */
 	public function onNukeDeletePage( Title $title, string $reason, bool &$deletionResult ) {
 		return $this->hookContainer->run(
@@ -40,16 +32,7 @@ class NukeHookRunner implements NukeDeletePageHook, NukeGetNewPagesHook {
 	}
 
 	/**
-	 * Hook runner for the `NukeGetNewPages` hook
-	 *
-	 * After searching for pages to delete. Can be used to add and remove pages.
-	 *
-	 * @param string $username username filter applied
-	 * @param ?string $pattern pattern filter applied
-	 * @param ?int $namespace namespace filter applied
-	 * @param int $limit limit filter applied
-	 * @param array &$pages page titles already retrieved
-	 * @return bool|void
+	 * @inheritDoc
 	 */
 	public function onNukeGetNewPages(
 		string $username,
