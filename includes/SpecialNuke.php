@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\Nuke;
 
-use ActorMigration;
 use FileDeleteForm;
 use Html;
 use HTMLForm;
@@ -282,12 +281,9 @@ class SpecialNuke extends SpecialPage {
 		$where = [ "(rc_new = 1) OR (rc_log_type = 'upload' AND rc_log_action = 'upload')" ];
 
 		if ( $username === '' ) {
-			$actorQuery = ActorMigration::newMigration()->getJoin( 'rc_user' );
-			$what['rc_user_text'] = $actorQuery['fields']['rc_user_text'];
+			$what['rc_user_text'] = 'actor_name';
 		} else {
-			$actorQuery = ActorMigration::newMigration()
-				->getWhere( $dbr, 'rc_user', User::newFromName( $username, false ) );
-			$where[] = $actorQuery['conds'];
+			$where['actor_name'] = $username;
 		}
 
 		if ( $namespace !== null ) {
@@ -303,7 +299,7 @@ class SpecialNuke extends SpecialPage {
 		$group = implode( ', ', $what );
 
 		$result = $dbr->select(
-			[ 'recentchanges' ] + $actorQuery['tables'],
+			[ 'recentchanges', 'actor' ],
 			$what,
 			$where,
 			__METHOD__,
@@ -312,7 +308,7 @@ class SpecialNuke extends SpecialPage {
 				'GROUP BY' => $group,
 				'LIMIT' => $limit
 			],
-			$actorQuery['joins']
+			[ 'actor' => [ 'JOIN', 'actor_id=rc_actor' ] ]
 		);
 
 		$pages = [];
