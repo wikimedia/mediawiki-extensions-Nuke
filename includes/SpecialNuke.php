@@ -367,7 +367,7 @@ class SpecialNuke extends SpecialPage {
 				throw new PermissionsError( 'delete', $permission_errors );
 			}
 
-			$file = $title->getNamespace() === NS_FILE ? wfLocalFile( $title ) : false;
+			$file = $title->getNamespace() === NS_FILE ? $localRepo->newFile( $title ) : false;
 			if ( $file ) {
 				$oldimage = null; // Must be passed by reference
 				$status = FileDeleteForm::doDelete(
