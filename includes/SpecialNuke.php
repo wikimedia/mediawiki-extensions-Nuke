@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\Nuke;
 
 use ActorMigration;
+use DeletePageJob;
 use FileDeleteForm;
 use Html;
 use HTMLForm;
@@ -15,7 +16,6 @@ use Title;
 use User;
 use UserBlockedError;
 use UserNamePrefixSearch;
-use WikiPage;
 use Xml;
 
 class SpecialNuke extends SpecialPage {
@@ -347,6 +347,7 @@ class SpecialNuke extends SpecialPage {
 	 */
 	protected function doDelete( array $pages, $reason ) {
 		$res = [];
+		$jobs = [];
 		$user = $this->getUser();
 
 		$services = MediaWikiServices::getInstance();
@@ -383,15 +384,27 @@ class SpecialNuke extends SpecialPage {
 					$user
 				);
 			} else {
-				$status = WikiPage::factory( $title )
-					->doDeleteArticleReal( $reason, $user );
+				$job = new DeletePageJob( [
+					'namespace' => $title->getNamespace(),
+					'title' => $title->getId(),
+					'reason' => $reason,
+					'userId' => $user->getId()
+				] );
+				$jobs[] = $job;
+				$status = 'job';
 			}
 
-			if ( $status->isOK() ) {
+			if ( $status == 'job' ) {
+				$res[] = $this->msg( 'nuke-deletion-queued', $title->getPrefixedText() )->parse();
+			} elseif ( $status->isOK() ) {
 				$res[] = $this->msg( 'nuke-deleted', $title->getPrefixedText() )->parse();
 			} else {
 				$res[] = $this->msg( 'nuke-not-deleted', $title->getPrefixedText() )->parse();
 			}
+		}
+
+		if ( $jobs ) {
+			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
 		}
 
 		$this->getOutput()->addHTML(
