@@ -382,9 +382,13 @@ class SpecialNuke extends SpecialPage {
 			} else {
 				$job = new DeletePageJob( [
 					'namespace' => $title->getNamespace(),
-					'title' => $title->getId(),
+					'title' => $title->getDBKey(),
 					'reason' => $reason,
-					'userId' => $user->getId()
+					'userId' => $user->getId(),
+					'wikiPageId' => $title->getId(),
+					'suppress' => false,
+					'tags' => '[]',
+					'logsubtype' => 'delete',
 				] );
 				$jobs[] = $job;
 				$status = 'job';
