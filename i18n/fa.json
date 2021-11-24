@@ -30,7 +30,7 @@
 	"nuke-deleted": "صفحهٔ '''$1''' حذف شده‌است.",
 	"nuke-not-deleted": "صفحهٔ [[:$1]] را '''نمی‌توان''' حذف کرد.",
 	"nuke-delete-more": "[[Special:Nuke|حذف صفحه‌های بیشتر]]",
-	"nuke-pattern": "الگو برای نام صفحه:",
+	"nuke-pattern": "الگوی SQL LIKE (مثلاً %) برای نام صفحه:",
 	"nuke-nopages-global": "هیچ صفحهٔ جدیدی در جستجوی شما نیست.",
 	"nuke-viewchanges": "نمایش تغییرات",
 	"nuke-namespace": "محدودیت به فضای نام:",

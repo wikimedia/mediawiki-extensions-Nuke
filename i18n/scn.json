@@ -3,7 +3,8 @@
 		"authors": [
 			"Pippinu",
 			"Santu",
-			"Sarvaturi"
+			"Sarvaturi",
+			"Ajeje Brazorf"
 		]
 	},
 	"nuke": "Scancella la massa",
@@ -14,5 +15,9 @@
 	"nuke-tools": "Stu strummentu pirmetti di cancillari 'n bloccu li pàggini criati di picca tempu di n'utenti o di nu nnirizzu IP.\nMetti lu nomu utenti o lu nnirizzu IP p'aviri na lista dî pàggini di cancillari, o puru lassa jancu pi ntènniri tutti l'utenti.",
 	"nuke-submit-user": "Và",
 	"nuke-submit-delete": "Scancella la silizzioni",
-	"right-nuke": "Scancella pàggini 'n massa"
+	"right-nuke": "Scancella pàggini 'n massa",
+	"nuke-deleted": "La pàggina '''$1''' fu cancillata.",
+	"nuke-not-deleted": "La pàggina [[:$1]] '''nun pò''' èssiri cancillata.",
+	"nuke-delete-more": "[[Special:Nuke|Cancella àutri pàggini]]",
+	"nuke-viewchanges": "talìa li canciamenti"
 }
