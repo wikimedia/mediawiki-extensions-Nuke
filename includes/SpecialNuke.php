@@ -7,6 +7,7 @@ use DeletePageJob;
 use FileDeleteForm;
 use Html;
 use HTMLForm;
+use JobQueueGroup;
 use ListToggle;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\MediaWikiServices;
@@ -408,7 +409,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		if ( $jobs ) {
-			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
+			JobQueueGroup::singleton()->push( $jobs );
 		}
 
 		$this->getOutput()->addHTML(
