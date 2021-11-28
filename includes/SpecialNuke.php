@@ -395,7 +395,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		if ( $jobs ) {
-			MediaWikiServices::getInstance()->getJobQueueGroup()->push( $jobs );
+			JobQueueGroup::singleton()->push( $jobs );
 		}
 
 		$this->getOutput()->addHTML(
