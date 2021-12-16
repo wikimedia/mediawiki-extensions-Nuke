@@ -376,7 +376,7 @@ class SpecialNuke extends SpecialPage {
 					'title' => $title->getDBKey(),
 					'reason' => $reason,
 					'userId' => $user->getId(),
-					'wikiPageId' => $title->getId(),
+					'wikiPageId' => $title->getArticleID(),
 					'suppress' => false,
 					'tags' => '[]',
 					'logsubtype' => 'delete',
