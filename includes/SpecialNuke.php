@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\Nuke;
 
+use CommentStore;
 use DeletePageJob;
 use FileDeleteForm;
 use Html;
@@ -9,12 +10,16 @@ use HTMLForm;
 use ListToggle;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\MediaWikiServices;
+use OOUI\DropdownInputWidget;
+use OOUI\FieldLayout;
+use OOUI\TextInputWidget;
 use PermissionsError;
 use SpecialPage;
 use Title;
 use User;
 use UserBlockedError;
 use UserNamePrefixSearch;
+use WebRequest;
 use Xml;
 
 class SpecialNuke extends SpecialPage {
@@ -64,12 +69,7 @@ class SpecialNuke extends SpecialPage {
 			}
 		}
 
-		$msg = $target === '' ?
-			$this->msg( 'nuke-multiplepeople' )->inContentLanguage()->text() :
-			$this->msg( 'nuke-defaultreason', $target )->
-			inContentLanguage()->text();
-
-		$reason = $req->getText( 'wpReason', $msg );
+		$reason = $this->getDeleteReason( $this->getRequest(), $target );
 
 		$limit = $req->getInt( 'limit', 500 );
 		$namespace = $req->getVal( 'namespace' );
@@ -188,6 +188,42 @@ class SpecialNuke extends SpecialPage {
 
 		$nuke = $this->getPageTitle();
 
+		$options = Xml::listDropDownOptions(
+			$this->msg( 'deletereason-dropdown' )->inContentLanguage()->text(),
+			[ 'other' => $this->msg( 'deletereasonotherlist' )->inContentLanguage()->text() ]
+		);
+
+		$dropdown = new FieldLayout(
+			new DropdownInputWidget( [
+				'name' => 'wpDeleteReasonList',
+				'inputId' => 'wpDeleteReasonList',
+				'tabIndex' => 1,
+				'infusable' => true,
+				'value' => '',
+				'options' => Xml::listDropDownOptionsOoui( $options ),
+			] ),
+			[
+				'label' => $this->msg( 'deletecomment' )->text(),
+				'align' => 'top',
+			]
+		);
+		$reasonField = new FieldLayout(
+			new TextInputWidget( [
+				'name' => 'wpReason',
+				'inputId' => 'wpReason',
+				'tabIndex' => 2,
+				'maxLength' => CommentStore::COMMENT_CHARACTER_LIMIT,
+				'infusable' => true,
+				'value' => $reason,
+				'autofocus' => true,
+			] ),
+			[
+				'label' => $this->msg( 'deleteotherreason' )->text(),
+				'align' => 'top',
+			]
+		);
+
+		$out->enableOOUI();
 		$out->addHTML(
 			Xml::openElement( 'form', [
 					'action' => $nuke->getLocalURL( 'action=delete' ),
@@ -195,16 +231,7 @@ class SpecialNuke extends SpecialPage {
 					'name' => 'nukelist' ]
 			) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
-			Xml::tags( 'p',
-				null,
-				Xml::inputLabel(
-					$this->msg( 'deletecomment' )->text(),
-					'wpReason',
-					'wpReason',
-					70,
-					$reason
-				)
-			)
+			$dropdown . $reasonField
 		);
 
 		// Select: All, None, Invert
@@ -441,5 +468,29 @@ class SpecialNuke extends SpecialPage {
 
 	protected function getGroupName() {
 		return 'pagetools';
+	}
+
+	/**
+	 * @param WebRequest $request
+	 * @param string $target
+	 * @return string
+	 */
+	private function getDeleteReason( WebRequest $request, string $target ): string {
+		$defaultReason = $target === ''
+			? $this->msg( 'nuke-multiplepeople' )->inContentLanguage()->text()
+			: $this->msg( 'nuke-defaultreason', $target )->inContentLanguage()->text();
+
+		$dropdownSelection = $request->getText( 'wpDeleteReasonList', 'other' );
+		$reasonInput = $request->getText( 'wpReason', $defaultReason );
+
+		if ( $dropdownSelection === 'other' ) {
+			return $reasonInput;
+		} elseif ( $reasonInput !== '' ) {
+			// Entry from drop down menu + additional comment
+			$separator = $this->msg( 'colon-separator' )->inContentLanguage()->text();
+			return $dropdownSelection . $separator . $reasonInput;
+		} else {
+			return $dropdownSelection;
+		}
 	}
 }
