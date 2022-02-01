@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Meno25",
+			"SaldırganSincap",
 			"ديفيد",
 			"زكريا",
 			"محمد أحمد عبد الفتاح"
@@ -23,6 +24,7 @@
 	"nuke-maxpages": "الحد الأقصى لعدد الصفحات:",
 	"nuke-editby": "من إنشاء [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "صفحة '''$1''' حذفت.",
+	"nuke-deletion-queued": "تم وضع الصفحة '''$1''' في قائمة الانتظار للحذف.",
 	"nuke-not-deleted": "صفحة [[:$1]] '''لا''' تحذف.",
 	"nuke-delete-more": "[[Special:Nuke|حذف المزيد من الصفحات]]",
 	"nuke-pattern": "نمط يشبه إس كيو إل (على سبيل المثال %) لاسم الصفحة:",
