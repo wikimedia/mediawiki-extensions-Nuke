@@ -148,7 +148,6 @@ class SpecialNuke extends SpecialPage {
 			->setSubmitTextMsg( 'nuke-submit-user' )
 			->setSubmitName( 'nuke-submit-user' )
 			->setAction( $this->getPageTitle()->getLocalURL( 'action=submit' ) )
-			->addHiddenField( 'wpEditToken', $this->getUser()->getEditToken() )
 			->prepareForm()
 			->displayForm( false );
 	}
