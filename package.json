@@ -1,4 +1,5 @@
 {
+	"name": "Nuke",
 	"private": true,
 	"scripts": {
 		"test": "grunt test"
