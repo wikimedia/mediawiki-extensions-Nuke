@@ -430,15 +430,10 @@ class SpecialNuke extends SpecialPage {
 
 			$deletionResult = false;
 			if ( !$this->getNukeHookRunner()->onNukeDeletePage( $title, $reason, $deletionResult ) ) {
-				if ( $deletionResult ) {
-					$res[] = $this->msg( 'nuke-deleted' )
-						->plaintextParams( $title->getPrefixedText() )
-						->parse();
-				} else {
-					$res[] = $this->msg( 'nuke-not-deleted' )
-						->plaintextParams( $title->getPrefixedText() )
-						->parse();
-				}
+				$res[] = $this->msg(
+					$deletionResult ? 'nuke-deleted' : 'nuke-not-deleted',
+					wfEscapeWikiText( $title->getPrefixedText() )
+				)->parse();
 				continue;
 			}
 
@@ -476,17 +471,15 @@ class SpecialNuke extends SpecialPage {
 			}
 
 			if ( $status === 'job' ) {
-				$res[] = $this->msg( 'nuke-deletion-queued' )
-					->plaintextParams( $title->getPrefixedText() )
-					->parse();
-			} elseif ( $status->isOK() ) {
-				$res[] = $this->msg( 'nuke-deleted' )
-					->plaintextParams( $title->getPrefixedText() )
-					->parse();
+				$res[] = $this->msg(
+					'nuke-deletion-queued',
+					wfEscapeWikiText( $title->getPrefixedText() )
+				)->parse();
 			} else {
-				$res[] = $this->msg( 'nuke-not-deleted' )
-					->plaintextParams( $title->getPrefixedText() )
-					->parse();
+				$res[] = $this->msg(
+					$status->isOK() ? 'nuke-deleted' : 'nuke-not-deleted',
+					wfEscapeWikiText( $title->getPrefixedText() )
+				)->parse();
 			}
 		}
 
