@@ -272,7 +272,7 @@ class SpecialNuke extends SpecialPage {
 					'pages[]',
 					true,
 					[ 'value' => $title->getPrefixedDBkey() ]
-				) . '&#160;' .
+				) . "\u{00A0}" .
 				( $thumb ? $thumb->toHtml( [ 'desc-link' => true ] ) : '' ) .
 				$linkRenderer->makeKnownLink( $title ) . $wordSeparator .
 				$this->msg( 'parentheses' )->rawParams( $userNameText . $changesLink )->escaped() .
