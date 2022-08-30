@@ -72,13 +72,13 @@ class SpecialNuke extends SpecialPage {
 		$reason = $this->getDeleteReason( $this->getRequest(), $target );
 
 		$limit = $req->getInt( 'limit', 500 );
-		$namespace = $req->getVal( 'namespace' );
+		$namespace = $req->getRawVal( 'namespace' );
 		$namespace = ctype_digit( $namespace ) ? (int)$namespace : null;
 
 		if ( $req->wasPosted()
 			&& $currentUser->matchEditToken( $req->getVal( 'wpEditToken' ) )
 		) {
-			if ( $req->getVal( 'action' ) === 'delete' ) {
+			if ( $req->getRawVal( 'action' ) === 'delete' ) {
 				$pages = $req->getArray( 'pages' );
 
 				if ( $pages ) {
@@ -86,7 +86,7 @@ class SpecialNuke extends SpecialPage {
 
 					return;
 				}
-			} elseif ( $req->getVal( 'action' ) === 'submit' ) {
+			} elseif ( $req->getRawVal( 'action' ) === 'submit' ) {
 				$this->listForm( $target, $reason, $limit, $namespace );
 			} else {
 				$this->promptForm();
@@ -429,7 +429,7 @@ class SpecialNuke extends SpecialPage {
 				$status = 'job';
 			}
 
-			if ( $status == 'job' ) {
+			if ( $status === 'job' ) {
 				$res[] = $this->msg( 'nuke-deletion-queued' )
 					->plaintextParams( $title->getPrefixedText() )
 					->parse();
