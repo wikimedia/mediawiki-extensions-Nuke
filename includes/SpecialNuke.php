@@ -405,7 +405,8 @@ class SpecialNuke extends SpecialPage {
 
 			$file = $title->getNamespace() === NS_FILE ? $localRepo->newFile( $title ) : false;
 			if ( $file ) {
-				$oldimage = null; // Must be passed by reference
+				// Must be passed by reference
+				$oldimage = null;
 				$status = FileDeleteForm::doDelete(
 					$title,
 					$file,
