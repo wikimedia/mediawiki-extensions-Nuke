@@ -72,8 +72,7 @@ class SpecialNuke extends SpecialPage {
 		$reason = $this->getDeleteReason( $this->getRequest(), $target );
 
 		$limit = $req->getInt( 'limit', 500 );
-		$namespace = $req->getRawVal( 'namespace' );
-		$namespace = ctype_digit( $namespace ) ? (int)$namespace : null;
+		$namespace = $req->getIntOrNull( 'namespace' );
 
 		if ( $req->wasPosted()
 			&& $currentUser->matchEditToken( $req->getVal( 'wpEditToken' ) )
