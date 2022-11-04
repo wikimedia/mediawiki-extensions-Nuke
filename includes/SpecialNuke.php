@@ -251,7 +251,7 @@ class SpecialNuke extends SpecialPage {
 			/**
 			 * @var $title Title
 			 */
-			list( $title, $userName ) = $info;
+			[ $title, $userName ] = $info;
 
 			$image = $title->inNamespace( NS_FILE ) ? $localRepo->newFile( $title ) : false;
 			$thumb = $image && $image->exists() ?
