@@ -58,7 +58,14 @@
 		}
 	},
 	"SpecialPages": {
-		"Nuke": "MediaWiki\\Extension\\Nuke\\SpecialNuke"
+		"Nuke": {
+			"class": "MediaWiki\\Extension\\Nuke\\SpecialNuke",
+			"services": [
+				"JobQueueGroup",
+				"PermissionManager",
+				"RepoGroup"
+			]
+		}
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\Nuke\\": "includes/"
