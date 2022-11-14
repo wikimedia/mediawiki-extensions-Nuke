@@ -1,8 +1,10 @@
 {
 	"@metadata": {
 		"authors": [
-			"Nayvik"
+			"Nayvik",
+			"~aanzx"
 		]
 	},
-	"nuke-submit-user": "ಹೋಗು"
+	"nuke-submit-user": "ಹೋಗು",
+	"nuke-linkoncontribs": "ಸಾಮೂಹಿಕ ಅಳಿಸುವಿಕೆ"
 }
