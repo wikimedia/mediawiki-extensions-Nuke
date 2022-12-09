@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
+			"Nataev",
 			"Sociologist"
 		]
 	},
 	"nuke": "Birdaniga oʻchirish",
 	"nuke-deleted": "'''$1''' sahifasi oʻchirildi.",
+	"nuke-deletion-queued": "'''„$1“''' sahifasi oʻchirilish uchun navbatga qoʻyildi.",
 	"nuke-linkoncontribs": "birdaniga oʻchirish"
 }
