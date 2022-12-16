@@ -7,6 +7,7 @@
 		]
 	},
 	"nuke": "Birdaniga oʻchirish",
+	"nuke-defaultreason": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] yaratgan sahifalar birdaniga oʻchirildi",
 	"nuke-submit-delete": "Tanlanganlarni oʻchirish",
 	"right-nuke": "Sahifalarni birdaniga oʻchirish",
 	"nuke-deleted": "'''$1''' sahifasi oʻchirildi.",
