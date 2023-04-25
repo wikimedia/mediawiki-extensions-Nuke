@@ -4,12 +4,12 @@ namespace MediaWiki\Extension\Nuke;
 
 use CommentStore;
 use DeletePageJob;
-use FileDeleteForm;
 use Html;
 use HTMLForm;
 use JobQueueGroup;
 use ListToggle;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
+use Mediawiki\Page\File\FileDeleteForm;
 use MediaWiki\Permissions\PermissionManager;
 use OOUI\DropdownInputWidget;
 use OOUI\FieldLayout;
