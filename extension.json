@@ -62,8 +62,12 @@
 			"class": "MediaWiki\\Extension\\Nuke\\SpecialNuke",
 			"services": [
 				"JobQueueGroup",
+				"DBLoadBalancer",
 				"PermissionManager",
-				"RepoGroup"
+				"RepoGroup",
+				"UserFactory",
+				"UserNamePrefixSearch",
+				"UserNameUtils"
 			]
 		}
 	},
