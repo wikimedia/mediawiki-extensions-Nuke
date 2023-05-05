@@ -9,7 +9,7 @@ use HTMLForm;
 use JobQueueGroup;
 use ListToggle;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
-use Mediawiki\Page\File\FileDeleteForm;
+use MediaWiki\Page\File\FileDeleteForm;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNamePrefixSearch;
