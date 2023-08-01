@@ -343,7 +343,7 @@ class SpecialNuke extends SpecialPage {
 	 * @return array
 	 */
 	protected function getNewPages( $username, $limit, $namespace = null ) {
-		$dbr = $this->loadBalancer->getConnectionRef( DB_REPLICA );
+		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
 
 		$what = [
 			'rc_namespace',
