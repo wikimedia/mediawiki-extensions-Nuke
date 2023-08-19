@@ -3,8 +3,8 @@
 namespace MediaWiki\Extension\Nuke;
 
 use MediaWiki\Hook\ContributionsToolLinksHook;
+use MediaWiki\Title\Title;
 use SpecialPage;
-use Title;
 use Wikimedia\IPUtils;
 
 class Hooks implements ContributionsToolLinksHook {
