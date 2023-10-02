@@ -2,15 +2,17 @@
 
 namespace MediaWiki\Extension\Nuke;
 
-use CommentStore;
 use DeletePageJob;
-use Html;
 use HTMLForm;
 use JobQueueGroup;
-use ListToggle;
+use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
+use MediaWiki\Html\Html;
+use MediaWiki\Html\ListToggle;
 use MediaWiki\Page\File\FileDeleteForm;
 use MediaWiki\Permissions\PermissionManager;
+use MediaWiki\Request\WebRequest;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNamePrefixSearch;
@@ -20,9 +22,7 @@ use OOUI\FieldLayout;
 use OOUI\TextInputWidget;
 use PermissionsError;
 use RepoGroup;
-use SpecialPage;
 use UserBlockedError;
-use WebRequest;
 use Wikimedia\Rdbms\ILoadBalancer;
 use Xml;
 
