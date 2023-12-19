@@ -23,7 +23,10 @@ use OOUI\TextInputWidget;
 use PermissionsError;
 use RepoGroup;
 use UserBlockedError;
-use Wikimedia\Rdbms\ILoadBalancer;
+use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\LikeValue;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 use Xml;
 
 class SpecialNuke extends SpecialPage {
@@ -34,8 +37,8 @@ class SpecialNuke extends SpecialPage {
 	/** @var JobQueueGroup */
 	private $jobQueueGroup;
 
-	/** @var ILoadBalancer */
-	private $loadBalancer;
+	/** @var IConnectionProvider */
+	private $dbProvider;
 
 	/** @var PermissionManager */
 	private $permissionManager;
@@ -54,7 +57,7 @@ class SpecialNuke extends SpecialPage {
 
 	/**
 	 * @param JobQueueGroup $jobQueueGroup
-	 * @param ILoadBalancer $loadBalancer
+	 * @param IConnectionProvider $dbProvider
 	 * @param PermissionManager $permissionManager
 	 * @param RepoGroup $repoGroup
 	 * @param UserFactory $userFactory
@@ -63,7 +66,7 @@ class SpecialNuke extends SpecialPage {
 	 */
 	public function __construct(
 		JobQueueGroup $jobQueueGroup,
-		ILoadBalancer $loadBalancer,
+		IConnectionProvider $dbProvider,
 		PermissionManager $permissionManager,
 		RepoGroup $repoGroup,
 		UserFactory $userFactory,
@@ -72,7 +75,7 @@ class SpecialNuke extends SpecialPage {
 	) {
 		parent::__construct( 'Nuke', 'nuke' );
 		$this->jobQueueGroup = $jobQueueGroup;
-		$this->loadBalancer = $loadBalancer;
+		$this->dbProvider = $dbProvider;
 		$this->permissionManager = $permissionManager;
 		$this->repoGroup = $repoGroup;
 		$this->userFactory = $userFactory;
@@ -343,54 +346,39 @@ class SpecialNuke extends SpecialPage {
 	 * @return array
 	 */
 	protected function getNewPages( $username, $limit, $namespace = null ) {
-		$dbr = $this->loadBalancer->getConnection( DB_REPLICA );
-
-		$what = [
-			'rc_namespace',
-			'rc_title',
-		];
-
-		$where = [
-			$dbr->makeList( [
-				'rc_new' => 1,
-				$dbr->makeList( [
-					'rc_log_type' => 'upload',
-					'rc_log_action' => 'upload',
-				], LIST_AND ),
-			], LIST_OR ),
-		];
+		$dbr = $this->dbProvider->getReplicaDatabase();
+		$queryBuilder = $dbr->newSelectQueryBuilder()
+			->select( [ 'rc_namespace', 'rc_title' ] )
+			->from( 'recentchanges' )
+			->join( 'actor', null, 'actor_id=rc_actor' )
+			->where(
+				$dbr->expr( 'rc_new', '=', 1 )->orExpr(
+					$dbr->expr( 'rc_log_type', '=', 'upload' )
+						->and( 'rc_log_action', '=', 'upload' )
+				)
+			)
+			->orderBy( 'rc_timestamp', SelectQueryBuilder::SORT_DESC )
+			->limit( $limit );
 
 		if ( $username === '' ) {
-			$what['rc_user_text'] = 'actor_name';
+			$queryBuilder->field( 'actor_name', 'rc_user_text' );
 		} else {
-			$where['actor_name'] = $username;
+			$queryBuilder->andWhere( [ 'actor_name' => $username ] );
 		}
 
 		if ( $namespace !== null ) {
-			$where['rc_namespace'] = $namespace;
+			$queryBuilder->andWhere( [ 'rc_namespace' => $namespace ] );
 		}
 
 		$pattern = $this->getRequest()->getText( 'pattern' );
 		if ( $pattern !== null && trim( $pattern ) !== '' ) {
 			// $pattern is a SQL pattern supporting wildcards, so buildLike
 			// will not work.
-			$where[] = 'rc_title LIKE ' . $dbr->addQuotes( $pattern );
+			$queryBuilder->andWhere( $dbr->expr( 'rc_title', IExpression::LIKE, new LikeValue( $pattern ) ) );
 		}
 
-		$result = $dbr->select(
-			[ 'recentchanges', 'actor' ],
-			$what,
-			$where,
-			__METHOD__,
-			[
-				'ORDER BY' => 'rc_timestamp DESC',
-				'LIMIT' => $limit
-			],
-			[ 'actor' => [ 'JOIN', 'actor_id=rc_actor' ] ]
-		);
-
+		$result = $queryBuilder->caller( __METHOD__ )->fetchResultSet();
 		$pages = [];
-
 		foreach ( $result as $row ) {
 			$pages[] = [
 				Title::makeTitle( $row->rc_namespace, $row->rc_title ),
