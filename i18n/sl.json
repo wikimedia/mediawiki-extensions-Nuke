@@ -9,7 +9,7 @@
 	"nuke": "Množični izbris",
 	"action-nuke": "množično brisanje",
 	"nuke-desc": "Administratorjem omogoča [[Special:Nuke|množičen izbris]] strani",
-	"nuke-nopages": "V zadnjih spremembah ni novih strani {{GENDER:$1|uporabnika|uporabnice|uporabnika/ce}} [[Special:Contributions/$1|$1]].",
+	"nuke-nopages": "V zadnjih spremembah ni novih strani {{GENDER:$1|uporabnika|uporabnice|uporabnika_ce}} [[Special:Contributions/$1|$1]].",
 	"nuke-list": "Naslednje strani je pred kratkim {{GENDER:$1|ustvaril uporabnik|ustvarila uporabnica|ustvaril/a uporabnik/ca}} [[Special:Contributions/$1|$1]];\nvnesite komentar in pritisnite gumb za njihov izbris.",
 	"nuke-list-multiple": "Naslednje strani so bile ustvarjene pred kratkim;\nvnesite komentar in kliknite gumb, da jih izbrišete.",
 	"nuke-defaultreason": "Množično brisanje strani, ki jih je {{GENDER:$1|dodal|dodala|dodal_a}} [[Special:Contributions/$1|$1]]",
