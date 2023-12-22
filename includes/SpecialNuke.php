@@ -317,6 +317,8 @@ class SpecialNuke extends SpecialPage {
 				[],
 				[ 'action' => 'history' ]
 			);
+			$isRedirect = $title->isRedirect();
+			$query = $isRedirect ? [ 'redirect' => 'no' ] : [];
 			$out->addHTML( '<li>' .
 				Xml::check(
 					'pages[]',
@@ -324,7 +326,7 @@ class SpecialNuke extends SpecialPage {
 					[ 'value' => $title->getPrefixedDBkey() ]
 				) . "\u{00A0}" .
 				( $thumb ? $thumb->toHtml( [ 'desc-link' => true ] ) : '' ) .
-				$linkRenderer->makeKnownLink( $title ) . $wordSeparator .
+				$linkRenderer->makeKnownLink( $title, null, [], $query ) . $wordSeparator .
 				$this->msg( 'parentheses' )->rawParams( $userNameText . $changesLink )->escaped() .
 				"</li>\n" );
 		}
