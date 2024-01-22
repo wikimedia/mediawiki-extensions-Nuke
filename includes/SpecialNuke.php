@@ -24,8 +24,6 @@ use PermissionsError;
 use RepoGroup;
 use UserBlockedError;
 use Wikimedia\Rdbms\IConnectionProvider;
-use Wikimedia\Rdbms\IExpression;
-use Wikimedia\Rdbms\LikeValue;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 use Xml;
 
@@ -374,9 +372,9 @@ class SpecialNuke extends SpecialPage {
 
 		$pattern = $this->getRequest()->getText( 'pattern' );
 		if ( $pattern !== null && trim( $pattern ) !== '' ) {
-			// $pattern is a SQL pattern supporting wildcards, so buildLike
-			// will not work.
-			$queryBuilder->andWhere( $dbr->expr( 'rc_title', IExpression::LIKE, new LikeValue( $pattern ) ) );
+			// $pattern is a SQL pattern supporting wildcards, so buildLike() will not work.
+			// Wildcards are escaped using '\', so LikeValue/LikeMatch will not work either.
+			$queryBuilder->andWhere( 'rc_title LIKE ' . $dbr->addQuotes( $pattern ) );
 		}
 
 		$result = $queryBuilder->caller( __METHOD__ )->fetchResultSet();
