@@ -235,7 +235,7 @@ class SpecialNuke extends SpecialPage {
 
 		$nuke = $this->getPageTitle();
 
-		$options = Xml::listDropDownOptions(
+		$options = Xml::listDropdownOptions(
 			$this->msg( 'deletereason-dropdown' )->inContentLanguage()->text(),
 			[ 'other' => $this->msg( 'deletereasonotherlist' )->inContentLanguage()->text() ]
 		);
@@ -247,7 +247,7 @@ class SpecialNuke extends SpecialPage {
 				'tabIndex' => 1,
 				'infusable' => true,
 				'value' => '',
-				'options' => Xml::listDropDownOptionsOoui( $options ),
+				'options' => Xml::listDropdownOptionsOoui( $options ),
 			] ),
 			[
 				'label' => $this->msg( 'deletecomment' )->text(),
