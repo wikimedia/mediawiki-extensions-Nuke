@@ -272,7 +272,7 @@ class SpecialNuke extends SpecialPage {
 
 		$out->enableOOUI();
 		$out->addHTML(
-			Xml::openElement( 'form', [
+			Html::openElement( 'form', [
 					'action' => $nuke->getLocalURL( 'action=delete' ),
 					'method' => 'post',
 					'name' => 'nukelist' ]
@@ -318,7 +318,7 @@ class SpecialNuke extends SpecialPage {
 			$isRedirect = $title->isRedirect();
 			$query = $isRedirect ? [ 'redirect' => 'no' ] : [];
 			$out->addHTML( '<li>' .
-				Xml::check(
+				Html::check(
 					'pages[]',
 					true,
 					[ 'value' => $title->getPrefixedDBkey() ]
@@ -331,7 +331,7 @@ class SpecialNuke extends SpecialPage {
 
 		$out->addHTML(
 			"</ul>\n" .
-			Xml::submitButton( $this->msg( 'nuke-submit-delete' )->text() ) .
+			Html::submitButton( $this->msg( 'nuke-submit-delete' )->text() ) .
 			'</form>'
 		);
 	}
