@@ -32,36 +32,14 @@ class SpecialNuke extends SpecialPage {
 	/** @var NukeHookRunner|null */
 	private $hookRunner;
 
-	/** @var JobQueueGroup */
-	private $jobQueueGroup;
+	private JobQueueGroup $jobQueueGroup;
+	private IConnectionProvider $dbProvider;
+	private PermissionManager $permissionManager;
+	private RepoGroup $repoGroup;
+	private UserFactory $userFactory;
+	private UserNamePrefixSearch $userNamePrefixSearch;
+	private UserNameUtils $userNameUtils;
 
-	/** @var IConnectionProvider */
-	private $dbProvider;
-
-	/** @var PermissionManager */
-	private $permissionManager;
-
-	/** @var RepoGroup */
-	private $repoGroup;
-
-	/** @var UserFactory */
-	private $userFactory;
-
-	/** @var UserNamePrefixSearch */
-	private $userNamePrefixSearch;
-
-	/** @var UserNameUtils */
-	private $userNameUtils;
-
-	/**
-	 * @param JobQueueGroup $jobQueueGroup
-	 * @param IConnectionProvider $dbProvider
-	 * @param PermissionManager $permissionManager
-	 * @param RepoGroup $repoGroup
-	 * @param UserFactory $userFactory
-	 * @param UserNamePrefixSearch $userNamePrefixSearch
-	 * @param UserNameUtils $userNameUtils
-	 */
 	public function __construct(
 		JobQueueGroup $jobQueueGroup,
 		IConnectionProvider $dbProvider,
@@ -131,7 +109,6 @@ class SpecialNuke extends SpecialPage {
 
 				if ( $pages ) {
 					$this->doDelete( $pages, $reason );
-
 					return;
 				}
 			} elseif ( $req->getRawVal( 'action' ) === 'submit' ) {
@@ -151,7 +128,7 @@ class SpecialNuke extends SpecialPage {
 	 *
 	 * @param string $userName
 	 */
-	protected function promptForm( $userName = '' ) {
+	protected function promptForm( $userName = '' ): void {
 		$out = $this->getOutput();
 
 		$out->addWikiMsg( 'nuke-tools' );
@@ -208,12 +185,12 @@ class SpecialNuke extends SpecialPage {
 	 * @param int $limit
 	 * @param int|null $namespace
 	 */
-	protected function listForm( $username, $reason, $limit, $namespace = null ) {
+	protected function listForm( $username, $reason, $limit, $namespace = null ): void {
 		$out = $this->getOutput();
 
 		$pages = $this->getNewPages( $username, $limit, $namespace );
 
-		if ( count( $pages ) === 0 ) {
+		if ( !$pages ) {
 			if ( $username === '' ) {
 				$out->addWikiMsg( 'nuke-nopages-global' );
 			} else {
@@ -221,7 +198,6 @@ class SpecialNuke extends SpecialPage {
 			}
 
 			$this->promptForm( $username );
-
 			return;
 		}
 
@@ -278,15 +254,10 @@ class SpecialNuke extends SpecialPage {
 					'name' => 'nukelist' ]
 			) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
-			$dropdown . $reasonField
-		);
-
-		// Select: All, None, Invert
-		$listToggle = new ListToggle( $this->getOutput() );
-		$selectLinks = $listToggle->getHTML();
-
-		$out->addHTML(
-			$selectLinks .
+			$dropdown .
+			$reasonField .
+			// Select: All, None, Invert
+			( new ListToggle( $this->getOutput() ) )->getHTML() .
 			'<ul>'
 		);
 
@@ -295,11 +266,10 @@ class SpecialNuke extends SpecialPage {
 
 		$linkRenderer = $this->getLinkRenderer();
 		$localRepo = $this->repoGroup->getLocalRepo();
-		foreach ( $pages as $info ) {
+		foreach ( $pages as [ $title, $userName ] ) {
 			/**
 			 * @var $title Title
 			 */
-			[ $title, $userName ] = $info;
 
 			$image = $title->inNamespace( NS_FILE ) ? $localRepo->newFile( $title ) : false;
 			$thumb = $image && $image->exists() ?
@@ -315,8 +285,7 @@ class SpecialNuke extends SpecialPage {
 				[],
 				[ 'action' => 'history' ]
 			);
-			$isRedirect = $title->isRedirect();
-			$query = $isRedirect ? [ 'redirect' => 'no' ] : [];
+			$query = $title->isRedirect() ? [ 'redirect' => 'no' ] : [];
 			$out->addHTML( '<li>' .
 				Html::check(
 					'pages[]',
@@ -343,9 +312,9 @@ class SpecialNuke extends SpecialPage {
 	 * @param int $limit
 	 * @param int|null $namespace
 	 *
-	 * @return array
+	 * @return array{0:Title,1:string|false}[]
 	 */
-	protected function getNewPages( $username, $limit, $namespace = null ) {
+	protected function getNewPages( $username, $limit, $namespace = null ): array {
 		$dbr = $this->dbProvider->getReplicaDatabase();
 		$queryBuilder = $dbr->newSelectQueryBuilder()
 			->select( [ 'rc_namespace', 'rc_title' ] )
@@ -378,6 +347,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$result = $queryBuilder->caller( __METHOD__ )->fetchResultSet();
+		/** @var array{0:Title,1:string|false}[] $pages */
 		$pages = [];
 		foreach ( $result as $row ) {
 			$pages[] = [
@@ -407,7 +377,7 @@ class SpecialNuke extends SpecialPage {
 	 * @param string $reason
 	 * @throws PermissionsError
 	 */
-	protected function doDelete( array $pages, $reason ) {
+	protected function doDelete( array $pages, $reason ): void {
 		$res = [];
 		$jobs = [];
 		$user = $this->getUser();
@@ -512,11 +482,6 @@ class SpecialNuke extends SpecialPage {
 		return 'pagetools';
 	}
 
-	/**
-	 * @param WebRequest $request
-	 * @param string $target
-	 * @return string
-	 */
 	private function getDeleteReason( WebRequest $request, string $target ): string {
 		$defaultReason = $target === ''
 			? $this->msg( 'nuke-multiplepeople' )->inContentLanguage()->text()
@@ -536,14 +501,8 @@ class SpecialNuke extends SpecialPage {
 		}
 	}
 
-	/**
-	 * @return NukeHookRunner
-	 */
-	private function getNukeHookRunner() {
-		if ( !$this->hookRunner ) {
-			$this->hookRunner = new NukeHookRunner( $this->getHookContainer() );
-		}
-
+	private function getNukeHookRunner(): NukeHookRunner {
+		$this->hookRunner ??= new NukeHookRunner( $this->getHookContainer() );
 		return $this->hookRunner;
 	}
 }
