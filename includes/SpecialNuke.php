@@ -317,9 +317,10 @@ class SpecialNuke extends SpecialPage {
 	protected function getNewPages( $username, $limit, $namespace = null ): array {
 		$dbr = $this->dbProvider->getReplicaDatabase();
 		$queryBuilder = $dbr->newSelectQueryBuilder()
-			->select( [ 'rc_namespace', 'rc_title' ] )
+			->select( [ 'page_title', 'page_namespace' ] )
 			->from( 'recentchanges' )
 			->join( 'actor', null, 'actor_id=rc_actor' )
+			->join( 'page', null, 'page_id=rc_cur_id' )
 			->where(
 				$dbr->expr( 'rc_new', '=', 1 )->orExpr(
 					$dbr->expr( 'rc_log_type', '=', 'upload' )
@@ -336,14 +337,14 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		if ( $namespace !== null ) {
-			$queryBuilder->andWhere( [ 'rc_namespace' => $namespace ] );
+			$queryBuilder->andWhere( [ 'page_namespace' => $namespace ] );
 		}
 
 		$pattern = $this->getRequest()->getText( 'pattern' );
 		if ( $pattern !== null && trim( $pattern ) !== '' ) {
 			// $pattern is a SQL pattern supporting wildcards, so buildLike() will not work.
 			// Wildcards are escaped using '\', so LikeValue/LikeMatch will not work either.
-			$queryBuilder->andWhere( 'rc_title LIKE ' . $dbr->addQuotes( $pattern ) );
+			$queryBuilder->andWhere( 'page_title LIKE ' . $dbr->addQuotes( $pattern ) );
 		}
 
 		$result = $queryBuilder->caller( __METHOD__ )->fetchResultSet();
@@ -351,7 +352,7 @@ class SpecialNuke extends SpecialPage {
 		$pages = [];
 		foreach ( $result as $row ) {
 			$pages[] = [
-				Title::makeTitle( $row->rc_namespace, $row->rc_title ),
+				Title::makeTitle( $row->page_namespace, $row->page_title ),
 				$username === '' ? $row->rc_user_text : false
 			];
 		}
