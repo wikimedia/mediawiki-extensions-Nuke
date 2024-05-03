@@ -23,7 +23,9 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			$services->getRepoGroup(),
 			$services->getUserFactory(),
 			$services->getUserNamePrefixSearch(),
-			$services->getUserNameUtils()
+			$services->getUserNameUtils(),
+			$services->getNamespaceInfo(),
+			$services->getContentLanguage()
 		);
 	}
 

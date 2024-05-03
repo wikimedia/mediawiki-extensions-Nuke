@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Nuke;
 use DeletePageJob;
 use HTMLForm;
 use JobQueueGroup;
+use Language;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\Html\Html;
@@ -13,6 +14,7 @@ use MediaWiki\Page\File\FileDeleteForm;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNamePrefixSearch;
@@ -24,6 +26,10 @@ use PermissionsError;
 use RepoGroup;
 use UserBlockedError;
 use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IExpression;
+use Wikimedia\Rdbms\LikeMatch;
+use Wikimedia\Rdbms\LikeValue;
+use Wikimedia\Rdbms\OrExpressionGroup;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 use Xml;
 
@@ -39,6 +45,8 @@ class SpecialNuke extends SpecialPage {
 	private UserFactory $userFactory;
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
+	private NamespaceInfo $namespaceInfo;
+	private Language $contentLanguage;
 
 	public function __construct(
 		JobQueueGroup $jobQueueGroup,
@@ -47,7 +55,9 @@ class SpecialNuke extends SpecialPage {
 		RepoGroup $repoGroup,
 		UserFactory $userFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,
-		UserNameUtils $userNameUtils
+		UserNameUtils $userNameUtils,
+		NamespaceInfo $namespaceInfo,
+		Language $contentLanguage
 	) {
 		parent::__construct( 'Nuke', 'nuke' );
 		$this->jobQueueGroup = $jobQueueGroup;
@@ -57,6 +67,8 @@ class SpecialNuke extends SpecialPage {
 		$this->userFactory = $userFactory;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
+		$this->namespaceInfo = $namespaceInfo;
+		$this->contentLanguage = $contentLanguage;
 	}
 
 	public function doesWrites() {
@@ -342,9 +354,73 @@ class SpecialNuke extends SpecialPage {
 
 		$pattern = $this->getRequest()->getText( 'pattern' );
 		if ( $pattern !== null && trim( $pattern ) !== '' ) {
+			$addedWhere = false;
+			$pattern = trim( $pattern );
+			$pattern = preg_replace( '/ +/', '`_', $pattern );
+			$pattern = preg_replace( '/\\\\([%_])/', '`$1', $pattern );
+			if ( $namespace !== null ) {
+				$pattern = $this->namespaceInfo->isCapitalized( $namespace ) ?
+					$this->contentLanguage->ucfirst( $pattern ) : $pattern;
+			} else {
+				$overriddenNamespaces = [];
+				$capitalLinks = $this->getConfig()->get( 'CapitalLinks' );
+				$capitalLinkOverrides = $this->getConfig()->get( 'CapitalLinkOverrides' );
+				foreach ( $capitalLinkOverrides as $k => $v ) {
+					if ( $v !== $capitalLinks ) {
+						$overriddenNamespaces[] = $k;
+					}
+				}
+				if ( count( $overriddenNamespaces ) ) {
+					$validNamespaces = $this->namespaceInfo->getValidNamespaces();
+					$nonOverriddenNamespaces = [];
+					foreach ( $validNamespaces as $ns ) {
+						if ( !in_array( $ns, $overriddenNamespaces ) ) {
+							$nonOverriddenNamespaces[] = $ns;
+						}
+					}
+					$patternSpecific = $this->namespaceInfo->isCapitalized( $overriddenNamespaces[0] ) ?
+						$this->contentLanguage->ucfirst( $pattern ) : $pattern;
+					$orConditions = [
+						$dbr->expr(
+							'page_title', IExpression::LIKE, new LikeValue(
+								new LikeMatch( $patternSpecific )
+							)
+						)->and(
+							'page_namespace', '=', $overriddenNamespaces
+						)
+					];
+					if ( count( $nonOverriddenNamespaces ) ) {
+						$patternStandard = $this->namespaceInfo->isCapitalized( $nonOverriddenNamespaces[0] ) ?
+							$this->contentLanguage->ucfirst( $pattern ) : $pattern;
+						$orConditions[] = $dbr->expr(
+							'page_title', IExpression::LIKE, new LikeValue(
+								new LikeMatch( $patternStandard )
+							)
+						)->and(
+							'page_namespace', '=', $nonOverriddenNamespaces
+						);
+					}
+					$queryBuilder->andWhere( new OrExpressionGroup( ...$orConditions ) );
+					$addedWhere = true;
+				} else {
+					$pattern = $this->namespaceInfo->isCapitalized( NS_MAIN ) ?
+						$this->contentLanguage->ucfirst( $pattern ) : $pattern;
+				}
+			}
+
 			// $pattern is a SQL pattern supporting wildcards, so buildLike() will not work.
 			// Wildcards are escaped using '\', so LikeValue/LikeMatch will not work either.
-			$queryBuilder->andWhere( 'page_title LIKE ' . $dbr->addQuotes( $pattern ) );
+			if ( !$addedWhere ) {
+				$queryBuilder->andWhere(
+					$dbr->expr(
+						'page_title',
+						IExpression::LIKE,
+						new LikeValue(
+							new LikeMatch( $pattern )
+						)
+					)
+				);
+			}
 		}
 
 		$result = $queryBuilder->caller( __METHOD__ )->fetchResultSet();

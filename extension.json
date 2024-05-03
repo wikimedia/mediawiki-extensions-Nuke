@@ -67,7 +67,9 @@
 				"RepoGroup",
 				"UserFactory",
 				"UserNamePrefixSearch",
-				"UserNameUtils"
+				"UserNameUtils",
+				"NamespaceInfo",
+				"ContentLanguage"
 			]
 		}
 	},
