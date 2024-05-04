@@ -322,7 +322,7 @@ class SpecialNuke extends SpecialPage {
 			->join( 'actor', null, 'actor_id=rc_actor' )
 			->join( 'page', null, 'page_id=rc_cur_id' )
 			->where(
-				$dbr->expr( 'rc_new', '=', 1 )->orExpr(
+				$dbr->expr( 'rc_source', '=', 'mw.new' )->orExpr(
 					$dbr->expr( 'rc_log_type', '=', 'upload' )
 						->and( 'rc_log_action', '=', 'upload' )
 				)
