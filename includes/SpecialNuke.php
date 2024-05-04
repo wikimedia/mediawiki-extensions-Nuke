@@ -408,8 +408,6 @@ class SpecialNuke extends SpecialPage {
 				}
 			}
 
-			// $pattern is a SQL pattern supporting wildcards, so buildLike() will not work.
-			// Wildcards are escaped using '\', so LikeValue/LikeMatch will not work either.
 			if ( !$addedWhere ) {
 				$queryBuilder->andWhere(
 					$dbr->expr(
