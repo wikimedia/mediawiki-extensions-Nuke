@@ -214,6 +214,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$out->addModules( 'ext.nuke.confirm' );
+		$out->addModuleStyles( 'mediawiki.special' );
 
 		if ( $username === '' ) {
 			$out->addWikiMsg( 'nuke-list-multiple' );
@@ -298,6 +299,7 @@ class SpecialNuke extends SpecialPage {
 				[ 'action' => 'history' ]
 			);
 			$query = $title->isRedirect() ? [ 'redirect' => 'no' ] : [];
+			$attributes = $title->isRedirect() ? [ 'class' => 'allpagesredirect' ] : [];
 			$out->addHTML( '<li>' .
 				Html::check(
 					'pages[]',
@@ -305,7 +307,7 @@ class SpecialNuke extends SpecialPage {
 					[ 'value' => $title->getPrefixedDBkey() ]
 				) . "\u{00A0}" .
 				( $thumb ? $thumb->toHtml( [ 'desc-link' => true ] ) : '' ) .
-				$linkRenderer->makeKnownLink( $title, null, [], $query ) . $wordSeparator .
+				$linkRenderer->makeKnownLink( $title, null, $attributes, $query ) . $wordSeparator .
 				$this->msg( 'parentheses' )->rawParams( $userNameText . $changesLink )->escaped() .
 				"</li>\n" );
 		}

@@ -70,6 +70,9 @@
 				"UserNameUtils",
 				"NamespaceInfo",
 				"ContentLanguage"
+			],
+			"styles": [
+				"mediawiki.special.special"
 			]
 		}
 	},
