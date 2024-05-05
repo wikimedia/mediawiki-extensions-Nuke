@@ -50,4 +50,72 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringNotContainsString( 'NegativeNukeTest123', $html );
 	}
 
+	public function testUserPages() {
+		$user = $this->getTestUser()->getUser();
+		$this->insertPage( 'Page123', 'Test', NS_MAIN, $user );
+		$this->insertPage( 'Paging456', 'Test', NS_MAIN, $user );
+		$this->insertPage( 'Should not show', 'No show' );
+
+		$admin = $this->getTestSysop()->getUser();
+
+		$request = new FauxRequest( [
+			'action' => 'submit',
+			'target' => $user->getName(),
+			'wpFormIdentifier' => 'massdelete',
+			'wpEditToken' => $admin->getEditToken(),
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$this->assertStringContainsString( 'Page123', $html );
+		$this->assertStringContainsString( 'Paging456', $html );
+		$this->assertStringNotContainsString( 'Should not show', $html );
+	}
+
+	public function testNamespaces() {
+		$this->insertPage( 'Page123', 'Test', NS_MAIN );
+		$this->insertPage( 'Paging456', 'Test', NS_MAIN );
+		$this->insertPage( 'Should not show', 'No show', NS_TALK );
+
+		$admin = $this->getTestSysop()->getUser();
+
+		$request = new FauxRequest( [
+			'action' => 'submit',
+			'namespace' => NS_MAIN,
+			'wpFormIdentifier' => 'massdelete',
+			'wpEditToken' => $admin->getEditToken(),
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$this->assertStringContainsString( 'Page123', $html );
+		$this->assertStringContainsString( 'Paging456', $html );
+		$this->assertStringNotContainsString( 'Should not show', $html );
+	}
+
+	public function testDelete() {
+		$pages = [];
+		$pages[] = $this->insertPage( 'Page123', 'Test', NS_MAIN )[ 'title' ];
+		$pages[] = $this->insertPage( 'Paging456', 'Test', NS_MAIN )[ 'title' ];
+
+		$admin = $this->getTestSysop()->getUser();
+
+		$request = new FauxRequest( [
+			'action' => 'delete',
+			'wpDeleteReasonList' => 'Reason',
+			'wpReason' => 'Reason',
+			'pages' => $pages,
+			'wpFormIdentifier' => 'nukelist',
+			'wpEditToken' => $admin->getEditToken(),
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$this->assertStringContainsString( '(nuke-deletion-queued: Page123)', $html );
+		$this->assertStringContainsString( '(nuke-deletion-queued: Paging456)', $html );
+	}
+
 }
