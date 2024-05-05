@@ -18,7 +18,7 @@
 	"nuke-submit-delete": "Delete selected",
 	"right-nuke": "Mass delete pages",
 	"nuke-userorip": "Username, IP address or blank:",
-	"nuke-maxpages": "Maximum number of pages:",
+	"nuke-maxpages": "Number of pages to retrieve (maximum 500):",
 	"nuke-editby": "Created by [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
 	"nuke-deleted": "Page '''$1''' has been deleted.",
 	"nuke-deletion-queued": "Page '''$1''' has been queued for deletion.",
