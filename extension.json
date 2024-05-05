@@ -38,6 +38,12 @@
 			"messages": [
 				"nuke-confirm"
 			]
+		},
+		"ext.nuke.styles": {
+			"localBasePath": "modules/ext.nuke.styles",
+			"styles": [
+				"nuke.less"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

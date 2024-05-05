@@ -214,7 +214,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$out->addModules( 'ext.nuke.confirm' );
-		$out->addModuleStyles( 'mediawiki.special' );
+		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
 
 		if ( $username === '' ) {
 			$out->addWikiMsg( 'nuke-list-multiple' );
@@ -276,6 +276,7 @@ class SpecialNuke extends SpecialPage {
 
 		$wordSeparator = $this->msg( 'word-separator' )->escaped();
 		$commaSeparator = $this->msg( 'comma-separator' )->escaped();
+		$pipeSeparator = $this->msg( 'pipe-separator' )->escaped();
 
 		$linkRenderer = $this->getLinkRenderer();
 		$localRepo = $this->repoGroup->getLocalRepo();
@@ -290,7 +291,7 @@ class SpecialNuke extends SpecialPage {
 				false;
 
 			$userNameText = $userName ?
-				$this->msg( 'nuke-editby', $userName )->parse() . $commaSeparator :
+				' <span class="mw-changeslist-separator"></span> ' . $this->msg( 'nuke-editby', $userName )->parse() :
 				'';
 			$changesLink = $linkRenderer->makeKnownLink(
 				$title,
@@ -298,8 +299,18 @@ class SpecialNuke extends SpecialPage {
 				[],
 				[ 'action' => 'history' ]
 			);
+
+			$talkPageText = $this->namespaceInfo->isTalk( $title->getNamespace() ) ?
+				'' :
+				$linkRenderer->makeLink(
+					$this->namespaceInfo->getTalkPage( $title ),
+					$this->msg( 'sp-contributions-talk' )->text(),
+					[],
+					[],
+				) . $wordSeparator . $pipeSeparator;
+
 			$query = $title->isRedirect() ? [ 'redirect' => 'no' ] : [];
-			$attributes = $title->isRedirect() ? [ 'class' => 'allpagesredirect' ] : [];
+			$attributes = $title->isRedirect() ? [ 'class' => 'ext-nuke-italicize' ] : [];
 			$out->addHTML( '<li>' .
 				Html::check(
 					'pages[]',
@@ -308,7 +319,8 @@ class SpecialNuke extends SpecialPage {
 				) . "\u{00A0}" .
 				( $thumb ? $thumb->toHtml( [ 'desc-link' => true ] ) : '' ) .
 				$linkRenderer->makeKnownLink( $title, null, $attributes, $query ) . $wordSeparator .
-				$this->msg( 'parentheses' )->rawParams( $userNameText . $changesLink )->escaped() .
+				$this->msg( 'parentheses' )->rawParams( $talkPageText . $changesLink )->escaped() . $wordSeparator .
+				"<span class='ext-nuke-italicize'>" . $userNameText . "</span>" .
 				"</li>\n" );
 		}
 
