@@ -22,7 +22,7 @@
 	"nuke-submit-delete": "מחיקת הדפים שנבחרו",
 	"right-nuke": "מחיקה המונית של דפים",
 	"nuke-userorip": "שם משתמש, כתובת IP או ריק:",
-	"nuke-maxpages": "מספר דפים מרבי:",
+	"nuke-maxpages": "מספר הדפים המרבי לאחזור (לכל היותר 500):",
 	"nuke-editby": "נוצר על־ידי [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
 	"nuke-deleted": "הדף '''$1''' נמחק.",
 	"nuke-deletion-queued": "הדף '''$1''' הוכנס לתור מחיקה.",

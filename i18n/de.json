@@ -23,7 +23,7 @@
 	"nuke-submit-delete": "Ausgewählte Seiten löschen",
 	"right-nuke": "Massenlöschungen von Seiten",
 	"nuke-userorip": "Benutzername, IP-Adresse oder keine Angabe:",
-	"nuke-maxpages": "Maximale Anzahl der Seiten:",
+	"nuke-maxpages": "Anzahl der abzurufenden Seiten (maximal 500):",
 	"nuke-editby": "Erstellt von [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Seite „$1“ wurde gelöscht.",
 	"nuke-deletion-queued": "Die Seite '''$1''' steht für die Löschung in der Warteschlange.",
