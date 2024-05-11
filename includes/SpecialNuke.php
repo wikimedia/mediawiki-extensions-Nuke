@@ -140,7 +140,7 @@ class SpecialNuke extends SpecialPage {
 	 *
 	 * @param string $userName
 	 */
-	protected function promptForm( $userName = '' ): void {
+	protected function promptForm( string $userName = '' ): void {
 		$out = $this->getOutput();
 
 		$out->addWikiMsg( 'nuke-tools' );
@@ -369,29 +369,44 @@ class SpecialNuke extends SpecialPage {
 		$pattern = $this->getRequest()->getText( 'pattern' );
 		if ( $pattern !== null && trim( $pattern ) !== '' ) {
 			$addedWhere = false;
+
 			$pattern = trim( $pattern );
 			$pattern = preg_replace( '/ +/', '`_', $pattern );
 			$pattern = preg_replace( '/\\\\([%_])/', '`$1', $pattern );
+
 			if ( $namespace !== null ) {
+				// Custom namespace requested
+				// If that namespace capitalizes titles, capitalize the first character
+				// to match the DB title.
 				$pattern = $this->namespaceInfo->isCapitalized( $namespace ) ?
 					$this->contentLanguage->ucfirst( $pattern ) : $pattern;
 			} else {
+				// All namespaces requested
+
 				$overriddenNamespaces = [];
 				$capitalLinks = $this->getConfig()->get( 'CapitalLinks' );
 				$capitalLinkOverrides = $this->getConfig()->get( 'CapitalLinkOverrides' );
+				// If there are any capital-overridden namespaces, keep track of them. "overridden"
+				// here means the namespace-specific value is not equal to $wgCapitalLinks.
 				foreach ( $capitalLinkOverrides as $k => $v ) {
 					if ( $v !== $capitalLinks ) {
 						$overriddenNamespaces[] = $k;
 					}
 				}
+
 				if ( count( $overriddenNamespaces ) ) {
+					// If there are overridden namespaces, they have to be converted
+					// on a case-by-case basis.
+
 					$validNamespaces = $this->namespaceInfo->getValidNamespaces();
 					$nonOverriddenNamespaces = [];
 					foreach ( $validNamespaces as $ns ) {
 						if ( !in_array( $ns, $overriddenNamespaces ) ) {
+							// Put all namespaces that aren't overridden in $nonOverriddenNamespaces
 							$nonOverriddenNamespaces[] = $ns;
 						}
 					}
+
 					$patternSpecific = $this->namespaceInfo->isCapitalized( $overriddenNamespaces[0] ) ?
 						$this->contentLanguage->ucfirst( $pattern ) : $pattern;
 					$orConditions = [
@@ -400,6 +415,7 @@ class SpecialNuke extends SpecialPage {
 								new LikeMatch( $patternSpecific )
 							)
 						)->and(
+							// IN condition
 							'page_namespace', '=', $overriddenNamespaces
 						)
 					];
@@ -411,12 +427,16 @@ class SpecialNuke extends SpecialPage {
 								new LikeMatch( $patternStandard )
 							)
 						)->and(
+							// IN condition, with the non-overridden namespaces.
+							// If the default is case-sensitive namespaces, $pattern's first
+							// character is turned lowercase. Otherwise, it is turned uppercase.
 							'page_namespace', '=', $nonOverriddenNamespaces
 						);
 					}
 					$queryBuilder->andWhere( new OrExpressionGroup( ...$orConditions ) );
 					$addedWhere = true;
 				} else {
+					// No overridden namespaces; just convert all titles.
 					$pattern = $this->namespaceInfo->isCapitalized( NS_MAIN ) ?
 						$this->contentLanguage->ucfirst( $pattern ) : $pattern;
 				}
