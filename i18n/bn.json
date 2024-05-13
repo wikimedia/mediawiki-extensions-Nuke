@@ -33,7 +33,7 @@
 	"nuke-delete-more": "[[Special:Nuke|আরও পাতা অপসারণ করুন]]",
 	"nuke-pattern": "পাতাটির নামের জন্য SQL ধরনের প্যাটার্ন (উদা. %):",
 	"nuke-nopages-global": "আপনার অনুসন্ধানের সাথে মিলে এমন শিরোনাম যুক্ত কোনো পাতা নেই।",
-	"nuke-viewchanges": "পরিবর্তনসমূহ দেখুন",
+	"nuke-viewchanges": "ইতিহাস",
 	"nuke-namespace": "নামস্থানে সীমা:",
 	"nuke-linkoncontribs": "গণ অপসারণ",
 	"nuke-linkoncontribs-text": "পাতা গণ অপসারণ করুন যেখানে {{GENDER:$1|এই ব্যবহারকারী}} একমাত্র লেখক",
