@@ -71,6 +71,10 @@ class SpecialNuke extends SpecialPage {
 		$this->contentLanguage = $contentLanguage;
 	}
 
+	/**
+	 * @inheritDoc
+	 * @codeCoverageIgnore
+	 */
 	public function doesWrites() {
 		return true;
 	}
@@ -585,6 +589,7 @@ class SpecialNuke extends SpecialPage {
 	/**
 	 * Group Special:Nuke with pagetools
 	 *
+	 * @codeCoverageIgnore
 	 * @return string
 	 */
 	protected function getGroupName() {
