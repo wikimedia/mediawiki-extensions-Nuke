@@ -1,6 +1,6 @@
 <?php
 
-namespace MediaWiki\Extension\Nuke\Tests;
+namespace MediaWiki\Extension\Nuke\Test\Integration;
 
 use MediaWiki\Extension\Nuke\SpecialNuke;
 use MediaWiki\Permissions\UltimateAuthority;
@@ -601,7 +601,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 	}
 
 	private function uploadTestFile() {
-		$exampleFilePath = realpath( __DIR__ . "/../assets/Example.png" );
+		$exampleFilePath = realpath( __DIR__ . "/../../assets/Example.png" );
 		$tempFilePath = $this->getNewTempFile();
 		copy( $exampleFilePath, $tempFilePath );
 
@@ -622,7 +622,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		);
 	}
 
-	private function getDeleteLogHtml() {
+	private function getDeleteLogHtml(): string {
 		$services = $this->getServiceContainer();
 		$specialLog = new SpecialLog(
 			$services->getLinkBatchFactory(),
