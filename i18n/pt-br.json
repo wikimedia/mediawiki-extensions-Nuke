@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			555,
 			"Araceletorres",
 			"Cainamarques",
 			"Carla404",
@@ -9,8 +10,7 @@
 			"Eduardoaddad",
 			"Felipe L. Ewald",
 			"Giro720",
-			"MetalBrasil",
-			555
+			"MetalBrasil"
 		]
 	},
 	"nuke": "Eliminar de forma massiva",
