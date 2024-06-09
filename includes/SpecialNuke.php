@@ -3,13 +3,13 @@
 namespace MediaWiki\Extension\Nuke;
 
 use DeletePageJob;
-use HTMLForm;
 use JobQueueGroup;
 use Language;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\ListToggle;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Page\File\FileDeleteForm;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\WebRequest;
