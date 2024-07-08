@@ -40,7 +40,7 @@
 	"nuke-delete-more": "[[Special:Nuke|Supprimer plus de pages]]",
 	"nuke-pattern": "Patron au format SQL LIKE (par ex. %) pour le nom de page :",
 	"nuke-nopages-global": "Il n’y a aucun titre de page correspondant à votre recherche.",
-	"nuke-viewchanges": "voir les modifications",
+	"nuke-viewchanges": "historique",
 	"nuke-namespace": "Se limiter à l’espace de noms :",
 	"nuke-linkoncontribs": "suppression de masse",
 	"nuke-linkoncontribs-text": "Suppression de pages en masse pour lesquelles {{GENDER:$1|cet utilisateur|cette utilisatrice}} est l’unique auteur",
