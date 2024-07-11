@@ -29,7 +29,6 @@ use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeMatch;
 use Wikimedia\Rdbms\LikeValue;
-use Wikimedia\Rdbms\OrExpressionGroup;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 use Xml;
 
@@ -437,7 +436,7 @@ class SpecialNuke extends SpecialPage {
 							'page_namespace', '=', $nonOverriddenNamespaces
 						);
 					}
-					$queryBuilder->andWhere( new OrExpressionGroup( ...$orConditions ) );
+					$queryBuilder->andWhere( $dbr->orExpr( $orConditions ) );
 					$addedWhere = true;
 				} else {
 					// No overridden namespaces; just convert all titles.
