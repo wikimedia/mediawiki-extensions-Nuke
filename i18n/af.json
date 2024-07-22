@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Naudefj",
+			"Rooiratel",
 			"පසිඳු කාවින්ද"
 		]
 	},
@@ -23,5 +24,6 @@
 	"nuke-pattern": "Patroon vir die naam:",
 	"nuke-nopages-global": "Daar is nie nuwe bladsye in [[Special:RecentChanges|onlangse wysigings]] nie.",
 	"nuke-viewchanges": "wys veranderings",
-	"nuke-namespace": "Beperk tot naamruimte:"
+	"nuke-namespace": "Beperk tot naamruimte:",
+	"nuke-linkoncontribs": "massa verwyder"
 }
