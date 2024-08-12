@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\Nuke\Test\Integration;
 use MediaWiki\Extension\Nuke\SpecialNuke;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\Specials\SpecialLog;
 use MediaWiki\Title\Title;
 use PermissionsError;
 use SpecialPageTestBase;
@@ -624,13 +623,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 	private function getDeleteLogHtml(): string {
 		$services = $this->getServiceContainer();
-		$specialLog = new SpecialLog(
-			$services->getLinkBatchFactory(),
-			$services->getConnectionProvider(),
-			$services->getActorNormalization(),
-			$services->getUserIdentityLookup(),
-			$services->getUserNameUtils()
-		);
+		$specialLog = $services->getSpecialPageFactory()->getPage( 'Log' );
 		$specialLog->execute( "delete" );
 		return $specialLog->getOutput()->getHTML();
 	}
