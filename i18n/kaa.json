@@ -9,6 +9,8 @@
 	"nuke-defaultreason": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] paydalanıwshı qosqan betlerdi ǵalabalıq túrde óshirdi",
 	"nuke-multiplepeople": "Jaqında qosılǵan betlerdi ǵalabalıq túrde óshirdi",
 	"nuke-submit-user": "Ótiw",
+	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] tárepinen jaratılǵan",
+	"nuke-viewchanges": "ózgerislerdi kóriw",
 	"nuke-linkoncontribs": "ǵalabalıq óshiriw",
 	"nuke-linkoncontribs-text": "Tek {{GENDER:$1|usı paydalanıwshı}} avtorlıǵındaǵı betlerdi ǵalabalıq óshiriw"
 }
