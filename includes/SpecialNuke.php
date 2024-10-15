@@ -3,7 +3,9 @@
 namespace MediaWiki\Extension\Nuke;
 
 use DeletePageJob;
+use ErrorPageError;
 use JobQueueGroup;
+use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\Html\Html;
@@ -16,6 +18,8 @@ use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
+use MediaWiki\User\Options\UserOptionsLookup;
+use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
@@ -26,6 +30,7 @@ use OOUI\TextInputWidget;
 use PermissionsError;
 use RepoGroup;
 use UserBlockedError;
+use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeMatch;
@@ -42,21 +47,29 @@ class SpecialNuke extends SpecialPage {
 	private PermissionManager $permissionManager;
 	private RepoGroup $repoGroup;
 	private UserFactory $userFactory;
+	private UserOptionsLookup $userOptionsLookup;
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
 	private NamespaceInfo $namespaceInfo;
 	private Language $contentLanguage;
+	/** @var CheckUserTemporaryAccountsByIPLookup|null */
+	private $checkUserTemporaryAccountsByIPLookup = null;
 
+	/**
+	 * @inheritDoc
+	 */
 	public function __construct(
 		JobQueueGroup $jobQueueGroup,
 		IConnectionProvider $dbProvider,
 		PermissionManager $permissionManager,
 		RepoGroup $repoGroup,
 		UserFactory $userFactory,
+		UserOptionsLookup $userOptionsLookup,
 		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
 		NamespaceInfo $namespaceInfo,
-		Language $contentLanguage
+		Language $contentLanguage,
+		$checkUserTemporaryAccountsByIPLookup = null
 	) {
 		parent::__construct( 'Nuke', 'nuke' );
 		$this->jobQueueGroup = $jobQueueGroup;
@@ -64,10 +77,12 @@ class SpecialNuke extends SpecialPage {
 		$this->permissionManager = $permissionManager;
 		$this->repoGroup = $repoGroup;
 		$this->userFactory = $userFactory;
+		$this->userOptionsLookup = $userOptionsLookup;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
 		$this->namespaceInfo = $namespaceInfo;
 		$this->contentLanguage = $contentLanguage;
+		$this->checkUserTemporaryAccountsByIPLookup = $checkUserTemporaryAccountsByIPLookup;
 	}
 
 	/**
@@ -127,7 +142,20 @@ class SpecialNuke extends SpecialPage {
 					return;
 				}
 			} elseif ( $req->getRawVal( 'action' ) === 'submit' ) {
-				$this->listForm( $target, $reason, $limit, $namespace );
+				// if the target is an ip addresss and temp account lookup is available,
+				// list pages created by the ip user or by temp accounts associated with the ip address
+				if (
+					$this->checkUserTemporaryAccountsByIPLookup &&
+					IPUtils::isValid( $target )
+				) {
+					$this->assertUserCanAccessTemporaryAccounts( $currentUser );
+					$tempnames = $this->getTempAccountData( $target );
+					$reason = $this->getDeleteReason( $this->getRequest(), $target, true );
+					$this->listForm( $target, $reason, $limit, $namespace, $tempnames );
+				} else {
+					// otherwise just list pages normally
+					$this->listForm( $target, $reason, $limit, $namespace );
+				}
 			} else {
 				$this->promptForm();
 			}
@@ -139,6 +167,62 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	/**
+	 * Does the user have the appropriate permissions and have they enabled in preferences?
+	 * Adapted from MediaWiki\CheckUser\Api\Rest\Handler\AbstractTemporaryAccountHandler::checkPermissions
+	 *
+	 * @param User $currentUser
+	 *
+	 * @throws PermissionsError if the user does not have the 'checkuser-temporary-account' right
+	 * @throws ErrorPageError if the user has not enabled the 'checkuser-temporary-account-enabled' preference
+	 */
+	private function assertUserCanAccessTemporaryAccounts( User $currentUser ) {
+		if (
+			!$currentUser->isAllowed( 'checkuser-temporary-account-no-preference' )
+		) {
+			if (
+				!$currentUser->isAllowed( 'checkuser-temporary-account' )
+			) {
+				throw new PermissionsError( 'checkuser-temporary-account' );
+			}
+			if (
+				!$this->userOptionsLookup->getOption(
+					$currentUser,
+					'checkuser-temporary-account-enable'
+				)
+			) {
+				throw new ErrorPageError(
+					$this->msg( 'checkuser-ip-contributions-permission-error-title' ),
+					$this->msg( 'checkuser-ip-contributions-permission-error-description' )
+				);
+			}
+		}
+	}
+
+	/**
+	 * Given an IP address, return a list of temporary accounts that are known to have edited from the IP.
+	 *
+	 * Calls to this method result in a log entry being generated for the logged-in user account making the request.
+	 * @param string $ip The IP address used for looking up temporary account names.
+	 * The address will be normalized in the IP lookup service.
+	 * @return string[] A list of temporary account usernames associated with the IP address
+	 */
+	private function getTempAccountData( string $ip ): array {
+		// Requires CheckUserTemporaryAccountsByIPLookup service
+		if ( !$this->checkUserTemporaryAccountsByIPLookup ) {
+			return [];
+		}
+		$status = $this->checkUserTemporaryAccountsByIPLookup->get(
+			$ip,
+			$this->getAuthority(),
+			true
+		);
+		if ( $status->isGood() ) {
+			return $status->getValue();
+		}
+		return [];
+	}
+
+	/**
 	 * Prompt for a username or IP address.
 	 *
 	 * @param string $userName
@@ -146,7 +230,11 @@ class SpecialNuke extends SpecialPage {
 	protected function promptForm( string $userName = '' ): void {
 		$out = $this->getOutput();
 
-		$out->addWikiMsg( 'nuke-tools' );
+		if ( $this->checkUserTemporaryAccountsByIPLookup ) {
+			$out->addWikiMsg( 'nuke-tools-tempaccount' );
+		} else {
+			$out->addWikiMsg( 'nuke-tools' );
+		}
 
 		$formDescriptor = [
 			'nuke-target' => [
@@ -199,11 +287,12 @@ class SpecialNuke extends SpecialPage {
 	 * @param string $reason
 	 * @param int $limit
 	 * @param int|null $namespace
+	 * @param string[] $tempnames
 	 */
-	protected function listForm( $username, $reason, $limit, $namespace = null ): void {
+	protected function listForm( $username, $reason, $limit, $namespace = null, $tempnames = [] ): void {
 		$out = $this->getOutput();
 
-		$pages = $this->getNewPages( $username, $limit, $namespace );
+		$pages = $this->getNewPages( $username, $limit, $namespace, $tempnames );
 
 		if ( !$pages ) {
 			if ( $username === '' ) {
@@ -221,6 +310,8 @@ class SpecialNuke extends SpecialPage {
 
 		if ( $username === '' ) {
 			$out->addWikiMsg( 'nuke-list-multiple' );
+		} elseif ( $tempnames ) {
+			$out->addWikiMsg( 'nuke-list-tempaccount', $username );
 		} else {
 			$out->addWikiMsg( 'nuke-list', $username );
 		}
@@ -340,10 +431,11 @@ class SpecialNuke extends SpecialPage {
 	 * @param string $username
 	 * @param int $limit
 	 * @param int|null $namespace
+	 * @param string[] $tempnames
 	 *
 	 * @return array{0:Title,1:string|false}[]
 	 */
-	protected function getNewPages( $username, $limit, $namespace = null ): array {
+	protected function getNewPages( $username, $limit, $namespace = null, $tempnames = [] ): array {
 		$dbr = $this->dbProvider->getReplicaDatabase();
 		$queryBuilder = $dbr->newSelectQueryBuilder()
 			->select( [ 'page_title', 'page_namespace' ] )
@@ -362,7 +454,8 @@ class SpecialNuke extends SpecialPage {
 		if ( $username === '' ) {
 			$queryBuilder->field( 'actor_name', 'rc_user_text' );
 		} else {
-			$queryBuilder->andWhere( [ 'actor_name' => $username ] );
+			$actornames = [ $username, ...$tempnames ];
+			$queryBuilder->andWhere( [ 'actor_name' => $actornames ] );
 		}
 
 		if ( $namespace !== null ) {
@@ -595,10 +688,14 @@ class SpecialNuke extends SpecialPage {
 		return 'pagetools';
 	}
 
-	private function getDeleteReason( WebRequest $request, string $target ): string {
-		$defaultReason = $target === ''
-			? $this->msg( 'nuke-multiplepeople' )->inContentLanguage()->text()
-			: $this->msg( 'nuke-defaultreason', $target )->inContentLanguage()->text();
+	private function getDeleteReason( WebRequest $request, string $target, bool $tempaccount = false ): string {
+		if ( $tempaccount ) {
+			$defaultReason = $this->msg( 'nuke-defaultreason-tempaccount' );
+		} else {
+			$defaultReason = $target === ''
+				? $this->msg( 'nuke-multiplepeople' )->inContentLanguage()->text()
+				: $this->msg( 'nuke-defaultreason', $target )->inContentLanguage()->text();
+		}
 
 		$dropdownSelection = $request->getText( 'wpDeleteReasonList', 'other' );
 		$reasonInput = $request->getText( 'wpReason', $defaultReason );

@@ -72,10 +72,12 @@
 				"PermissionManager",
 				"RepoGroup",
 				"UserFactory",
+				"UserOptionsLookup",
 				"UserNamePrefixSearch",
 				"UserNameUtils",
 				"NamespaceInfo",
-				"ContentLanguage"
+				"ContentLanguage",
+				"NukeIPLookup"
 			],
 			"styles": [
 				"mediawiki.special.special"
@@ -85,5 +87,8 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\Nuke\\": "includes/"
 	},
+	"ServiceWiringFiles": [
+		"includes/ServiceWiring.php"
+	],
 	"manifest_version": 2
 }

@@ -32,4 +32,12 @@ $cfg['exclude_analysis_directory_list'] = array_merge(
 	]
 );
 
+// Don't stub CheckUser dependency if present
+if ( file_exists( '../../extensions/CheckUser/src/Services/CheckUserTemporaryAccountsByIPLookup.php' ) ) {
+	$cfg[ 'exclude_file_list' ] = array_merge(
+		$cfg[ 'exclude_file_list' ],
+		[ '.phan/stubs/CheckUserTemporaryAccountsByIPLookup.php' ]
+	);
+}
+
 return $cfg;

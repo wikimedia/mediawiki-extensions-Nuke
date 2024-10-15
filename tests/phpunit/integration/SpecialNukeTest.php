@@ -2,9 +2,12 @@
 
 namespace MediaWiki\Extension\Nuke\Test\Integration;
 
+use ErrorPageError;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Nuke\SpecialNuke;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\Title\Title;
 use PermissionsError;
 use SpecialPageTestBase;
@@ -17,6 +20,8 @@ use UserBlockedError;
  */
 class SpecialNukeTest extends SpecialPageTestBase {
 
+	use TempUserTestTrait;
+
 	protected function newSpecialPage(): SpecialNuke {
 		$services = $this->getServiceContainer();
 
@@ -26,15 +31,17 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			$services->getPermissionManager(),
 			$services->getRepoGroup(),
 			$services->getUserFactory(),
+			$services->getUserOptionsLookup(),
 			$services->getUserNamePrefixSearch(),
 			$services->getUserNameUtils(),
 			$services->getNamespaceInfo(),
-			$services->getContentLanguage()
+			$services->getContentLanguage(),
+			$services->getService( 'NukeIPLookup' )
 		);
 	}
 
 	/**
-	 * Ensure that the prompt doesn't allow a user blocked from deleting
+	 * Ensure that the prompt prevents a user blocked from deleting
 	 * pages from accessing the form.
 	 *
 	 * @return void
@@ -110,11 +117,92 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 	public function testPrompt() {
 		$admin = $this->getTestSysop()->getUser();
+		$this->disableAutoCreateTempUser();
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', null, 'qqx', $performer );
 
 		$this->assertStringContainsString( '(nuke-summary)', $html );
+		$this->assertStringContainsString( '(nuke-tools)', $html );
+	}
+
+	/**
+	 * Ensure that the prompt prevents a nuke user without the checkuser-temporary-account permission
+	 * from performing CheckUser IP lookups
+	 *
+	 * @return void
+	 */
+	public function testPromptCheckUserNoPermission() {
+		$this->expectException( PermissionsError::class );
+
+		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
+		$this->enableAutoCreateTempUser();
+		$ip = '1.2.3.4';
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$permissionManager = $this->getServiceContainer()->getPermissionManager();
+		$permissions = $permissionManager->getUserPermissions( $adminUser );
+		$permissions = array_diff( $permissions, [ 'checkuser-temporary-account' ] );
+		$permissionManager->overrideUserRightsForTesting( $adminUser,
+			$permissions
+		);
+		$performer = new UltimateAuthority( $adminUser );
+		$request = new FauxRequest( [
+			'target' => $ip,
+			'action' => 'submit',
+		], true );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+	}
+
+	/**
+	 * Ensure that the prompt prevents a nuke user who hasn't accepted the agreement
+	 * from performing CheckUser IP lookups
+	 *
+	 * @return void
+	 */
+	public function testPromptCheckUserNoPreference() {
+		$this->expectException( ErrorPageError::class );
+		$this->expectExceptionMessage(
+			'To view temporary account contributions for an IP, please accept' .
+			' the agreement in [[Special:Preferences|your preferences]].'
+		);
+		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
+		$this->enableAutoCreateTempUser();
+		$ip = '1.2.3.4';
+		$this->overrideConfigValues( [
+			'GroupPermissions' => [
+				'testgroup' => [
+					'nuke' => true,
+					'checkuser-temporary-account' => true
+				]
+			]
+		] );
+
+		$adminUser = $this->getTestUser( [ 'testgroup' ] )->getUser();
+		$request = new FauxRequest( [
+			'target' => $ip,
+			'action' => 'submit',
+		], true );
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+	}
+
+	/**
+	 * Ensure that the prompt displays the correct messages when
+	 * temp accounts and CheckUser are enabled
+	 *
+	 * @return void
+	 */
+	public function testPromptWithCheckUser() {
+		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
+		$admin = $this->getTestSysop()->getUser();
+		$this->enableAutoCreateTempUser();
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', null, 'qqx', $performer );
+
+		$this->assertStringContainsString( '(nuke-summary)', $html );
+		$this->assertStringContainsString( '(nuke-tools-tempaccount)', $html );
 	}
 
 	public function testPromptTarget() {
@@ -132,6 +220,123 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
 
+		$this->assertStringContainsString( 'Target1', $html );
+		$this->assertStringContainsString( 'Target2', $html );
+	}
+
+	/**
+	 * Ensure that the prompt works with anon IP searches when
+	 * temp accounts are disabled
+	 *
+	 * @return void
+	 */
+	public function testPromptTargetAnonUser() {
+		$this->disableAutoCreateTempUser( [ 'known' => false ] );
+		$ip = '127.0.0.1';
+		$testUser = $this->getServiceContainer()->getUserFactory()->newAnonymous( $ip );
+		$performer = new UltimateAuthority( $testUser );
+
+		$this->editPage( 'Target1', 'test', "", NS_MAIN, $performer );
+		$this->editPage( 'Target2', 'test', "", NS_MAIN, $performer );
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$request = new FauxRequest( [
+			'target' => $testUser->getUser()->getName()
+		] );
+		$adminPerformer = new UltimateAuthority( $adminUser );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+
+		$this->assertStringContainsString( '(nuke-list:', $html );
+		$this->assertStringContainsString( 'Target1', $html );
+		$this->assertStringContainsString( 'Target2', $html );
+
+		$usernameCount = substr_count( $html, $ip );
+		$this->assertStringContainsString( 5, $usernameCount );
+	}
+
+	/**
+	 * Ensure that the prompt returns temp accounts from IP lookups when
+	 * temp accounts and CheckUser are enabled
+	 *
+	 * @return void
+	 */
+	public function testPromptTargetCheckUser() {
+		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
+		$this->enableAutoCreateTempUser();
+		$ip = '1.2.3.4';
+		RequestContext::getMain()->getRequest()->setIP( $ip );
+		$testUser = $this->getServiceContainer()->getTempUserCreator()
+			->create( null, new FauxRequest() )->getUser();
+		$this->editPage( 'Target1', 'test', "", NS_MAIN, $testUser );
+		$this->editPage( 'Target2', 'test', "", NS_MAIN, $testUser );
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$permissionManager = $this->getServiceContainer()->getPermissionManager();
+		$permissionManager->overrideUserRightsForTesting( $adminUser,
+			array_merge(
+				$permissionManager->getUserPermissions( $adminUser ),
+				[ 'checkuser-temporary-account-no-preference' ]
+			) );
+		$request = new FauxRequest( [
+			'target' => $ip,
+			'action' => 'submit',
+		], true );
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+
+		$usernameCount = substr_count( $html, $ip );
+		$this->assertStringContainsString( 1, $usernameCount );
+
+		$this->assertStringContainsString( '(nuke-list-tempaccount:', $html );
+		$this->assertStringContainsString( 'Target1', $html );
+		$this->assertStringContainsString( 'Target2', $html );
+	}
+
+	/**
+	 * Ensure that the prompt returns temp accounts and IP accounts from IP lookups when
+	 * temp accounts and CheckUser are enabled and Anonymous IP accounts exist
+	 *
+	 * @return void
+	 */
+	public function testPromptTargetCheckUserMixed() {
+		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
+		$this->disableAutoCreateTempUser( [ 'known' => false ] );
+		$ip = '1.2.3.4';
+		$testUser = $this->getServiceContainer()->getUserFactory()->newAnonymous( $ip );
+		$performer = new UltimateAuthority( $testUser );
+
+		// create a page as an anonymous IP user
+		$this->editPage( 'Target1', 'test', "", NS_MAIN, $performer );
+
+		$this->enableAutoCreateTempUser();
+		RequestContext::getMain()->getRequest()->setIP( $ip );
+		$testUser = $this->getServiceContainer()->getTempUserCreator()
+										  ->create( null, new FauxRequest() )->getUser();
+		$performer = new UltimateAuthority( $testUser );
+
+		// create a page as a temp user
+		$this->editPage( 'Target2', 'test', "", NS_MAIN, $performer );
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$permissionManager = $this->getServiceContainer()->getPermissionManager();
+		$permissionManager->overrideUserRightsForTesting( $adminUser,
+			array_merge(
+				$permissionManager->getUserPermissions( $adminUser ),
+				[ 'checkuser-temporary-account-no-preference' ]
+			) );
+		$request = new FauxRequest( [
+			'target' => $ip,
+			'action' => 'submit',
+		], true );
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+
+		$usernameCount = substr_count( $html, $ip );
+		$this->assertStringContainsString( 1, $usernameCount );
+
+		// They should all show up together
+		$this->assertStringContainsString( '(nuke-list-tempaccount:', $html );
 		$this->assertStringContainsString( 'Target1', $html );
 		$this->assertStringContainsString( 'Target2', $html );
 	}
