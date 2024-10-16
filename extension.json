@@ -25,7 +25,9 @@
 		}
 	},
 	"Hooks": {
-		"ContributionsToolLinks": "main"
+		"ContributionsToolLinks": "main",
+		"ListDefinedTags": "MediaWiki\\Extension\\Nuke\\Hooks::onRegisterTags",
+		"ChangeTagsListActive": "MediaWiki\\Extension\\Nuke\\Hooks::onRegisterTags"
 	},
 	"ResourceModules": {
 		"ext.nuke.confirm": {

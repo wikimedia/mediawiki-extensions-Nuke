@@ -465,11 +465,12 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$this->assertStringContainsString( '(nuke-deletion-queued: Page123)', $html );
 		$this->assertStringContainsString( '(nuke-deletion-queued: Paging456)', $html );
-
+		$this->assertStringNotContainsString( 'Nuke', $this->getDeleteLogHtml() );
 		// Ensure all jobs are run
 		$this->runJobs();
 
 		$this->assertStringContainsString( 'Vandalism', $this->getDeleteLogHtml() );
+		$this->assertStringContainsString( 'Nuke', $this->getDeleteLogHtml() );
 		$this->assertStringContainsString( $fauxReason, $this->getDeleteLogHtml() );
 	}
 
