@@ -451,13 +451,10 @@ class SpecialNuke extends SpecialPage {
 			->orderBy( 'rc_timestamp', SelectQueryBuilder::SORT_DESC )
 			->limit( $limit );
 
-		if ( $username === '' ) {
-			$queryBuilder->field( 'actor_name', 'rc_user_text' );
-		} else {
-			$actornames = array_filter( [ $username, ...$tempnames ] );
-			if ( $actornames ) {
-				$queryBuilder->andWhere( [ 'actor_name' => $actornames ] );
-			}
+		$queryBuilder->field( 'actor_name', 'rc_user_text' );
+		$actornames = array_filter( [ $username, ...$tempnames ] );
+		if ( $actornames ) {
+			$queryBuilder->andWhere( [ 'actor_name' => $actornames ] );
 		}
 
 		if ( $namespace !== null ) {
@@ -559,7 +556,7 @@ class SpecialNuke extends SpecialPage {
 		foreach ( $result as $row ) {
 			$pages[] = [
 				Title::makeTitle( $row->page_namespace, $row->page_title ),
-				$username === '' ? $row->rc_user_text : false
+				$row->rc_user_text
 			];
 		}
 

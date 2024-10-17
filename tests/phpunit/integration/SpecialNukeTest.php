@@ -251,8 +251,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( 'Target1', $html );
 		$this->assertStringContainsString( 'Target2', $html );
 
-		$usernameCount = substr_count( $html, $ip );
-		$this->assertStringContainsString( 5, $usernameCount );
+		$this->assertEquals( 2, substr_count( $html, '(nuke-editby: 127.0.0.1)' ) );
 	}
 
 	/**
@@ -285,8 +284,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
 
-		$usernameCount = substr_count( $html, $ip );
-		$this->assertStringContainsString( 1, $usernameCount );
+		$this->assertEquals( 2, substr_count( $html, '(nuke-editby: ~2024-1)' ) );
 
 		$this->assertStringContainsString( '(nuke-list-tempaccount:', $html );
 		$this->assertStringContainsString( 'Target1', $html );
@@ -332,8 +330,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
 
-		$usernameCount = substr_count( $html, $ip );
-		$this->assertStringContainsString( 1, $usernameCount );
+		$this->assertSame( 1, substr_count( $html, ' (nuke-editby: ~2024-1)' ) );
+		$this->assertSame( 1, substr_count( $html, ' (nuke-editby: 1.2.3.4)' ) );
 
 		// They should all show up together
 		$this->assertStringContainsString( '(nuke-list-tempaccount:', $html );
