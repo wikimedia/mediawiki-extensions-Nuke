@@ -97,7 +97,8 @@ class HooksTest extends MediaWikiIntegrationTestCase {
 			$services->getCommentFormatter(),
 			$services->getUserFactory(),
 			$services->getUserIdentityLookup(),
-			$services->getDatabaseBlockStore()
+			$services->getDatabaseBlockStore(),
+			$services->getTempUserConfig()
 		);
 	}
 
