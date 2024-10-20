@@ -4,12 +4,12 @@ namespace MediaWiki\Extension\Nuke;
 
 use DeletePageJob;
 use JobQueueGroup;
-use Language;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\ListToggle;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Language\Language;
 use MediaWiki\Page\File\FileDeleteForm;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\WebRequest;
@@ -19,6 +19,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\Xml\Xml;
 use OOUI\DropdownInputWidget;
 use OOUI\FieldLayout;
 use OOUI\TextInputWidget;
@@ -30,7 +31,6 @@ use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeMatch;
 use Wikimedia\Rdbms\LikeValue;
 use Wikimedia\Rdbms\SelectQueryBuilder;
-use Xml;
 
 class SpecialNuke extends SpecialPage {
 
