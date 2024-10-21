@@ -454,8 +454,10 @@ class SpecialNuke extends SpecialPage {
 		if ( $username === '' ) {
 			$queryBuilder->field( 'actor_name', 'rc_user_text' );
 		} else {
-			$actornames = [ $username, ...$tempnames ];
-			$queryBuilder->andWhere( [ 'actor_name' => $actornames ] );
+			$actornames = array_filter( [ $username, ...$tempnames ] );
+			if ( $actornames ) {
+				$queryBuilder->andWhere( [ 'actor_name' => $actornames ] );
+			}
 		}
 
 		if ( $namespace !== null ) {
