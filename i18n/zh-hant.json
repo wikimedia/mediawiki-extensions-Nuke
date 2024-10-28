@@ -3,6 +3,7 @@
 		"authors": [
 			"A2093064",
 			"Anakmalaysia",
+			"Cookai1205",
 			"Cwlin0416",
 			"EagerLin",
 			"H78c67c",
@@ -24,6 +25,7 @@
 	"nuke-desc": "提供管理員可執行[[Special:Nuke|大量刪除]]的頁面",
 	"nuke-nopages": "沒有任何最近由 [[Special:Contributions/$1|{{GENDER:$1|$1}}]] 所變更的頁面。",
 	"nuke-list": "下列頁面最近由[[Special:Contributions/$1|{{GENDER:$1|$1}}]]所建立。請選擇要刪除的頁面，提供編輯摘要，然後點擊「刪除所選」來實行頁面刪除。\n\n重新導向會以斜體文字呈現。",
+	"nuke-list-tempaccount": "下列頁面最近由臨時帳號所建立，IP位址為$1。請選擇要刪除的頁面，提供編輯摘要，然後點擊「刪除所選」來實行頁面刪除。'''出於隱私原因，請不要在編輯摘要中寫出IP位址。'''\n\n重新導向會以斜體文字呈現。",
 	"nuke-list-multiple": "下列為最近建立的頁面。請選擇要刪除的頁面，提供編輯摘要，然後點擊「刪除所選」來實行頁面刪除。\n\n重新導向會以斜體文字呈現。",
 	"nuke-defaultreason": "大量刪除由 [[Special:Contributions/$1|$1]] 所建立的頁面",
 	"nuke-multiplepeople": "大量刪除最近新增的頁面",
