@@ -46,5 +46,7 @@
 	"nuke-namespace": "Label shown on [[Special:Nuke]] in front of the namespace input that allows choosing a namespace to filter the search by",
 	"nuke-linkoncontribs": "Used as link text which is used on [[Special:Contributions]] and [[Special:DeletedContributions]].\n\nOnly added if a user has rights to nuke pages.\n\nThe link has the tooltip {{msg-mw|Nuke-linkoncontribs-text}}.\n{{Identical|Mass delete}}",
 	"nuke-linkoncontribs-text": "Tooltip for the link which is labeled {{msg-mw|Nuke-linkoncontribs}} Parameters:\n* $1 is the target username used for GENDER.",
-	"nuke-confirm": "Message when the user is trying to delete pages."
+	"nuke-confirm": "Message when the user is trying to delete pages.",
+	"tag-nuke": "Short description of the nuke tag.\n\nShown on lists of changes (history, recentchanges, etc.) for each page deleted with the Tag extension.\n\nSee also:\n* {{msg-mw|tag-nuke-description}}",
+	"tag-nuke-description": "Long description of the nuke tag.\n\nShown on [[Special:Tags]].\n\nSee also:\n* {{msg-mw|tag-nuke}}"
 }

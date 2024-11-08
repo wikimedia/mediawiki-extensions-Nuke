@@ -625,7 +625,7 @@ class SpecialNuke extends SpecialPage {
 					'userId' => $user->getId(),
 					'wikiPageId' => $title->getId(),
 					'suppress' => false,
-					'tags' => '["Nuke"]',
+					'tags' => '["nuke"]',
 					'logsubtype' => 'delete',
 				] );
 				$jobs[] = $job;
