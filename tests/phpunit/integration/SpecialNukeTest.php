@@ -403,6 +403,89 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( $expectedTitle, $html );
 	}
 
+	public function testListNamespaceMultiple() {
+		$this->editPage( 'NukeMainPageTarget', 'test' );
+		$this->editPage( 'NukeProjectPageTarget', 'test', '', NS_PROJECT );
+		$this->editPage( 'NukeUserPageTarget', 'test', '', NS_USER );
+
+		$admin = $this->getTestSysop()->getUser();
+		$request = new FauxRequest( [
+			'action' => 'submit',
+			'pattern' => 'Nuke%PageTarget',
+			'namespace' => implode( "\n", [ NS_MAIN, NS_USER ] )
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$this->assertStringContainsString(
+			Title::makeTitle( NS_MAIN, 'NukeMainPageTarget' )->getPrefixedText(),
+			$html
+		);
+		$this->assertStringContainsString(
+			Title::makeTitle( NS_USER, 'NukeUserPageTarget' )->getPrefixedText(),
+			$html
+		);
+		$this->assertStringNotContainsString(
+			Title::makeTitle( NS_PROJECT, 'NukNukeProjectPageTarget' )->getPrefixedText(),
+			$html
+		);
+	}
+
+	public function testListNamespaceMultipleEdge() {
+		$page1 = $this->insertPage( 'NukeMainPageTarget', 'test' )['title'];
+		$page2 = $this->insertPage( 'NukeProjectPageTarget', 'test', NS_PROJECT )['title'];
+		$page3 = $this->insertPage( 'NukeUserPageTarget', 'test', NS_USER )['title'];
+
+		$admin = $this->getTestSysop()->getUser();
+		$performer = new UltimateAuthority( $admin );
+
+		// Input includes empty line
+		$request1 = new FauxRequest( [
+			'action' => 'submit',
+			'pattern' => 'Nuke%PageTarget',
+			'namespace' => NS_PROJECT . "\n"
+		], true );
+		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $performer );
+		$this->assertStringNotContainsString( $page1, $html1 );
+		$this->assertStringContainsString( $page2, $html1 );
+		$this->assertStringNotContainsString( $page3, $html1 );
+
+		// Input includes invalid namespace ID
+		$request1 = new FauxRequest( [
+			'action' => 'submit',
+			'pattern' => 'Nuke%PageTarget',
+			'namespace' => NS_PROJECT . "\n99999999"
+		], true );
+		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $performer );
+		$this->assertStringNotContainsString( $page1, $html1 );
+		$this->assertStringContainsString( $page2, $html1 );
+		$this->assertStringNotContainsString( $page3, $html1 );
+
+		// Input includes a string
+		$request1 = new FauxRequest( [
+			'action' => 'submit',
+			'pattern' => 'Nuke%PageTarget',
+			'namespace' => NS_PROJECT . "\nUser"
+		], true );
+		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $performer );
+		$this->assertStringNotContainsString( $page1, $html1 );
+		$this->assertStringContainsString( $page2, $html1 );
+		$this->assertStringNotContainsString( $page3, $html1 );
+
+		// Input is entirely invalid
+		$request1 = new FauxRequest( [
+			'action' => 'submit',
+			'pattern' => 'Nuke%PageTarget',
+			'namespace' => "Project\nUser"
+		], true );
+		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $performer );
+		// Pages from all namespaces will be returned
+		$this->assertStringContainsString( $page1, $html1 );
+		$this->assertStringContainsString( $page2, $html1 );
+		$this->assertStringContainsString( $page3, $html1 );
+	}
+
 	public function testListCapitalizedNamespace() {
 		$this->overrideConfigValues( [
 			'CapitalLinks' => false,
@@ -477,6 +560,59 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringNotContainsString( "uncapsTarget" . NS_PROJECT, $html );
 		$this->assertStringNotContainsString( "uncapsTarget" . NS_MEDIAWIKI, $html );
 		$this->assertStringNotContainsString( "uncapsTarget" . NS_USER, $html );
+	}
+
+	public function testListCapitalizedNamespaceMultiple() {
+		// The goal of this test is to:
+		// - Ensure that for case-sensitive namespaces, the search remains case-sensitive.
+		// - Ensure that for non-case-sensitive namespaces, the search capitalizes the condition accordingly.
+		// Here, `NS_MAIN` remains case-insensitive, but other namespaces will be case-sensitive.
+		$this->overrideConfigValues( [
+			'CapitalLinks' => false,
+			'CapitalLinkOverrides' => [
+				NS_MAIN => true
+			]
+		] );
+
+		$this->editPage( 'UncapsTargetMain', 'test' );
+		$this->editPage( 'UncapsTarget', 'test', '', NS_PROJECT );
+		$this->editPage( 'uncapsTarget', 'test', '', NS_PROJECT );
+		$this->editPage( 'UncapsTarget', 'test', '', NS_HELP );
+		$this->editPage( 'uncapsTarget', 'test', '', NS_HELP );
+
+		$admin = $this->getTestSysop()->getUser();
+		$request = new FauxRequest( [
+			'action' => 'submit',
+			'pattern' => 'uncapsTarget%',
+			'namespace' => implode( "\n", [ NS_MAIN, NS_HELP ] )
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$this->assertStringContainsString(
+			Title::makeTitle( NS_MAIN, 'UncapsTargetMain' )->getPrefixedText(),
+			$html
+		);
+		$this->assertStringContainsString(
+			Title::makeTitle( NS_HELP, 'uncapsTarget' )->getPrefixedText(),
+			$html
+		);
+
+		$this->assertStringNotContainsString(
+			Title::makeTitle( NS_PROJECT, 'UncapsTarget' )->getPrefixedText(),
+			$html
+		);
+
+		$this->assertStringNotContainsString(
+			Title::makeTitle( NS_PROJECT, 'uncapsTarget' )->getPrefixedText(),
+			$html
+		);
+
+		$this->assertStringNotContainsString(
+			Title::makeTitle( NS_HELP, 'UncapsTarget' )->getPrefixedText(),
+			$html
+		);
 	}
 
 	/**
