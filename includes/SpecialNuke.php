@@ -12,6 +12,7 @@ use MediaWiki\Html\Html;
 use MediaWiki\Html\ListToggle;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Language\Language;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Page\File\FileDeleteForm;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\WebRequest;
@@ -437,21 +438,32 @@ class SpecialNuke extends SpecialPage {
 	 */
 	protected function getNewPages( $username, $limit, $namespace = null, $tempnames = [] ): array {
 		$dbr = $this->dbProvider->getReplicaDatabase();
+
+		$maxAge = $this->getConfig()->get( "NukeMaxAge" );
+		// If no Nuke-specific max age was set, this should match the value of `$wgRCMaxAge`.
+		if ( !$maxAge ) {
+			$maxAge = $this->getConfig()->get( MainConfigNames::RCMaxAge );
+		}
+
 		$queryBuilder = $dbr->newSelectQueryBuilder()
 			->select( [ 'page_title', 'page_namespace' ] )
-			->from( 'recentchanges' )
-			->join( 'actor', null, 'actor_id=rc_actor' )
-			->join( 'page', null, 'page_id=rc_cur_id' )
-			->where(
-				$dbr->expr( 'rc_source', '=', 'mw.new' )->orExpr(
-					$dbr->expr( 'rc_log_type', '=', 'upload' )
-						->and( 'rc_log_action', '=', 'upload' )
-				)
-			)
-			->orderBy( 'rc_timestamp', SelectQueryBuilder::SORT_DESC )
-			->limit( $limit );
+			->from( 'revision' )
+			->join( 'actor', null, 'actor_id=rev_actor' )
+			->join( 'page', null, 'page_id=rev_page' )
+			->where( [
+				$dbr->expr( 'rev_parent_id', '=', 0 ),
+				$dbr->expr( 'rev_timestamp', '>', $dbr->timestamp(
+					time() - $maxAge
+				) )
+			] )
+			->orderBy( 'rev_timestamp', SelectQueryBuilder::SORT_DESC )
+			->distinct()
+			->limit( $limit )
+			->setMaxExecutionTime(
+				$this->getConfig()->get( MainConfigNames::MaxExecutionTimeForExpensiveQueries )
+			);
 
-		$queryBuilder->field( 'actor_name', 'rc_user_text' );
+		$queryBuilder->field( 'actor_name' );
 		$actornames = array_filter( [ $username, ...$tempnames ] );
 		if ( $actornames ) {
 			$queryBuilder->andWhere( [ 'actor_name' => $actornames ] );
@@ -556,7 +568,7 @@ class SpecialNuke extends SpecialPage {
 		foreach ( $result as $row ) {
 			$pages[] = [
 				Title::makeTitle( $row->page_namespace, $row->page_title ),
-				$row->rc_user_text
+				$row->actor_name
 			];
 		}
 

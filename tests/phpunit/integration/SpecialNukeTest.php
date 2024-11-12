@@ -560,6 +560,77 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertEquals( 2, substr_count( $html, '<li>' ) );
 	}
 
+	public function testListMaxAge() {
+		// 1 day
+		$maxAge = 86400;
+		$this->overrideConfigValues( [
+			'NukeMaxAge' => $maxAge,
+			'RCMaxAge' => $maxAge
+		] );
+
+		// Will never show up. If it does, the max age isn't being applied at all.
+		$page1Status = $this->editPage( 'Page1', 'test' );
+		// Will show up conditionally (see below).
+		$page2Status = $this->editPage( 'Page2', 'test' );
+		// Will always show up.
+		$this->editPage( 'Page3', 'test' );
+
+		// Prepare database connection and update query builder
+		$dbw = $this->getServiceContainer()->getConnectionProvider()->getPrimaryDatabase();
+		$uqb = $dbw->newUpdateQueryBuilder()
+			->update( 'revision' )
+			->caller( __METHOD__ );
+
+		// Manually change the rev_timestamp of Page1's creation in the database.
+		( clone $uqb )
+			->set( [ 'rev_timestamp' => $dbw->timestamp( time() - ( $maxAge * 3 ) ) ] )
+			->where( [
+				'rev_id' => $page1Status->getNewRevision()->getId()
+			] )->execute();
+		// Manually change the rev_timestamp of Page2's creation in the database.
+		( clone $uqb )
+			->set( [ 'rev_timestamp' => $dbw->timestamp( time() - $maxAge - 60 ) ] )
+			->where( [
+				'rev_id' => $page2Status->getNewRevision()->getId()
+			] )->execute();
+
+		$admin = $this->getTestSysop()->getUser();
+		$request = new FauxRequest( [
+			'action' => 'submit',
+			'pattern' => 'Page%',
+			'limit' => 2
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+
+		// Now check if resetting $wgNukeMaxAge will show Page2.
+		// This should follow $wgRCMaxAge, which will include the page.
+		$this->overrideConfigValues( [
+			'RCMaxAge' => $maxAge * 2,
+			'NukeMaxAge' => 0
+		] );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+
+		// Now check if expanding just $wgNukeMaxAge will show Page2.
+		$this->overrideConfigValues( [
+			'RCMaxAge' => $maxAge,
+			'NukeMaxAge' => $maxAge * 2
+		] );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+	}
+
 	public function testExecutePattern() {
 		// Test that matching wildcards works, and that escaping wildcards works as documented
 		// at https://www.mediawiki.org/wiki/Help:Extension:Nuke

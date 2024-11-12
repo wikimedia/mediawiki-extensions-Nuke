@@ -29,6 +29,12 @@
 		"ListDefinedTags": "MediaWiki\\Extension\\Nuke\\Hooks::onRegisterTags",
 		"ChangeTagsListActive": "MediaWiki\\Extension\\Nuke\\Hooks::onRegisterTags"
 	},
+	"config": {
+		"NukeMaxAge": {
+			"value": 0,
+			"description": "The maximum age of a new page creation or file upload before it becomes ineligible for mass deletion. Defaults to the value of $wgRCMaxAge."
+		}
+	},
 	"ResourceModules": {
 		"ext.nuke.confirm": {
 			"scripts": [
