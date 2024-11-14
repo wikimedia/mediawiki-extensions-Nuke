@@ -739,13 +739,18 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$this->assertStringContainsString( '(nuke-deletion-queued: Page123)', $html );
 		$this->assertStringContainsString( '(nuke-deletion-queued: Paging456)', $html );
-		$this->assertStringNotContainsString( 'Nuke', $this->getDeleteLogHtml() );
-		// Ensure all jobs are run
+
+		// Pre-check to confirm that the page hasn't been deleted yet
+		// "mw-tag-marker-nuke" is the CSS class for the "Nuke" tag's <span> on Special:Log.
+		$this->assertStringNotContainsString( 'mw-tag-marker-nuke', $this->getDeleteLogHtml() );
+
+		// Ensure all delete jobs are run
 		$this->runJobs();
 
-		$this->assertStringContainsString( 'Vandalism', $this->getDeleteLogHtml() );
-		$this->assertStringContainsString( 'Nuke', $this->getDeleteLogHtml() );
-		$this->assertStringContainsString( $fauxReason, $this->getDeleteLogHtml() );
+		$deleteLogHtml = $this->getDeleteLogHtml();
+		$this->assertStringContainsString( 'Vandalism', $deleteLogHtml );
+		$this->assertStringContainsString( 'mw-tag-marker-nuke', $deleteLogHtml );
+		$this->assertStringContainsString( $fauxReason, $deleteLogHtml );
 	}
 
 	public function testDeleteDropdownReason() {
@@ -898,6 +903,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 	private function getDeleteLogHtml(): string {
 		$services = $this->getServiceContainer();
+		// TODO: Make this use qqx so tests can be checked against system message keys.
 		$specialLog = $services->getSpecialPageFactory()->getPage( 'Log' );
 		$specialLog->execute( "delete" );
 		return $specialLog->getOutput()->getHTML();
