@@ -9,6 +9,7 @@ use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\Title\Title;
+use MediaWiki\User\User;
 use PermissionsError;
 use SpecialPageTestBase;
 use UploadFromFile;
@@ -653,7 +654,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 	}
 
 	public function testListFiles() {
-		$this->uploadTestFile();
+		$testFileName = $this->uploadTestFile()['title']->getPrefixedText();
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
@@ -664,10 +665,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 
-		$expectedTitle = Title::makeTitle( NS_FILE, 'Example.png' );
-
 		// The title should be in the list
-		$this->assertStringContainsString( $expectedTitle->getPrefixedText(), $html );
+		$this->assertStringContainsString( $testFileName, $html );
 		// There should also be an image preview
 		$this->assertStringContainsString( "<img src", $html );
 	}
@@ -737,6 +736,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 
+		$deleteCount = count( $pages );
+		$this->assertStringContainsString( "(nuke-delete-summary: $deleteCount)", $html );
 		$this->assertStringContainsString( '(nuke-deletion-queued: Page123)', $html );
 		$this->assertStringContainsString( '(nuke-deletion-queued: Paging456)', $html );
 
@@ -751,6 +752,106 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( 'Vandalism', $deleteLogHtml );
 		$this->assertStringContainsString( 'mw-tag-marker-nuke', $deleteLogHtml );
 		$this->assertStringContainsString( $fauxReason, $deleteLogHtml );
+	}
+
+	public function testDeleteTarget() {
+		$pages = [];
+
+		$testUser = $this->getTestUser( "user" )->getUser();
+		$testUserName = $testUser->getName();
+
+		$pages[] = $this->uploadTestFile( $testUser )[ 'title' ];
+		$pages[] = $this->insertPage( 'Page123', 'Test', NS_MAIN, $testUser )[ 'title' ];
+		$pages[] = $this->insertPage( 'Paging456', 'Test', NS_MAIN, $testUser )[ 'title' ];
+
+		$admin = $this->getTestSysop()->getUser();
+
+		$fauxReason = "Reason " . wfRandomString();
+		$request = new FauxRequest( [
+			'action' => 'delete',
+			'wpDeleteReasonList' => 'Vandalism',
+			'wpReason' => $fauxReason,
+			'target' => $testUserName,
+			'pages' => $pages,
+			'wpFormIdentifier' => 'nukelist',
+			'wpEditToken' => $admin->getEditToken(),
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$deleteCount = count( $pages );
+		$this->assertStringContainsString(
+			"(nuke-delete-summary-user: $deleteCount, $testUserName)",
+			$html
+		);
+	}
+
+	public function testDeleteTargetAnon() {
+		$pages = [];
+
+		$testUser = $this->getTestUser( "user" )->getUser();
+		$testUserName = $testUser->getName();
+
+		$pages[] = $this->uploadTestFile( $testUser )[ 'title' ];
+		$pages[] = $this->insertPage( 'Page123', 'Test', NS_MAIN, $testUser )[ 'title' ];
+		$pages[] = $this->insertPage( 'Paging456', 'Test', NS_MAIN, $testUser )[ 'title' ];
+
+		$admin = $this->getTestSysop()->getUser();
+
+		$fauxReason = "Reason " . wfRandomString();
+		$request = new FauxRequest( [
+			'action' => 'delete',
+			'wpDeleteReasonList' => 'Vandalism',
+			'wpReason' => $fauxReason,
+			'pages' => $pages,
+			'wpFormIdentifier' => 'nukelist',
+			'wpEditToken' => $admin->getEditToken(),
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$deleteCount = count( $pages );
+		$this->assertStringContainsString(
+			"(nuke-delete-summary: $deleteCount)",
+			$html
+		);
+	}
+
+	public function testDeleteSkipped() {
+		$pages = [];
+		$pages[] = $this->insertPage( 'Page123', 'Test', NS_MAIN )[ 'title' ];
+		$pages[] = $this->insertPage( 'Paging 456', 'Test', NS_MAIN )[ 'title' ];
+		$skippedPage = $this->insertPage( 'Page 789', 'Test', NS_MAIN )['title'];
+
+		$admin = $this->getTestSysop()->getUser();
+
+		$request = new FauxRequest( [
+			'action' => 'delete',
+			'wpDeleteReasonList' => 'Vandalism',
+			'originalPageList' => implode( '|', $pages ),
+			'pages' => [ $skippedPage->getPrefixedDBkey() ],
+			'wpFormIdentifier' => 'nukelist',
+			'wpEditToken' => $admin->getEditToken(),
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$skippedCount = count( $pages );
+		$this->assertStringContainsString( '(nuke-delete-summary: 1)', $html );
+		$this->assertStringContainsString( "(nuke-skipped-summary: $skippedCount)", $html );
+
+		// Ensure all delete jobs are run
+		$this->runJobs();
+
+		// Make sure that those pages are not in the deletion log.
+		$deleteLogHtml = $this->getDeleteLogHtml();
+		foreach ( $pages as $title ) {
+			$this->assertStringNotContainsString( $title->getPrefixedText(), $deleteLogHtml );
+		}
+		$this->assertStringContainsString( $skippedPage->getPrefixedText(), $deleteLogHtml );
 	}
 
 	public function testDeleteDropdownReason() {
@@ -807,14 +908,14 @@ class SpecialNukeTest extends SpecialPageTestBase {
 	}
 
 	public function testDeleteFiles() {
-		$this->uploadTestFile();
+		$testFileName = $this->uploadTestFile()['title']->getPrefixedText();
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
 			'action' => 'delete',
 			'wpDeleteReasonList' => 'Reason',
 			'wpReason' => 'Reason',
-			'pages' => [ 'File:Example.png' ],
+			'pages' => [ $testFileName ],
 			'wpFormIdentifier' => 'nukelist',
 			'wpEditToken' => $admin->getEditToken(),
 		], true );
@@ -822,11 +923,9 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 
-		$expectedTitle = Title::makeTitle( NS_FILE, 'Example.png' );
-
 		// Files are deleted instantly
 		$this->assertStringContainsString( "nuke-deleted", $html );
-		$this->assertStringContainsString( $expectedTitle->getPrefixedText(), $html );
+		$this->assertStringContainsString( $testFileName, $html );
 	}
 
 	public function testDeleteHook() {
@@ -879,26 +978,40 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertCount( 0, $searchResults2 );
 	}
 
-	private function uploadTestFile() {
+	/**
+	 * Upload a test file.
+	 *
+	 * @param ?User|null $user
+	 * @return array Title object and page id
+	 */
+	private function uploadTestFile( ?User $user = null ): array {
 		$exampleFilePath = realpath( __DIR__ . "/../../assets/Example.png" );
 		$tempFilePath = $this->getNewTempFile();
 		copy( $exampleFilePath, $tempFilePath );
 
+		$title = Title::makeTitle( NS_FILE, "Example " . rand() . ".png" );
 		$request = new FauxRequest( [], true );
 		$request->setUpload( 'wpUploadFile', [
-			'name' => 'Example.png',
+			'name' => $title->getText(),
 			'type' => 'image/png',
 			'tmp_name' => $tempFilePath,
 			'size' => filesize( $tempFilePath ),
 			'error' => UPLOAD_ERR_OK
 		] );
 		$upload = UploadFromFile::createFromRequest( $request );
-		$upload->performUpload(
+		$uploadStatus = $upload->performUpload(
 			"test",
 			false,
 			false,
-			$this->getTestUser( "user" )->getUser()
+			$user ?? $this->getTestUser( "user" )->getUser()
 		);
+		$this->assertTrue( $uploadStatus->isOK() );
+		$this->getServiceContainer()->getJobRunner()->run( [] );
+
+		return [
+			'title' => $title,
+			'id' => $title->getId()
+		];
 	}
 
 	private function getDeleteLogHtml(): string {

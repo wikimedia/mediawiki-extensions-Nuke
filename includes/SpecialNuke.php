@@ -136,12 +136,16 @@ class SpecialNuke extends SpecialPage {
 			&& $currentUser->matchEditToken( $req->getVal( 'wpEditToken' ) )
 		) {
 			if ( $req->getRawVal( 'action' ) === 'delete' ) {
-				$pages = $req->getArray( 'pages' );
+				$pages = $req->getArray( 'pages' ) ?? [];
+				$originalPageList
+					= explode( '|', $req->getText( 'originalPageList' ) );
 
-				if ( $pages ) {
-					$this->doDelete( $pages, $reason );
-					return;
+				if ( count( $originalPageList ) === 1 && !$originalPageList[0] ) {
+					// No page list was provided.
+					$originalPageList = [];
 				}
+
+				$this->doDelete( $pages, $originalPageList, $reason, $target );
 			} elseif ( $req->getRawVal( 'action' ) === 'submit' ) {
 				// if the target is an ip addresss and temp account lookup is available,
 				// list pages created by the ip user or by temp accounts associated with the ip address
@@ -362,12 +366,15 @@ class SpecialNuke extends SpecialPage {
 					'name' => 'nukelist' ]
 			) .
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
+			Html::hidden( 'target', $username ) .
 			$dropdown .
 			$reasonField .
 			// Select: All, None, Invert
 			( new ListToggle( $this->getOutput() ) )->getHTML() .
 			'<ul>'
 		);
+
+		$titles = [];
 
 		$wordSeparator = $this->msg( 'word-separator' )->escaped();
 		$commaSeparator = $this->msg( 'comma-separator' )->escaped();
@@ -379,6 +386,7 @@ class SpecialNuke extends SpecialPage {
 			/**
 			 * @var $title Title
 			 */
+			$titles[] = $title->getPrefixedDBkey();
 
 			$image = $title->inNamespace( NS_FILE ) ? $localRepo->newFile( $title ) : false;
 			$thumb = $image && $image->exists() ?
@@ -421,6 +429,7 @@ class SpecialNuke extends SpecialPage {
 
 		$out->addHTML(
 			"</ul>\n" .
+			Html::hidden( 'originalPageList', implode( '|', $titles ) ) .
 			Html::submitButton( $this->msg( 'nuke-submit-delete' )->text() ) .
 			'</form>'
 		);
@@ -590,17 +599,46 @@ class SpecialNuke extends SpecialPage {
 	 * Does the actual deletion of the pages.
 	 *
 	 * @param array $pages The pages to delete
+	 * @param array $originalPageList The original list of pages shown to the user
 	 * @param string $reason
+	 * @param string $target
 	 * @throws PermissionsError
 	 */
-	protected function doDelete( array $pages, $reason ): void {
+	protected function doDelete(
+		array $pages, array $originalPageList, string $reason, string $target
+	): void {
 		$res = [];
 		$jobs = [];
+		$skippedRes = [];
 		$user = $this->getUser();
+		$queuedCount = 0;
+
+		// Get a list of all pages involved and what to do with them.
+		// Pages in $pages will always be deleted, even if they are not present in
+		// $originalPageList.
+		$willDeleteList = [];
+		foreach ( $pages as $page ) {
+			$willDeleteList[$page] = true;
+		}
+		foreach ( $originalPageList as $originalPage ) {
+			if ( !isset( $willDeleteList[$originalPage] ) ) {
+				$willDeleteList[$originalPage] = false;
+			}
+		}
 
 		$localRepo = $this->repoGroup->getLocalRepo();
-		foreach ( $pages as $page ) {
+		foreach ( $willDeleteList as $page => $willDelete ) {
 			$title = Title::newFromText( $page );
+
+			if ( !$willDelete ) {
+				// If this page was skipped, add it to the list of skipped pages and move on.
+				$skippedRes[] = $this->msg(
+					'nuke-skipped',
+					wfEscapeWikiText( $title->getPrefixedText() ),
+					wfEscapeWikiText( $title->getTalkPageIfDefined() )
+				)->parse();
+				continue;
+			}
 
 			$deletionResult = false;
 			if ( !$this->getNukeHookRunner()->onNukeDeletePage( $title, $reason, $deletionResult ) ) {
@@ -649,11 +687,15 @@ class SpecialNuke extends SpecialPage {
 					'nuke-deletion-queued',
 					wfEscapeWikiText( $title->getPrefixedText() )
 				)->parse();
+				$queuedCount++;
 			} else {
 				$res[] = $this->msg(
 					$status->isOK() ? 'nuke-deleted' : 'nuke-not-deleted',
 					wfEscapeWikiText( $title->getPrefixedText() )
 				)->parse();
+				if ( $status->isOK() ) {
+					$queuedCount++;
+				}
 			}
 		}
 
@@ -661,11 +703,27 @@ class SpecialNuke extends SpecialPage {
 			$this->jobQueueGroup->push( $jobs );
 		}
 
-		$this->getOutput()->addHTML(
-			"<ul>\n<li>" .
-			implode( "</li>\n<li>", $res ) .
-			"</li>\n</ul>\n"
-		);
+		// Show the main summary, regardless of whether we deleted pages or not.
+		if ( $target ) {
+			$this->getOutput()->addWikiMsg( 'nuke-delete-summary-user', $queuedCount, $target );
+		} else {
+			$this->getOutput()->addWikiMsg( 'nuke-delete-summary', $queuedCount );
+		}
+		if ( $queuedCount ) {
+			$this->getOutput()->addHTML(
+				"<ul>\n<li>" .
+				implode( "</li>\n<li>", $res ) .
+				"</li>\n</ul>\n"
+			);
+		}
+		if ( count( $skippedRes ) ) {
+			$this->getOutput()->addWikiMsg( 'nuke-skipped-summary', count( $skippedRes ) );
+			$this->getOutput()->addHTML(
+				"<ul>\n<li>" .
+				implode( "</li>\n<li>", $skippedRes ) .
+				"</li>\n</ul>\n"
+			);
+		}
 		$this->getOutput()->addWikiMsg( 'nuke-delete-more' );
 	}
 
