@@ -5,6 +5,7 @@
 			"Jeroen De Dauw",
 			"Jon Harald Søby",
 			"Liuxinyu970226",
+			"Mahabarata",
 			"Matěj Suchánek",
 			"Meno25",
 			"Purodha",
@@ -47,6 +48,6 @@
 	"nuke-linkoncontribs": "Used as link text which is used on [[Special:Contributions]] and [[Special:DeletedContributions]].\n\nOnly added if a user has rights to nuke pages.\n\nThe link has the tooltip {{msg-mw|Nuke-linkoncontribs-text}}.\n{{Identical|Mass delete}}",
 	"nuke-linkoncontribs-text": "Tooltip for the link which is labeled {{msg-mw|Nuke-linkoncontribs}} Parameters:\n* $1 is the target username used for GENDER.",
 	"nuke-confirm": "Message when the user is trying to delete pages.",
-	"tag-nuke": "Short description of the nuke tag.\n\nShown on lists of changes (history, recentchanges, etc.) for each page deleted with the Tag extension.\n\nSee also:\n* {{msg-mw|tag-nuke-description}}",
+	"tag-nuke": "Short description of the nuke tag.\n\nShown on lists of changes (history, recentchanges, etc.) for each page deleted with the Nuke extension.\n\nSee also:\n* {{msg-mw|tag-nuke-description}}",
 	"tag-nuke-description": "Long description of the nuke tag.\n\nShown on [[Special:Tags]].\n\nSee also:\n* {{msg-mw|tag-nuke}}"
 }

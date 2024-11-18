@@ -36,5 +36,7 @@
 	"nuke-namespace": "Ad fəzaları:",
 	"nuke-linkoncontribs": "kütləvi silmə",
 	"nuke-linkoncontribs-text": "{{GENDER:$1|Bu istifadəçinin}} yeganə müəllif olduğu səhifələri kütləvi şəkildə sil",
-	"nuke-confirm": "{{PLURAL:$1|1 səhifə|$1 səhifə}} silmək üzrəsiz. Silmək istədiyinizdən əminsiniz?"
+	"nuke-confirm": "{{PLURAL:$1|1 səhifə|$1 səhifə}} silmək üzrəsiz. Silmək istədiyinizdən əminsiniz?",
+	"tag-nuke": "Kütləvi silmə",
+	"tag-nuke-description": "Nuke uzantısını ilə həyata keçirilən silinmələr"
 }
