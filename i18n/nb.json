@@ -17,6 +17,7 @@
 	"nuke-defaultreason": "Massesletting av sider lagt inn av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-multiplepeople": "Massesletting av nylig opprettede sider",
 	"nuke-tools": "Dette verktøyet muliggjør massesletting av sider som nylig er opprettet av gitt bruker eller IP-adresse.\nSkriv et brukernavn eller en IP-adresse for å få en liste over sider som kan slettes, eller angi tomt for alle brukere.",
+	"nuke-tools-tempaccount": "Dette verktøyet gjør det mulig å masseslette sider som nylig har blitt lagt til av en gitt bruker eller midlertidig konto. Skriv inn et brukernavn eller ei IP-adresse for å få ei liste over sider som skal slettes, eller la feltet være tomt for å liste opp sider av alle brukere. Hvis du skriver inn ei IP-adresse vil verktøyet liste opp alle sider som er opprettet av den IP-adressa, eller sider opprettet av midlertidige kontoer som har brukt den IP-adressa.",
 	"nuke-submit-user": "List opp sider",
 	"nuke-submit-delete": "Slett valgte",
 	"right-nuke": "Masseslette sider",

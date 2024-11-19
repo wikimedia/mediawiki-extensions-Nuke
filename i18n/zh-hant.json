@@ -28,6 +28,7 @@
 	"nuke-list-tempaccount": "下列頁面最近由臨時帳號所建立，IP位址為$1。請選擇要刪除的頁面，提供編輯摘要，然後點擊「刪除所選」來實行頁面刪除。'''出於隱私原因，請不要在編輯摘要中寫出IP位址。'''\n\n重新導向會以斜體文字呈現。",
 	"nuke-list-multiple": "下列為最近建立的頁面。請選擇要刪除的頁面，提供編輯摘要，然後點擊「刪除所選」來實行頁面刪除。\n\n重新導向會以斜體文字呈現。",
 	"nuke-defaultreason": "大量刪除由 [[Special:Contributions/$1|$1]] 所建立的頁面",
+	"nuke-defaultreason-tempaccount": "批量刪除臨時帳號新增的頁面",
 	"nuke-multiplepeople": "大量刪除最近新增的頁面",
 	"nuke-tools": "此工具可大量刪除指定使用者或 IP 位址最近新增的頁面。\n請輸入使用者名稱或 IP 位址取得欲刪除的頁面清單，或留空代表所有使用者。",
 	"nuke-submit-user": "列出頁面",
