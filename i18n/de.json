@@ -33,7 +33,7 @@
 	"nuke-deleted": "Seite „$1“ wurde gelöscht.",
 	"nuke-deletion-queued": "Die Seite '''$1''' steht für die Löschung in der Warteschlange.",
 	"nuke-not-deleted": "Seite [[:$1]] '''konnte nicht''' gelöscht werden.",
-	"nuke-skipped-summary": "'''{{PLURAL:$1|Eine Seite''' wurde|$1 Seiten''' wurden}} nicht zum Löschen ausgewählt.",
+	"nuke-skipped-summary": "{{PLURAL:$1|'''Eine Seite''' wurde|'''$1 Seiten''' wurden}} nicht zum Löschen ausgewählt.",
 	"nuke-skipped": "[[:$1]] ([[:$2|Diskussion]] {{int:pipe-separator}} [[{{ns:special}}:PageHistory/$1|Versionsgeschichte]])",
 	"nuke-delete-more": "[[Special:Nuke|Weitere Seiten löschen]]",
 	"nuke-pattern": "SQL-LIKE-Muster (z.&nbsp;B. %) für den Seitennamen:",
