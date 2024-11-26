@@ -30,6 +30,7 @@
 	"nuke-defaultreason-tempaccount": "Masowe usuwanie stron stworzonych przez konta tymczasowe",
 	"nuke-multiplepeople": "Masowe usuwanie ostatnio utworzonych stron",
 	"nuke-tools": "Narzędzie pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika.<br />\nWpisz nazwę użytkownika lub adres IP, by otrzymać listę stron do usunięcia. Możesz także nic nie wpisywać, wtedy będzie można masowo usunąć wkład wszystkich użytkowników.",
+	"nuke-tools-tempaccount": "Narzędzie pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub konto tymczasowe.<br />\nWpisz nazwę użytkownika lub adres IP, by otrzymać listę stron do usunięcia. Możesz także nic nie wpisywać, wtedy będzie można masowo usunąć wkład wszystkich użytkowników. Wpisując adres IP, otrzymasz linię stron stworzonych przez ten adres oraz wszystkie konta tymczasowe z niego korzystające.",
 	"nuke-submit-user": "Lista stron",
 	"nuke-submit-delete": "Usuń zaznaczone",
 	"right-nuke": "Masowe usuwanie stron",
