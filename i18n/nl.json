@@ -33,7 +33,7 @@
 	"nuke-deleted": "Pagina '''$1''' is verwijderd.",
 	"nuke-deletion-queued": "Pagina '''$1''' is in de wachtrij voor verwijdering gezet.",
 	"nuke-not-deleted": "Pagina [[:$1]] '''kon niet''' worden verwijderd.",
-	"nuke-skipped-summary": "'''{{PLURAL:$1|Eén pagina''' is|$1 pagina’s''' zijn}} niet geselecteerd voor verwijdering.",
+	"nuke-skipped-summary": "{{PLURAL:$1|'''Eén pagina''' is|'''$1 pagina’s''' zijn}} niet geselecteerd voor verwijdering.",
 	"nuke-skipped": "[[:$1]] ([[:$2|overleg]] {{int:pipe-separator}} [[{{ns:special}}:PageHistory/$1|geschiedenis]])",
 	"nuke-delete-more": "[[Special:Nuke|Meer pagina's verwijderen]]",
 	"nuke-pattern": "SQL Like patroon (bijv. %) voor de paginanaam:",
