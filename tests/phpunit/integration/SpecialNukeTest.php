@@ -42,80 +42,10 @@ class SpecialNukeTest extends SpecialPageTestBase {
 	}
 
 	/**
-	 * Ensure that the prompt prevents a user blocked from deleting
-	 * pages from accessing the form.
+	 * Ensure that the prompt appears as expected.
 	 *
 	 * @return void
 	 */
-	public function testBlocked() {
-		$user = $this->getTestSysop()->getUser();
-		$performer = new UltimateAuthority( $user );
-
-		// Self-blocks should still prevent the form from being shown
-		$this->getServiceContainer()
-			->getBlockUserFactory()
-			->newBlockUser( $user, $performer, 'infinity', 'SpecialNukeTest::testBlocked' )
-			->placeBlockUnsafe();
-
-		$this->expectException( UserBlockedError::class );
-		$this->executeSpecialPage( '', null, 'qqx', $performer );
-
-		$this->getServiceContainer()
-			->getUnblockUserFactory()
-			->newUnblockUser( $user, $performer, 'SpecialNukeTest::testBlocked' )
-			->unblockUnsafe();
-	}
-
-	public function testProtectedPage() {
-		$pages = [];
-		$pages[] = $this->insertPage( 'Page123', 'Test', NS_MAIN )[ 'title' ];
-		$pages[] = $this->insertPage( 'Page456', 'Test', NS_MAIN )[ 'title' ];
-		$pages[] = $this->insertPage( 'Page789', 'Test', NS_MAIN )[ 'title' ];
-
-		$this->overrideConfigValues( [
-			"GroupPermissions" => [
-				"testgroup" => [
-					"nuke" => true,
-					"delete" => true
-				]
-			]
-		] );
-
-		$services = $this->getServiceContainer();
-		$page = $services->getWikiPageFactory()
-			->newFromTitle( $pages[2] );
-		$restrictions = [];
-		foreach ( $services->getRestrictionStore()->listApplicableRestrictionTypes( $page ) as $type ) {
-			$restrictions[$type] = "sysop";
-		}
-		$cascade = false;
-		$page->doUpdateRestrictions(
-			$restrictions,
-			[],
-			$cascade,
-			"test",
-			$this->getTestSysop()->getUser()
-		);
-
-		$testUser = $this->getTestUser( [ "testgroup" ] );
-
-		$request = new FauxRequest( [
-			'action' => 'delete',
-			'wpDeleteReasonList' => 'other',
-			'wpReason' => 'Reason',
-			'pages' => $pages,
-			'wpFormIdentifier' => 'nukelist',
-			'wpEditToken' => $testUser->getUser()->getEditToken(),
-		], true );
-
-		$this->expectException( PermissionsError::class );
-		$this->executeSpecialPage( '', $request, 'qqx', $testUser->getAuthority() );
-
-		foreach ( $pages as $checkedPage ) {
-			$this->assertTrue( $checkedPage->exists() );
-		}
-	}
-
 	public function testPrompt() {
 		$admin = $this->getTestSysop()->getUser();
 		$this->disableAutoCreateTempUser();
@@ -125,67 +55,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$this->assertStringContainsString( '(nuke-summary)', $html );
 		$this->assertStringContainsString( '(nuke-tools)', $html );
-	}
-
-	/**
-	 * Ensure that the prompt prevents a nuke user without the checkuser-temporary-account permission
-	 * from performing CheckUser IP lookups
-	 *
-	 * @return void
-	 */
-	public function testPromptCheckUserNoPermission() {
-		$this->expectException( PermissionsError::class );
-
-		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
-		$this->enableAutoCreateTempUser();
-		$ip = '1.2.3.4';
-
-		$adminUser = $this->getTestSysop()->getUser();
-		$permissionManager = $this->getServiceContainer()->getPermissionManager();
-		$permissions = $permissionManager->getUserPermissions( $adminUser );
-		$permissions = array_diff( $permissions, [ 'checkuser-temporary-account' ] );
-		$permissionManager->overrideUserRightsForTesting( $adminUser,
-			$permissions
-		);
-		$performer = new UltimateAuthority( $adminUser );
-		$request = new FauxRequest( [
-			'target' => $ip,
-			'action' => 'submit',
-		], true );
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
-	}
-
-	/**
-	 * Ensure that the prompt prevents a nuke user who hasn't accepted the agreement
-	 * from performing CheckUser IP lookups
-	 *
-	 * @return void
-	 */
-	public function testPromptCheckUserNoPreference() {
-		$this->expectException( ErrorPageError::class );
-		$this->expectExceptionMessage(
-			'To view temporary account contributions for an IP, please accept' .
-			' the agreement in [[Special:Preferences|your preferences]].'
-		);
-		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
-		$this->enableAutoCreateTempUser();
-		$ip = '1.2.3.4';
-		$this->overrideConfigValues( [
-			'GroupPermissions' => [
-				'testgroup' => [
-					'nuke' => true,
-					'checkuser-temporary-account' => true
-				]
-			]
-		] );
-
-		$adminUser = $this->getTestUser( [ 'testgroup' ] )->getUser();
-		$request = new FauxRequest( [
-			'target' => $ip,
-			'action' => 'submit',
-		], true );
-		$adminPerformer = new UltimateAuthority( $adminUser );
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->assertStringContainsString( '(nuke-tools-prompt)', $html );
 	}
 
 	/**
@@ -206,32 +76,134 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( '(nuke-tools-tempaccount)', $html );
 	}
 
-	public function testPromptTarget() {
-		$testUser = $this->getTestUser();
-		$performer = $testUser->getAuthority();
-
-		$this->editPage( 'Target1', 'test', "", NS_MAIN, $performer );
-		$this->editPage( 'Target2', 'test', "", NS_MAIN, $performer );
-
-		$adminUser = $this->getTestSysop()->getUser();
-		$request = new FauxRequest( [
-			'target' => $testUser->getUser()->getName()
-		] );
-		$adminPerformer = new UltimateAuthority( $adminUser );
-
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
-
-		$this->assertStringContainsString( 'Target1', $html );
-		$this->assertStringContainsString( 'Target2', $html );
-	}
-
 	/**
-	 * Ensure that the prompt works with anon IP searches when
-	 * temp accounts are disabled
+	 * Ensure that the prompt prevents a user blocked from deleting pages from accessing the form
 	 *
 	 * @return void
 	 */
-	public function testPromptTargetAnonUser() {
+	public function testPromptBlocked() {
+		$user = $this->getTestSysop()->getUser();
+		$performer = new UltimateAuthority( $user );
+
+		// Self-blocks should still prevent the form from being shown
+		$this->getServiceContainer()
+			->getBlockUserFactory()
+			->newBlockUser( $user, $performer, 'infinity', 'SpecialNukeTest::testBlocked' )
+			->placeBlockUnsafe();
+
+		$this->expectException( UserBlockedError::class );
+		$this->executeSpecialPage( '', null, 'qqx', $performer );
+
+		$this->getServiceContainer()
+			->getUnblockUserFactory()
+			->newUnblockUser( $user, $performer, 'SpecialNukeTest::testBlocked' )
+			->unblockUnsafe();
+	}
+
+	/**
+	 * Ensure that the prompt prevents a nuke user without the checkuser-temporary-account permission
+	 * from performing CheckUser IP lookups
+	 *
+	 * @return void
+	 */
+	public function testListCheckUserNoPermission() {
+		$this->expectException( PermissionsError::class );
+
+		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
+		$this->enableAutoCreateTempUser();
+		$ip = '1.2.3.4';
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$permissionManager = $this->getServiceContainer()->getPermissionManager();
+		$permissions = $permissionManager->getUserPermissions( $adminUser );
+		$permissions = array_diff( $permissions, [ 'checkuser-temporary-account' ] );
+		$permissionManager->overrideUserRightsForTesting( $adminUser,
+			$permissions
+		);
+		$performer = new UltimateAuthority( $adminUser );
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $ip,
+		], true );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+	}
+
+	/**
+	 * Ensure that the prompt prevents a nuke user who hasn't accepted the agreement
+	 * from performing CheckUser IP lookups
+	 *
+	 * @return void
+	 */
+	public function testListCheckUserNoPreference() {
+		$this->expectException( ErrorPageError::class );
+		$this->expectExceptionMessage(
+			'To view temporary account contributions for an IP, please accept' .
+			' the agreement in [[Special:Preferences|your preferences]].'
+		);
+		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
+		$this->enableAutoCreateTempUser();
+		$ip = '1.2.3.4';
+		$this->overrideConfigValues( [
+			'GroupPermissions' => [
+				'testgroup' => [
+					'nuke' => true,
+					'checkuser-temporary-account' => true
+				]
+			]
+		] );
+
+		$adminUser = $this->getTestUser( [ 'testgroup' ] )->getUser();
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $ip,
+		], true );
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+	}
+
+	/**
+	 * Ensure that pages created by a specific user are shown accordingly
+	 *
+	 * @return void
+	 */
+	public function testListTarget() {
+		$user = $this->getTestUser()->getUser();
+
+		$this->insertPage( 'Target1', 'test', NS_MAIN, $user );
+		$this->insertPage( 'Target2', 'test', NS_MAIN, $user );
+		$this->insertPage( 'Should not show', 'No show' );
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		$request1 = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user->getName()
+		] );
+
+		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $adminPerformer );
+
+		$this->assertStringContainsString( 'Target1', $html1 );
+		$this->assertStringContainsString( 'Target2', $html1 );
+		$this->assertStringNotContainsString( 'Should not show', $html1 );
+
+		// Not supplying an action should imply 'list'.
+		$request2 = new FauxRequest( [
+			'target' => $user->getName()
+		] );
+
+		[ $html2 ] = $this->executeSpecialPage( '', $request2, 'qqx', $adminPerformer );
+
+		$this->assertStringContainsString( 'Target1', $html2 );
+		$this->assertStringContainsString( 'Target2', $html2 );
+		$this->assertStringNotContainsString( 'Should not show', $html2 );
+	}
+
+	/**
+	 * Ensure that the prompt works with anon IP searches when temp accounts are disabled
+	 *
+	 * @return void
+	 */
+	public function testListTargetAnonUser() {
 		$this->disableAutoCreateTempUser( [ 'known' => false ] );
 		$ip = '127.0.0.1';
 		$testUser = $this->getServiceContainer()->getUserFactory()->newAnonymous( $ip );
@@ -242,13 +214,13 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$adminUser = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
 			'target' => $testUser->getUser()->getName()
 		] );
 		$adminPerformer = new UltimateAuthority( $adminUser );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
 
-		$this->assertStringContainsString( '(nuke-list:', $html );
 		$this->assertStringContainsString( 'Target1', $html );
 		$this->assertStringContainsString( 'Target2', $html );
 
@@ -256,12 +228,12 @@ class SpecialNukeTest extends SpecialPageTestBase {
 	}
 
 	/**
-	 * Ensure that the prompt returns temp accounts from IP lookups when
-	 * temp accounts and CheckUser are enabled
+	 * Ensure that the prompt returns temp accounts from IP lookups when temp accounts and
+	 * CheckUser are enabled
 	 *
 	 * @return void
 	 */
-	public function testPromptTargetCheckUser() {
+	public function testListTargetCheckUser() {
 		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
 		$this->enableAutoCreateTempUser();
 		$ip = '1.2.3.4';
@@ -279,15 +251,14 @@ class SpecialNukeTest extends SpecialPageTestBase {
 				[ 'checkuser-temporary-account-no-preference' ]
 			) );
 		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
 			'target' => $ip,
-			'action' => 'submit',
 		], true );
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
 
 		$this->assertEquals( 2, substr_count( $html, '(nuke-editby: ~2024-1)' ) );
 
-		$this->assertStringContainsString( '(nuke-list-tempaccount:', $html );
 		$this->assertStringContainsString( 'Target1', $html );
 		$this->assertStringContainsString( 'Target2', $html );
 	}
@@ -298,7 +269,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 	 *
 	 * @return void
 	 */
-	public function testPromptTargetCheckUserMixed() {
+	public function testListTargetCheckUserMixed() {
 		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
 		$this->disableAutoCreateTempUser( [ 'known' => false ] );
 		$ip = '1.2.3.4';
@@ -325,8 +296,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 				[ 'checkuser-temporary-account-no-preference' ]
 			) );
 		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
 			'target' => $ip,
-			'action' => 'submit',
 		], true );
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
@@ -335,15 +306,58 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertSame( 1, substr_count( $html, ' (nuke-editby: 1.2.3.4)' ) );
 
 		// They should all show up together
-		$this->assertStringContainsString( '(nuke-list-tempaccount:', $html );
 		$this->assertStringContainsString( 'Target1', $html );
 		$this->assertStringContainsString( 'Target2', $html );
+	}
+
+	/**
+	 * Ensure that matching wildcards works, and that escaping wildcards works as documented at
+	 * https://www.mediawiki.org/wiki/Help:Extension:Nuke
+	 *
+	 * @return void
+	 */
+	public function testListPattern() {
+		$this->editPage( '%PositiveNukeTest123', 'test' );
+		$this->editPage( 'NegativeNukeTest123', 'test' );
+
+		$admin = $this->getTestSysop()->getUser();
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'pattern' => '\\%PositiveNukeTest%'
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$this->assertStringContainsString( 'PositiveNukeTest123', $html );
+		$this->assertStringNotContainsString( 'NegativeNukeTest123', $html );
+	}
+
+	public function testListNamespaces() {
+		$this->insertPage( 'Page123', 'Test', NS_MAIN );
+		$this->insertPage( 'Paging456', 'Test', NS_MAIN );
+		$this->insertPage( 'Should not show', 'No show', NS_TALK );
+
+		$admin = $this->getTestSysop()->getUser();
+
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'namespace' => NS_MAIN,
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$this->assertStringContainsString( 'Page123', $html );
+		$this->assertStringContainsString( 'Paging456', $html );
+		$this->assertStringNotContainsString( 'Should not show', $html );
 	}
 
 	public function testListNoPagesGlobal() {
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'ThisPageShouldNotExist-' . rand()
 		], true );
 		$performer = new UltimateAuthority( $admin );
@@ -351,21 +365,19 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 
 		$this->assertStringContainsString( '(nuke-nopages-global)', $html );
-		$this->assertStringNotContainsString( '(nuke-nopages)', $html );
 	}
 
 	public function testListNoPagesUser() {
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'target' => 'ThisPageShouldNotExist-' . rand()
 		], true );
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 
-		$this->assertStringNotContainsString( '(nuke-nopages-global)', $html );
-		$this->assertStringContainsString( 'nuke-nopages', $html );
+		$this->assertStringContainsString( '(nuke-nopages-global)', $html );
 	}
 
 	public function testListNamespace() {
@@ -373,7 +385,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'NukeUserPageTarget',
 			'namespace' => NS_USER
 		], true );
@@ -391,7 +403,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'NukeTalkPageTarget'
 		], true );
 		$performer = new UltimateAuthority( $admin );
@@ -410,7 +422,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'Nuke%PageTarget',
 			'namespace' => implode( "\n", [ NS_MAIN, NS_USER ] )
 		], true );
@@ -442,7 +454,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		// Input includes empty line
 		$request1 = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'Nuke%PageTarget',
 			'namespace' => NS_PROJECT . "\n"
 		], true );
@@ -453,7 +465,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		// Input includes invalid namespace ID
 		$request1 = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'Nuke%PageTarget',
 			'namespace' => NS_PROJECT . "\n99999999"
 		], true );
@@ -464,7 +476,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		// Input includes a string
 		$request1 = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'Nuke%PageTarget',
 			'namespace' => NS_PROJECT . "\nUser"
 		], true );
@@ -475,7 +487,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		// Input is entirely invalid
 		$request1 = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'Nuke%PageTarget',
 			'namespace' => "Project\nUser"
 		], true );
@@ -510,7 +522,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		foreach ( $shouldMatch as $match ) {
 			$request = new FauxRequest( [
-				'action' => 'submit',
+				'action' => SpecialNuke::ACTION_LIST,
 				'pattern' => 'uncapsTarget'
 			], true );
 			$performer = new UltimateAuthority( $admin );
@@ -543,7 +555,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$admin = $this->getTestSysop()->getUser();
 
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'u%'
 		], true );
 		$performer = new UltimateAuthority( $admin );
@@ -582,7 +594,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'uncapsTarget%',
 			'namespace' => implode( "\n", [ NS_MAIN, NS_HELP ] )
 		], true );
@@ -645,7 +657,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 			$admin = $this->getTestSysop()->getUser();
 			$request = new FauxRequest( [
-				'action' => 'submit',
+				'action' => SpecialNuke::ACTION_LIST,
 				'pattern' => $wanted
 			], true );
 			$performer = new UltimateAuthority( $admin );
@@ -663,7 +675,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'Page%',
 			'limit' => 2
 		], true );
@@ -686,7 +698,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'Page%',
 			'limit' => 2
 		], true );
@@ -733,7 +745,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'pattern' => 'Page%',
 			'limit' => 2
 		], true );
@@ -768,33 +780,12 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( 'Page3', $html );
 	}
 
-	public function testExecutePattern() {
-		// Test that matching wildcards works, and that escaping wildcards works as documented
-		// at https://www.mediawiki.org/wiki/Help:Extension:Nuke
-		$this->editPage( '%PositiveNukeTest123', 'test' );
-		$this->editPage( 'NegativeNukeTest123', 'test' );
-
-		$admin = $this->getTestSysop()->getUser();
-		$request = new FauxRequest( [
-			'action' => 'submit',
-			'pattern' => '\\%PositiveNukeTest%',
-			'wpFormIdentifier' => 'massdelete',
-			'wpEditToken' => $admin->getEditToken(),
-		], true );
-		$performer = new UltimateAuthority( $admin );
-
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
-
-		$this->assertStringContainsString( 'PositiveNukeTest123', $html );
-		$this->assertStringNotContainsString( 'NegativeNukeTest123', $html );
-	}
-
 	public function testListFiles() {
 		$testFileName = $this->uploadTestFile()['title']->getPrefixedText();
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_LIST,
 			'namespace' => NS_FILE
 		], true );
 		$performer = new UltimateAuthority( $admin );
@@ -807,49 +798,196 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( "<img src", $html );
 	}
 
-	public function testUserPages() {
+	public function testConfirm() {
 		$user = $this->getTestUser()->getUser();
-		$this->insertPage( 'Page123', 'Test', NS_MAIN, $user );
-		$this->insertPage( 'Paging456', 'Test', NS_MAIN, $user );
-		$this->insertPage( 'Should not show', 'No show' );
 
-		$admin = $this->getTestSysop()->getUser();
+		// Set content language to English; needed to get the right "defaultreason".
+		$this->overrideConfigValue( 'wgLanguageCode', 'en' );
+		$defaultReason = RequestContext::getMain()
+			->msg( 'nuke-defaultreason', $user->getName() )
+			->inContentLanguage()
+			->text();
 
+		/** @var Title $page1 */
+		$page1 = $this->insertPage( 'Target1', 'test', NS_MAIN, $user )['title'];
+		/** @var Title $page2 */
+		$page2 = $this->insertPage( 'Target2', 'test' )['title'];
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
 		$request = new FauxRequest( [
-			'action' => 'submit',
+			'action' => SpecialNuke::ACTION_CONFIRM,
 			'target' => $user->getName(),
-			'wpFormIdentifier' => 'massdelete',
-			'wpEditToken' => $admin->getEditToken(),
+			'pages' => [
+				$page1->getPrefixedDBkey()
+			],
+			'originalPageList' => implode(
+				SpecialNuke::PAGE_LIST_SEPARATOR,
+				[ $page1->getPrefixedDBkey(), $page2->getPrefixedDBkey() ]
+			),
+			// 'confirm' action requires an edit token
+			'wpEditToken' => $user->getEditToken()
 		], true );
-		$performer = new UltimateAuthority( $admin );
 
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
 
-		$this->assertStringContainsString( 'Page123', $html );
-		$this->assertStringContainsString( 'Paging456', $html );
-		$this->assertStringNotContainsString( 'Should not show', $html );
+		// Default reason should pre-fill the reason field
+		$this->assertStringContainsString( $defaultReason, $html );
+
+		// Selected pages will have talk and history links
+		$this->assertStringContainsString( 'Target1', $html );
+		$this->assertStringContainsString( 'Talk:Target1', $html );
+		$this->assertStringContainsString( 'Target1&amp;action=history', $html );
+
+		// Skipped pages will not show up at all, but will be found in the hidden
+		// originalPageList field.
+		$this->assertStringContainsString( 'Target2', $html );
+		$this->assertStringNotContainsString( 'Talk:Target2', $html );
+		$this->assertStringNotContainsString( 'Target2&amp;action=history', $html );
+
+		// Ensure the originalPageList field was included
+		$this->assertStringContainsString( '"originalPageList"', $html );
+		$this->assertStringContainsString( '"Target1|Target2"', $html );
 	}
 
-	public function testNamespaces() {
-		$this->insertPage( 'Page123', 'Test', NS_MAIN );
-		$this->insertPage( 'Paging456', 'Test', NS_MAIN );
-		$this->insertPage( 'Should not show', 'No show', NS_TALK );
+	/**
+	 * Tests a malformed confirm request: a request that either
+	 *  - was not posted
+	 *  - does not have an edit token
+	 *
+	 * @return void
+	 */
+	public function testConfirmMalformed() {
+		$user = $this->getTestUser()->getUser();
 
-		$admin = $this->getTestSysop()->getUser();
+		/** @var Title $page1 */
+		$page1 = $this->insertPage( 'Target1', 'test', NS_MAIN, $user )['title'];
+		/** @var Title $page2 */
+		$page2 = $this->insertPage( 'Target2', 'test' )['title'];
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_CONFIRM,
+			'target' => $user->getName(),
+			'pages' => [
+				$page1->getPrefixedDBkey()
+			],
+			'originalPageList' => implode(
+				SpecialNuke::PAGE_LIST_SEPARATOR,
+				[ $page1->getPrefixedDBkey(), $page2->getPrefixedDBkey() ]
+			),
+		], false );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+
+		// We should be re-prompting the user, since no edit token was provided.
+		$this->assertStringContainsString( "(nuke-tools-prompt)", $html );
+		// Correct target should still be on the prompt box
+		$this->assertStringContainsString( $user->getName(), $html );
+	}
+
+	/**
+	 * Ensure that the default deletion reason used correctly changes based on whether or not
+	 * temporary accounts are being used or not.
+	 *
+	 * @return void
+	 */
+	public function testConfirmAnonUser() {
+		$this->markTestSkippedIfExtensionNotLoaded( 'CheckUser' );
+		$this->enableAutoCreateTempUser();
+		$ip = '1.2.3.4';
+		RequestContext::getMain()->getRequest()->setIP( $ip );
+		$testUser = $this->getServiceContainer()->getTempUserCreator()
+			->create( null, new FauxRequest() )->getUser();
+
+		$user = $this->getTestUser()->getUser();
+
+		// Set content language to English; needed to get the right "defaultreason".
+		$this->overrideConfigValue( 'wgLanguageCode', 'en' );
+		$defaultReason = RequestContext::getMain()
+			->msg( 'nuke-defaultreason-tempaccount', $user->getName() )
+			->inContentLanguage()
+			->text();
+
+		/** @var Title $page1 */
+		$page1 = $this->insertPage( 'Target1', 'test', NS_MAIN, $testUser )['title'];
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
+
+		$permissionManager = $this->getServiceContainer()->getPermissionManager();
+		$permissionManager->overrideUserRightsForTesting( $adminUser,
+			array_merge(
+				$permissionManager->getUserPermissions( $adminUser ),
+				[ 'checkuser-temporary-account-no-preference' ]
+			) );
 
 		$request = new FauxRequest( [
-			'action' => 'submit',
-			'namespace' => NS_MAIN,
-			'wpFormIdentifier' => 'massdelete',
-			'wpEditToken' => $admin->getEditToken(),
+			'action' => SpecialNuke::ACTION_CONFIRM,
+			'target' => $ip,
+			'pages' => [
+				$page1->getPrefixedDBkey()
+			],
+			'originalPageList' => $page1->getPrefixedDBkey(),
+			// 'confirm' action requires an edit token
+			'wpEditToken' => $user->getEditToken()
 		], true );
-		$performer = new UltimateAuthority( $admin );
 
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
 
-		$this->assertStringContainsString( 'Page123', $html );
-		$this->assertStringContainsString( 'Paging456', $html );
-		$this->assertStringNotContainsString( 'Should not show', $html );
+		$this->assertStringContainsString( $defaultReason, $html );
+		$this->assertStringContainsString( 'Target1', $html );
+		$this->assertStringContainsString( 'Talk:Target1', $html );
+		$this->assertStringContainsString( 'Target1&amp;action=history', $html );
+	}
+
+	/**
+	 * Tests requests which have pages but no original page list. This is similar to a click on
+	 * the "Continue" button without having first clicked on the "List pages" button.
+	 *
+	 * @return void
+	 */
+	public function testConfirmWithoutList() {
+		$user = $this->getTestUser()->getUser();
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_CONFIRM,
+			// 'confirm' action requires an edit token
+			'wpEditToken' => $user->getEditToken()
+		], true );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+
+		$this->assertStringContainsString( '(nuke-nolist)', $html );
+	}
+
+	public function testConfirmWithoutSelection() {
+		$user = $this->getTestUser()->getUser();
+
+		/** @var Title $page1 */
+		$page1 = $this->insertPage( 'Target1', 'test', NS_MAIN, $user )['title'];
+		/** @var Title $page2 */
+		$page2 = $this->insertPage( 'Target2', 'test' )['title'];
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_CONFIRM,
+			'target' => $user->getName(),
+			'originalPageList' => implode( SpecialNuke::PAGE_LIST_SEPARATOR, [
+				$page1->getPrefixedDBkey(),
+				$page2->getPrefixedDBkey()
+			] ),
+			// 'confirm' action requires an edit token
+			'wpEditToken' => $user->getEditToken()
+		], true );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+
+		$this->assertStringContainsString( '(nuke-noselected)', $html );
 	}
 
 	public function testDelete() {
@@ -1096,6 +1234,56 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( '(nuke-deleted: Bad article)', $html );
 		$this->assertStringContainsString( '(nuke-not-deleted: DO NOT DELETE)', $html );
 		$this->assertStringContainsString( '(nuke-deletion-queued: Bad article 2)', $html );
+	}
+
+	public function testOldDeleteProtectedPage() {
+		$pages = [];
+		$pages[] = $this->insertPage( 'Page123', 'Test', NS_MAIN )[ 'title' ];
+		$pages[] = $this->insertPage( 'Page456', 'Test', NS_MAIN )[ 'title' ];
+		$pages[] = $this->insertPage( 'Page789', 'Test', NS_MAIN )[ 'title' ];
+
+		$this->overrideConfigValues( [
+			"GroupPermissions" => [
+				"testgroup" => [
+					"nuke" => true,
+					"delete" => true
+				]
+			]
+		] );
+
+		$services = $this->getServiceContainer();
+		$page = $services->getWikiPageFactory()
+			->newFromTitle( $pages[2] );
+		$restrictions = [];
+		foreach ( $services->getRestrictionStore()->listApplicableRestrictionTypes( $page ) as $type ) {
+			$restrictions[$type] = "sysop";
+		}
+		$cascade = false;
+		$page->doUpdateRestrictions(
+			$restrictions,
+			[],
+			$cascade,
+			"test",
+			$this->getTestSysop()->getUser()
+		);
+
+		$testUser = $this->getTestUser( [ "testgroup" ] );
+
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_DELETE,
+			'wpDeleteReasonList' => 'other',
+			'wpReason' => 'Reason',
+			'pages' => $pages,
+			'wpFormIdentifier' => 'nukelist',
+			'wpEditToken' => $testUser->getUser()->getEditToken(),
+		], true );
+
+		$this->expectException( PermissionsError::class );
+		$this->executeSpecialPage( '', $request, 'qqx', $testUser->getAuthority() );
+
+		foreach ( $pages as $checkedPage ) {
+			$this->assertTrue( $checkedPage->exists() );
+		}
 	}
 
 	public function testSearchSubpages() {
