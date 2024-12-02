@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\Nuke;
 
 use DeletePageJob;
 use ErrorPageError;
+use HtmlArmor;
 use JobQueueGroup;
 use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
 use MediaWiki\CommentStore\CommentStore;
@@ -130,7 +131,12 @@ class SpecialNuke extends SpecialPage {
 		$reason = $this->getDeleteReason( $this->getRequest(), $target );
 
 		$limit = $req->getInt( 'limit', 500 );
-		$namespace = $req->getIntOrNull( 'namespace' );
+
+		$namespaces = $this->loadNamespacesFromRequest( $req );
+		// Set $namespaces to null if it's empty
+		if ( count( $namespaces ) == 0 ) {
+			$namespaces = null;
+		}
 
 		if ( $req->wasPosted()
 			&& $currentUser->matchEditToken( $req->getVal( 'wpEditToken' ) )
@@ -156,10 +162,10 @@ class SpecialNuke extends SpecialPage {
 					$this->assertUserCanAccessTemporaryAccounts( $currentUser );
 					$tempnames = $this->getTempAccountData( $target );
 					$reason = $this->getDeleteReason( $this->getRequest(), $target, true );
-					$this->listForm( $target, $reason, $limit, $namespace, $tempnames );
+					$this->listForm( $target, $reason, $limit, $namespaces, $tempnames );
 				} else {
 					// otherwise just list pages normally
-					$this->listForm( $target, $reason, $limit, $namespace );
+					$this->listForm( $target, $reason, $limit, $namespaces );
 				}
 			} else {
 				$this->promptForm();
@@ -167,8 +173,28 @@ class SpecialNuke extends SpecialPage {
 		} elseif ( $target === '' ) {
 			$this->promptForm();
 		} else {
-			$this->listForm( $target, $reason, $limit, $namespace );
+			$this->listForm( $target, $reason, $limit, $namespaces );
 		}
+	}
+
+	/**
+	 * Load namespaces from the provided request and return them as an array. This also performs
+	 * validation, ensuring that only valid namespaces are returned.
+	 *
+	 * @param WebRequest $req The request
+	 * @return array An array of namespace IDs
+	 */
+	private function loadNamespacesFromRequest( WebRequest $req ): array {
+		$validNamespaces = $this->namespaceInfo->getValidNamespaces();
+
+		return array_map(
+			'intval', array_filter(
+				explode( "\n", $req->getText( "namespace" ) ),
+				static function ( $ns ) use ( $validNamespaces ) {
+					return is_numeric( $ns ) && in_array( intval( $ns ), $validNamespaces );
+				}
+			)
+		);
 	}
 
 	/**
@@ -259,8 +285,15 @@ class SpecialNuke extends SpecialPage {
 			],
 			'namespace' => [
 				'id' => 'nuke-namespace',
-				'type' => 'namespaceselect',
+				'type' => 'namespacesmultiselect',
 				'label' => $this->msg( 'nuke-namespace' )->text(),
+				'help-messages' => [
+					new HtmlArmor( '<noscript>' ),
+					'nuke-namespace-noscript',
+					new HtmlArmor( '</noscript>' )
+				],
+				'help-inline' => true,
+				'exists' => true,
 				'all' => 'all',
 				'name' => 'namespace'
 			],
@@ -291,13 +324,13 @@ class SpecialNuke extends SpecialPage {
 	 * @param string $username
 	 * @param string $reason
 	 * @param int $limit
-	 * @param int|null $namespace
+	 * @param int[]|null $namespaces
 	 * @param string[] $tempnames
 	 */
-	protected function listForm( $username, $reason, $limit, $namespace = null, $tempnames = [] ): void {
+	protected function listForm( $username, $reason, $limit, $namespaces = null, $tempnames = [] ): void {
 		$out = $this->getOutput();
 
-		$pages = $this->getNewPages( $username, $limit, $namespace, $tempnames );
+		$pages = $this->getNewPages( $username, $limit, $namespaces, $tempnames );
 
 		if ( !$pages ) {
 			if ( $username === '' ) {
@@ -440,12 +473,12 @@ class SpecialNuke extends SpecialPage {
 	 *
 	 * @param string $username
 	 * @param int $limit
-	 * @param int|null $namespace
+	 * @param int[]|null $namespaces
 	 * @param string[] $tempnames
 	 *
 	 * @return array{0:Title,1:string|false}[]
 	 */
-	protected function getNewPages( $username, $limit, $namespace = null, $tempnames = [] ): array {
+	protected function getNewPages( $username, $limit, $namespaces = null, $tempnames = [] ): array {
 		$dbr = $this->dbProvider->getReplicaDatabase();
 
 		$maxAge = $this->getConfig()->get( "NukeMaxAge" );
@@ -478,8 +511,11 @@ class SpecialNuke extends SpecialPage {
 			$queryBuilder->andWhere( [ 'actor_name' => $actornames ] );
 		}
 
-		if ( $namespace !== null ) {
-			$queryBuilder->andWhere( [ 'page_namespace' => $namespace ] );
+		if ( $namespaces !== null ) {
+			$namespaceConditions = array_map( static function ( $ns ) use ( $dbr ){
+				return $dbr->expr( 'page_namespace', '=', $ns );
+			}, $namespaces );
+			$queryBuilder->andWhere( $dbr->orExpr( $namespaceConditions ) );
 		}
 
 		$pattern = $this->getRequest()->getText( 'pattern' );
@@ -490,72 +526,68 @@ class SpecialNuke extends SpecialPage {
 			$pattern = preg_replace( '/ +/', '`_', $pattern );
 			$pattern = preg_replace( '/\\\\([%_])/', '`$1', $pattern );
 
-			if ( $namespace !== null ) {
-				// Custom namespace requested
-				// If that namespace capitalizes titles, capitalize the first character
-				// to match the DB title.
-				$pattern = $this->namespaceInfo->isCapitalized( $namespace ) ?
+			$overriddenNamespaces = [];
+			$capitalLinks = $this->getConfig()->get( 'CapitalLinks' );
+			$capitalLinkOverrides = $this->getConfig()->get( 'CapitalLinkOverrides' );
+			// If there are any capital-overridden namespaces, keep track of them. "overridden"
+			// here means the namespace-specific value is not equal to $wgCapitalLinks.
+			foreach ( $capitalLinkOverrides as $nsId => $nsOverridden ) {
+				if ( $nsOverridden !== $capitalLinks && (
+					$namespaces == null || in_array( $nsId, $namespaces )
+				) ) {
+					$overriddenNamespaces[] = $nsId;
+				}
+			}
+
+			if ( count( $overriddenNamespaces ) ) {
+				// If there are overridden namespaces, they have to be converted
+				// on a case-by-case basis.
+
+				// Our scope should only be limited to the namespaces selected by the user,
+				// or all namespaces (when $namespaces == null).
+				$validNamespaces = $namespaces == null ?
+					$this->namespaceInfo->getValidNamespaces() :
+					$namespaces;
+				$nonOverriddenNamespaces = [];
+				foreach ( $validNamespaces as $ns ) {
+					if ( !in_array( $ns, $overriddenNamespaces ) ) {
+						// Put all namespaces that aren't overridden in $nonOverriddenNamespaces.
+						$nonOverriddenNamespaces[] = $ns;
+					}
+				}
+
+				$patternSpecific = $this->namespaceInfo->isCapitalized( $overriddenNamespaces[0] ) ?
 					$this->contentLanguage->ucfirst( $pattern ) : $pattern;
-			} else {
-				// All namespaces requested
-
-				$overriddenNamespaces = [];
-				$capitalLinks = $this->getConfig()->get( 'CapitalLinks' );
-				$capitalLinkOverrides = $this->getConfig()->get( 'CapitalLinkOverrides' );
-				// If there are any capital-overridden namespaces, keep track of them. "overridden"
-				// here means the namespace-specific value is not equal to $wgCapitalLinks.
-				foreach ( $capitalLinkOverrides as $k => $v ) {
-					if ( $v !== $capitalLinks ) {
-						$overriddenNamespaces[] = $k;
-					}
-				}
-
-				if ( count( $overriddenNamespaces ) ) {
-					// If there are overridden namespaces, they have to be converted
-					// on a case-by-case basis.
-
-					$validNamespaces = $this->namespaceInfo->getValidNamespaces();
-					$nonOverriddenNamespaces = [];
-					foreach ( $validNamespaces as $ns ) {
-						if ( !in_array( $ns, $overriddenNamespaces ) ) {
-							// Put all namespaces that aren't overridden in $nonOverriddenNamespaces
-							$nonOverriddenNamespaces[] = $ns;
-						}
-					}
-
-					$patternSpecific = $this->namespaceInfo->isCapitalized( $overriddenNamespaces[0] ) ?
-						$this->contentLanguage->ucfirst( $pattern ) : $pattern;
-					$orConditions = [
-						$dbr->expr(
-							'page_title', IExpression::LIKE, new LikeValue(
-								new LikeMatch( $patternSpecific )
-							)
-						)->and(
-							// IN condition
-							'page_namespace', '=', $overriddenNamespaces
+				$orConditions = [
+					$dbr->expr(
+						'page_title', IExpression::LIKE, new LikeValue(
+							new LikeMatch( $patternSpecific )
 						)
-					];
-					if ( count( $nonOverriddenNamespaces ) ) {
-						$patternStandard = $this->namespaceInfo->isCapitalized( $nonOverriddenNamespaces[0] ) ?
-							$this->contentLanguage->ucfirst( $pattern ) : $pattern;
-						$orConditions[] = $dbr->expr(
-							'page_title', IExpression::LIKE, new LikeValue(
-								new LikeMatch( $patternStandard )
-							)
-						)->and(
-							// IN condition, with the non-overridden namespaces.
-							// If the default is case-sensitive namespaces, $pattern's first
-							// character is turned lowercase. Otherwise, it is turned uppercase.
-							'page_namespace', '=', $nonOverriddenNamespaces
-						);
-					}
-					$queryBuilder->andWhere( $dbr->orExpr( $orConditions ) );
-					$addedWhere = true;
-				} else {
-					// No overridden namespaces; just convert all titles.
-					$pattern = $this->namespaceInfo->isCapitalized( NS_MAIN ) ?
+					)->and(
+					// IN condition
+						'page_namespace', '=', $overriddenNamespaces
+					)
+				];
+				if ( count( $nonOverriddenNamespaces ) ) {
+					$patternStandard = $this->namespaceInfo->isCapitalized( $nonOverriddenNamespaces[0] ) ?
 						$this->contentLanguage->ucfirst( $pattern ) : $pattern;
+					$orConditions[] = $dbr->expr(
+						'page_title', IExpression::LIKE, new LikeValue(
+							new LikeMatch( $patternStandard )
+						)
+					)->and(
+					// IN condition, with the non-overridden namespaces.
+					// If the default is case-sensitive namespaces, $pattern's first
+					// character is turned lowercase. Otherwise, it is turned uppercase.
+						'page_namespace', '=', $nonOverriddenNamespaces
+					);
 				}
+				$queryBuilder->andWhere( $dbr->orExpr( $orConditions ) );
+				$addedWhere = true;
+			} else {
+				// No overridden namespaces; just convert all titles.
+				$pattern = $this->namespaceInfo->isCapitalized( NS_MAIN ) ?
+					$this->contentLanguage->ucfirst( $pattern ) : $pattern;
 			}
 
 			if ( !$addedWhere ) {
@@ -581,9 +613,27 @@ class SpecialNuke extends SpecialPage {
 			];
 		}
 
-		// Allows other extensions to provide pages to be nuked that don't use
-		// the recentchanges table the way mediawiki-core does
-		$this->getNukeHookRunner()->onNukeGetNewPages( $username, $pattern, $namespace, $limit, $pages );
+		// Allows other extensions to provide pages to be mass-deleted that
+		// don't use the revision table the way mediawiki-core does.
+		if ( $namespaces ) {
+			foreach ( $namespaces as $namespace ) {
+				$this->getNukeHookRunner()->onNukeGetNewPages(
+					$username,
+					$pattern,
+					$namespace,
+					$limit,
+					$pages
+				);
+			}
+		} else {
+			$this->getNukeHookRunner()->onNukeGetNewPages(
+				$username,
+				$pattern,
+				null,
+				$limit,
+				$pages
+			);
+		}
 
 		// Re-enforcing the limit *after* the hook because other extensions
 		// may add and/or remove pages. We need to make sure we don't end up
