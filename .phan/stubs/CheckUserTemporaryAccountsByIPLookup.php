@@ -15,7 +15,7 @@ class CheckUserTemporaryAccountsByIPLookup {
 	 * @param \MediaWiki\User\TempUser\TempUserConfig $tempUserConfig
 	 * @param \MediaWiki\User\UserFactory $userFactory
 	 * @param \MediaWiki\Permissions\PermissionManager $permissionManager
-	 * @param \MediaWiki\User\UserOptionsLookup $userOptionsLookup
+	 * @param \MediaWiki\User\Options\UserOptionsLookup $userOptionsLookup
 	 */
 	public function __construct(
 		\MediaWiki\Config\ServiceOptions $serviceOptions,
@@ -24,7 +24,7 @@ class CheckUserTemporaryAccountsByIPLookup {
 		\MediaWiki\User\TempUser\TempUserConfig $tempUserConfig,
 		\MediaWiki\User\UserFactory $userFactory,
 		\MediaWiki\Permissions\PermissionManager $permissionManager,
-		\MediaWiki\User\UserOptionsLookup $userOptionsLookup
+		\MediaWiki\User\Options\UserOptionsLookup $userOptionsLookup
 	) {
 	}
 }
