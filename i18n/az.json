@@ -38,6 +38,7 @@
 	"nuke-nopages-global": "Axtarışınıza uyğun səhifə adı yoxdur.",
 	"nuke-viewchanges": "tarixçə",
 	"nuke-namespace": "Ad fəzaları:",
+	"nuke-namespace-noscript": "Hər biri bir sətir olmaqla ad fəzası identifikatorlarını daxil edin. Bütün ad fəzalarını seçmək üçün boş buraxın. Etibarsız ID-lər nəzərə alınmayacaq.",
 	"nuke-linkoncontribs": "kütləvi silmə",
 	"nuke-linkoncontribs-text": "{{GENDER:$1|Bu istifadəçinin}} yeganə müəllif olduğu səhifələri kütləvi şəkildə sil",
 	"nuke-confirm": "{{PLURAL:$1|1 səhifə|$1 səhifə}} silmək üzrəsiz. Silmək istədiyinizdən əminsiniz?",

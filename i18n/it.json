@@ -34,7 +34,7 @@
 	"nuke-pattern": "Pattern SQL LIKE (ad esempio %) per il nome della pagina:",
 	"nuke-nopages-global": "Non ci sono titoli di pagine che corrispondono alla tua ricerca.",
 	"nuke-viewchanges": "cronologia",
-	"nuke-namespace": "Limita al namespace:",
+	"nuke-namespace": "Limita ai namespace:",
 	"nuke-linkoncontribs": "cancella massivamente",
 	"nuke-linkoncontribs-text": "Cancella massivamente le pagine dove questo utente è {{GENDER:$1|l'unico contributore|l'unica contributrice}}"
 }
