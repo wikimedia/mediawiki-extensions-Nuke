@@ -7,13 +7,10 @@
 	"nuke": "Deletion in massa",
 	"action-nuke": "deler paginas in massa",
 	"nuke-desc": "Da le possibilitate al administratores de [[Special:Nuke|deler paginas in massa]]",
-	"nuke-nopages": "Nulle nove pagina create per [[Special:Contributions/$1|{{GENDER:$1|$1}}]] trovate in le modificationes recente.",
-	"nuke-list": "Le sequente paginas ha essite create recentemente per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]. Per favor selige le paginas a deler, forni un summario de modification e clicca sur ‘Deler selection’ pro comenciar le deletion del paginas.\n\nLe redirectiones appare in litteras italic.",
-	"nuke-list-multiple": "Le sequente paginas ha ressite create recentemente. Per favor selige le paginas a deler, forni un summario de modification e clicca sur ‘Deler selection’ pro comenciar le deletion del paginas.\n\nLe redirectiones appare in litteras italic.",
 	"nuke-defaultreason": "Deletion in massa de paginas addite per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-multiplepeople": "Deletion in massa de paginas addite recentemente",
 	"nuke-tools": "Iste instrumento permitte le deletion in massa de paginas recentemente addite per un usator o adresse IP specific.\nEntra le nomine de usator o adresse IP pro obtener un lista de paginas a deler, o lassa vacue pro tote le usatores.",
-	"nuke-submit-user": "Listar paginas",
+	"nuke-submit-list": "Listar paginas",
 	"nuke-submit-delete": "Deler selection",
 	"right-nuke": "Deler paginas in massa",
 	"nuke-userorip": "Nomine de usator, adresse IP o vacue:",
@@ -28,6 +25,5 @@
 	"nuke-viewchanges": "historia",
 	"nuke-namespace": "Limitar al spatio de nomines:",
 	"nuke-linkoncontribs": "deletion in massa",
-	"nuke-linkoncontribs-text": "Deler tote le paginas del quales {{GENDER:$1|iste usator}} es le unic autor",
-	"nuke-confirm": "Tu es sur le puncto de deler {{PLURAL:$1|1 pagina|$1 paginas}}. Es tu secur de voler deler {{PLURAL:$1|lo|los}}?"
+	"nuke-linkoncontribs-text": "Deler tote le paginas del quales {{GENDER:$1|iste usator}} es le unic autor"
 }

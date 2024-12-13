@@ -12,13 +12,10 @@
 	"nuke": "Eliminar en masa",
 	"action-nuke": "borrar páxinas en masa",
 	"nuke-desc": "Dá aos administradores a posibilidade de [[Special:Nuke|borrar páxinas]] masivamente",
-	"nuke-nopages": "Non hai novas páxinas feitas por [[Special:Contributions/$1|{{GENDER:$1|$1}}]] nos cambios recentes.",
-	"nuke-list": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] creou nos últimos intres as seguintes páxinas;\nescriba un comentario e prema no botón para borralas.",
-	"nuke-list-multiple": "As seguintes páxinas creáronse recentemente;\ninsira un comentario e prema o botón para borralas.",
 	"nuke-defaultreason": "Eliminación en masa das páxinas engadidas por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-multiplepeople": "Eliminación en masa de páxinas recentes",
 	"nuke-tools": "Esta ferramenta permite borrar en masa as páxinas engadidas recentemente por un determinado usuario ou enderezo IP.\nIntroduza o nome do usuario ou enderezo IP para obter unha lista das páxinas para borrar. Déixeo en branco para todos os usuarios.",
-	"nuke-submit-user": "Listar páxinas",
+	"nuke-submit-list": "Listar páxinas",
 	"nuke-submit-delete": "Eliminar a selección",
 	"right-nuke": "Borrar páxinas masivamente",
 	"nuke-userorip": "Nome de usuario, enderezo IP ou en branco:",
@@ -33,6 +30,5 @@
 	"nuke-viewchanges": "historial",
 	"nuke-namespace": "Limitar aos espazos de nomes:",
 	"nuke-linkoncontribs": "eliminar en masa",
-	"nuke-linkoncontribs-text": "Eliminar en masa as páxinas das que {{GENDER:$1|este usuario é o único autor|esta usuaria é a única autora}}",
-	"nuke-confirm": "Está a piques de eliminar {{PLURAL:$1|unha páxina|$1 páxinas}}. Está seguro de que quere facer o borrado?"
+	"nuke-linkoncontribs-text": "Eliminar en masa as páxinas das que {{GENDER:$1|este usuario é o único autor|esta usuaria é a única autora}}"
 }

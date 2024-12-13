@@ -7,8 +7,6 @@
 		]
 	},
 	"nuke": "Birdaniga oʻchirish",
-	"nuke-list": "Quyida koʻrsatilgan sahifalar [[Special:Contributions/$1|{{GENDER:$1|$1}}]] tomonidan yaratilgan; sahifalarni oʻchirish uchun pastdagi qatorga oʻchirish sababini kiritib, „Tanlanganlarni oʻchirish“ tugmasini bosing.",
-	"nuke-list-multiple": "Quyida koʻrsatilgan sahifalar yaqinda yaratilgan; ularni oʻchirish uchun pastdagi qatorga oʻchirish sababini kiritib, „Tanlanganlarni oʻchirish“ tugmasini bosing.",
 	"nuke-defaultreason": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] yaratgan sahifalar birdaniga oʻchirildi",
 	"nuke-submit-delete": "Tanlanganlarni oʻchirish",
 	"right-nuke": "Sahifalarni birdaniga oʻchirish",

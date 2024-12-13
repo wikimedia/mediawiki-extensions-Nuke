@@ -1,0 +1,11 @@
+{
+	"@metadata": {
+		"authors": [
+			"Cabal"
+		]
+	},
+	"nuke-submit-continue": "ਜਾਰੀ ਰੱਖੋ",
+	"nuke-submit-delete": "ਮਿਟਾਓ",
+	"nuke-nopages-global": "ਖੋਜ ਨਾਲ ਕੋਈ ਵੀ ਸਫ਼ਾ ਮੇਲ ਨਹੀਂ ਖਾਂਦਾ।",
+	"nuke-noselected": "ਜਾਰੀ ਰੱਖਣ ਲਈ, ਉਹਨਾਂ ਸਫ਼ਿਆਂ ਨੂੰ ਚੁਣੋ ਜੋ ਮਿਟਾਉਣ ਲਈ ਕਤਾਰ ਵਿੱਚ ਹੋਣਗੇ।"
+}
