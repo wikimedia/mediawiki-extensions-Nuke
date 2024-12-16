@@ -10,7 +10,8 @@
 			"Eduardoaddad",
 			"Felipe L. Ewald",
 			"Giro720",
-			"MetalBrasil"
+			"MetalBrasil",
+			"Tuliouel"
 		]
 	},
 	"nuke": "Eliminar de forma massiva",
@@ -20,7 +21,7 @@
 	"nuke-multiplepeople": "Eliminação em massa de páginas criadas recentemente",
 	"nuke-tools": "Esta ferramenta permite que páginas criadas recentemente por um usuário ou IP específico sejam eliminadas de forma massiva.\nInsira um nome de usuário ou IP para listar páginas a eliminar; deixe em branco se deseja listar de todos os usuários.",
 	"nuke-submit-list": "Listar páginas",
-	"nuke-submit-delete": "Eliminar selecionadas",
+	"nuke-submit-delete": "Deletar",
 	"right-nuke": "Eliminar páginas em massa",
 	"nuke-userorip": "Nome de usuário, endereço IP ou em branco:",
 	"nuke-maxpages": "Número máximo de páginas:",
@@ -30,7 +31,7 @@
 	"nuke-not-deleted": "A página [[:$1]] '''não pôde''' ser excluída.",
 	"nuke-delete-more": "[[Special:Nuke|Eliminar mais páginas]]",
 	"nuke-pattern": "Padrão (por exemplo %) para o nome da página:",
-	"nuke-nopages-global": "Não há títulos de páginas que correspondam à sua pesquisa.",
+	"nuke-nopages-global": "Nenhuma página corresponde à sua pesquisa.",
 	"nuke-viewchanges": "ver alterações",
 	"nuke-namespace": "Limitar ao espaço nominal:",
 	"nuke-linkoncontribs": "excluir em massa",
