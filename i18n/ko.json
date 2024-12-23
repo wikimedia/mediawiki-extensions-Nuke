@@ -29,6 +29,7 @@
 	"nuke-userorip": "계정 이름이나 IP 주소 또는 빈 칸:",
 	"nuke-maxpages": "가져올 페이지 수 (최대 500):",
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]]님이 작성함.",
+	"nuke-delete-summary": "'''{{PLURAL:$1|1개 문서|$1개 문서}}'''가 삭제를 위해 대기열에 추가되었습니다.",
 	"nuke-delete-summary-user": "[[{{ns:user}}:$2|$2]]([[{{ns:user_talk}}:$2|{{int:talkpagelinktext}}]] {{int:pipe-separator}} [[{{ns:special}}:Contributions/$2|{{int:contribslink}}]] {{int:pipe-separator}} [[{{ns:special}}:Block/$2|{{int:blocklink}}]])님이 만든 '''{{PLURAL:$1|문서 1개|문서 $1개}}'''는 삭제를 위해 대기열에 추가되었습니다.",
 	"nuke-deleted": "'''$1''' 문서를 삭제했습니다.",
 	"nuke-deletion-queued": "'''$1''' 문서는 삭제를 위해 대기열에 추가되었습니다.",
