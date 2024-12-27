@@ -5,23 +5,23 @@ namespace MediaWiki\Extension\Nuke\Test\Integration;
 use ErrorPageError;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Nuke\SpecialNuke;
-use MediaWiki\Permissions\Authority;
+use MediaWiki\Extension\Nuke\Test\NukeIntegrationTest;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\Title\Title;
-use MediaWiki\User\User;
 use PermissionsError;
 use SpecialPageTestBase;
-use UploadFromFile;
 use UserBlockedError;
 
 /**
  * @group Database
  * @covers \MediaWiki\Extension\Nuke\SpecialNuke
+ * @covers \MediaWiki\Extension\Nuke\NukeQueryBuilder
  */
 class SpecialNukeTest extends SpecialPageTestBase {
 
+	use NukeIntegrationTest;
 	use TempUserTestTrait;
 
 	protected function newSpecialPage(): SpecialNuke {
@@ -735,60 +735,167 @@ class SpecialNukeTest extends SpecialPageTestBase {
 	}
 
 	public function testListMaxAge() {
-		// 1 day
-		$maxAge = 86400;
+		$time = time();
+
+		$creator = $this->getTestUser()->getAuthority();
+
+		// A page that's always older than $wgNukeMaxAge and $wgRCMaxAge.
+		// This should never show up; if it does, the max age isn't being applied at all.
+		$this->editPageAtTime(
+			'Page1',
+			'test',
+			'',
+			$time - ( 86400 * 7 ), NS_MAIN,
+			$creator
+		);
+		// A page that's four days old.
+		$this->editPageAtTime(
+			'Page2',
+			'test',
+			'',
+			$time - ( 86400 * 4 ),
+			NS_MAIN,
+			$creator
+		);
+		// A page that's two days old.
+		$this->editPageAtTime(
+			'Page3',
+			'test',
+			'',
+			$time - ( 86400 * 2 ),
+			NS_MAIN,
+			$creator
+		);
+		// A page that was just made.
+		$this->editPage( 'Page4', 'test', '', NS_MAIN, $creator );
+
 		$this->overrideConfigValues( [
-			'NukeMaxAge' => $maxAge,
-			'RCMaxAge' => $maxAge
+			'NukeMaxAge' => 86400 * 5,
+			'RCMaxAge' => 86400 * 3
 		] );
-
-		$performer = $this->getTestUser()->getAuthority();
-
-		// Will never show up. If it does, the max age isn't being applied at all.
-		$this->editPageAtTime( 'Page1', 'test', '', time() - ( $maxAge * 3 ), NS_MAIN, $performer );
-		// Will show up conditionally (see below).
-		$this->editPageAtTime( 'Page2', 'test', '', time() - $maxAge - 60, NS_MAIN, $performer );
-		// Will always show up.
-		$this->editPage( 'Page3', 'test', '', NS_MAIN, $performer );
+		$this->rebuildRecentChanges( $time - ( 86400 * 3 ) - 60, $time + 60 );
 
 		$admin = $this->getTestSysop()->getUser();
+		$performer = new UltimateAuthority( $admin );
+
+		// == Pattern-only (recentchanges) searches ==
+
+		// Request with a pattern but no actor.
+		// This should use the recentchanges table exclusively.
+		// Page3 and Page4 should be present.
 		$request = new FauxRequest( [
 			'action' => SpecialNuke::ACTION_LIST,
-			'pattern' => 'Page%',
-			'limit' => 2
+			'pattern' => 'Page%'
 		], true );
-		$adminPerformer = new UltimateAuthority( $admin );
 
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringContainsString( 'nuke-pattern-performance', $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
+
+		// Changing NukeMaxAge to be way larger than RCMaxAge shouldn't affect that query.
+		$this->overrideConfigValues( [
+			'NukeMaxAge' => 86400 * 6,
+			'RCMaxAge' => 86400
+		] );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringContainsString( 'nuke-pattern-performance', $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
+
+		// Changing NukeMaxAge to be smaller than RCMaxAge should limit to just those pages.
+		// We don't want to provide pages larger than the scope of NukeMaxAge just because
+		// we're using the recentchanges table.
+		$this->overrideConfigValues( [
+			'NukeMaxAge' => 600,
+			'RCMaxAge' => 86400
+		] );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+		// No help message here, since we're limited by $wgNukeMaxAge instead of $wgRCMaxAge.
+		$this->assertStringNotContainsString( 'nuke-pattern-performance', $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
+
+		// Changing NukeMaxAge to 0 should make it fall back to RCMaxAge.
+		$this->overrideConfigValues( [
+			'NukeMaxAge' => 0,
+			'RCMaxAge' => 86400 * 3
+		] );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+		// No help message here, since we're limited by $wgNukeMaxAge instead of $wgRCMaxAge.
+		$this->assertStringNotContainsString( 'nuke-pattern-performance', $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
+
+		// == With-actor (revision) searches ==
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $creator->getUser()->getName(),
+			'pattern' => 'Page%'
+		], true );
+
+		// NukeMaxAge falls back to RCMaxAge.
+		$this->overrideConfigValues( [
+			'NukeMaxAge' => 0,
+			'RCMaxAge' => 86400 * 3
+		] );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
 
-		// Now check if resetting $wgNukeMaxAge will show Page2.
-		// This should follow $wgRCMaxAge, which will include the page.
+		// NukeMaxAge matches RCMaxAge. Should have no difference from above.
 		$this->overrideConfigValues( [
-			'RCMaxAge' => $maxAge * 2,
-			'NukeMaxAge' => 0
+			'NukeMaxAge' => 86400 * 3,
+			'RCMaxAge' => 86400 * 3
 		] );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
 
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		// NukeMaxAge is greater than RCMaxAge. It should show older pages.
+		$this->overrideConfigValues( [
+			'NukeMaxAge' => 86400 * 5,
+			'RCMaxAge' => 86400
+		] );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
 
-		// Now check if expanding just $wgNukeMaxAge will show Page2.
+		// NukeMaxAge is lesser than RCMaxAge. It should show newer pages.
 		$this->overrideConfigValues( [
-			'RCMaxAge' => $maxAge,
-			'NukeMaxAge' => $maxAge * 2
+			'NukeMaxAge' => 86400 * 3,
+			'RCMaxAge' => 86400 * 5
 		] );
-
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		// Rebuild recent changes to make Page2 reappear on the recentchanges table.
+		// We still don't want to match it.
+		$this->rebuildRecentChanges( $time - ( 86400 * 8 ) - 60, $time + 60 );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
-		$this->assertStringContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
 	}
 
 	public function testListFiles() {
@@ -1351,88 +1458,6 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		foreach ( $shouldBeMissing as $validationMessage ) {
 			$this->assertStringNotContainsString( $validationMessage, $html );
 		}
-	}
-
-	/**
-	 * Edit a page and also overwrite the timestamp for the revision.
-	 *
-	 * @param string $title
-	 * @param string $content
-	 * @param string $summary
-	 * @param int $timestamp
-	 * @param int|null $defaultNs
-	 * @param Authority|null $performer
-	 * @return void
-	 */
-	private function editPageAtTime(
-		string $title,
-		string $content,
-		string $summary,
-		int $timestamp,
-		?int $defaultNs = NS_MAIN,
-		?Authority $performer = null
-	) {
-		$pageStatus = $this->editPage( $title, $content, $summary, $defaultNs, $performer );
-		if ( !$pageStatus->isGood() ) {
-			$this->fail( "Failed to create page: $title" );
-		}
-
-		// Prepare database connection and update query builder
-		$dbw = $this->getServiceContainer()->getConnectionProvider()->getPrimaryDatabase();
-		$updateQueryBuilder = $dbw->newUpdateQueryBuilder()
-			->update( 'revision' )
-			->caller( __METHOD__ );
-
-		// Manually change the rev_timestamp of the revision in the database.
-		( clone $updateQueryBuilder )
-			->set( [ 'rev_timestamp' => $dbw->timestamp( $timestamp ) ] )
-			->where( [
-				'rev_id' => $pageStatus->getNewRevision()->getId()
-			] )->execute();
-	}
-
-	/**
-	 * Upload a test file.
-	 *
-	 * @param ?User|null $user
-	 * @return array Title object and page id
-	 */
-	private function uploadTestFile( ?User $user = null ): array {
-		$exampleFilePath = realpath( __DIR__ . "/../../assets/Example.png" );
-		$tempFilePath = $this->getNewTempFile();
-		copy( $exampleFilePath, $tempFilePath );
-
-		$title = Title::makeTitle( NS_FILE, "Example " . rand() . ".png" );
-		$request = new FauxRequest( [], true );
-		$request->setUpload( 'wpUploadFile', [
-			'name' => $title->getText(),
-			'type' => 'image/png',
-			'tmp_name' => $tempFilePath,
-			'size' => filesize( $tempFilePath ),
-			'error' => UPLOAD_ERR_OK
-		] );
-		$upload = UploadFromFile::createFromRequest( $request );
-		$uploadStatus = $upload->performUpload(
-			"test",
-			false,
-			false,
-			$user ?? $this->getTestUser( "user" )->getUser()
-		);
-		$this->assertTrue( $uploadStatus->isOK() );
-		$this->getServiceContainer()->getJobRunner()->run( [] );
-
-		return [
-			'title' => $title,
-			'id' => $title->getId()
-		];
-	}
-
-	private function getDeleteLogHtml(): string {
-		$services = $this->getServiceContainer();
-		// TODO: Make this use qqx so tests can be checked against system message keys.
-		$specialLog = $services->getSpecialPageFactory()->getPage( 'Log' );
-		$specialLog->execute( "delete" );
-		return $specialLog->getOutput()->getHTML();
 	}
 
 }

@@ -296,12 +296,13 @@ class NukeContext {
 	/**
 	 * Get the maximum age in seconds that a page can be before it cannot be deleted by Nuke.
 	 *
+	 * @param bool $useRCMaxAge Whether to use `$wgRCMaxAge` as a fallback.
 	 * @return int
 	 */
-	public function getNukeMaxAge(): int {
+	public function getNukeMaxAge( bool $useRCMaxAge = true ): int {
 		$maxAge = $this->requestContext->getConfig()->get( "NukeMaxAge" );
 		// If no Nuke-specific max age was set, this should match the value of `$wgRCMaxAge`.
-		if ( !$maxAge ) {
+		if ( !$maxAge && $useRCMaxAge ) {
 			$maxAge = $this->requestContext->getConfig()->get( MainConfigNames::RCMaxAge );
 		}
 		return $maxAge;

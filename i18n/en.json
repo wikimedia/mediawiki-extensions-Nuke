@@ -30,6 +30,7 @@
 	"nuke-skipped-summary": "{{PLURAL:$1|'''One page''' was|'''$1 pages''' were}} not selected for deletion.",
 	"nuke-delete-more": "[[Special:Nuke|Delete more pages]]",
 	"nuke-pattern": "SQL LIKE pattern (e.g. %) for the page name:",
+	"nuke-pattern-performance": "Due to performance reasons, using this filter without a username or IP address will limit the results to the last $1.",
 	"nuke-nolist": "To continue, first 'List pages' and then select pages that will be queued for deletion.",
 	"nuke-nopages-global": "No pages match the search.",
 	"nuke-noselected": "To continue, select pages that will be queued for deletion.",

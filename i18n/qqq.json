@@ -44,6 +44,7 @@
 	"nuke-skipped-summary": "Used at the middle (or bottom) of the Nuke (mass deletion) result page. Shown only when some pages were not selected when mass deleting.\n\nParameters:\n* $1 - the number of pages queued for deletion\n\nSee also: \n*{{msg-mw|nuke-skipped}}",
 	"nuke-delete-more": "Used at the bottom of the Nuke (mass deletion) result page.",
 	"nuke-pattern": "{{doc-important|Do not translate <code>LIKE</code>, it is an SQL operator.}}\nUsed as label for \"nuke pattern\" input box.",
+	"nuke-pattern-performance": "Used as a help message for the \"nuke pattern\" input box. Indicates the maximum age allowed by recent changes.\n\nParameters:\n* $1 - the time period of Special:RecentChange's max age (e.g. \"30 days\", \"24 hours 0 minutes\"), as provided by <code>Language::formatTimePeriod</code>.",
 	"nuke-nolist": "Used if the user clicked on 'Continue' without first listing pages.\n\n\"List pages\" is {{msg-mw|Nuke-submit-list}}.\n\nSee also:\n* {{msg-mw|Nuke-nopages-global}}\n* {{msg-mw|Nuke-noselected}}",
 	"nuke-nopages-global": "Used if there are no pages to delete and the username is empty.\n\nSee also:\n* {{msg-mw|Nuke-nolist}}\n* {{msg-mw|Nuke-noselected}}",
 	"nuke-noselected": "Used if the user clicked on 'Continue' without selecting pages to delete.\n\nSee also:\n* {{msg-mw|Nuke-nolist}}\n* {{msg-mw|Nuke-nopages-global}}",

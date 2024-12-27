@@ -84,6 +84,9 @@
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\Nuke\\": "includes/"
 	},
+	"TestAutoloadNamespaces": {
+		"MediaWiki\\Extension\\Nuke\\Test\\": "tests/phpunit/"
+	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
 	],

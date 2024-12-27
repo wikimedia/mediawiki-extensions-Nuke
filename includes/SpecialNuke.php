@@ -31,10 +31,6 @@ use RepoGroup;
 use UserBlockedError;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
-use Wikimedia\Rdbms\IExpression;
-use Wikimedia\Rdbms\LikeMatch;
-use Wikimedia\Rdbms\LikeValue;
-use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class SpecialNuke extends SpecialPage {
 
@@ -372,6 +368,22 @@ class SpecialNuke extends SpecialPage {
 				'name' => 'limit'
 			]
 		];
+
+		$rcMaxAge = $this->getConfig()->get( MainConfigNames::RCMaxAge );
+		$nukeMaxAge = $context->getNukeMaxAge();
+
+		if ( $nukeMaxAge && $nukeMaxAge > $rcMaxAge ) {
+			// On a pattern-only search (all-user search), we'll only be searching the
+			// recentchanges table. Because of this, we can't fully respect $wgNukeMaxAge.
+			// This breaks the expectation of users, so we need to show a note for it.
+			$formDescriptor['nuke-pattern']['help-message'] = [
+				'nuke-pattern-performance',
+				$this->getLanguage()->formatTimePeriod( $rcMaxAge, [
+					'avoid' => 'avoidhours',
+					'noabbrevs' => true
+				] )
+			];
+		}
 
 		$promptForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
 			->setFormIdentifier( 'massdelete' )
@@ -787,128 +799,58 @@ class SpecialNuke extends SpecialPage {
 	protected function getNewPages( NukeContext $context, array $tempAccounts = [] ): array {
 		$dbr = $this->dbProvider->getReplicaDatabase();
 
-		$maxAge = $context->getNukeMaxAge();
+		$nukeMaxAge = $context->getNukeMaxAge();
 
 		$target = $context->getTarget();
-		$limit = $context->getLimit();
-		$queryBuilder = $dbr->newSelectQueryBuilder()
-			->select( [ 'page_title', 'page_namespace' ] )
-			->from( 'revision' )
-			->join( 'actor', null, 'actor_id=rev_actor' )
-			->join( 'page', null, 'page_id=rev_page' )
-			->where( [
-				$dbr->expr( 'rev_parent_id', '=', 0 ),
-				$dbr->expr( 'rev_timestamp', '>', $dbr->timestamp(
-					time() - $maxAge
-				) )
-			] )
-			->orderBy( 'rev_timestamp', SelectQueryBuilder::SORT_DESC )
-			->distinct()
-			->limit( $limit )
-			->setMaxExecutionTime(
-				$this->getConfig()->get( MainConfigNames::MaxExecutionTimeForExpensiveQueries )
+		if ( $target ) {
+			// Enable revision table searches only when a target has been specified.
+			// Running queries on the revision table when there's no actor causes timeouts, since
+			// the entirety of the `page` table needs to be scanned. (T380846)
+			$nukeQueryBuilder = new NukeQueryBuilder(
+				$dbr,
+				$this->getConfig(),
+				$this->namespaceInfo,
+				$this->contentLanguage,
+				NukeQueryBuilder::TABLE_REVISION
 			);
-
-		$queryBuilder->field( 'actor_name' );
-		$actorNames = array_filter( [ $target, ...$tempAccounts ] );
-		if ( $actorNames ) {
-			$queryBuilder->andWhere( [ 'actor_name' => $actorNames ] );
+		} else {
+			// Switch to `recentchanges` table searching when running an all-user search. (T380846)
+			$nukeQueryBuilder = new NukeQueryBuilder(
+				$dbr,
+				$this->getConfig(),
+				$this->namespaceInfo,
+				$this->contentLanguage,
+				NukeQueryBuilder::TABLE_RECENTCHANGES
+			);
 		}
 
+		// Follow the `$wgNukeMaxAge` config variable.
+		if ( $nukeMaxAge ) {
+			$nukeQueryBuilder->filterFromTimestamp( time() - $nukeMaxAge );
+		}
+
+		// Limit the number of rows that can be returned by the query.
+		$limit = $context->getLimit();
+		$nukeQueryBuilder->limit( $limit );
+
+		// Filter by actors, if applicable.
+		$nukeQueryBuilder->filterActor( array_filter( [ $target, ...$tempAccounts ] ) );
+
+		// Filter by namespace, if applicable
 		$namespaces = $context->getNamespaces();
-		if ( $namespaces !== null ) {
-			$namespaceConditions = array_map( static function ( $ns ) use ( $dbr ){
-				return $dbr->expr( 'page_namespace', '=', $ns );
-			}, $namespaces );
-			$queryBuilder->andWhere( $dbr->orExpr( $namespaceConditions ) );
-		}
+		$nukeQueryBuilder->filterNamespaces( $namespaces );
 
+		// Filter by pattern, if applicable
 		$pattern = $context->getPattern();
-		if ( trim( $pattern ) !== '' ) {
-			$addedWhere = false;
+		$nukeQueryBuilder->filterPattern(
+			$pattern,
+			$namespaces
+		);
 
-			$pattern = trim( $pattern );
-			$pattern = preg_replace( '/ +/', '`_', $pattern );
-			$pattern = preg_replace( '/\\\\([%_])/', '`$1', $pattern );
-
-			$overriddenNamespaces = [];
-			$capitalLinks = $this->getConfig()->get( 'CapitalLinks' );
-			$capitalLinkOverrides = $this->getConfig()->get( 'CapitalLinkOverrides' );
-			// If there are any capital-overridden namespaces, keep track of them. "overridden"
-			// here means the namespace-specific value is not equal to $wgCapitalLinks.
-			foreach ( $capitalLinkOverrides as $nsId => $nsOverridden ) {
-				if ( $nsOverridden !== $capitalLinks && (
-					$namespaces == null || in_array( $nsId, $namespaces )
-				) ) {
-					$overriddenNamespaces[] = $nsId;
-				}
-			}
-
-			if ( count( $overriddenNamespaces ) ) {
-				// If there are overridden namespaces, they have to be converted
-				// on a case-by-case basis.
-
-				// Our scope should only be limited to the namespaces selected by the user,
-				// or all namespaces (when $namespaces == null).
-				$validNamespaces = $namespaces == null ?
-					$this->namespaceInfo->getValidNamespaces() :
-					$namespaces;
-				$nonOverriddenNamespaces = [];
-				foreach ( $validNamespaces as $ns ) {
-					if ( !in_array( $ns, $overriddenNamespaces ) ) {
-						// Put all namespaces that aren't overridden in $nonOverriddenNamespaces.
-						$nonOverriddenNamespaces[] = $ns;
-					}
-				}
-
-				$patternSpecific = $this->namespaceInfo->isCapitalized( $overriddenNamespaces[0] ) ?
-					$this->contentLanguage->ucfirst( $pattern ) : $pattern;
-				$orConditions = [
-					$dbr->expr(
-						'page_title', IExpression::LIKE, new LikeValue(
-							new LikeMatch( $patternSpecific )
-						)
-					)->and(
-					// IN condition
-						'page_namespace', '=', $overriddenNamespaces
-					)
-				];
-				if ( count( $nonOverriddenNamespaces ) ) {
-					$patternStandard = $this->namespaceInfo->isCapitalized( $nonOverriddenNamespaces[0] ) ?
-						$this->contentLanguage->ucfirst( $pattern ) : $pattern;
-					$orConditions[] = $dbr->expr(
-						'page_title', IExpression::LIKE, new LikeValue(
-							new LikeMatch( $patternStandard )
-						)
-					)->and(
-					// IN condition, with the non-overridden namespaces.
-					// If the default is case-sensitive namespaces, $pattern's first
-					// character is turned lowercase. Otherwise, it is turned uppercase.
-						'page_namespace', '=', $nonOverriddenNamespaces
-					);
-				}
-				$queryBuilder->andWhere( $dbr->orExpr( $orConditions ) );
-				$addedWhere = true;
-			} else {
-				// No overridden namespaces; just convert all titles.
-				$pattern = $this->namespaceInfo->isCapitalized( NS_MAIN ) ?
-					$this->contentLanguage->ucfirst( $pattern ) : $pattern;
-			}
-
-			if ( !$addedWhere ) {
-				$queryBuilder->andWhere(
-					$dbr->expr(
-						'page_title',
-						IExpression::LIKE,
-						new LikeValue(
-							new LikeMatch( $pattern )
-						)
-					)
-				);
-			}
-		}
-
-		$result = $queryBuilder->caller( __METHOD__ )->fetchResultSet();
+		$result = $nukeQueryBuilder
+			->build()
+			->caller( __METHOD__ )
+			->fetchResultSet();
 		/** @var array{0:Title,1:string|false}[] $pages */
 		$pages = [];
 		foreach ( $result as $row ) {
