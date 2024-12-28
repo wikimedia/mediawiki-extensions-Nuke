@@ -55,6 +55,10 @@ class SpecialNuke extends SpecialPage {
 	private $checkUserTemporaryAccountsByIPLookup = null;
 
 	/**
+	 * Action keyword for the "prompt" step.
+	 */
+	public const ACTION_PROMPT = 'prompt';
+	/**
 	 * Action keyword for the "list" step.
 	 */
 	public const ACTION_LIST = 'list';
@@ -139,6 +143,81 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$req = $this->getRequest();
+		$nukeContext = $this->loadNukeContextFromRequest( $par );
+
+		switch ( $nukeContext->getAction() ) {
+			case self::ACTION_DELETE:
+			case self::ACTION_CONFIRM:
+				if ( !$req->wasPosted()
+					|| !$currentUser->matchEditToken( $req->getVal( 'wpEditToken' ) )
+				) {
+					// If the form was not posted or the edit token didn't match, something
+					// must have gone wrong. Show the prompt form again.
+					$this->showPromptForm( $nukeContext );
+					break;
+				}
+
+				if ( !$nukeContext->hasPages() ) {
+					if ( !$nukeContext->hasOriginalPages() ) {
+						// No pages were requested. This is an early confirm attempt without having
+						// listed the pages at all. Show the list form again.
+						$this->showPromptForm( $nukeContext );
+					} else {
+						// Pages were not requested but a page list exists. The user did not select any
+						// pages. Show the list form again.
+						$this->showListForm( $nukeContext );
+					}
+					break;
+				}
+
+				if ( $nukeContext->getAction() === self::ACTION_DELETE ) {
+					$deletedPageStatuses = $this->doDelete( $nukeContext );
+					$this->showResultPage( $nukeContext, $deletedPageStatuses );
+				} else {
+					$this->showConfirmForm( $nukeContext );
+				}
+				break;
+			case self::ACTION_LIST:
+				$this->showListForm( $nukeContext );
+				break;
+			default:
+				$this->showPromptForm( $nukeContext );
+				break;
+		}
+	}
+
+	/**
+	 * Return a list of temporary accounts that are known to have edited from the context's target.
+	 * Calls to this method result in a log entry being generated for the logged-in user account
+	 * making the request.
+	 *
+	 * @param NukeContext $context
+	 * @return string[] A list of temporary account usernames associated with the IP address
+	 */
+	public function getTempAccounts( NukeContext $context ): array {
+		if ( !$this->checkUserTemporaryAccountsByIPLookup ) {
+			return [];
+		}
+		$status = $this->checkUserTemporaryAccountsByIPLookup->get(
+			$context->getTarget(),
+			$this->getAuthority(),
+			true
+		);
+		if ( $status->isGood() ) {
+			return $status->getValue();
+		}
+		return [];
+	}
+
+	/**
+	 * Load the Nuke context from request data ({@link SpecialPage::getRequest}).
+	 *
+	 * @param string|null $par
+	 * @return NukeContext
+	 */
+	protected function loadNukeContextFromRequest( ?string $par ): NukeContext {
+		$req = $this->getRequest();
+
 		$target = trim( $req->getText( 'target', $par ?? '' ) );
 
 		// Normalise name
@@ -149,8 +228,6 @@ class SpecialNuke extends SpecialPage {
 			}
 		}
 
-		$limit = $req->getInt( 'limit', 500 );
-
 		$namespaces = $this->loadNamespacesFromRequest( $req );
 		// Set $namespaces to null if it's empty
 		if ( count( $namespaces ) == 0 ) {
@@ -158,81 +235,38 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$action = $req->getRawVal( 'action' );
-		if ( !$action && $target !== '' ) {
-			// Target was supplied but action was not. Imply 'list' action.
-			$action = self::ACTION_LIST;
+		if ( !$action ) {
+			if ( $target !== '' ) {
+				// Target was supplied but action was not. Imply 'list' action.
+				$action = self::ACTION_LIST;
+			} else {
+				$action = self::ACTION_PROMPT;
+			}
 		}
 
-		switch ( $action ) {
-			case self::ACTION_DELETE:
-			case self::ACTION_CONFIRM:
-				// "target" might be different, if the user typed in a different name before
-				// hitting "Continue". We still want to show the pages from the user currently
-				// shown on the form.
-				$target = trim( $req->getText( 'listedTarget', $target ) );
-				$reason = $this->getDeleteReason( $this->getRequest(), $target );
-
-				if ( !$req->wasPosted()
-					|| !$currentUser->matchEditToken( $req->getVal( 'wpEditToken' ) )
-				) {
-					// If the form was not posted or the edit token didn't match, something
-					// must have gone wrong. Show the prompt form again.
-					$this->showPromptForm( $target );
-					break;
-				}
-
-				$pages = $req->getArray( 'pages', [] );
-				$originalPageList = explode(
-					self::PAGE_LIST_SEPARATOR,
-					$req->getText( 'originalPageList' )
-				);
-
-				// Check if $originalPageList[0] is empty
-				if ( count( $originalPageList ) === 1 && !$originalPageList[0] ) {
-					// No page list was provided.
-					if ( count( $pages ) ) {
-						// Pages were requested. Set $originalPageList to an empty array to
-						// permit deletion of those pages.
-						$originalPageList = [];
-					} else {
-						// No pages were requested. This is an early confirm attempt without having
-						// listed the pages at all. Show the list form again.
-						$this->showPromptForm( $target, $this->msg( 'nuke-nolist' )->text() );
-						break;
-					}
-				} elseif ( !count( $pages ) ) {
-					// Pages were not requested but a page list exists. The user did not select any
-					// pages. Show the list form again.
-					$this->showListForm(
-						$target,
-						$limit,
-						$namespaces,
-						$this->msg( 'nuke-noselected' )->text()
-					);
-					break;
-				}
-
-				if (
-					$this->checkUserTemporaryAccountsByIPLookup &&
-					IPUtils::isValid( $target )
-				) {
-					$reason = $this->getDeleteReason( $this->getRequest(), $target, true );
-				}
-
-				if ( $req->getRawVal( 'action' ) === self::ACTION_DELETE ) {
-					$deletedPageStatuses = $this->doDelete( $pages, $reason );
-					$this->showResultPage( $deletedPageStatuses, $originalPageList, $target );
-				} else {
-					$this->showConfirmForm( $pages, $originalPageList, $reason );
-				}
-				break;
-			case self::ACTION_LIST:
-				$this->showListForm( $target, $limit, $namespaces );
-				break;
-			default:
-				$this->showPromptForm( $target );
-				break;
+		// This uses a string value to avoid having to generate hundreds of hidden <input>s.
+		$originalPages = explode(
+			self::PAGE_LIST_SEPARATOR,
+			$req->getText( 'originalPageList' )
+		);
+		if ( count( $originalPages ) == 1 && $originalPages[0] == "" ) {
+			$originalPages = [];
 		}
+
+		return new NukeContext( [
+			'requestContext' => $this->getContext(),
+			'useTemporaryAccounts' => $this->checkUserTemporaryAccountsByIPLookup != null,
+
+			'action' => $action,
+			'target' => $target,
+			'listedTarget' => trim( $req->getText( 'listedTarget', $target ) ),
+			'pattern' => $req->getText( 'pattern' ),
+			'limit' => $req->getInt( 'limit', 500 ),
+			'namespaces' => $namespaces,
+
+			'pages' => $req->getArray( 'pages', [] ),
+			'originalPages' => $originalPages
+		] );
 	}
 
 	/**
@@ -288,46 +322,22 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	/**
-	 * Given an IP address, return a list of temporary accounts that are known to have edited from the IP.
-	 *
-	 * Calls to this method result in a log entry being generated for the logged-in user account making the request.
-	 * @param string $ip The IP address used for looking up temporary account names.
-	 * The address will be normalized in the IP lookup service.
-	 * @return string[] A list of temporary account usernames associated with the IP address
-	 */
-	private function getTempAccountData( string $ip ): array {
-		// Requires CheckUserTemporaryAccountsByIPLookup service
-		if ( !$this->checkUserTemporaryAccountsByIPLookup ) {
-			return [];
-		}
-		$status = $this->checkUserTemporaryAccountsByIPLookup->get(
-			$ip,
-			$this->getAuthority(),
-			true
-		);
-		if ( $status->isGood() ) {
-			return $status->getValue();
-		}
-		return [];
-	}
-
-	/**
 	 * Get the prompt form to be shown to the user. Should appear when both asking for initial
 	 * data or showing the page list.
 	 *
-	 * @param string $userName The username or IP address to prefill into the "Target" field
-	 * @param string|null $error An error message to show to the user.
+	 * @param NukeContext $context
 	 * @return string
 	 */
-	protected function getPromptForm( string $userName = '', ?string $error = null ): string {
+	protected function getPromptForm( NukeContext $context ): string {
 		$this->getOutput()->addModuleStyles( [ 'ext.nuke.styles' ] );
 
 		$formDescriptor = [
 			'nuke-target' => [
 				'id' => 'nuke-target',
-				'default' => $userName,
+				'default' => $context->getTarget(),
 				'label' => $this->msg( 'nuke-userorip' )->text(),
 				'type' => 'user',
+				'ipallowed' => true,
 				'name' => 'target',
 				'autofocus' => true,
 				'autocomplete' => 'off'
@@ -380,12 +390,13 @@ class SpecialNuke extends SpecialPage {
 				'flags' => [ 'primary', 'progressive' ]
 			] );
 
-		if ( $error ) {
+		$validationResult = $context->validate();
+		if ( $validationResult !== true ) {
 			$promptForm->addFooterHtml( strval(
 				new \OOUI\MessageWidget( [
 					'classes' => [ 'ext-nuke-promptform-error' ],
 					'type' => 'error',
-					'label' => $error
+					'label' => $validationResult
 				] )
 			) );
 		}
@@ -398,10 +409,9 @@ class SpecialNuke extends SpecialPage {
 	/**
 	 * Prompt for a username or IP address.
 	 *
-	 * @param string $userName The username or IP address to prefill into the "Target" field
-	 * @param string|null $error An error to show to the user at the bottom of the prompt box
+	 * @param NukeContext $context
 	 */
-	protected function showPromptForm( string $userName = '', ?string $error = null ): void {
+	protected function showPromptForm( NukeContext $context ): void {
 		$out = $this->getOutput();
 
 		if ( $this->checkUserTemporaryAccountsByIPLookup ) {
@@ -414,8 +424,7 @@ class SpecialNuke extends SpecialPage {
 		$out->enableOOUI();
 		$out->addHTML(
 			$this->wrapForm( $this->getPromptForm(
-				$userName,
-				$error
+				$context
 			) )
 		);
 	}
@@ -423,37 +432,31 @@ class SpecialNuke extends SpecialPage {
 	/**
 	 * Display list of pages to delete.
 	 *
-	 * @param string $username
-	 * @param int $limit
-	 * @param int[]|null $namespaces
-	 * @param string|null $error An error to show to the user at the bottom of the prompt box
+	 * @param NukeContext $context
 	 */
-	protected function showListForm(
-		$username, $limit, $namespaces = null, $error = null
-	): void {
+	protected function showListForm( NukeContext $context ): void {
+		$target = $context->getTarget();
 		$out = $this->getOutput();
 
-		$tempnames = [];
+		$tempAccounts = [];
 		if ( $this->checkUserTemporaryAccountsByIPLookup ) {
 			$out->addWikiMsg( 'nuke-tools-tempaccount' );
-
-			if ( IPUtils::isValid( $username ) ) {
+			if ( IPUtils::isValid( $target ) ) {
 				// if the target is an ip addresss and temp account lookup is available,
 				// list pages created by the ip user or by temp accounts associated with the ip address
 				$this->assertUserCanAccessTemporaryAccounts( $this->getUser() );
-				$tempnames = $this->getTempAccountData( $username );
+				$tempAccounts = $this->getTempAccounts( $context );
 			}
 		} else {
 			$out->addWikiMsg( 'nuke-tools' );
 		}
 		$out->addWikiMsg( 'nuke-tools-prompt' );
 
-		$pages = $this->getNewPages( $username, $limit, $namespaces, $tempnames );
-
 		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
 		$out->enableOOUI();
-		$body = $this->getPromptForm( $username, $error );
+		$body = $this->getPromptForm( $context );
 
+		$pages = $this->getNewPages( $context, $tempAccounts );
 		if ( !$pages ) {
 			$out->addHTML(
 				$this->wrapForm( $body )
@@ -510,7 +513,7 @@ class SpecialNuke extends SpecialPage {
 				self::PAGE_LIST_SEPARATOR,
 				$titles
 			) ) .
-			Html::hidden( 'listedTarget', $username );
+			Html::hidden( 'listedTarget', $target );
 
 		$out->addHTML(
 			$this->wrapForm( $body )
@@ -518,22 +521,19 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	/**
-	 * @param string[] $pages The pages to be deleted
-	 * @param array $originalPageList The original list of pages shown to the user
-	 * @param string $reason The reason to use for deletion
+	 * @param NukeContext $context
 	 * @return void
 	 */
-	protected function showConfirmForm(
-		array $pages, array $originalPageList, string $reason = ''
-	) {
+	protected function showConfirmForm( NukeContext $context ) {
 		$out = $this->getOutput();
 
 		$out->enableOOUI();
 		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
 
+		$otherKey = 'other';
 		$options = Html::listDropdownOptions(
 			$this->msg( 'deletereason-dropdown' )->inContentLanguage()->text(),
-			[ 'other' => $this->msg( 'deletereasonotherlist' )->inContentLanguage()->text() ]
+			[ $otherKey => $this->msg( 'deletereasonotherlist' )->inContentLanguage()->text() ]
 		);
 
 		$formDescriptor = [
@@ -544,6 +544,7 @@ class SpecialNuke extends SpecialPage {
 				'label' => $this->msg( 'deletecomment' )->text(),
 				'align' => 'top',
 				'options' => $options,
+				'default' => $otherKey
 			],
 			'wpReason' => [
 				'id' => 'wpReason',
@@ -552,7 +553,7 @@ class SpecialNuke extends SpecialPage {
 				'label' => $this->msg( 'deleteotherreason' )->text(),
 				'align' => 'top',
 				'maxLength' => CommentStore::COMMENT_CHARACTER_LIMIT,
-				'default' => $reason,
+				'default' => $context->getDeleteReason(),
 				'autofocus' => true
 			]
 		];
@@ -562,7 +563,7 @@ class SpecialNuke extends SpecialPage {
 			->addHiddenField( 'action', self::ACTION_DELETE )
 			->addHiddenField( 'originalPageList', implode(
 				self::PAGE_LIST_SEPARATOR,
-				$originalPageList
+				$context->getOriginalPages()
 			) )
 			->setSubmitTextMsg( 'nuke-submit-delete' )
 			->setSubmitDestructive()
@@ -570,7 +571,7 @@ class SpecialNuke extends SpecialPage {
 
 		$pageList = [];
 
-		foreach ( $pages as $page ) {
+		foreach ( $context->getPages() as $page ) {
 			$title = Title::newFromText( $page );
 
 			$pageList[] = '<li>' .
@@ -594,21 +595,22 @@ class SpecialNuke extends SpecialPage {
 	 * Show the result page, showing what pages were deleted and what pages were skipped by the
 	 * user.
 	 *
+	 * @param NukeContext $context
 	 * @param array $deletedPageStatuses The status for each page queued for deletion.
-	 * @param array $originalPageList The original list of pages shown to the user. Used to
-	 * 	determine which pages were not selected by the user for deletion.
-	 * @param string $target The username of the user, if one was selected
 	 * @return void
 	 */
 	protected function showResultPage(
-		array $deletedPageStatuses, array $originalPageList, string $target = ''
+		NukeContext $context,
+		array $deletedPageStatuses
 	) {
 		$out = $this->getOutput();
 
 		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
 
 		// Determine what pages weren't deleted.
-		$pageStatuses = array_fill_keys( $originalPageList, false );
+		// Deselected pages will have a value of `false`, anything else should be either the
+		// string "job" or a Status object.
+		$pageStatuses = array_fill_keys( $context->getOriginalPages(), false );
 		foreach ( $deletedPageStatuses as $page => $value ) {
 			$pageStatuses[ $page ] = $value;
 		}
@@ -642,6 +644,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		// Show the main summary, regardless of whether we deleted pages or not.
+		$target = $context->getTarget();
 		if ( $target ) {
 			$out->addWikiMsg( 'nuke-delete-summary-user', $queuedCount, $target );
 		} else {
@@ -703,9 +706,16 @@ class SpecialNuke extends SpecialPage {
 		$this->getOutput()->addModules( 'mediawiki.htmlform' );
 		$this->getOutput()->addModuleStyles( 'mediawiki.htmlform.styles' );
 
+		// Only used for validation.
+		$form->setSubmitCallback( static function () {
+			return true;
+		} );
+
+		$submitResult = $form->trySubmit();
 		$html = $form->getHeaderHtml()
 			. $form->getBody()
 			. $form->getHiddenFields()
+			. $form->getErrorsOrWarnings( $submitResult, 'error' )
 			. $form->getButtons()
 			. $form->getFooterHtml();
 
@@ -768,22 +778,19 @@ class SpecialNuke extends SpecialPage {
 	/**
 	 * Gets a list of new pages by the specified user or everyone when none is specified.
 	 *
-	 * @param string $username
-	 * @param int $limit
-	 * @param int[]|null $namespaces
-	 * @param string[] $tempnames
+	 * @param NukeContext $context
+	 * @param string[] $tempAccounts Temporary accounts to search for. This is passed directly
+	 *   instead of through context to ensure permissions checks happen first.
 	 *
 	 * @return array{0:Title,1:string|false}[]
 	 */
-	protected function getNewPages( $username, $limit, $namespaces = null, $tempnames = [] ): array {
+	protected function getNewPages( NukeContext $context, array $tempAccounts = [] ): array {
 		$dbr = $this->dbProvider->getReplicaDatabase();
 
-		$maxAge = $this->getConfig()->get( "NukeMaxAge" );
-		// If no Nuke-specific max age was set, this should match the value of `$wgRCMaxAge`.
-		if ( !$maxAge ) {
-			$maxAge = $this->getConfig()->get( MainConfigNames::RCMaxAge );
-		}
+		$maxAge = $context->getNukeMaxAge();
 
+		$target = $context->getTarget();
+		$limit = $context->getLimit();
 		$queryBuilder = $dbr->newSelectQueryBuilder()
 			->select( [ 'page_title', 'page_namespace' ] )
 			->from( 'revision' )
@@ -803,11 +810,12 @@ class SpecialNuke extends SpecialPage {
 			);
 
 		$queryBuilder->field( 'actor_name' );
-		$actornames = array_filter( [ $username, ...$tempnames ] );
-		if ( $actornames ) {
-			$queryBuilder->andWhere( [ 'actor_name' => $actornames ] );
+		$actorNames = array_filter( [ $target, ...$tempAccounts ] );
+		if ( $actorNames ) {
+			$queryBuilder->andWhere( [ 'actor_name' => $actorNames ] );
 		}
 
+		$namespaces = $context->getNamespaces();
 		if ( $namespaces !== null ) {
 			$namespaceConditions = array_map( static function ( $ns ) use ( $dbr ){
 				return $dbr->expr( 'page_namespace', '=', $ns );
@@ -815,8 +823,8 @@ class SpecialNuke extends SpecialPage {
 			$queryBuilder->andWhere( $dbr->orExpr( $namespaceConditions ) );
 		}
 
-		$pattern = $this->getRequest()->getText( 'pattern' );
-		if ( $pattern !== null && trim( $pattern ) !== '' ) {
+		$pattern = $context->getPattern();
+		if ( trim( $pattern ) !== '' ) {
 			$addedWhere = false;
 
 			$pattern = trim( $pattern );
@@ -915,7 +923,7 @@ class SpecialNuke extends SpecialPage {
 		if ( $namespaces ) {
 			foreach ( $namespaces as $namespace ) {
 				$this->getNukeHookRunner()->onNukeGetNewPages(
-					$username,
+					$target,
 					$pattern,
 					$namespace,
 					$limit,
@@ -924,7 +932,7 @@ class SpecialNuke extends SpecialPage {
 			}
 		} else {
 			$this->getNukeHookRunner()->onNukeGetNewPages(
-				$username,
+				$target,
 				$pattern,
 				null,
 				$limit,
@@ -945,18 +953,17 @@ class SpecialNuke extends SpecialPage {
 	/**
 	 * Does the actual deletion of the pages.
 	 *
-	 * @param array $pages The pages to delete
-	 * @param string $reason
 	 * @return array An associative array of statuses (or the string "job") keyed by the page title
 	 * @throws PermissionsError
 	 */
-	protected function doDelete( array $pages, string $reason ): array {
+	protected function doDelete( NukeContext $context ): array {
 		$statuses = [];
 		$jobs = [];
 		$user = $this->getUser();
 
+		$reason = $context->getDeleteReason();
 		$localRepo = $this->repoGroup->getLocalRepo();
-		foreach ( $pages as $page ) {
+		foreach ( $context->getPages() as $page ) {
 			$title = Title::newFromText( $page );
 
 			$deletionResult = false;
@@ -1040,31 +1047,6 @@ class SpecialNuke extends SpecialPage {
 	 */
 	protected function getGroupName() {
 		return 'pagetools';
-	}
-
-	private function getDeleteReason( WebRequest $request, string $target, bool $tempaccount = false ): string {
-		if ( $tempaccount ) {
-			$defaultReason = $this->msg( 'nuke-defaultreason-tempaccount' )
-				->inContentLanguage()
-				->text();
-		} else {
-			$defaultReason = $target === ''
-				? $this->msg( 'nuke-multiplepeople' )->inContentLanguage()->text()
-				: $this->msg( 'nuke-defaultreason', $target )->inContentLanguage()->text();
-		}
-
-		$dropdownSelection = $request->getText( 'wpDeleteReasonList', 'other' );
-		$reasonInput = $request->getText( 'wpReason', $defaultReason );
-
-		if ( $dropdownSelection === 'other' ) {
-			return $reasonInput;
-		} elseif ( $reasonInput !== '' ) {
-			// Entry from drop down menu + additional comment
-			$separator = $this->msg( 'colon-separator' )->inContentLanguage()->text();
-			return $dropdownSelection . $separator . $reasonInput;
-		} else {
-			return $dropdownSelection;
-		}
 	}
 
 	private function getNukeHookRunner(): NukeHookRunner {
