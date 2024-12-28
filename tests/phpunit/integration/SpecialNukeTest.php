@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Nuke\Test\Integration;
 use ErrorPageError;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\Nuke\SpecialNuke;
+use MediaWiki\Permissions\Authority;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
@@ -744,30 +745,11 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = $this->getTestUser()->getAuthority();
 
 		// Will never show up. If it does, the max age isn't being applied at all.
-		$page1Status = $this->editPage( 'Page1', 'test' );
+		$this->editPageAtTime( 'Page1', 'test', '', time() - ( $maxAge * 3 ), NS_MAIN, $performer );
 		// Will show up conditionally (see below).
-		$page2Status = $this->editPage( 'Page2', 'test' );
+		$this->editPageAtTime( 'Page2', 'test', '', time() - $maxAge - 60, NS_MAIN, $performer );
 		// Will always show up.
-		$this->editPage( 'Page3', 'test' );
-
-		// Prepare database connection and update query builder
-		$dbw = $this->getServiceContainer()->getConnectionProvider()->getPrimaryDatabase();
-		$uqb = $dbw->newUpdateQueryBuilder()
-			->update( 'revision' )
-			->caller( __METHOD__ );
-
-		// Manually change the rev_timestamp of Page1's creation in the database.
-		( clone $uqb )
-			->set( [ 'rev_timestamp' => $dbw->timestamp( time() - ( $maxAge * 3 ) ) ] )
-			->where( [
-				'rev_id' => $page1Status->getNewRevision()->getId()
-			] )->execute();
-		// Manually change the rev_timestamp of Page2's creation in the database.
-		( clone $uqb )
-			->set( [ 'rev_timestamp' => $dbw->timestamp( time() - $maxAge - 60 ) ] )
-			->where( [
-				'rev_id' => $page2Status->getNewRevision()->getId()
-			] )->execute();
+		$this->editPage( 'Page3', 'test', '', NS_MAIN, $performer );
 
 		$admin = $this->getTestSysop()->getUser();
 		$request = new FauxRequest( [
@@ -1369,6 +1351,44 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		foreach ( $shouldBeMissing as $validationMessage ) {
 			$this->assertStringNotContainsString( $validationMessage, $html );
 		}
+	}
+
+	/**
+	 * Edit a page and also overwrite the timestamp for the revision.
+	 *
+	 * @param string $title
+	 * @param string $content
+	 * @param string $summary
+	 * @param int $timestamp
+	 * @param int|null $defaultNs
+	 * @param Authority|null $performer
+	 * @return void
+	 */
+	private function editPageAtTime(
+		string $title,
+		string $content,
+		string $summary,
+		int $timestamp,
+		?int $defaultNs = NS_MAIN,
+		?Authority $performer = null
+	) {
+		$pageStatus = $this->editPage( $title, $content, $summary, $defaultNs, $performer );
+		if ( !$pageStatus->isGood() ) {
+			$this->fail( "Failed to create page: $title" );
+		}
+
+		// Prepare database connection and update query builder
+		$dbw = $this->getServiceContainer()->getConnectionProvider()->getPrimaryDatabase();
+		$updateQueryBuilder = $dbw->newUpdateQueryBuilder()
+			->update( 'revision' )
+			->caller( __METHOD__ );
+
+		// Manually change the rev_timestamp of the revision in the database.
+		( clone $updateQueryBuilder )
+			->set( [ 'rev_timestamp' => $dbw->timestamp( $timestamp ) ] )
+			->where( [
+				'rev_id' => $pageStatus->getNewRevision()->getId()
+			] )->execute();
 	}
 
 	/**
