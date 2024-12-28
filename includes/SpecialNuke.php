@@ -2,12 +2,14 @@
 
 namespace MediaWiki\Extension\Nuke;
 
+use DateTime;
 use DeletePageJob;
 use ErrorPageError;
 use HtmlArmor;
 use JobQueueGroup;
 use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
 use MediaWiki\CommentStore\CommentStore;
+use MediaWiki\Extension\Nuke\Form\HTMLForm\NukeDateTimeField;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\ListToggle;
@@ -141,6 +143,12 @@ class SpecialNuke extends SpecialPage {
 		$req = $this->getRequest();
 		$nukeContext = $this->loadNukeContextFromRequest( $par );
 
+		if ( $nukeContext->validatePrompt() !== true ) {
+			// Something is wrong with filters. Immediately return the prompt form again.
+			$this->showPromptForm( $nukeContext );
+			return;
+		}
+
 		switch ( $nukeContext->getAction() ) {
 			case self::ACTION_DELETE:
 			case self::ACTION_CONFIRM:
@@ -260,6 +268,9 @@ class SpecialNuke extends SpecialPage {
 			'limit' => $req->getInt( 'limit', 500 ),
 			'namespaces' => $namespaces,
 
+			'dateFrom' => $req->getText( 'wpdateFrom' ),
+			'dateTo' => $req->getText( 'wpdateTo' ),
+
 			'pages' => $req->getArray( 'pages', [] ),
 			'originalPages' => $originalPages
 		] );
@@ -327,6 +338,9 @@ class SpecialNuke extends SpecialPage {
 	protected function getPromptForm( NukeContext $context ): string {
 		$this->getOutput()->addModuleStyles( [ 'ext.nuke.styles' ] );
 
+		$nukeMaxAge = $context->getNukeMaxAge();
+		$minDate = date( 'Y-m-d', time() - $nukeMaxAge );
+
 		$formDescriptor = [
 			'nuke-target' => [
 				'id' => 'nuke-target',
@@ -366,12 +380,27 @@ class SpecialNuke extends SpecialPage {
 				'label' => $this->msg( 'nuke-maxpages' )->text(),
 				'type' => 'int',
 				'name' => 'limit'
+			],
+			'dateFrom' => [
+				'id' => 'nuke-dateFrom',
+				'class' => NukeDateTimeField::class,
+				'cssclass' => 'ext-nuke-promptForm-dateFrom',
+				'inline' => true,
+				'label' => $this->msg( 'nuke-date-from' )->text(),
+				'maxAge' => $nukeMaxAge,
+				'default' => $minDate
+			],
+			'dateTo' => [
+				'id' => 'nuke-dateTo',
+				'class' => NukeDateTimeField::class,
+				'cssclass' => 'ext-nuke-promptForm-dateTo',
+				'inline' => true,
+				'label' => $this->msg( 'nuke-date-to' )->text(),
+				'maxAge' => $nukeMaxAge
 			]
 		];
 
 		$rcMaxAge = $this->getConfig()->get( MainConfigNames::RCMaxAge );
-		$nukeMaxAge = $context->getNukeMaxAge();
-
 		if ( $nukeMaxAge && $nukeMaxAge > $rcMaxAge ) {
 			// On a pattern-only search (all-user search), we'll only be searching the
 			// recentchanges table. Because of this, we can't fully respect $wgNukeMaxAge.
@@ -801,6 +830,41 @@ class SpecialNuke extends SpecialPage {
 
 		$nukeMaxAge = $context->getNukeMaxAge();
 
+		$min = $context->getDateFrom();
+		if ( !$min || $min->getTimestamp() < time() - $nukeMaxAge ) {
+			// Requested $min is way too far in the past (or null). Set it to the earliest possible
+			// value.
+			$min = time() - $nukeMaxAge;
+		} else {
+			$min = $min->getTimestamp();
+		}
+
+		$max = $context->getDateTo();
+		if ( $max ) {
+			// Increment by 1 day to include all edits from that day.
+			$max = ( clone $max )
+				->modify( "+1 day" )
+				->getTimestamp();
+		}
+		// $min and $max are int|null here.
+
+		if ( $max && $max < $min ) {
+			// Impossible range. Skip the query and fail gracefully.
+			return [];
+		}
+		if ( $min > time() ) {
+			// Improbable range (since revisions cannot be in the future).
+			// Skip the query and fail gracefully.
+			return [];
+		}
+		$maxPossibleDate = ( new DateTime() )
+			->modify( "+1 day" )
+			->getTimestamp();
+		if ( $max > $maxPossibleDate ) {
+			// Truncate to the current day, since there shouldn't be any future revisions.
+			$max = $maxPossibleDate;
+		}
+
 		$target = $context->getTarget();
 		if ( $target ) {
 			// Enable revision table searches only when a target has been specified.
@@ -824,9 +888,12 @@ class SpecialNuke extends SpecialPage {
 			);
 		}
 
-		// Follow the `$wgNukeMaxAge` config variable.
-		if ( $nukeMaxAge ) {
-			$nukeQueryBuilder->filterFromTimestamp( time() - $nukeMaxAge );
+		// Follow the `$wgNukeMaxAge` config variable, or the user-specified minimum date.
+		$nukeQueryBuilder->filterFromTimestamp( $min );
+
+		// Follow the user-specified maximum date, if applicable.
+		if ( $max ) {
+			$nukeQueryBuilder->filterToTimestamp( $max );
 		}
 
 		// Limit the number of rows that can be returned by the query.

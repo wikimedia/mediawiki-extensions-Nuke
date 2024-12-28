@@ -41,6 +41,18 @@
 			"styles": [
 				"nuke.less"
 			]
+		},
+		"ext.nuke.fields.NukeDateTimeField": {
+			"packageFiles": [
+				"ext.nuke.fields.NukeDateTimeField/init.js"
+			],
+			"messages": [
+				"nuke-date-limited"
+			],
+			"dependencies": [
+				"moment",
+				"mediawiki.widgets.DateInputWidget"
+			]
 		}
 	},
 	"ResourceFileModulePaths": {

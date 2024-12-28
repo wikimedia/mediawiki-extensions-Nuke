@@ -898,6 +898,372 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( 'Page4', $html );
 	}
 
+	public function testListDateFrom() {
+		$time = time();
+
+		// 7 days
+		$maxAge = 86400 * 7;
+		$this->overrideConfigValues( [ 'NukeMaxAge' => $maxAge ] );
+
+		$testUser = $this->getTestUser();
+		// Will never show up. If it does, the max age isn't being applied at all.
+		// We're still checking this here on the off-chance that something in Special:Nuke logic
+		// causes us to completely forget about our max age configuration.
+		$this->editPageAtTime(
+			'Page1',
+			'test',
+			'',
+			$time - ( $maxAge * 2 ),
+			NS_MAIN,
+			$testUser->getAuthority()
+		);
+		// Will show up conditionally (see below).
+		$this->editPageAtTime(
+			'Page2',
+			'test',
+			'',
+			$time - ( 86400 * 2 ),
+			NS_MAIN,
+			$testUser->getAuthority()
+		);
+		// Will always show up.
+		$this->editPage(
+			'Page3',
+			'test',
+			'',
+			NS_MAIN,
+			$testUser->getAuthority()
+		);
+
+		$admin = $this->getTestSysop()->getUser();
+
+		// Test setting from to include Page3 only
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateFrom' => date( 'Y-m-d', $time ),
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+
+		// Now include Page2 by including things which are 2 days old
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateFrom' => date( 'Y-m-d', $time - ( 86400 * 2 ) ),
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+
+		// Now go beyond our max age and ensure we get an error
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateFrom' => date( 'Y-m-d', $time - ( $maxAge * 2 + 60 ) ),
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html, [ 'nuke-date-limited' ] );
+		$this->assertStringContainsString( "(days: 7)", $html );
+		// The search should not happen at all.
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page3', $html );
+
+		// Now go beyond the current time and ensure we get no pages
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateFrom' => date( 'Y-m-d', $time + 86400 ),
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		// There should be no listed pages.
+		$this->checkForValidationMessages( $html, [ 'nuke-nopages-global' ] );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page3', $html );
+
+		// Test invalid date filter
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateFrom' => 'i am an invalid date filter!!!',
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		// The search should not happen.
+		$this->checkForValidationMessages( $html, [ 'htmlform-date-invalid' ] );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page3', $html );
+	}
+
+	public function testListDateTo() {
+		// 7 days
+		$maxAge = 86400 * 7;
+		$this->overrideConfigValues( [ 'NukeMaxAge' => $maxAge ] );
+
+		$testUser = $this->getTestUser();
+		// Will never show up. If it does, the max age isn't being applied at all.
+		// We're still checking this here on the off-chance that something in Special:Nuke logic
+		// causes us to completely forget about our max age configuration.
+		$this->editPageAtTime(
+			'Page1',
+			'test',
+			'',
+			time() - ( $maxAge * 2 ),
+			NS_MAIN,
+			$testUser->getAuthority()
+		);
+		// Will always show up.
+		$this->editPageAtTime(
+			'Page2',
+			'test',
+			'',
+			time() - ( 86400 * 4 ),
+			NS_MAIN,
+			$testUser->getAuthority()
+		);
+		// Will show up conditionally (see below).
+		$this->editPage(
+			'Page3',
+			'test',
+			'',
+			NS_MAIN,
+			$testUser->getAuthority()
+		);
+
+		$admin = $this->getTestSysop()->getUser();
+
+		// Include everything except Page1
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateTo' => date( 'Y-m-d', time() ),
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+
+		// Now exclude Page3 by shortening the date range
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateTo' => date( 'Y-m-d', time() - ( 86400 * 2 ) ),
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page3', $html );
+
+		// Now go beyond our max age and ensure we get an error
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateTo' => date( 'Y-m-d', time() - ( $maxAge * 2 + 60 ) ),
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html, [ 'nuke-date-limited' ] );
+		$this->assertStringContainsString( "(days: 7)", $html );
+		// The search should not happen at all.
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page3', $html );
+
+		// Now go beyond the current time and ensure we still get pages
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateTo' => date( 'Y-m-d', time() + 86400 ),
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+
+		// Test invalid date filter
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'limit' => 2,
+			'wpdateTo' => 'i am an invalid date filter!!!',
+			// Required for field validation to run
+			'wpFormIdentifier' => 'massdelete'
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		// The search should not happen.
+		$this->checkForValidationMessages( $html, [ 'htmlform-date-invalid' ] );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page3', $html );
+	}
+
+	/**
+	 * Runs tests which use both "from date" and "to date" filters.
+	 *
+	 * See also:
+	 *  - {@link testListDateFrom}
+	 *  - {@link testListDateTo}
+	 *
+	 * @return void
+	 */
+	public function testListDateFilters() {
+		// 7 days
+		$maxAge = 86400 * 7;
+		$this->overrideConfigValues( [ 'NukeMaxAge' => $maxAge ] );
+
+		$testUser = $this->getTestUser();
+		for ( $i = 0; $i <= 8; $i++ ) {
+			// Creates Page0, Page1, Page2... with creation date of `now`, `now - 1 day`, `now -
+			// 2 days`, etc.
+			$this->editPageAtTime(
+				"Page$i",
+				"$i",
+				'',
+				time() - ( 86400 * $i ),
+				NS_MAIN,
+				$testUser->getAuthority()
+			);
+		}
+
+		$admin = $this->getTestSysop()->getUser();
+
+		// Standard search
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'wpdateFrom' => date( 'Y-m-d', time() - ( 86400 * 4 ) ),
+			'wpdateTo' => date( 'Y-m-d', time() - ( 86400 * 2 ) )
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+
+		$this->assertStringNotContainsString( 'Page0', $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		// A page created on the same day as "to date" should still be included.
+		$this->assertStringContainsString( 'Page2', $html );
+		$this->assertStringContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
+		$this->assertStringNotContainsString( 'Page5', $html );
+		$this->assertStringNotContainsString( 'Page6', $html );
+		$this->assertStringNotContainsString( 'Page7', $html );
+		$this->assertStringNotContainsString( 'Page8', $html );
+
+		// Impossible search ("to date" is before "from date")
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'wpdateFrom' => date( 'Y-m-d', time() - ( 86400 * 2 ) ),
+			'wpdateTo' => date( 'Y-m-d', time() - ( 86400 * 4 ) )
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html, [ 'nuke-nopages-global' ] );
+
+		$this->assertStringNotContainsString( 'Page0', $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page3', $html );
+		$this->assertStringNotContainsString( 'Page4', $html );
+		$this->assertStringNotContainsString( 'Page5', $html );
+		$this->assertStringNotContainsString( 'Page6', $html );
+		$this->assertStringNotContainsString( 'Page7', $html );
+		$this->assertStringNotContainsString( 'Page8', $html );
+
+		// Single date search ("to date" is equal to "from date")
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $testUser->getUser()->getName(),
+			'pattern' => 'Page%',
+			'wpdateFrom' => date( 'Y-m-d', time() - ( 86400 * 4 ) ),
+			'wpdateTo' => date( 'Y-m-d', time() - ( 86400 * 4 ) )
+		], true );
+		$adminPerformer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+
+		$this->assertStringNotContainsString( 'Page0', $html );
+		$this->assertStringNotContainsString( 'Page1', $html );
+		$this->assertStringNotContainsString( 'Page2', $html );
+		$this->assertStringNotContainsString( 'Page3', $html );
+		$this->assertStringContainsString( 'Page4', $html );
+		$this->assertStringNotContainsString( 'Page5', $html );
+		$this->assertStringNotContainsString( 'Page6', $html );
+		$this->assertStringNotContainsString( 'Page7', $html );
+		$this->assertStringNotContainsString( 'Page8', $html );
+	}
+
 	public function testListFiles() {
 		$testFileName = $this->uploadTestFile()['title']->getPrefixedText();
 

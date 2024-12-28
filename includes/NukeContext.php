@@ -2,6 +2,8 @@
 
 namespace MediaWiki\Extension\Nuke;
 
+use DateTime;
+use Exception;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\MainConfigNames;
 use Wikimedia\IPUtils;
@@ -69,6 +71,22 @@ class NukeContext {
 	private int $limit = 500;
 
 	/**
+	 * The date from which the Nuke search should be performed. Only page creations after this
+	 * value should be returned. When not provided, this is an empty string.
+	 *
+	 * @var string
+	 */
+	private string $dateFrom = '';
+
+	/**
+	 * The date to which the Nuke search should be performed. Only page creations before this
+	 * value should be returned. When not provided, this is an empty string.
+	 *
+	 * @var string
+	 */
+	private string $dateTo = '';
+
+	/**
 	 * The list of pages to delete. Only applicable for the `confirm` and `delete` actions.
 	 * When not provided, this is an empty array.
 	 *
@@ -115,6 +133,13 @@ class NukeContext {
 		$this->pattern = $params['pattern'] ?? $this->pattern;
 		$this->namespaces = $params['namespaces'] ?? $this->namespaces;
 		$this->limit = $params['limit'] ?? $this->limit;
+
+		if ( isset( $params['dateFrom'] ) && $params['dateFrom'] ) {
+			$this->dateFrom = $params['dateFrom'];
+		}
+		if ( isset( $params['dateTo'] ) && $params['dateTo'] ) {
+			$this->dateTo = $params['dateTo'];
+		}
 
 		$this->pages = $params['pages'] ?? $this->pages;
 
@@ -185,6 +210,38 @@ class NukeContext {
 	}
 
 	/**
+	 * Returns {@link $dateFrom} in DateTime format. The value of `$dateFrom` should first be
+	 * validated with {@link validateDate}.
+	 *
+	 * FIXME: Doc should be changed to throw DateMalformedStringException in PHP 8.3+.
+	 *
+	 * @return DateTime|null
+	 * @throws Exception
+	 */
+	public function getDateFrom(): ?DateTime {
+		if ( !$this->dateFrom ) {
+			return null;
+		}
+		return new DateTime( "{$this->dateFrom}T00:00:00Z" );
+	}
+
+	/**
+	 * Returns {@link $dateTo} in DateTime format.The value of `$dateFrom` should first be
+	 *  validated with {@link validateDate}.
+	 *
+	 * FIXME: Doc should be changed to throw DateMalformedStringException in PHP 8.3+.
+	 *
+	 * @return DateTime|null
+	 * @throws Exception
+	 */
+	public function getDateTo(): ?DateTime {
+		if ( !$this->dateTo ) {
+			return null;
+		}
+		return new DateTime( "{$this->dateTo}T00:00:00Z" );
+	}
+
+	/**
 	 * Returns {@link $pages}.
 	 * @return string[]
 	 */
@@ -235,6 +292,11 @@ class NukeContext {
 	 * @return string|true
 	 */
 	public function validate() {
+		$promptValidation = $this->validatePrompt();
+		if ( $promptValidation !== true ) {
+			return $promptValidation;
+		}
+
 		if (
 			(
 				// This is a confirm/delete
@@ -255,6 +317,66 @@ class NukeContext {
 			}
 		}
 
+		return true;
+	}
+
+	/**
+	 * Validate values for the "list" or "prompt" stages of Nuke. Determines what error
+	 * messages should be shown to the user. Returns `true` on success, a string value containing
+	 * the error for failures.
+	 *
+	 * Any error returned by this function should be something that blocks the search process.
+	 *
+	 * @return string|true
+	 */
+	public function validatePrompt() {
+		$fromValidationResult = $this->validateDate( $this->dateFrom );
+		if ( $fromValidationResult !== true ) {
+			return $fromValidationResult;
+		}
+
+		$toValidationResult = $this->validateDate( $this->dateTo );
+		if ( $toValidationResult !== true ) {
+			return $toValidationResult;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Validate a date-related filter. Checks if the date is before the Nuke max age.
+	 *
+	 * @param string $value The value to validate
+	 * @return string|true
+	 */
+	protected function validateDate( string $value ) {
+		if ( $value == '' ) {
+			// No value is valid.
+			return true;
+		}
+
+		$now = ( new DateTime() )
+			->setTime( 0, 0 )
+			->getTimestamp();
+		$maxAge = $this->getNukeMaxAge();
+
+		try {
+			$timestamp = ( new DateTime( $value . "T00:00:00Z" ) )
+				->getTimestamp();
+			if ( $timestamp < $now - $maxAge ) {
+				return $this->requestContext->msg(
+					'nuke-date-limited',
+					$this->requestContext->getLanguage()->formatTimePeriod( $maxAge, [
+						'avoid' => 'avoidhours',
+						'noabbrevs' => true
+					] )
+				)->text();
+			}
+		} catch ( \Exception $e ) {
+			// FIXME: This should be changed to use DateMalformedStringException when MediaWiki
+			// begins using PHP 8.3 as a minimum.
+			return $this->requestContext->msg( 'htmlform-date-invalid' )->text();
+		}
 		return true;
 	}
 
