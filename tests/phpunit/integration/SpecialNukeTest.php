@@ -53,6 +53,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html ] = $this->executeSpecialPage( '', null, 'qqx', $performer );
 
+		$this->checkForValidationMessages( $html );
 		$this->assertStringContainsString( '(nuke-summary)', $html );
 		$this->assertStringContainsString( '(nuke-tools)', $html );
 		$this->assertStringContainsString( '(nuke-tools-prompt)', $html );
@@ -72,6 +73,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html ] = $this->executeSpecialPage( '', null, 'qqx', $performer );
 
+		$this->checkForValidationMessages( $html );
 		$this->assertStringContainsString( '(nuke-summary)', $html );
 		$this->assertStringContainsString( '(nuke-tools-tempaccount)', $html );
 	}
@@ -126,6 +128,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			'target' => $ip,
 		], true );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 	}
 
 	/**
@@ -159,6 +162,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		], true );
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 	}
 
 	/**
@@ -181,6 +185,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		] );
 
 		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html1 );
 
 		$this->assertStringContainsString( 'Target1', $html1 );
 		$this->assertStringContainsString( 'Target2', $html1 );
@@ -192,6 +197,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		] );
 
 		[ $html2 ] = $this->executeSpecialPage( '', $request2, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html2 );
 
 		$this->assertStringContainsString( 'Target1', $html2 );
 		$this->assertStringContainsString( 'Target2', $html2 );
@@ -220,6 +226,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$adminPerformer = new UltimateAuthority( $adminUser );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 
 		$this->assertStringContainsString( 'Target1', $html );
 		$this->assertStringContainsString( 'Target2', $html );
@@ -256,6 +263,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		], true );
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 
 		$year = gmdate( 'Y' );
 		$this->assertEquals( 2, substr_count( $html, "(nuke-editby: ~$year-1)" ) );
@@ -302,6 +310,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		], true );
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 
 		$year = gmdate( 'Y' );
 		$this->assertSame( 1, substr_count( $html, "(nuke-editby: ~$year-1)" ) );
@@ -330,6 +339,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		$this->assertStringContainsString( 'PositiveNukeTest123', $html );
 		$this->assertStringNotContainsString( 'NegativeNukeTest123', $html );
@@ -350,6 +360,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		$this->assertStringContainsString( 'Page123', $html );
 		$this->assertStringContainsString( 'Paging456', $html );
@@ -365,8 +376,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
-
-		$this->assertStringContainsString( '(nuke-nopages-global)', $html );
+		$this->checkForValidationMessages( $html, [ 'nuke-nopages-global' ] );
 	}
 
 	public function testListNoPagesUser() {
@@ -378,8 +388,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
-
-		$this->assertStringContainsString( '(nuke-nopages-global)', $html );
+		$this->checkForValidationMessages( $html, [ 'nuke-nopages-global' ] );
 	}
 
 	public function testListNamespace() {
@@ -394,6 +403,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		$expectedTitle = Title::makeTitle( NS_USER, 'NukeUserPageTarget' )
 			->getPrefixedText();
@@ -411,6 +421,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		$expectedTitle = Title::makeTitle( NS_TALK, 'NukeTalkPageTarget' )
 			->getPrefixedText();
@@ -431,6 +442,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		$this->assertStringContainsString(
 			Title::makeTitle( NS_MAIN, 'NukeMainPageTarget' )->getPrefixedText(),
@@ -461,6 +473,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			'namespace' => NS_PROJECT . "\n"
 		], true );
 		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $performer );
+		$this->checkForValidationMessages( $html1 );
 		$this->assertStringNotContainsString( $page1, $html1 );
 		$this->assertStringContainsString( $page2, $html1 );
 		$this->assertStringNotContainsString( $page3, $html1 );
@@ -472,6 +485,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			'namespace' => NS_PROJECT . "\n99999999"
 		], true );
 		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $performer );
+		$this->checkForValidationMessages( $html1 );
 		$this->assertStringNotContainsString( $page1, $html1 );
 		$this->assertStringContainsString( $page2, $html1 );
 		$this->assertStringNotContainsString( $page3, $html1 );
@@ -483,6 +497,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			'namespace' => NS_PROJECT . "\nUser"
 		], true );
 		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $performer );
+		$this->checkForValidationMessages( $html1 );
 		$this->assertStringNotContainsString( $page1, $html1 );
 		$this->assertStringContainsString( $page2, $html1 );
 		$this->assertStringNotContainsString( $page3, $html1 );
@@ -494,6 +509,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			'namespace' => "Project\nUser"
 		], true );
 		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $performer );
+		$this->checkForValidationMessages( $html1 );
 		// Pages from all namespaces will be returned
 		$this->assertStringContainsString( $page1, $html1 );
 		$this->assertStringContainsString( $page2, $html1 );
@@ -529,6 +545,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			], true );
 			$performer = new UltimateAuthority( $admin );
 			[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+			$this->checkForValidationMessages( $html );
 
 			$this->assertStringContainsString( $expectedTitle, $html, "match: $match" );
 			foreach ( $shouldNotMatch as $noMatch ) {
@@ -562,6 +579,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		], true );
 		$performer = new UltimateAuthority( $admin );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		$this->assertStringContainsString( "uncapsTarget" . NS_MAIN, $html );
 		// Check that the overridden namespaces are included in the search
@@ -603,6 +621,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		$this->assertStringContainsString(
 			Title::makeTitle( NS_MAIN, 'UncapsTargetMain' )->getPrefixedText(),
@@ -665,6 +684,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			$performer = new UltimateAuthority( $admin );
 
 			[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+			$this->checkForValidationMessages( $html );
 
 			$this->assertStringContainsString( $created, $html );
 		}
@@ -684,6 +704,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		$this->assertEquals( 2, substr_count( $html, '<li>' ) );
 	}
@@ -707,6 +728,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		$this->assertEquals( 2, substr_count( $html, '<li>' ) );
 	}
@@ -718,6 +740,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			'NukeMaxAge' => $maxAge,
 			'RCMaxAge' => $maxAge
 		] );
+
+		$performer = $this->getTestUser()->getAuthority();
 
 		// Will never show up. If it does, the max age isn't being applied at all.
 		$page1Status = $this->editPage( 'Page1', 'test' );
@@ -751,9 +775,10 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			'pattern' => 'Page%',
 			'limit' => 2
 		], true );
-		$performer = new UltimateAuthority( $admin );
+		$adminPerformer = new UltimateAuthority( $admin );
 
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
@@ -765,7 +790,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			'NukeMaxAge' => 0
 		] );
 
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
@@ -776,7 +802,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			'NukeMaxAge' => $maxAge * 2
 		] );
 
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
@@ -793,6 +820,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
 
 		// The title should be in the list
 		$this->assertStringContainsString( $testFileName, $html );
@@ -832,6 +860,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		], true );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 
 		// Default reason should pre-fill the reason field
 		$this->assertStringContainsString( $defaultReason, $html );
@@ -882,6 +911,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		], false );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 
 		// We should be re-prompting the user, since no edit token was provided.
 		$this->assertStringContainsString( "(nuke-tools-prompt)", $html );
@@ -937,6 +967,7 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		], true );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
 
 		$this->assertStringContainsString( $defaultReason, $html );
 		$this->assertStringContainsString( 'Target1', $html );
@@ -953,6 +984,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 	public function testConfirmWithoutList() {
 		$user = $this->getTestUser()->getUser();
 
+		$this->editPage( 'Page1', 'test' );
+
 		$adminUser = $this->getTestSysop()->getUser();
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		$request = new FauxRequest( [
@@ -962,8 +995,9 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		], true );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
-
-		$this->assertStringContainsString( '(nuke-nolist)', $html );
+		$this->checkForValidationMessages( $html, [ 'nuke-nolist' ] );
+		// The search should not happen automatically.
+		$this->assertStringNotContainsString( 'Page1', $html );
 	}
 
 	public function testConfirmWithoutSelection() {
@@ -988,8 +1022,11 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		], true );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
-
-		$this->assertStringContainsString( '(nuke-noselected)', $html );
+		$this->checkForValidationMessages( $html, [ 'nuke-noselected' ] );
+		// The search should still happen.
+		$this->assertStringContainsString( 'Target1', $html );
+		// Page2 was not created by the user, it shouldn't show up.
+		$this->assertStringNotContainsString( 'Target2', $html );
 	}
 
 	public function testDelete() {
@@ -1302,6 +1339,36 @@ class SpecialNukeTest extends SpecialPageTestBase {
 			->prefixSearchSubpages( "", 10, 0 );
 
 		$this->assertCount( 0, $searchResults2 );
+	}
+
+	/**
+	 * Check if a validation warning/error message can be found in the search, and ensure that no
+	 * other error messages appear.
+	 *
+	 * @param string $html The HTML to check
+	 * @param string[] $messages The i18n keys of the messages that should be found.
+	 * @return void
+	 */
+	private function checkForValidationMessages( string $html, ?array $messages = [] ) {
+		$errorMessages = [
+			"htmlform-user-not-valid",
+			"nuke-date-limited",
+			"nuke-date-ahead",
+			"htmlform-date-invalid",
+			"nuke-nolist",
+			"nuke-nopages-global",
+			"nuke-noselected"
+		];
+
+		$shouldBeFound = $messages;
+		$shouldBeMissing = array_diff( $errorMessages, $messages );
+
+		foreach ( $shouldBeFound as $validationMessage ) {
+			$this->assertStringContainsString( $validationMessage, $html );
+		}
+		foreach ( $shouldBeMissing as $validationMessage ) {
+			$this->assertStringNotContainsString( $validationMessage, $html );
+		}
 	}
 
 	/**
