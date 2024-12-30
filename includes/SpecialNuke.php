@@ -5,17 +5,12 @@ namespace MediaWiki\Extension\Nuke;
 use DateTime;
 use DeletePageJob;
 use ErrorPageError;
-use HtmlArmor;
 use JobQueueGroup;
 use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
-use MediaWiki\CommentStore\CommentStore;
-use MediaWiki\Extension\Nuke\Form\HTMLForm\NukeDateTimeField;
+use MediaWiki\Extension\Nuke\Form\SpecialNukeHTMLFormUIRenderer;
+use MediaWiki\Extension\Nuke\Form\SpecialNukeUIRenderer;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
-use MediaWiki\Html\Html;
-use MediaWiki\Html\ListToggle;
-use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Language\Language;
-use MediaWiki\MainConfigNames;
 use MediaWiki\Page\File\FileDeleteForm;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\WebRequest;
@@ -141,7 +136,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$req = $this->getRequest();
-		$nukeContext = $this->loadNukeContextFromRequest( $par );
+		$nukeContext = $this->getNukeContextFromRequest( $par );
 
 		if ( $nukeContext->validatePrompt() !== true ) {
 			// Something is wrong with filters. Immediately return the prompt form again.
@@ -198,7 +193,7 @@ class SpecialNuke extends SpecialPage {
 	 * @param NukeContext $context
 	 * @return string[] A list of temporary account usernames associated with the IP address
 	 */
-	public function getTempAccounts( NukeContext $context ): array {
+	protected function getTempAccounts( NukeContext $context ): array {
 		if ( !$this->checkUserTemporaryAccountsByIPLookup ) {
 			return [];
 		}
@@ -219,7 +214,7 @@ class SpecialNuke extends SpecialPage {
 	 * @param string|null $par
 	 * @return NukeContext
 	 */
-	protected function loadNukeContextFromRequest( ?string $par ): NukeContext {
+	protected function getNukeContextFromRequest( ?string $par ): NukeContext {
 		$req = $this->getRequest();
 
 		$target = trim( $req->getText( 'target', $par ?? '' ) );
@@ -277,6 +272,37 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	/**
+	 * Get the UI renderer for a given type.
+	 *
+	 * @param NukeContext $context
+	 * @return SpecialNukeUIRenderer
+	 */
+	protected function getUIRenderer(
+		NukeContext $context
+	): SpecialNukeUIRenderer {
+		// Permit overriding the UI type with the `?nukeUI=` query parameter.
+		$formType = $this->getRequest()->getText( 'nukeUI' );
+		if ( !$formType ) {
+			$formType = $this->getConfig()->get( NukeConfigNames::UIType ) ?? 'htmlform';
+		}
+
+		// Possible values: 'codex', 'htmlform'
+		switch ( $formType ) {
+			// case 'codex': to be implemented (T153988)
+			case 'htmlform':
+			default:
+				return new SpecialNukeHTMLFormUIRenderer(
+					$context,
+					$this,
+					$this->repoGroup,
+					$this->getLinkRenderer(),
+					$this->namespaceInfo,
+					$this->getLanguage()
+				);
+		}
+	}
+
+	/**
 	 * Load namespaces from the provided request and return them as an array. This also performs
 	 * validation, ensuring that only valid namespaces are returned.
 	 *
@@ -329,307 +355,50 @@ class SpecialNuke extends SpecialPage {
 	}
 
 	/**
-	 * Get the prompt form to be shown to the user. Should appear when both asking for initial
-	 * data or showing the page list.
-	 *
-	 * @param NukeContext $context
-	 * @return string
-	 */
-	protected function getPromptForm( NukeContext $context ): string {
-		$this->getOutput()->addModuleStyles( [ 'ext.nuke.styles' ] );
-
-		$nukeMaxAge = $context->getNukeMaxAge();
-		$minDate = date( 'Y-m-d', time() - $nukeMaxAge );
-
-		$formDescriptor = [
-			'nuke-target' => [
-				'id' => 'nuke-target',
-				'default' => $context->getTarget(),
-				'label' => $this->msg( 'nuke-userorip' )->text(),
-				'type' => 'user',
-				'ipallowed' => true,
-				'name' => 'target',
-				'autofocus' => true,
-				'autocomplete' => 'off'
-			],
-			'nuke-pattern' => [
-				'id' => 'nuke-pattern',
-				'label' => $this->msg( 'nuke-pattern' )->text(),
-				'maxLength' => 40,
-				'type' => 'text',
-				'name' => 'pattern'
-			],
-			'namespace' => [
-				'id' => 'nuke-namespace',
-				'type' => 'namespacesmultiselect',
-				'label' => $this->msg( 'nuke-namespace' )->text(),
-				'help-messages' => [
-					new HtmlArmor( '<noscript>' ),
-					'nuke-namespace-noscript',
-					new HtmlArmor( '</noscript>' )
-				],
-				'help-inline' => true,
-				'exists' => true,
-				'all' => 'all',
-				'name' => 'namespace'
-			],
-			'limit' => [
-				'id' => 'nuke-limit',
-				'maxLength' => 7,
-				'default' => 500,
-				'label' => $this->msg( 'nuke-maxpages' )->text(),
-				'type' => 'int',
-				'name' => 'limit'
-			],
-			'dateFrom' => [
-				'id' => 'nuke-dateFrom',
-				'class' => NukeDateTimeField::class,
-				'cssclass' => 'ext-nuke-promptForm-dateFrom',
-				'inline' => true,
-				'label' => $this->msg( 'nuke-date-from' )->text(),
-				'maxAge' => $nukeMaxAge,
-				'default' => $minDate
-			],
-			'dateTo' => [
-				'id' => 'nuke-dateTo',
-				'class' => NukeDateTimeField::class,
-				'cssclass' => 'ext-nuke-promptForm-dateTo',
-				'inline' => true,
-				'label' => $this->msg( 'nuke-date-to' )->text(),
-				'maxAge' => $nukeMaxAge
-			]
-		];
-
-		$rcMaxAge = $this->getConfig()->get( MainConfigNames::RCMaxAge );
-		if ( $nukeMaxAge && $nukeMaxAge > $rcMaxAge ) {
-			// On a pattern-only search (all-user search), we'll only be searching the
-			// recentchanges table. Because of this, we can't fully respect $wgNukeMaxAge.
-			// This breaks the expectation of users, so we need to show a note for it.
-			$formDescriptor['nuke-pattern']['help-message'] = [
-				'nuke-pattern-performance',
-				$this->getLanguage()->formatTimePeriod( $rcMaxAge, [
-					'avoid' => 'avoidhours',
-					'noabbrevs' => true
-				] )
-			];
-		}
-
-		$promptForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
-			->setFormIdentifier( 'massdelete' )
-			// Suppressing default submit button to manually control button order.
-			->suppressDefaultSubmit()
-			->addButton( [
-				'label-message' => 'nuke-submit-list',
-				'name' => 'action',
-				'value' => self::ACTION_LIST
-			] )
-			->addButton( [
-				'classes' => [ 'mw-htmlform-submit' ],
-				'label-message' => 'nuke-submit-continue',
-				'name' => 'action',
-				'value' => self::ACTION_CONFIRM,
-				'flags' => [ 'primary', 'progressive' ]
-			] );
-
-		$validationResult = $context->validate();
-		if ( $validationResult !== true ) {
-			$promptForm->addFooterHtml( strval(
-				new \OOUI\MessageWidget( [
-					'classes' => [ 'ext-nuke-promptform-error' ],
-					'type' => 'error',
-					'label' => $validationResult
-				] )
-			) );
-		}
-
-		$promptForm->prepareForm();
-
-		return $this->getFormFieldsetHtml( $promptForm );
-	}
-
-	/**
 	 * Prompt for a username or IP address.
 	 *
 	 * @param NukeContext $context
 	 */
-	protected function showPromptForm( NukeContext $context ): void {
-		$out = $this->getOutput();
-
-		if ( $this->checkUserTemporaryAccountsByIPLookup ) {
-			$out->addWikiMsg( 'nuke-tools-tempaccount' );
-		} else {
-			$out->addWikiMsg( 'nuke-tools' );
-		}
-		$out->addWikiMsg( 'nuke-tools-prompt' );
-
-		$out->enableOOUI();
-		$out->addHTML(
-			$this->wrapForm( $this->getPromptForm(
-				$context
-			) )
-		);
+	public function showPromptForm( NukeContext $context ): void {
+		$this->getUIRenderer( $context )
+			->showPromptForm();
 	}
 
 	/**
-	 * Display list of pages to delete.
+	 * Display the prompt form and a list of pages to delete.
 	 *
 	 * @param NukeContext $context
 	 */
-	protected function showListForm( NukeContext $context ): void {
-		$target = $context->getTarget();
-		$out = $this->getOutput();
-
+	public function showListForm( NukeContext $context ): void {
+		// Check for temporary accounts, if applicable.
 		$tempAccounts = [];
-		if ( $this->checkUserTemporaryAccountsByIPLookup ) {
-			$out->addWikiMsg( 'nuke-tools-tempaccount' );
-			if ( IPUtils::isValid( $target ) ) {
-				// if the target is an ip addresss and temp account lookup is available,
-				// list pages created by the ip user or by temp accounts associated with the ip address
-				$this->assertUserCanAccessTemporaryAccounts( $this->getUser() );
-				$tempAccounts = $this->getTempAccounts( $context );
-			}
-		} else {
-			$out->addWikiMsg( 'nuke-tools' );
+		if (
+			$this->checkUserTemporaryAccountsByIPLookup &&
+			IPUtils::isValid( $context->getTarget() )
+		) {
+			// if the target is an ip address and temp account lookup is available,
+			// list pages created by the ip user or by temp accounts associated with the ip address
+			$this->assertUserCanAccessTemporaryAccounts( $this->getUser() );
+			$tempAccounts = $this->getTempAccounts( $context );
 		}
-		$out->addWikiMsg( 'nuke-tools-prompt' );
 
-		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
-		$out->enableOOUI();
-		$body = $this->getPromptForm( $context );
-
+		// Get list of pages to show the user.
 		$pages = $this->getNewPages( $context, $tempAccounts );
-		if ( !$pages ) {
-			$out->addHTML(
-				$this->wrapForm( $body )
-			);
 
-			$out->addHTML( new \OOUI\MessageWidget( [
-				'type' => 'warning',
-				'label' => $this->msg( 'nuke-nopages-global' )->text(),
-			] ) );
-			return;
-		}
-
-		$body .=
-			// Select: All, None, Invert
-			( new ListToggle( $this->getOutput() ) )->getHTML() .
-			'<ul>';
-
-		$titles = [];
-
-		$wordSeparator = $this->msg( 'word-separator' )->escaped();
-
-		$localRepo = $this->repoGroup->getLocalRepo();
-		foreach ( $pages as [ $title, $userName ] ) {
-			/**
-			 * @var $title Title
-			 */
-			$titles[] = $title->getPrefixedDBkey();
-
-			$image = $title->inNamespace( NS_FILE ) ? $localRepo->newFile( $title ) : false;
-			$thumb = $image && $image->exists() ?
-				$image->transform( [ 'width' => 120, 'height' => 120 ], 0 ) :
-				false;
-
-			$userNameText = $userName ?
-				' <span class="mw-changeslist-separator"></span> ' . $this->msg( 'nuke-editby', $userName )->parse() :
-				'';
-
-			$body .= '<li>' .
-				Html::check(
-					'pages[]',
-					true,
-					[ 'value' => $title->getPrefixedDBkey() ]
-				) . "\u{00A0}" .
-				( $thumb ? $thumb->toHtml( [ 'desc-link' => true ] ) : '' ) .
-				$this->getPageLinksHtml( $title ) .
-				$wordSeparator .
-				"<span class='ext-nuke-italicize'>" . $userNameText . "</span>" .
-				"</li>\n";
-		}
-
-		$body .=
-			"</ul>\n" .
-			Html::hidden( 'originalPageList', implode(
-				self::PAGE_LIST_SEPARATOR,
-				$titles
-			) ) .
-			Html::hidden( 'listedTarget', $target );
-
-		$out->addHTML(
-			$this->wrapForm( $body )
-		);
+		$this->getUIRenderer( $context )
+			->showListForm( $pages );
 	}
 
 	/**
+	 * Display a page confirming all pages to be deleted.
+	 *
 	 * @param NukeContext $context
+	 *
 	 * @return void
 	 */
-	protected function showConfirmForm( NukeContext $context ) {
-		$out = $this->getOutput();
-
-		$out->enableOOUI();
-		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
-
-		$otherKey = 'other';
-		$options = Html::listDropdownOptions(
-			$this->msg( 'deletereason-dropdown' )->inContentLanguage()->text(),
-			[ $otherKey => $this->msg( 'deletereasonotherlist' )->inContentLanguage()->text() ]
-		);
-
-		$formDescriptor = [
-			'wpDeleteReasonList' => [
-				'id' => 'wpDeleteReasonList',
-				'name' => 'wpDeleteReasonList',
-				'type' => 'select',
-				'label' => $this->msg( 'deletecomment' )->text(),
-				'align' => 'top',
-				'options' => $options,
-				'default' => $otherKey
-			],
-			'wpReason' => [
-				'id' => 'wpReason',
-				'name' => 'wpReason',
-				'type' => 'text',
-				'label' => $this->msg( 'deleteotherreason' )->text(),
-				'align' => 'top',
-				'maxLength' => CommentStore::COMMENT_CHARACTER_LIMIT,
-				'default' => $context->getDeleteReason(),
-				'autofocus' => true
-			]
-		];
-
-		$reasonForm = HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
-			->setFormIdentifier( 'massdelete-reason' )
-			->addHiddenField( 'action', self::ACTION_DELETE )
-			->addHiddenField( 'originalPageList', implode(
-				self::PAGE_LIST_SEPARATOR,
-				$context->getOriginalPages()
-			) )
-			->setSubmitTextMsg( 'nuke-submit-delete' )
-			->setSubmitDestructive()
-			->prepareForm();
-
-		$pageList = [];
-
-		foreach ( $context->getPages() as $page ) {
-			$title = Title::newFromText( $page );
-
-			$pageList[] = '<li>' .
-				$this->getPageLinksHtml( $title ) .
-				Html::hidden( 'pages[]', $title->getPrefixedDBkey() ) .
-				'</li>';
-		}
-
-		$out->addWikiMsg( 'nuke-tools-confirm', count( $pageList ) );
-		$out->addHTML(
-			$this->wrapForm(
-				$this->getFormFieldsetHtml( $reasonForm ) .
-				'<ul>' .
-				implode( '', $pageList ) .
-				'</ul>'
-			)
-		);
+	public function showConfirmForm( NukeContext $context ): void {
+		$this->getUIRenderer( $context )
+			->showConfirmForm();
 	}
 
 	/**
@@ -637,183 +406,15 @@ class SpecialNuke extends SpecialPage {
 	 * user.
 	 *
 	 * @param NukeContext $context
-	 * @param array $deletedPageStatuses The status for each page queued for deletion.
+	 *   deletion. Can be either `"job"` to indicate that the page was queued for deletion, a
+	 *   {@link Status} to indicate if the page was successfully deleted, or `false` if the user
+	 *   did not select the page for deletion.
+	 * @param (Status|string|boolean)[] $deletedPageStatuses The status for each page queued for
 	 * @return void
 	 */
-	protected function showResultPage(
-		NukeContext $context,
-		array $deletedPageStatuses
-	) {
-		$out = $this->getOutput();
-
-		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
-
-		// Determine what pages weren't deleted.
-		// Deselected pages will have a value of `false`, anything else should be either the
-		// string "job" or a Status object.
-		$pageStatuses = array_fill_keys( $context->getOriginalPages(), false );
-		foreach ( $deletedPageStatuses as $page => $value ) {
-			$pageStatuses[ $page ] = $value;
-		}
-
-		$queuedCount = count( $deletedPageStatuses );
-		$skippedCount = count( $pageStatuses ) - $queuedCount;
-
-		$queued = [];
-		$skipped = [];
-
-		foreach ( $pageStatuses as $page => $status ) {
-			$title = Title::newFromText( $page );
-			if ( $status === false ) {
-				$skipped[] = $this->getPageLinksHtml( $title );
-			} elseif ( $status === 'job' ) {
-				$queued[] = $this->msg(
-					'nuke-deletion-queued',
-					wfEscapeWikiText( $title->getPrefixedText() )
-				)->parse();
-			} else {
-				$queued[] = $this->msg(
-					$status->isOK() ? 'nuke-deleted' : 'nuke-not-deleted',
-					wfEscapeWikiText( $title->getPrefixedText() )
-				)->parse();
-				if ( !$status->isOK() ) {
-					// Reduce the queuedCount by 1 if it turns out that on of the Status objects
-					// is not OK.
-					$queuedCount--;
-				}
-			}
-		}
-
-		// Show the main summary, regardless of whether we deleted pages or not.
-		$target = $context->getTarget();
-		if ( $target ) {
-			$out->addWikiMsg( 'nuke-delete-summary-user', $queuedCount, $target );
-		} else {
-			$out->addWikiMsg( 'nuke-delete-summary', $queuedCount );
-		}
-		if ( $queuedCount ) {
-			$out->addHTML(
-				"<ul>\n<li>" .
-				implode( "</li>\n<li>", $queued ) .
-				"</li>\n</ul>\n"
-			);
-		}
-		if ( $skippedCount ) {
-			$out->addWikiMsg( 'nuke-skipped-summary', $skippedCount );
-			$out->addHTML(
-				"<ul>\n<li>" .
-				implode( "</li>\n<li>", $skipped ) .
-				"</li>\n</ul>\n"
-			);
-		}
-		$out->addWikiMsg( 'nuke-delete-more' );
-	}
-
-	/**
-	 * Wraps HTML within <form> tags. Should be used in displaying the initial prompt
-	 * form and the page list.
-	 *
-	 * Implementation derived from {@link \MediaWiki\HTMLForm\OOUIHTMLForm::wrapForm}
-	 *
-	 * @param string $content The HTML content to add inside the <form> tags.
-	 * @return string
-	 */
-	protected function wrapForm( string $content ): string {
-		// From \MediaWiki\HTMLForm\OOUIHTMLForm::wrapForm
-		$form = new \OOUI\FormLayout( [
-			'name' => 'massdelete',
-			'action' => $this->getPageTitle()->getLocalURL(),
-			'method' => 'POST',
-			'enctype' => 'application/x-www-form-urlencoded',
-			'classes' => [ 'mw-htmlform', 'mw-htmlform-ooui' ],
-			'content' => new \OOUI\HtmlSnippet( $content ),
-		] );
-		return strval( $form );
-	}
-
-	/**
-	 * Get the HTML for the given form, wrapped inside a fieldset and OOUI HTMLForm wrapper.
-	 * This exists because there's no way to suppress the <form> element inside HTMLForm,
-	 * which is required to let the design of the Special:Nuke form run properly without
-	 * JavaScript.
-	 *
-	 * @param HTMLForm $form
-	 * @return string
-	 * @throws \OOUI\Exception
-	 */
-	protected function getFormFieldsetHtml( HTMLForm $form ): string {
-		// Partly from \MediaWiki\HTMLForm\HTMLForm::getHTML
-		$this->getOutput()->getMetadata()->setPreventClickjacking( true );
-		$this->getOutput()->addModules( 'mediawiki.htmlform' );
-		$this->getOutput()->addModuleStyles( 'mediawiki.htmlform.styles' );
-
-		// Only used for validation.
-		$form->setSubmitCallback( static function () {
-			return true;
-		} );
-
-		$submitResult = $form->trySubmit();
-		$html = $form->getHeaderHtml()
-			. $form->getBody()
-			. $form->getHiddenFields()
-			. $form->getErrorsOrWarnings( $submitResult, 'error' )
-			. $form->getButtons()
-			. $form->getFooterHtml();
-
-		// Partly from \MediaWiki\HTMLForm\OOUIHTMLForm::wrapForm
-		return strval( new \OOUI\PanelLayout( [
-			'classes' => [ 'mw-htmlform-ooui-wrapper' ],
-			'expanded' => false,
-			'padded' => true,
-			'framed' => true,
-			'content' => new \OOUI\FieldsetLayout( [
-				'label' => $this->msg( 'nuke' )->text(),
-				'items' => [
-					new \OOUI\Widget( [
-						'content' => new \OOUI\HtmlSnippet( $html )
-					] ),
-				],
-			] ),
-		] ) );
-	}
-
-	/**
-	 * Render the page links. Returns a string in `Title (talk | history)` format.
-	 *
-	 * @param Title $title The title to render links of
-	 * @return string
-	 * @throws \MWException
-	 */
-	protected function getPageLinksHtml( Title $title ): string {
-		$linkRenderer = $this->getLinkRenderer();
-
-		$wordSeparator = $this->msg( 'word-separator' )->escaped();
-		$pipeSeparator = $this->msg( 'pipe-separator' )->escaped();
-
-		$talkPageText = $this->namespaceInfo->isTalk( $title->getNamespace() ) ?
-			'' :
-			$linkRenderer->makeLink(
-				$this->namespaceInfo->getTalkPage( $title ),
-				$this->msg( 'sp-contributions-talk' )->text()
-			);
-		$changesLink = $linkRenderer->makeKnownLink(
-			$title,
-			$this->msg( 'nuke-viewchanges' )->text(),
-			[],
-			[ 'action' => 'history' ]
-		);
-
-		$query = $title->isRedirect() ? [ 'redirect' => 'no' ] : [];
-		$attributes = $title->isRedirect() ? [ 'class' => 'ext-nuke-italicize' ] : [];
-
-		return $linkRenderer->makeKnownLink( $title, null, $attributes, $query ) .
-			$wordSeparator .
-			$this->msg( 'parentheses' )->rawParams(
-				$talkPageText .
-				$wordSeparator .
-				$pipeSeparator .
-				$changesLink
-			)->escaped();
+	public function showResultPage( NukeContext $context, array $deletedPageStatuses ): void {
+		$this->getUIRenderer( $context )
+			->showResultPage( $deletedPageStatuses );
 	}
 
 	/**

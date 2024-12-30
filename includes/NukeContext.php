@@ -258,6 +258,22 @@ class NukeContext {
 	}
 
 	/**
+	 * Returns {@link requestContext}.
+	 * @return IContextSource
+	 */
+	public function getRequestContext(): IContextSource {
+		return $this->requestContext;
+	}
+
+	/**
+	 * Returns {@link $useTemporaryAccounts}.
+	 * @return bool
+	 */
+	public function willUseTemporaryAccounts(): bool {
+		return $this->useTemporaryAccounts;
+	}
+
+	/**
 	 * Returns whether a target was specified.
 	 *
 	 * @return bool
@@ -422,7 +438,7 @@ class NukeContext {
 	 * @return int
 	 */
 	public function getNukeMaxAge( bool $useRCMaxAge = true ): int {
-		$maxAge = $this->requestContext->getConfig()->get( "NukeMaxAge" );
+		$maxAge = $this->requestContext->getConfig()->get( NukeConfigNames::MaxAge );
 		// If no Nuke-specific max age was set, this should match the value of `$wgRCMaxAge`.
 		if ( !$maxAge && $useRCMaxAge ) {
 			$maxAge = $this->requestContext->getConfig()->get( MainConfigNames::RCMaxAge );
