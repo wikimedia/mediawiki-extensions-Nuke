@@ -257,7 +257,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
 
-		$this->assertEquals( 2, substr_count( $html, '(nuke-editby: ~2024-1)' ) );
+		$year = gmdate( 'Y' );
+		$this->assertEquals( 2, substr_count( $html, "(nuke-editby: ~$year-1)" ) );
 
 		$this->assertStringContainsString( 'Target1', $html );
 		$this->assertStringContainsString( 'Target2', $html );
@@ -302,7 +303,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$adminPerformer = new UltimateAuthority( $adminUser );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
 
-		$this->assertSame( 1, substr_count( $html, ' (nuke-editby: ~2024-1)' ) );
+		$year = gmdate( 'Y' );
+		$this->assertSame( 1, substr_count( $html, "(nuke-editby: ~$year-1)" ) );
 		$this->assertSame( 1, substr_count( $html, ' (nuke-editby: 1.2.3.4)' ) );
 
 		// They should all show up together
