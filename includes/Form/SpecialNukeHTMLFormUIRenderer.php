@@ -152,14 +152,18 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'label-message' => 'nuke-submit-list',
 				'name' => 'action',
 				'value' => SpecialNuke::ACTION_LIST
-			] )
-			->addButton( [
+			] );
+		if (
+			$this->context->getAction() !== SpecialNuke::ACTION_PROMPT
+		) {
+			$promptForm->addButton( [
 				'classes' => [ 'mw-htmlform-submit' ],
 				'label-message' => 'nuke-submit-continue',
 				'name' => 'action',
 				'value' => SpecialNuke::ACTION_CONFIRM,
 				'flags' => [ 'primary', 'progressive' ]
 			] );
+		}
 
 		$validationResult = $this->context->validate();
 		if ( $validationResult !== true ) {
