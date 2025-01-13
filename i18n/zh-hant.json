@@ -34,6 +34,8 @@
 	"right-nuke": "大量刪除頁面",
 	"nuke-userorip": "使用者名稱、IP位址或留空：",
 	"nuke-maxpages": "檢索頁面的數量（最多 500）",
+	"nuke-date-from": "開始日期",
+	"nuke-date-to": "結束日期",
 	"nuke-editby": "由[[Special:Contributions/$1|$1]]建立。",
 	"nuke-delete-summary": "已佇列'''{{PLURAL:$1|$1個頁面}}'''以待刪除。",
 	"nuke-delete-summary-user": "已佇列 [[{{ns:user}}:$2|$2]] （[[{{ns:user_talk}}:$2|{{int:talkpagelinktext}}]] {{int:pipe-separator}} [[{{ns:special}}:Contributions/$2|{{int:contribslink}}]] {{int:pipe-separator}} [[{{ns:special}}:Block/$2|{{int:blocklink}}]]） 建立的'''{{PLURAL:$1|$1個頁面}}'''以待刪除。",
