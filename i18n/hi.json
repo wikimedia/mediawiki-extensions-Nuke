@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Abijeet Patro",
 			"Ansumang",
 			"Ayushimrigen",
 			"Kaustubh",
@@ -20,6 +21,7 @@
 	"right-nuke": "बहुत से पृष्ठ एक साथ हटायें",
 	"nuke-userorip": "सदस्यनाम, आई॰पी पता या खाली:",
 	"nuke-maxpages": "अधिकतम पृष्ठ संख्या:",
+	"nuke-date-to": "दिनांक तक",
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] द्वारा बनाए गए",
 	"nuke-deleted": "पृष्ठ '''$1''' को हटा दिया गया है।",
 	"nuke-not-deleted": "पृष्ठ [[:$1]] हटाया '''नहीं''' जा सका।",
