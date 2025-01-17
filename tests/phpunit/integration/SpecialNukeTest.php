@@ -58,6 +58,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( '(nuke-summary)', $html );
 		$this->assertStringContainsString( '(nuke-tools)', $html );
 		$this->assertStringContainsString( '(nuke-tools-prompt)', $html );
+		$this->assertStringContainsString( 'nuke-submit-list', $html );
+		$this->assertStringNotContainsString( 'nuke-submit-continue', $html );
 	}
 
 	/**
@@ -187,6 +189,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html1 ] = $this->executeSpecialPage( '', $request1, 'qqx', $adminPerformer );
 		$this->checkForValidationMessages( $html1 );
+		$this->assertStringContainsString( 'nuke-submit-list', $html1 );
+		$this->assertStringContainsString( 'nuke-submit-continue', $html1 );
 
 		$this->assertStringContainsString( 'Target1', $html1 );
 		$this->assertStringContainsString( 'Target2', $html1 );
@@ -199,6 +203,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html2 ] = $this->executeSpecialPage( '', $request2, 'qqx', $adminPerformer );
 		$this->checkForValidationMessages( $html2 );
+		$this->assertStringContainsString( 'nuke-submit-list', $html2 );
+		$this->assertStringContainsString( 'nuke-submit-continue', $html2 );
 
 		$this->assertStringContainsString( 'Target1', $html2 );
 		$this->assertStringContainsString( 'Target2', $html2 );
@@ -378,6 +384,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html, [ 'nuke-nopages-global' ] );
+		$this->assertStringContainsString( 'nuke-submit-list', $html );
+		$this->assertStringNotContainsString( 'nuke-submit-continue', $html );
 	}
 
 	public function testListNoPagesUser() {
@@ -390,6 +398,8 @@ class SpecialNukeTest extends SpecialPageTestBase {
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html, [ 'nuke-nopages-global' ] );
+		$this->assertStringContainsString( 'nuke-submit-list', $html );
+		$this->assertStringNotContainsString( 'nuke-submit-continue', $html );
 	}
 
 	public function testListNamespace() {

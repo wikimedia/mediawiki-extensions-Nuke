@@ -61,9 +61,10 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 	 * Get the prompt form to be shown to the user. Should appear when both asking for initial
 	 * data or showing the page list.
 	 *
+	 * @param bool $canContinue Whether the form should show a 'Continue' button.
 	 * @return string
 	 */
-	protected function getPromptForm(): string {
+	protected function getPromptForm( bool $canContinue = true ): string {
 		$this->getOutput()->addModuleStyles( [ 'ext.nuke.styles' ] );
 
 		$nukeMaxAge = $this->context->getNukeMaxAge();
@@ -153,7 +154,11 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'name' => 'action',
 				'value' => SpecialNuke::ACTION_LIST
 			] );
+
+		// Show 'Continue' button only if we're not in the initial 'prompt' stage, and pages
+		// are going to be listed.
 		if (
+			$canContinue &&
 			$this->context->getAction() !== SpecialNuke::ACTION_PROMPT
 		) {
 			$promptForm->addButton( [
@@ -212,8 +217,8 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		$out->addWikiMsg( 'nuke-tools-prompt' );
 		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
 		$out->enableOOUI();
-		$body = $this->getPromptForm();
 		if ( !$pages ) {
+			$body = $this->getPromptForm( false );
 			$out->addHTML(
 				$this->wrapForm( $body )
 			);
@@ -223,6 +228,8 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'label' => $this->msg( 'nuke-nopages-global' )->text(),
 			] ) );
 			return;
+		} else {
+			$body = $this->getPromptForm();
 		}
 
 		$body .=
