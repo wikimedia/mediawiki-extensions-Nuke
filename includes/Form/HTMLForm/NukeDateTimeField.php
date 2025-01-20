@@ -27,10 +27,10 @@ class NukeDateTimeField extends HTMLDateTimeField {
 
 		// Use 'date' by default, as this is what's used on Special:Nuke and what the module
 		// explicitly supports.
-		$this->mType = $params['type'] ?? 'date';
+		$this->mType = 'date';
 
 		// Set 'min' from 'maxAge', if provided
-		if ( $params['maxAge'] ) {
+		if ( array_key_exists( 'maxAge', $params ) && $params['maxAge'] ) {
 			$this->mParams['min'] = date( 'Y-m-d', time() - $params['maxAge'] );
 		}
 	}
@@ -60,8 +60,7 @@ class NukeDateTimeField extends HTMLDateTimeField {
 		if ( isset( $this->mParams['min'] ) ) {
 			$min = $this->parseDate( $this->mParams['min'] );
 			if ( $min && $date < $min ) {
-				if ( $this->mParams['maxAge'] ) {
-
+				if ( array_key_exists( 'maxAge', $this->mParams ) && $this->mParams['maxAge'] ) {
 					// Use a custom message when the date is below the minimum
 					return $this->msg(
 						"nuke-date-limited",
@@ -117,11 +116,7 @@ class NukeDateTimeField extends HTMLDateTimeField {
 	 * @inheritDoc
 	 */
 	protected function getOOUIModules() {
-		if ( $this->mType === 'date' ) {
-			return [ 'mediawiki.widgets.DateInputWidget', 'ext.nuke.fields.NukeDateTimeField' ];
-		} else {
-			return [ 'mediawiki.widgets.datetime' ];
-		}
+		return [ 'mediawiki.widgets.DateInputWidget', 'ext.nuke.fields.NukeDateTimeField' ];
 	}
 
 	/**

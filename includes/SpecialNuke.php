@@ -136,7 +136,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$req = $this->getRequest();
-		$nukeContext = $this->getNukeContextFromRequest( $par );
+		$nukeContext = $this->getNukeContextFromRequest( $req, $par );
 
 		if ( $nukeContext->validatePrompt() !== true ) {
 			// Something is wrong with filters. Immediately return the prompt form again.
@@ -211,12 +211,14 @@ class SpecialNuke extends SpecialPage {
 	/**
 	 * Load the Nuke context from request data ({@link SpecialPage::getRequest}).
 	 *
-	 * @param string|null $par
+	 * @param WebRequest $req The request to use
+	 * @param string|null $par The parameter to use as the target, if any
 	 * @return NukeContext
 	 */
-	protected function getNukeContextFromRequest( ?string $par ): NukeContext {
-		$req = $this->getRequest();
-
+	protected function getNukeContextFromRequest(
+		WebRequest $req,
+		?string $par = null
+	): NukeContext {
 		$target = trim( $req->getText( 'target', $par ?? '' ) );
 
 		// Normalise name
@@ -467,7 +469,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		$target = $context->getTarget();
-		if ( $target ) {
+		if ( $context->hasTarget() ) {
 			// Enable revision table searches only when a target has been specified.
 			// Running queries on the revision table when there's no actor causes timeouts, since
 			// the entirety of the `page` table needs to be scanned. (T380846)

@@ -253,9 +253,8 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				$image->transform( [ 'width' => 120, 'height' => 120 ], 0 ) :
 				false;
 
-			$userNameText = $userName ?
-				' <span class="mw-changeslist-separator"></span> ' . $this->msg( 'nuke-editby', $userName )->parse() :
-				'';
+			$userNameText = ' <span class="mw-changeslist-separator"></span> '
+				. $this->msg( 'nuke-editby', $userName )->parse();
 
 			$body .= '<li>' .
 				Html::check(
