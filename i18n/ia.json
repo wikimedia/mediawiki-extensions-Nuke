@@ -25,14 +25,22 @@
 	"nuke-date-limited": "Solmente paginas create in le ultime $1 pote esser delite. Per favor cambia le data de sorta que illo cade intra iste intervallo.",
 	"nuke-editby": "Create per [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
 	"nuke-delete-summary": "'''{{PLURAL:$1|Un pagina|$1 paginas}}''' mittite in cauda pro deletion.",
+	"nuke-delete-summary-user": "'''{{PLURAL:$1|Un pagina|$1 paginas}}''' {{GENDER:$2|create}} per [[{{ns:user}}:$2|$2]] ([[{{ns:user_talk}}:$2|{{int:talkpagelinktext}}]] {{int:pipe-separator}} [[{{ns:special}}:Contributions/$2|{{int:contribslink}}]] {{int:pipe-separator}} [[{{ns:special}}:Block/$2|{{int:blocklink}}]]) ha essite mittite in cauda pro deletion.",
 	"nuke-deleted": "Le pagina '''$1''' ha essite delite.",
 	"nuke-deletion-queued": "Le pagina '''$1''' ha essite adjungite al cauda de deletiones.",
 	"nuke-not-deleted": "Le pagina [[:$1]] '''non poteva''' esser delite.",
+	"nuke-skipped-summary": "'''{{PLURAL:$1|Un pagina|$1 paginas}}''' non ha essite seligite pro deletion.",
 	"nuke-delete-more": "[[Special:Nuke|Deler plus paginas]]",
 	"nuke-pattern": "Patrono SQL LIKE (p.ex. %) pro le nomine de pagina:",
+	"nuke-pattern-performance": "Debite a motivos de rendimento, si iste filtro se usa sin nomine de usator o adresse IP, le resultatos essera limitate al ultime $1.",
+	"nuke-nolist": "Pro continuar, primo ‘{{int:nuke-submit-list}}’ e alora selige le paginas a mitter in cauda pro deletion.",
 	"nuke-nopages-global": "Necun pagina corresponde al recerca.",
+	"nuke-noselected": "Pro continuar, selige le paginas a mitter in causa pro deletion.",
 	"nuke-viewchanges": "historia",
 	"nuke-namespace": "Limitar al spatios de nomines:",
+	"nuke-namespace-noscript": "Insere IDs de spatio de nomine, un per linea. Lassa vacue pro cercar in tote le spatios de nomines. IDs non valide essera ignorate.",
 	"nuke-linkoncontribs": "deletion in massa",
-	"nuke-linkoncontribs-text": "Deler tote le paginas del quales {{GENDER:$1|iste usator}} es le unic autor"
+	"nuke-linkoncontribs-text": "Deler tote le paginas del quales {{GENDER:$1|iste usator}} es le unic autor",
+	"tag-nuke": "Annihilation",
+	"tag-nuke-description": "Deletiones realisate con le extension Nuke"
 }
