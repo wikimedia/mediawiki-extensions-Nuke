@@ -2,11 +2,11 @@
 
 namespace MediaWiki\Extension\Nuke;
 
+use LogicException;
 use MediaWiki\Config\Config;
 use MediaWiki\Language\Language;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Title\NamespaceInfo;
-use Symfony\Component\Console\Exception\LogicException;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\LikeMatch;
@@ -28,7 +28,7 @@ class NukeQueryBuilder {
 	 * Default fields to include in the result set. Must be fields that can be found
 	 * in both revision and recentchanges queries.
 	 */
-	private const DEFAULT_FIELDS = [ 'page_title', 'page_namespace' ];
+	private const DEFAULT_FIELDS = [ 'page_id', 'page_title', 'page_namespace', 'actor_name' ];
 
 	private IReadableDatabase $readableDatabase;
 	private Config $config;
@@ -89,7 +89,6 @@ class NukeQueryBuilder {
 			->distinct()
 			->from( self::TABLE_REVISION )
 			->join( 'actor', null, 'actor_id=rev_actor' )
-			->field( 'actor_name' )
 			->join( 'page', null, 'page_id=rev_page' )
 			->where( [
 				$dbr->expr( 'rev_parent_id', '=', 0 )
@@ -106,7 +105,6 @@ class NukeQueryBuilder {
 			->select( self::DEFAULT_FIELDS )
 			->from( self::TABLE_RECENTCHANGES )
 			->join( 'actor', null, 'actor_id=rc_actor' )
-			->field( 'actor_name' )
 			->join( 'page', null, 'page_id=rc_cur_id' )
 			->where( [
 				$dbr->expr( 'rc_source', '=', 'mw.new' )->orExpr(
@@ -310,9 +308,9 @@ class NukeQueryBuilder {
 					new LikeMatch( $patternStandard )
 				)
 			)->and(
-			// IN condition, with the non-overridden namespaces.
-			// If the default is case-sensitive namespaces, $pattern's first
-			// character is turned lowercase. Otherwise, it is turned uppercase.
+				// IN condition, with the non-overridden namespaces.
+				// If the default is case-sensitive namespaces, $pattern's first
+				// character is turned lowercase. Otherwise, it is turned uppercase.
 				'page_namespace', '=', $nonOverriddenNamespaces
 			);
 		}
