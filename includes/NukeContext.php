@@ -134,6 +134,21 @@ class NukeContext {
 	private bool $useTemporaryAccounts = false;
 
 	/**
+	 * The current status of the user's access to Nuke.
+	 *
+	 * @var int
+	 */
+	private int $nukeAccessStatus = self::NUKE_ACCESS_INTERNAL_ERROR;
+
+	/**
+	 * Constants for nuke access status.
+	 */
+	public const NUKE_ACCESS_INTERNAL_ERROR = 0;
+	public const NUKE_ACCESS_GRANTED = 1;
+	public const NUKE_ACCESS_NO_PERMISSION = 2;
+	public const NUKE_ACCESS_BLOCKED = 3;
+
+	/**
 	 * Originating request context of the query.
 	 *
 	 * @var IContextSource
@@ -175,6 +190,8 @@ class NukeContext {
 			}
 			$this->originalPages = $params['originalPages'] ?? $this->originalPages;
 		}
+
+		$this->nukeAccessStatus = $params['nukeAccessStatus'] ?? $this->nukeAccessStatus;
 	}
 
 	/**
@@ -313,6 +330,14 @@ class NukeContext {
 	 */
 	public function getOriginalPages(): array {
 		return $this->originalPages;
+	}
+
+	/**
+	 * Returns {@link $nukeAccessStatus}.
+	 * @return int
+	 */
+	public function getNukeAccessStatus(): int {
+		return $this->nukeAccessStatus;
 	}
 
 	/**

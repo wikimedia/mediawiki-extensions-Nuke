@@ -26,7 +26,6 @@ use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use PermissionsError;
 use RepoGroup;
-use UserBlockedError;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
 
@@ -94,7 +93,7 @@ class SpecialNuke extends SpecialPage {
 		RedirectLookup $redirectLookup,
 		$checkUserTemporaryAccountsByIPLookup = null
 	) {
-		parent::__construct( 'Nuke', 'nuke' );
+		parent::__construct( 'Nuke' );
 		$this->jobQueueGroup = $jobQueueGroup;
 		$this->dbProvider = $dbProvider;
 		$this->permissionManager = $permissionManager;
@@ -122,22 +121,11 @@ class SpecialNuke extends SpecialPage {
 	 */
 	public function execute( $par ) {
 		$this->setHeaders();
-		$this->checkPermissions();
 		$this->checkReadOnly();
 		$this->outputHeader();
 		$this->addHelpLink( 'Help:Extension:Nuke' );
 
 		$currentUser = $this->getUser();
-		$block = $currentUser->getBlock();
-
-		// appliesToRight is presently a no-op, since there is no handling for `delete`,
-		// and so will return `null`. `true` will be returned if the block actively
-		// applies to `delete`, and both `null` and `true` should result in an error
-		if ( $block && ( $block->isSitewide() ||
-			( $block->appliesToRight( 'delete' ) !== false ) )
-		) {
-			throw new UserBlockedError( $block );
-		}
 
 		$req = $this->getRequest();
 		$nukeContext = $this->getNukeContextFromRequest( $req, $par );
@@ -277,7 +265,9 @@ class SpecialNuke extends SpecialPage {
 
 			'pages' => $req->getArray( 'pages', [] ),
 			'associatedPages' => $req->getArray( 'associatedPages', [] ),
-			'originalPages' => $originalPages
+			'originalPages' => $originalPages,
+
+			'nukeAccessStatus' => $this->getNukeAccessStatus( $this->getUser() ),
 		] );
 	}
 
@@ -799,5 +789,33 @@ class SpecialNuke extends SpecialPage {
 	private function getNukeHookRunner(): NukeHookRunner {
 		$this->hookRunner ??= new NukeHookRunner( $this->getHookContainer() );
 		return $this->hookRunner;
+	}
+
+	/**
+	 * Check the status of the current user's access to Nuke.
+	 *
+	 * Returns a number based on the user's access to Nuke,
+	 * you can use the NUKE_ACCESS_* constants to compare the result.
+	 *
+	 * @param User $currentUser
+	 *
+	 * @return int
+	 */
+	private function getNukeAccessStatus( User $currentUser ): int {
+		if ( !$currentUser->isAllowed( 'nuke' ) ) {
+			return NukeContext::NUKE_ACCESS_NO_PERMISSION;
+		}
+
+		// appliesToRight is presently a no-op, since there is no handling for `delete`,
+		// and so will return `null`. `true` will be returned if the block actively
+		// applies to `delete`, and both `null` and `true` should result in an error
+		$block = $currentUser->getBlock();
+		if ( $block && ( $block->isSitewide() ||
+			( $block->appliesToRight( 'delete' ) !== false ) )
+		) {
+			return NukeContext::NUKE_ACCESS_BLOCKED;
+		}
+
+		return NukeContext::NUKE_ACCESS_GRANTED;
 	}
 }

@@ -12,7 +12,6 @@ use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\Title\Title;
 use PermissionsError;
 use SpecialPageTestBase;
-use UserBlockedError;
 
 /**
  * @group Database
@@ -48,7 +47,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 	}
 
 	/**
-	 * Ensure that the prompt appears as expected.
+	 * Ensure that the prompt appears as expected for users with nuke permission.
 	 *
 	 * @return void
 	 */
@@ -63,6 +62,36 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( '(nuke-summary)', $html );
 		$this->assertStringContainsString( '(nuke-tools)', $html );
 		$this->assertStringContainsString( '(nuke-tools-prompt)', $html );
+		$this->assertStringNotContainsString( '(nuke-tools-prompt-restricted)', $html );
+		$this->assertStringContainsString( 'nuke-submit-list', $html );
+		$this->assertStringNotContainsString( 'nuke-submit-continue', $html );
+	}
+
+	/**
+	 * Ensure that the prompt appears as expected for users without nuke permission.
+	 *
+	 * @return void
+	 */
+	public function testPromptNoPermission() {
+		$user = $this->getTestUser()->getUser();
+		$this->disableAutoCreateTempUser();
+		$permissionManager = $this->getServiceContainer()->getPermissionManager();
+		$permissions = $permissionManager->getUserPermissions( $user );
+		$permissions = array_diff( $permissions, [ 'nuke' ] );
+		$permissionManager->overrideUserRightsForTesting( $user,
+			$permissions
+		);
+		$performer = new UltimateAuthority( $user );
+
+		[ $html ] = $this->executeSpecialPage( '', null, 'qqx', $performer );
+
+		$this->checkForValidationMessages( $html );
+		$this->assertStringContainsString( '(nuke-summary)', $html );
+		$this->assertStringContainsString( '(nuke-tools)', $html );
+		$this->assertStringNotContainsString( '(nuke-tools-prompt)', $html );
+		$this->assertStringContainsString( '(nuke-tools-prompt-restricted)', $html );
+		$this->assertStringNotContainsString( '(nuke-tools-notice-blocked)', $html );
+		$this->assertStringContainsString( '(nuke-tools-notice-noperm)', $html );
 		$this->assertStringContainsString( 'nuke-submit-list', $html );
 		$this->assertStringNotContainsString( 'nuke-submit-continue', $html );
 	}
@@ -87,7 +116,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 	}
 
 	/**
-	 * Ensure that the prompt prevents a user blocked from deleting pages from accessing the form
+	 * Ensure that the prompt appears as expected for a blocked sysop
 	 *
 	 * @return void
 	 */
@@ -101,8 +130,32 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			->newBlockUser( $user, $performer, 'infinity', 'SpecialNukeTest::testBlocked' )
 			->placeBlockUnsafe();
 
-		$this->expectException( UserBlockedError::class );
-		$this->executeSpecialPage( '', null, 'qqx', $performer );
+		[ $html ] = $this->executeSpecialPage( '', null, 'qqx', $performer );
+
+		$this->checkForValidationMessages( $html );
+		$this->assertStringContainsString( '(nuke-summary)', $html );
+		$this->assertStringNotContainsString( '(nuke-tools-prompt)', $html );
+		$this->assertStringContainsString( '(nuke-tools-prompt-restricted)', $html );
+		$this->assertStringContainsString( '(nuke-tools-notice-blocked)', $html );
+		$this->assertStringNotContainsString( '(nuke-tools-notice-noperm)', $html );
+		$this->assertStringContainsString( 'nuke-submit-list', $html );
+		$this->assertStringNotContainsString( 'nuke-submit-continue', $html );
+
+		// regression check: now list the pages and confirm the same message is shown at the top
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user->getName()
+		], true );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		$this->assertStringContainsString( '(nuke-summary)', $html );
+		$this->assertStringNotContainsString( '(nuke-tools-prompt)', $html );
+		$this->assertStringContainsString( '(nuke-tools-prompt-restricted)', $html );
+		$this->assertStringContainsString( '(nuke-tools-notice-blocked)', $html );
+		$this->assertStringNotContainsString( '(nuke-tools-notice-noperm)', $html );
+		$this->assertStringContainsString( 'nuke-submit-list', $html );
+		$this->assertStringNotContainsString( 'nuke-submit-continue', $html );
 
 		$this->getServiceContainer()
 			->getUnblockUserFactory()

@@ -13,6 +13,7 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\RedirectLookup;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
@@ -183,17 +184,18 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 			] );
 
 		// Show 'Continue' button only if we're not in the initial 'prompt' stage, and pages
-		// are going to be listed.
+		// are going to be listed, and the user's access status is allowed.
 		if (
 			$canContinue &&
-			$this->context->getAction() !== SpecialNuke::ACTION_PROMPT
+			$this->context->getAction() !== SpecialNuke::ACTION_PROMPT &&
+			$this->context->getNukeAccessStatus() === NukeContext::NUKE_ACCESS_GRANTED
 		) {
 			$promptForm->addButton( [
 				'classes' => [ 'mw-htmlform-submit' ],
 				'label-message' => 'nuke-submit-continue',
 				'name' => 'action',
 				'value' => SpecialNuke::ACTION_CONFIRM,
-				'flags' => [ 'primary', 'progressive' ]
+				'flags' => [ 'primary', 'progressive' ],
 			] );
 		}
 
@@ -222,7 +224,10 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		} else {
 			$out->addWikiMsg( 'nuke-tools' );
 		}
-		$out->addWikiMsg( 'nuke-tools-prompt' );
+
+		$accessStatus = $this->context->getNukeAccessStatus();
+
+		$this->outputAccessStatusHeader( $out, $accessStatus );
 
 		$out->enableOOUI();
 		$out->addHTML(
@@ -241,7 +246,10 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 			$out->addWikiMsg( 'nuke-tools' );
 		}
 
-		$out->addWikiMsg( 'nuke-tools-prompt' );
+		$accessStatus = $this->context->getNukeAccessStatus();
+
+		$this->outputAccessStatusHeader( $out, $accessStatus );
+
 		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
 		$out->enableOOUI();
 		if ( !$pageGroups ) {
@@ -620,6 +628,46 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				$talkPageText .
 				$changesLink
 			)->escaped();
+	}
+
+	/**
+	 * Output the access status header, stating:
+	 * If the user has access to delete pages
+	 * If so, the instructions for deleting pages
+	 * If not, the reason why the user does not have access
+	 *
+	 * @param OutputPage $out
+	 * @param int $accessStatus
+	 * @return void
+	 */
+	protected function outputAccessStatusHeader( OutputPage $out, int $accessStatus ) {
+		switch ( $accessStatus ) {
+			case NukeContext::NUKE_ACCESS_GRANTED:
+				// the user has normal access, give them the tools prompt
+				$out->addWikiMsg( 'nuke-tools-prompt' );
+				break;
+			case NukeContext::NUKE_ACCESS_NO_PERMISSION:
+				// tell the user that they don't have the permission
+				$out->addWikiMsg( 'nuke-tools-notice-noperm' );
+				break;
+			case NukeContext::NUKE_ACCESS_BLOCKED:
+				// tell the user that they are blocked
+				$out->addWikiMsg( 'nuke-tools-notice-blocked' );
+				break;
+			case NukeContext::NUKE_ACCESS_INTERNAL_ERROR:
+			default:
+				// it's either internal error
+				// or a new case we don't support in the code yet
+				// in both cases we want to tell the user
+				// that there's been an error
+				$out->addWikiMsg( 'nuke-tools-notice-error' );
+				break;
+		}
+
+		// if $accessStatus isn't normal, then tell the user that their access is restricted
+		if ( $accessStatus !== NukeContext::NUKE_ACCESS_GRANTED ) {
+			$out->addWikiMsg( 'nuke-tools-prompt-restricted' );
+		}
 	}
 
 }
