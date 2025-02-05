@@ -42,6 +42,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			$services->getUserNameUtils(),
 			$services->getNamespaceInfo(),
 			$services->getContentLanguage(),
+			$services->getRedirectLookup(),
 			$services->getService( 'NukeIPLookup' )
 		);
 	}
@@ -719,6 +720,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$performer = new UltimateAuthority( $admin );
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		// NOTE: No 'nuke-associated-limited' message box will be shown here, because the limit is
+		// enforced on the initial 'pages' query and no associated pages are selected.
 		$this->checkForValidationMessages( $html );
 
 		$this->assertEquals( 2, substr_count( $html, '<li>' ) );
@@ -1278,6 +1281,256 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->assertStringNotContainsString( 'Page8', $html );
 	}
 
+	public function testListIncludeTalkPages() {
+		$user1 = $this->getMutableTestUser();
+		$user2 = $this->getMutableTestUser();
+
+		// Create a page and its talk page
+		$this->insertPage( 'Page1', 'test', NS_MAIN, $user1->getUser() );
+		$this->insertPage( 'Talk:Page1', 'test', NS_TALK, $user2->getUser() );
+
+		$admin = $this->getTestSysop()->getUser();
+		$performer = new UltimateAuthority( $admin );
+
+		// Include talk pages
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user1->getUser()->getName(),
+			'includeTalkPages' => true
+		], true );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+
+		// HTML syntax here is used to ensure that it doesn't appear inside a tag.
+		$this->assertStringContainsString( 'Page1</a>', $html );
+		$this->assertStringContainsString( 'Talk:Page1</a>', $html );
+		$this->assertStringContainsString( $user2->getUser()->getName(), $html );
+
+		// Exclude talk pages
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user1->getUser()->getName(),
+			'includeTalkPages' => false
+		], true );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+
+		// HTML syntax here is used to ensure that it doesn't appear inside a tag.
+		$this->assertStringContainsString( 'Page1</a>', $html );
+		$this->assertStringNotContainsString( 'Talk:Page1</a>', $html );
+		$this->assertStringNotContainsString( $user2->getUser()->getName(), $html );
+	}
+
+	public function testListIncludeRedirectPages() {
+		$user1 = $this->getMutableTestUser();
+		$user2 = $this->getMutableTestUser();
+
+		// Create a page and its talk page
+		$this->insertPage( 'Page 1', 'test', NS_MAIN, $user1->getUser() );
+		$this->insertPage(
+			'Redirect 1',
+			'#REDIRECT [[Page 1]]',
+			NS_MAIN,
+			$user2->getUser()
+		)['title'];
+		$this->runJobs();
+
+		$admin = $this->getTestSysop()->getUser();
+		$performer = new UltimateAuthority( $admin );
+
+		// Include talk pages
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user1->getUser()->getName(),
+			'includeRedirects' => true
+		], true );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+
+		// HTML syntax here is used to ensure that it doesn't appear inside a tag.
+		$this->assertStringContainsString( 'Page 1</a>', $html );
+		$this->assertStringContainsString( 'Redirect 1</a>', $html );
+		$this->assertStringContainsString( $user2->getUser()->getName(), $html );
+
+		// Exclude talk pages
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user1->getUser()->getName(),
+			'includeRedirects' => false
+		], true );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+
+		// HTML syntax here is used to ensure that it doesn't appear inside a tag.
+		$this->assertStringContainsString( 'Page 1</a>', $html );
+		$this->assertStringNotContainsString( 'Redirect 1</a>', $html );
+		$this->assertStringNotContainsString( $user2->getUser()->getName(), $html );
+	}
+
+	/**
+	 * Ensure that pages don't appear twice on the list when a page was created by a user and is
+	 * also an associated page of another page.
+	 *
+	 * @return void
+	 */
+	public function testListAssociatedPagesDeduplication() {
+		$user = $this->getTestUser();
+		$this->insertPage( 'Page 1', 'test', NS_MAIN, $user->getUser() );
+		$this->insertPage( 'Redirect 1', '#REDIRECT [[Page 1]]', NS_MAIN, $user->getUser() );
+		$this->insertPage( 'Page 1', 'test', NS_TALK, $user->getUser() );
+
+		$admin = $this->getTestSysop()->getUser();
+		$performer = new UltimateAuthority( $admin );
+
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user->getUser()->getName(),
+			'includeTalkPages' => true,
+			'includeRedirects' => true
+		], true );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+
+		// HTML syntax here is used to ensure that it doesn't appear inside a tag.
+		$this->assertSame(
+			1,
+			substr_count( $html, '>Page 1</a>' ),
+			"Failed asserting that \"$html\" contains '>>Page 1</a>' only once."
+		);
+		$this->assertSame(
+			1,
+			substr_count( $html, '>Redirect 1</a>' ),
+			"Failed asserting that \"$html\" contains '>Redirect 1</a>' only once."
+		);
+		$this->assertSame(
+			1,
+			substr_count( $html, '>Talk:Page 1</a>' ),
+			"Failed asserting that \"$html\" contains '>Talk:Page 1</a>' only once."
+		);
+	}
+
+	public function testListLimitAssociatedPages() {
+		$time = time();
+		$authority1 = $this->getMutableTestUser()->getAuthority();
+		$authority2 = $this->getMutableTestUser()->getAuthority();
+
+		$page1 =
+			$this->editPageAtTime( 'Page 1', 'test', '', $time, NS_MAIN, $authority1 );
+		$this->editPageAtTime( 'Page 2', 'test', '', $time - 5, NS_MAIN, $authority1 );
+		$this->editPageAtTime( 'Page 3', 'test', '', $time - 10, NS_MAIN, $authority1 );
+		$this->editPageAtTime(
+			'Redirect 1',
+			'#REDIRECT [[Page 2]]',
+			'',
+			$time - 1,
+			NS_MAIN,
+			$authority2
+		);
+		$this->editPageAtTime(
+			'Redirect 2',
+			'#REDIRECT [[Page 2]]',
+			'',
+			$time - 20,
+			NS_MAIN,
+			$authority2
+		);
+		$this->editPageAtTime(
+			'Page 3',
+			'test',
+			'',
+			$time - 25,
+			NS_TALK,
+			$authority2
+		);
+		$pages = [ 'Page 1', 'Page 2', 'Page 3', 'Redirect 1', 'Redirect 2', 'Talk:Page 3' ];
+
+		$admin = $this->getTestSysop()->getUser();
+		$performer = new UltimateAuthority( $admin );
+
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $authority1->getUser()->getName(),
+			'includeTalkPages' => true,
+			'includeRedirects' => true
+		], true );
+
+		// First test no limits
+		$request->setVal( 'limit', 7 );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringsFound( $html, $pages, $pages );
+
+		// Now test with limit = 1.
+		// Only Page 1 should show up, and there should be no validation error messages.
+		$request->setVal( 'limit', 1 );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringsFound( $html, $pages, [ 'Page 1' ] );
+
+		// Now test with limit = 2.
+		// It should still only be page 1 here.
+		// Page 2 will be skipped because it has 2 associated pages, totalling 3 pages in the group.
+		// Page 3 will be skipped because it has a talk page, totalling 2 pages in the group.
+		// This will cause a limit warning to show up.
+		$request->setVal( 'limit', 2 );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html, [ 'nuke-associated-limited' ] );
+		$this->assertStringsFound( $html, $pages, [ 'Page 1' ] );
+
+		// Now test with limit = 3
+		// Only the Page 1 and Page 3 should show up.
+		// Page 2 will be skipped because it has 2 associated pages, totalling 3 pages in the group.
+		// This will cause a limit warning to show up.
+		$request->setVal( 'limit', 3 );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html, [ 'nuke-associated-limited' ] );
+		$this->assertStringsFound( $html, $pages, [ 'Page 1', 'Page 3', 'Talk:Page 3' ] );
+
+		// Now test with limit = 4
+		// Page 1, Page 2, and all its redirects should show up.
+		// Page 3 will be excluded since Page 2 was created later.
+		// This will cause a limit warning to show up.
+		$request->setVal( 'limit', 4 );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html, [ 'nuke-associated-limited' ] );
+		$this->assertStringsFound( $html, $pages, [
+			'Page 1',
+			'Page 2',
+			'Redirect 1',
+			'Redirect 2'
+		] );
+
+		// Now test with limit = 4, but include only talk pages
+		// Page 1, Page 2, Page 3, and Talk:Page 3 should show up.
+		// There should be no limit warning.
+		$request->setVal( 'limit', 4 );
+		$request->setVal( 'includeRedirects', false );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html );
+		$this->assertStringsFound( $html, $pages, [
+			'Page 1',
+			'Page 2',
+			'Page 3',
+			'Talk:Page 3'
+		] );
+
+		// Now test with limit = 1, but delete Page 1
+		// There should be a limit warning and a no pages warning.
+		$this->deletePage( $this->getServiceContainer()->getWikiPageFactory()->newFromID(
+			$page1->getNewRevision()->getPageId()
+		) );
+		$request->setVal( 'limit', 1 );
+		$request->setVal( 'includeRedirects', true );
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html, [ 'nuke-nopages-global', 'nuke-associated-limited' ] );
+		$this->assertStringsFound( $html, $pages, [] );
+	}
+
 	public function testListFiles() {
 		$testFileName = $this->uploadTestFile()['title']->getPrefixedText();
 
@@ -1498,6 +1751,31 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->assertStringNotContainsString( 'Target2', $html );
 	}
 
+	public function testConfirmAssociatedPages() {
+		$user = $this->getTestUser()->getUser();
+		$this->insertPage( 'Page 1', 'test', NS_MAIN, $user );
+		$this->insertPage( 'Redirect 2', '#REDIRECT [[Page 1]]', NS_MAIN, $user );
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_CONFIRM,
+			'target' => $user->getName(),
+			'originalPageList' => implode( SpecialNuke::PAGE_LIST_SEPARATOR, [
+				'Page_1', 'Page_2'
+			] ),
+			'pages' => [ 'Page_1' ],
+			'associatedPages' => [ 'Redirect_2' ],
+			// 'confirm' action requires an edit token
+			'wpEditToken' => $user->getEditToken()
+		], true );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+		// Ensure that the associated pages are also listed on the confirm form
+		$this->assertStringContainsString( 'name="associatedPages[]"', $html );
+	}
+
 	public function testDelete() {
 		$pages = [];
 		$pages[] = $this->insertPage( 'Page123', 'Test', NS_MAIN )[ 'title' ];
@@ -1689,6 +1967,40 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( $fauxReason, $this->getDeleteLogHtml() );
 	}
 
+	public function testDeleteAssociatedReason() {
+		$this->insertPage( 'Page 1', 'Test', NS_MAIN );
+		$this->insertPage( 'Redirect 1', '#REDIRECT [[Page 1]]', NS_MAIN );
+
+		$admin = $this->getTestSysop()->getUser();
+
+		$fauxReason = "Reason " . wfRandomString();
+		$request = new FauxRequest( [
+			'action' => 'delete',
+			'wpDeleteReasonList' => 'other',
+			'wpReason' => $fauxReason,
+			'pages' => [ 'Page 1' ],
+			'associatedPages' => [ 'Redirect 1' ],
+			'wpFormIdentifier' => 'nukelist',
+			'wpEditToken' => $admin->getEditToken(),
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		$this->executeSpecialPage( '', $request, 'qqx', $performer );
+
+		// Ensure all jobs are run
+		$this->runJobs();
+
+		// Check logs
+		$logHtml = $this->getDeleteLogHtml();
+		$this->assertStringContainsString( $fauxReason, $logHtml );
+		$this->assertStringContainsString(
+			wfMessage( 'delete-talk-summary-prefix', $fauxReason )
+				->inContentLanguage()
+				->text(),
+			$this->getDeleteLogHtml()
+		);
+	}
+
 	public function testDeleteFiles() {
 		$testFileName = $this->uploadTestFile()['title']->getPrefixedText();
 
@@ -1826,7 +2138,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			"htmlform-date-invalid",
 			"nuke-nolist",
 			"nuke-nopages-global",
-			"nuke-noselected"
+			"nuke-noselected",
+			"nuke-associated-limited"
 		];
 
 		$shouldBeFound = $messages;

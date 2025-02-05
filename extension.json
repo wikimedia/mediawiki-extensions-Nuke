@@ -90,6 +90,7 @@
 				"UserNameUtils",
 				"NamespaceInfo",
 				"ContentLanguage",
+				"RedirectLookup",
 				"NukeIPLookup"
 			],
 			"styles": [

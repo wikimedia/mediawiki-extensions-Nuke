@@ -87,12 +87,34 @@ class NukeContext {
 	private string $dateTo = '';
 
 	/**
+	 * Whether to include talk pages in the search. When not provided, this is `false`.
+	 *
+	 * @var bool
+	 */
+	private bool $includeTalkPages = false;
+
+	/**
+	 * Whether to include redirects in the search. When not provided, this is `false`.
+	 *
+	 * @var bool
+	 */
+	private bool $includeRedirects = false;
+
+	/**
 	 * The list of pages to delete. Only applicable for the `confirm` and `delete` actions.
 	 * When not provided, this is an empty array.
 	 *
 	 * @var string[]
 	 */
 	private array $pages = [];
+
+	/**
+	 * The list of pages associated with the target to delete. Only applicable for the `confirm`
+	 * and `delete` actions. When not provided, this is an empty array.
+	 *
+	 * @var string[]
+	 */
+	private array $associatedPages = [];
 
 	/**
 	 * The original list of pages provided to the user. When on the `confirm` and `delete`
@@ -141,7 +163,11 @@ class NukeContext {
 			$this->dateTo = $params['dateTo'];
 		}
 
+		$this->includeTalkPages = $params['includeTalkPages'];
+		$this->includeRedirects = $params['includeRedirects'];
+
 		$this->pages = $params['pages'] ?? $this->pages;
+		$this->associatedPages = $params['associatedPages'] ?? $this->associatedPages;
 
 		if ( $this->action == 'delete' || $this->action == 'confirm' ) {
 			if ( $params['listedTarget'] ) {
@@ -242,11 +268,43 @@ class NukeContext {
 	}
 
 	/**
+	 * Returns {@link $includeRedirects}.
+	 * @return bool
+	 */
+	public function getIncludeRedirects(): bool {
+		return $this->includeRedirects;
+	}
+
+	/**
+	 * Returns {@link $includeTalkPages}.
+	 * @return bool
+	 */
+	public function getIncludeTalkPages(): bool {
+		return $this->includeTalkPages;
+	}
+
+	/**
+	 * Returns a merger of {@link $pages} and {@link $associatedPages}.
+	 * @return string[]
+	 */
+	public function getAllPages(): array {
+		return array_merge( $this->getPages(), $this->getAssociatedPages() );
+	}
+
+	/**
 	 * Returns {@link $pages}.
 	 * @return string[]
 	 */
 	public function getPages(): array {
 		return $this->pages;
+	}
+
+	/**
+	 * Returns {@link $associatedPages}.
+	 * @return string[]
+	 */
+	public function getAssociatedPages(): array {
+		return $this->associatedPages;
 	}
 
 	/**

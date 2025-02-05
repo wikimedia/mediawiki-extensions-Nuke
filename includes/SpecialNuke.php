@@ -12,6 +12,7 @@ use MediaWiki\Extension\Nuke\Form\SpecialNukeUIRenderer;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\Language\Language;
 use MediaWiki\Page\File\FileDeleteForm;
+use MediaWiki\Page\RedirectLookup;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -44,6 +45,7 @@ class SpecialNuke extends SpecialPage {
 	private UserNameUtils $userNameUtils;
 	private NamespaceInfo $namespaceInfo;
 	private Language $contentLanguage;
+	private RedirectLookup $redirectLookup;
 	/** @var CheckUserTemporaryAccountsByIPLookup|null */
 	private $checkUserTemporaryAccountsByIPLookup = null;
 
@@ -89,6 +91,7 @@ class SpecialNuke extends SpecialPage {
 		UserNameUtils $userNameUtils,
 		NamespaceInfo $namespaceInfo,
 		Language $contentLanguage,
+		RedirectLookup $redirectLookup,
 		$checkUserTemporaryAccountsByIPLookup = null
 	) {
 		parent::__construct( 'Nuke', 'nuke' );
@@ -102,6 +105,7 @@ class SpecialNuke extends SpecialPage {
 		$this->userNameUtils = $userNameUtils;
 		$this->namespaceInfo = $namespaceInfo;
 		$this->contentLanguage = $contentLanguage;
+		$this->redirectLookup = $redirectLookup;
 		$this->checkUserTemporaryAccountsByIPLookup = $checkUserTemporaryAccountsByIPLookup;
 	}
 
@@ -268,7 +272,11 @@ class SpecialNuke extends SpecialPage {
 			'dateFrom' => $req->getText( 'wpdateFrom' ),
 			'dateTo' => $req->getText( 'wpdateTo' ),
 
+			'includeTalkPages' => $req->getBool( 'includeTalkPages' ),
+			'includeRedirects' => $req->getBool( 'includeRedirects' ),
+
 			'pages' => $req->getArray( 'pages', [] ),
+			'associatedPages' => $req->getArray( 'associatedPages', [] ),
 			'originalPages' => $originalPages
 		] );
 	}
@@ -299,7 +307,8 @@ class SpecialNuke extends SpecialPage {
 					$this->repoGroup,
 					$this->getLinkRenderer(),
 					$this->namespaceInfo,
-					$this->getLanguage()
+					$this->getLanguage(),
+					$this->redirectLookup
 				);
 		}
 	}
@@ -385,10 +394,11 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		// Get list of pages to show the user.
-		$pages = $this->getNewPages( $context, $tempAccounts );
+		$hasExcludedResults = false;
+		$pageGroups = $this->getNewPages( $context, $hasExcludedResults, $tempAccounts );
 
 		$this->getUIRenderer( $context )
-			->showListForm( $pages );
+			->showListForm( $pageGroups, $hasExcludedResults );
 	}
 
 	/**
@@ -422,13 +432,27 @@ class SpecialNuke extends SpecialPage {
 	/**
 	 * Gets a list of new pages by the specified user or everyone when none is specified.
 	 *
+	 * This returns an array of arrays of more arrays, following the following general structure:
+	 *  - Each element in the outermost array is a "page group".
+	 *  - Each page group consists of one or more pages.
+	 *  - The first element of each page group represents the "main page", which the other
+	 *    pages in that array are associated with.
+	 *  - Each page is represented by an array with the following elements:
+	 *    - The page title
+	 *    - The actor name
+	 *    - (if an associated page) "talk" or "redirect", to indicate the type of page
+	 *
 	 * @param NukeContext $context
+	 * @param bool &$hasExcludedResults Will be set to `true` if some results had to be excluded
+	 *   due to the user-defined limit.
 	 * @param string[] $tempAccounts Temporary accounts to search for. This is passed directly
 	 *   instead of through context to ensure permissions checks happen first.
 	 *
-	 * @return array{0:Title,1:string|false}[]
+	 * @return array{0:Title,1:string|false,2?:string,3?:Title}[][]
 	 */
-	protected function getNewPages( NukeContext $context, array $tempAccounts = [] ): array {
+	protected function getNewPages(
+		NukeContext $context, bool &$hasExcludedResults, array $tempAccounts = []
+	): array {
 		$dbr = $this->dbProvider->getReplicaDatabase();
 
 		$nukeMaxAge = $context->getNukeMaxAge();
@@ -506,7 +530,7 @@ class SpecialNuke extends SpecialPage {
 		// Filter by actors, if applicable.
 		$nukeQueryBuilder->filterActor( array_filter( [ $target, ...$tempAccounts ] ) );
 
-		// Filter by namespace, if applicable
+		// Filter by namespace, if applicable.
 		$namespaces = $context->getNamespaces();
 		$nukeQueryBuilder->filterNamespaces( $namespaces );
 
@@ -521,45 +545,147 @@ class SpecialNuke extends SpecialPage {
 			->build()
 			->caller( __METHOD__ )
 			->fetchResultSet();
-		/** @var array{0:Title,1:string|false}[] $pages */
+
+		// Organize all the pages we collect into "groups". This ensures that we properly
+		// associate talk pages or redirects with their main page.
+		//
+		// The first element of each group must always be the main page.
+		// This array is keyed by the main page ID.
+		/** @var array{0:Title,1:string|false,2?:string,3?:Title}[][] $pageGroups */
+		$pageGroups = [];
+
+		// A summative list of pages, to be used for associated queries.
+		/** @var Title[] $pageGroups */
 		$pages = [];
+
 		foreach ( $result as $row ) {
-			$pages[] = [
+			// [ [ page title, actor name ], [ page title, actor name ], ... ]
+			$mainPage = [
 				Title::makeTitle( $row->page_namespace, $row->page_title ),
 				$row->actor_name
 			];
+			$pageGroups[ $row->page_id ] = [ $mainPage ];
+			$pages[] = $mainPage[0];
+		}
+
+		if ( !$pageGroups ) {
+			// No results were found. Return early.
+			return [];
+		}
+
+		$associatedQueryBuilder = new NukeAssociatedQueryBuilder(
+			$dbr,
+			$this->getConfig(),
+			$this->namespaceInfo
+		);
+		$associatedPagesEnabled = $this->getRequest()->getBool( 'nukeAP' );
+		if ( $associatedPagesEnabled || $context->getIncludeTalkPages() ) {
+			// Include talk pages in the results.
+			$talkPagesResult = $associatedQueryBuilder->getTalkPages( $pages )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+			foreach ( $talkPagesResult as $talkPageRow ) {
+				if ( array_key_exists( $talkPageRow->page_id, $pageGroups ) ) {
+					// This page was already included in the first query. Merge it and
+					// its associated pages into their main page, and then have its
+					// entry in $pageGroups reference that new merged array.
+
+					// Merging in these arrays manually instead of using array_merge
+					// to preserve references across $pageGroups elements.
+					foreach ( $pageGroups[ $talkPageRow->page_id ] as $talkAndAssociatedPages ) {
+						$pageGroups[ $talkPageRow->subject_page_id ][] = $talkAndAssociatedPages;
+					}
+					$pageGroups[ $talkPageRow->page_id ] =
+						&$pageGroups[ $talkPageRow->subject_page_id ];
+				} else {
+					// [ [ page title, actor name, "talk" ], ... ]
+					$pageGroups[ $talkPageRow->subject_page_id ][] = [
+						Title::makeTitle(
+							$talkPageRow->page_namespace,
+							$talkPageRow->page_title
+						),
+						$talkPageRow->actor_name,
+						"talk"
+					];
+				}
+			}
+		}
+		if ( $associatedPagesEnabled || $context->getIncludeRedirects() ) {
+			// Include redirect pages in the results.
+			$redirectPagesResult = $associatedQueryBuilder->getRedirectPages( $pages )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+			foreach ( $redirectPagesResult as $redirectPageRow ) {
+				if ( array_key_exists( $redirectPageRow->page_id, $pageGroups ) ) {
+					// This page was already included in previous queries. Merge it and
+					// its associated pages into their main page, and then have its
+					// entry in $pageGroups reference that new merged array.
+
+					// Merging in these arrays manually instead of using array_merge
+					// to preserve references across $pageGroups elements.
+					foreach ( $pageGroups[ $redirectPageRow->page_id ] as $rdAndAssociatedPages ) {
+						$pageGroups[ $redirectPageRow->target_page_id ][] = $rdAndAssociatedPages;
+					}
+					$pageGroups[ $redirectPageRow->page_id ] =
+						&$pageGroups[ $redirectPageRow->target_page_id ];
+				} else {
+					// [ [ page title, actor name, "redirect" ], ... ]
+					$pageGroups[$redirectPageRow->target_page_id][] = [
+						Title::makeTitle(
+							$redirectPageRow->page_namespace,
+							$redirectPageRow->page_title
+						),
+						$redirectPageRow->actor_name,
+						"redirect"
+					];
+				}
+			}
 		}
 
 		// Allows other extensions to provide pages to be mass-deleted that
 		// don't use the revision table the way mediawiki-core does.
-		if ( $namespaces ) {
-			foreach ( $namespaces as $namespace ) {
+		foreach ( array_unique( $pageGroups, SORT_REGULAR ) as $pageGroup ) {
+			if ( $namespaces ) {
+				foreach ( $namespaces as $namespace ) {
+					$this->getNukeHookRunner()->onNukeGetNewPages(
+						$target,
+						$pattern,
+						$namespace,
+						$limit,
+						$pageGroup
+					);
+				}
+			} else {
 				$this->getNukeHookRunner()->onNukeGetNewPages(
 					$target,
 					$pattern,
-					$namespace,
+					null,
 					$limit,
-					$pages
+					$pageGroup
 				);
 			}
-		} else {
-			$this->getNukeHookRunner()->onNukeGetNewPages(
-				$target,
-				$pattern,
-				null,
-				$limit,
-				$pages
-			);
 		}
 
-		// Re-enforcing the limit *after* the hook because other extensions
-		// may add and/or remove pages. We need to make sure we don't end up
-		// with more pages than $limit.
-		if ( count( $pages ) > $limit ) {
-			$pages = array_slice( $pages, 0, $limit );
+		// Now compile a list of page groups that we can show to the user. When a page group is
+		// too big to include in the results (due to the limit), we'll exclude it from the results.
+		// The admin can then later re-run the query, and (assuming that the page does not have an
+		// extremely large amount of associated pages) the page will be included in the results.
+		//
+		// A page group will never be included in the results without all of its associated pages.
+		// An associated page will also never appear in a group without its main page.
+		$finalPageGroups = [];
+		$includedPages = 0;
+		$hasExcludedResults = false;
+		foreach ( array_unique( $pageGroups, SORT_REGULAR ) as $pageGroup ) {
+			if ( $includedPages + count( $pageGroup ) > $limit ) {
+				$hasExcludedResults = true;
+				continue;
+			}
+			$finalPageGroups[] = $pageGroup;
+			$includedPages += count( $pageGroup );
 		}
 
-		return $pages;
+		return $finalPageGroups;
 	}
 
 	/**
@@ -573,10 +699,19 @@ class SpecialNuke extends SpecialPage {
 		$jobs = [];
 		$user = $this->getUser();
 
-		$reason = $context->getDeleteReason();
+		$baseReason = $context->getDeleteReason();
 		$localRepo = $this->repoGroup->getLocalRepo();
-		foreach ( $context->getPages() as $page ) {
+		$associatedPages = $context->getAssociatedPages();
+		foreach ( $context->getAllPages() as $page ) {
 			$title = Title::newFromText( $page );
+
+			if ( in_array( $page, $associatedPages ) ) {
+				$reason = $this->msg( 'delete-talk-summary-prefix', $baseReason )
+					->inContentLanguage()
+					->text();
+			} else {
+				$reason = $baseReason;
+			}
 
 			$deletionResult = false;
 			if ( !$this->getNukeHookRunner()->onNukeDeletePage( $title, $reason, $deletionResult ) ) {

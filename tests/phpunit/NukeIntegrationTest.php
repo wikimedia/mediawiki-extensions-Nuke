@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\Nuke\Test;
 
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Storage\PageUpdateStatus;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use PurgeRecentChanges;
@@ -61,7 +62,7 @@ trait NukeIntegrationTest {
 		int $timestamp,
 		?int $defaultNs = NS_MAIN,
 		?Authority $performer = null
-	) {
+	): PageUpdateStatus {
 		$pageStatus = $this->editPage( $title, $content, $summary, $defaultNs, $performer );
 		if ( !$pageStatus->isGood() ) {
 			$this->fail( "Failed to create page: $title" );
@@ -79,6 +80,7 @@ trait NukeIntegrationTest {
 			->where( [
 				'rev_id' => $pageStatus->getNewRevision()->getId()
 			] )->execute();
+		return $pageStatus;
 	}
 
 	/**
@@ -117,12 +119,39 @@ trait NukeIntegrationTest {
 		];
 	}
 
+	/**
+	 * Get the HTML of the 'delete' Special:Log page.
+	 *
+	 * @return string
+	 */
 	private function getDeleteLogHtml(): string {
 		$services = $this->getServiceContainer();
 		// TODO: Make this use qqx so tests can be checked against system message keys.
 		$specialLog = $services->getSpecialPageFactory()->getPage( 'Log' );
 		$specialLog->execute( "delete" );
 		return $specialLog->getOutput()->getHTML();
+	}
+
+	/**
+	 * Assert that some strings are found in the output, while some aren't.
+	 *
+	 * @param string $haystack The string to check in
+	 * @param string[] $everything All possible strings to check. If a string is in `$everything`
+	 *   but not in `$needles`, it should be missing from `$haystack`.
+	 * @param string[] $needles The strings that should be found in `$haystack`.
+	 *
+	 * @return string
+	 */
+	private function assertStringsFound(
+		string $haystack, array $everything, array $needles
+	): void {
+		foreach ( $everything as $str ) {
+			if ( in_array( $str, $needles ) ) {
+				$this->assertStringContainsString( $str, $haystack );
+			} else {
+				$this->assertStringNotContainsString( $str, $haystack );
+			}
+		}
 	}
 
 }

@@ -13,6 +13,7 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MainConfigNames;
+use MediaWiki\Page\RedirectLookup;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use OOUI\FieldsetLayout;
@@ -36,6 +37,7 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 	private LinkRenderer $linkRenderer;
 	private NamespaceInfo $namespaceInfo;
 	private Language $interfaceLanguage;
+	private RedirectLookup $redirectLookup;
 
 	/** @inheritDoc */
 	public function __construct(
@@ -44,7 +46,8 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		RepoGroup $repoGroup,
 		LinkRenderer $linkRenderer,
 		NamespaceInfo $namespaceInfo,
-		Language $interfaceLanguage
+		Language $interfaceLanguage,
+		RedirectLookup $redirectLookup
 	) {
 		parent::__construct( $context );
 
@@ -55,6 +58,7 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		$this->linkRenderer = $linkRenderer;
 		$this->namespaceInfo = $namespaceInfo;
 		$this->interfaceLanguage = $interfaceLanguage;
+		$this->redirectLookup = $redirectLookup;
 	}
 
 	/**
@@ -128,6 +132,29 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'maxAge' => $nukeMaxAge
 			]
 		];
+
+		$associatedPagesEnabled = $this->getRequestContext()->getRequest()->getBool( 'nukeAP' );
+		if (
+			$associatedPagesEnabled ||
+			$this->context->getIncludeTalkPages() ||
+			$this->context->getIncludeRedirects()
+		) {
+			$formDescriptor['associated'] = [
+				'type' => 'info',
+				'default' => $this->msg( 'nuke-associated' )->escaped(),
+				'raw' => true,
+			];
+			$formDescriptor['includeTalkPages'] = [
+				'type' => 'check',
+				'label' => $this->msg( 'nuke-associated-talk' )->text(),
+				'name' => 'includeTalkPages',
+			];
+			$formDescriptor['includeRedirects'] = [
+				'type' => 'check',
+				'label' => $this->msg( 'nuke-associated-redirect' )->text(),
+				'name' => 'includeRedirects',
+			];
+		}
 
 		$rcMaxAge = $this->getRequestContext()->getConfig()->get( MainConfigNames::RCMaxAge );
 		if ( $nukeMaxAge && $nukeMaxAge > $rcMaxAge ) {
@@ -204,7 +231,7 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 	}
 
 	/** @inheritDoc */
-	public function showListForm( array $pages ): void {
+	public function showListForm( array $pageGroups, bool $hasExcludedResults ): void {
 		$target = $this->context->getTarget();
 		$out = $this->getOutput();
 
@@ -217,7 +244,7 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		$out->addWikiMsg( 'nuke-tools-prompt' );
 		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
 		$out->enableOOUI();
-		if ( !$pages ) {
+		if ( !$pageGroups ) {
 			$body = $this->getPromptForm( false );
 			$out->addHTML(
 				$this->wrapForm( $body )
@@ -225,11 +252,27 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 
 			$out->addHTML( new MessageWidget( [
 				'type' => 'warning',
+				'classes' => [ 'ext-nuke-promptform-error' ],
 				'label' => $this->msg( 'nuke-nopages-global' )->text(),
 			] ) );
+			if ( $hasExcludedResults ) {
+				$out->addHTML( new MessageWidget( [
+					'type' => 'warning',
+					'classes' => [ 'ext-nuke-promptform-error' ],
+					'label' => $this->msg( 'nuke-associated-limited' )->text(),
+				] ) );
+			}
 			return;
 		} else {
 			$body = $this->getPromptForm();
+		}
+
+		if ( $hasExcludedResults ) {
+			$body .= new MessageWidget( [
+				'type' => 'warning',
+				'classes' => [ 'ext-nuke-promptform-error' ],
+				'label' => $this->msg( 'nuke-associated-limited' )->text(),
+			] );
 		}
 
 		$body .=
@@ -239,34 +282,25 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 
 		$titles = [];
 
-		$wordSeparator = $this->msg( 'word-separator' )->escaped();
+		foreach ( $pageGroups as $pages ) {
+			$body .= '<li>';
 
-		$localRepo = $this->repoGroup->getLocalRepo();
-		foreach ( $pages as [ $title, $userName ] ) {
-			/**
-			 * @var $title Title
-			 */
-			$titles[] = $title->getPrefixedDBkey();
+			$body .= $this->getPageCheckbox( $pages[0] );
+			$titles[] = $pages[0][0]->getPrefixedDBkey();
 
-			$image = $title->inNamespace( NS_FILE ) ? $localRepo->newFile( $title ) : false;
-			$thumb = $image && $image->exists() ?
-				$image->transform( [ 'width' => 120, 'height' => 120 ], 0 ) :
-				false;
+			if ( count( $pages ) > 1 ) {
+				// There are associated pages. Show them in a sub-list.
+				$body .= "<ul>\n";
+				foreach ( array_slice( $pages, 1 ) as $page ) {
+					$body .= '<li>' .
+						$this->getPageCheckbox( $page, true ) .
+						'</li>';
+					$titles[] = $page[0]->getPrefixedDBkey();
+				}
+				$body .= "</ul>\n";
+			}
 
-			$userNameText = ' <span class="mw-changeslist-separator"></span> '
-				. $this->msg( 'nuke-editby', $userName )->parse();
-
-			$body .= '<li>' .
-				Html::check(
-					'pages[]',
-					true,
-					[ 'value' => $title->getPrefixedDBkey() ]
-				) . "\u{00A0}" .
-				( $thumb ? $thumb->toHtml( [ 'desc-link' => true ] ) : '' ) .
-				$this->getPageLinksHtml( $title ) .
-				$wordSeparator .
-				"<span class='ext-nuke-italicize'>" . $userNameText . "</span>" .
-				"</li>\n";
+			$body .= "</li>\n";
 		}
 
 		$body .=
@@ -280,6 +314,60 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		$out->addHTML(
 			$this->wrapForm( $body )
 		);
+	}
+
+	/**
+	 * Get the page checkbox for the given page-actor tuple.
+	 *
+	 * @param array{0:Title,1:string|false,2?:string,3?:Title} $pageActorTuple
+	 * @param bool $isAssociated Whether the page is associated with another page.
+	 * @return string
+	 * @throws \MWException
+	 */
+	protected function getPageCheckbox( array $pageActorTuple, bool $isAssociated = false ): string {
+		[ $title, $userName ] = $pageActorTuple;
+
+		$localRepo = $this->repoGroup->getLocalRepo();
+
+		$image = $title->inNamespace( NS_FILE ) ? $localRepo->newFile( $title ) : false;
+		$thumb = $image && $image->exists() ?
+			$image->transform( [ 'width' => 120, 'height' => 120 ], 0 ) :
+			false;
+
+		$wordSeparator = $this->msg( 'word-separator' )->escaped();
+		$userNameText = ' <span class="mw-changeslist-separator"></span> '
+			. $this->msg( 'nuke-editby', $userName )->parse();
+
+		$name = $isAssociated ?
+			'associatedPages[]' :
+			'pages[]';
+		$attribs = [
+			'value' => $title->getPrefixedDBkey()
+		];
+		$html = Html::check(
+				$name,
+				true,
+				$attribs
+			) . "\u{00A0}" .
+			( $thumb ? $thumb->toHtml( [ 'desc-link' => true ] ) : '' ) .
+			$this->getPageLinksHtml( $title ) .
+			$wordSeparator .
+			"<span class='ext-nuke-italicize'>" . $userNameText . "</span>";
+
+		$redirect = $this->redirectLookup->getRedirectTarget( $title );
+		if ( $redirect ) {
+			$html .= ' <span class="mw-changeslist-separator"></span> ' .
+				$this->msg(
+					'nuke-redirectsto',
+					$redirect->getText()
+				)->parse();
+		}
+
+		if ( $isAssociated || $redirect ) {
+			$html = "<span class='ext-nuke-italicize'>$html</span>";
+		}
+
+		return $html;
 	}
 
 	/** @inheritDoc */
@@ -332,12 +420,18 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 
 		$pageList = [];
 
-		foreach ( $this->context->getPages() as $page ) {
+		$associatedPages = $this->context->getAssociatedPages();
+		foreach ( $this->context->getAllPages() as $page ) {
 			$title = Title::newFromText( $page );
 
 			$pageList[] = '<li>' .
 				$this->getPageLinksHtml( $title ) .
-				Html::hidden( 'pages[]', $title->getPrefixedDBkey() ) .
+				Html::hidden(
+					in_array( $page, $associatedPages ) ?
+						'associatedPages[]' :
+						'pages[]',
+					$title->getPrefixedDBkey()
+				) .
 				'</li>';
 		}
 
@@ -506,7 +600,10 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 			$linkRenderer->makeLink(
 				$this->namespaceInfo->getTalkPage( $title ),
 				$this->msg( 'sp-contributions-talk' )->text()
-			);
+			) .
+			$wordSeparator .
+			$pipeSeparator .
+			$wordSeparator;
 		$changesLink = $linkRenderer->makeKnownLink(
 			$title,
 			$this->msg( 'nuke-viewchanges' )->text(),
@@ -521,8 +618,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 			$wordSeparator .
 			$this->msg( 'parentheses' )->rawParams(
 				$talkPageText .
-				$wordSeparator .
-				$pipeSeparator .
 				$changesLink
 			)->escaped();
 	}

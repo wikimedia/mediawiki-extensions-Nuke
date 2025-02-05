@@ -65,9 +65,12 @@ abstract class SpecialNukeUIRenderer {
 	 * {@link IContextSource::getOutput output} in
 	 * {@link NukeContext::getRequestContext $this->context->getRequestContext}.
 	 *
-	 * @param array{0:Title,1:string|false}[] $pages An array of page title-actor name pairs.
+	 * @param array{0:Title,1:string|false,2?:string,3?:Title}[][] $pageGroups An array of page title-actor
+	 * *   name pairs.
+	 * @param bool $hasExcludedResults Whether some results had to be excluded due to the
+	 *   user-defined limit
 	 */
-	abstract public function showListForm( array $pages ): void;
+	abstract public function showListForm( array $pageGroups, bool $hasExcludedResults ): void;
 
 	/**
 	 * Display a page confirming all pages to be deleted. Directly modifies the
