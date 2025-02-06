@@ -25,7 +25,7 @@
 	"right-nuke": "масовно брисање страница",
 	"nuke-userorip": "Корисничко име, IP адреса или оставите празно:",
 	"nuke-maxpages": "Највећи број страница:",
-	"nuke-editby": "{{GENDER:$1|Направио|Направила}} [[Special:Contributions/$1|$1]]",
+	"nuke-editby": "{{GENDER:$1|Направио|Направила}} [[Special:Contributions/$1|$1]].",
 	"nuke-deleted": "Страница '''$1''' је обрисана.",
 	"nuke-deletion-queued": "Страница '''$1''' је стављена у ред за чекање на брисање.",
 	"nuke-not-deleted": "'''Не могу''' да обришем страницу [[:$1]].",

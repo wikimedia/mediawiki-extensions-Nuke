@@ -25,7 +25,7 @@
 	"right-nuke": "Cancella pagine in massa",
 	"nuke-userorip": "Nome utente, indirizzo IP o vuoto:",
 	"nuke-maxpages": "Numero massimo di pagine:",
-	"nuke-editby": "Creata da [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
+	"nuke-editby": "Creata da [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
 	"nuke-deleted": "La pagina '''$1''' è stata cancellata.",
 	"nuke-deletion-queued": "La pagina '''$1''' è stata messa in coda per la cancellazione.",
 	"nuke-not-deleted": "La pagina [[:$1]] '''non può''' essere cancellata.",

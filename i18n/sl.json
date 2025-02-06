@@ -20,7 +20,7 @@
 	"right-nuke": "Množično brisanje strani",
 	"nuke-userorip": "Uporabniško ime, IP-naslov ali prazno:",
 	"nuke-maxpages": "Največje število strani:",
-	"nuke-editby": "{{GENDER:$1|Ustvaril|Ustvarila|Ustvaril_a}} [[Special:Contributions/$1|$1]]",
+	"nuke-editby": "{{GENDER:$1|Ustvaril|Ustvarila|Ustvaril_a}} [[Special:Contributions/$1|$1]].",
 	"nuke-deleted": "Stran '''$1''' je izbrisana.",
 	"nuke-deletion-queued": "Stran '''$1''' je v čakalni vrsti za izbris.",
 	"nuke-not-deleted": "Strani [[:$1]] '''ni bilo mogoče''' izbrisati.",
