@@ -111,4 +111,103 @@ class NukeQueryBuilderTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( 'Page1', $row->page_title );
 	}
 
+	public function testFilterByMinPageSize() {
+		$user = $this->getMutableTestUser();
+
+		// 4 bytes content
+		$this->editPage( 'SmallPage', 'test', 'test', NS_MAIN, $user->getAuthority() );
+		// 9 bytes content
+		$this->editPage( 'MediumPage', 'test test', 'test test', NS_MAIN, $user->getAuthority() );
+		// 14 bytes content
+		$this->editPage( 'LargePage', 'test test test', 'test test test', NS_MAIN, $user->getAuthority() );
+
+		$rows = $this->newQueryBuilder( NukeQueryBuilder::TABLE_REVISION )
+			->filterByMinPageSize( 10 )
+			->build()
+			->caller( __METHOD__ )
+			->fetchResultSet();
+
+		$this->assertCount( 1, $rows );
+		$row = $rows->fetchObject();
+		$this->assertSame( 'LargePage', $row->page_title );
+	}
+
+	public function testFilterByMaxPageSize() {
+		$user = $this->getMutableTestUser();
+
+		// 4 bytes content
+		$this->editPage( 'SmallPage', 'test', 'test', NS_MAIN, $user->getAuthority() );
+		// 9 bytes content
+		$this->editPage( 'MediumPage', 'test test', 'test test', NS_MAIN, $user->getAuthority() );
+		// 14 bytes content
+		$this->editPage( 'LargePage', 'test test test', 'test test test', NS_MAIN, $user->getAuthority() );
+
+		$rows = $this->newQueryBuilder( NukeQueryBuilder::TABLE_REVISION )
+			->filterByMaxPageSize( 9 )
+			->build()
+			->caller( __METHOD__ )
+			->fetchResultSet();
+
+		$this->assertCount( 2, $rows );
+		$titles = [];
+		foreach ( $rows as $row ) {
+			$titles[] = $row->page_title;
+		}
+		$this->assertContains( 'SmallPage', $titles );
+		$this->assertContains( 'MediumPage', $titles );
+		$this->assertNotContains( 'LargePage', $titles );
+	}
+
+	public function testFilterByMinMaxPageSize() {
+		$user = $this->getMutableTestUser();
+
+		// 2 bytes content
+		$this->editPage( 'TinyPage', 'te', 'te', NS_MAIN, $user->getAuthority() );
+		// 4 bytes content
+		$this->editPage( 'SmallPage', 'test', 'test', NS_MAIN, $user->getAuthority() );
+		// 9 bytes content
+		$this->editPage( 'MediumPage', 'test test', 'test test', NS_MAIN, $user->getAuthority() );
+		// 14 bytes content
+		$this->editPage( 'LargePage', 'test test test', 'test test test', NS_MAIN, $user->getAuthority() );
+		// 19 bytes content
+		$this->editPage( 'HugePage', 'test test test test', 'test test test test', NS_MAIN, $user->getAuthority() );
+
+		$rows = $this->newQueryBuilder( NukeQueryBuilder::TABLE_REVISION )
+			->filterByMinPageSize( 5 )
+			->filterByMaxPageSize( 15 )
+			->build()
+			->caller( __METHOD__ )
+			->fetchResultSet();
+
+		$this->assertCount( 2, $rows );
+		$titles = [];
+		foreach ( $rows as $row ) {
+			$titles[] = $row->page_title;
+		}
+		$this->assertNotContains( 'TinyPage', $titles );
+		$this->assertNotContains( 'SmallPage', $titles );
+		$this->assertContains( 'MediumPage', $titles );
+		$this->assertContains( 'LargePage', $titles );
+		$this->assertNotContains( 'HugePage', $titles );
+	}
+
+	public function testIgnoresNegativeMinMax() {
+		$user = $this->getMutableTestUser();
+
+		// 4 bytes content
+		$this->editPage( 'SmallPage', 'test', 'test', NS_MAIN, $user->getAuthority() );
+		// 9 bytes content
+		$this->editPage( 'MediumPage', 'test test', 'test test', NS_MAIN, $user->getAuthority() );
+		// 14 bytes content
+		$this->editPage( 'LargePage', 'test test test', 'test test test', NS_MAIN, $user->getAuthority() );
+
+		$rows = $this->newQueryBuilder( NukeQueryBuilder::TABLE_REVISION )
+			->filterByMinPageSize( -1 )
+			->filterByMaxPageSize( -1 )
+			->build()
+			->caller( __METHOD__ )
+			->fetchResultSet();
+
+		$this->assertCount( 3, $rows );
+	}
 }

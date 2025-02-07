@@ -199,6 +199,57 @@ class NukeQueryBuilder {
 	}
 
 	/**
+	 * Filter based on a minimum page size.
+	 *
+	 * If `$minPageSize` is 0 or negative, this is a no-op.
+	 *
+	 * @param int $minPageSize The minimum size (in bytes) that a page must be to be included
+	 * @return $this
+	 */
+	public function filterByMinPageSize( int $minPageSize ): self {
+		if ( $minPageSize <= 0 ) {
+			// No filtering if minPageSize is 0 or negative, because
+			// this would do nothing if we added it to the query
+			// anyway.
+			return $this;
+		}
+
+		$dbr = $this->readableDatabase;
+		// Add a condition to filter by page length if minPageSize is greater than 0
+		$this->selectQueryBuilder->andWhere(
+			$dbr->expr( 'page_len', '>=', $minPageSize )
+		);
+
+		return $this;
+	}
+
+	/**
+	 * Filter based on a maximum page size.
+	 *
+	 * If `$maxPageSize` is negative, this is a no-op.
+	 * It is possible for a page to exist with 0 bytes, so having a
+	 * max of 0 is allowed.
+	 *
+	 * @param int $maxPageSize The maximum size (in bytes) that a page must be to be included
+	 * @return $this
+	 */
+	public function filterByMaxPageSize( int $maxPageSize ): self {
+		if ( $maxPageSize < 0 ) {
+			// No filtering if maxPageSize is negative as this doesn't make sense
+			// The user is told this will be ignored in the UI
+			return $this;
+		}
+
+		$dbr = $this->readableDatabase;
+		// Add a condition to filter by page length if maxPageSize is greater than 0
+		$this->selectQueryBuilder->andWhere(
+			$dbr->expr( 'page_len', '<=', $maxPageSize )
+		);
+
+		return $this;
+	}
+
+	/**
 	 * Get an array of all namespaces in `$namespaces` (or all namespaces, if `$namespaces` is
 	 * null) where their `$wgCapitalLinksOverride` configuration does not match the wiki's
 	 * `$wgCapitalLinks` option. Used to determine whether the pattern should be capitalized

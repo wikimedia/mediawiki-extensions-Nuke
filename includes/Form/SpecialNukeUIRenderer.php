@@ -69,8 +69,9 @@ abstract class SpecialNukeUIRenderer {
 	 * *   name pairs.
 	 * @param bool $hasExcludedResults Whether some results had to be excluded due to the
 	 *   user-defined limit
+	 * @param string[] $searchNotices An array of i18n strings to provide as notices to show the user with the results
 	 */
-	abstract public function showListForm( array $pageGroups, bool $hasExcludedResults ): void;
+	abstract public function showListForm( array $pageGroups, bool $hasExcludedResults, array $searchNotices ): void;
 
 	/**
 	 * Display a page confirming all pages to be deleted. Directly modifies the

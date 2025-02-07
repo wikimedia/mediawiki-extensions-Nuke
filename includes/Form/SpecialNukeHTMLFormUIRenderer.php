@@ -13,6 +13,7 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\MainConfigNames;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\RedirectLookup;
 use MediaWiki\Title\NamespaceInfo;
@@ -75,6 +76,14 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		$nukeMaxAge = $this->context->getNukeMaxAge();
 		$minDate = date( 'Y-m-d', time() - $nukeMaxAge );
 
+		$config = MediaWikiServices::getInstance()->getMainConfig();
+
+		// Retrieve the maximum page size in kilobytes
+		$maxPageSizeKB = $config->get( 'MaxArticleSize' );
+
+		// Convert the size to bytes
+		$maxPageSizeBytes = $maxPageSizeKB * 1024;
+
 		$formDescriptor = [
 			'nuke-target' => [
 				'id' => 'nuke-target',
@@ -131,6 +140,23 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'inline' => true,
 				'label' => $this->msg( 'nuke-date-to' )->text(),
 				'maxAge' => $nukeMaxAge
+			],
+			'minPageSize' => [
+				'id' => 'nuke-minPageSize',
+				'maxLength' => 7,
+				'cssclass' => 'ext-nuke-promptForm-minPageSize',
+				'label' => $this->msg( 'nuke-minsize' )->text(),
+				'type' => 'int',
+				'name' => 'minPageSize'
+			],
+			'maxPageSize' => [
+				'id' => 'nuke-maxPageSize',
+				'maxLength' => 7,
+				'cssclass' => 'ext-nuke-promptForm-maxPageSize',
+				'label' => $this->msg( 'nuke-maxsize' )->text(),
+				'type' => 'int',
+				'name' => 'maxPageSize',
+				'default' => $maxPageSizeBytes
 			]
 		];
 
@@ -236,7 +262,7 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 	}
 
 	/** @inheritDoc */
-	public function showListForm( array $pageGroups, bool $hasExcludedResults ): void {
+	public function showListForm( array $pageGroups, bool $hasExcludedResults, array $searchNotices ): void {
 		$target = $this->context->getTarget();
 		$out = $this->getOutput();
 
@@ -252,35 +278,36 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 
 		$out->addModuleStyles( [ 'ext.nuke.styles', 'mediawiki.interface.helpers.styles' ] );
 		$out->enableOOUI();
+		$messageLabelOutput = "";
+
 		if ( !$pageGroups ) {
 			$body = $this->getPromptForm( false );
 			$out->addHTML(
 				$this->wrapForm( $body )
 			);
-
-			$out->addHTML( new MessageWidget( [
-				'type' => 'warning',
-				'classes' => [ 'ext-nuke-promptform-error' ],
-				'label' => $this->msg( 'nuke-nopages-global' )->text(),
-			] ) );
-			if ( $hasExcludedResults ) {
-				$out->addHTML( new MessageWidget( [
-					'type' => 'warning',
-					'classes' => [ 'ext-nuke-promptform-error' ],
-					'label' => $this->msg( 'nuke-associated-limited' )->text(),
-				] ) );
-			}
-			return;
+			$messageLabelOutput .= $this->msg( "nuke-nopages-global" )->text() . " ";
 		} else {
 			$body = $this->getPromptForm();
 		}
 
 		if ( $hasExcludedResults ) {
-			$body .= new MessageWidget( [
+			$messageLabelOutput .= $this->msg( "nuke-associated-limited" )->text() . " ";
+		}
+
+		for ( $i = 0; $i < count( $searchNotices ); $i++ ) {
+			$messageLabelOutput .= $this->msg( $searchNotices[$i] )->text() . " ";
+		}
+
+		if ( strlen( $messageLabelOutput ) != 0 ) {
+			$out->addHTML( new MessageWidget( [
 				'type' => 'warning',
 				'classes' => [ 'ext-nuke-promptform-error' ],
-				'label' => $this->msg( 'nuke-associated-limited' )->text(),
-			] );
+				'label' => $messageLabelOutput,
+			] ) );
+		}
+
+		if ( !$pageGroups ) {
+			return;
 		}
 
 		$body .=

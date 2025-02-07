@@ -7,6 +7,7 @@ use DeletePageJob;
 use ErrorPageError;
 use JobQueueGroup;
 use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\Nuke\Form\SpecialNukeHTMLFormUIRenderer;
 use MediaWiki\Extension\Nuke\Form\SpecialNukeUIRenderer;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
@@ -45,6 +46,7 @@ class SpecialNuke extends SpecialPage {
 	private NamespaceInfo $namespaceInfo;
 	private Language $contentLanguage;
 	private RedirectLookup $redirectLookup;
+	private Config $mainConfig;
 	/** @var CheckUserTemporaryAccountsByIPLookup|null */
 	private $checkUserTemporaryAccountsByIPLookup = null;
 
@@ -91,6 +93,7 @@ class SpecialNuke extends SpecialPage {
 		NamespaceInfo $namespaceInfo,
 		Language $contentLanguage,
 		RedirectLookup $redirectLookup,
+		Config $mainConfig,
 		$checkUserTemporaryAccountsByIPLookup = null
 	) {
 		parent::__construct( 'Nuke' );
@@ -105,6 +108,7 @@ class SpecialNuke extends SpecialPage {
 		$this->namespaceInfo = $namespaceInfo;
 		$this->contentLanguage = $contentLanguage;
 		$this->redirectLookup = $redirectLookup;
+		$this->mainConfig = $mainConfig;
 		$this->checkUserTemporaryAccountsByIPLookup = $checkUserTemporaryAccountsByIPLookup;
 	}
 
@@ -246,9 +250,26 @@ class SpecialNuke extends SpecialPage {
 			$originalPages = [];
 		}
 
+		$config = $this->mainConfig;
+
+		// Retrieve the maximum page size in kilobytes
+		$maxPageSizeKB = $config->get( 'MaxArticleSize' );
+
+		// Convert the size to bytes
+		$maxPageSizeBytes = $maxPageSizeKB * 1024;
+
+		$maxSizeUserConfig = $maxPageSizeBytes;
+
+		// getInt doesn't treat "" as null, so we need to manually do this instead of parsing
+		// $maxSizeUserConfig directly to getInt as the fallback
+		if ( $req->getRawVal( 'maxPageSize' ) != "" ) {
+			$maxSizeUserConfig = $req->getInt( 'maxPageSize', $maxSizeUserConfig );
+		}
+
 		return new NukeContext( [
 			'requestContext' => $this->getContext(),
 			'useTemporaryAccounts' => $this->checkUserTemporaryAccountsByIPLookup != null,
+			'nukeAccessStatus' => $this->getNukeAccessStatus( $this->getUser() ),
 
 			'action' => $action,
 			'target' => $target,
@@ -267,7 +288,9 @@ class SpecialNuke extends SpecialPage {
 			'associatedPages' => $req->getArray( 'associatedPages', [] ),
 			'originalPages' => $originalPages,
 
-			'nukeAccessStatus' => $this->getNukeAccessStatus( $this->getUser() ),
+			// default to 0 (no limit) if the parameters are not set
+			'minPageSize' => $req->getInt( 'minPageSize', 0 ),
+			'maxPageSize' => $maxSizeUserConfig,
 		] );
 	}
 
@@ -387,8 +410,11 @@ class SpecialNuke extends SpecialPage {
 		$hasExcludedResults = false;
 		$pageGroups = $this->getNewPages( $context, $hasExcludedResults, $tempAccounts );
 
+		// Calculate the search notices to show the user.
+		$notices = $context->calculateSearchNotices();
+
 		$this->getUIRenderer( $context )
-			->showListForm( $pageGroups, $hasExcludedResults );
+			->showListForm( $pageGroups, $hasExcludedResults, $notices );
 	}
 
 	/**
@@ -530,6 +556,9 @@ class SpecialNuke extends SpecialPage {
 			$pattern,
 			$namespaces
 		);
+
+		$nukeQueryBuilder->filterByMinPageSize( $context->getMinPageSize() );
+		$nukeQueryBuilder->filterByMaxPageSize( $context->getMaxPageSize() );
 
 		$result = $nukeQueryBuilder
 			->build()

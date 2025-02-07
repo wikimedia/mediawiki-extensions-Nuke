@@ -149,6 +149,24 @@ class NukeContext {
 	public const NUKE_ACCESS_BLOCKED = 3;
 
 	/**
+	 * The minimum size of pages to list, in bytes. This is used to limit the size of the
+	 * pages shown to the user. When not provided, this is by default 0 (no limit).
+	 *
+	 * @var int
+	 */
+	private int $minPageSize = 0;
+
+	/**
+	 * The maximum size of pages to list, in bytes. This is used to limit the size of the
+	 * pages shown to the user. When not provided, this is by default null.
+	 *
+	 * Negatives are treated as no-ops, so this is what we default to.
+	 *
+	 * @var int
+	 */
+	private int $maxPageSize = -1;
+
+	/**
 	 * Originating request context of the query.
 	 *
 	 * @var IContextSource
@@ -178,8 +196,8 @@ class NukeContext {
 			$this->dateTo = $params['dateTo'];
 		}
 
-		$this->includeTalkPages = $params['includeTalkPages'];
-		$this->includeRedirects = $params['includeRedirects'];
+		$this->includeTalkPages = $params['includeTalkPages'] ?? $this->includeTalkPages;
+		$this->includeRedirects = $params['includeRedirects'] ?? $this->includeRedirects;
 
 		$this->pages = $params['pages'] ?? $this->pages;
 		$this->associatedPages = $params['associatedPages'] ?? $this->associatedPages;
@@ -192,6 +210,9 @@ class NukeContext {
 		}
 
 		$this->nukeAccessStatus = $params['nukeAccessStatus'] ?? $this->nukeAccessStatus;
+
+		$this->minPageSize = $params['minPageSize'];
+		$this->maxPageSize = $params['maxPageSize'];
 	}
 
 	/**
@@ -306,6 +327,24 @@ class NukeContext {
 	 */
 	public function getAllPages(): array {
 		return array_merge( $this->getPages(), $this->getAssociatedPages() );
+	}
+
+	/**
+	 * Returns {@link $minPageSize}.
+	 *
+	 * @return int
+	 */
+	public function getMinPageSize(): int {
+		return $this->minPageSize;
+	}
+
+	/**
+	 * Returns {@link $maxPageSize}.
+	 *
+	 * @return int
+	 */
+	public function getMaxPageSize(): int {
+		return $this->maxPageSize;
 	}
 
 	/**
@@ -527,6 +566,46 @@ class NukeContext {
 			$maxAge = $this->requestContext->getConfig()->get( MainConfigNames::RCMaxAge );
 		}
 		return $maxAge;
+	}
+
+	/**
+	 * Calculate any search notices that need to be displayed with the results.
+	 * This is based on the search parameters.
+	 *
+	 * @return string[] Array of i18n strings to display as a search notice
+	 */
+	public function calculateSearchNotices(): array {
+		$notices = [];
+
+		// first check if any values are being ignored
+		$ignoringValues = false;
+
+		if ( $this->maxPageSize < 0 ) {
+			// if the maximum is negative, it's invalid
+			// it is allowed to have it be 0,
+			// because a 0-byte page can exist
+			// the QueryBuilder code will ignore negative values
+			$notices[] = "nuke-searchnotice-negmax";
+			$ignoringValues = true;
+		}
+		if ( $this->minPageSize < 0 ) {
+			// if the minimum is negative, then it's not really a minimum
+			// tell the user the QueryBuilder code will ignore it
+			// this is last because we can still return results if the minimum is negative
+			$notices[] = "nuke-searchnotice-negmin";
+			$ignoringValues = true;
+		}
+
+		// if we're not ignoring either, check for incompatibility
+		if ( !$ignoringValues ) {
+			if ( $this->minPageSize > $this->maxPageSize ) {
+				// if the maximum is less than the minimum then
+				// there's no way any results can be returned
+				$notices[] = "nuke-searchnotice-minmorethanmax";
+			}
+		}
+
+		return $notices;
 	}
 
 }

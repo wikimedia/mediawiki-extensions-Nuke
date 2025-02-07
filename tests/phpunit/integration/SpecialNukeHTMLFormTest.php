@@ -42,7 +42,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			$services->getNamespaceInfo(),
 			$services->getContentLanguage(),
 			$services->getRedirectLookup(),
-			$services->getService( 'NukeIPLookup' )
+			$services->getMainConfig(),
+			$services->getService( 'NukeIPLookup' ),
 		);
 	}
 
@@ -94,6 +95,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( '(nuke-tools-notice-noperm)', $html );
 		$this->assertStringContainsString( 'nuke-submit-list', $html );
 		$this->assertStringNotContainsString( 'nuke-submit-continue', $html );
+		$this->assertStringContainsString( '(nuke-minsize)', $html );
+		$this->assertStringContainsString( '(nuke-maxsize)', $html );
 	}
 
 	/**
@@ -2176,6 +2179,114 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 	}
 
 	/**
+	 * Test filtering by minimum page size.
+	 *
+	 * @return void
+	 */
+	public function testListMinPageSizeFilter() {
+		$user = $this->getTestUser()->getUser();
+
+		// 4 bytes content
+		$this->insertPage( 'SmallPage', 'test', NS_MAIN, $user );
+		// 9 bytes content
+		$this->insertPage( 'MediumPage', 'test test', NS_MAIN, $user );
+		// 14 bytes content
+		$this->insertPage( 'LargePage', 'test test test', NS_MAIN, $user );
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user->getName(),
+			// Filter out pages smaller than 10 bytes
+			'minPageSize' => 10
+		] );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+
+		$this->assertStringNotContainsString( 'SmallPage', $html );
+		$this->assertStringNotContainsString( 'MediumPage', $html );
+		$this->assertStringContainsString( 'LargePage', $html );
+	}
+
+	/**
+	 * Test filtering by maximum page size.
+	 *
+	 * @return void
+	 */
+	public function testListMaxPageSizeFilter() {
+		$user = $this->getTestUser()->getUser();
+
+		// 4 bytes content
+		$this->insertPage( 'SmallPage', 'test', NS_MAIN, $user );
+		// 9 bytes content
+		$this->insertPage( 'MediumPage', 'test test', NS_MAIN, $user );
+		// 14 bytes content
+		$this->insertPage( 'LargePage', 'test test test', NS_MAIN, $user );
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user->getName(),
+			// Filter out pages larger than 9 bytes
+			'maxPageSize' => 9,
+		] );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+
+		$this->assertStringContainsString( 'SmallPage', $html );
+		$this->assertStringContainsString( 'MediumPage', $html );
+		$this->assertStringNotContainsString( 'LargePage', $html );
+	}
+
+	/**
+	 * Test filtering by both minimum and maximum page size.
+	 *
+	 * @return void
+	 */
+	public function testListMinMaxPageSizeFilter() {
+		$user = $this->getTestUser()->getUser();
+
+		// 2 bytes content
+		$this->insertPage( 'TinyPage', 'te', NS_MAIN, $user );
+		// 4 bytes content
+		$this->insertPage( 'SmallPage', 'test', NS_MAIN, $user );
+		// 9 bytes content
+		$this->insertPage( 'MediumPage', 'test test', NS_MAIN, $user );
+		// 14 bytes content
+		$this->insertPage( 'LargePage', 'test test test', NS_MAIN, $user );
+		// 19 bytes content
+		$this->insertPage( 'HugePage', 'test test test test', NS_MAIN, $user );
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$adminPerformer = new UltimateAuthority( $adminUser );
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user->getName(),
+			// Minimum size is 5 bytes
+			'minPageSize' => 5,
+			// Maximum size is 15 bytes
+			'maxPageSize' => 15
+		] );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+
+		$this->assertStringNotContainsString( 'TinyPage', $html );
+		// size is 4, less than minSize
+		$this->assertStringNotContainsString( 'SmallPage', $html );
+		 // size is 9, within range
+		$this->assertStringContainsString( 'MediumPage', $html );
+		// size is 14, within range
+		$this->assertStringContainsString( 'LargePage', $html );
+		// size is 19, greater than maxSize
+		$this->assertStringNotContainsString( 'HugePage', $html );
+	}
+
+	/**
 	 * Check if a validation warning/error message can be found in the search, and ensure that no
 	 * other error messages appear.
 	 *
@@ -2192,7 +2303,10 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			"nuke-nolist",
 			"nuke-nopages-global",
 			"nuke-noselected",
-			"nuke-associated-limited"
+			"nuke-associated-limited",
+			"nuke-searchnotice-minmorethanmax",
+			"nuke-searchnotice-negmin",
+			"nuke-searchnotice-negmax"
 		];
 
 		$shouldBeFound = $messages;
@@ -2206,4 +2320,53 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		}
 	}
 
+	/**
+	 * Test search notices are displayed when no pages are found and there are search notices.
+	 *
+	 * @return void
+	 */
+	public function testListNoPagesGlobalWithSearchNotices() {
+		$admin = $this->getTestSysop()->getUser();
+
+		// Cause a search notice by maxing the min more than the max
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'pattern' => 'ThisPageShouldNotExist-' . rand(),
+			'minPageSize' => 2000,
+			'maxPageSize' => 1000,
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html, [ 'nuke-nopages-global', 'nuke-searchnotice-minmorethanmax' ] );
+		$this->assertStringContainsString( 'nuke-submit-list', $html );
+		$this->assertStringNotContainsString( 'nuke-submit-continue', $html );
+	}
+
+	/**
+	 * Test search notices are displayed even when pages are found.
+	 *
+	 * @return void
+	 */
+	public function testListWithSearchNotices() {
+		$user = $this->getTestUser()->getUser();
+		$this->insertPage( 'SomePage', 'test', NS_MAIN, $user );
+
+		$admin = $this->getTestSysop()->getUser();
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user->getName(),
+			'minPageSize' => -1,
+			'maxPageSize' => 1000,
+		], true );
+		$performer = new UltimateAuthority( $admin );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
+		$this->checkForValidationMessages( $html, [ 'nuke-searchnotice-negmin' ] );
+		$this->assertStringContainsString( 'nuke-submit-list', $html );
+		$this->assertStringContainsString( 'nuke-submit-continue', $html );
+
+		// Page should still be listed
+		$this->assertStringContainsString( 'SomePage', $html );
+	}
 }
