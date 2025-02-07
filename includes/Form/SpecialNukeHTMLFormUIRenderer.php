@@ -12,7 +12,6 @@ use MediaWiki\Html\ListToggle;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\RedirectLookup;
@@ -74,7 +73,8 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		$this->getOutput()->addModuleStyles( [ 'ext.nuke.styles' ] );
 
 		$nukeMaxAge = $this->context->getNukeMaxAge();
-		$minDate = date( 'Y-m-d', time() - $nukeMaxAge );
+		$nukeMaxAgeInDays = $this->context->getNukeMaxAgeInDays();
+		$recentChangesMaxAgeInDays = $this->context->getRecentChangesMaxAgeInDays();
 
 		$config = MediaWikiServices::getInstance()->getMainConfig();
 
@@ -131,7 +131,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'inline' => true,
 				'label' => $this->msg( 'nuke-date-from' )->text(),
 				'maxAge' => $nukeMaxAge,
-				'default' => $minDate
 			],
 			'dateTo' => [
 				'id' => 'nuke-dateTo',
@@ -140,6 +139,13 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'inline' => true,
 				'label' => $this->msg( 'nuke-date-to' )->text(),
 				'maxAge' => $nukeMaxAge
+			],
+			'info' => [
+				'type' => 'info',
+				'default' => $this->getDateRangeHelperText(
+					$nukeMaxAgeInDays,
+					$recentChangesMaxAgeInDays ),
+				'cssclass' => 'ext-nuke-promptForm-dateHelperText',
 			],
 			'minPageSize' => [
 				'id' => 'nuke-minPageSize',
@@ -180,20 +186,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'type' => 'check',
 				'label' => $this->msg( 'nuke-associated-redirect' )->text(),
 				'name' => 'includeRedirects',
-			];
-		}
-
-		$rcMaxAge = $this->getRequestContext()->getConfig()->get( MainConfigNames::RCMaxAge );
-		if ( $nukeMaxAge && $nukeMaxAge > $rcMaxAge ) {
-			// On a pattern-only search (all-user search), we'll only be searching the
-			// recentchanges table. Because of this, we can't fully respect $wgNukeMaxAge.
-			// This breaks the expectation of users, so we need to show a note for it.
-			$formDescriptor['nuke-pattern']['help-message'] = [
-				'nuke-pattern-performance',
-				$this->interfaceLanguage->formatTimePeriod( $rcMaxAge, [
-					'avoid' => 'avoidhours',
-					'noabbrevs' => true
-				] )
 			];
 		}
 
@@ -695,6 +687,25 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		if ( $accessStatus !== NukeContext::NUKE_ACCESS_GRANTED ) {
 			$out->addWikiMsg( 'nuke-tools-prompt-restricted' );
 		}
+	}
+
+	/**
+	 * @param float $nukeMaxAgeInDays
+	 * @param float $recentChangesMaxAgeInDays
+	 * @return string
+	 */
+	private function getDateRangeHelperText( float $nukeMaxAgeInDays, float $recentChangesMaxAgeInDays ): string {
+		$nukeMaxAgeDisplay = ( $nukeMaxAgeInDays > 0 ) ? $nukeMaxAgeInDays : 90;
+		if ( $nukeMaxAgeInDays !== $recentChangesMaxAgeInDays ) {
+			$recentChangesMaxAgeDisplay = ( $recentChangesMaxAgeInDays > 0 ) ? $recentChangesMaxAgeInDays : 30;
+			return $this->msg( 'nuke-daterange-helper-text-max-age-different' )
+				->params( [ $nukeMaxAgeDisplay,
+					$recentChangesMaxAgeDisplay ] )
+				->text();
+		}
+		return $this->msg( 'nuke-daterange-helper-text-max-age-same' )->params(
+			[ $nukeMaxAgeDisplay ]
+		)->text();
 	}
 
 }
