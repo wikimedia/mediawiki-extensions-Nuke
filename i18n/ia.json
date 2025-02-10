@@ -23,7 +23,7 @@
 	"nuke-date-from": "A partir del data",
 	"nuke-date-to": "Usque al data",
 	"nuke-date-limited": "Solmente paginas create in le ultime $1 pote esser delite. Per favor cambia le data de sorta que illo cade intra iste intervallo.",
-	"nuke-editby": "Create per [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
+	"nuke-editby": "Create per [[Special:Contributions/$1|$1]]",
 	"nuke-delete-summary": "'''{{PLURAL:$1|Un pagina|$1 paginas}}''' mittite in cauda pro deletion.",
 	"nuke-delete-summary-user": "'''{{PLURAL:$1|Un pagina|$1 paginas}}''' {{GENDER:$2|create}} per [[{{ns:user}}:$2|$2]] ([[{{ns:user_talk}}:$2|{{int:talkpagelinktext}}]] {{int:pipe-separator}} [[{{ns:special}}:Contributions/$2|{{int:contribslink}}]] {{int:pipe-separator}} [[{{ns:special}}:Block/$2|{{int:blocklink}}]]) ha essite mittite in cauda pro deletion.",
 	"nuke-deleted": "Le pagina '''$1''' ha essite delite.",

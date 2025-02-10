@@ -25,7 +25,7 @@
 	"right-nuke": "পাতাগুলির গণ অপসারণ",
 	"nuke-userorip": "ব্যবহারকারী নাম, আইপি ঠিকানা বা খালি:",
 	"nuke-maxpages": "সংগ্রহের জন্য পাতার সংখ্যা (সর্বোচ্চ ৫০০):",
-	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] দ্বারা তৈরি।",
+	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] দ্বারা তৈরি",
 	"nuke-deleted": "'''$1''' পাতাটি অপসারণ করা হয়েছে।",
 	"nuke-deletion-queued": "'''$1''' পাতাটি অপসারণের জন্য সারিবদ্ধ করা হয়েছে।",
 	"nuke-not-deleted": "[[:$1]] পাতাটি অপসারণ '''করা যাবে না'''।",
