@@ -16,7 +16,8 @@
 			"Ralgis",
 			"Remember the dot",
 			"RicardoSGZ",
-			"Sanbec"
+			"Sanbec",
+			"Eulalio"
 		]
 	},
 	"nuke": "Borrado en masa",
@@ -33,7 +34,7 @@
 	"right-nuke": "Borrar páginas masivamente",
 	"nuke-userorip": "Nombre de usuario, dirección IP o en blanco:",
 	"nuke-maxpages": "Número máximo de páginas:",
-	"nuke-editby": "Creado por [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
+	"nuke-editby": "Creado por [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
 	"nuke-deleted": "La página '''$1''' ha sido borrada.",
 	"nuke-deletion-queued": "Se ha añadido la página '''«$1»''' a la cola de borrado.",
 	"nuke-not-deleted": "La página [[:$1]] '''no se ha podido''' borrar.",

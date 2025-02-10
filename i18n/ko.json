@@ -10,7 +10,8 @@
 			"Priviet",
 			"ToePeu",
 			"Ykhwong",
-			"아라"
+			"아라",
+			"Suleiman the Magnificent Television"
 		]
 	},
 	"nuke": "문서 대량 삭제",
@@ -27,7 +28,7 @@
 	"right-nuke": "문서 대량 삭제",
 	"nuke-userorip": "계정 이름이나 IP 주소 또는 빈 칸:",
 	"nuke-maxpages": "문서의 최대 크기:",
-	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]]님이 만듦",
+	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]]님이 작성함.",
 	"nuke-deleted": "'''$1''' 문서를 삭제했습니다.",
 	"nuke-deletion-queued": "'''$1''' 문서는 삭제를 위해 대기열에 추가되었습니다.",
 	"nuke-not-deleted": "[[:$1]] 문서를 삭제하지 '''못했습니다'''.",

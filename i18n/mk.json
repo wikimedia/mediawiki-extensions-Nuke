@@ -18,7 +18,7 @@
 	"right-nuke": "Групно бришење на страници",
 	"nuke-userorip": "Корисничко име, IP-адреса или празно:",
 	"nuke-maxpages": "Најг. број на страници:",
-	"nuke-editby": "Создавач: [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
+	"nuke-editby": "Создадено од [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
 	"nuke-deleted": "Страницата '''$1''' е избришана.",
 	"nuke-deletion-queued": "Страницата '''$1''' е ставена во редица за бришење.",
 	"nuke-not-deleted": "Страницата [[:$1]] '''не можеше''' да се избрише.",
