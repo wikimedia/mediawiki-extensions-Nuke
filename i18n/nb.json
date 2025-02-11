@@ -27,6 +27,8 @@
 	"nuke-delete-more": "[[Special:Nuke|Slett flere sider]]",
 	"nuke-pattern": "SQL-LIKE-mønster (f.eks. %) for sidenavnet:",
 	"nuke-nopages-global": "Det er ingen sidetitler som matcher søket ditt.",
+	"nuke-searchnotice-negmax": "Maksimumsstørrelsen i byte er mindre enn null, og vil derfor ignoreres.",
+	"nuke-searchnotice-negmin": "Minimumsstørrelsen i byte er mindre enn null, og vil derfor ignoreres.",
 	"nuke-viewchanges": "historikk",
 	"nuke-namespace": "Begrens til navnerom:",
 	"nuke-linkoncontribs": "masseslett",
