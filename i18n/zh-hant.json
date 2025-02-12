@@ -34,7 +34,7 @@
 	"right-nuke": "大量刪除頁面",
 	"nuke-userorip": "使用者名稱、IP位址或留空：",
 	"nuke-maxpages": "頁面數量上限：",
-	"nuke-editby": "由 [[Special:Contributions/$1|$1]] 建立",
+	"nuke-editby": "由[[Special:Contributions/$1|{{GENDER:$1|$1}}]]建立",
 	"nuke-deleted": "已刪除頁面 '''$1'''。",
 	"nuke-deletion-queued": "頁面'''$1'''已佇列刪除。",
 	"nuke-not-deleted": "'''無法'''刪除頁面 [[:$1]]。",

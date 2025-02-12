@@ -22,7 +22,7 @@
 	"right-nuke": "Fjöldaeyða síðum",
 	"nuke-userorip": "Notandanafn, IP-staðfang eða tómt:",
 	"nuke-maxpages": "Hámarksfjöldi síðna:",
-	"nuke-editby": "Búnar til af [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
+	"nuke-editby": "Búnar til af [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
 	"nuke-deleted": "'''$1''' hefur verið eytt.",
 	"nuke-deletion-queued": "Síðan '''$1''' hefur verið sett á biðlista fyrir eyðingu.",
 	"nuke-not-deleted": "Mistök við eyðingu síðunnar [[:$1]].",

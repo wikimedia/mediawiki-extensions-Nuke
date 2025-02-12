@@ -15,7 +15,8 @@
 			"Rezonansowy",
 			"Sp5uhe",
 			"WTM",
-			"Woytecr"
+			"Woytecr",
+			"Msz2001"
 		]
 	},
 	"nuke": "Masowe usuwanie",
@@ -32,7 +33,7 @@
 	"right-nuke": "Masowe usuwanie stron",
 	"nuke-userorip": "Podaj nazwę użytkownika, adres IP lub pozostaw puste pole",
 	"nuke-maxpages": "Maksymalna liczba stron:",
-	"nuke-editby": "Utworzona przez {{GENDER:$1|użytkownika|użytkowniczkę}} [[Special:Contributions/$1|$1]]",
+	"nuke-editby": "Utworzona przez {{GENDER:$1|użytkownika|użytkowniczkę}} [[Special:Contributions/$1|$1]].",
 	"nuke-deleted": "Strona '''$1''' została usunięta.",
 	"nuke-deletion-queued": "Strona '''$1''' została ustawiona w kolejce do usunięcia.",
 	"nuke-not-deleted": "Strony [[:$1]] '''nie można''' usunąć.",
