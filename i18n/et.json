@@ -32,7 +32,6 @@
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Üht lehekülg'''|'''$1 lehekülge'''}} ei valitud kustutamiseks.",
 	"nuke-delete-more": "[[Special:Nuke|Kustuta veel lehekülgi]]",
 	"nuke-pattern": "Lehekülje pealkirja LIKE-kuju (SQL, nt %):",
-	"nuke-pattern-performance": "Jõudluskaalutluse tõttu näidatakse tulemusi piiratud ajaperioodist (viimased $1), kui kasutad seda filtrit ilma kasutajanime või IP-aadressita.",
 	"nuke-nolist": "Et jätkata, klõpsa kõigepealt nuppu \"{{int:nuke-submit-list}}\" ning seejärel vali leheüljed, mida kustutamiseks tööjärge lisada.",
 	"nuke-nopages-global": "Ükski lehekülg ei vasta sinu otsingule.",
 	"nuke-noselected": "Et jätkata, vali leheküljed, mida kustutamiseks tööjärge lisada.",

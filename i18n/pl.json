@@ -47,7 +47,6 @@
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Jedna strona''' nie została wybrana|'''$1 strony''' nie zostały wybrane|'''$1 stron''' nie zostało wybranych}} do usunięcia.",
 	"nuke-delete-more": "[[Special:Nuke|Usuń więcej stron]]",
 	"nuke-pattern": "Wzór SQL LIKE (np. %) nazwy strony:",
-	"nuke-pattern-performance": "Ze względu na wydajność, skorzystanie z tego filtra bez podania nazwy użytkownika bądź adresów IP ograniczy wyświetlone wyniki do $1.",
 	"nuke-nolist": "Aby kontynuować, najpierw wylistuj i wybierz strony do usunięcia.",
 	"nuke-nopages-global": "Żadne strony nie pasują do Twojego wyszukiwania.",
 	"nuke-noselected": "Aby kontynuować, wybierz strony do skasowania.",

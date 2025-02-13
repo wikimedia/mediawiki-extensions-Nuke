@@ -46,7 +46,6 @@
 	"nuke-skipped-summary": "'''{{PLURAL:$1|$1 səhifə}}''' silinmə üçün seçilməyib.",
 	"nuke-delete-more": "[[Special:Nuke|Daha çox səhifə sil]]",
 	"nuke-pattern": "Səhifə adı üçün SQL LIKE kodu (məs: %)",
-	"nuke-pattern-performance": "Performans səbəblərinə görə, istifadəçi adı və ya IP ünvanı olmadan bu filtrdən istifadə nəticələri son $1 ilə məhdudlaşdıracaq.",
 	"nuke-nolist": "Davam etmək üçün əvvəlcə \"{{int:nuke-submit-list}}\" düyməsinə klikləyin, sonra silinmək üçün növbəyə qoyulacaq səhifələri seçin.",
 	"nuke-nopages-global": "Axtarışa uyğun səhifə yoxdur.",
 	"nuke-searchnotice-minmorethanmax": "Baytdakı minimum ölçü maksimum ölçüdən çoxdur, ona görə də heç bir səhifənin bu meyarlara cavab verməsi mümkün deyil.",

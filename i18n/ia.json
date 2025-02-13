@@ -42,7 +42,6 @@
 	"nuke-skipped-summary": "'''{{PLURAL:$1|Un pagina|$1 paginas}}''' non ha essite seligite pro deletion.",
 	"nuke-delete-more": "[[Special:Nuke|Deler plus paginas]]",
 	"nuke-pattern": "Patrono SQL LIKE (p.ex. %) pro le nomine de pagina:",
-	"nuke-pattern-performance": "Debite a motivos de rendimento, si iste filtro se usa sin nomine de usator o adresse IP, le resultatos essera limitate al ultime $1.",
 	"nuke-nolist": "Pro continuar, primo ‘{{int:nuke-submit-list}}’ e alora selige le paginas a mitter in cauda pro deletion.",
 	"nuke-nopages-global": "Necun pagina corresponde al recerca.",
 	"nuke-searchnotice-minmorethanmax": "Le grandor minime in bytes es superior al grandor maxime in bytes, dunque non es possibile que alcun pagina satisface iste criterios.",

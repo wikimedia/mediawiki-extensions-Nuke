@@ -38,7 +38,6 @@
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Eén pagina''' is|'''$1 pagina’s''' zijn}} niet geselecteerd voor verwijdering.",
 	"nuke-delete-more": "[[Special:Nuke|Meer pagina's verwijderen]]",
 	"nuke-pattern": "SQL Like patroon (bijv. %) voor de paginanaam:",
-	"nuke-pattern-performance": "Om prestatieredenen worden de resultaten beperkt tot de laatste $1 als u dit filter gebruikt zonder gebruikersnaam of IP-adres.",
 	"nuke-nolist": "Om verder te gaan, klikt u eerst op ‘{{int:nuke-submit-list}}’ en selecteert u vervolgens de pagina’s die in de wachtrij voor verwijdering moeten worden geplaatst.",
 	"nuke-nopages-global": "Er zijn geen pagina’s die aan de zoekopdracht voldoen.",
 	"nuke-noselected": "Om door te gaan, selecteert u de pagina’s die in de wachtrij voor verwijdering moeten worden geplaatst.",

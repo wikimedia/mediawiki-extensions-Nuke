@@ -33,8 +33,8 @@
 	"nuke-maxpages": "Anzahl der abzurufenden Seiten (maximal 500):",
 	"nuke-minsize": "Mindestgröße des Seiteninhalts (in Bytes):",
 	"nuke-maxsize": "Maximale Größe des Seiteninhalts (in Bytes):",
-	"nuke-date-from": "Ab Datum",
-	"nuke-date-to": "Bis Datum",
+	"nuke-date-from": "Ab Datum:",
+	"nuke-date-to": "Bis Datum:",
 	"nuke-associated": "Zusätzlich zu den ausgewählten Seiten müssen auch die zugehörigen Seiten gelöscht werden:",
 	"nuke-associated-talk": "Diskussionsseiten",
 	"nuke-associated-redirect": "Weiterleitungen",
@@ -49,7 +49,6 @@
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Eine Seite''' wurde|'''$1 Seiten''' wurden}} nicht zum Löschen ausgewählt.",
 	"nuke-delete-more": "[[Special:Nuke|Weitere Seiten löschen]]",
 	"nuke-pattern": "SQL-LIKE-Muster (z.&nbsp;B. %) für den Seitennamen:",
-	"nuke-pattern-performance": "Aus Leistungsgründen werden bei Verwendung dieses Filters ohne Benutzernamen oder IP-Adresse nur die letzten $1 angezeigt.",
 	"nuke-nolist": "Um fortzufahren, führe zuerst „{{int:nuke-submit-list}}“ aus und wähle dann die Seiten aus, die zum Löschen in die Warteschlange gestellt werden.",
 	"nuke-nopages-global": "Es stimmen keine Seiten mit der Suche überein.",
 	"nuke-searchnotice-minmorethanmax": "Die Mindestgröße in Bytes überschreitet die Maximalgröße in Bytes, daher ist es für keine Seite möglich, dieses Kriterium zu erfüllen.",
@@ -62,6 +61,8 @@
 	"nuke-namespace-noscript": "Gib die Namensraum-IDs ein, jeweils eine pro Zeile. Lasse das Feld leer, um alle Namensräume zu durchsuchen. Ungültige IDs werden ignoriert.",
 	"nuke-linkoncontribs": "Massenlöschungen",
 	"nuke-linkoncontribs-text": "Massengelöschte Seiten, bei denen {{GENDER:$1|dieser Benutzer der einzige Autor|diese Benutzerin die einzige Autorin}} ist.",
+	"nuke-daterange-helper-text-max-age-different": "Wenn ein Benutzername oder eine IP-Adresse angegeben wird, können Seiten, die bis zu $1 Tage alt sind, abgerufen werden. Andernfalls können aus Leistungsgründen Seiten abgerufen werden, die bis zu $2 Tage alt sind.",
+	"nuke-daterange-helper-text-max-age-same": "Aus Leistungsgründen können Seiten abgerufen werden, die bis zu $1 Tage alt sind.",
 	"tag-nuke": "Nuke",
 	"tag-nuke-description": "Mit der Nuke-Erweiterung durchgeführte Löschungen"
 }
