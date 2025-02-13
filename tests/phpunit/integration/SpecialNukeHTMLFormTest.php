@@ -863,7 +863,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
-		$this->assertStringContainsString( 'nuke-pattern-performance', $html );
+		$this->assertStringContainsString( 'nuke-daterange-helper-text-max-age-different', $html );
+		$this->assertStringNotContainsString( 'nuke-daterange-helper-text-max-age-same', $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
@@ -876,7 +877,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		] );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
-		$this->assertStringContainsString( 'nuke-pattern-performance', $html );
+		$this->assertStringContainsString( 'nuke-daterange-helper-text-max-age-different', $html );
+		$this->assertStringNotContainsString( 'nuke-daterange-helper-text-max-age-same', $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
@@ -891,8 +893,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		] );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
-		// No help message here, since we're limited by $wgNukeMaxAge instead of $wgRCMaxAge.
-		$this->assertStringNotContainsString( 'nuke-pattern-performance', $html );
+		$this->assertStringContainsString( 'nuke-daterange-helper-text-max-age-different', $html );
+		$this->assertStringNotContainsString( 'nuke-daterange-helper-text-max-age-same', $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringNotContainsString( 'Page3', $html );
@@ -905,8 +907,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		] );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
-		// No help message here, since we're limited by $wgNukeMaxAge instead of $wgRCMaxAge.
-		$this->assertStringNotContainsString( 'nuke-pattern-performance', $html );
+		$this->assertStringContainsString( 'nuke-daterange-helper-text-max-age-different', $html );
+		$this->assertStringNotContainsString( 'nuke-daterange-helper-text-max-age-same', $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
@@ -926,6 +928,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		] );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
+		$this->assertStringContainsString( 'nuke-daterange-helper-text-max-age-different', $html );
+		$this->assertStringNotContainsString( 'nuke-daterange-helper-text-max-age-same', $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
@@ -938,6 +942,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		] );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
+		$this->assertStringNotContainsString( 'nuke-daterange-helper-text-max-age-different', $html );
+		$this->assertStringContainsString( 'nuke-daterange-helper-text-max-age-same', $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
@@ -950,6 +956,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		] );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
+		$this->assertStringContainsString( 'nuke-daterange-helper-text-max-age-different', $html );
+		$this->assertStringNotContainsString( 'nuke-daterange-helper-text-max-age-same', $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );
@@ -965,6 +973,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->rebuildRecentChanges( $time - ( 86400 * 8 ) - 60, $time + 60 );
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
+		$this->assertStringContainsString( 'nuke-daterange-helper-text-max-age-different', $html );
+		$this->assertStringNotContainsString( 'nuke-daterange-helper-text-max-age-same', $html );
 		$this->assertStringNotContainsString( 'Page1', $html );
 		$this->assertStringNotContainsString( 'Page2', $html );
 		$this->assertStringContainsString( 'Page3', $html );

@@ -569,6 +569,26 @@ class NukeContext {
 	}
 
 	/**
+	 * Get the maximum age in days that a page can be before it cannot be deleted by Nuke when a username is provided.
+	 *
+	 * @return float
+	 */
+	public function getNukeMaxAgeInDays(): float {
+		$secondsInADay = 86400;
+		return round( $this->requestContext->getConfig()->get( NukeConfigNames::MaxAge ) / $secondsInADay );
+	}
+
+	/**
+	 * Get the maximum age in days that a page can be before it cannot be deleted by Nuke when no username is provided.
+	 *
+	 * @return float
+	 */
+	public function getRecentChangesMaxAgeInDays(): float {
+		$secondsInADay = 86400;
+		return round( $this->requestContext->getConfig()->get( MainConfigNames::RCMaxAge ) / $secondsInADay );
+	}
+
+	/**
 	 * Calculate any search notices that need to be displayed with the results.
 	 * This is based on the search parameters.
 	 *
