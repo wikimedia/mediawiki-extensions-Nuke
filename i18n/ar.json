@@ -5,7 +5,8 @@
 			"SaldırganSincap",
 			"ديفيد",
 			"زكريا",
-			"محمد أحمد عبد الفتاح"
+			"محمد أحمد عبد الفتاح",
+			"Cigaryno"
 		]
 	},
 	"nuke": "حذف كمي",
@@ -22,7 +23,7 @@
 	"right-nuke": "حذف الصفحات كميا",
 	"nuke-userorip": "اسم مستخدم أو عنوان بروتوكول إنترنت أو فراغ:",
 	"nuke-maxpages": "الحد الأقصى لعدد الصفحات:",
-	"nuke-editby": "من إنشاء [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
+	"nuke-editby": "من إنشاء [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
 	"nuke-deleted": "صفحة '''$1''' حذفت.",
 	"nuke-deletion-queued": "تم وضع الصفحة '''$1''' في قائمة الانتظار للحذف.",
 	"nuke-not-deleted": "صفحة [[:$1]] '''لا''' تحذف.",
