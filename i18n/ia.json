@@ -26,8 +26,8 @@
 	"nuke-maxpages": "Numero de paginas a recuperar (maximo 500):",
 	"nuke-minsize": "Grandor minime del contento del pagina (in bytes):",
 	"nuke-maxsize": "Grandor maxime del contento del pagina (in bytes):",
-	"nuke-date-from": "A partir del data",
-	"nuke-date-to": "Usque al data",
+	"nuke-date-from": "A partir del data:",
+	"nuke-date-to": "Usque al data:",
 	"nuke-associated": "In addition al paginas seligite, deler etiam lor paginas associate:",
 	"nuke-associated-talk": "Paginas de discussion",
 	"nuke-associated-redirect": "Redirectiones",
@@ -54,6 +54,8 @@
 	"nuke-namespace-noscript": "Insere IDs de spatio de nomine, un per linea. Lassa vacue pro cercar in tote le spatios de nomines. IDs non valide essera ignorate.",
 	"nuke-linkoncontribs": "deletion in massa",
 	"nuke-linkoncontribs-text": "Deler tote le paginas del quales {{GENDER:$1|iste usator}} es le unic autor",
+	"nuke-daterange-helper-text-max-age-different": "Si un nomine de usator o adresse IP es fornite, le paginas usque a $1 dies de etate pote esser recuperate. Alteremente, pro motivos de rendimento, le paginas usque a $2 dies de etate pote esser recuperate.",
+	"nuke-daterange-helper-text-max-age-same": "A causa de motivos de rendimento, le paginas usque a $1 dies de etate pote esser recuperate.",
 	"tag-nuke": "Annihilation",
 	"tag-nuke-description": "Deletiones realisate con le extension Nuke"
 }
