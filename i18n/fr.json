@@ -17,7 +17,8 @@
 			"Zetud",
 			"Verdy p",
 			"Mahabarata",
-			"SleaY"
+			"SleaY",
+			"Escargot bleu"
 		]
 	},
 	"nuke": "Suppression en masse",
@@ -34,7 +35,7 @@
 	"right-nuke": "Supprimer des pages en masse",
 	"nuke-userorip": "Nom d'utilisateur, adresse IP ou vide :",
 	"nuke-maxpages": "Nombre maximal de pages :",
-	"nuke-editby": "Créé par [[Special:Contributions/$1|{{GENDER:$1|}}$1]].",
+	"nuke-editby": "Créé par [[Special:Contributions/$1|{{GENDER:$1|}}$1]]",
 	"nuke-deleted": "La page '''$1''' a été supprimée.",
 	"nuke-deletion-queued": "La page '''$1''' a été mise en file d'attente pour suppression.",
 	"nuke-not-deleted": "La page [[:$1]] '''n’a pas pu''' être supprimée.",
