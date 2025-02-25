@@ -165,29 +165,21 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'default' => $maxPageSizeBytes
 			]
 		];
-
-		$associatedPagesEnabled = $this->getRequestContext()->getRequest()->getBool( 'nukeAP' );
-		if (
-			$associatedPagesEnabled ||
-			$this->context->getIncludeTalkPages() ||
-			$this->context->getIncludeRedirects()
-		) {
-			$formDescriptor['associated'] = [
-				'type' => 'info',
-				'default' => $this->msg( 'nuke-associated' )->escaped(),
-				'raw' => true,
-			];
-			$formDescriptor['includeTalkPages'] = [
-				'type' => 'check',
-				'label' => $this->msg( 'nuke-associated-talk' )->text(),
-				'name' => 'includeTalkPages',
-			];
-			$formDescriptor['includeRedirects'] = [
-				'type' => 'check',
-				'label' => $this->msg( 'nuke-associated-redirect' )->text(),
-				'name' => 'includeRedirects',
-			];
-		}
+		$formDescriptor['associated'] = [
+			'type' => 'info',
+			'default' => $this->msg( 'nuke-associated' )->escaped(),
+			'raw' => true,
+		];
+		$formDescriptor['includeTalkPages'] = [
+			'type' => 'check',
+			'label' => $this->msg( 'nuke-associated-talk' )->text(),
+			'name' => 'includeTalkPages',
+		];
+		$formDescriptor['includeRedirects'] = [
+			'type' => 'check',
+			'label' => $this->msg( 'nuke-associated-redirect' )->text(),
+			'name' => 'includeRedirects',
+		];
 
 		$promptForm = HTMLForm::factory(
 			'ooui', $formDescriptor, $this->getRequestContext()

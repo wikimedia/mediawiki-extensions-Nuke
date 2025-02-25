@@ -597,8 +597,7 @@ class SpecialNuke extends SpecialPage {
 			$this->getConfig(),
 			$this->namespaceInfo
 		);
-		$associatedPagesEnabled = $this->getRequest()->getBool( 'nukeAP' );
-		if ( $associatedPagesEnabled || $context->getIncludeTalkPages() ) {
+		if ( $context->getIncludeTalkPages() ) {
 			// Include talk pages in the results.
 			$talkPagesResult = $associatedQueryBuilder->getTalkPages( $pages )
 				->caller( __METHOD__ )
@@ -629,7 +628,7 @@ class SpecialNuke extends SpecialPage {
 				}
 			}
 		}
-		if ( $associatedPagesEnabled || $context->getIncludeRedirects() ) {
+		if ( $context->getIncludeRedirects() ) {
 			// Include redirect pages in the results.
 			$redirectPagesResult = $associatedQueryBuilder->getRedirectPages( $pages )
 				->caller( __METHOD__ )
