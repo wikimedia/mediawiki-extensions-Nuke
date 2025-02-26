@@ -55,8 +55,8 @@
 	"nuke-namespace-noscript": "Enter namespace IDs, one line each. Leave empty to search all namespaces. Invalid IDs will be ignored.",
 	"nuke-linkoncontribs": "mass delete",
 	"nuke-linkoncontribs-text": "Mass delete pages where {{GENDER:$1|this user}} is the only author",
-	"nuke-daterange-helper-text-max-age-different": "If a username or IP address is provided, pages up to $1 days old can be retrieved. Otherwise, for performance reasons, pages up to $2 days old can be retrieved.",
-	"nuke-daterange-helper-text-max-age-same": "Due to performance reasons, pages up to $1 days old can be retrieved.",
+	"nuke-daterange-helper-text-max-age-different": "If a username or IP address is provided, pages up to {{PLURAL:$1|a day|$1 days}} old can be retrieved. Otherwise, for performance reasons, pages up to {{PLURAL:$2|a day|$2 days}} old can be retrieved.",
+	"nuke-daterange-helper-text-max-age-same": "Due to performance reasons, pages up to {{PLURAL:$1|a day|$1 days}} old can be retrieved.",
 	"tag-nuke": "Nuke",
 	"tag-nuke-description": "Deletions performed with the Nuke extension"
 }
