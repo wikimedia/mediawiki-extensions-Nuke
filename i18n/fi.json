@@ -28,7 +28,7 @@
 	"right-nuke": "Massapoistaa sivuja",
 	"nuke-userorip": "Käyttäjänimi tai IP-osoite (voi jättää myös tyhjäksi):",
 	"nuke-maxpages": "Sivujen enimmäismäärä:",
-	"nuke-editby": "Luonut [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
+	"nuke-editby": "Luonut [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Sivu '''$1''' on poistettu.",
 	"nuke-deletion-queued": "Sivu '''$1''' on poistojonossa.",
 	"nuke-not-deleted": "Sivua [[:$1]] '''ei voitu''' poistaa.",
