@@ -13,22 +13,31 @@ $( '.ext-nuke-dateTimeField[data-ooui!=""]' )
 				} )
 				.catch( () => {
 					moment.relativeTimeRounding( Math.floor );
-					field.setErrors( [
-						mw.msg(
-							'nuke-date-limited',
-							// Regenerate moment object using just the date to get a timestamp
-							// at 0 UTC of the specified date, instead of local time.
-							moment.utc( input.mustBeAfter.format( 'YYYY-MM-DD' ) )
-								.utc()
-								// `mustBeAfter` is set to always be one day before the `max` in
-								// DateInputWidget::__construct. We need to add a day to get the
-								// original value back.
-								.add( 1, 'day' )
-								// Get relative time, without the suffix (e.g. "ago").
-								.fromNow( true )
-						)
-					] );
-					moment.relativeTimeRounding();
+					const localDay = moment.utc().local().format( 'DD' );
+					const utcDay = moment.utc().format( 'DD' );
+					// we don't need to subtract a day when the utc day is different from local day
+					// which implies a new day in UTC time and would result in $wgNukeMaxAge - 1
+					if ( localDay !== utcDay ) {
+						field.setErrors( [
+							mw.msg(
+								'nuke-date-limited',
+								moment()
+									.diff( input.mustBeAfter.format( 'YYYY-MM-DD' ), 'days' )
+							)
+						] );
+					} else {
+						field.setErrors( [
+							mw.msg(
+								'nuke-date-limited',
+								moment()
+									// `mustBeAfter` is set to always be one day before the `max` in
+									// DateInputWidget::__construct. We need to remove a day to get
+									// the original value back.
+									.subtract( 1, 'day' )
+									.diff( input.mustBeAfter.format( 'YYYY-MM-DD' ), 'days' )
+							)
+						] );
+					}
 				} );
 		}
 

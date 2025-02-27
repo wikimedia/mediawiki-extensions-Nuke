@@ -46,7 +46,7 @@
 	"nuke-associated": "Used as a label for the associated page checkboxes.",
 	"nuke-associated-talk": "Used as a label for the checkbox to include talk pages as part of deletion.",
 	"nuke-associated-redirect": "Used as a label for the checkbox to include redirects as part of deletion.",
-	"nuke-date-limited": "Shown when one of the date filters falls outside a range.\n\nParameters:\n* $1 - the time period of Nuke's max age (e.g. \"30 days\", \"24 hours 0 minutes\"), as provided by <code>Language::formatTimePeriod</code>.",
+	"nuke-date-limited": "Shown when one of the date filters falls outside a range.\n\nParameters:\n* $1 - the time period of Nuke's max age in days",
 	"nuke-editby": "This message is followed by {{msg-mw|Comma-separator}} and {{msg-mw|Nuke-viewchanges}}.\n\nParameters:\n* $1 - a username",
 	"nuke-redirectsto": "Used to show the target of a redirect page in the list.\n\nParameters:\n* $1 - the target page title",
 	"nuke-delete-summary": "Used at the top of the Nuke (mass deletion) result page. Shown when a username was not provided.\n\nParameters:\n* $1 - the number of pages queued for deletion\n\nSee also:\n* {{msg-mw|nuke-delete-summary-user}}",

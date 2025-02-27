@@ -32,7 +32,7 @@
 	"nuke-associated": "In addition to the selected pages, include their associated pages for deletion:",
 	"nuke-associated-talk": "Talk pages",
 	"nuke-associated-redirect": "Redirects",
-	"nuke-date-limited": "Only pages created in the last $1 can be deleted. Please change the date so it is within the range.",
+	"nuke-date-limited": "Only pages created in the last {{PLURAL:$1| day|$1 days}} can be deleted. Please change the date so it is within the range.",
 	"nuke-editby": "Created by [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-redirectsto": "redirect:[[$1]]",
 	"nuke-delete-summary": "Queued '''{{PLURAL:$1|one page|$1 pages}}''' for deletion.",
