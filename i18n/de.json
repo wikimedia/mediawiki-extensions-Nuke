@@ -61,8 +61,8 @@
 	"nuke-namespace-noscript": "Gib die Namensraum-IDs ein, jeweils eine pro Zeile. Lasse das Feld leer, um alle Namensräume zu durchsuchen. Ungültige IDs werden ignoriert.",
 	"nuke-linkoncontribs": "Massenlöschungen",
 	"nuke-linkoncontribs-text": "Massengelöschte Seiten, bei denen {{GENDER:$1|dieser Benutzer der einzige Autor|diese Benutzerin die einzige Autorin}} ist.",
-	"nuke-daterange-helper-text-max-age-different": "Wenn ein Benutzername oder eine IP-Adresse angegeben wird, können Seiten, die bis zu $1 Tage alt sind, abgerufen werden. Andernfalls können aus Leistungsgründen Seiten abgerufen werden, die bis zu $2 Tage alt sind.",
-	"nuke-daterange-helper-text-max-age-same": "Aus Leistungsgründen können Seiten abgerufen werden, die bis zu $1 Tage alt sind.",
+	"nuke-daterange-helper-text-max-age-different": "Wenn ein Benutzername oder eine IP-Adresse angegeben wird, können Seiten, die bis zu {{PLURAL:$1|1 Tag|$1 Tage}} alt sind, abgerufen werden. Andernfalls können aus Leistungsgründen Seiten abgerufen werden, die bis zu {{PLURAL:$2|1 Tag|$2 Tage}} alt sind.",
+	"nuke-daterange-helper-text-max-age-same": "Aus Leistungsgründen können Seiten abgerufen werden, die bis zu {{PLURAL:$1|1 Tag|$1 Tage}} alt sind.",
 	"tag-nuke": "Nuke",
 	"tag-nuke-description": "Mit der Nuke-Erweiterung durchgeführte Löschungen"
 }
