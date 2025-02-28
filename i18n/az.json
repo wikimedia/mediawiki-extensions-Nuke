@@ -58,8 +58,8 @@
 	"nuke-namespace-noscript": "Hər biri bir sətir olmaqla ad fəzası identifikatorlarını daxil edin. Bütün ad fəzalarını seçmək üçün boş buraxın. Etibarsız ID-lər nəzərə alınmayacaq.",
 	"nuke-linkoncontribs": "kütləvi silmə",
 	"nuke-linkoncontribs-text": "{{GENDER:$1|Bu istifadəçinin}} yeganə müəllif olduğu səhifələri kütləvi şəkildə sil",
-	"nuke-daterange-helper-text-max-age-different": "İstifadəçi adı və ya IP ünvanı qeyd edilərsə, $1 günə qədər köhnə səhifələr əldə edilə bilər. Əks halda, performans səbəbi ilə $2 günə qədər köhnə səhifələr əldə edilə bilər.",
-	"nuke-daterange-helper-text-max-age-same": "Performans səbəblərinə görə, $1 günə qədər köhnə səhifələr əldə edilə bilər.",
+	"nuke-daterange-helper-text-max-age-different": "İstifadəçi adı və ya IP ünvanı qeyd edilərsə, {{PLURAL:$1|$1 günə}} qədər köhnə səhifələr əldə edilə bilər. Əks halda, performans səbəbi ilə {{PLURAL:$2|$2 günə}} qədər köhnə səhifələr əldə edilə bilər.",
+	"nuke-daterange-helper-text-max-age-same": "Performans səbəblərinə görə, {{PLURAL:$1|$1 günə}} qədər köhnə səhifələr əldə edilə bilər.",
 	"tag-nuke": "Kütləvi silmə",
 	"tag-nuke-description": "Nuke uzantısını ilə həyata keçirilən silinmələr"
 }

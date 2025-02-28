@@ -37,5 +37,5 @@
 	"nuke-namespace": "Limita ai namespace:",
 	"nuke-linkoncontribs": "cancella massivamente",
 	"nuke-linkoncontribs-text": "Cancella massivamente le pagine dove questo utente è {{GENDER:$1|l'unico contributore|l'unica contributrice}}",
-	"nuke-daterange-helper-text-max-age-same": "Per motivi di prestazioni, è possibile recuperare pagine vecchie fino a $1 giorno."
+	"nuke-daterange-helper-text-max-age-same": "Per motivi di prestazioni, è possibile recuperare pagine vecchie fino a $1 {{PLURAL:$1|giorno|giorni}}."
 }
