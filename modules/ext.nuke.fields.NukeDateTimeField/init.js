@@ -1,17 +1,17 @@
 // eslint-disable-next-line no-jquery/no-global-selector
 $( '.ext-nuke-dateTimeField[data-ooui!=""]' )
-	.each( function ( _index, element ) {
-		var field = OO.ui.FieldLayout.static.infuse( $( element ) );
-		var input = field.getField();
+	.each( ( _index, element ) => {
+		const field = OO.ui.FieldLayout.static.infuse( $( element ) );
+		const input = field.getField();
 
-		var moment = require( 'moment' );
+		const moment = require( 'moment' );
 
 		function validate() {
 			input.getValidity()
-				.then( function () {
+				.then( () => {
 					field.setErrors( [] );
 				} )
-				.catch( function () {
+				.catch( () => {
 					moment.relativeTimeRounding( Math.floor );
 					field.setErrors( [
 						mw.msg(
