@@ -22,7 +22,7 @@
 	"right-nuke": "масавае выдаленьне старонак",
 	"nuke-userorip": "Удзельнік, IP-адрас ці пустое:",
 	"nuke-maxpages": "Максымальная колькасьць старонак:",
-	"nuke-editby": "Створана {{GENDER:$1|ўдзельнікам|ўдзельніцай}} [[Special:Contributions/$1|$1]].",
+	"nuke-editby": "Створана {{GENDER:$1|ўдзельнікам|ўдзельніцай}} [[Special:Contributions/$1|$1]]",
 	"nuke-deleted": "Старонка «$1» выдаленая.",
 	"nuke-not-deleted": "Старонка [[:$1]] '''ня можа''' быць выдаленая.",
 	"nuke-delete-more": "[[Special:Nuke|Масавае выдаленьне старонак]]",
