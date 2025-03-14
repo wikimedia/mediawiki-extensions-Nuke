@@ -35,7 +35,7 @@
 	"nuke-associated": "Seçilmiş səhifələrə əlavə olaraq, silinmək üçün onların əlaqəli səhifələrini daxil edin:",
 	"nuke-associated-talk": "Müzakirə səhifələri",
 	"nuke-associated-redirect": "Yönləndirmələr",
-	"nuke-date-limited": "Yalnız son $1 ərzində yaradılmış səhifələr silinə bilər. Zəhmət olmasa, tarixi diapazonda olması üçün dəyişdirin.",
+	"nuke-date-limited": "Yalnız son {{PLURAL:$1|$1 gün}} ərzində yaradılmış səhifələr silinə bilər. Zəhmət olmasa, tarixi diapazonda olması üçün dəyişdirin.",
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] tərəfindən yaradılıb",
 	"nuke-redirectsto": "yönləndirmə:[[$1]]",
 	"nuke-delete-summary": "'''{{PLURAL:$1|$1 səhifə}}''' silinmə üçün növbəyə alınıb.",

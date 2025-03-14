@@ -38,7 +38,7 @@
 	"nuke-associated": "Zusätzlich zu den ausgewählten Seiten müssen auch die zugehörigen Seiten gelöscht werden:",
 	"nuke-associated-talk": "Diskussionsseiten",
 	"nuke-associated-redirect": "Weiterleitungen",
-	"nuke-date-limited": "Nur Seiten, die im Zeitraum letzten $1 erstellt wurden, können gelöscht werden. Bitte ändere das Datum so, dass es innerhalb des Bereichs liegt.",
+	"nuke-date-limited": "Nur Seiten, die {{PLURAL:$1|gestern|in letzten $1 Tagen}} erstellt wurden, können gelöscht werden. Bitte ändere das Datum so, dass es innerhalb des Bereichs liegt.",
 	"nuke-editby": "Erstellt von [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-redirectsto": "redirect:[[$1]]",
 	"nuke-delete-summary": "'''{{PLURAL:$1|Eine Seite|$1 Seiten}}''' zum Löschen in die Warteschlange gestellt.",

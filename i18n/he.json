@@ -36,7 +36,7 @@
 	"nuke-associated": "בנוסף לדפים שנבחרו, לכלול את הדפים המשויכים אליהם במחיקה:",
 	"nuke-associated-talk": "דפי שיחה",
 	"nuke-associated-redirect": "הפניות",
-	"nuke-date-limited": "ניתן למחוק רק דפים שנוצרו בתקופה הזאת: $1. נא לשנות את התאריך כך שיהיה בטווח.",
+	"nuke-date-limited": "ניתן למחוק רק דפים שנוצרו {{PLURAL:$1|מאז אתמול|מאז שלשום|ב־$1 הימים האחרונים}}. נא לשנות את התאריך כך שיהיה בטווח.",
 	"nuke-editby": "נוצר על־ידי [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-redirectsto": "הפניה:[[$1]]",
 	"nuke-delete-summary": "{{PLURAL:$1|דף אחד הוכנס|$1 דפים הוכנסו}} לתור מחיקה.",
