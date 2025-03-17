@@ -31,7 +31,7 @@
 	"nuke-associated": "In addition al paginas seligite, deler etiam lor paginas associate:",
 	"nuke-associated-talk": "Paginas de discussion",
 	"nuke-associated-redirect": "Redirectiones",
-	"nuke-date-limited": "Solmente paginas create in le ultime $1 pote esser delite. Per favor cambia le data de sorta que illo cade intra iste intervallo.",
+	"nuke-date-limited": "Solmente paginas create in le ultime {{PLURAL:$1|die|$1 dies}} pote esser delite. Per favor cambia le data de sorta que illo cade intra iste intervallo.",
 	"nuke-editby": "Create per [[Special:Contributions/$1|$1]]",
 	"nuke-redirectsto": "redirection:[[$1]]",
 	"nuke-delete-summary": "'''{{PLURAL:$1|Un pagina|$1 paginas}}''' mittite in cauda pro deletion.",
@@ -54,8 +54,8 @@
 	"nuke-namespace-noscript": "Insere IDs de spatio de nomine, un per linea. Lassa vacue pro cercar in tote le spatios de nomines. IDs non valide essera ignorate.",
 	"nuke-linkoncontribs": "deletion in massa",
 	"nuke-linkoncontribs-text": "Deler tote le paginas del quales {{GENDER:$1|iste usator}} es le unic autor",
-	"nuke-daterange-helper-text-max-age-different": "Si un nomine de usator o adresse IP es fornite, le paginas usque a $1 dies de etate pote esser recuperate. Alteremente, pro motivos de rendimento, le paginas usque a $2 dies de etate pote esser recuperate.",
-	"nuke-daterange-helper-text-max-age-same": "A causa de motivos de rendimento, le paginas usque a $1 dies de etate pote esser recuperate.",
+	"nuke-daterange-helper-text-max-age-different": "Si un nomine de usator o adresse IP es fornite, le paginas usque a $1 die{{PLURAL:$1||s}} de etate pote esser recuperate. Alteremente, pro motivos de rendimento, le paginas usque a $2 die{{PLURAL:$2||s}} de etate pote esser recuperate.",
+	"nuke-daterange-helper-text-max-age-same": "Pro motivos de rendimento, le paginas usque a $1 die{{PLURAL:$1||s}} de etate pote esser recuperate.",
 	"tag-nuke": "Annihilation",
 	"tag-nuke-description": "Deletiones realisate con le extension Nuke"
 }

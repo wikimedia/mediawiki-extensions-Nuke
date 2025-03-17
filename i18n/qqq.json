@@ -7,6 +7,7 @@
 			"Liuxinyu970226",
 			"Mahabarata",
 			"Matěj Suchánek",
+			"McDutchie",
 			"Meno25",
 			"Purodha",
 			"SPQRobin",
@@ -69,8 +70,8 @@
 	"nuke-namespace-noscript": "Additional instructions for how to properly type in namespaces for those with JavaScript disabled",
 	"nuke-linkoncontribs": "Used as link text which is used on [[Special:Contributions]] and [[Special:DeletedContributions]].\n\nOnly added if a user has rights to nuke pages.\n\nThe link has the tooltip {{msg-mw|Nuke-linkoncontribs-text}}.\n{{Identical|Mass delete}}",
 	"nuke-linkoncontribs-text": "Tooltip for the link which is labeled {{msg-mw|Nuke-linkoncontribs}} Parameters:\n* $1 is the target username used for GENDER.",
-	"nuke-daterange-helper-text-max-age-different": "Helper text that goes under the date range input on the prompt form when the recent changes max age is different than the nuke max age; this text helps users understand date range input limitations. $1 - Max age of results in days, $2 - Max age of results in days if no username provided.",
-	"nuke-daterange-helper-text-max-age-same": "Helper text that goes under the date range input on the prompt form when the recent changes max age is the same as the nuke max age; this text helps users understand date range input limitations. $1 - Max age of results in days.",
+	"nuke-daterange-helper-text-max-age-different": "Helper text that goes under the date range input on the prompt form when the recent changes max age is different than the nuke max age; this text helps users understand date range input limitations.\n* $1 - Max age of results in days\n* $2 - Max age of results in days if no username provided",
+	"nuke-daterange-helper-text-max-age-same": "Helper text that goes under the date range input on the prompt form when the recent changes max age is the same as the nuke max age; this text helps users understand date range input limitations.\n* $1 - Max age of results in days",
 	"tag-nuke": "Short description of the nuke tag.\n\nShown on lists of changes (history, recentchanges, etc.) for each page deleted with the Nuke extension.\n\nSee also:\n* {{msg-mw|tag-nuke-description}}",
 	"tag-nuke-description": "Long description of the nuke tag.\n\nShown on [[Special:Tags]].\n\nSee also:\n* {{msg-mw|tag-nuke}}"
 }
