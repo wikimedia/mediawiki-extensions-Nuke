@@ -37,7 +37,7 @@
 	"nuke-associated": "Naast de geselecteerde pagina’s ook de bijbehorende pagina’s verwijderen:",
 	"nuke-associated-talk": "Overlegpagina’s",
 	"nuke-associated-redirect": "Doorverwijzingen",
-	"nuke-date-limited": "Alleen pagina’s die in de laatste $1 zijn gemaakt, kunnen worden verwijderd. Wijzig de datum zodat deze binnen het bereik valt.",
+	"nuke-date-limited": "Alleen pagina’s die in de laatste {{PLURAL:$1|dag|$1 dagen}} zijn gemaakt, kunnen worden verwijderd. Wijzig de datum zodat deze binnen het bereik valt.",
 	"nuke-editby": "Aangemaakt door [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-redirectsto": "doorverwijzing:[[$1]]",
 	"nuke-delete-summary": "'''{{PLURAL:$1|Eén pagina is|$1 pagina’s zijn}}''' in de verwijderingswachtrij gezet.",
