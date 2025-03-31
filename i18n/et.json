@@ -29,7 +29,7 @@
 	"nuke-associated": "Peale valitud lehekülgede loetle kustutamiseks ka nendega seotud leheküljed:",
 	"nuke-associated-talk": "Aruteluleheküljed",
 	"nuke-associated-redirect": "Ümbersuunamised",
-	"nuke-date-limited": "Kustutada saab ainult lehekülgi, mis on lisatud piiratud ajaperioodil (viimased $1). Palun muuda kuupäeva nii, et see oleks vahemikus.",
+	"nuke-date-limited": "Kustutada saab ainult lehekülgi, mis on lisatud viimase {{PLURAL:$1|$1 päeva}} jooksul. Palun muuda kuupäeva nii, et see oleks vahemikus.",
 	"nuke-editby": "Alustanud [[Special:Contributions/$1|$1]]",
 	"nuke-redirectsto": "ümbersuunamine:[[$1]]",
 	"nuke-delete-summary": "Tööjärge lisatud kustutamiseks '''{{PLURAL:$1|üks lehekülg|$1 lehekülge}}'''.",
