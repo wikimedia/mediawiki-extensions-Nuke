@@ -4,9 +4,5 @@
 		"wikimedia/client",
 		"wikimedia/jquery",
 		"wikimedia/mediawiki"
-	],
-	"globals": {
-		"mw": "readonly",
-		"$": "readonly"
-	}
+	]
 }
