@@ -5,6 +5,7 @@
 			"Bulgu",
 			"Erkan Yilmaz",
 			"Joseph",
+			"Leo",
 			"LisafBia",
 			"MuratTheTurkish",
 			"SaldırganSincap",
@@ -47,5 +48,7 @@
 	"nuke-namespace": "Ad alanına sınırla:",
 	"nuke-linkoncontribs": "toplu sil",
 	"nuke-linkoncontribs-text": "{{GENDER:$1|Bu kullanıcının}} tek yazar olduğu sayfaları toplu olarak silin",
-	"nuke-daterange-helper-text-max-age-different": "Bir kullanıcı adı veya IP adresi sağlanırsa, {{PLURAL:$1|bir gün|$1 gün}} öncesine kadar olan sayfalar alınabilir. Aksi takdirde, performans nedenleriyle, {{PLURAL:$2|bir gün|$2 gün}} öncesine kadar olan sayfalar alınabilir."
+	"nuke-daterange-helper-text-max-age-different": "Bir kullanıcı adı veya IP adresi sağlanırsa, {{PLURAL:$1|bir gün|$1 gün}} öncesine kadar olan sayfalar alınabilir. Aksi takdirde, performans nedenleriyle, {{PLURAL:$2|bir gün|$2 gün}} öncesine kadar olan sayfalar alınabilir.",
+	"tag-nuke": "Nuke",
+	"tag-nuke-description": "Nuke uzantısıyla gerçekleştirilen silmeler"
 }
