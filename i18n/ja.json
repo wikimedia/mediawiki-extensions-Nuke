@@ -37,7 +37,9 @@
 	"nuke-maxpages": "取得するページ数 (最大500):",
 	"nuke-date-from": "この日から:",
 	"nuke-date-to": "この日まで:",
-	"nuke-date-limited": "削除できるのは、過去$1以内に作成されたページのみです。範囲内になるように日付を変更してください。",
+	"nuke-associated": "選択したページに加えて、関連付けられたページも削除対象に含める:",
+	"nuke-associated-talk": "トークページ",
+	"nuke-date-limited": "削除できるのは、過去{{PLURAL:$1|1日|$1日間}}で作成されたページのみです。範囲内になるように日付を変更してください。",
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]]が作成。",
 	"nuke-delete-summary": "'''{{PLURAL:$1|$1ページ}}'''を削除キューに追加しました。",
 	"nuke-delete-summary-user": "[[{{ns:user}}:$2|$2]] ([[{{ns:user_talk}}:$2|{{int:talkpagelinktext}}]] {{int:pipe-separator}} [[{{ns:special}}:Contributions/$2|{{int:contribslink}}]] {{int:pipe-separator}} [[{{ns:special}}:Block/$2|{{int:blocklink}}]]) によって{{GENDER:$2|作成された}}'''{{PLURAL:$2|$1ページ}}'''を削除キューに追加しました。",
@@ -46,7 +48,7 @@
 	"nuke-not-deleted": "ページ [[:$1]] を削除'''できませんでした'''。",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''$1ページ'''は}}削除対象として選択されませんでした。",
 	"nuke-delete-more": "[[Special:Nuke|他のページも削除]]",
-	"nuke-pattern": "ページ名のSQL LIKE パターン (例: %)：",
+	"nuke-pattern": "ページ名の SQL LIKE パターン (例: %):",
 	"nuke-nolist": "続けるには、まず「{{int:nuke-submit-list}}」を実行し、次に削除キューに入れるページを選択します。",
 	"nuke-nopages-global": "検索条件に一致するページはありません。",
 	"nuke-noselected": "続けるには、削除キューに入れるページを選択してください。",
@@ -55,6 +57,7 @@
 	"nuke-namespace-noscript": "名前空間IDを1行ずつ入力します。すべての名前空間を検索するには空白のままにします。無効なIDは無視されます。",
 	"nuke-linkoncontribs": "一括削除",
 	"nuke-linkoncontribs-text": "{{GENDER:$1|この利用者}}が作成したページを一括削除します",
+	"nuke-daterange-helper-text-max-age-different": "利用者名または IP アドレスが指定されている場合は、最大で過去{{PLURAL:$1|1日|$1日間}}で作祭されたページを取得できます。指定されていない場合は、パフォーマンス上の理由から、最大で過去{{PLURAL:$2|1日|$2日間}}で作成されたページのみを取得できます。",
 	"tag-nuke": "一括削除",
 	"tag-nuke-description": "Nuke拡張機能で実行された削除"
 }
