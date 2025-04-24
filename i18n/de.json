@@ -44,7 +44,7 @@
 	"nuke-delete-summary": "'''{{PLURAL:$1|Eine Seite|$1 Seiten}}''' zum Löschen in die Warteschlange gestellt.",
 	"nuke-delete-summary-user": "'''{{PLURAL:$1|Eine Seite|$1 Seiten}}''' von [[{{ns:user}}:$2|$2]] ([[{{ns:user_talk}}:$2|{{int:talkpagelinktext}}]] {{int:pipe-separator}} [[{{ns:special}}:Contributions/$2|{{int:contribslink}}]] {{int:pipe-separator}} [[{{ns:special}}:Block/$2|{{int:blocklink}}]]) zum Löschen in die Warteschlange gestellt.",
 	"nuke-deleted": "Seite „$1“ wurde gelöscht.",
-	"nuke-deletion-queued": "Die Seite '''$1''' steht für die Löschung in der Warteschlange.",
+	"nuke-deletion-queued": "Seite '''$1''' wurde zum Löschen vorgemerkt.",
 	"nuke-not-deleted": "Seite [[:$1]] '''konnte nicht''' gelöscht werden.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Eine Seite''' wurde|'''$1 Seiten''' wurden}} nicht zum Löschen ausgewählt.",
 	"nuke-delete-more": "[[Special:Nuke|Weitere Seiten löschen]]",
