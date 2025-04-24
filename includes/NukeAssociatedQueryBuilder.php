@@ -3,10 +3,10 @@
 namespace MediaWiki\Extension\Nuke;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Exception\MWException;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
-use MWException;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 

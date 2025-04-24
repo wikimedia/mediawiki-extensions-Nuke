@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\Nuke\Test;
 
+use MediaWiki\JobQueue\Exceptions\JobQueueError;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Storage\PageUpdateStatus;
@@ -19,7 +20,7 @@ trait NukeIntegrationTest {
 	 * @param int|null $from The timestamp to start rebuilding from.
 	 * @param int|null $to The timestamp to stop rebuilding to.
 	 * @return void
-	 * @throws \JobQueueError
+	 * @throws JobQueueError
 	 */
 	private function rebuildRecentChanges( ?int $from = null, ?int $to = null ) {
 		$rebuildRecentchanges = new RebuildRecentchanges();

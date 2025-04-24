@@ -3,14 +3,16 @@
 namespace MediaWiki\Extension\Nuke;
 
 use DateTime;
-use DeletePageJob;
-use ErrorPageError;
-use JobQueueGroup;
 use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
 use MediaWiki\Config\Config;
+use MediaWiki\Exception\ErrorPageError;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\Nuke\Form\SpecialNukeHTMLFormUIRenderer;
 use MediaWiki\Extension\Nuke\Form\SpecialNukeUIRenderer;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
+use MediaWiki\FileRepo\RepoGroup;
+use MediaWiki\JobQueue\JobQueueGroup;
+use MediaWiki\JobQueue\Jobs\DeletePageJob;
 use MediaWiki\Language\Language;
 use MediaWiki\Page\File\FileDeleteForm;
 use MediaWiki\Page\RedirectLookup;
@@ -25,8 +27,6 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
-use PermissionsError;
-use RepoGroup;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
 

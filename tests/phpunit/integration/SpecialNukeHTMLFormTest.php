@@ -2,15 +2,15 @@
 
 namespace MediaWiki\Extension\Nuke\Test\Integration;
 
-use ErrorPageError;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Exception\ErrorPageError;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\Nuke\SpecialNuke;
 use MediaWiki\Extension\Nuke\Test\NukeIntegrationTest;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\Title\Title;
-use PermissionsError;
 use SpecialPageTestBase;
 
 /**
