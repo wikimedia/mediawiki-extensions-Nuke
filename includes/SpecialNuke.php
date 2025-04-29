@@ -320,7 +320,6 @@ class SpecialNuke extends SpecialPage {
 					$this->repoGroup,
 					$this->getLinkRenderer(),
 					$this->namespaceInfo,
-					$this->getLanguage(),
 					$this->redirectLookup
 				);
 		}

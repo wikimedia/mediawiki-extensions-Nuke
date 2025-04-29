@@ -12,9 +12,7 @@ use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\Html\Html;
 use MediaWiki\Html\ListToggle;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\Language\Language;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\RedirectLookup;
 use MediaWiki\Title\NamespaceInfo;
@@ -38,7 +36,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 	private RepoGroup $repoGroup;
 	private LinkRenderer $linkRenderer;
 	private NamespaceInfo $namespaceInfo;
-	private Language $interfaceLanguage;
 	private RedirectLookup $redirectLookup;
 
 	/** @inheritDoc */
@@ -48,7 +45,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		RepoGroup $repoGroup,
 		LinkRenderer $linkRenderer,
 		NamespaceInfo $namespaceInfo,
-		Language $interfaceLanguage,
 		RedirectLookup $redirectLookup
 	) {
 		parent::__construct( $context );
@@ -59,7 +55,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		$this->repoGroup = $repoGroup;
 		$this->linkRenderer = $linkRenderer;
 		$this->namespaceInfo = $namespaceInfo;
-		$this->interfaceLanguage = $interfaceLanguage;
 		$this->redirectLookup = $redirectLookup;
 	}
 
@@ -76,14 +71,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		$nukeMaxAge = $this->context->getNukeMaxAge();
 		$nukeMaxAgeInDays = $this->context->getNukeMaxAgeInDays();
 		$recentChangesMaxAgeInDays = $this->context->getRecentChangesMaxAgeInDays();
-
-		$config = MediaWikiServices::getInstance()->getMainConfig();
-
-		// Retrieve the maximum page size in kilobytes
-		$maxPageSizeKB = $config->get( 'MaxArticleSize' );
-
-		// Convert the size to bytes
-		$maxPageSizeBytes = $maxPageSizeKB * 1024;
 
 		$formDescriptor = [
 			'nuke-target' => [
@@ -163,7 +150,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'label' => $this->msg( 'nuke-maxsize' )->text(),
 				'type' => 'int',
 				'name' => 'maxPageSize',
-				'default' => $maxPageSizeBytes
 			]
 		];
 		$formDescriptor['associated'] = [
