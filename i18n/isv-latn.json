@@ -15,7 +15,7 @@
 	"nuke-submit-delete": "Odstraniti izbrane",
 	"right-nuke": "Masovo odstranjenje stranic",
 	"nuke-userorip": "Koristničsko ime ili IP-adres (tuto polje možete ostaviti prazdnym):",
-	"nuke-editby": "Stvorjeno {{GENDER:$1|koristnikom|koristniceju}} [[Special:Contributions/$1|$1]].",
+	"nuke-editby": "Stvorjeno {{GENDER:$1|koristnikom|koristniceju}} [[Special:Contributions/$1|$1]]",
 	"nuke-deleted": "Stranica '''$1''' jest odstranjena.",
 	"nuke-deletion-queued": "Stranica '''$1''' čekaje na odstranjenje.",
 	"nuke-not-deleted": "Odstranjenje stranice [[:$1]] '''ne udalo se'''.",
