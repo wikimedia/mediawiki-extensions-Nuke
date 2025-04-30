@@ -24,7 +24,6 @@ use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
-use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\IPUtils;
@@ -39,7 +38,6 @@ class SpecialNuke extends SpecialPage {
 	private IConnectionProvider $dbProvider;
 	private PermissionManager $permissionManager;
 	private RepoGroup $repoGroup;
-	private UserFactory $userFactory;
 	private UserOptionsLookup $userOptionsLookup;
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
@@ -86,7 +84,6 @@ class SpecialNuke extends SpecialPage {
 		IConnectionProvider $dbProvider,
 		PermissionManager $permissionManager,
 		RepoGroup $repoGroup,
-		UserFactory $userFactory,
 		UserOptionsLookup $userOptionsLookup,
 		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
@@ -101,7 +98,6 @@ class SpecialNuke extends SpecialPage {
 		$this->dbProvider = $dbProvider;
 		$this->permissionManager = $permissionManager;
 		$this->repoGroup = $repoGroup;
-		$this->userFactory = $userFactory;
 		$this->userOptionsLookup = $userOptionsLookup;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
@@ -219,9 +215,12 @@ class SpecialNuke extends SpecialPage {
 
 		// Normalise name
 		if ( $target !== '' ) {
-			$user = $this->userFactory->newFromName( $target );
-			if ( $user ) {
-				$target = $user->getName();
+			if ( IPUtils::isValid( $target ) ) {
+				$target = IPUtils::sanitizeIP( $target );
+				// IPUtils::sanitizeIP returns null only for bad input
+				'@phan-var string $target';
+			} else {
+				$target = $this->userNameUtils->getCanonical( $target ) ?: $target;
 			}
 		}
 

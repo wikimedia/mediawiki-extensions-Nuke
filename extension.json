@@ -84,7 +84,6 @@
 				"DBLoadBalancerFactory",
 				"PermissionManager",
 				"RepoGroup",
-				"UserFactory",
 				"UserOptionsLookup",
 				"UserNamePrefixSearch",
 				"UserNameUtils",

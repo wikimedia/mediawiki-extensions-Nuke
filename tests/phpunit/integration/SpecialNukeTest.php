@@ -35,7 +35,6 @@ class SpecialNukeTest extends MediaWikiIntegrationTestCase {
 			$services->getDBLoadBalancerFactory(),
 			$services->getPermissionManager(),
 			$services->getRepoGroup(),
-			$services->getUserFactory(),
 			$services->getUserOptionsLookup(),
 			$services->getUserNamePrefixSearch(),
 			$services->getUserNameUtils(),

@@ -12,6 +12,7 @@ use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\Title\Title;
 use SpecialPageTestBase;
+use Wikimedia\IPUtils;
 
 /**
  * @group Database
@@ -35,7 +36,6 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			$services->getDBLoadBalancerFactory(),
 			$services->getPermissionManager(),
 			$services->getRepoGroup(),
-			$services->getUserFactory(),
 			$services->getUserOptionsLookup(),
 			$services->getUserNamePrefixSearch(),
 			$services->getUserNameUtils(),
@@ -300,6 +300,41 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( 'Target2', $html );
 
 		$this->assertEquals( 2, substr_count( $html, '(nuke-editby: 127.0.0.1)' ) );
+	}
+
+	public static function provideListTargetNormalizeUser() {
+		yield 'normalize IPv4' => [ '001.002.003.004', '1.2.3.4' ];
+
+		$ip = '2001:0db8::ff00:0042:8329';
+		yield 'normalize IPv6' => [ $ip, IPUtils::sanitizeIP( $ip ) ];
+	}
+
+	/**
+	 * Ensure that the prompt works with searches for non-canonical user names, like lowercase IPv6
+	 * @dataProvider provideListTargetNormalizeUser
+	 */
+	public function testListTargetNormalizeUser( $target, $normalized ) {
+		$this->disableAutoCreateTempUser( [ 'known' => false ] );
+		$testUser = $this->getServiceContainer()->getUserFactory()->newAnonymous( $normalized );
+		$performer = new UltimateAuthority( $testUser );
+
+		$this->editPage( 'Target1', 'test', "", NS_MAIN, $performer );
+		$this->editPage( 'Target2', 'test', "", NS_MAIN, $performer );
+
+		$adminUser = $this->getTestSysop()->getUser();
+		$request = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $target
+		] );
+		$adminPerformer = new UltimateAuthority( $adminUser );
+
+		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html );
+
+		$this->assertStringContainsString( 'Target1', $html );
+		$this->assertStringContainsString( 'Target2', $html );
+
+		$this->assertEquals( 2, substr_count( $html, "(nuke-editby: $normalized)" ) );
 	}
 
 	/**
