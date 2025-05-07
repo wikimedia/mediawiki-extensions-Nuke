@@ -29,7 +29,7 @@
 	"nuke-delete-summary": "'''{{PLURAL:$1|Eng Säit|$1 Säiten}}''' an d'Waardeschlaang fir geläscht ze gi gesat.",
 	"nuke-delete-summary-user": "'''{{PLURAL:$1|Eng Säit|$1 Säiten}}''', déi vum [[{{ns:user}}:$2|$2]] ([[{{ns:user_talk}}:$2|{{int:talkpagelinktext}}]] {{int:pipe-separator}} [[{{ns:special}}:Contributions/$2|{{int:contribslink}}]] {{int:pipe-separator}} [[{{ns:special}}:Block/$2|{{int:blocklink}}]]) {{GENDER:$2|ugeluecht}} goufen, an d'Waardeschlaang fir geläscht ze gi gesat.",
 	"nuke-deleted": "D'Säit '''$1''' gouf geläscht.",
-	"nuke-deletion-queued": "D'Säit '''$2''' gouf an d'Waardeschlaang fir geläscht ze gi gesat.",
+	"nuke-deletion-queued": "D'Säit '''$1''' gouf an d'Waardeschlaang fir geläscht ze gi gesat.",
 	"nuke-not-deleted": "D'Säit [[:$1]] '''konnt net''' geläscht ginn.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Eng Säit''' gouf|'''$1 Säite''' goufen}} net ausgewielt fir geläscht ze ginn.",
 	"nuke-delete-more": "[[Special:Nuke|Méi Säite läschen]]",
