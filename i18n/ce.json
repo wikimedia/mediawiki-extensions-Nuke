@@ -44,5 +44,7 @@
 	"nuke-viewchanges": "истори",
 	"nuke-namespace": "ЦӀерийн меттигашна доза тоха:",
 	"nuke-linkoncontribs": "Дуккха дӀайахар",
-	"nuke-linkoncontribs-text": "ХӀокху {{GENDER:$1|декъашхочо}} кхоьллина агӀонаш йерриге дӀайаха"
+	"nuke-linkoncontribs-text": "ХӀокху {{GENDER:$1|декъашхочо}} кхоьллина агӀонаш йерриге дӀайаха",
+	"tag-nuke": "«Нуке»",
+	"tag-nuke-description": "«Нуке» шордарца дина дӀадахарш"
 }
