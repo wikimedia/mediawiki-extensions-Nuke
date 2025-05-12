@@ -23,7 +23,7 @@
 	"nuke-maxpages": "Maximal Zuel vu Säiten:",
 	"nuke-editby": "Gemaach vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "D'Säit '''$1''' gouf geläscht.",
-	"nuke-deletion-queued": "D'Säit '''$2''' gouf an d'Waardeschlaang fir geläscht ze gi gesat.",
+	"nuke-deletion-queued": "D'Säit '''$1''' gouf an d'Waardeschlaang fir geläscht ze gi gesat.",
 	"nuke-not-deleted": "D'Säit [[:$1]] '''konnt net''' geläscht ginn.",
 	"nuke-delete-more": "[[Special:Nuke|Méi Säite läschen]]",
 	"nuke-pattern": "SQL-LIKE-Muster (z.&nbsp;B. %) fir de Säitennumm:",
