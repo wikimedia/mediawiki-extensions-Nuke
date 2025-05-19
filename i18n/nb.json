@@ -5,7 +5,8 @@
 			"Event",
 			"Jon Harald Søby",
 			"Kingu",
-			"Nghtwlkr"
+			"Nghtwlkr",
+			"EdoAug"
 		]
 	},
 	"nuke": "Massesletting",
@@ -22,7 +23,7 @@
 	"right-nuke": "Masseslette sider",
 	"nuke-userorip": "Brukernavn, IP-adresse eller tomt:",
 	"nuke-maxpages": "Maksimalt antall sider:",
-	"nuke-editby": "Opprettet av [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
+	"nuke-editby": "Opprettet av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Siden '''$1''' har blitt slettet.",
 	"nuke-deletion-queued": "Siden '''$1''' står i kø for å slettes.",
 	"nuke-not-deleted": "Siden [[:$1]] '''kunne ikke''' slettes.",
