@@ -28,6 +28,7 @@
 	"nuke-tools": "Narzędzie pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub anonimowego użytkownika.<br />\nWpisz nazwę użytkownika lub adres IP, by otrzymać listę stron do usunięcia. Możesz także nic nie wpisywać, wtedy będzie można masowo usunąć wkład wszystkich użytkowników.",
 	"nuke-tools-tempaccount": "Narzędzie pozwala na masowe usuwanie stron ostatnio dodanych przez zarejestrowanego lub konto tymczasowe.<br />\nWpisz nazwę użytkownika lub adres IP, by otrzymać listę stron do usunięcia. Możesz także nic nie wpisywać, wtedy będzie można masowo usunąć wkład wszystkich użytkowników. Wpisując adres IP, otrzymasz linię stron stworzonych przez ten adres oraz wszystkie konta tymczasowe z niego korzystające.",
 	"nuke-tools-prompt": "Po wylistowaniu stron wybierz strony do usunięcia, a następnie kliknij „{{int:nuke-submit-continue}}”. Przekierowania są wyświetlane kursywą.",
+	"nuke-tools-notice-error": "Podczas sprawdzania twoich uprawnień do masowego usuwania stron wystąpił błąd. Nie możesz kontynuować.",
 	"nuke-tools-confirm": "{{PLURAL:$1|Następująca strona została wybrana|Następujące $1 strony zostały wybrane|Następujące $1 stron zostało wybranych}} do usunięcia. Podaj powód usunięcia i kliknij „{{int:nuke-submit-delete}}”, aby rozpocząć proces masowego usuwania.",
 	"nuke-submit-list": "Lista stron",
 	"nuke-submit-continue": "Kontynuuj",
