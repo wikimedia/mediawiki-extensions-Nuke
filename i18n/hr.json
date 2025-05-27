@@ -3,6 +3,7 @@
 		"authors": [
 			"Dalibor Bosits",
 			"Dnik",
+			"FriedrickMILBarbarossa",
 			"Hmxhmx",
 			"MaGa",
 			"Ponor",
@@ -22,5 +23,6 @@
 	"nuke-viewchanges": "prikaži promjene",
 	"nuke-namespace": "Ograniči na imenski prostor:",
 	"nuke-linkoncontribs": "skupno brisanje",
-	"nuke-linkoncontribs-text": "Skupno brisanje stranica kojima je ovaj suradnik jedini autor"
+	"nuke-linkoncontribs-text": "Skupno brisanje stranica kojima je ovaj suradnik jedini autor",
+	"tag-nuke": "Masovno brisanje"
 }

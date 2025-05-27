@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"CERminator",
+			"FriedrickMILBarbarossa",
 			"Obsuser",
 			"Srdjan m",
 			"Srđan"
@@ -21,5 +22,6 @@
 	"nuke-editby": "{{GENDER:$1|Autor|Autorica}}: [[Special:Contributions/$1|$1]]",
 	"nuke-viewchanges": "prikaži izmjene",
 	"nuke-linkoncontribs": "masovno brisanje",
-	"nuke-linkoncontribs-text": "Masovno brisanje stranica kojima je ovaj korisnik jedini autor"
+	"nuke-linkoncontribs-text": "Masovno brisanje stranica kojima je ovaj korisnik jedini autor",
+	"tag-nuke": "Masovno brisanje"
 }
