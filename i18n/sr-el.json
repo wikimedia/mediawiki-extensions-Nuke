@@ -6,7 +6,8 @@
 			"Milicevic01",
 			"Zoranzoki21",
 			"Жељко Тодоровић",
-			"Сербијана"
+			"Сербијана",
+			"FriedrickMILBarbarossa"
 		]
 	},
 	"nuke": "Masovno brisanje",
@@ -56,5 +57,6 @@
 	"nuke-linkoncontribs-text": "Masovno izbrišite stranice kojima je {{GENDER:$1|ovaj korisnik|ova korisnica}} jedini autor",
 	"nuke-daterange-helper-text-max-age-different": "Ako je navedeno korisničko ime ili IP adresa stranice stare do {{PLURAL:$1|jednog dana|$1 dana}} mogu biti dobavljene. U svim drugim okolnostima, radi očuvanja performansi, mogu biti dobavljene stranice stare do {{PLURAL:$2|jednog dana|$2 dana}}.",
 	"nuke-daterange-helper-text-max-age-same": "Radi očuvanja performansi, mogu biti dobavljene stranice stare do {{PLURAL:$1|jednog dana|$1 dana}}.",
+	"tag-nuke": "masovno brisanje",
 	"tag-nuke-description": "Brisanje izvršeno pomoću Nuke ekstenzije"
 }
