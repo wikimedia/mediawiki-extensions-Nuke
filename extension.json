@@ -22,12 +22,16 @@
 	"HookHandlers": {
 		"main": {
 			"class": "MediaWiki\\Extension\\Nuke\\Hooks"
+		},
+		"nukeTagFix": {
+			"class": "MediaWiki\\Extension\\Nuke\\HookHandler\\NukeTagFix"
 		}
 	},
 	"Hooks": {
 		"ContributionsToolLinks": "main",
 		"ListDefinedTags": "MediaWiki\\Extension\\Nuke\\Hooks::onRegisterTags",
-		"ChangeTagsListActive": "MediaWiki\\Extension\\Nuke\\Hooks::onRegisterTags"
+		"ChangeTagsListActive": "MediaWiki\\Extension\\Nuke\\Hooks::onRegisterTags",
+		"LoadExtensionSchemaUpdates": "nukeTagFix"
 	},
 	"config": {
 		"NukeMaxAge": {
@@ -99,6 +103,9 @@
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\Nuke\\": "includes/"
+	},
+	"AutoloadClasses": {
+		"MediaWiki\\Extension\\Nuke\\Maintenance\\NormalizeNukeTags": "maintenance/normalizeNukeTags.php"
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\Nuke\\Test\\": "tests/phpunit/"
