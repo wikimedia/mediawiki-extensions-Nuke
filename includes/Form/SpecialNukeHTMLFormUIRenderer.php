@@ -549,7 +549,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 	 *
 	 * @param HTMLForm $form
 	 * @return string
-	 * @throws \OOUI\Exception
 	 */
 	protected function getFormFieldsetHtml( HTMLForm $form ): string {
 		$out = $this->getOutput();
