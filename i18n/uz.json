@@ -10,6 +10,7 @@
 	"nuke-defaultreason": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] yaratgan sahifalar birdaniga oʻchirildi",
 	"nuke-submit-delete": "Tanlanganlarni oʻchirish",
 	"right-nuke": "Sahifalarni birdaniga oʻchirish",
+	"nuke-delete-summary": "'''{{PLURAL:$1|Bitta sahifa|$1 ta sahifa}}''' oʻchirilish uchun navbatga qoʻyildi.",
 	"nuke-deleted": "'''$1''' sahifasi oʻchirildi.",
 	"nuke-deletion-queued": "'''„$1“''' sahifasi oʻchirilish uchun navbatga qoʻyildi.",
 	"nuke-delete-more": "[[Special:Nuke|Koʻproq sahifalarni oʻchirish]]",
