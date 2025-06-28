@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\Nuke;
 
 use DateTime;
 use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
-use MediaWiki\Config\Config;
 use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\Nuke\Form\SpecialNukeHTMLFormUIRenderer;
@@ -44,7 +43,6 @@ class SpecialNuke extends SpecialPage {
 	private NamespaceInfo $namespaceInfo;
 	private Language $contentLanguage;
 	private RedirectLookup $redirectLookup;
-	private Config $mainConfig;
 	/** @var CheckUserTemporaryAccountsByIPLookup|null */
 	private $checkUserTemporaryAccountsByIPLookup = null;
 
@@ -90,7 +88,6 @@ class SpecialNuke extends SpecialPage {
 		NamespaceInfo $namespaceInfo,
 		Language $contentLanguage,
 		RedirectLookup $redirectLookup,
-		Config $mainConfig,
 		$checkUserTemporaryAccountsByIPLookup = null
 	) {
 		parent::__construct( 'Nuke' );
@@ -104,7 +101,6 @@ class SpecialNuke extends SpecialPage {
 		$this->namespaceInfo = $namespaceInfo;
 		$this->contentLanguage = $contentLanguage;
 		$this->redirectLookup = $redirectLookup;
-		$this->mainConfig = $mainConfig;
 		$this->checkUserTemporaryAccountsByIPLookup = $checkUserTemporaryAccountsByIPLookup;
 	}
 
@@ -249,10 +245,8 @@ class SpecialNuke extends SpecialPage {
 			$originalPages = [];
 		}
 
-		$config = $this->mainConfig;
-
 		// Retrieve the maximum page size in kilobytes
-		$maxPageSizeKB = $config->get( 'MaxArticleSize' );
+		$maxPageSizeKB = $this->getConfig()->get( 'MaxArticleSize' );
 
 		// Convert the size to bytes
 		$maxPageSizeBytes = $maxPageSizeKB * 1024;

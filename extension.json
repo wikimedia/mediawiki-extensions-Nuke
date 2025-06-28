@@ -90,7 +90,6 @@
 				"NamespaceInfo",
 				"ContentLanguage",
 				"RedirectLookup",
-				"MainConfig",
 				"NukeIPLookup"
 			],
 			"styles": [
