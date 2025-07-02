@@ -34,5 +34,6 @@
 	"nuke-viewchanges": "vizualizează modificările",
 	"nuke-namespace": "Limitați la spațiul de nume:",
 	"nuke-linkoncontribs": "ștergere în masă",
-	"nuke-linkoncontribs-text": "Ștergeți pagini în masă unde {{GENDER:$1|acest utilizator|această utilizatoare|acest utilizator}} este {{GENDER:$1|singurul autor|singura autoare|singurul autor}}"
+	"nuke-linkoncontribs-text": "Ștergeți pagini în masă unde {{GENDER:$1|acest utilizator|această utilizatoare|acest utilizator}} este {{GENDER:$1|singurul autor|singura autoare|singurul autor}}",
+	"tag-nuke": "Ștergere în masă"
 }
