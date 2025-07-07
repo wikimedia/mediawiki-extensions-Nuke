@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"BukhariSaeed",
 			"Muhammad Shuaib",
 			"Obaid Raza",
 			"පසිඳු කාවින්ද"
@@ -26,5 +27,6 @@
 	"nuke-viewchanges": "تبدیلیاں دیکھیں",
 	"nuke-namespace": "نام فضا کا تعین:",
 	"nuke-linkoncontribs": "اجتماعی حذف",
-	"nuke-linkoncontribs-text": "یہ صارف جن صفحات کا تنہا مصنف ہو انھیں حذف کر دیں"
+	"nuke-linkoncontribs-text": "یہ صارف جن صفحات کا تنہا مصنف ہو انھیں حذف کر دیں",
+	"tag-nuke": "اجتماعی حذف"
 }
