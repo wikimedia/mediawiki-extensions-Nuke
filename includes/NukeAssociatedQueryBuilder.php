@@ -45,7 +45,7 @@ class NukeAssociatedQueryBuilder {
 		foreach ( $pages as $page ) {
 			try {
 				$talkNamespace = $this->namespaceInfo->getTalk( $page->getNamespace() );
-			} catch ( MWException $e ) {
+			} catch ( MWException ) {
 				continue;
 			}
 			$byNamespace[ $talkNamespace ][] = $page->getDBkey();
