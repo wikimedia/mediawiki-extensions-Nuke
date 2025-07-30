@@ -6,6 +6,7 @@ use DateTime;
 use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
 use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Exception\PermissionsError;
+use MediaWiki\Extension\Nuke\Form\SpecialNukeCodexUIRenderer;
 use MediaWiki\Extension\Nuke\Form\SpecialNukeHTMLFormUIRenderer;
 use MediaWiki\Extension\Nuke\Form\SpecialNukeUIRenderer;
 use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
@@ -25,6 +26,7 @@ use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
+use Wikimedia\Codex\Utility\Codex;
 use Wikimedia\IPUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
 
@@ -271,8 +273,8 @@ class SpecialNuke extends SpecialPage {
 			'limit' => $req->getInt( 'limit', 500 ),
 			'namespaces' => $namespaces,
 
-			'dateFrom' => $req->getText( 'wpdateFrom' ),
-			'dateTo' => $req->getText( 'wpdateTo' ),
+			'dateFrom' => $req->getText( 'wpdateFrom', $req->getText( 'dateFrom' ) ),
+			'dateTo' => $req->getText( 'wpdateTo', $req->getText( 'dateTo' ) ),
 
 			'includeTalkPages' => $req->getBool( 'includeTalkPages' ),
 			'includeRedirects' => $req->getBool( 'includeRedirects' ),
@@ -304,7 +306,17 @@ class SpecialNuke extends SpecialPage {
 
 		// Possible values: 'codex', 'htmlform'
 		switch ( $formType ) {
-			// case 'codex': to be implemented (T153988)
+			case 'codex':
+				$codex = new Codex();
+				return new SpecialNukeCodexUIRenderer(
+					$context,
+					$this,
+					$codex,
+					$this->repoGroup,
+					$this->getLinkRenderer(),
+					$this->namespaceInfo,
+					$this->redirectLookup
+				);
 			case 'htmlform':
 			default:
 				return new SpecialNukeHTMLFormUIRenderer(
@@ -323,7 +335,7 @@ class SpecialNuke extends SpecialPage {
 	 * validation, ensuring that only valid namespaces are returned.
 	 *
 	 * @param WebRequest $req The request
-	 * @return array An array of namespace IDs
+	 * @return int[] An array of namespace IDs
 	 */
 	private function loadNamespacesFromRequest( WebRequest $req ): array {
 		$validNamespaces = $this->namespaceInfo->getValidNamespaces();

@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\Nuke\Test\Integration;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Exception\PermissionsError;
+use MediaWiki\Extension\Nuke\NukeConfigNames;
 use MediaWiki\Extension\Nuke\SpecialNuke;
 use MediaWiki\Extension\Nuke\Test\NukeIntegrationTest;
 use MediaWiki\Permissions\UltimateAuthority;
@@ -28,6 +29,14 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 	use NukeIntegrationTest;
 	use TempUserTestTrait;
 
+	/**
+	 * @before
+	 * @return void
+	 */
+	public function nukeUISetUp() {
+		$this->overrideConfigValue( NukeConfigNames::UIType, null );
+	}
+
 	protected function newSpecialPage(): SpecialNuke {
 		$services = $this->getServiceContainer();
 
@@ -42,7 +51,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			$services->getNamespaceInfo(),
 			$services->getContentLanguage(),
 			$services->getRedirectLookup(),
-			$services->getService( 'NukeIPLookup' ),
+			$services->getService( 'NukeIPLookup' )
 		);
 	}
 
@@ -298,7 +307,11 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( 'Target1', $html );
 		$this->assertStringContainsString( 'Target2', $html );
 
-		$this->assertEquals( 2, substr_count( $html, '(nuke-editby: 127.0.0.1)' ) );
+		$this->assertEquals(
+			2,
+			substr_count( $html, 'nuke-editby: 127.0.0.1' ),
+			"Failed asserting that the IP address is shown twice in '$html'"
+		);
 	}
 
 	public static function provideListTargetNormalizeUser() {
@@ -368,7 +381,11 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->checkForValidationMessages( $html );
 
 		$year = gmdate( 'Y' );
-		$this->assertEquals( 2, substr_count( $html, "(nuke-editby: ~$year-1)" ) );
+		$this->assertEquals(
+			2,
+			substr_count( $html, "~$year-1" ),
+			"Failed asserting that the temporary account is shown twice in '$html'"
+		);
 
 		$this->assertStringContainsString( 'Target1', $html );
 		$this->assertStringContainsString( 'Target2', $html );
@@ -415,8 +432,16 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->checkForValidationMessages( $html );
 
 		$year = gmdate( 'Y' );
-		$this->assertSame( 1, substr_count( $html, "(nuke-editby: ~$year-1)" ) );
-		$this->assertSame( 1, substr_count( $html, ' (nuke-editby: 1.2.3.4)' ) );
+		$this->assertSame(
+			1,
+			substr_count( $html, "~$year-1" ),
+			"Failed asserting that the temporary account name is shown once in '$html'"
+		);
+		$this->assertSame(
+			1,
+			substr_count( $html, 'nuke-editby: 1.2.3.4' ),
+			"Failed asserting that the IP address is shown once in '$html'"
+		);
 
 		// They should all show up together
 		$this->assertStringContainsString( 'Target1', $html );
@@ -779,6 +804,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			[ $created, $wanted ] = is_array( $testData ) ?
 				$testData : [ $testData, $testData ];
 
+			// Disable case-sensitive page titles
+			$this->overrideConfigValue( 'CapitalLinks', true );
 			$this->overrideConfigValue( 'LanguageCode', $lang );
 			$this->editPage( $created, 'test' );
 
@@ -814,7 +841,11 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		// enforced on the initial 'pages' query and no associated pages are selected.
 		$this->checkForValidationMessages( $html );
 
-		$this->assertEquals( 2, substr_count( $html, '<li>' ) );
+		$this->assertEquals(
+			2,
+			substr_count( $html, '<li>' ),
+			"Failed asserting that two entries are shown in '$html'"
+		);
 	}
 
 	public function testListLimitWithHooks() {
@@ -838,7 +869,11 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $performer );
 		$this->checkForValidationMessages( $html );
 
-		$this->assertEquals( 2, substr_count( $html, '<li>' ) );
+		$this->assertEquals(
+			2,
+			substr_count( $html, '<li>' ),
+			"Failed asserting that two entries are shown in '$html'"
+		);
 	}
 
 	public function testListMaxAge() {
@@ -2338,7 +2373,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 	 * @param string[] $messages The i18n keys of the messages that should be found.
 	 * @return void
 	 */
-	private function checkForValidationMessages( string $html, ?array $messages = [] ) {
+	protected function checkForValidationMessages( string $html, ?array $messages = [] ) {
 		$errorMessages = [
 			"htmlform-user-not-valid",
 			"nuke-date-limited",

@@ -13,7 +13,6 @@ use MediaWiki\Html\Html;
 use MediaWiki\Html\ListToggle;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\LinkRenderer;
-use MediaWiki\Output\OutputPage;
 use MediaWiki\Page\RedirectLookup;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
@@ -132,7 +131,8 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'type' => 'info',
 				'default' => $this->getDateRangeHelperText(
 					$nukeMaxAgeInDays,
-					$recentChangesMaxAgeInDays ),
+					$recentChangesMaxAgeInDays
+				)->text(),
 				'cssclass' => 'ext-nuke-promptForm-dateHelperText',
 			],
 			'minPageSize' => [
@@ -529,6 +529,12 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 	 * @return string
 	 */
 	protected function wrapForm( string $content ): string {
+		$formType = $this->getRequestContext()->getRequest()->getText( 'nukeUI' );
+
+		if ( $formType ) {
+			$content .= Html::input( 'nukeUI', $formType, 'hidden' );
+		}
+
 		// From \MediaWiki\HTMLForm\OOUIHTMLForm::wrapForm
 		$form = new FormLayout( [
 			'name' => 'massdelete',
@@ -625,65 +631,6 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				$talkPageText .
 				$changesLink
 			)->escaped();
-	}
-
-	/**
-	 * Output the access status header, stating:
-	 * If the user has access to delete pages
-	 * If so, the instructions for deleting pages
-	 * If not, the reason why the user does not have access
-	 *
-	 * @param OutputPage $out
-	 * @param int $accessStatus
-	 * @return void
-	 */
-	protected function outputAccessStatusHeader( OutputPage $out, int $accessStatus ) {
-		switch ( $accessStatus ) {
-			case NukeContext::NUKE_ACCESS_GRANTED:
-				// the user has normal access, give them the tools prompt
-				$out->addWikiMsg( 'nuke-tools-prompt' );
-				break;
-			case NukeContext::NUKE_ACCESS_NO_PERMISSION:
-				// tell the user that they don't have the permission
-				$out->addWikiMsg( 'nuke-tools-notice-noperm' );
-				break;
-			case NukeContext::NUKE_ACCESS_BLOCKED:
-				// tell the user that they are blocked
-				$out->addWikiMsg( 'nuke-tools-notice-blocked' );
-				break;
-			case NukeContext::NUKE_ACCESS_INTERNAL_ERROR:
-			default:
-				// it's either internal error
-				// or a new case we don't support in the code yet
-				// in both cases we want to tell the user
-				// that there's been an error
-				$out->addWikiMsg( 'nuke-tools-notice-error' );
-				break;
-		}
-
-		// if $accessStatus isn't normal, then tell the user that their access is restricted
-		if ( $accessStatus !== NukeContext::NUKE_ACCESS_GRANTED ) {
-			$out->addWikiMsg( 'nuke-tools-prompt-restricted' );
-		}
-	}
-
-	/**
-	 * @param float $nukeMaxAgeInDays
-	 * @param float $recentChangesMaxAgeInDays
-	 * @return string
-	 */
-	private function getDateRangeHelperText( float $nukeMaxAgeInDays, float $recentChangesMaxAgeInDays ): string {
-		$nukeMaxAgeDisplay = ( $nukeMaxAgeInDays > 0 ) ? $nukeMaxAgeInDays : 90;
-		if ( $nukeMaxAgeInDays !== $recentChangesMaxAgeInDays ) {
-			$recentChangesMaxAgeDisplay = ( $recentChangesMaxAgeInDays > 0 ) ? $recentChangesMaxAgeInDays : 30;
-			return $this->msg( 'nuke-daterange-helper-text-max-age-different' )
-				->params( [ $nukeMaxAgeDisplay,
-					$recentChangesMaxAgeDisplay ] )
-				->text();
-		}
-		return $this->msg( 'nuke-daterange-helper-text-max-age-same' )->params(
-			[ $nukeMaxAgeDisplay ]
-		)->text();
 	}
 
 }
