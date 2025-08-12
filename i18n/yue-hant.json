@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"H78c67c",
-			"Winston Sung"
+			"Winston Sung",
+			"Ktchankt"
 		]
 	},
 	"nuke": "大量刪除",
@@ -14,5 +15,6 @@
 	"nuke-submit-user": "列出頁面",
 	"nuke-submit-delete": "刪除㨂咗嘅",
 	"right-nuke": "大量刪頁",
+	"nuke-viewchanges": "歷史",
 	"nuke-linkoncontribs": "大量刪除"
 }
