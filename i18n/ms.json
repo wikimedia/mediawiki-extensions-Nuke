@@ -19,7 +19,6 @@
 	"nuke-editby": "Dibuat oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Laman '''$1''' telah dihapuskan.",
 	"nuke-not-deleted": "Laman [[:$1]] '''tidak dapat''' dihapuskan.",
-	"nuke-delete-more": "[[Special:Nuke|Hapuskan lebih banyak laman]]",
 	"nuke-pattern": "Pola nama laman:",
 	"nuke-nopages-global": "Tiada laman baru dalam [[Special:RecentChanges|perubahan terkini]].",
 	"nuke-viewchanges": "lihat perubahan",

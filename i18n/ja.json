@@ -56,7 +56,6 @@
 	"nuke-deletion-queued": "ページ '''$1''' が削除キューに追加されました。",
 	"nuke-not-deleted": "ページ [[:$1]] を削除'''できませんでした'''。",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''$1ページ'''は}}削除対象として選択されませんでした。",
-	"nuke-delete-more": "[[Special:Nuke|他のページも削除]]",
 	"nuke-pattern": "ページ名の SQL LIKE パターン (例: %):",
 	"nuke-nolist": "続けるには、まず「{{int:nuke-submit-list}}」を実行し、次に削除キューに入れるページを選択します。",
 	"nuke-nopages-global": "検索条件に一致するページはありません。",

@@ -25,7 +25,6 @@
 	"nuke-deleted": "Puslapis '''$1''' buvo ištrintas.",
 	"nuke-deletion-queued": "Puslapis '''$1''' įtrauktas į eilę ištrynimui.",
 	"nuke-not-deleted": "Puslapis [[:$1]] '''negalimas''' ištrinti.",
-	"nuke-delete-more": "[[Special:Nuke|Ištrinti daugiau puslapių]]",
 	"nuke-pattern": "SQL LIKE šablonas (pvz., %) puslapio pavadinimui:",
 	"nuke-nopages-global": "Nėra jūsų paiešką atitinkančių puslapių pavadinimų.",
 	"nuke-viewchanges": "žiūrėti pakeitimus",

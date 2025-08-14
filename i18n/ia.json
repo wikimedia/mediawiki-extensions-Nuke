@@ -40,7 +40,6 @@
 	"nuke-deletion-queued": "Le pagina '''$1''' ha essite adjungite al cauda de deletiones.",
 	"nuke-not-deleted": "Le pagina [[:$1]] '''non poteva''' esser delite.",
 	"nuke-skipped-summary": "'''{{PLURAL:$1|Un pagina|$1 paginas}}''' non ha essite seligite pro deletion.",
-	"nuke-delete-more": "[[Special:Nuke|Deler plus paginas]]",
 	"nuke-pattern": "Patrono SQL LIKE (p.ex. %) pro le nomine de pagina:",
 	"nuke-nolist": "Pro continuar, primo ‘{{int:nuke-submit-list}}’ e alora selige le paginas a mitter in cauda pro deletion.",
 	"nuke-nopages-global": "Necun pagina corresponde al recerca.",

@@ -25,7 +25,6 @@
 	"nuke-deleted": "A página '''$1''' foi eliminada.",
 	"nuke-deletion-queued": "A página '''$1''' foi colocada na fila para eliminação.",
 	"nuke-not-deleted": "Não foi possível eliminar a página [[:$1]].",
-	"nuke-delete-more": "[[Special:Nuke|Eliminar mais páginas]]",
 	"nuke-pattern": "Padrão do tipo SQL LIKE (por exemplo %) para o nome da página:",
 	"nuke-nopages-global": "Não existem títulos de página que correspondam à sua pesquisa.",
 	"nuke-viewchanges": "histórico",

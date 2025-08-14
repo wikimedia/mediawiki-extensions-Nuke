@@ -18,7 +18,6 @@
 	"nuke-editby": "Geskep deur [[Special:Contributions/$1|$1]]",
 	"nuke-deleted": "Bladsy '''$1''' is verwyder.",
 	"nuke-not-deleted": "Bladsy [[:$1]] '''kon nie''' verwyder word nie.",
-	"nuke-delete-more": "[[Special:Nuke|Skrap meer bladsy]]",
 	"nuke-pattern": "Patroon vir die naam:",
 	"nuke-nopages-global": "Daar is nie nuwe bladsye in [[Special:RecentChanges|onlangse wysigings]] nie.",
 	"nuke-viewchanges": "wys veranderings",

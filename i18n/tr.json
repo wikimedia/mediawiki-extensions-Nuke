@@ -41,7 +41,6 @@
 	"nuke-deleted": "'''$1''' sayfası silindi.",
 	"nuke-deletion-queued": "'''$1''' sayfası silinmek üzere sıraya alındı.",
 	"nuke-not-deleted": "[[:$1]] sayfası '''silinemedi'''.",
-	"nuke-delete-more": "[[Special:Nuke|Daha fazla sayfa sil]]",
 	"nuke-pattern": "Sayfa adı için SQL LIKE modeli (ör. %):",
 	"nuke-nopages-global": "Aramanızla eşleşen bir sayfa başlığı yoktur.",
 	"nuke-viewchanges": "değişiklikleri görüntüle",

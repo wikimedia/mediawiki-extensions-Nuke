@@ -26,7 +26,6 @@
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] द्वारा बनाए गए",
 	"nuke-deleted": "पृष्ठ '''$1''' को हटा दिया गया है।",
 	"nuke-not-deleted": "पृष्ठ [[:$1]] हटाया '''नहीं''' जा सका।",
-	"nuke-delete-more": "[[Special:Nuke|और पृष्ठ हटाएँ]]",
 	"nuke-pattern": "पृष्ठ नाम के लिए पैटर्न:",
 	"nuke-nopages-global": "आपके खोज अनुसार कोई भी पृष्ठ का शीर्षक नहीं है।",
 	"nuke-viewchanges": "बदलाव देखें",

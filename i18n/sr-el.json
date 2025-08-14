@@ -43,7 +43,6 @@
 	"nuke-deletion-queued": "Stranica '''$1''' je stavljena u red za čekanje na brisanje.",
 	"nuke-not-deleted": "Stranicu [[:$1]] '''nije bilo moguće''' obrisati.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Jedna stranica''' nije označena|'''$1 stranica''' nije označeno}} za brisanje.",
-	"nuke-delete-more": "[[Special:Nuke|Obriši još stranica]]",
 	"nuke-pattern": "SQL LIKE obrazac (npr. %) za ime stranice:",
 	"nuke-nopages-global": "Nema pronađenih stranica.",
 	"nuke-searchnotice-minmorethanmax": "Minimalna veličina u bajtovima veća je od maksimalne veličine, tako da nijedna stranica ne može ispuniti ovaj kriterijum.",

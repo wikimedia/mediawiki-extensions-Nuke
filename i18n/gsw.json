@@ -20,7 +20,6 @@
 	"nuke-editby": "Aagleit vu [[Special:Contributions/$1|$1]]",
 	"nuke-deleted": "Syte „$1“ isch glescht wore.",
 	"nuke-not-deleted": "Syte [[:$1]] '''het nit chönne''' glöscht werde.",
-	"nuke-delete-more": "[[Special:Nuke|Wyteri Syte lösche]]",
 	"nuke-pattern": "Muster für de Sytename:",
 	"nuke-nopages-global": "Es git kei neui Syte unter de [[Special:RecentChanges|letschte Änderige]].",
 	"nuke-viewchanges": "Änderige zeige"

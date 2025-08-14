@@ -28,7 +28,6 @@
 	"nuke-editby": "Creat de [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Pagina '''$1''' a fost ștearsă.",
 	"nuke-not-deleted": "Pagina [[:$1]] '''nu a putut''' fi ștearsă.",
-	"nuke-delete-more": "[[Special:Nuke|Șterge mai multe pagini]]",
 	"nuke-pattern": "Pattern de SQL LIKE (de ex. %) pentru numele paginii:",
 	"nuke-nopages-global": "Nu există titluri de pagină care să corespundă căutării dvs.",
 	"nuke-viewchanges": "vizualizează modificările",

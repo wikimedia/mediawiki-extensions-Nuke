@@ -18,7 +18,6 @@
 	"nuke-editby": "Kakardi olih [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Kaca '''$1''' sampun kaapus.",
 	"nuke-not-deleted": "Kaca [[:$1]] '''tan sida''' kaapus.",
-	"nuke-delete-more": "[[Special:Nuke|Apus malih]]",
 	"nuke-pattern": "Pola SQL LIKE (sek. %) antuk aran kaca:",
 	"nuke-nopages-global": "Tan katemuin kaca anyar sané pateh sareng parerehan ragané.",
 	"nuke-viewchanges": "cingak gentosan",

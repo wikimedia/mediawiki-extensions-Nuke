@@ -50,7 +50,6 @@
 	"nuke-deletion-queued": "頁面'''$1'''已佇列刪除。",
 	"nuke-not-deleted": "'''無法'''刪除頁面 [[:$1]]。",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''$1個頁面'''}}未選擇刪除。",
-	"nuke-delete-more": "[[Special:Nuke|刪除更多頁面]]",
 	"nuke-pattern": "用於頁面名稱的 SQL LIKE 模式（例如 %）：",
 	"nuke-nopages-global": "沒有符合搜尋條件的頁面。",
 	"nuke-viewchanges": "歷史",

@@ -23,7 +23,6 @@
 	"nuke-editby": "Garapané [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Kaca '''$1''' wis dibusak.",
 	"nuke-not-deleted": "Kaca [[:$1]] '''ora bisa''' dibusak.",
-	"nuke-delete-more": "[[Special:Nuke|Busak kaca luwih akèh]]",
 	"nuke-pattern": "Pola kanggo jeneng kaca:",
 	"nuke-nopages-global": "Ora ana sesirah kaca sing mathuk karo panggolèké panjenengan.",
 	"nuke-viewchanges": "deleng owah-owahan",

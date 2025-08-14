@@ -44,7 +44,6 @@
 	"nuke-deletion-queued": "'''$1''' səhifəsi silinmək üçün növbəyə alınıb.",
 	"nuke-not-deleted": "[[:$1]] səhifəsini silmək '''mümkün olmadı.'''",
 	"nuke-skipped-summary": "'''{{PLURAL:$1|$1 səhifə}}''' silinmə üçün seçilməyib.",
-	"nuke-delete-more": "[[Special:Nuke|Daha çox səhifə sil]]",
 	"nuke-pattern": "Səhifə adı üçün SQL LIKE kodu (məs: %)",
 	"nuke-nolist": "Davam etmək üçün əvvəlcə \"{{int:nuke-submit-list}}\" düyməsinə klikləyin, sonra silinmək üçün növbəyə qoyulacaq səhifələri seçin.",
 	"nuke-nopages-global": "Axtarışa uyğun səhifə yoxdur.",

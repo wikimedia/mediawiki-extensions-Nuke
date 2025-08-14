@@ -50,7 +50,6 @@
 	"nuke-deletion-queued": "Sivu '''$1''' on poistojonossa.",
 	"nuke-not-deleted": "Sivua [[:$1]] '''ei voitu''' poistaa.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Yhtä sivua'''|'''$1 sivua'''}} ei valittu poistettavaksi.",
-	"nuke-delete-more": "[[Special:Nuke|Poista enemmän sivuja]]",
 	"nuke-pattern": "SQL LIKE -malli (esim. %) sivun nimelle:",
 	"nuke-nopages-global": "Hakua vastaavia sivuja ei ole.",
 	"nuke-viewchanges": "historia",

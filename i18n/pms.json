@@ -20,7 +20,6 @@
 	"nuke-editby": "Creà da [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "La pàgina '''$1''' a l'é stàita scancelà.",
 	"nuke-not-deleted": "La pàgina [[:$1]] '''a peul pa''' esse scancelà.",
-	"nuke-delete-more": "[[Special:Nuke|Scancelé pì 'd pàgine]]",
 	"nuke-pattern": "Model për ël nòm ëd pàgina:",
 	"nuke-nopages-global": "A-i é pa 'd pàgine neuve an [[Special:RecentChanges|ùltime modìfiche]].",
 	"nuke-viewchanges": "vëdde le modìfiche",

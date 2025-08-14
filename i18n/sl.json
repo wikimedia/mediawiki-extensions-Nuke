@@ -21,7 +21,6 @@
 	"nuke-deleted": "Stran '''$1''' je izbrisana.",
 	"nuke-deletion-queued": "Stran '''$1''' je v čakalni vrsti za izbris.",
 	"nuke-not-deleted": "Strani [[:$1]] '''ni bilo mogoče''' izbrisati.",
-	"nuke-delete-more": "[[Special:Nuke|Izbriši več strani]]",
 	"nuke-pattern": "Vzorec SQL LIKE (npr. %) za ime strani:",
 	"nuke-nopages-global": "Z vašim iskanjem se ne ujema noben naslov strani.",
 	"nuke-viewchanges": "zgodovina",

@@ -58,7 +58,6 @@
 	"nuke-deletion-queued": "La page '''$1''' a été mise en file d'attente pour suppression.",
 	"nuke-not-deleted": "La page [[:$1]] '''n’a pas pu''' être supprimée.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Une page''' n'était pas sélectionnée|'''$1 pages''' n'étaient pas sélectionnées}} pour la suppression.",
-	"nuke-delete-more": "[[Special:Nuke|Supprimer plus de pages]]",
 	"nuke-pattern": "Patron au format SQL LIKE (par ex. %) pour le nom de page :",
 	"nuke-nolist": "Avant de continuer, commencez d'abord par « {{int:nuke-submit-list}} » puis sélectionnez celles qui seront mises en file d’attente pour la suppression.",
 	"nuke-nopages-global": "Aucune page ne correspond à la recherche.",

@@ -30,7 +30,6 @@
 	"nuke-deletion-queued": "La pagina '''$1''' è stata messa in coda per la cancellazione.",
 	"nuke-not-deleted": "La pagina [[:$1]] '''non può''' essere cancellata.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Una pagina''' non è stata selezionata|'''$1 pagine''' non sono state selezionate}} per la cancellazione.",
-	"nuke-delete-more": "[[Special:Nuke|Cancella altre pagine]]",
 	"nuke-pattern": "Pattern SQL LIKE (ad esempio %) per il nome della pagina:",
 	"nuke-nopages-global": "Non ci sono pagine che corrispondono alla tua ricerca.",
 	"nuke-viewchanges": "cronologia",

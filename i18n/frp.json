@@ -18,7 +18,6 @@
 	"nuke-editby": "Fêt per [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "La pâge '''$1''' at étâ suprimâ.",
 	"nuke-not-deleted": "La pâge [[:$1]] '''pôt pas''' étre suprimâ.",
-	"nuke-delete-more": "[[Special:Nuke|Suprimar més de pâges]]",
 	"nuke-pattern": "Modèlo por lo nom de pâge :",
 	"nuke-nopages-global": "Y at gins de pâge novèla dedens los [[Special:RecentChanges|dèrriérs changements]].",
 	"nuke-viewchanges": "vêre los changements",

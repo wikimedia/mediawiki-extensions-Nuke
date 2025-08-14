@@ -18,7 +18,6 @@
 	"nuke-editby": "Maħluqa minn [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Il-paġna '''$1''' ġiet imħassra.",
 	"nuke-not-deleted": "Il-paġna [[:$1]] '''ma setgħetx''' tiġi mħassra.",
-	"nuke-delete-more": "[[Special:Nuke|Ħassar aktar paġni]]",
 	"nuke-pattern": "Mudell għat-titlu tal-paġna:",
 	"nuke-nopages-global": "M'hemm l-ebda paġna ġdida fit-[[Special:RecentChanges|tibdil riċenti]].",
 	"nuke-viewchanges": "uri t-tibdiliet",

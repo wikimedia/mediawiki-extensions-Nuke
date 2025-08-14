@@ -22,7 +22,6 @@
 	"nuke-editby": "Δημιουργήθηκε από [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Η σελίδα '''$1''' έχει διαγραφεί.",
 	"nuke-not-deleted": "Η σελίδα [[:$1]] '''δεν μπορούσε''' να διαγραφεί.",
-	"nuke-delete-more": "[[Special:Nuke|Διαγραφή περισσότερων σελίδων]]",
 	"nuke-pattern": "Μοτίβο για το όνομα σελίδας:",
 	"nuke-nopages-global": "Δεν υπάρχουν νέες σελίδες στις [[Special:RecentChanges|πρόσφατες αλλαγές]].",
 	"nuke-viewchanges": "προβολή αλλαγών",

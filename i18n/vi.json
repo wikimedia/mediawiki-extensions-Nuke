@@ -21,7 +21,6 @@
 	"nuke-deleted": "Đã xóa trang '''$1'''.",
 	"nuke-deletion-queued": "Đã đặt trang '''$1''' vào hàng đợi xóa.",
 	"nuke-not-deleted": "'''Không thể''' xóa trang [[:$1]].",
-	"nuke-delete-more": "[[Special:Nuke|Xóa thêm trang]]",
 	"nuke-pattern": "Mẫu tên trang:",
 	"nuke-nopages-global": "Không có tiêu đề trang trùng với truy vấn của bạn.",
 	"nuke-viewchanges": "xem thay đổi",

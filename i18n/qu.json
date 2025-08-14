@@ -18,7 +18,6 @@
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] sutiyuqpa kamarisqan",
 	"nuke-deleted": "'''$1''' sutiyuq p'anqaqa qullusqañam.",
 	"nuke-not-deleted": "[[:$1]] sutiyuq p'anqataqa qulluyta '''manam atinichu'''.",
-	"nuke-delete-more": "[[Special:Nuke|Aswan p'anqakunata qulluy]]",
 	"nuke-pattern": "P'anqa sutip qatinallan",
 	"nuke-nopages-global": "[[Special:RecentChanges|Ñaqha hukchasqakunapiqa]] manam musuq p'anqakuna kanchu.",
 	"nuke-viewchanges": "hukchasqakunata qhaway",

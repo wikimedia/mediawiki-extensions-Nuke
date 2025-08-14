@@ -18,7 +18,6 @@
 	"nuke-editby": "Wutworjeny wot [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Strona '''„$1“''' bu wušmórnjena.",
 	"nuke-not-deleted": "Strona [[:$1]]  '''njeda so''' wušmórnyć.",
-	"nuke-delete-more": "[[Special:Nuke|Dalše strony wušmórnyć]]",
 	"nuke-pattern": "Muster SQL-LIKE (na př. %) za mjeno strony:",
 	"nuke-nopages-global": "Njejsu žane nowe strony w [[Special:RecentChanges|aktualnych změnach]].",
 	"nuke-viewchanges": "změny pokazać",
