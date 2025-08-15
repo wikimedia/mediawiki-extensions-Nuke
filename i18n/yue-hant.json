@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"H78c67c",
+			"JeffreyKim",
 			"Ktchankt",
 			"Winston Sung"
 		]
@@ -15,7 +16,9 @@
 	"nuke-submit-delete": "刪除",
 	"right-nuke": "大量刪頁",
 	"nuke-associated-redirect": "跳轉",
+	"nuke-deletemore": "刪除多啲版面",
 	"nuke-viewchanges": "歷史",
+	"nuke-namespace-invalid": "呢個空間名無效。請喺選單入面揀選項。",
 	"nuke-linkoncontribs": "大量刪除",
 	"tag-nuke": "Nuke",
 	"tag-nuke-description": "用Nuke擴充功能執行嘅刪版"
