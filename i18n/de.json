@@ -47,6 +47,7 @@
 	"nuke-deletion-queued": "Seite '''$1''' wurde zum Löschen vorgemerkt.",
 	"nuke-not-deleted": "Seite [[:$1]] '''konnte nicht''' gelöscht werden.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Eine Seite''' wurde|'''$1 Seiten''' wurden}} nicht zum Löschen ausgewählt.",
+	"nuke-delete-more": "[[Special:Nuke|Weitere Seiten löschen]]",
 	"nuke-deletemore": "Weitere Seiten löschen",
 	"nuke-pattern": "SQL-LIKE-Muster (z.&nbsp;B. %) für den Seitennamen:",
 	"nuke-nolist": "Um fortzufahren, führe zuerst „{{int:nuke-submit-list}}“ aus und wähle dann die Seiten aus, die zum Löschen in die Warteschlange gestellt werden.",

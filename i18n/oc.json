@@ -12,6 +12,7 @@
 	"nuke-submit-delete": "Supression seleccionada",
 	"right-nuke": "Suprimir de paginas en massa",
 	"nuke-deleted": "La pagina '''$1''' es estada escafada.",
+	"nuke-delete-more": "[[Special:Nuke|Suprimir mai de paginas]]",
 	"nuke-nopages-global": "I a pas de novèla pagina dins los [[Special:RecentChanges|darrièrs cambiaments]].",
 	"nuke-linkoncontribs": "supression en massa"
 }

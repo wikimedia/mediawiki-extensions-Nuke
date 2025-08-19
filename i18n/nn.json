@@ -20,6 +20,7 @@
 	"nuke-editby": "Oppretta av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Sida '''$1''' vart sletta.",
 	"nuke-not-deleted": "Sida [[:$1]] ''kunne ikkje''' verta sletta.",
+	"nuke-delete-more": "[[Special:Nuke|Slett fleire sider]]",
 	"nuke-pattern": "Mønster for sidenamnet:",
 	"nuke-nopages-global": "Det er ingen nye sider i [[Special:RecentChanges|siste endringane]].",
 	"nuke-viewchanges": "vis endringar",

@@ -41,6 +41,7 @@
 	"nuke-deletion-queued": "Page '''$1''' has been queued for deletion.",
 	"nuke-not-deleted": "Page [[:$1]] '''could not''' be deleted.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''One page''' was|'''$1 pages''' were}} not selected for deletion.",
+	"nuke-delete-more": "[[Special:Nuke|Delete more pages]]",
 	"nuke-deletemore": "Delete more pages",
 	"nuke-pattern": "SQL LIKE pattern (e.g. %) for the page name:",
 	"nuke-nolist": "To continue, first '{{int:nuke-submit-list}}' and then select pages that will be queued for deletion.",

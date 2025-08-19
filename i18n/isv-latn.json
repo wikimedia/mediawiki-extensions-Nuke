@@ -21,6 +21,7 @@
 	"nuke-deleted": "Stranica '''$1''' jest odstranjena.",
 	"nuke-deletion-queued": "Stranica '''$1''' čekaje na odstranjenje.",
 	"nuke-not-deleted": "Odstranjenje stranice [[:$1]] '''ne udalo se'''.",
+	"nuke-delete-more": "[[Special:Nuke|Odstraniti veče stranic]]",
 	"nuke-pattern": "SQL-vzor LIKE (napr. %) za nazvu stranice:",
 	"nuke-nopages-global": "Nijedna stranica ne odpovědaje zapytu.",
 	"nuke-viewchanges": "historija",

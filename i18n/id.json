@@ -26,6 +26,7 @@
 	"nuke-deleted": "Halaman '''$1''' sudah dihapus.",
 	"nuke-deletion-queued": "Halaman '''$1''' telah diantrekan untuk dihapus.",
 	"nuke-not-deleted": "Halaman [[:$1]] '''tidak bisa''' dihapus.",
+	"nuke-delete-more": "[[Special:Nuke|Hapus lagi]]",
 	"nuke-pattern": "Pola SQL LIKE (mis. %) untuk nama halaman:",
 	"nuke-nopages-global": "Tidak ditemukan halaman baru yang cocok dengan pencarian Anda.",
 	"nuke-viewchanges": "lihat perubahan",

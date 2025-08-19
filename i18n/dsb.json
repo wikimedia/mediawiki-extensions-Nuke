@@ -20,6 +20,7 @@
 	"nuke-editby": "Napórany wót [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Bok '''$1''' jo se wulašował.",
 	"nuke-not-deleted": "Bok [[:$1]] '''njejo dał''' se wulašowaś.",
+	"nuke-delete-more": "[[Special:Nuke|Dalšne boki lašowaś]]",
 	"nuke-pattern": "Pśikład za bokowe mě:",
 	"nuke-nopages-global": "Njejsu žedne nowe boki w [[Special:RecentChanges|aktualnych změnach]].",
 	"nuke-viewchanges": "změny pokazaś",

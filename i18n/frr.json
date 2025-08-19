@@ -18,6 +18,7 @@
 	"nuke-editby": "Skrewen faan [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Sidj '''„$1“''' as stregen wurden.",
 	"nuke-not-deleted": "Sidj [[:$1]] '''küd ei''' stregen wurd.",
+	"nuke-delete-more": "[[Special:Nuke|Muar sidjen strik]]",
 	"nuke-pattern": "Münster för di sidjnööm:",
 	"nuke-nopages-global": "Diar san nian sidjen uun a [[Special:RecentChanges|leetst feranrangen]].",
 	"nuke-viewchanges": "Feranrangen wise",

@@ -21,6 +21,7 @@
 	"nuke-editby": "تحریر کردہ از [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "صفحہ '''$1''' حذف کر دیا گیا۔",
 	"nuke-not-deleted": "صفحہ [[:$1]] حذف '''نہیں کیا جا سکا'''۔",
+	"nuke-delete-more": "[[Special:Nuke|مزید صفحات حذف کریں]]",
 	"nuke-pattern": "عنوان صفحہ کا انداز",
 	"nuke-nopages-global": "[[Special:RecentChanges|حالیہ تبدیلیوں]] میں نئے صفحات موجود نہیں ہیں۔",
 	"nuke-viewchanges": "تبدیلیاں دیکھیں",

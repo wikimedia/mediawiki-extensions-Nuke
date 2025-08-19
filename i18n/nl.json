@@ -46,6 +46,7 @@
 	"nuke-deletion-queued": "Pagina '''$1''' is in de wachtrij voor verwijdering gezet.",
 	"nuke-not-deleted": "Pagina [[:$1]] '''kon niet''' worden verwijderd.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Eén pagina''' is|'''$1 pagina’s''' zijn}} niet geselecteerd voor verwijdering.",
+	"nuke-delete-more": "[[Special:Nuke|Meer pagina's verwijderen]]",
 	"nuke-deletemore": "Meer pagina’s verwijderen",
 	"nuke-pattern": "SQL Like patroon (bijv. %) voor de paginanaam:",
 	"nuke-nolist": "Om verder te gaan, klikt u eerst op ‘{{int:nuke-submit-list}}’ en selecteert u vervolgens de pagina’s die in de wachtrij voor verwijdering moeten worden geplaatst.",

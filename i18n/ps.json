@@ -18,6 +18,7 @@
 	"nuke-maxpages": "راوړل کېدونکو مخونو شمېر(ډېرشمېر ۵۰۰):",
 	"nuke-deleted": "د '''$1''' مخ ړنگ شو.",
 	"nuke-not-deleted": "د [[:$1]] مخ '''نشي''' ړنګېدلی.",
+	"nuke-delete-more": "[[Special:Nuke|لا نور مخونه ړنگول]]",
 	"nuke-viewchanges": "پېښليک",
 	"nuke-linkoncontribs": "ټول ړنگېدنه"
 }

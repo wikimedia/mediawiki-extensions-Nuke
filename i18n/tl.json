@@ -18,6 +18,7 @@
 	"nuke-editby": "Nilikha ni [[Special:Contributions/$1|$1]]",
 	"nuke-deleted": "Nabura na ang pahinang '''$1'''.",
 	"nuke-not-deleted": "'''Hindi mabura''' ang pahinang [[:$1]].",
+	"nuke-delete-more": "[[Special:Nuke|Magbura ng marami pang mga pahina]]",
 	"nuke-pattern": "Padron para sa pangalan ng pahina:",
 	"nuke-nopages-global": "Walang bagong mga pahina sa loob ng [[Special:RecentChanges|kamakailang mga pagbabago]].",
 	"nuke-viewchanges": "tingnan ang mga pagbabago"

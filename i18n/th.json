@@ -25,6 +25,7 @@
 	"nuke-editby": "สร้างโดย [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "ลบหน้า '''$1''' แล้ว",
 	"nuke-not-deleted": "ลบหน้า [[:$1]] '''ไม่ได้'''",
+	"nuke-delete-more": "[[Special:Nuke|ลบหน้าเพิ่ม]]",
 	"nuke-pattern": "แบบรูปสำหรับชื่อหน้า:",
 	"nuke-nopages-global": "ไม่มีหน้าที่ตรงกับการค้นหา",
 	"nuke-viewchanges": "ประวัติ",
