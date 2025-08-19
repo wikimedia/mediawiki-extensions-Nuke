@@ -864,10 +864,18 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					wfEscapeWikiText( $title->getPrefixedText() )
 				)->parse();
 			} else {
-				$queued[] = $this->msg(
-					$status->isOK() ? 'nuke-deleted' : 'nuke-not-deleted',
-					wfEscapeWikiText( $title->getPrefixedText() )
-				)->parse();
+				$statusMessages = $status->getMessages();
+				if ( count( $statusMessages ) > 0 ) {
+					foreach ( $statusMessages as $message ) {
+						$queued[] = $this->msg( $message )->parse();
+					}
+				} else {
+					$queued[] = $this->msg(
+						$status->isOK() ? 'nuke-deleted' : 'nuke-not-deleted',
+						wfEscapeWikiText( $title->getPrefixedText() )
+					)->parse();
+				}
+
 				if ( !$status->isOK() ) {
 					// Reduce the queuedCount by 1 if it turns out that on of the Status objects
 					// is not OK.

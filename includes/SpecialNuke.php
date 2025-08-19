@@ -740,7 +740,7 @@ class SpecialNuke extends SpecialPage {
 				$statuses[$title->getPrefixedDBkey()] = $deletionResult ?
 					Status::newGood() :
 					Status::newFatal(
-						$this->msg( 'nuke-not-deleted' )
+						$this->msg( 'nuke-not-deleted', wfEscapeWikiText( $title->getPrefixedText() ) )
 					);
 				continue;
 			}
