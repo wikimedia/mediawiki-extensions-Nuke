@@ -21,6 +21,7 @@
 	"nuke-editby": "შექმნილია მოხმარებელ [[Special:Contributions/$1|{{GENDER:$1|$1}}]]-ის მიერ",
 	"nuke-deleted": "გვერდი '''$1''' წაიშალა.",
 	"nuke-not-deleted": "გვერდი [[:$1]] წაშლა '''შეუძლებელია'''.",
+	"nuke-delete-more": "[[Special:Nuke|მრავალრიცხოვანი გვერდების წაშლა]]",
 	"nuke-pattern": "გვერდის სახელის თარგი:",
 	"nuke-nopages-global": "[[Special:RecentChanges|ბოლო ცვლილებებში]] არ არის ახალი გვერდები.",
 	"nuke-viewchanges": "ცვლილებების ჩვენება",

@@ -21,6 +21,7 @@
 	"nuke-editby": "{{GENDER:$1|Vytvoril|Vytvorila}} [[Special:Contributions/$1|$1]]",
 	"nuke-deleted": "Stránka '''$1''' bola zmazaná.",
 	"nuke-not-deleted": "Stránka [[:$1]] '''nemohla byť''' zmazaná.",
+	"nuke-delete-more": "[[Special:Nuke|Odstrániť ďalšie stránky]]",
 	"nuke-pattern": "SQL LIKE vzor (napr. %) pre názov stránky:",
 	"nuke-nopages-global": "Vášmu vyhľadávaniu nezodpovedajú žiadne názvy stránok.",
 	"nuke-viewchanges": "zobraziť zmeny",

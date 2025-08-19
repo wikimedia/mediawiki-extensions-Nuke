@@ -38,6 +38,7 @@
 	"nuke-deletion-queued": "Lehekülg \"'''$1'''\" ootab tööjärjes kustutamist.",
 	"nuke-not-deleted": "Lehekülge [[:$1]] '''ei saa''' kustutada.",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''Üht lehekülg'''|'''$1 lehekülge'''}} ei valitud kustutamiseks.",
+	"nuke-delete-more": "[[Special:Nuke|Kustuta veel lehekülgi]]",
 	"nuke-pattern": "Lehekülje pealkirja LIKE-kuju (SQL, nt %):",
 	"nuke-nolist": "Et jätkata, klõpsa kõigepealt nuppu \"{{int:nuke-submit-list}}\" ning seejärel vali leheüljed, mida kustutamiseks tööjärge lisada.",
 	"nuke-nopages-global": "Ükski lehekülg ei vasta sinu otsingule.",

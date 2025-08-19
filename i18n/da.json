@@ -23,6 +23,7 @@
 	"nuke-editby": "Oprettet af [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Siden '''$1''' er blevet slettet.",
 	"nuke-not-deleted": "Siden [[:$1]] '''kunne ikke''' slettes.",
+	"nuke-delete-more": "[[Special:Nuke|Slet flere sider]]",
 	"nuke-pattern": "Mønster for sidenavnet:",
 	"nuke-nopages-global": "Der er ikke nogen nye sider i [[Special:RecentChanges|de seneste ændringer]].",
 	"nuke-viewchanges": "vis ændringer",

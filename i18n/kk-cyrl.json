@@ -18,6 +18,7 @@
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] бастаған",
 	"nuke-deleted": "'''$1'''  беті жойылды.",
 	"nuke-not-deleted": "[[:$1]] беті '''жойылмады'''.",
+	"nuke-delete-more": "[[Special:Nuke|Басқа да беттерді жою]]",
 	"nuke-pattern": "Бет атауы үшін өрнек:",
 	"nuke-nopages-global": "[[Special:RecentChanges|Жуықтағы өзгерістерде]] жаңа беттер жоқ.",
 	"nuke-viewchanges": "өзгерістерін көру",

@@ -44,6 +44,7 @@
 	"nuke-deletion-queued": "页面'''$1'''已进入队列等待删除。",
 	"nuke-not-deleted": "'''无法'''删除[[:$1]]页面。",
 	"nuke-skipped-summary": "{{PLURAL:$1|'''$1个页面'''}}未被选中以供删除。",
+	"nuke-delete-more": "[[Special:Nuke|删除更多页面]]",
 	"nuke-pattern": "页面名称的SQL LIKE模式（例如%）：",
 	"nuke-nolist": "要继续，请先“{{int:nuke-submit-list}}”，然后选择要加入队列以供删除的页面。",
 	"nuke-nopages-global": "没有匹配搜索条件的页面。",

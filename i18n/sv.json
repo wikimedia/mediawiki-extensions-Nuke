@@ -27,6 +27,7 @@
 	"nuke-editby": "Skapades av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Sidan '''$1''' har raderats.",
 	"nuke-not-deleted": "Sidan [[:$1]] '''kunde inte''' raderas.",
+	"nuke-delete-more": "[[Special:Nuke|Radera fler sidor]]",
 	"nuke-pattern": "SQL LIKE-mönster (t.ex %) för sidnamnet:",
 	"nuke-nopages-global": "Det finns inga sidtitlar som matchar din sökning.",
 	"nuke-viewchanges": "visa ändringar",

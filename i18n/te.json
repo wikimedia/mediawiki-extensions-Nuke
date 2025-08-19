@@ -16,6 +16,7 @@
 	"right-nuke": "పేజీలను సామూహికంగా తొలగించడం",
 	"nuke-maxpages": "గరిష్ఠ పుటల సంఖ్య:",
 	"nuke-deleted": "'''$1''' పేజీని తొలగించారు.",
+	"nuke-delete-more": "[[Special:Nuke|మరిన్ని పేజీలను తొలగించండి]]",
 	"nuke-nopages-global": "[[Special:RecentChanges|ఇటీవలి మార్పుల]]లో కొత్త పేజీలు ఏమీ లేవు.",
 	"nuke-viewchanges": "మార్పులను చూడండి",
 	"nuke-linkoncontribs": "మూకుమ్మడి తొలగింపు"

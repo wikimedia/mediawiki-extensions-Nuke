@@ -19,6 +19,7 @@
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] സൃഷ്ടിച്ചവ",
 	"nuke-deleted": "'''$1''' എന്ന താൾ മായ്ച്ചു കഴിഞ്ഞു.",
 	"nuke-not-deleted": "[[:$1]] എന്ന താൾ മായ്ക്കാൻ '''കഴിയില്ല'''.",
+	"nuke-delete-more": "[[Special:Nuke|കൂടുതൽ താളുകൾ മായ്ക്കുക]]",
 	"nuke-pattern": "താളിന്റെ പേരിന്റെ ശൈലി:",
 	"nuke-nopages-global": "[[Special:RecentChanges|സമീപകാലമാറ്റങ്ങളിൽ]] പുതിയ താളുകളൊന്നുമില്ല.",
 	"nuke-viewchanges": "മാറ്റങ്ങൾ കാണുക",

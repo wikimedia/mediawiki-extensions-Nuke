@@ -23,6 +23,7 @@
 	"nuke-editby": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]] vıraşt bi",
 	"nuke-deleted": "Pela '''$1''' esteriye.",
 	"nuke-not-deleted": "Pela  [[:$1]] '''nêşena''' ke besteriyo.",
+	"nuke-delete-more": "[[Special:Nuke|Tayêna pelan bestere]]",
 	"nuke-pattern": "Nımuneyê SQL-LIKE-yi (m. %) be nameyê pele:",
 	"nuke-nopages-global": "Gorey cıgeyrayışi ju pela çıniya",
 	"nuke-viewchanges": "vurriyayışan bıvêne",

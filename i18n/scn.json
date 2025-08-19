@@ -16,5 +16,6 @@
 	"right-nuke": "Scancella pàggini 'n massa",
 	"nuke-deleted": "La pàggina '''$1''' fu cancillata.",
 	"nuke-not-deleted": "La pàggina [[:$1]] '''nun pò''' èssiri cancillata.",
+	"nuke-delete-more": "[[Special:Nuke|Cancella àutri pàggini]]",
 	"nuke-viewchanges": "talìa li canciamenti"
 }

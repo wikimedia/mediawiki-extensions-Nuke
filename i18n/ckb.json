@@ -18,6 +18,7 @@
 	"nuke-userorip": "ناوی بەکارھێنەر، ناونیشانی IP یان بۆش:",
 	"nuke-deleted": "پەڕەی '''$1''' سڕرایەوە.",
 	"nuke-not-deleted": "'''ناکرێت''' پەڕەی [[:$1]] بسڕرێتەوە.",
+	"nuke-delete-more": "[[Special:Nuke|سڕینەوەی پەڕەی دیکە]]",
 	"nuke-viewchanges": "گۆڕانکارییەکان ببینە",
 	"nuke-linkoncontribs": "سڕینەوەی بەکۆمەڵ"
 }
