@@ -23,6 +23,7 @@
 	"nuke-editby": "由[[Special:Contributions/$1|$1]]開嘅",
 	"nuke-deleted": "版「'''$1'''」經已刪咗。",
 	"nuke-not-deleted": "版「[[:$1]]」'''刪唔到'''。",
+	"nuke-delete-more": "[[Special:Nuke|刪多啲版]]",
 	"nuke-deletemore": "刪除多啲版面",
 	"nuke-pattern": "版名嘅 SQL LIKE 花款（例如 %）：",
 	"nuke-nopages-global": "冇符合搜尋條件嘅版。",
