@@ -15,7 +15,9 @@
 			"The Evil IP address",
 			"Thibaut120094",
 			"Umherirrender",
-			"Yekrats"
+			"Yekrats",
+			"Mahabarata",
+			"McDutchie"
 		]
 	},
 	"nuke": "{{doc-special|Nuke}}\nThe Nuke extension allows for sysops to delete a large number of pages (\"Mass delete\").\nFor more information, see https://www.mediawiki.org/wiki/Extension:Nuke\n{{Identical|Mass delete}}",
@@ -39,7 +41,7 @@
 	"nuke-deleted": "Used as success result of deletion. Parameters:\n* $1 - page title\nSee also:\n* {{msg-mw|Nuke-not-deleted}}",
 	"nuke-deletion-queued": "Used when the page is queued for deletion. Parameters:\n* $1 - page title\nSee also:\n* {{msg-mw|Nuke-deleted}}",
 	"nuke-not-deleted": "Used as failure result of deletion. Parameters:\n* $1 - page title\nSee also:\n* {{msg-mw|Nuke-deleted}}",
-	"nuke-delete-more": "Used at the bottom of the Nuke (mass deletion) result page.",
+	"nuke-delete-more": "Used at the bottom of the Nuke (mass deletion) result page. This is not automatically linked, so it needs to include a link back to the Special:Nuke page.",
 	"nuke-pattern": "{{doc-important|Do not translate <code>LIKE</code>, it is an SQL operator.}}\nUsed as label for \"nuke pattern\" input box.",
 	"nuke-nopages-global": "Used if there are no pages to delete and the username is empty.\n\nSee also:\n* {{msg-mw|Nuke-nopages}}",
 	"nuke-viewchanges": "Used as link text.\n\nThe link points to History page of the page.\n\nThis message follows:\n* {{msg-mw|nuke-editby}} and {{msg-mw|comma-separator}}\n* or empty string (if username is empty).\n{{Identical|View changes}}",

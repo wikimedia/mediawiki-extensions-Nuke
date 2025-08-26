@@ -17,7 +17,9 @@
 			"Wladek92",
 			"Wyz",
 			"Zetud",
-			"Mahabarata"
+			"Mahabarata",
+			"Escargot bleu",
+			"JLTRY"
 		]
 	},
 	"nuke": "Suppression en masse",
@@ -28,7 +30,7 @@
 	"nuke-list-tempaccount": "Les pages suivantes ont été récemment créées par des comptes temporaires qui ont été utilisés à partir de l'adresse IP $1. Veuillez sélectionner les pages à supprimer, fournir un résumé des modifications effectuées et cliquer sur « Supprimer la sélection » pour lancer la suppression des pages. '''Pour des raisons de confidentialité, veuillez ne pas écrire l'adresse IP dans le résumé.'''\n\nLes redirections sont affichées en italique.",
 	"nuke-list-multiple": "Les pages suivantes ont été récemment créées. Veuillez sélectionner les pages à supprimer, ajoutez un commentaire et cliquez sur le bouton pour lancer la suppression des pages.\n\nLes redirections sont affichées en italique.",
 	"nuke-defaultreason": "Suppression en masse des pages ajoutées par [[Special:Contributions/$1|{{GENDER:$1|}}$1]]",
-	"nuke-defaultreason-tempaccount": "Suppression massive des pages ajoutées par des comptes temporaires",
+	"nuke-defaultreason-tempaccount": "Suppression massive de pages créées par des comptes temporaires",
 	"nuke-multiplepeople": "Suppression de masse de pages récemment ajoutées",
 	"nuke-tools": "Cet outil permet les suppressions en masse des pages ajoutées récemment par un utilisateur inscrit ou par une adresse IP donnée. Indiquez le nom de l’utilisateur ou l’adresse IP afin d’obtenir la liste des pages à supprimer, ou laissez vide pour tous les utilisateurs.",
 	"nuke-tools-tempaccount": "Cet outil permet de supprimer en masse les pages récemment ajoutées par un utilisateur donné ou un compte temporaire. Saisissez un nom d'utilisateur ou une adresse IP pour obtenir une liste des pages à supprimer, ou laissez ce champ vide pour tous les utilisateurs. La saisie d'une adresse IP répertorie toutes les pages créées par cette adresse IP ou tous les comptes temporaires utilisés à partir de cette adresse IP.",
