@@ -6,6 +6,7 @@ use LogicException;
 use MediaWiki\Config\Config;
 use MediaWiki\Language\Language;
 use MediaWiki\MainConfigNames;
+use MediaWiki\RecentChanges\RecentChange;
 use MediaWiki\Title\NamespaceInfo;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\IReadableDatabase;
@@ -107,8 +108,9 @@ class NukeQueryBuilder {
 			->join( 'actor', null, 'actor_id=rc_actor' )
 			->join( 'page', null, 'page_id=rc_cur_id' )
 			->where( [
-				$dbr->expr( 'rc_source', '=', 'mw.new' )->orExpr(
-					$dbr->expr( 'rc_log_type', '=', 'upload' )
+				$dbr->expr( 'rc_source', '=', RecentChange::SRC_NEW )->orExpr(
+					$dbr->expr( 'rc_source', '=', RecentChange::SRC_LOG )
+						->and( 'rc_log_type', '=', 'upload' )
 						->and( 'rc_log_action', '=', 'upload' )
 				)
 			] )
