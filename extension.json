@@ -142,7 +142,7 @@
 	},
 	"TestAutoloadNamespaces": {
 		"MediaWiki\\Extension\\Nuke\\Test\\": "tests/phpunit/",
-		"MediaWiki\\Extension\\Nuke\\Test\\Integration\\": "tests/phpunit/integration"
+		"MediaWiki\\Extension\\Nuke\\Test\\Integration\\": "tests/phpunit/integration/"
 	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
