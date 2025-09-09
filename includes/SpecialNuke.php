@@ -35,19 +35,6 @@ class SpecialNuke extends SpecialPage {
 	/** @var NukeHookRunner|null */
 	private $hookRunner;
 
-	private JobQueueGroup $jobQueueGroup;
-	private IConnectionProvider $dbProvider;
-	private PermissionManager $permissionManager;
-	private RepoGroup $repoGroup;
-	private UserOptionsLookup $userOptionsLookup;
-	private UserNamePrefixSearch $userNamePrefixSearch;
-	private UserNameUtils $userNameUtils;
-	private NamespaceInfo $namespaceInfo;
-	private Language $contentLanguage;
-	private RedirectLookup $redirectLookup;
-	/** @var CheckUserTemporaryAccountsByIPLookup|null */
-	private $checkUserTemporaryAccountsByIPLookup = null;
-
 	/**
 	 * Action keyword for the "prompt" step.
 	 */
@@ -76,34 +63,20 @@ class SpecialNuke extends SpecialPage {
 	 */
 	public const NAMESPACE_LIST_SEPARATOR = "\n";
 
-	/**
-	 * @inheritDoc
-	 */
 	public function __construct(
-		JobQueueGroup $jobQueueGroup,
-		IConnectionProvider $dbProvider,
-		PermissionManager $permissionManager,
-		RepoGroup $repoGroup,
-		UserOptionsLookup $userOptionsLookup,
-		UserNamePrefixSearch $userNamePrefixSearch,
-		UserNameUtils $userNameUtils,
-		NamespaceInfo $namespaceInfo,
-		Language $contentLanguage,
-		RedirectLookup $redirectLookup,
-		$checkUserTemporaryAccountsByIPLookup = null
+		private readonly JobQueueGroup $jobQueueGroup,
+		private readonly IConnectionProvider $dbProvider,
+		private readonly PermissionManager $permissionManager,
+		private readonly RepoGroup $repoGroup,
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly UserNamePrefixSearch $userNamePrefixSearch,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly Language $contentLanguage,
+		private readonly RedirectLookup $redirectLookup,
+		private readonly ?CheckUserTemporaryAccountsByIPLookup $checkUserTemporaryAccountsByIPLookup,
 	) {
 		parent::__construct( 'Nuke' );
-		$this->jobQueueGroup = $jobQueueGroup;
-		$this->dbProvider = $dbProvider;
-		$this->permissionManager = $permissionManager;
-		$this->repoGroup = $repoGroup;
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->userNamePrefixSearch = $userNamePrefixSearch;
-		$this->userNameUtils = $userNameUtils;
-		$this->namespaceInfo = $namespaceInfo;
-		$this->contentLanguage = $contentLanguage;
-		$this->redirectLookup = $redirectLookup;
-		$this->checkUserTemporaryAccountsByIPLookup = $checkUserTemporaryAccountsByIPLookup;
 	}
 
 	/**

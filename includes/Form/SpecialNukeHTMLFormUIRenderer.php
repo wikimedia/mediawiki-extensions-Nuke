@@ -32,29 +32,17 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 	 */
 	protected Title $pageTitle;
 
-	private RepoGroup $repoGroup;
-	private LinkRenderer $linkRenderer;
-	private NamespaceInfo $namespaceInfo;
-	private RedirectLookup $redirectLookup;
-
-	/** @inheritDoc */
 	public function __construct(
 		NukeContext $context,
 		SpecialNuke $specialNuke,
-		RepoGroup $repoGroup,
-		LinkRenderer $linkRenderer,
-		NamespaceInfo $namespaceInfo,
-		RedirectLookup $redirectLookup
+		private readonly RepoGroup $repoGroup,
+		private readonly LinkRenderer $linkRenderer,
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly RedirectLookup $redirectLookup,
 	) {
 		parent::__construct( $context );
 
 		$this->pageTitle = $specialNuke->getPageTitle();
-
-		// MediaWiki services
-		$this->repoGroup = $repoGroup;
-		$this->linkRenderer = $linkRenderer;
-		$this->namespaceInfo = $namespaceInfo;
-		$this->redirectLookup = $redirectLookup;
 	}
 
 	/**

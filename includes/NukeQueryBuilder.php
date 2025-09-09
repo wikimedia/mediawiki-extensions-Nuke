@@ -31,11 +31,6 @@ class NukeQueryBuilder {
 	 */
 	private const DEFAULT_FIELDS = [ 'page_id', 'page_title', 'page_namespace', 'actor_name' ];
 
-	private IReadableDatabase $readableDatabase;
-	private Config $config;
-	private NamespaceInfo $namespaceInfo;
-	private Language $contentLanguage;
-
 	/**
 	 * The query builder for this query. Set once in the constructor, and should never be
 	 * reassigned afterward.
@@ -43,12 +38,6 @@ class NukeQueryBuilder {
 	 * @var SelectQueryBuilder|null
 	 */
 	private ?SelectQueryBuilder $selectQueryBuilder = null;
-	/**
-	 * The table being used.
-	 *
-	 * @var string
-	 */
-	private string $table;
 
 	/**
 	 * @param IReadableDatabase $readableDatabase
@@ -59,17 +48,12 @@ class NukeQueryBuilder {
 	 *   {@link TABLE_REVISION} or {@link TABLE_RECENTCHANGES}.
 	 */
 	public function __construct(
-		IReadableDatabase $readableDatabase,
-		Config $config,
-		NamespaceInfo $namespaceInfo,
-		Language $contentLanguage,
-		string $table
+		private readonly IReadableDatabase $readableDatabase,
+		private readonly Config $config,
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly Language $contentLanguage,
+		private readonly string $table,
 	) {
-		$this->readableDatabase = $readableDatabase;
-		$this->config = $config;
-		$this->namespaceInfo = $namespaceInfo;
-		$this->contentLanguage = $contentLanguage;
-
 		switch ( $table ) {
 			case self::TABLE_REVISION:
 				$this->fromRevisionTableQuery();
@@ -80,7 +64,6 @@ class NukeQueryBuilder {
 			default:
 				throw new LogicException( "Invalid Nuke table target: $table" );
 		}
-		$this->table = $table;
 	}
 
 	private function fromRevisionTableQuery() {

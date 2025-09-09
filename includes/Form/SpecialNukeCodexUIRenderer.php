@@ -24,38 +24,18 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 	 */
 	protected Title $pageTitle;
 
-	/**
-	 * Main Codex factory, used to build everything.
-	 *
-	 * @var \Wikimedia\Codex\Utility\Codex
-	 */
-	protected Codex $codex;
-
-	private RepoGroup $repoGroup;
-	private LinkRenderer $linkRenderer;
-	private NamespaceInfo $namespaceInfo;
-	private RedirectLookup $redirectLookup;
-
-	/** @inheritDoc */
 	public function __construct(
 		NukeContext $context,
 		SpecialNuke $specialNuke,
-		Codex $codex,
-		RepoGroup $repoGroup,
-		LinkRenderer $linkRenderer,
-		NamespaceInfo $namespaceInfo,
-		RedirectLookup $redirectLookup
+		protected readonly Codex $codex,
+		private readonly RepoGroup $repoGroup,
+		private readonly LinkRenderer $linkRenderer,
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly RedirectLookup $redirectLookup,
 	) {
 		parent::__construct( $context );
 
 		$this->pageTitle = $specialNuke->getPageTitle();
-		$this->codex = $codex;
-
-		// MediaWiki services
-		$this->repoGroup = $repoGroup;
-		$this->linkRenderer = $linkRenderer;
-		$this->namespaceInfo = $namespaceInfo;
-		$this->redirectLookup = $redirectLookup;
 	}
 
 	protected function getTargetField(): string {

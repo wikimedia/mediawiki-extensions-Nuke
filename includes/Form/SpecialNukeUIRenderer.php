@@ -12,18 +12,7 @@ use Wikimedia\Message\MessageSpecifier;
 
 abstract class SpecialNukeUIRenderer {
 
-	/**
-	 * The context of the form.
-	 *
-	 * @var NukeContext
-	 */
-	protected NukeContext $context;
-
-	/**
-	 * @param NukeContext $context
-	 */
-	public function __construct( NukeContext $context ) {
-		$this->context = $context;
+	public function __construct( protected readonly NukeContext $context ) {
 	}
 
 	/**
