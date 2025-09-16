@@ -8,6 +8,7 @@ use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\Nuke\NukeConfigNames;
 use MediaWiki\Extension\Nuke\SpecialNuke;
 use MediaWiki\Extension\Nuke\Test\NukeIntegrationTest;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
@@ -1667,6 +1668,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 	}
 
 	public function testListFiles() {
+		$this->overrideConfigValue( MainConfigNames::EnableUploads, true );
+
 		$testFileName = $this->uploadTestFile()['title']->getPrefixedText();
 
 		$admin = $this->getTestSysop()->getUser();
@@ -1955,6 +1958,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$testUser = $this->getTestUser( "user" )->getUser();
 		$testUserName = $testUser->getName();
 
+		$this->overrideConfigValue( MainConfigNames::EnableUploads, true );
+
 		$pages[] = $this->uploadTestFile( $testUser )[ 'title' ];
 		$pages[] = $this->insertPage( 'Page123', 'Test', NS_MAIN, $testUser )[ 'title' ];
 		$pages[] = $this->insertPage( 'Paging456', 'Test', NS_MAIN, $testUser )[ 'title' ];
@@ -1987,6 +1992,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 
 		$testUser = $this->getTestUser( "user" )->getUser();
 		$testUserName = $testUser->getName();
+
+		$this->overrideConfigValue( MainConfigNames::EnableUploads, true );
 
 		$pages[] = $this->uploadTestFile( $testUser )[ 'title' ];
 		$pages[] = $this->insertPage( 'Page123', 'Test', NS_MAIN, $testUser )[ 'title' ];
@@ -2137,6 +2144,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 	}
 
 	public function testDeleteFiles() {
+		$this->overrideConfigValue( MainConfigNames::EnableUploads, true );
+
 		$testFileName = $this->uploadTestFile()['title']->getPrefixedText();
 
 		$admin = $this->getTestSysop()->getUser();
