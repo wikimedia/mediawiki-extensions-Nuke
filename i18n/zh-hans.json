@@ -18,7 +18,8 @@
 			"铁桶",
 			"阿pp",
 			"Cookai1205",
-			"GuoPC"
+			"GuoPC",
+			"Libamidi"
 		]
 	},
 	"nuke": "大量删除",
@@ -35,7 +36,7 @@
 	"right-nuke": "删除大量页面",
 	"nuke-userorip": "用户名、IP地址或留空：",
 	"nuke-maxpages": "最大页面数：",
-	"nuke-editby": "由[[Special:Contributions/$1|{{GENDER:$1|$1}}]]创建。",
+	"nuke-editby": "由[[Special:Contributions/$1|{{GENDER:$1|$1}}]]创建",
 	"nuke-deleted": "已删除页面'''$1'''。",
 	"nuke-deletion-queued": "页面'''$1'''已进入队列等待删除。",
 	"nuke-not-deleted": "'''无法'''删除[[:$1]]页面。",
