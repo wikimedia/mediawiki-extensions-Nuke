@@ -21,7 +21,7 @@
 	"right-nuke": "Xóa trang hàng loạt",
 	"nuke-userorip": "Tên thành viên, địa chỉ IP, hoặc để trống:",
 	"nuke-maxpages": "Số trang tối đa:",
-	"nuke-editby": "{{GENDER:$1}}Được tạo bởi [[Special:Contributions/$1|$1]]",
+	"nuke-editby": "Được tạo bởi [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Đã xóa trang '''$1'''.",
 	"nuke-deletion-queued": "Đã thêm trang '''$1''' vào hàng đợi xóa.",
 	"nuke-not-deleted": "'''Không thể''' xóa trang [[:$1]].",
