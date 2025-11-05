@@ -231,10 +231,10 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			)->parse()
 		);
 
-		return HTML::rawElement(
+		return Html::rawElement(
 			'div',
 			[],
-			HTML::rawElement(
+			Html::rawElement(
 				'div',
 				[
 					"class" => "ext-nuke-form-dateRange"
@@ -290,7 +290,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			->build()
 			->getHtml();
 
-		return HTML::rawElement(
+		return Html::rawElement(
 			'div',
 			[
 				"class" => "ext-nuke-form-pageSizeRange"
