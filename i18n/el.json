@@ -6,7 +6,8 @@
 			"Giannaras99",
 			"Glavkos",
 			"Protnet",
-			"ZaDiak"
+			"ZaDiak",
+			"Jimkats"
 		]
 	},
 	"nuke": "Μαζική διαγραφή",
@@ -28,7 +29,7 @@
 	"nuke-delete-more": "[[Special:Nuke|Διαγραφή περισσότερων σελίδων]]",
 	"nuke-pattern": "Μοτίβο για το όνομα σελίδας:",
 	"nuke-nopages-global": "Δεν υπάρχουν νέες σελίδες στις [[Special:RecentChanges|πρόσφατες αλλαγές]].",
-	"nuke-viewchanges": "προβολή αλλαγών",
+	"nuke-viewchanges": "ιστορικό",
 	"nuke-namespace": "Να περιοριστεί στον ονοματοχώρο:",
 	"nuke-linkoncontribs": "μαζική διαγραφή",
 	"nuke-linkoncontribs-text": "Μαζική διαγραφή σελίδων όπου αυτός ο χρήστης είναι ο μοναδικός συγγραφέας"
