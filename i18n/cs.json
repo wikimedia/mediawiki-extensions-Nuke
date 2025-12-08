@@ -27,6 +27,7 @@
 	"nuke-maxpages": "Maximální počet stran:",
 	"nuke-editby": "{{GENDER:$1|Vytvořil|Vytvořila}} [[Special:Contributions/$1|$1]]",
 	"nuke-deleted": "Stránka '''$1''' byla smazána.",
+	"nuke-deletion-queued": "Stránka '''$1''' byla zařazena do fronty ke smazání.",
 	"nuke-not-deleted": "Stránka [[:$1]] '''nemohla být''' smazána.",
 	"nuke-delete-more": "[[Special:Nuke|Odstranit další stránky]]",
 	"nuke-pattern": "SQL LIKE vzor (např. %) pro název stránky:",
