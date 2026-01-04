@@ -12,7 +12,7 @@ module.exports = function ( grunt ) {
 				cache: true
 			},
 			all: [
-				'**/*.js{,on}',
+				'**/*.{js,json,vue}',
 				'!{vendor,node_modules,coverage}/**'
 			]
 		},
@@ -21,7 +21,7 @@ module.exports = function ( grunt ) {
 				cache: true
 			},
 			all: [
-				'**/*.{css,less}',
+				'**/*.{css,less,vue}',
 				'!node_modules/**',
 				'!vendor/**',
 				'!coverage/**'

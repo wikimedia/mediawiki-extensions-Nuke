@@ -2,7 +2,7 @@
 	"name": "nuke",
 	"private": true,
 	"scripts": {
-		"test": "npm run test:jest && npm run test:grunt",
+		"test": "npm run test:grunt && npm run test:jest",
 		"test:jest": "jest",
 		"test:grunt": "grunt test"
 	},
