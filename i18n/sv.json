@@ -9,7 +9,8 @@
 			"Martinwiss",
 			"Tobulos1",
 			"WikiPhoenix",
-			"Gkyziridis"
+			"Gkyziridis",
+			"Stefan2255"
 		]
 	},
 	"nuke": "Massradering",
@@ -25,14 +26,14 @@
 	"nuke-submit-delete": "Ta bort valda",
 	"right-nuke": "Massradera sidor",
 	"nuke-userorip": "Användarnamn, IP-adress eller tomt:",
-	"nuke-maxpages": "Maximalt antal sidor:",
+	"nuke-maxpages": "Antal sidor att hämta (max 500):",
 	"nuke-editby": "Skapades av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Sidan '''$1''' har raderats.",
 	"nuke-not-deleted": "Sidan [[:$1]] '''kunde inte''' raderas.",
 	"nuke-delete-more": "[[Special:Nuke|Radera fler sidor]]",
 	"nuke-pattern": "SQL LIKE-mönster (t.ex %) för sidnamnet:",
 	"nuke-nopages-global": "Det finns inga sidtitlar som matchar din sökning.",
-	"nuke-viewchanges": "visa ändringar",
+	"nuke-viewchanges": "historik",
 	"nuke-namespace": "Begränsa till namnrymd:",
 	"nuke-linkoncontribs": "massradering",
 	"nuke-linkoncontribs-text": "Radera alla sidor där {{GENDER:$1|användaren}} är den enda bidragsgivaren",
