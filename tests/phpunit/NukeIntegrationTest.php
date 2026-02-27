@@ -111,7 +111,7 @@ trait NukeIntegrationTest {
 			false,
 			$user ?? $this->getTestUser( "user" )->getUser()
 		);
-		$this->assertTrue( $uploadStatus->isOK() );
+		$this->assertStatusOK( $uploadStatus );
 		$this->getServiceContainer()->getJobRunner()->run( [] );
 
 		return [
