@@ -326,7 +326,7 @@ class NukeContext {
 	 * @return string[]
 	 */
 	public function getAllPages(): array {
-		return array_merge( $this->getPages(), $this->getAssociatedPages() );
+		return array_unique( array_merge( $this->getPages(), $this->getAssociatedPages() ) );
 	}
 
 	/**
