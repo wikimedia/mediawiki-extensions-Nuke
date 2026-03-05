@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\Nuke;
 
 use DateTime;
 use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
+use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\Nuke\Form\SpecialNukeCodexUIRenderer;
@@ -14,6 +15,7 @@ use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\JobQueue\Jobs\DeletePageJob;
 use MediaWiki\Language\Language;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\File\FileDeleteForm;
 use MediaWiki\Page\RedirectLookup;
 use MediaWiki\Permissions\PermissionManager;
@@ -742,6 +744,29 @@ class SpecialNuke extends SpecialPage {
 					false,
 					$user
 				);
+				if ( $status->isOK() && $status->value ) {
+					$logId = (int)$status->value;
+					// Tag both the log entry and the RecentChange entry.
+					// The RC is created in a POSTSEND deferred update by
+					// ManualLogEntry::publish(), queued via onTransactionPreCommitOrIdle
+					// inside DeletePage::deleteInternal(). To ensure our addTags() call
+					// runs after the RC exists, we queue it the same way: first via
+					// onTransactionPreCommitOrIdle (so it's registered after the publish
+					// callback), then via a POSTSEND deferred update.
+					$this->dbProvider->getPrimaryDatabase()
+						->onTransactionPreCommitOrIdle(
+							static function () use ( $logId ) {
+								DeferredUpdates::addCallableUpdate(
+									static function () use ( $logId ) {
+										MediaWikiServices::getInstance()->getChangeTagsStore()
+											->addTags( [ 'nuke' ], null, null, $logId );
+									},
+									DeferredUpdates::POSTSEND
+								);
+							},
+							__METHOD__
+						);
+				}
 			} else {
 				$job = new DeletePageJob( [
 					'namespace' => $title->getNamespace(),
