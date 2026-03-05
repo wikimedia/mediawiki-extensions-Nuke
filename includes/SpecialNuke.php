@@ -593,6 +593,12 @@ class SpecialNuke extends SpecialPage {
 		foreach ( $pages as $page ) {
 			$title = Title::newFromText( $page );
 
+			// Check the delete rate limit for each page
+			if ( $user->pingLimiter( 'delete' ) ) {
+				$statuses[$title->getPrefixedDBkey()] = Status::newFatal( 'actionthrottledtext' );
+				break;
+			}
+
 			$deletionResult = false;
 			if ( !$this->getNukeHookRunner()->onNukeDeletePage( $title, $reason, $deletionResult ) ) {
 				$res[] = $this->msg(
