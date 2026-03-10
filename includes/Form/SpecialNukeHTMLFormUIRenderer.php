@@ -258,7 +258,7 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		}
 
 		if ( strlen( $messageLabelOutput ) != 0 ) {
-			$out->addHTML( new MessageWidget( [
+			$out->addHTML( (string)new MessageWidget( [
 				'type' => 'warning',
 				'classes' => [ 'ext-nuke-promptform-error' ],
 				'label' => $messageLabelOutput,
