@@ -421,7 +421,12 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 				$this->codex
 					->message()
 					->setType( "error" )
-					->setContentText( $validationResult )
+					->setContentHtml(
+						$this->codex
+							->htmlSnippet()
+							->setContent( $validationResult )
+							->build()
+					)
 					->setAttributes( [
 						'class' => 'ext-nuke-form-error'
 					] )

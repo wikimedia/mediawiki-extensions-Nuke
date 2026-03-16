@@ -190,7 +190,7 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				new MessageWidget( [
 					'classes' => [ 'ext-nuke-promptform-error' ],
 					'type' => 'error',
-					'label' => $validationResult
+					'label' => new HtmlSnippet( $validationResult )
 				] )
 			) );
 		}
