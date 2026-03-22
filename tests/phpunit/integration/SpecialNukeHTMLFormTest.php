@@ -7,7 +7,7 @@ use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\Nuke\NukeConfigNames;
 use MediaWiki\Extension\Nuke\SpecialNuke;
-use MediaWiki\Extension\Nuke\Test\NukeIntegrationTest;
+use MediaWiki\Extension\Nuke\Test\NukeIntegrationTestTrait;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
@@ -27,7 +27,7 @@ use Wikimedia\IPUtils;
  */
 class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 
-	use NukeIntegrationTest;
+	use NukeIntegrationTestTrait;
 	use TempUserTestTrait;
 
 	/**

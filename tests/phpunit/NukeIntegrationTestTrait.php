@@ -12,7 +12,7 @@ use PurgeRecentChanges;
 use RebuildRecentchanges;
 use UploadFromFile;
 
-trait NukeIntegrationTest {
+trait NukeIntegrationTestTrait {
 
 	/**
 	 * Rebuild the recent changes table.
