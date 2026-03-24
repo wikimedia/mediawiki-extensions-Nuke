@@ -31,7 +31,7 @@
 	"nuke-delete-more": "[[Special:Nuke|Ištrinti daugiau puslapių]]",
 	"nuke-pattern": "SQL LIKE šablonas (pvz., %) puslapio pavadinimui:",
 	"nuke-nopages-global": "Nėra jūsų paiešką atitinkančių puslapių pavadinimų.",
-	"nuke-viewchanges": "žiūrėti pakeitimus",
+	"nuke-viewchanges": "Istorija",
 	"nuke-namespace": "Apriboti vardų sritį:",
 	"nuke-linkoncontribs": "masinis trynimas",
 	"nuke-linkoncontribs-text": "Masiškai trinti puslapius, kur {{GENDER:$1|šis naudotojas yra vienintelis autorius|ši naudotoja yra vienintelė autorė}}",
