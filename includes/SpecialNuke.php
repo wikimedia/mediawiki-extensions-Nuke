@@ -420,7 +420,7 @@ class SpecialNuke extends SpecialPage {
 	 *   deletion. Can be either `"job"` to indicate that the page was queued for deletion, a
 	 *   {@link Status} to indicate if the page was successfully deleted, or `false` if the user
 	 *   did not select the page for deletion.
-	 * @param (Status|string|boolean)[] $deletedPageStatuses The status for each page queued for
+	 * @param array<string,Status|string> $deletedPageStatuses The status for each page queued for
 	 * @return void
 	 */
 	public function showResultPage( NukeContext $context, array $deletedPageStatuses ): void {
@@ -447,7 +447,7 @@ class SpecialNuke extends SpecialPage {
 	 * @param string[] $tempAccounts Temporary accounts to search for. This is passed directly
 	 *   instead of through context to ensure permissions checks happen first.
 	 *
-	 * @return array{0:Title,1:string|false,2?:string,3?:Title}[][]
+	 * @return array<array<int,array{0:Title,1:string|false,2?:string,3?:Title}>>
 	 */
 	protected function getNewPages(
 		NukeContext $context, bool &$hasExcludedResults, array $tempAccounts = []
@@ -553,11 +553,11 @@ class SpecialNuke extends SpecialPage {
 		//
 		// The first element of each group must always be the main page.
 		// This array is keyed by the main page ID.
-		/** @var array{0:Title,1:string|false,2?:string,3?:Title}[][] $pageGroups */
+		/** @var array<array<int,array{0:Title,1:string|false,2?:string,3?:Title}>> $pageGroups */
 		$pageGroups = [];
 
 		// A summative list of pages, to be used for associated queries.
-		/** @var Title[] $pageGroups */
+		/** @var Title[] $pages */
 		$pages = [];
 
 		foreach ( $result as $row ) {
@@ -692,7 +692,7 @@ class SpecialNuke extends SpecialPage {
 	/**
 	 * Does the actual deletion of the pages.
 	 *
-	 * @return array An associative array of statuses (or the string "job") keyed by the page title
+	 * @return array<string,Status|string> An associative array of statuses (or the string "job") keyed by page title
 	 * @throws PermissionsError
 	 */
 	protected function doDelete( NukeContext $context ): array {
