@@ -52,7 +52,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			$services->getNamespaceInfo(),
 			$services->getContentLanguage(),
 			$services->getRedirectLookup(),
-			$services->getService( 'NukeIPLookup' )
+			$services->getService( 'NukeIPLookup' ),
+			$services->getTitleFormatter()
 		);
 	}
 

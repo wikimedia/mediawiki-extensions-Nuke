@@ -13,6 +13,7 @@ use MediaWiki\Linker\LinkRenderer;
 use MediaWiki\Page\RedirectLookup;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleFormatter;
 use Wikimedia\Codex\Utility\Codex;
 
 class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
@@ -32,6 +33,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 		private readonly LinkRenderer $linkRenderer,
 		private readonly NamespaceInfo $namespaceInfo,
 		private readonly RedirectLookup $redirectLookup,
+		private readonly TitleFormatter $titleFormatter,
 	) {
 		parent::__construct( $context );
 
@@ -610,7 +612,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			$html .= ' <span class="mw-changeslist-separator"></span> ' .
 				$this->msg(
 					'nuke-redirectsto',
-					$redirect->getText()
+					$this->titleFormatter->getPrefixedText( $redirect )
 				)->parse();
 		}
 

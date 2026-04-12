@@ -126,7 +126,8 @@
 				"NamespaceInfo",
 				"ContentLanguage",
 				"RedirectLookup",
-				"NukeIPLookup"
+				"NukeIPLookup",
+				"TitleFormatter"
 			],
 			"styles": [
 				"mediawiki.special.special"

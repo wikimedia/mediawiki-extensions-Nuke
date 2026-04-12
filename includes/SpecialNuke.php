@@ -24,6 +24,7 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleFormatter;
 use MediaWiki\User\Options\UserOptionsLookup;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNamePrefixSearch;
@@ -77,6 +78,7 @@ class SpecialNuke extends SpecialPage {
 		private readonly Language $contentLanguage,
 		private readonly RedirectLookup $redirectLookup,
 		private readonly ?CheckUserTemporaryAccountsByIPLookup $checkUserTemporaryAccountsByIPLookup,
+		private readonly TitleFormatter $titleFormatter,
 	) {
 		parent::__construct( 'Nuke' );
 	}
@@ -290,7 +292,8 @@ class SpecialNuke extends SpecialPage {
 					$this->repoGroup,
 					$this->getLinkRenderer(),
 					$this->namespaceInfo,
-					$this->redirectLookup
+					$this->redirectLookup,
+					$this->titleFormatter
 				);
 			case 'htmlform':
 			default:
@@ -300,7 +303,8 @@ class SpecialNuke extends SpecialPage {
 					$this->repoGroup,
 					$this->getLinkRenderer(),
 					$this->namespaceInfo,
-					$this->redirectLookup
+					$this->redirectLookup,
+					$this->titleFormatter
 				);
 		}
 	}
