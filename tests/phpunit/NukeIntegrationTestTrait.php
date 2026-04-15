@@ -7,10 +7,10 @@ use MediaWiki\Permissions\Authority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Storage\PageUpdateStatus;
 use MediaWiki\Title\Title;
+use MediaWiki\Upload\UploadFromFile;
 use MediaWiki\User\User;
 use PurgeRecentChanges;
 use RebuildRecentchanges;
-use UploadFromFile;
 
 trait NukeIntegrationTestTrait {
 

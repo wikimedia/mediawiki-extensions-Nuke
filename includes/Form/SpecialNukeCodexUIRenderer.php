@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\Nuke\Form;
 
 use Exception;
 use MediaWiki\CommentStore\CommentStore;
+use MediaWiki\Exception\MWException;
 use MediaWiki\Extension\Nuke\NukeContext;
 use MediaWiki\Extension\Nuke\SpecialNuke;
 use MediaWiki\FileRepo\RepoGroup;
@@ -575,7 +576,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 	 * @param array{0:Title,1:string|false,2?:string,3?:Title} $pageActorTuple
 	 * @param bool $isAssociated Whether the page is associated with another page.
 	 * @return string
-	 * @throws \MWException
+	 * @throws MWException
 	 */
 	protected function getPageCheckbox( array $pageActorTuple, bool $isAssociated = false ): string {
 		[ $title, $userName ] = $pageActorTuple;
@@ -950,7 +951,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 	 *
 	 * @param Title $title The title to render links of
 	 * @return string
-	 * @throws \MWException
+	 * @throws MWException
 	 */
 	protected function getPageLinksHtml( Title $title ): string {
 		$linkRenderer = $this->linkRenderer;

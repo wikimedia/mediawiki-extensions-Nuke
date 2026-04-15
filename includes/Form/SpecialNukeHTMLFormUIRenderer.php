@@ -2,7 +2,6 @@
 
 namespace MediaWiki\Extension\Nuke\Form;
 
-use HtmlArmor;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Exception\MWException;
 use MediaWiki\Extension\Nuke\Form\HTMLForm\NukeDateTimeField;
@@ -23,6 +22,7 @@ use OOUI\HtmlSnippet;
 use OOUI\MessageWidget;
 use OOUI\PanelLayout;
 use OOUI\Widget;
+use Wikimedia\HtmlArmor\HtmlArmor;
 
 class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 

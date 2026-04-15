@@ -11,9 +11,9 @@ use MediaWiki\Extension\Nuke\Test\NukeIntegrationTestTrait;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\Title\Title;
-use SpecialPageTestBase;
 use Wikimedia\IPUtils;
 
 /**
