@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"nuke": "Tirtirid ballaaran",
+	"action-nuke": "Tirtir bogag badan",
+	"nuke-desc": "Waxay siisaa maamulayaasha awood ay ku [[Special:Nuke|tirtiraan bogag badan]] hal mar",
+	"nuke-defaultreason": "Tirtirid ballaaran oo bogag uu ku daray [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
+	"nuke-defaultreason-tempaccount": "Tirtirid ballaaran oo bogag ay ku darsadeen akoonno ku-meelgaar ah",
+	"nuke-multiplepeople": "Tirtirid ballaaran oo bogag dhawaan la daray",
+	"nuke-tools": "Qalabkani wuxuu oggolaanayaa tirtirid ballaaran oo bogag uu dhawaan ku daray isticmaale gaar ah ama cinwaan IP.\n\nGeli magaca isticmaalaha ama cinwaanka IP-ga si aad u hesho liiska bogagga la tirtirayo, ama ka tag banaan si loo eego dhammaan isticmaalayaasha.",
+	"nuke-tools-tempaccount": "Qalabkani wuxuu oggolaanayaa tirtirid ballaaran oo bogag uu dhawaan ku daray isticmaale gaar ah ama akoon ku-meelgaar ah. Geli magaca isticmaalaha ama cinwaanka IP-ga si aad u hesho liiska bogagga la tirtirayo, ama ka tag banaan si loo eego dhammaan isticmaalayaasha. Haddii IP la geliyo, waxaa la soo bandhigi doonaa dhammaan bogagga uu sameeyay IP-gaas ama akoonnada ku-meelgaarka ah ee laga isticmaalay IP-gaas.",
+	"right-nuke": "Tirtir bogag badan",
+	"nuke-userorip": "Magaca isticmaalaha, cinwaanka IP-ga ama ka tag banaan:",
+	"nuke-maxpages": "Tirada bogagga la soo saarayo (ugu badnaan 500):",
+	"nuke-deleted": "Bogga '''$1''' waa la tirtiray.",
+	"nuke-deletion-queued": "Bogga '''$1''' waxaa loo geliyay safka tirtiridda.",
+	"nuke-not-deleted": "Bogga [[:$1]] '''lama tirtiri karin'''.",
+	"nuke-delete-more": "[[Special:Nuke|Tirtir bogag kale]]",
+	"nuke-pattern": "Qaabka SQL LIKE (tusaale %) ee magaca bogga:",
+	"nuke-viewchanges": "taariikh",
+	"nuke-linkoncontribs": "tirtirid ballaaran",
+	"nuke-linkoncontribs-text": "Tirtir bogagga halka {{GENDER:$1|isticmaalahan}} uu yahay qoraaga kaliya"
+}
