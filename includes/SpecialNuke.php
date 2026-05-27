@@ -14,6 +14,7 @@ use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Language\Language;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\DeletePageJob;
 use MediaWiki\Page\File\FileDeleteForm;
@@ -225,7 +226,7 @@ class SpecialNuke extends SpecialPage {
 		}
 
 		// Retrieve the maximum page size in kilobytes
-		$maxPageSizeKB = $this->getConfig()->get( 'MaxArticleSize' );
+		$maxPageSizeKB = $this->getConfig()->get( MainConfigNames::MaxArticleSize );
 
 		// Convert the size to bytes
 		$maxPageSizeBytes = $maxPageSizeKB * 1024;
