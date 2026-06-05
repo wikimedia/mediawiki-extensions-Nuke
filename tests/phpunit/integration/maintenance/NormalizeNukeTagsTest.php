@@ -36,7 +36,7 @@ class NormalizeNukeTagsTest extends MaintenanceBaseTestCase {
 			->forceImmediate( true );
 		$delete->deleteUnsafe( "Test deletion" );
 		$successfulDeletionsIDs = $delete->getSuccessfulDeletionsIDs();
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'recentChangesUpdate' ] );
 
 		if ( !$successfulDeletionsIDs[ DeletePage::PAGE_BASE ] ) {
 			$this->fail( "Test condition failure: no successful deletion ID for page 'Test'" );
@@ -99,7 +99,7 @@ class NormalizeNukeTagsTest extends MaintenanceBaseTestCase {
 			}
 			$logIDs[] = $successfulDeletionsIDs[ DeletePage::PAGE_BASE ];
 		}
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'recentChangesUpdate' ] );
 		$this->assertCount( 51, $logIDs );
 
 		// This sets `ctd_user_defined` to 0.
@@ -169,7 +169,7 @@ class NormalizeNukeTagsTest extends MaintenanceBaseTestCase {
 			}
 		}
 		$logIDs = $delete->getSuccessfulDeletionsIDs();
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'recentChangesUpdate' ] );
 
 		// Run the maintenance script
 		$this->maintenance->execute();

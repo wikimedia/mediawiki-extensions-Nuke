@@ -1511,7 +1511,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 			NS_MAIN,
 			$user2->getUser()
 		)['title'];
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'recentChangesUpdate' ] );
 
 		$admin = $this->getTestSysop()->getUser();
 		$performer = new UltimateAuthority( $admin );
@@ -1984,7 +1984,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->assertStringNotContainsString( 'mw-tag-marker-nuke', $this->getDeleteLogHtml() );
 
 		// Ensure all delete jobs are run
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'deletePage' ] );
 
 		$deleteLogHtml = $this->getDeleteLogHtml();
 		$this->assertStringContainsString( 'Vandalism', $deleteLogHtml );
@@ -2086,7 +2086,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( "(nuke-skipped-summary: $skippedCount)", $html );
 
 		// Ensure all delete jobs are run
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'deletePage' ] );
 
 		// Make sure that those pages are not in the deletion log.
 		$deleteLogHtml = $this->getDeleteLogHtml();
@@ -2116,7 +2116,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->executeSpecialPage( '', $request, 'qqx', $performer );
 
 		// Ensure all jobs are run
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'deletePage' ] );
 
 		// Check logs
 		$this->assertStringContainsString( "Vandalism", $this->getDeleteLogHtml() );
@@ -2143,7 +2143,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->executeSpecialPage( '', $request, 'qqx', $performer );
 
 		// Ensure all jobs are run
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'deletePage' ] );
 
 		// Check logs
 		$this->assertStringContainsString( $fauxReason, $this->getDeleteLogHtml() );
@@ -2170,7 +2170,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		$this->executeSpecialPage( '', $request, 'qqx', $performer );
 
 		// Ensure all jobs are run
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'deletePage' ] );
 
 		// Check logs
 		$logHtml = $this->getDeleteLogHtml();

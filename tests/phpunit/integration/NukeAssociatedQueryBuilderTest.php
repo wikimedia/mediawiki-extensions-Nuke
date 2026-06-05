@@ -139,7 +139,7 @@ class NukeAssociatedQueryBuilderTest extends MediaWikiIntegrationTestCase {
 			NS_PROJECT,
 			$user2->getUser()
 		);
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => 'recentChangesUpdate' ] );
 
 		$result = $this->getNukeAssociatedQueryBuilder()
 			->getRedirectPages( [ $page1[ 'title' ], $page2['title'], $page3['title'] ] )
