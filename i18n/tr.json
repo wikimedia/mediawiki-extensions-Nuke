@@ -14,7 +14,8 @@
 			"Tarikozket",
 			"TmY e12",
 			"ToprakM",
-			"Vito Genovese"
+			"Vito Genovese",
+			"HakanIST"
 		]
 	},
 	"nuke": "Toplu sil",
@@ -27,6 +28,7 @@
 	"nuke-tools-prompt-restricted": "Bu aracı sayfaları listelemek için kullanabilirsiniz, ancak onları silemezsiniz.",
 	"nuke-tools-notice-noperm": "Sayfaları toplu silmek için yetkiniz bulunmuyor.",
 	"nuke-submit-list": "Sayfaları listele",
+	"nuke-submit-continue": "Devam et",
 	"nuke-submit-delete": "Sil",
 	"right-nuke": "Sayfaları toplu sil",
 	"nuke-userorip": "Kullanıcı adı, IP adresi veya boş:",
