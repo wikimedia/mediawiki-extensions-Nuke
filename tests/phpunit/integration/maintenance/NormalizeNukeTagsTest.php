@@ -29,7 +29,7 @@ class NormalizeNukeTagsTest extends MaintenanceBaseTestCase {
 		$this->insertPage( 'Test' );
 		$user = $this->getTestSysop();
 		$delete = $services->getDeletePageFactory()->newDeletePage(
-			Title::newFromText( 'Test' )->toPageIdentity(),
+			Title::makeTitle( NS_MAIN, 'Test' )->toPageIdentity(),
 			$user->getUser()
 		)
 			->setTags( [ 'Nuke' ] )
@@ -87,7 +87,7 @@ class NormalizeNukeTagsTest extends MaintenanceBaseTestCase {
 		$logIDs = [];
 		for ( $i = 0; $i < 51; $i++ ) {
 			$delete = $services->getDeletePageFactory()->newDeletePage(
-				Title::newFromText( "Test$i" )->toPageIdentity(),
+				Title::makeTitle( NS_MAIN, "Test$i" )->toPageIdentity(),
 				$user->getUser()
 			)
 				->setTags( [ 'Nuke' ] )
@@ -141,7 +141,7 @@ class NormalizeNukeTagsTest extends MaintenanceBaseTestCase {
 		$this->insertPage( 'Test' );
 		$user = $this->getTestSysop();
 		$delete = $services->getDeletePageFactory()->newDeletePage(
-			Title::newFromText( 'Test' )->toPageIdentity(),
+			Title::makeTitle( NS_MAIN, 'Test' )->toPageIdentity(),
 			$user->getUser()
 		)
 			->setTags( [ 'nuke' ] )
