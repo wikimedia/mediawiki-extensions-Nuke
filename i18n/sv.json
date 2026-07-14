@@ -10,7 +10,8 @@
 			"Tobulos1",
 			"WikiPhoenix",
 			"Gkyziridis",
-			"Stefan2255"
+			"Stefan2255",
+			"Boivie"
 		]
 	},
 	"nuke": "Massradering",
@@ -20,8 +21,10 @@
 	"nuke-list": "Följande sidor har nyligen skapats av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; skriv in en kommentar och klicka på knappen för att ta bort dem.",
 	"nuke-list-multiple": "Följande sidor skapades nyligen;\nskriv in en kommentar och tryck på knappen för att radera dem.",
 	"nuke-defaultreason": "Massradering av sidor skapade av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
+	"nuke-defaultreason-tempaccount": "Massradering av sidor som lagts till av tillfälliga konton",
 	"nuke-multiplepeople": "Massradering av nyligen tillagda sidor",
 	"nuke-tools": "Det här verktyget gör det möjligt att massradera sidor som nyligen skapats av en viss användare eller IP-adress.\nAnge användarnamnet eller IP-adressen för att se en lista över sidor som kan tas bort, eller lämna tomt för alla användare.",
+	"nuke-tools-tempaccount": "Det här verktyget möjliggör massradering av sidor som nyligen lagts till av en given användare eller ett tillfälligt konto. Ange ett användarnamn eller en IP-adress för att få en lista över sidor som ska raderas, eller lämna tomt för alla användare. Om du anger en IP-adress listas alla sidor som skapats av den IP-adressen eller alla tillfälliga konton som används från den IP-adressen.",
 	"nuke-submit-user": "Lista sidor",
 	"nuke-submit-delete": "Ta bort valda",
 	"right-nuke": "Massradera sidor",
@@ -29,6 +32,7 @@
 	"nuke-maxpages": "Antal sidor att hämta (max 500):",
 	"nuke-editby": "Skapades av [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Sidan '''$1''' har raderats.",
+	"nuke-deletion-queued": "Sidan '''$1''' har placerats i kö för radering.",
 	"nuke-not-deleted": "Sidan [[:$1]] '''kunde inte''' raderas.",
 	"nuke-delete-more": "[[Special:Nuke|Radera fler sidor]]",
 	"nuke-pattern": "SQL LIKE-mönster (t.ex %) för sidnamnet:",
