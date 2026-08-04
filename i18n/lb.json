@@ -8,7 +8,7 @@
 		]
 	},
 	"nuke": "Masseläschung",
-	"action-nuke": "Säiten 'en masse' ze läschen",
+	"action-nuke": "Säite masseweis ze läschen",
 	"nuke-desc": "Gëtt Administrateuren d'Méiglechkeet fir [[Special:Nuke|vill Säite mateneen ze läschen]]",
 	"nuke-nopages": "Et gëtt bei de rezenten Ännerunge keng nei Säite vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]].",
 	"nuke-list": "Dës Säite goufe viru kuerzem vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]] nei ugeluecht; gitt wgl. eng Bemierkung an, an dréckt op de Knäppche Läschen.",
