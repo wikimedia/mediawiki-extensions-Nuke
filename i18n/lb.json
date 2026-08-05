@@ -8,7 +8,7 @@
 		]
 	},
 	"nuke": "Masseläschung",
-	"action-nuke": "Säiten 'en masse' ze läschen",
+	"action-nuke": "Säite masseweis ze läschen",
 	"nuke-desc": "Gëtt Administrateuren d'Méiglechkeet fir [[Special:Nuke|vill Säite mateneen ze läschen]]",
 	"nuke-defaultreason": "Masseläschung vu Säiten, déi vum [[Special:Contributions/$1|{{GENDER:$1|$1}}]] ugefaange goufen",
 	"nuke-defaultreason-tempaccount": "Masseläschung vu Säiten, déi vun temporäre Konten ugefaange goufen",
