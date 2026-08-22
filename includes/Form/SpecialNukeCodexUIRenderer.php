@@ -58,6 +58,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->textInput()
 					->setName( "target" )
 					->setValue( $this->context->getTarget() )
+					->setInputAttributes( [ 'autofocus' => true ] )
 					->build()
 			] )
 			->build();

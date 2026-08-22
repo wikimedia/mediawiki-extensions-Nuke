@@ -1,6 +1,7 @@
 <template>
 	<cdx-field id="nuke-target-lookup" :messages="messages">
 		<cdx-lookup
+			ref="target"
 			v-model:selected="selection"
 			v-model:input-value="inputValue"
 			:menu-items="menuItems"
@@ -105,6 +106,9 @@ module.exports = exports = defineComponent( {
 			menuConfig,
 			onUpdateInputValue: mw.util.debounce( onUpdateInputValue, 100 )
 		};
+	},
+	mounted() {
+		this.$refs.target.focus();
 	}
 } );
 </script>
