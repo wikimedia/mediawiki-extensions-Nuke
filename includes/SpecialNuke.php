@@ -4,7 +4,6 @@ namespace MediaWiki\Extension\Nuke;
 
 use DateTime;
 use MediaWiki\CheckUser\Services\CheckUserTemporaryAccountsByIPLookup;
-use MediaWiki\Context\RequestContext;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Exception\ErrorPageError;
 use MediaWiki\Exception\PermissionsError;
@@ -287,8 +286,7 @@ class SpecialNuke extends SpecialPage {
 		// Possible values: 'codex', 'htmlform'
 		switch ( $formType ) {
 			case 'codex':
-				// @phan-suppress-next-line PhanParamTooMany False positive, mediawiki/vendor pins codex 0.7.1 (T434742)
-				$codex = new Codex( new MediaWikiLocalization( RequestContext::getMain() ) );
+				$codex = new Codex( new MediaWikiLocalization( $this->getContext() ) );
 				return new SpecialNukeCodexUIRenderer(
 					$context,
 					$this,

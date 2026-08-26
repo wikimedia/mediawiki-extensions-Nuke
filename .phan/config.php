@@ -40,11 +40,4 @@ if ( file_exists( '../../extensions/CheckUser/src/Services/CheckUserTemporaryAcc
 	);
 }
 
-// Suppresses PhanParamTooMany for Codex::__construct(), which only accepts a
-// localizer from wikimedia/codex 0.8.0 onwards. That suppression is needed while
-// mediawiki/vendor pins 0.7.1 and unused once it ships 0.8.0, so it must not be reported as
-// an unused suppression either way. PhanParamTooMany itself stays enabled everywhere.
-// TODO: Remove once wikimedia/codex 0.8.0 is available everywhere (T434742).
-$cfg['plugin_config']['unused_suppression_ignore_list'][] = 'PhanParamTooMany';
-
 return $cfg;
