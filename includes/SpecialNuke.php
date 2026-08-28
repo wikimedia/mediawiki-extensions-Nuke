@@ -776,7 +776,7 @@ class SpecialNuke extends SpecialPage {
 			} else {
 				$job = new DeletePageJob( [
 					'namespace' => $title->getNamespace(),
-					'title' => $title->getDBKey(),
+					'title' => $title->getDBkey(),
 					'reason' => $reason,
 					'userId' => $user->getId(),
 					'wikiPageId' => $title->getId(),
