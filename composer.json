@@ -1,6 +1,6 @@
 {
 	"require": {
-		"wikimedia/codex": "0.7.1"
+		"wikimedia/codex": "0.8.0"
 	},
 	"require-dev": {
 		"mediawiki/mediawiki-codesniffer": "52.0.0",
