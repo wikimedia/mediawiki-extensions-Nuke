@@ -10,7 +10,7 @@
 			@update:input-value="onUpdateInputValue"
 		></cdx-lookup>
 		<template #label>
-			{{ $i18n( 'nuke-userorip' ).text() }}
+			<span v-i18n-html:nuke-userorip></span>
 		</template>
 	</cdx-field>
 </template>

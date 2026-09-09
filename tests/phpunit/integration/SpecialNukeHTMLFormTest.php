@@ -2447,6 +2447,10 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 		foreach ( $shouldBeMissing as $validationMessage ) {
 			$this->assertStringNotContainsString( $validationMessage, $html );
 		}
+
+		// Ensure that we don't have an unescaped NBSP (happens if the parsed message is not shown
+		// as HTML).
+		$this->assertStringNotContainsString( '&amp;#160;%', $html );
 	}
 
 	/**

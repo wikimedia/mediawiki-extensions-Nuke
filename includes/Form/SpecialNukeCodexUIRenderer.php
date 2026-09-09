@@ -46,12 +46,15 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 	protected function getTargetField(): Component {
 		return $this->codex
 			->field()
-			->setId( "nuke-target" )
+			->setAttributes( [
+				"id" => "nuke-target"
+			] )
 			->setLabel(
 				$this->codex
 					->Label()
-					->setLabelText( $this->msg( 'nuke-userorip' )->parse() )
-					->build()
+					->setLabelText(
+						$this->codex->htmlSnippet( $this->msg( 'nuke-userorip' )->parse() )
+					)
 			)
 			->setFields( [
 				$this->codex
@@ -59,9 +62,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->setName( "target" )
 					->setValue( $this->context->getTarget() )
 					->setInputAttributes( [ 'autofocus' => true ] )
-					->build()
-			] )
-			->build();
+			] );
 	}
 
 	protected function getPatternField(): Component {
@@ -70,8 +71,9 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			->setLabel(
 				$this->codex
 					->Label()
-					->setLabelText( $this->msg( 'nuke-pattern' )->parse() )
-					->build()
+					->setLabelText(
+						$this->codex->htmlSnippet( $this->msg( 'nuke-pattern' )->parse() )
+					)
 			)
 			->setFields( [
 				$this->codex
@@ -79,25 +81,26 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->setInputId( "nuke-pattern" )
 					->setName( "pattern" )
 					->setValue( $this->context->getPattern() )
-					->build()
-			] )
-			->build();
+			] );
 	}
 
 	protected function getNamespacesField(): Component {
 		$namespaces = $this->context->getNamespaces();
 		return $this->codex
 			->field()
-			->setId( "nuke-namespace" )
+			->setAttributes( [
+				"id" => "nuke-namespace"
+			] )
 			->setLabel( $this->codex
 				->Label()
-				->setLabelText( $this->msg( 'nuke-namespace' )->parse() )
-				->build()
+				->setLabelText(
+					$this->codex->htmlSnippet( $this->msg( 'nuke-namespace' )->parse() )
+				)
 			)
 			->setFields( [
 				$this->codex
 					->textArea()
-					->setTextAreaAttributes( [
+					->setInputAttributes( [
 						"rows" => "1",
 						"class" => "ext-nuke-form-namespace-raw"
 					] )
@@ -113,9 +116,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 							) :
 							''
 					)
-					->build()
-			] )
-			->build();
+			] );
 	}
 
 	protected function getLimitField(): Component {
@@ -123,8 +124,9 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			->field()
 			->setLabel( $this->codex
 				->Label()
-				->setLabelText( $this->msg( 'nuke-maxpages' )->parse() )
-				->build()
+				->setLabelText(
+					$this->codex->htmlSnippet( $this->msg( 'nuke-maxpages' )->parse() )
+				)
 			)
 			->setFields( [
 				$this->codex
@@ -133,9 +135,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->setName( "limit" )
 					->setValue( strval( $this->context->getLimit() ) )
 					->setType( 'number' )
-					->build()
-			] )
-			->build();
+			] );
 	}
 
 	protected function getDateRangeField(): HtmlSnippet {
@@ -172,8 +172,9 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			->field()
 			->setLabel( $this->codex
 				->label()
-				->setLabelText( $this->msg( 'nuke-date-from' )->parse() )
-				->build()
+				->setLabelText(
+					$this->codex->htmlSnippet( $this->msg( 'nuke-date-from' )->parse() )
+				)
 			)
 			->setFields( [
 				$this->codex
@@ -185,19 +186,18 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->setInputAttributes( [
 						'min' => $minDate
 					] )
-					->build()
 			] )
 			->setAttributes( [
 				"class" => "ext-nuke-form-dateFrom"
 			] )
-			->build()
 			->getHtml();
 		$toDateField = $this->codex
 			->field()
 			->setLabel( $this->codex
 				->label()
-				->setLabelText( $this->msg( 'nuke-date-to' )->parse() )
-				->build()
+				->setLabelText(
+					$this->codex->htmlSnippet( $this->msg( 'nuke-date-to' )->parse() )
+				)
 			)
 			->setFields( [
 				$this->codex
@@ -209,12 +209,10 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->setInputAttributes( [
 						'min' => $minDate
 					] )
-					->build()
 			] )
 			->setAttributes( [
 				"class" => "ext-nuke-form-dateTo"
 			] )
-			->build()
 			->getHtml();
 		$helperField = Html::rawElement(
 			'p',
@@ -245,8 +243,9 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			->field()
 			->setLabel( $this->codex
 				->label()
-				->setLabelText( $this->msg( 'nuke-minsize' )->parse() )
-				->build()
+				->setLabelText(
+					$this->codex->htmlSnippet( $this->msg( 'nuke-minsize' )->parse() )
+				)
 			)
 			->setFields( [
 				$this->codex
@@ -255,19 +254,18 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->setName( 'minPageSize' )
 					->setValue( strval( $this->context->getMinPageSize() ) )
 					->setType( 'number' )
-					->build()
 			] )
 			->setAttributes( [
 				"class" => "ext-nuke-form-minPageSize"
 			] )
-			->build()
 			->getHtml();
 		$maxSize = $this->codex
 			->field()
 			->setLabel( $this->codex
 				->label()
-				->setLabelText( $this->msg( 'nuke-maxsize' )->parse() )
-				->build()
+				->setLabelText(
+					$this->codex->htmlSnippet( $this->msg( 'nuke-maxsize' )->parse() )
+				)
 			)
 			->setFields( [
 				$this->codex
@@ -276,12 +274,10 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->setName( 'maxPageSize' )
 					->setValue( strval( $this->context->getMaxPageSize() ) )
 					->setType( 'number' )
-					->build()
 			] )
 			->setAttributes( [
 				"class" => "ext-nuke-form-maxPageSize"
 			] )
-			->build()
 			->getHtml();
 
 		return new HtmlSnippet( Html::rawElement(
@@ -311,13 +307,13 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					$this->codex
 						->Label()
 						->setLabelText(
-							$this->msg( 'nuke-associated-talk' )->parse()
+							$this->codex->htmlSnippet(
+								$this->msg( 'nuke-associated-talk' )->parse()
+							)
 						)
-						->build()
 				)
 				->setValue( 'true' )
-				->setChecked( $this->context->getIncludeTalkPages() )
-				->build(),
+				->setChecked( $this->context->getIncludeTalkPages() ),
 			$this->codex
 				->Checkbox()
 				->setInputId( "includeRedirects" )
@@ -326,13 +322,13 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					$this->codex
 						->Label()
 						->setLabelText(
-							$this->msg( 'nuke-associated-redirect' )->parse()
+							$this->codex->htmlSnippet(
+								$this->msg( 'nuke-associated-redirect' )->parse()
+							)
 						)
-						->build()
 				)
 				->setValue( 'true' )
-				->setChecked( $this->context->getIncludeRedirects() )
-				->build(),
+				->setChecked( $this->context->getIncludeRedirects() ),
 		];
 	}
 
@@ -344,9 +340,8 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 				'value' => SpecialNuke::ACTION_LIST
 			] )
 			->setType( "submit" )
-			->setLabel( $this->msg( 'nuke-submit-list' )->parse() )
-			->setSize( "medium" )
-			->build();
+			->setLabel( $this->msg( 'nuke-submit-list' )->text() )
+			->setSize( "medium" );
 	}
 
 	protected function getContinueButton(): Component {
@@ -356,11 +351,10 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 				'value' => SpecialNuke::ACTION_CONFIRM
 			] )
 			->setType( "submit" )
-			->setLabel( $this->msg( 'nuke-submit-continue' )->parse() )
+			->setLabel( $this->msg( 'nuke-submit-continue' )->text() )
 			->setAction( "progressive" )
 			->setWeight( "primary" )
-			->setSize( "medium" )
-			->build();
+			->setSize( "medium" );
 	}
 
 	protected function getPromptForm( bool $canContinue = true ): string {
@@ -393,12 +387,12 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			->setLabel(
 				$this->codex
 					->Label()
-					->setLabelText( $this->msg( 'nuke' )->parse() )
-					->build()
+					->setLabelText(
+						$this->codex->htmlSnippet( $this->msg( 'nuke' )->parse() )
+					)
 			)
 			->setFields( $fields )
 			->setIsFieldset( true )
-			->build()
 			->getHtml();
 	}
 
@@ -411,16 +405,13 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 				$this->codex
 					->message()
 					->setType( "error" )
-					->setContentHtml(
+					->setContent(
 						$this->codex
-							->htmlSnippet()
-							->setContent( $validationResult )
-							->build()
+							->htmlSnippet( $validationResult )
 					)
 					->setAttributes( [
 						'class' => 'ext-nuke-form-error'
 					] )
-					->build()
 					->getHtml()
 			);
 		}
@@ -496,17 +487,13 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			$out->addHTML(
 				$this->codex
 					->message()
-					->setContentHtml(
-						$this->codex
-							->htmlSnippet()
-							->setContent( $messageLabelOutput )
-							->build()
+					->setContent(
+						$this->codex->htmlSnippet( $messageLabelOutput )
 					)
 					->setType( 'warning' )
 					->setAttributes( [
 						'class' => 'ext-nuke-form-error'
 					] )
-					->build()
 					->getHtml()
 			);
 		}
@@ -657,14 +644,17 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			->setLabel(
 				$this->codex
 					->Label()
-					->setLabelText( $this->msg( 'deletecomment' )->parse() )
-					->build()
+					->setLabelText(
+						$this->codex->htmlSnippet(
+							$this->msg( 'deletecomment' )->parse()
+						)
+					)
 			)
 			->setFields( [
 				$this->codex
 					->Select()
-					->setId( 'wpDeleteReasonList' )
 					->setAttributes( [
+						'id' => 'wpDeleteReasonList',
 						'name' => 'wpDeleteReasonList'
 					] )
 					->setOptions(
@@ -684,9 +674,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 						)
 					)
 					->setSelectedOption( $otherKey )
-					->build()
-			] )
-			->build();
+			] );
 	}
 
 	protected function getDeleteComment(): Component {
@@ -695,8 +683,9 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			->setLabel(
 				$this->codex
 					->Label()
-					->setLabelText( $this->msg( 'deleteotherreason' )->parse() )
-					->build()
+					->setLabelText(
+						$this->codex->htmlSnippet( $this->msg( 'deleteotherreason' )->parse() )
+					)
 			)
 			->setFields( [
 				$this->codex
@@ -708,9 +697,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->setInputId( "wpReason" )
 					->setName( "wpReason" )
 					->setValue( $this->context->getDeleteReason() )
-					->build()
-			] )
-			->build();
+			] );
 	}
 
 	protected function getDeleteButton(): Component {
@@ -721,11 +708,10 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 				'value' => SpecialNuke::ACTION_DELETE
 			] )
 			->setType( "submit" )
-			->setLabel( $this->msg( 'nuke-submit-delete' )->parse() )
+			->setLabel( $this->msg( 'nuke-submit-delete' )->text() )
 			->setAction( "destructive" )
 			->setWeight( "primary" )
-			->setSize( "medium" )
-			->build();
+			->setSize( "medium" );
 	}
 
 	/**
@@ -750,12 +736,10 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 			->setLabel(
 				$this->codex
 					->Label()
-					->setLabelText( $this->msg( 'nuke' )->parse() )
-					->build()
+					->setLabelText( $this->codex->htmlSnippet( $this->msg( 'nuke' )->parse() ) )
 			)
 			->setFields( $fields )
 			->setIsFieldset( true )
-			->build()
 			->getHtml();
 	}
 
@@ -885,12 +869,11 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 				],
 				$this->codex
 					->button()
-					->setLabel( $this->msg( 'nuke-deletemore' )->parse() )
+					->setLabel( $this->msg( 'nuke-deletemore' )->text() )
 					->setAction( "default" )
 					->setWeight( "normal" )
 					->setSize( "medium" )
 					->setIconOnly( false )
-					->build()
 					->getHtml()
 			)
 		);

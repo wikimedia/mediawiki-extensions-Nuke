@@ -14,7 +14,7 @@
 			@keydown.enter="validateInstantly"
 		></cdx-multiselect-lookup>
 		<template #label>
-			{{ $i18n( 'nuke-namespace' ).text() }}
+			<span v-i18n-html:nuke-namespace></span>
 		</template>
 	</cdx-field>
 	<textarea
