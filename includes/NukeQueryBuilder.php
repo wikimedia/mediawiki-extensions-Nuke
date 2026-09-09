@@ -69,7 +69,11 @@ class NukeQueryBuilder {
 	private function fromRevisionTableQuery() {
 		$dbr = $this->readableDatabase;
 		$this->selectQueryBuilder = $dbr->newSelectQueryBuilder()
-			->select( self::DEFAULT_FIELDS )
+			->select( [
+				...self::DEFAULT_FIELDS,
+				// T415851: We unconditionally need this if we want ordering to work on PostgreSQL.
+				"rev_timestamp"
+			] )
 			->distinct()
 			->from( self::TABLE_REVISION )
 			->join( 'actor', null, 'actor_id=rev_actor' )
@@ -86,7 +90,11 @@ class NukeQueryBuilder {
 	private function fromRecentChangesTableQuery() {
 		$dbr = $this->readableDatabase;
 		$this->selectQueryBuilder = $dbr->newSelectQueryBuilder()
-			->select( self::DEFAULT_FIELDS )
+			->select( [
+				...self::DEFAULT_FIELDS,
+				// T415851: We unconditionally need this if we want ordering to work on PostgreSQL.
+				"rc_timestamp"
+			] )
 			->from( self::TABLE_RECENTCHANGES )
 			->join( 'actor', null, 'actor_id=rc_actor' )
 			->join( 'page', null, 'page_id=rc_cur_id' )
