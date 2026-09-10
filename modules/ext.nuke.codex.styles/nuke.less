@@ -21,25 +21,16 @@
 	&-pageSizeRange {
 		margin-top: 12px;
 		display: flex;
+		flex-wrap: wrap;
+		gap: 12px;
 	}
 
 	&-dateFrom.cdx-field,
-	&-minPageSize.cdx-field {
-		flex: 1;
-	}
-
+	&-minPageSize.cdx-field,
 	&-dateTo.cdx-field,
 	&-maxPageSize.cdx-field {
-		flex: 1;
+		flex: 1 1 200px;
 		margin-top: 0;
-
-		[ dir='ltr' ] & {
-			margin-left: 12px;
-		}
-
-		[ dir='rtl' ] & {
-			margin-right: 12px;
-		}
 	}
 
 	&-namespace-raw {
