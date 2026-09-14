@@ -150,21 +150,19 @@ class NukeContext {
 
 	/**
 	 * The minimum size of pages to list, in bytes. This is used to limit the size of the
-	 * pages shown to the user. When not provided, this is by default 0 (no limit).
+	 * pages shown to the user. When not provided, this is by default null (zero).
 	 *
-	 * @var int
+	 * @var int|null
 	 */
-	private int $minPageSize = 0;
+	private ?int $minPageSize = null;
 
 	/**
 	 * The maximum size of pages to list, in bytes. This is used to limit the size of the
-	 * pages shown to the user. When not provided, this is by default null.
+	 * pages shown to the user. When not provided, this is by default null (maximum possible).
 	 *
-	 * Negatives are treated as no-ops, so this is what we default to.
-	 *
-	 * @var int
+	 * @var int|null
 	 */
-	private int $maxPageSize = -1;
+	private ?int $maxPageSize = null;
 
 	/**
 	 * Originating request context of the query.
@@ -211,8 +209,12 @@ class NukeContext {
 
 		$this->nukeAccessStatus = $params['nukeAccessStatus'] ?? $this->nukeAccessStatus;
 
-		$this->minPageSize = $params['minPageSize'];
-		$this->maxPageSize = $params['maxPageSize'];
+		if ( isset( $params['minPageSize'] ) ) {
+			$this->minPageSize = $params['minPageSize'];
+		}
+		if ( isset( $params['maxPageSize'] ) ) {
+			$this->maxPageSize = $params['maxPageSize'];
+		}
 	}
 
 	/**
@@ -332,19 +334,27 @@ class NukeContext {
 	/**
 	 * Returns {@link $minPageSize}.
 	 *
-	 * @return int
+	 * @return int|null
 	 */
-	public function getMinPageSize(): int {
+	public function getMinPageSize(): ?int {
 		return $this->minPageSize;
 	}
 
 	/**
 	 * Returns {@link $maxPageSize}.
 	 *
-	 * @return int
+	 * @return int|null
 	 */
-	public function getMaxPageSize(): int {
+	public function getMaxPageSize(): ?int {
 		return $this->maxPageSize;
+	}
+
+	public function getMaxPossiblePageSize(): int {
+		// Retrieve the maximum page size in kilobytes
+		$maxPageSizeKB = $this->requestContext->getConfig()->get( MainConfigNames::MaxArticleSize );
+
+		// Convert the size to bytes
+		return $maxPageSizeKB * 1024;
 	}
 
 	/**
@@ -617,11 +627,12 @@ class NukeContext {
 	 */
 	public function calculateSearchNotices(): array {
 		$notices = [];
+		$maxPossiblePageSize = $this->getMaxPossiblePageSize();
 
 		// first check if any values are being ignored
 		$ignoringValues = false;
 
-		if ( $this->maxPageSize < 0 ) {
+		if ( $this->maxPageSize != null && $this->maxPageSize < 0 ) {
 			// if the maximum is negative, it's invalid
 			// it is allowed to have it be 0,
 			// because a 0-byte page can exist
@@ -629,20 +640,32 @@ class NukeContext {
 			$notices[] = "nuke-searchnotice-negmax";
 			$ignoringValues = true;
 		}
-		if ( $this->minPageSize < 0 ) {
+		if ( $this->minPageSize != null && $this->minPageSize < 0 ) {
 			// if the minimum is negative, then it's not really a minimum
 			// tell the user the QueryBuilder code will ignore it
 			// this is last because we can still return results if the minimum is negative
 			$notices[] = "nuke-searchnotice-negmin";
 			$ignoringValues = true;
 		}
+		if ( $this->minPageSize > $maxPossiblePageSize ) {
+			// Minimum is greater than the allowed size. This would have returned zero pages.
+			$notices[] = "nuke-searchnotice-min-exceeds-max";
+			$ignoringValues = true;
+		}
 
 		// if we're not ignoring either, check for incompatibility
 		if ( !$ignoringValues ) {
-			if ( $this->minPageSize > $this->maxPageSize ) {
+			if (
+				( $this->minPageSize ?? 0 ) >
+				( $this->maxPageSize ?? $maxPossiblePageSize )
+			) {
 				// if the maximum is less than the minimum then
 				// there's no way any results can be returned
 				$notices[] = "nuke-searchnotice-minmorethanmax";
+			}
+			if ( $this->maxPageSize > $maxPossiblePageSize ) {
+				// Maximum is greater than the allowed size. This is fine, but it's a no-op.
+				$notices[] = "nuke-searchnotice-max-exceeds-max";
 			}
 		}
 

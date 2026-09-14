@@ -14,7 +14,6 @@ use MediaWiki\Extension\Nuke\Hooks\NukeHookRunner;
 use MediaWiki\FileRepo\RepoGroup;
 use MediaWiki\JobQueue\JobQueueGroup;
 use MediaWiki\Language\Language;
-use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Page\DeletePageJob;
 use MediaWiki\Page\File\FileDeleteForm;
@@ -226,19 +225,8 @@ class SpecialNuke extends SpecialPage {
 			$originalPages = [];
 		}
 
-		// Retrieve the maximum page size in kilobytes
-		$maxPageSizeKB = $this->getConfig()->get( MainConfigNames::MaxArticleSize );
-
-		// Convert the size to bytes
-		$maxPageSizeBytes = $maxPageSizeKB * 1024;
-
-		$maxSizeUserConfig = $maxPageSizeBytes;
-
-		// getInt doesn't treat "" as null, so we need to manually do this instead of parsing
-		// $maxSizeUserConfig directly to getInt as the fallback
-		if ( $req->getRawVal( 'maxPageSize' ) != "" ) {
-			$maxSizeUserConfig = $req->getInt( 'maxPageSize', $maxSizeUserConfig );
-		}
+		$minPageSize = $req->getIntOrNull( 'minPageSize' );
+		$maxPageSize = $req->getIntOrNull( 'maxPageSize' );
 
 		return new NukeContext( [
 			'requestContext' => $this->getContext(),
@@ -263,8 +251,8 @@ class SpecialNuke extends SpecialPage {
 			'originalPages' => $originalPages,
 
 			// default to 0 (no limit) if the parameters are not set
-			'minPageSize' => $req->getInt( 'minPageSize', 0 ),
-			'maxPageSize' => $maxSizeUserConfig,
+			'minPageSize' => $minPageSize,
+			'maxPageSize' => $maxPageSize,
 		] );
 	}
 
@@ -542,8 +530,12 @@ class SpecialNuke extends SpecialPage {
 			$namespaces
 		);
 
-		$nukeQueryBuilder->filterByMinPageSize( $context->getMinPageSize() );
-		$nukeQueryBuilder->filterByMaxPageSize( $context->getMaxPageSize() );
+		if ( $context->getMinPageSize() !== null ) {
+			$nukeQueryBuilder->filterByMinPageSize( (int)$context->getMinPageSize() );
+		}
+		if ( $context->getMaxPageSize() !== null ) {
+			$nukeQueryBuilder->filterByMaxPageSize( (int)$context->getMaxPageSize() );
+		}
 
 		$result = $nukeQueryBuilder
 			->build()

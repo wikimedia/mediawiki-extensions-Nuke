@@ -239,6 +239,13 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 	}
 
 	protected function getPageSizeRangeField(): HtmlSnippet {
+		$minSizeValue = (string)$this->context->getMinPageSize();
+		$maxSizeValue = (string)$this->context->getMaxPageSize();
+		$pageSizeInputAttributes = [
+			"min" => "0",
+			"max" => (string)$this->context->getMaxPossiblePageSize()
+		];
+
 		$minSize = $this->codex
 			->field()
 			->setLabel( $this->codex
@@ -252,7 +259,8 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->textInput()
 					->setInputId( "nuke-minPageSize" )
 					->setName( 'minPageSize' )
-					->setValue( strval( $this->context->getMinPageSize() ) )
+					->setValue( $minSizeValue )
+					->setInputAttributes( $pageSizeInputAttributes )
 					->setType( 'number' )
 			] )
 			->setAttributes( [
@@ -272,7 +280,8 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 					->textInput()
 					->setInputId( "nuke-maxPageSize" )
 					->setName( 'maxPageSize' )
-					->setValue( strval( $this->context->getMaxPageSize() ) )
+					->setValue( $maxSizeValue )
+					->setInputAttributes( $pageSizeInputAttributes )
 					->setType( 'number' )
 			] )
 			->setAttributes( [

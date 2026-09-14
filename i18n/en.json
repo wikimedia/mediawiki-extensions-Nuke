@@ -50,6 +50,8 @@
 	"nuke-searchnotice-minmorethanmax": "The minimum size in bytes exceeds the maximum size in bytes, so it's not possible for any page to meet this criteria.",
 	"nuke-searchnotice-negmax": "The maximum size in bytes is less than zero, which will be ignored.",
 	"nuke-searchnotice-negmin": "The minimum size in bytes is less than zero, which will be ignored.",
+	"nuke-searchnotice-min-exceeds-max": "The minimum size in bytes exceeds the maximum allowed page size.",
+	"nuke-searchnotice-max-exceeds-max": "The maximum size in bytes exceeds the maximum allowed page size.",
 	"nuke-noselected": "To continue, select pages that will be queued for deletion.",
 	"nuke-associated-limited": "Some pages could not be listed because including their associated pages (talk pages, redirects) would exceed the limit.",
 	"nuke-viewchanges": "history",

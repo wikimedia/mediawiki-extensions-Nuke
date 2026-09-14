@@ -219,9 +219,7 @@ class NukeQueryBuilder {
 	/**
 	 * Filter based on a maximum page size.
 	 *
-	 * If `$maxPageSize` is negative, this is a no-op.
-	 * It is possible for a page to exist with 0 bytes, so having a
-	 * max of 0 is allowed.
+	 * It is possible for a page to exist with 0 bytes, so having a max of 0 is allowed.
 	 *
 	 * @param int $maxPageSize The maximum size (in bytes) that a page must be to be included
 	 * @return $this

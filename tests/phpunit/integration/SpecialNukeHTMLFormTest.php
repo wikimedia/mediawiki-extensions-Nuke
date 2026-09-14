@@ -2346,6 +2346,8 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 	public function testListMaxPageSizeFilter() {
 		$user = $this->getTestUser()->getUser();
 
+		// 0 bytes content
+		$this->insertPage( 'BlankPage', '', NS_MAIN, $user );
 		// 4 bytes content
 		$this->insertPage( 'SmallPage', 'test', NS_MAIN, $user );
 		// 9 bytes content
@@ -2355,19 +2357,35 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 
 		$adminUser = $this->getTestSysop()->getUser();
 		$adminPerformer = new UltimateAuthority( $adminUser );
-		$request = new FauxRequest( [
+		$request2 = new FauxRequest( [
 			'action' => SpecialNuke::ACTION_LIST,
 			'target' => $user->getName(),
 			// Filter out pages larger than 9 bytes
 			'maxPageSize' => 9,
 		] );
 
-		[ $html ] = $this->executeSpecialPage( '', $request, 'qqx', $adminPerformer );
-		$this->checkForValidationMessages( $html );
+		[ $html2 ] = $this->executeSpecialPage( '', $request2, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html2 );
 
-		$this->assertStringContainsString( 'SmallPage', $html );
-		$this->assertStringContainsString( 'MediumPage', $html );
-		$this->assertStringNotContainsString( 'LargePage', $html );
+		$this->assertStringContainsString( 'BlankPage', $html2 );
+		$this->assertStringContainsString( 'SmallPage', $html2 );
+		$this->assertStringContainsString( 'MediumPage', $html2 );
+		$this->assertStringNotContainsString( 'LargePage', $html2 );
+
+		// Test for a max page size of 0
+		$request2 = new FauxRequest( [
+			'action' => SpecialNuke::ACTION_LIST,
+			'target' => $user->getName(),
+			'maxPageSize' => 0,
+		] );
+
+		[ $html2 ] = $this->executeSpecialPage( '', $request2, 'qqx', $adminPerformer );
+		$this->checkForValidationMessages( $html2 );
+
+		$this->assertStringContainsString( 'BlankPage', $html2 );
+		$this->assertStringNotContainsString( 'SmallPage', $html2 );
+		$this->assertStringNotContainsString( 'MediumPage', $html2 );
+		$this->assertStringNotContainsString( 'LargePage', $html2 );
 	}
 
 	/**

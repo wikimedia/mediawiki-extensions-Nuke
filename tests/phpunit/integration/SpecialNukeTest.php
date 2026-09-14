@@ -120,12 +120,6 @@ class SpecialNukeTest extends MediaWikiIntegrationTestCase {
 	public function testGetNukeContextFromRequestPageSize() {
 		$specialPage = TestingAccessWrapper::newFromObject( $this->newSpecialPage() );
 
-		// Test default values.
-		$context1 = $specialPage->getNukeContextFromRequest( new FauxRequest( [], true ) );
-		$this->assertSame( 0, $context1->getMinPageSize() );
-		// The maxPageSize is derived from the configuration (and will be >= 0).
-		$this->assertGreaterThanOrEqual( 0, $context1->getMaxPageSize() );
-
 		// Test setting valid minPageSize and maxPageSize.
 		$context2 = $specialPage->getNukeContextFromRequest( new FauxRequest( [
 			'minPageSize' => '100',
@@ -205,5 +199,25 @@ class SpecialNukeTest extends MediaWikiIntegrationTestCase {
 		] );
 		$notices = $context->calculateSearchNotices();
 		$this->assertSame( [], $notices );
+
+		// Case 6: minPageSize is greater than the limit
+		$context = new NukeContext( [
+			'requestContext'   => RequestContext::getMain(),
+			'minPageSize'      => $context->getMaxPossiblePageSize() + 1,
+			'originalPages'    => []
+		] );
+		$notices = $context->calculateSearchNotices();
+		$this->assertContains( 'nuke-searchnotice-min-exceeds-max', $notices );
+		$this->assertCount( 1, $notices );
+
+		// Case 7: maxPageSize is greater than the limit
+		$context = new NukeContext( [
+			'requestContext'   => RequestContext::getMain(),
+			'maxPageSize'      => $context->getMaxPossiblePageSize() + 1,
+			'originalPages'    => []
+		] );
+		$notices = $context->calculateSearchNotices();
+		$this->assertContains( 'nuke-searchnotice-max-exceeds-max', $notices );
+		$this->assertCount( 1, $notices );
 	}
 }

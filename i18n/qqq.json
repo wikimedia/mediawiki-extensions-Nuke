@@ -65,6 +65,8 @@
 	"nuke-searchnotice-minmorethanmax": "Shown as a notice after running a search where the minimum size in bytes exceeds the maximum size in bytes, so it's not possible for any page to meet the users criteria.",
 	"nuke-searchnotice-negmax": "Shown as a notice after running a search where the maximum size in bytes is less then zero, which will be ignored.",
 	"nuke-searchnotice-negmin": "Shown as a notice after running a search where the minimum size in bytes is less then zero, which will be ignored.",
+	"nuke-searchnotice-min-exceeds-max": "Shown as a notice after running a search where the minimum size in bytes is greater than the maximum possible page size, which will be ignored.",
+	"nuke-searchnotice-max-exceeds-max": "Shown as a notice after running a search where the maximum size in bytes is greater than the maximum possible page size, which will be ignored.",
 	"nuke-noselected": "Used if the user clicked on 'Continue' without selecting pages to delete.\n\nSee also:\n* {{msg-mw|Nuke-nolist}}\n* {{msg-mw|Nuke-nopages-global}}",
 	"nuke-associated-limited": "Used if the user selected talk pages or redirects to be included in deletion, but some pages could not be shown because including them would go over the limit.\n\nSee also:\n* {{msg-mw|Nuke-nolist}}\n* {{msg-mw|Nuke-nopages-global}}",
 	"nuke-viewchanges": "Used as link text.\n\nThe link points to History page of the page.\n\nThis message follows:\n* {{msg-mw|nuke-editby}} and {{msg-mw|comma-separator}}\n* or empty string (if username is empty).\n{{Identical|View changes}}",

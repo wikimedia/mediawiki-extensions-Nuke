@@ -61,6 +61,8 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 		$nukeMaxAgeInDays = $this->context->getNukeMaxAgeInDays();
 		$recentChangesMaxAgeInDays = $this->context->getRecentChangesMaxAgeInDays();
 
+		$maxPossiblePageSize = $this->context->getMaxPossiblePageSize();
+
 		$formDescriptor = [
 			'nuke-target' => [
 				'id' => 'nuke-target',
@@ -131,7 +133,9 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'cssclass' => 'ext-nuke-promptForm-minPageSize',
 				'label' => $this->msg( 'nuke-minsize' )->text(),
 				'type' => 'int',
-				'name' => 'minPageSize'
+				'name' => 'minPageSize',
+				'min' => 0,
+				'max' => $maxPossiblePageSize
 			],
 			'maxPageSize' => [
 				'id' => 'nuke-maxPageSize',
@@ -140,6 +144,8 @@ class SpecialNukeHTMLFormUIRenderer extends SpecialNukeUIRenderer {
 				'label' => $this->msg( 'nuke-maxsize' )->text(),
 				'type' => 'int',
 				'name' => 'maxPageSize',
+				'min' => 0,
+				'max' => $maxPossiblePageSize
 			]
 		];
 		$formDescriptor['associated'] = [
