@@ -7,6 +7,7 @@
 		]
 	},
 	"nuke": "量刪",
+	"action-nuke": "量刪諸頁",
 	"nuke-nopages": "[[Special:Contributions/$1|{{GENDER:$1|$1}}]]並無新纂。",
 	"nuke-list": "[[Special:Contributions/$1|$1]]之作所示；剔註再點刪之。",
 	"nuke-defaultreason": "量刪由$1所建之頁",
