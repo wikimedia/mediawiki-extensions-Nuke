@@ -56,6 +56,8 @@
 	"nuke-searchnotice-minmorethanmax": "Die Mindestgröße in Bytes überschreitet die Maximalgröße in Bytes, daher ist es für keine Seite möglich, dieses Kriterium zu erfüllen.",
 	"nuke-searchnotice-negmax": "Die maximale Größe in Bytes ist kleiner als Null und wird ignoriert.",
 	"nuke-searchnotice-negmin": "Die Mindestgröße in Bytes ist kleiner als Null und wird ignoriert.",
+	"nuke-searchnotice-min-exceeds-max": "Die minimale Größe in Bytes überschreitet die maximal zulässige Seitengröße.",
+	"nuke-searchnotice-max-exceeds-max": "Die maximale Größe in Bytes überschreitet die maximal zulässige Seitengröße.",
 	"nuke-noselected": "Um fortzufahren, wähle Seiten aus, die zum Löschen in die Warteschlange gestellt werden.",
 	"nuke-associated-limited": "Einige Seiten konnten nicht aufgelistet werden, da die Einbeziehung der zugehörigen Seiten (Diskussionsseiten, Weiterleitungen) das Limit überschreiten würde.",
 	"nuke-viewchanges": "Versionsgeschichte",
