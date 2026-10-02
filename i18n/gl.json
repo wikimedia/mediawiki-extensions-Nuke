@@ -54,6 +54,8 @@
 	"nuke-searchnotice-minmorethanmax": "O tamaño mínimo en bytes supera o tamaño máximo en bytes, polo que ningunha páxina cumpra estes criterios.",
 	"nuke-searchnotice-negmax": "O tamaño máximo en bytes é inferior a cero, que se ignorará.",
 	"nuke-searchnotice-negmin": "O tamaño mínimo en bytes é inferior a cero, que se ignorará.",
+	"nuke-searchnotice-min-exceeds-max": "O tamaño mínimo en bytes supera o tamaño máximo de páxina permitido.",
+	"nuke-searchnotice-max-exceeds-max": "O tamaño máximo en bytes supera o tamaño máximo de páxina permitido.",
 	"nuke-noselected": "Para continuar, selecciona as páxinas que se porán en cola para a súa eliminación.",
 	"nuke-associated-limited": "Non se puideron listar algunhas páxinas porque se supera o límite ao incluír as súas páxinas asociadas (páxinas de conversa, redireccións).",
 	"nuke-viewchanges": "historial",

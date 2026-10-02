@@ -49,6 +49,8 @@
 	"nuke-searchnotice-minmorethanmax": "Cabbirka ugu yar ee baytyada ayaa ka weyn cabbirka ugu badan ee baytyada, sidaas darteed suurtagal ma aha in bog kasta uu buuxiyo shuruudahan.",
 	"nuke-searchnotice-negmax": "Cabbirka ugu badan ee baytyada waa ka yar eber, sidaas darteed waa la iska indha tirayaa.",
 	"nuke-searchnotice-negmin": "Cabbirka ugu yar ee baytyada waa ka yar eber, sidaas darteed waa la iska indha tirayaa.",
+	"nuke-searchnotice-min-exceeds-max": "Cabbirka ugu yar ee bayt ahaan wuxuu ka badan yahay cabbirka ugu badan ee bogga la oggol yahay.",
+	"nuke-searchnotice-max-exceeds-max": "Cabbirka ugu badan ee bayt ahaan wuxuu ka badan yahay cabbirka ugu badan ee bogga la oggol yahay.",
 	"nuke-noselected": "Si aad u sii wadato, dooro bogagga lagu dari doono safka tirtiridda.",
 	"nuke-associated-limited": "Bogag qaar lama soo bandhigi karin sababtoo ah ku darista bogagga la xiriira (bogagga wadahadalka, dib u hagista) waxay ka badan lahayd xadka la oggol yahay.",
 	"nuke-viewchanges": "taariikh",

@@ -53,6 +53,8 @@
 	"nuke-searchnotice-minmorethanmax": "Baytdakı minimum ölçü maksimum ölçüdən çoxdur, ona görə də heç bir səhifənin bu meyarlara cavab verməsi mümkün deyil.",
 	"nuke-searchnotice-negmax": "Baytlarda maksimum ölçü sıfırdan azdır, nəzərə alınmayacaq.",
 	"nuke-searchnotice-negmin": "Baytlarda minimum ölçü sıfırdan azdır, nəzərə alınmayacaq.",
+	"nuke-searchnotice-min-exceeds-max": "Minimum bayt ölçüsü icazə verilən maksimum səhifə ölçüsünü aşır.",
+	"nuke-searchnotice-max-exceeds-max": "Baytlarla verilən maksimum ölçü icazə verilən maksimum səhifə ölçüsünü aşır.",
 	"nuke-noselected": "Davam etmək üçün silinmək üçün növbəyə alınacaq səhifələri seçin.",
 	"nuke-associated-limited": "Bəzi səhifələr siyahıya alına bilmədi, çünki onların əlaqəli səhifələri (müzakirə səhifələri, yönləndirmələr) limiti keçəcək.",
 	"nuke-viewchanges": "tarixçə",

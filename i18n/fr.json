@@ -67,6 +67,8 @@
 	"nuke-searchnotice-minmorethanmax": "La taille minimale en octets dépasse la taille maximale en octets, il est donc impossible qu'une page réponde à ce critère.",
 	"nuke-searchnotice-negmax": "La taille maximale en octets est inférieure à zéro et sera ignorée.",
 	"nuke-searchnotice-negmin": "La taille minimale en octets est inférieure à zéro et sera ignorée.",
+	"nuke-searchnotice-min-exceeds-max": "La taille minimale en octets dépasse la taille maximale autorisée pour la page.",
+	"nuke-searchnotice-max-exceeds-max": "La taille maximale en octets dépasse la taille de page maximale autorisée.",
 	"nuke-noselected": "Avant de continuer, sélectionnez les pages qui seront mises en file d’attente pour suppression.",
 	"nuke-associated-limited": "Certaines pages n'ont pas pu être répertoriées car l'inclusion de leurs pages associées (pages de discussion, redirections) dépasserait la limite.",
 	"nuke-viewchanges": "historique",

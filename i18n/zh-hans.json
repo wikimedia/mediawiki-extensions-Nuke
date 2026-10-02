@@ -69,6 +69,8 @@
 	"nuke-searchnotice-minmorethanmax": "最小字节数超过了最大字节数，因此没有任何页面能够满足此条件。",
 	"nuke-searchnotice-negmax": "最大字节数小于零，将被忽略。",
 	"nuke-searchnotice-negmin": "最小字节数小于零，将被忽略。",
+	"nuke-searchnotice-min-exceeds-max": "最小字节数超过了允许的最大页面大小。",
+	"nuke-searchnotice-max-exceeds-max": "最大字节数超过了允许的最大页面大小。",
 	"nuke-noselected": "要继续，请选择要加入队列以供删除的页面。",
 	"nuke-associated-limited": "由于包含关联页面（讨论页、重定向）将超出限制，因此部分页面无法列出。",
 	"nuke-viewchanges": "历史",
