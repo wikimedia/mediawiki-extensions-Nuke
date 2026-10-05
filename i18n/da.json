@@ -55,6 +55,8 @@
 	"nuke-searchnotice-minmorethanmax": "Minimumsstørrelsen i bytes overstiger den maksimale størrelse i bytes, så det er ikke muligt for nogen side at opfylde dette kriterium.",
 	"nuke-searchnotice-negmax": "Den maksimale størrelse i bytes er mindre end nul, hvilket vil blive ignoreret.",
 	"nuke-searchnotice-negmin": "Minimumsstørrelsen i bytes er mindre end nul, hvilket vil blive ignoreret.",
+	"nuke-searchnotice-min-exceeds-max": "Minimumsstørrelsen i bytes overstiger den maksimalt tilladte sidestørrelse.",
+	"nuke-searchnotice-max-exceeds-max": "Den maksimale størrelse i bytes overstiger den maksimalt tilladte sidestørrelse.",
 	"nuke-noselected": "For at fortsætte skal du vælge de sider, der skal sættes i kø til sletning.",
 	"nuke-associated-limited": "Nogle sider kunne ikke vises, fordi det ville overskride grænsen at inkludere deres tilknyttede sider (diskussionssider, omdirigeringer).",
 	"nuke-viewchanges": "historik",

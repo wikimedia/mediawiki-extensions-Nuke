@@ -60,6 +60,8 @@
 	"nuke-searchnotice-minmorethanmax": "최소 크기(바이트)가 최대 크기(바이트)를 초과하므로 어떤 문서도 이 기준을 충족할 수 없습니다.",
 	"nuke-searchnotice-negmax": "최대 크기(바이트)가 0보다 작으면 무시됩니다.",
 	"nuke-searchnotice-negmin": "최소 크기(바이트)가 0보다 작으면 무시됩니다.",
+	"nuke-searchnotice-min-exceeds-max": "최소 크기(바이트)가 허용된 최대 문서 크기를 초과합니다.",
+	"nuke-searchnotice-max-exceeds-max": "최대 크기(바이트)가 허용된 최대 문서 크기를 초과합니다.",
 	"nuke-noselected": "계속하려면 삭제 대기열에 추가할 문서를 선택하십시오.",
 	"nuke-associated-limited": "일부 문서는 관련 문서(토론 문서, 넘겨주기)를 포함하면 한도를 초과하기 때문에 나열할 수 없습니다.",
 	"nuke-viewchanges": "역사",
