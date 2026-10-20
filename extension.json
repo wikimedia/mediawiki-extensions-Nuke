@@ -39,8 +39,8 @@
 			"description": "The maximum age of a new page creation or file upload before it becomes ineligible for mass deletion. Defaults to the value of $wgRCMaxAge."
 		},
 		"NukeUIType": {
-			"value": "htmlform",
-			"description": "The UI type to use for Special:Nuke."
+			"value": "codex",
+			"description": "The UI type to use for Special:Nuke. Either 'codex' (default) or 'htmlform' (legacy)."
 		}
 	},
 	"ResourceModules": {

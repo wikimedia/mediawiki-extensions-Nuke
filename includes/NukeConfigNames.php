@@ -13,9 +13,9 @@ class NukeConfigNames {
 	public const MaxAge = "NukeMaxAge";
 
 	/**
-	 * The UI type to use for Special:Nuke. Used to switch between the standard HTMLForm-based
-	 * interface and the (as of 2024-12) experimental Codex-based interface. Can be overridden
-	 * by a request parameter.
+	 * The UI type to use for Special:Nuke. Used to switch between the Codex-based interface
+	 * ("codex", the default) and the legacy HTMLForm-based interface ("htmlform"). Can be
+	 * overridden by a request parameter.
 	 *
 	 * @since 1.44
 	 */

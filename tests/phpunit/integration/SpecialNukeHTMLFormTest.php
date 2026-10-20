@@ -35,7 +35,7 @@ class SpecialNukeHTMLFormTest extends SpecialPageTestBase {
 	 * @return void
 	 */
 	public function nukeUISetUp() {
-		$this->overrideConfigValue( NukeConfigNames::UIType, null );
+		$this->overrideConfigValue( NukeConfigNames::UIType, 'htmlform' );
 	}
 
 	protected function newSpecialPage(): SpecialNuke {

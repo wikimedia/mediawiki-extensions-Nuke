@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\Nuke\Test\Integration;
 
 use MediaWiki\Context\RequestContext;
+use MediaWiki\Extension\Nuke\Form\SpecialNukeCodexUIRenderer;
 use MediaWiki\Extension\Nuke\Form\SpecialNukeHTMLFormUIRenderer;
 use MediaWiki\Extension\Nuke\NukeContext;
 use MediaWiki\Extension\Nuke\SpecialNuke;
@@ -88,28 +89,51 @@ class SpecialNukeTest extends MediaWikiIntegrationTestCase {
 		$this->assertCount( 0, $specialPage->getTempAccounts( $context ) );
 	}
 
-	public function testUIRenderer() {
-		$specialPage = TestingAccessWrapper::newFromObject( $this->newSpecialPage() );
+	/**
+	 * Get a special page whose context holds the given request. The renderer type is read
+	 * from the page's own request, so the request must not leak in from the global context.
+	 *
+	 * @param array $params
+	 * @return SpecialNuke|TestingAccessWrapper
+	 */
+	private function newSpecialPageWithRequest( array $params ) {
+		$request = new FauxRequest( $params, true );
+		$context = new RequestContext();
+		$context->setRequest( $request );
+		$specialPage = $this->newSpecialPage();
+		$specialPage->setContext( $context );
+		return TestingAccessWrapper::newFromObject( $specialPage );
+	}
 
+	public function testUIRenderer() {
 		$uiTypes = [
 			'htmlform' => SpecialNukeHTMLFormUIRenderer::class,
+			'codex' => SpecialNukeCodexUIRenderer::class,
 		];
 
 		foreach ( $uiTypes as $type => $class ) {
 			// Check if changing the global variable works
 			$this->overrideConfigValue( 'NukeUIType', $type );
-			$context = $specialPage->getNukeContextFromRequest(
-				new FauxRequest( [], true )
-			);
+			$specialPage = $this->newSpecialPageWithRequest( [] );
+			$context = $specialPage->getNukeContextFromRequest( $specialPage->getRequest() );
 			$this->assertInstanceOf( $class, $specialPage->getUIRenderer( $context ) );
 
 			// Check if changing the request variable works
 			$this->overrideConfigValue( 'NukeUIType', null );
-			$context = $specialPage->getNukeContextFromRequest(
-				new FauxRequest( [ 'nukeUI' => $type ], true )
-			);
+			$specialPage = $this->newSpecialPageWithRequest( [ 'nukeUI' => $type ] );
+			$context = $specialPage->getNukeContextFromRequest( $specialPage->getRequest() );
 			$this->assertInstanceOf( $class, $specialPage->getUIRenderer( $context ) );
 		}
+	}
+
+	public function testUIRendererDefaultsToCodex() {
+		$this->overrideConfigValue( 'NukeUIType', null );
+		$specialPage = $this->newSpecialPageWithRequest( [] );
+		$context = $specialPage->getNukeContextFromRequest( $specialPage->getRequest() );
+		$this->assertInstanceOf(
+			SpecialNukeCodexUIRenderer::class,
+			$specialPage->getUIRenderer( $context )
+		);
 	}
 
 	/**

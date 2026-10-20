@@ -268,28 +268,28 @@ class SpecialNuke extends SpecialPage {
 		// Permit overriding the UI type with the `?nukeUI=` query parameter.
 		$formType = $this->getRequest()->getText( 'nukeUI' );
 		if ( !$formType ) {
-			$formType = $this->getConfig()->get( NukeConfigNames::UIType ) ?? 'htmlform';
+			$formType = $this->getConfig()->get( NukeConfigNames::UIType ) ?? 'codex';
 		}
 
 		// Possible values: 'codex', 'htmlform'
 		switch ( $formType ) {
-			case 'codex':
-				$codex = new Codex( new MediaWikiLocalization( $this->getContext() ) );
-				return new SpecialNukeCodexUIRenderer(
+			case 'htmlform':
+				return new SpecialNukeHTMLFormUIRenderer(
 					$context,
 					$this,
-					$codex,
 					$this->repoGroup,
 					$this->getLinkRenderer(),
 					$this->namespaceInfo,
 					$this->redirectLookup,
 					$this->titleFormatter
 				);
-			case 'htmlform':
+			case 'codex':
 			default:
-				return new SpecialNukeHTMLFormUIRenderer(
+				$codex = new Codex( new MediaWikiLocalization( $this->getContext() ) );
+				return new SpecialNukeCodexUIRenderer(
 					$context,
 					$this,
+					$codex,
 					$this->repoGroup,
 					$this->getLinkRenderer(),
 					$this->namespaceInfo,

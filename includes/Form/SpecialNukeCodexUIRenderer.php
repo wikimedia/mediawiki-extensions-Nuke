@@ -892,13 +892,15 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 	 * Wraps HTML within <form> tags. Should be used in displaying the initial prompt
 	 * form and the page list.
 	 *
-	 * Implementation derived from {@link \MediaWiki\HTMLForm\OOUIHTMLForm::wrapForm}
+	 * Implementation derived from {@link \MediaWiki\HTMLForm\CodexHTMLForm::wrapForm}
 	 *
 	 * @param string $content The HTML content to add inside the <form> tags.
 	 * @return string
 	 */
 	protected function wrapForm( string $content ): string {
 		$formType = $this->getRequestContext()->getRequest()->getText( 'nukeUI' );
+
+		$this->getOutput()->addModuleStyles( 'mediawiki.htmlform.codex.styles' );
 
 		return Html::rawElement(
 			'form',
@@ -907,7 +909,7 @@ class SpecialNukeCodexUIRenderer extends SpecialNukeUIRenderer {
 				'action' => $this->pageTitle->getLocalURL(),
 				'method' => 'POST',
 				'enctype' => 'application/x-www-form-urlencoded',
-				'class' => [ 'mw-htmlform', 'mw-htmlform-ooui' ],
+				'class' => [ 'mw-htmlform', 'mw-htmlform-codex' ],
 			],
 			$content .
 			// Only add in form type if not submitting under the default type.
