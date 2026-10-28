@@ -55,6 +55,8 @@
 	"nuke-searchnotice-minmorethanmax": "De minimumgrootte in bytes is meer dan de maximumgrootte in bytes. Geen enkele pagina kan dus aan deze criteria voldoen.",
 	"nuke-searchnotice-negmax": "De maximumgrootte in bytes is kleiner dan nul en wordt genegeerd.",
 	"nuke-searchnotice-negmin": "De minimumgrootte in bytes is kleiner dan nul en wordt genegeerd.",
+	"nuke-searchnotice-min-exceeds-max": "De minimale grootte in bytes overschrijdt de maximaal toegestane paginagrootte.",
+	"nuke-searchnotice-max-exceeds-max": "De maximale grootte in bytes overschrijdt de maximaal toegestane paginagrootte.",
 	"nuke-noselected": "Om door te gaan, selecteert u de pagina’s die in de wachtrij voor verwijdering moeten worden geplaatst.",
 	"nuke-associated-limited": "Sommige pagina’s konden niet worden vermeld omdat door het opnemen van de bijbehorende pagina’s (overlegpagina’s, doorverwijzingen) de limiet overschreden zou worden.",
 	"nuke-viewchanges": "geschiedenis",
