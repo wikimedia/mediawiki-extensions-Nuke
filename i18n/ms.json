@@ -3,31 +3,35 @@
 		"authors": [
 			"Anakmalaysia",
 			"Aviator",
-			"Tofeiku"
+			"Tofeiku",
+			"Hakimi97"
 		]
 	},
 	"nuke": "Hapus pukal",
-	"action-nuke": "menghapuskan laman secara besar-besaran",
-	"nuke-desc": "Membolehkan penyelia [[Special:Nuke|menghapuskan laman-laman]] secara pukal",
+	"action-nuke": "hapuskan laman secara pukal",
+	"nuke-desc": "Memberikan penyelia keupayaan untuk [[Special:Nuke|menghapuskan laman-laman secara pukal]]",
 	"nuke-nopages": "Tiada laman baru oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]] dalam perubahan terkini.",
 	"nuke-list": "Laman-laman berikut dicipta oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]]; sila masukkan komen anda dan tekan butang untuk memadamkannya.",
 	"nuke-list-multiple": "Laman-laman berikut baru diwujudkan;\nisikan komen dan tekan butang untuk menghapuskannya.",
 	"nuke-defaultreason": "Menghapuskan laman-laman yang ditambah oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]] secara pukal",
+	"nuke-defaultreason-tempaccount": "Penghapusan pukal laman yang ditambahkan oleh akaun sementara",
 	"nuke-multiplepeople": "Penghapusan laman yang baru ditambahkan secara pukal",
-	"nuke-tools": "Alat ini membolehkan penghapusan secara besar-besaran laman-laman yang dibuka oleh pengguna atau alamat IP tertentu.\nIsikan nama pengguna atau alamat IP untuk mendapat senarai laman yang hendak dikosongkan, atau biarkan kosong untuk semua pengguna.",
+	"nuke-tools": "Alat ini membolehkan penghapusan secara pukal bagi laman-laman yang dicipta oleh pengguna atau alamat IP tertentu.\nIsikan nama pengguna atau alamat IP untuk mendapat senarai laman yang hendak dikosongkan, atau biarkan kosong untuk semua pengguna.",
+	"nuke-tools-tempaccount": "Alat ini membolehkan penghapusan pukal terhadap laman-laman yang baru ditambahkan oleh pengguna atau akaun sementara tertentu. Masukkan nama pengguna atau alamat IP untuk mendapatkan senarai laman untuk dihapuskan, atau biarkan kosong untuk semua pengguna. Pemasukan alamat IP akan menyenaraikan semua laman yang dicipta oleh alamat IP tersebut atau sebarang akaun sementara yang digunakan daripada alamat IP tersebut.",
 	"nuke-submit-user": "Pergi",
 	"nuke-submit-delete": "Hapus",
 	"right-nuke": "Menghapuskan laman secara pukal",
 	"nuke-userorip": "Nama pengguna, alamat IP atau kosong:",
-	"nuke-maxpages": "Bilangan halaman maksimum:",
+	"nuke-maxpages": "Bilangan laman untuk diambil (maksimum 500):",
 	"nuke-editby": "Dibuat oleh [[Special:Contributions/$1|{{GENDER:$1|$1}}]]",
 	"nuke-deleted": "Laman '''$1''' telah dihapuskan.",
+	"nuke-deletion-queued": "Laman ''' $1 ''' telah diaturkan untuk penghapusan.",
 	"nuke-not-deleted": "Laman [[:$1]] '''tidak dapat''' dihapuskan.",
 	"nuke-delete-more": "[[Special:Nuke|Hapuskan lebih banyak laman]]",
-	"nuke-pattern": "Pola nama laman:",
+	"nuke-pattern": "Corak SQL LIKE (cth. %) untuk nama laman tersebut:",
 	"nuke-nopages-global": "Tiada laman baru dalam [[Special:RecentChanges|perubahan terkini]].",
-	"nuke-viewchanges": "lihat perubahan",
+	"nuke-viewchanges": "sejarah",
 	"nuke-namespace": "Had ruang nama:",
 	"nuke-linkoncontribs": "hapus pukal",
-	"nuke-linkoncontribs-text": "Hapus pukal halaman-halaman di mana pengguna ini satu-satunya pengarangnya"
+	"nuke-linkoncontribs-text": "Hapuskan laman secara pukal apabila {{GENDER:$1|pengguna ini}} merupakan satu-satunya pengarang"
 }
